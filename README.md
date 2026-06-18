@@ -1,3 +1,5 @@
+> 🚧 This project is under active development. Data coverage is incomplete and some entries are unverified.
+
 # On-Demand Transit Database
 
 A searchable research inventory of microtransit and demand-response public transit deployments across the United States.
