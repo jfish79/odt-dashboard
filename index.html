@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>On-Demand Transit Database</title>
+<meta name="description" content="A searchable research inventory of microtransit and on-demand public transit deployments across the United States.">
+<!-- Open Graph / social previews. NOTE: og:image requires og-image.png (1200x630) to exist in the repo root, and the URLs below must point to your published Pages URL. Until then these are inert. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="On-Demand Transit Database">
+<meta property="og:description" content="Microtransit and demand-response transit systems across the United States — searchable map, cards, and analytics.">
+<!-- <meta property="og:url" content="https://USERNAME.github.io/REPO/"> -->
+<!-- <meta property="og:image" content="https://USERNAME.github.io/REPO/og-image.png"> -->
+<meta name="twitter:card" content="summary_large_image">
+<!-- Inline SVG favicon, no extra file needed -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9A%90%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Code+Pro:wght@400;500&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+:root {
+  --bg:       #f7f4ef;
+  --bg2:      #f0ece4;
+  --surface:  #fdfcf9;
+  --border:   #ddd8ce;
+  --border2:  #ccc6ba;
+  --ink:      #2c2820;
+  --ink-mid:  #5a5248;
+  --ink-soft: #9a9088;
+  --ink-faint:#bdb6aa;
+  --green:    #3d6b4f;
+  --orange:   #c05c2a;
+  --blue:     #2e5e8a;
+  --gold:     #b08a30;
+  --mono:     'Source Code Pro', monospace;
+  --serif:    'Lora', serif;
+  --sans:     'Libre Franklin', sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--sans); background: var(--bg); color: var(--ink); min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ── HEADER ── */
+header {
+  background: var(--ink);
+  color: var(--bg);
+  padding: 2.5rem 3rem 2.25rem;
+  flex-shrink: 0;
+}
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 0.75rem;
+}
+header h1 {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 0.6rem;
+}
+header h1 em { font-style: italic; color: #d4c9a8; }
+.header-sub {
+  font-size: 0.85rem;
+  color: #a09888;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 500px;
+}
+.header-stats {
+  display: flex;
+  gap: 0;
+  margin-top: 1.75rem;
+  border-top: 1px solid #3a342c;
+  padding-top: 1.25rem;
+}
+.stat { padding-right: 2rem; margin-right: 2rem; border-right: 1px solid #3a342c; }
+.stat:last-child { border-right: none; }
+.stat-num { font-family: var(--serif); font-size: 1.8rem; color: #e8e0d0; line-height: 1; display: block; }
+.stat-label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: #6a6058; margin-top: 0.2rem; display: block; }
+
+/* ── TOOLBAR ── */
+.toolbar {
+  background: var(--surface);
+  border-bottom: 2px solid var(--ink);
+  padding: 0.8rem 3rem;
+  display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;
+  position: sticky; top: 0; z-index: 200;
+}
+.search-wrap { position: relative; flex: 1; min-width: 180px; max-width: 260px; }
+.search-wrap svg { position: absolute; left: 9px; top: 50%; transform: translateY(-50%); color: var(--ink-faint); pointer-events: none; }
+.search-wrap input {
+  width: 100%; padding: 0.45rem 0.7rem 0.45rem 2rem;
+  background: var(--bg); border: 1px solid var(--border2);
+  font-family: var(--mono); font-size: 0.78rem; color: var(--ink); outline: none;
+}
+.search-wrap input::placeholder { color: var(--ink-faint); }
+.search-wrap input:focus { border-color: var(--ink); }
+.filter-group { display: flex; align-items: center; gap: 0.4rem; }
+.filter-label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); white-space: nowrap; }
+select {
+  padding: 0.42rem 1.5rem 0.42rem 0.6rem;
+  background: var(--bg); border: 1px solid var(--border2);
+  font-family: var(--mono); font-size: 0.75rem; color: var(--ink); outline: none; appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='5' viewBox='0 0 9 5'%3E%3Cpath d='M1 1l3.5 3 3.5-3' stroke='%239a9088' stroke-width='1.3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 6px center; cursor: pointer;
+}
+select:focus { border-color: var(--ink); }
+.results-count { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-soft); white-space: nowrap; }
+.results-count span { color: var(--ink); }
+.view-toggle { display: flex; border: 1px solid var(--border2); overflow: hidden; flex-shrink: 0; margin-left: auto; }
+.view-btn {
+  padding: 0.42rem 0.85rem; background: var(--bg); border: none; cursor: pointer;
+  font-family: var(--mono); font-size: 0.63rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-soft); display: flex; align-items: center; gap: 0.35rem; transition: background 0.1s;
+}
+.view-btn:first-child { border-right: 1px solid var(--border2); }
+.view-btn.active { background: var(--ink); color: var(--bg); }
+.view-btn:hover:not(.active) { background: var(--bg2); color: var(--ink); }
+
+/* ── CONTENT ── */
+.content-area { flex: 1; }
+#card-view { padding: 2rem 3rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+
+/* ── CARD ── */
+.card {
+  background: var(--surface);
+  padding: 1.3rem 1.4rem 1.1rem;
+  display: flex; flex-direction: column; gap: 0.8rem;
+  cursor: pointer; position: relative;
+  transition: background 0.1s;
+  border-left: 3px solid var(--border);
+}
+.card:hover { background: #faf7f2; border-left-color: var(--card-color, var(--border2)); }
+.card.expanded { background: #faf7f2; border-left-color: var(--card-color, var(--border2)); cursor: default; }
+.card.hidden { display: none; }
+
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem; }
+.card-name { font-family: var(--serif); font-size: 1rem; font-weight: 600; line-height: 1.3; flex: 1; }
+.state-badge {
+  font-family: var(--mono); font-size: 0.6rem; font-weight: 500; letter-spacing: 0.08em;
+  padding: 0.18rem 0.45rem; white-space: nowrap; flex-shrink: 0;
+  background: var(--card-color, var(--ink-soft)); color: white;
+}
+
+.card-meta { display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; }
+.tag { font-family: var(--mono); font-size: 0.6rem; padding: 0.15rem 0.4rem; border: 1px solid; }
+.tag-type-Microtransit { color: var(--green); border-color: #a8c8b4; background: #f0f7f2; }
+.tag-type-Paratransit { color: #8a3060; border-color: #d4a0b8; background: #faf0f4; }
+.tag-type-Demand-Response { color: var(--blue); border-color: #a8bee0; background: #f0f4fa; }
+.tag-geo { color: var(--ink-soft); border-color: var(--border); background: var(--bg2); }
+.status-text { font-family: var(--mono); font-size: 0.6rem; color: var(--ink-soft); display: flex; align-items: center; gap: 0.3rem; }
+.status-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.status-Active,.status-Active---Expanding,.status-Active---New,.status-Active---Post-Pilot { background: var(--green); }
+.status-Pilot { background: var(--gold); }
+.status-Pilot---Ended,.status-Inactive { background: var(--ink-faint); }
+
+.card-area { font-family: var(--mono); font-size: 0.67rem; color: var(--ink-mid); line-height: 1.5; display: flex; gap: 0.35rem; }
+.card-area svg { flex-shrink: 0; margin-top: 1px; color: var(--ink-faint); }
+
+.card-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1rem; border-top: 1px solid var(--border); padding-top: 0.8rem; }
+.field { display: flex; flex-direction: column; gap: 0.1rem; }
+.field-label { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); }
+.field-value { font-family: var(--mono); font-size: 0.72rem; color: var(--ink); line-height: 1.3; }
+.field-value.muted { color: var(--ink-faint); }
+
+.card-expanded-content { display: none; border-top: 1px solid var(--border); padding-top: 0.8rem; gap: 0.8rem; flex-direction: column; }
+.card.expanded .card-expanded-content { display: flex; }
+.card-notes {
+  font-size: 0.78rem; color: var(--ink-mid); line-height: 1.6;
+  background: var(--bg2); padding: 0.65rem 0.85rem;
+  border-left: 2px solid var(--card-color, var(--border2));
+  font-family: var(--sans);
+}
+.card-fields-full { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.5rem 1rem; }
+.card-url a { font-family: var(--mono); font-size: 0.65rem; color: var(--blue); text-decoration: none; word-break: break-all; }
+.card-url a:hover { text-decoration: underline; }
+
+.expand-btn {
+  position: absolute; bottom: 0.85rem; right: 0.85rem;
+  width: 20px; height: 20px;
+  background: var(--bg2); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: var(--ink-soft); transition: background 0.1s;
+}
+.expand-btn:hover { background: var(--border); }
+.card.expanded .expand-btn svg { transform: rotate(45deg); }
+.expand-btn svg { transition: transform 0.18s; }
+
+.empty { grid-column: 1/-1; text-align: center; padding: 4rem 2rem; color: var(--ink-soft); background: var(--surface); }
+.empty-title { font-family: var(--serif); font-size: 1.3rem; margin-bottom: 0.5rem; }
+.empty p { font-family: var(--mono); font-size: 0.75rem; color: var(--ink-faint); }
+
+/* ── MAP ── */
+#map-view { display: none; height: calc(100vh - 158px); min-height: 500px; }
+#map-view.active { display: flex; }
+#map { flex: 1; }
+.map-sidebar { width: 290px; flex-shrink: 0; background: var(--surface); border-left: 1px solid var(--border); display: flex; flex-direction: column; overflow: hidden; }
+.map-sidebar-header { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
+.map-sidebar-header span { color: var(--ink); }
+.map-list { overflow-y: auto; flex: 1; }
+.map-list-item { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.1s; display: flex; align-items: flex-start; gap: 0.6rem; border-left: 3px solid transparent; }
+.map-list-item:hover { background: var(--bg2); }
+.map-list-item.selected { background: var(--bg2); border-left-color: var(--ink); }
+.map-list-item.hidden { display: none; }
+.map-pin-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; border: 1.5px solid white; }
+.map-item-name { font-family: var(--sans); font-size: 0.8rem; font-weight: 500; line-height: 1.3; color: var(--ink); }
+.map-item-sub { font-family: var(--mono); font-size: 0.6rem; color: var(--ink-soft); margin-top: 0.12rem; }
+.map-legend { position: absolute; bottom: 1rem; left: 1rem; z-index: 400; background: var(--surface); border: 1px solid var(--border); padding: 0.65rem 0.85rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); max-height: 250px; overflow-y: auto; }
+.map-legend-title { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.45rem; }
+.map-legend-item { display: flex; align-items: center; gap: 0.45rem; font-family: var(--mono); font-size: 0.67rem; color: var(--ink-mid); margin-bottom: 0.28rem; }
+.map-legend-item:last-child { margin-bottom: 0; }
+.legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+
+/* Leaflet overrides */
+.leaflet-popup-content-wrapper { border-radius: 0 !important; border: 1px solid var(--border) !important; box-shadow: 0 3px 12px rgba(0,0,0,0.12) !important; }
+.leaflet-popup-content { font-family: var(--mono) !important; font-size: 0.75rem !important; margin: 10px 13px !important; color: var(--ink) !important; }
+.popup-name { font-family: var(--serif) !important; font-size: 0.9rem !important; font-weight: 600; margin-bottom: 0.3rem; }
+.popup-area { font-size: 0.67rem; color: var(--ink-mid); margin-bottom: 0.35rem; line-height: 1.4; }
+.popup-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.28rem 0.7rem; margin: 0.4rem 0; }
+.popup-fl { font-size: 0.56rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint); display: block; }
+.popup-fv { font-size: 0.7rem; color: var(--ink); }
+.popup-note { margin-top: 0.45rem; padding: 0.35rem 0.5rem; background: var(--bg2); border-left: 2px solid var(--border2); font-size: 0.65rem; color: var(--ink-mid); line-height: 1.5; }
+.popup-url { margin-top: 0.35rem; }
+.popup-url a { color: var(--blue) !important; font-size: 0.63rem; text-decoration: none; }
+.popup-url a:hover { text-decoration: underline; }
+
+/* ── ANALYTICS ── */
+#analytics-view { padding: 2rem 3rem; }
+.analytics-header { margin-bottom: 1.75rem; border-bottom: 2px solid var(--ink); padding-bottom: 1rem; }
+.analytics-title { font-family: var(--serif); font-size: 1.4rem; font-weight: 400; margin-bottom: 0.25rem; }
+.analytics-title em { font-style: italic; color: var(--ink-mid); }
+.analytics-note { font-family: var(--mono); font-size: 0.7rem; color: var(--ink-soft); }
+.analytics-note strong { color: var(--ink); }
+
+.charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.chart-full { grid-column: 1 / -1; }
+
+.chart-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.25rem 1.4rem 1rem;
+}
+.chart-panel-title {
+  font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink-soft); margin-bottom: 0.2rem;
+}
+.chart-panel-sub {
+  font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink);
+  margin-bottom: 1rem;
+}
+.chart-panel canvas { display: block; max-width: 100%; }
+
+.chart-note {
+  font-family: var(--mono); font-size: 0.65rem; color: var(--ink-soft);
+  margin-top: 0.6rem; line-height: 1.6;
+  border-top: 1px solid var(--border); padding-top: 0.5rem;
+}
+
+/* Donut */
+.donut-wrap { display: flex; align-items: center; gap: 1.5rem; }
+.donut-canvas { flex-shrink: 0; display: block; }
+.donut-legend { display: flex; flex-direction: column; gap: 0.5rem; flex: 1; min-width: 0; }
+.dl-item { display: flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.72rem; color: var(--ink-mid); }
+.dl-swatch { width: 12px; height: 12px; flex-shrink: 0; border-radius: 2px; }
+.dl-pct { margin-left: auto; color: var(--ink); font-weight: 600; white-space: nowrap; }
+
+@media (max-width: 760px) {
+  #analytics-view { padding: 1rem; }
+  .charts-grid { grid-template-columns: 1fr; }
+  .chart-full { grid-column: 1; }
+  .donut-wrap { flex-direction: column; }
+}
+/* ── REFERENCE VIEW ── */
+#reference-view { padding: 2rem 3rem; max-width: 900px; }
+.ref-body { display: flex; flex-direction: column; gap: 2.5rem; }
+.ref-section { border-top: 2px solid var(--ink); padding-top: 1.1rem; }
+.ref-section-label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 0.9rem; }
+.ref-prose { font-family: var(--sans); font-size: 0.85rem; color: var(--ink-mid); line-height: 1.7; max-width: 720px; }
+.ref-table-wrap { overflow-x: auto; }
+.ref-table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 0.72rem; }
+.ref-table th { background: var(--ink); color: var(--bg); padding: 0.45rem 0.75rem; text-align: left; font-weight: 600; }
+.ref-table td { padding: 0.4rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--ink-mid); vertical-align: top; line-height: 1.5; }
+.ref-table tr:nth-child(even) td { background: var(--bg2); }
+.ref-defs { display: flex; flex-direction: column; gap: 1.75rem; }
+.ref-def-block { border-left: 3px solid var(--border2); padding-left: 1.1rem; }
+.ref-def-term { font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.35rem; }
+.ref-def-body { font-family: var(--sans); font-size: 0.82rem; color: var(--ink-mid); line-height: 1.6; margin-bottom: 0.85rem; max-width: 680px; }
+.ref-geo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.5rem; }
+.ref-geo-item { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--geo-color, var(--border2)); padding: 0.75rem 0.9rem; }
+.ref-geo-label { font-family: var(--mono); font-size: 0.7rem; font-weight: 600; color: var(--geo-color, var(--ink)); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.35rem; }
+.ref-geo-desc { font-family: var(--sans); font-size: 0.78rem; color: var(--ink-mid); line-height: 1.55; margin-bottom: 0.3rem; }
+.ref-geo-ex { font-family: var(--mono); font-size: 0.63rem; color: var(--ink-faint); line-height: 1.4; }
+.ref-type-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+.ref-type-item { background: var(--bg2); padding: 0.65rem 0.8rem; }
+.ref-type-desc { font-family: var(--sans); font-size: 0.78rem; color: var(--ink-mid); line-height: 1.55; }
+.ref-status-table { display: flex; flex-direction: column; gap: 0.4rem; }
+.ref-status-row { display: flex; align-items: baseline; gap: 0.75rem; font-family: var(--mono); font-size: 0.72rem; border-bottom: 1px solid var(--border); padding-bottom: 0.35rem; }
+.ref-status-name { font-weight: 600; color: var(--ink); flex-shrink: 0; min-width: 140px; }
+.ref-status-desc { color: var(--ink-mid); line-height: 1.45; }
+.ref-vendor-notes { display: flex; flex-direction: column; gap: 0.4rem; }
+.ref-vendor-row { display: flex; gap: 0.75rem; font-family: var(--mono); font-size: 0.72rem; border-bottom: 1px solid var(--border); padding-bottom: 0.35rem; }
+.ref-vendor-name { font-weight: 600; color: var(--ink); flex-shrink: 0; min-width: 140px; }
+.ref-vendor-desc { color: var(--ink-mid); line-height: 1.45; }
+
+/* ── DEEP SUMMARY MODAL ── */
+.modal-backdrop { position: fixed; inset: 0; background: rgba(44,40,32,0.55); z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 1.5rem; }
+.modal-box { background: var(--surface); border: 2px solid var(--ink); width: 100%; max-width: 660px; max-height: 85vh; overflow-y: auto; position: relative; padding: 2rem 2.25rem 1.75rem; }
+.modal-close { position: absolute; top: 1rem; right: 1rem; background: var(--bg2); border: 1px solid var(--border2); cursor: pointer; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; color: var(--ink-soft); }
+.modal-close:hover { background: var(--border); color: var(--ink); }
+.modal-eyebrow { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.4rem; }
+.modal-title { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; line-height: 1.2; margin-bottom: 0.2rem; }
+.modal-subtitle { font-family: var(--mono); font-size: 0.67rem; color: var(--ink-soft); margin-bottom: 1.25rem; line-height: 1.5; }
+.modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem 1.25rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 0.9rem 0; margin-bottom: 1rem; }
+.modal-field { display: flex; flex-direction: column; gap: 0.08rem; }
+.modal-fl { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); }
+.modal-fv { font-family: var(--mono); font-size: 0.73rem; color: var(--ink); line-height: 1.4; }
+.modal-fv.muted { color: var(--ink-faint); }
+.modal-full { grid-column: 1 / -1; }
+.modal-notes { font-family: var(--sans); font-size: 0.82rem; color: var(--ink-mid); line-height: 1.65; background: var(--bg2); padding: 0.75rem 1rem; border-left: 3px solid var(--border2); margin-bottom: 0.85rem; }
+.modal-url a { font-family: var(--mono); font-size: 0.65rem; color: var(--blue); text-decoration: none; word-break: break-all; }
+.modal-url a:hover { text-decoration: underline; }
+.modal-tags { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-bottom: 1.1rem; }
+.modal-open-btn { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--mono); font-size: 0.65rem; padding: 0.35rem 0.7rem; background: var(--ink); color: var(--bg); border: none; cursor: pointer; text-decoration: none; }
+.modal-open-btn:hover { background: var(--ink-mid); }
+
+@media (max-width: 760px) {
+  #reference-view { padding: 1rem; }
+  .ref-geo-grid, .ref-type-grid { grid-template-columns: 1fr; }
+  .ref-status-row, .ref-vendor-row { flex-direction: column; gap: 0.2rem; }
+  .ref-status-name, .ref-vendor-name { min-width: unset; }
+  .modal-box { padding: 1.5rem 1.25rem; }
+  .modal-grid { grid-template-columns: 1fr; }
+}
+
+footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--border); font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.06em; color: var(--ink-faint); }
+
+@media (max-width: 760px) {
+  header { padding: 1.5rem; }
+  .toolbar { padding: 0.65rem 1rem; }
+  #card-view { padding: 1rem; }
+  .grid { grid-template-columns: 1fr; }
+  .card.expanded { grid-column: span 1; }
+  .card-fields-full { grid-template-columns: 1fr 1fr; }
+  .header-stats { flex-wrap: wrap; gap: 1rem; }
+  .stat { border-right: none; padding-right: 0; margin-right: 0; }
+  #map-view { height: calc(100vh - 200px); flex-direction: column; }
+  .map-sidebar { width: 100%; height: 220px; border-left: none; border-top: 1px solid var(--border); }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">U.S. On-Demand Transit · Research Database</div>
+  <h1><em>On-Demand</em> Transit Systems</h1>
+  <p class="header-sub">A searchable inventory of microtransit and on-demand public transit deployments across the United States.</p>
+  <div class="header-stats">
+    <div class="stat"><span class="stat-num" id="stat-total">0</span><span class="stat-label">Systems</span></div>
+    <div class="stat"><span class="stat-num" id="stat-states">0</span><span class="stat-label">States</span></div>
+    <div class="stat"><span class="stat-num" id="stat-active">0</span><span class="stat-label">Active</span></div>
+    <div class="stat"><span class="stat-num" id="stat-micro">0</span><span class="stat-label">Microtransit</span></div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="search-wrap">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" id="search" placeholder="Search systems, operators, cities…" oninput="filterAll()">
+  </div>
+  <div class="filter-group">
+    <span class="filter-label">State</span>
+    <select id="filter-state" onchange="filterAll()">
+      <option value="">All</option>
+      <option value="AZ">AZ</option><option value="CA">CA</option>
+      <option value="CO">CO</option><option value="CT">CT</option>
+      <option value="FL">FL</option><option value="GA">GA</option>
+      <option value="IL">IL</option><option value="KY">KY</option>
+      <option value="MA">MA</option><option value="MD">MD</option>
+      <option value="MI">MI</option><option value="MN">MN</option>
+      <option value="NC">NC</option><option value="NJ">NJ</option>
+      <option value="NY">NY</option><option value="OH">OH</option>
+      <option value="OR">OR</option><option value="PA">PA</option>
+      <option value="SD">SD</option><option value="TX">TX</option>
+      <option value="UT">UT</option><option value="VA">VA</option>
+      <option value="WA">WA</option><option value="WI">WI</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <span class="filter-label">Type</span>
+    <select id="filter-type" onchange="filterAll()">
+      <option value="">All</option>
+      <option value="Microtransit">Microtransit</option>
+      <option value="Demand-Response">Demand-Response</option>
+      <option value="Paratransit">Paratransit</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <span class="filter-label">Geo</span>
+    <select id="filter-geo" onchange="filterAll()">
+      <option value="">All</option>
+      <option value="Urban">Urban</option>
+      <option value="Suburban">Suburban</option>
+      <option value="Rural">Rural</option>
+      <option value="Mixed">Mixed</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <span class="filter-label">Status</span>
+    <select id="filter-status" onchange="filterAll()">
+      <option value="">All</option>
+      <option value="Active">Active</option>
+      <option value="Pilot">Pilot</option>
+      <option value="Ended">Ended</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <span class="filter-label">Vendor</span>
+    <select id="filter-vendor" onchange="filterAll()">
+      <option value="">All</option>
+    </select>
+  </div>
+  <div class="results-count"><span id="count">0</span> systems</div>
+  <div class="view-toggle">
+    <button class="view-btn active" id="btn-cards" onclick="setView('cards')">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      Cards
+    </button>
+    <button class="view-btn" id="btn-map" onclick="setView('map')">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+      Map
+    </button>
+    <button class="view-btn" id="btn-analytics" onclick="setView('analytics')">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      Analytics
+    </button>
+    <button class="view-btn" id="btn-reference" onclick="setView('reference')">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      Reference
+    </button>
+  </div>
+</div>
+
+<div class="content-area">
+  <div id="card-view"><div class="grid" id="grid"></div></div>
+  <div id="map-view">
+    <div id="map"></div>
+    <div class="map-legend" id="map-legend"></div>
+    <div class="map-sidebar">
+      <div class="map-sidebar-header"><span id="map-count">0</span> systems shown</div>
+      <div class="map-list" id="map-list"></div>
+    </div>
+  </div>
+<div id="analytics-view" style="display:none">
+  <div class="analytics-header">
+    <div class="analytics-title"><em>Analytics</em> — System Trends &amp; Composition</div>
+    <div class="analytics-note">Charts reflect <strong id="a-count">107</strong> systems currently matching active filters &nbsp;·&nbsp; <span id="a-note-year">80 of 107 have known launch years</span></div>
+  </div>
+  <div class="charts-grid">
+
+    <!-- 1. Cumulative systems launched (full width) -->
+    <div class="chart-panel chart-full">
+      <div class="chart-panel-title">Growth over time</div>
+      <div class="chart-panel-sub">Cumulative systems launched, 2017–2026</div>
+      <canvas id="chart-cumulative"></canvas>
+      <div class="chart-note">* Bars show new systems per year. Line shows cumulative total. 26 systems with unknown launch years are excluded from this chart only.</div>
+    </div>
+
+    <!-- 2. Geographic context donut -->
+    <div class="chart-panel">
+      <div class="chart-panel-title">Geographic context</div>
+      <div class="chart-panel-sub">Urban · Suburban · Rural</div>
+      <div class="donut-wrap">
+        <canvas id="chart-geo" class="donut-canvas"></canvas>
+        <div class="donut-legend" id="legend-geo"></div>
+      </div>
+      <div class="chart-note">Suburban deployments lead, reflecting demand in low-density areas underserved by fixed-route bus.</div>
+    </div>
+
+    <!-- 3. Fare structure donut -->
+    <div class="chart-panel">
+      <div class="chart-panel-title">Fare structure</div>
+      <div class="chart-panel-sub">Free · Paid · Unknown</div>
+      <div class="donut-wrap">
+        <canvas id="chart-fare" class="donut-canvas"></canvas>
+        <div class="donut-legend" id="legend-fare"></div>
+      </div>
+      <div class="chart-note">~30% of systems are fare-free, typically funded by municipal or federal grants.</div>
+    </div>
+
+    <!-- 4. Top vendors bar -->
+    <div class="chart-panel">
+      <div class="chart-panel-title">Technology vendor</div>
+      <div class="chart-panel-sub">Known software platforms</div>
+      <canvas id="chart-vendor"></canvas>
+      <div class="chart-note">Via dominates the US market. ~38% of systems use an unspecified or proprietary platform.</div>
+    </div>
+
+    <!-- 5. Systems per state bar -->
+    <div class="chart-panel">
+      <div class="chart-panel-title">Geographic distribution</div>
+      <div class="chart-panel-sub">Systems by state</div>
+      <canvas id="chart-states"></canvas>
+      <div class="chart-note">NC leads due to the MEE-NC rural initiative and active NCDOT programs.</div>
+    </div>
+
+    <!-- 6. Status breakdown bar -->
+    <div class="chart-panel chart-full">
+      <div class="chart-panel-title">System maturity</div>
+      <div class="chart-panel-sub">Status distribution across all systems</div>
+      <canvas id="chart-status"></canvas>
+      <div class="chart-note">The majority of systems are in sustained operation. "Active – New" reflects services launched within the past ~6 months.</div>
+    </div>
+
+    <!-- 7. Propulsion type donut -->
+    <div class="chart-panel">
+      <div class="chart-panel-title">Fleet propulsion</div>
+      <div class="chart-panel-sub">Electric · Hybrid · Conventional</div>
+      <div class="donut-wrap">
+        <canvas id="chart-propulsion" class="donut-canvas"></canvas>
+        <div class="donut-legend" id="legend-propulsion"></div>
+      </div>
+      <div class="chart-note">~65% of systems have unknown propulsion type. Of those with known fleets, electrification is prevalent particularly in CA, FL, and CMO-funded services.</div>
+    </div>
+
+    <!-- 8. WAV/ADA availability donut -->
+    <div class="chart-panel">
+      <div class="chart-panel-title">Accessibility (WAV/ADA)</div>
+      <div class="chart-panel-sub">Wheelchair-accessible vehicles</div>
+      <div class="donut-wrap">
+        <canvas id="chart-wav" class="donut-canvas"></canvas>
+        <div class="donut-legend" id="legend-wav"></div>
+      </div>
+      <div class="chart-note">WAV availability is frequently mentioned in press releases when present; "Not Specified" likely understates true ADA compliance, which is federally required for public transit.</div>
+    </div>
+
+    <!-- 9. Known fleet sizes bar -->
+    <div class="chart-panel chart-full">
+      <div class="chart-panel-title">Fleet size (known deployments)</div>
+      <div class="chart-panel-sub">Vehicles per system — 16 of 123 systems with confirmed counts</div>
+      <canvas id="chart-fleet-sizes"></canvas>
+      <div class="chart-note">Fleet size data is available for only ~13% of systems. Larger fleets (Arlington ~90, DART GoLink, Scout) reflect citywide or multi-zone deployments. Most pilots operate 3–15 vehicles.</div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<div id="reference-view" style="display:none">
+  <div class="ref-body">
+
+    <div class="ref-section">
+      <div class="ref-section-label">About this database</div>
+      <p class="ref-prose">This database tracks same-day, app- or phone-bookable public on-demand transit deployments across the United States — commonly called microtransit or demand-response transit. It is a research inventory, not an official government registry. Data is compiled from agency websites, press releases, state DOT studies, and the Federal Transit Administration. All coverage areas and fleet figures are approximate.</p>
+    </div>
+
+    <div class="ref-section">
+      <div class="ref-section-label">Scope rules</div>
+      <div class="ref-table-wrap">
+        <table class="ref-table">
+          <thead><tr><th>Included</th><th>Excluded</th></tr></thead>
+          <tbody>
+            <tr><td>Same-day app or phone booking, no fixed schedule</td><td>Services requiring 24+ hour advance booking (e.g. SacRT SmaRT Ride)</td></tr>
+            <tr><td>Demand-response if flagged with "Advance" scheduling window</td><td>Private employer or apartment shuttles (not publicly accessible)</td></tr>
+            <tr><td>Publicly accessible services, even if privately sponsored (e.g. SouthPark Skipper)</td><td>Campus-only or closed-loop shuttles</td></tr>
+            <tr><td>Planned services with confirmed vendor and funding (flagged as Pilot or Planned)</td><td>Services that have permanently ceased operations</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="ref-section">
+      <div class="ref-section-label">Field definitions</div>
+      <div class="ref-defs">
+
+        <div class="ref-def-block">
+          <div class="ref-def-term">Geographic Context</div>
+          <div class="ref-def-body">Characterizes the land-use environment of the primary service area. Assigned by the research team based on Census urbanized area classification and service zone description.</div>
+          <div class="ref-geo-grid">
+            <div class="ref-geo-item" style="--geo-color:#2e5e8a">
+              <div class="ref-geo-label">Urban</div>
+              <div class="ref-geo-desc">Service area is primarily within a city core or densely developed urban district. Typically characterized by Census-defined urbanized areas with >50,000 population, walkable street grids, and connections to rail or frequent bus.</div>
+              <div class="ref-geo-ex">Examples: GoGastonia (NC), Via Jersey City (NJ), MARTA Reach (GA), Metro Micro zones (CA)</div>
+            </div>
+            <div class="ref-geo-item" style="--geo-color:#2a7a6a">
+              <div class="ref-geo-label">Suburban</div>
+              <div class="ref-geo-desc">Service area is primarily within a suburban municipality or outer metropolitan ring. Typically lower density than urban, auto-oriented land use, often first/last-mile to commuter rail or park-and-ride. May include Census "urban cluster" areas (2,500–50,000 population).</div>
+              <div class="ref-geo-ex">Examples: RTD FlexRide zones (CO), Metro Flex (WA), Ride Gwinnett (GA), CATS Micro (NC)</div>
+            </div>
+            <div class="ref-geo-item" style="--geo-color:#6b4226">
+              <div class="ref-geo-label">Rural</div>
+              <div class="ref-geo-desc">Service area is primarily in a rural county or low-density region outside any Census urbanized area. Trips are typically longer, vehicles are fewer, and connections to fixed-route transit are limited or absent. Often demand-response in nature.</div>
+              <div class="ref-geo-ex">Examples: YVEDDI GOTransit (NC), Clallam Transit Interlink (WA), Bay Transit Express (VA), GoWake SmartRide NE (NC)</div>
+            </div>
+            <div class="ref-geo-item" style="--geo-color:#b08a30">
+              <div class="ref-geo-label">Mixed</div>
+              <div class="ref-geo-desc">Service area meaningfully crosses multiple context types — for example, a military installation with adjacent civilian communities, or a zone bridging a city core and outlying suburban areas.</div>
+              <div class="ref-geo-ex">Examples: Cavazos Connector (TX — military/urban), The HOP (TX — multi-city urban/rural)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ref-def-block">
+          <div class="ref-def-term">System Type</div>
+          <div class="ref-def-body">Distinguishes the scheduling model of the service.</div>
+          <div class="ref-type-grid">
+            <div class="ref-type-item">
+              <div class="ref-type-label tag tag-type-Microtransit" style="display:inline-block;margin-bottom:0.4rem">Microtransit</div>
+              <div class="ref-type-desc">Rides are booked same-day, with no fixed schedule or route. The algorithm dynamically routes vehicles in real time to serve multiple passengers. Pickup is typically within 15–30 minutes of request. Synonymous with "on-demand transit" in this database.</div>
+            </div>
+            <div class="ref-type-item">
+              <div class="ref-type-label tag tag-type-Demand-Response" style="display:inline-block;margin-bottom:0.4rem">Demand-Response</div>
+              <div class="ref-type-desc">Rides are booked in advance (typically the prior day or further out). Vehicles are dynamically routed but scheduled rather than immediately dispatched. Common in rural settings. Open to the general public. Flagged with "Advance" scheduling window in this database.</div>
+            </div>
+            <div class="ref-type-item">
+              <div class="ref-type-label tag tag-type-Paratransit" style="display:inline-block;margin-bottom:0.4rem">Paratransit</div>
+              <div class="ref-type-desc">Eligibility-restricted demand-response service, typically limited to seniors, people with disabilities, or ADA-certified riders. Advance booking required. Added during the June 2026 supplemental data integration to distinguish these from general-public demand-response services.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ref-def-block">
+          <div class="ref-def-term">Status / Maturity</div>
+          <div class="ref-def-body">Describes the operational lifecycle stage of the service.</div>
+          <div class="ref-status-table">
+            <div class="ref-status-row"><span class="status-dot status-Active" style="display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:0.5rem;flex-shrink:0"></span><span class="ref-status-name">Active</span><span class="ref-status-desc">Currently operating with stable funding and no announced end date.</span></div>
+            <div class="ref-status-row"><span class="status-dot status-Active---Expanding" style="display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:0.5rem;flex-shrink:0;background:#2d8a5e"></span><span class="ref-status-name">Active – Expanding</span><span class="ref-status-desc">Actively operating and adding zones, fleet, or service hours.</span></div>
+            <div class="ref-status-row"><span class="status-dot status-Active---New" style="display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:0.5rem;flex-shrink:0;background:#5eb87e"></span><span class="ref-status-name">Active – New</span><span class="ref-status-desc">Recently launched (approximately within the last 6 months of the database's last update).</span></div>
+            <div class="ref-status-row"><span class="status-dot status-Active---Post-Pilot" style="display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:0.5rem;flex-shrink:0;background:#8ed8ae"></span><span class="ref-status-name">Active – Post Pilot</span><span class="ref-status-desc">Graduated from a time-limited pilot into permanent or ongoing funded service.</span></div>
+            <div class="ref-status-row"><span class="status-dot status-Pilot" style="display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:0.5rem;flex-shrink:0"></span><span class="ref-status-name">Pilot</span><span class="ref-status-desc">Actively operating under a time-limited or experimental funding authorization.</span></div>
+            <div class="ref-status-row"><span class="status-dot status-Pilot---Ended" style="display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:0.5rem;flex-shrink:0"></span><span class="ref-status-name">Pilot – Ended</span><span class="ref-status-desc">Pilot has concluded. Permanent status (continuation, suspension, or transition) unknown or pending announcement.</span></div>
+          </div>
+        </div>
+
+        <div class="ref-def-block">
+          <div class="ref-def-term">Scheduling Window</div>
+          <div class="ref-def-body">How far in advance rides must be booked.</div>
+          <div class="ref-status-table">
+            <div class="ref-status-row"><span class="ref-status-name">Same-day</span><span class="ref-status-desc">Rides can be booked and received within the same operating day, typically within minutes to an hour of request. The defining characteristic of true on-demand / microtransit.</span></div>
+            <div class="ref-status-row"><span class="ref-status-name">Advance</span><span class="ref-status-desc">Rides must be booked at least one day before travel. Common in demand-response systems and rural programs.</span></div>
+            <div class="ref-status-row"><span class="ref-status-name">Flexible</span><span class="ref-status-desc">System supports both same-day and advance booking, often with different lead times for different trip types or zones.</span></div>
+          </div>
+        </div>
+
+        <div class="ref-def-block">
+          <div class="ref-def-term">Technology Vendor</div>
+          <div class="ref-def-body">The software platform provider powering the dispatch, routing, and rider app. Distinct from the operator (who runs the vehicles) and the funding agency (who pays for the service). Many agencies procure the transit management contract and the technology platform separately.</div>
+          <div class="ref-vendor-notes">
+            <div class="ref-vendor-row"><span class="ref-vendor-name">Via</span><span class="ref-vendor-desc">New York-based TransitTech company, the dominant US market platform (~39 deployments in this database). Powers both app and operations management. Agencies often brand the service independently of Via's name.</span></div>
+            <div class="ref-vendor-row"><span class="ref-vendor-name">Spare</span><span class="ref-vendor-desc">Vancouver-based platform focused on transit agency integration, paratransit, and multi-modal trip planning. Used by DART GoLink, CATS Micro, Metro Transit Micro, and others.</span></div>
+            <div class="ref-vendor-row"><span class="ref-vendor-name">RideCo</span><span class="ref-vendor-desc">Toronto-based on-demand transit software. Used by LA Metro Micro, Ride Gwinnett, OmniRide (Omnitrans), and others.</span></div>
+            <div class="ref-vendor-row"><span class="ref-vendor-name">Freebee</span><span class="ref-vendor-desc">Miami-based operator-and-software provider. Unlike pure software vendors, Freebee also operates the vehicles. Predominantly deployed in Florida municipalities.</span></div>
+            <div class="ref-vendor-row"><span class="ref-vendor-name">The Routing Company (TRC/Pingo)</span><span class="ref-vendor-desc">Boston-based platform. Consumer app is branded "Pingo." Used by Clallam Transit Interlink, CDTA FLEX+, FAST Connect.</span></div>
+            <div class="ref-vendor-row"><span class="ref-vendor-name">Not specified</span><span class="ref-vendor-desc">The technology vendor is unknown, the agency uses a proprietary system, or the agency has not publicly disclosed their software provider.</span></div>
+          </div>
+        </div>
+
+      </div><!-- /.ref-defs -->
+    </div><!-- /.ref-section -->
+
+    <div class="ref-section">
+      <div class="ref-section-label">Data caveats</div>
+      <p class="ref-prose">Fleet figures are sourced from press releases and agency reports and may not reflect current operations. Service hours and fares change frequently — verify with the agency before travel planning. Latitude/longitude pins represent approximate service area centers, not coverage boundaries. Systems marked "Not specified" have data that is not publicly available or not yet researched.</p>
+      <p class="ref-prose" style="margin-top:0.75rem">Last updated: <strong>June 2026</strong>. This is a living document; if you identify errors or omissions, please contact the research team.</p>
+    </div>
+
+    <div class="ref-section">
+      <div class="ref-section-label">Data quality concerns</div>
+      <p class="ref-prose" style="margin-bottom:1rem">The June 2026 update added 120 systems from supplemental CA/CO lists. Several data quality issues were identified during integration and are documented below. The full log (including 83 individual paratransit reclassifications) is in the <code>Concerns</code> tab of the companion spreadsheet.</p>
+
+      <div class="ref-def-block">
+        <div class="ref-def-term">Vendor errors (verified)</div>
+        <div class="ref-def-body">Five systems in the supplemental lists had incorrect technology vendors. All were independently verified against vendor press releases and agency sources. The existing database values are correct; the supplemental values were discarded during integration.</div>
+        <div class="ref-table-wrap" style="margin-top:0.5rem">
+          <table class="ref-table">
+            <thead><tr><th>System</th><th>Correct vendor</th><th>Supplemental listed</th></tr></thead>
+            <tbody>
+              <tr><td>Metro Micro (LA Metro)</td><td>RideCo</td><td>Via</td></tr>
+              <tr><td>OmniRide (Omnitrans)</td><td>RideCo</td><td>Via</td></tr>
+              <tr><td>Tri MyRide (Tri Delta Transit)</td><td>TransLoc</td><td>Via</td></tr>
+              <tr><td>FAST Connect (Fairfield)</td><td>The Routing Company</td><td>Via (+ wrong year)</td></tr>
+              <tr><td>RIDE Longmont</td><td>Via (launched Dec 2024)</td><td>In-house (year 2023)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ref-prose" style="margin-top:0.5rem;color:var(--orange);font-size:0.78rem">The supplemental CA list labels 20 entries as "Via." Given that 4 of 4 checked were wrong, the entire vendor column for supplemental entries should be treated as unverified.</p>
+      </div>
+
+      <div class="ref-def-block">
+        <div class="ref-def-term">Paratransit reclassification</div>
+        <div class="ref-def-body">83 systems from the supplemental lists were reclassified from "Demand-Response" to "Paratransit" based on eligibility restrictions found in their names or notes (ADA, senior, disabled, age cutoffs). These are traditional eligibility-restricted dial-a-ride services, not general-public on-demand transit. Each reclassification is individually logged in the spreadsheet's Concerns tab. Filter by <code>System Type = Paratransit</code> and <code>Source = Supplemental CA/CO list</code> to isolate these entries.</div>
+      </div>
+
+      <div class="ref-def-block">
+        <div class="ref-def-term">Status change: OC Flex</div>
+        <div class="ref-def-body">OC Flex (Orange County, CA) was discontinued effective July 1, 2025 per OCTA's website. The supplemental list had status "Active." This should be updated to "Ended" or removed.</div>
+      </div>
+
+      <div class="ref-def-block">
+        <div class="ref-def-term">Deduplication</div>
+        <div class="ref-def-body">Two pre-existing duplicate pairs were resolved: <strong>CATS Micro</strong> (NC) had two entries with 8 differing fields — the more detailed entry was kept. <strong>Cupertino Microtransit</strong> and <strong>SV Hopper</strong> (CA) were the same Via-operated service listed twice — the richer SV Hopper entry was kept. Additionally, 12 systems that appeared in both the existing database and the supplemental lists were skipped (existing entries retained, since supplemental vendors were unreliable).</div>
+      </div>
+
+      <div class="ref-def-block">
+        <div class="ref-def-term">NC service area boundaries</div>
+        <div class="ref-def-body">Boundaries shown on the NC map view come from multiple sources with varying accuracy. No NC microtransit agency publishes downloadable boundary data or GTFS-Flex feeds.</div>
+        <div class="ref-table-wrap" style="margin-top:0.5rem">
+          <table class="ref-table">
+            <thead><tr><th>Source</th><th>Systems</th><th>Accuracy</th></tr></thead>
+            <tbody>
+              <tr><td>City limits (Census TIGER 2023)</td><td>Wilson, Gastonia, Morrisville, Greenville, Sanford, High Point</td><td>High — official municipal boundaries</td></tr>
+              <tr><td>County boundaries (Census)</td><td>Orange Co., McDowell Co., YVEDDI (4 counties), KARTS (4 counties), Tar River (2 counties)</td><td>High — but service may not cover entire county</td></tr>
+              <tr><td>Town boundary unions (Census)</td><td>GoWake, Johnston, Burke, Caldwell, CATS Micro</td><td>Good — actual town limits, but zones may extend beyond</td></tr>
+              <tr><td>Charlotte NPAs</td><td>JUMP Transit, SouthPark Skipper</td><td>Good — official neighborhood polygons from City of Charlotte</td></tr>
+              <tr><td>Census tracts</td><td>GoDurham Connect, RTP Connect</td><td>Moderate — tracts selected by geocoding boundary streets from agency websites</td></tr>
+              <tr><td>Constructed from places</td><td>RideMICRO (5 sub-zones)</td><td>Moderate — built from census places matching zone descriptions</td></tr>
+              <tr><td>Approximate buffer</td><td>PART On-Demand, HPTSGo!</td><td>Low — no published boundary data available</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="ref-def-block">
+        <div class="ref-def-term">Coordinate precision</div>
+        <div class="ref-def-body">Coordinates for supplemental CA/CO entries typically point to a city hall or downtown centroid rather than the service zone center. Adequate for the national map view but imprecise for zoomed views.</div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- DEEP SUMMARY MODAL -->
+<div id="deep-modal" class="modal-backdrop" style="display:none" onclick="closeModal(event)">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeDeepModal()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<footer>
+  On-Demand Transit Database · Updated June 2026 · 241 systems across 24 states</footer>
+
+<script>
+const STATE_COLORS = {
+  NC:'#2e5e8a',TX:'#b04a28',CO:'#3d6b4f',WA:'#5e5e9a',MN:'#8a5e2a',
+  GA:'#b08a30',NJ:'#2a7a6a',CT:'#7a3030',OH:'#6a4a90',CA:'#5e8a2a',
+  WI:'#8a2a5e',SD:'#2a6a8a',MD:'#4a6e2a',UT:'#8a3a6a',
+  PA:'#6b4226',FL:'#1a7a5e',AZ:'#8a6a1a',VA:'#4a2a7a',NY:'#1a4a7a',OR:'#2a6a4a',
+  IL:'#5e3d7a',KY:'#2a5e3a',MA:'#7a3d2a',MI:'#2a4a7a'
+};
+const STATE_NAMES = {
+  NC:'North Carolina',TX:'Texas',CO:'Colorado',WA:'Washington',MN:'Minnesota',
+  GA:'Georgia',NJ:'New Jersey',CT:'Connecticut',OH:'Ohio',CA:'California',
+  WI:'Wisconsin',SD:'South Dakota',MD:'Maryland',UT:'Utah',
+  PA:'Pennsylvania',FL:'Florida',AZ:'Arizona',VA:'Virginia',NY:'New York',OR:'Oregon',
+  IL:'Illinois',KY:'Kentucky',MA:'Massachusetts',MI:'Michigan'
+};
+
+let systems = [];
+
+
+function populateVendorFilter(){
+  const sel=document.getElementById("filter-vendor");
+  const vendors=[...new Set(systems.map(s=>s.vendor).filter(v=>v&&v!=="Not specified"&&v!=="In-house"))]
+    .sort((a,b)=>a.localeCompare(b));
+  sel.innerHTML='<option value="">All</option>'+vendors.map(v=>`<option value="${v}">${v}</option>`).join("");
+}
+
+function statusClass(s){if(s.includes('Ended'))return'Pilot---Ended';return s.replace(/[\s–\-]+/g,'-');}
+function fv(v){return(!v||v==='Not specified')?'<span class="field-value muted">—</span>':`<span class="field-value">${v}</span>`;}
+function matchesFilters(s){
+  const q=document.getElementById('search').value.toLowerCase();
+  const st=document.getElementById('filter-state').value,ty=document.getElementById('filter-type').value;
+  const ge=document.getElementById('filter-geo').value,su=document.getElementById('filter-status').value;
+  const ve=document.getElementById('filter-vendor').value;
+  const str=[s.name,s.operator,s.area,s.vendor,s.funding,s.notes,STATE_NAMES[s.state]||''].join(' ').toLowerCase();
+  return(!q||str.includes(q))&&(!st||s.state===st)&&(!ty||s.type===ty)&&(!ge||s.geo.includes(ge))&&
+    (!su||s.status.toLowerCase().includes(su.toLowerCase())||(su==='Ended'&&s.status.includes('Ended')))&&(!ve||s.vendor===ve);
+}
+function updateStats(){
+  const v=systems.filter(matchesFilters);
+  document.getElementById('stat-total').textContent=v.length;
+  document.getElementById('stat-states').textContent=new Set(v.map(s=>s.state)).size;
+  document.getElementById('stat-active').textContent=v.filter(s=>s.status.startsWith('Active')).length;
+  document.getElementById('stat-micro').textContent=v.filter(s=>s.type==='Microtransit').length;
+}
+
+let mapInitialized=false;
+function setView(v){
+  document.getElementById('card-view').style.display=v==='cards'?'block':'none';
+  document.getElementById('map-view').style.display=v==='map'?'flex':'none';
+  document.getElementById('analytics-view').style.display=v==='analytics'?'block':'none';
+  document.getElementById('reference-view').style.display=v==='reference'?'block':'none';
+  document.getElementById('btn-cards').classList.toggle('active',v==='cards');
+  document.getElementById('btn-map').classList.toggle('active',v==='map');
+  document.getElementById('btn-analytics').classList.toggle('active',v==='analytics');
+  document.getElementById('btn-reference').classList.toggle('active',v==='reference');
+  if(v==='map'){if(!mapInitialized){initMap();mapInitialized=true;}else updateMapMarkers();setTimeout(()=>{if(map)map.invalidateSize();},50);}
+  if(v==='analytics'){requestAnimationFrame(()=>{if(!analyticsInitialized){initAnalytics();analyticsInitialized=true;}else refreshAnalytics();});}
+}
+
+function renderCards(){
+  document.getElementById('grid').innerHTML=systems.map((s,i)=>{
+    const tc=s.type.replace(/[\s-]+/g,'-'),sc=statusClass(s.status),col=STATE_COLORS[s.state]||'#888';
+    const url=s.url?`<div class="card-url"><a href="${s.url}" target="_blank" rel="noopener">${s.url}</a></div>`:'';
+    return`<div class="card" id="card-${i}" style="--card-color:${col}" onclick="toggleExpand(${i},event)">
+      <div class="card-header">
+        <div class="card-name">${s.name}</div>
+        <span class="state-badge">${s.state}</span>
+      </div>
+      <div class="card-meta">
+        <span class="tag tag-type-${tc}">${s.type}</span>
+        <span class="tag tag-geo">${s.geo}</span>
+        <span class="status-text"><span class="status-dot status-${sc}"></span>${s.status}</span>
+      </div>
+      <div class="card-area">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        ${s.area}
+      </div>
+      <div class="card-fields">
+        <div class="field"><span class="field-label">Operator</span>${fv(s.operator)}</div>
+        <div class="field"><span class="field-label">Tech Vendor</span>${fv(s.vendor)}</div>
+        <div class="field"><span class="field-label">Fare</span>${fv(s.fare)}</div>
+        <div class="field"><span class="field-label">Launch Year</span>${fv(s.year)}</div>
+      </div>
+      <div class="card-expanded-content">
+        <div class="card-fields-full">
+          <div class="field"><span class="field-label">Booking</span>${fv(s.booking)}</div>
+          <div class="field"><span class="field-label">Scheduling</span>${fv(s.window)}</div>
+          <div class="field"><span class="field-label">Hours</span>${fv(s.hours)}</div>
+          <div class="field"><span class="field-label">Funding</span>${fv(s.funding)}</div>
+          <div class="field" style="grid-column:1/-1"><span class="field-label">Fleet</span>${fv(s.fleet)}</div>
+        </div>
+        ${s.notes&&s.notes!=='Not specified'?`<div class="card-notes">${s.notes}</div>`:''}
+        ${url}
+        <button class="modal-open-btn" onclick="openDeepModal(${i},event)">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Full details
+        </button>
+      </div>
+      <button class="expand-btn" onclick="toggleExpand(${i},event)">
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
+    </div>`;
+  }).join('');
+}
+function toggleExpand(i,e){e.stopPropagation();document.getElementById(`card-${i}`).classList.toggle('expanded');}
+
+let map,markers=[],markerLayers=[];
+function makeIcon(state){
+  const c=STATE_COLORS[state]||'#888';
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="32" viewBox="0 0 24 32"><path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 20 12 20S24 21 24 12C24 5.37 18.63 0 12 0z" fill="${c}"/><circle cx="12" cy="12" r="4.5" fill="white" opacity="0.92"/></svg>`;
+  return L.divIcon({html:svg,className:'',iconSize:[24,32],iconAnchor:[12,32],popupAnchor:[0,-34]});
+}
+function buildPopup(s){
+  const tc=s.type.replace(/[\s-]+/g,'-'),c=STATE_COLORS[s.state]||'#888';
+  const note=s.notes&&s.notes!=='Not specified'?`<div class="popup-note">${s.notes}</div>`:''; const detailBtn=`<div style="margin-top:0.5rem"><button class="modal-open-btn" onclick="openDeepModal(${systems.indexOf(s)})" style="font-size:0.6rem;padding:0.25rem 0.55rem">Full details</button></div>`;
+  const url=s.url?`<div class="popup-url"><a href="${s.url}" target="_blank">${s.url}</a></div>`:'';
+  return`<div style="min-width:205px;max-width:265px;cursor:default">
+    <div class="popup-name">${s.name}</div>
+    <div style="display:flex;gap:0.3rem;margin-bottom:0.35rem;flex-wrap:wrap">
+      <span class="tag tag-type-${tc}" style="font-family:monospace;font-size:0.58rem">${s.type}</span>
+      <span style="font-family:monospace;font-size:0.58rem;padding:0.15rem 0.4rem;background:${c};color:white">${STATE_NAMES[s.state]||s.state}</span>
+    </div>
+    <div class="popup-area">${s.area}</div>
+    <div class="popup-grid">
+      <div><span class="popup-fl">Fare</span><span class="popup-fv">${s.fare&&s.fare!=='Not specified'?s.fare:'—'}</span></div>
+      <div><span class="popup-fl">Launch</span><span class="popup-fv">${s.year&&s.year!=='Not specified'?s.year:'—'}</span></div>
+      <div style="grid-column:1/-1"><span class="popup-fl">Vendor</span><span class="popup-fv">${s.vendor&&s.vendor!=='Not specified'?s.vendor:'—'}</span></div>
+      ${s.fleet&&s.fleet!=='Not specified'?`<div style="grid-column:1/-1"><span class="popup-fl">Fleet</span><span class="popup-fv">${s.fleet}</span></div>`:''}
+    </div>${note}${url}
+  </div>`;
+}
+function buildLegend(){
+  const used=[...new Set(systems.map(s=>s.state))].sort();
+  document.getElementById('map-legend').innerHTML='<div class="map-legend-title">State</div>'+
+    used.map(st=>`<div class="map-legend-item"><span class="legend-dot" style="background:${STATE_COLORS[st]||'#888'}"></span>${STATE_NAMES[st]||st}</div>`).join('');
+}
+function buildMapList(){
+  document.getElementById('map-list').innerHTML=systems.map((s,i)=>
+    `<div class="map-list-item" id="mli-${i}" onclick="focusMarker(${i})">
+      <span class="map-pin-dot" style="background:${STATE_COLORS[s.state]||'#888'}"></span>
+      <div><div class="map-item-name">${s.name}</div><div class="map-item-sub">${s.state} · ${s.geo} · ${s.type}</div></div>
+    </div>`).join('');
+}
+function updateMapMarkers(){
+  markerLayers.forEach(m=>{if(map)map.removeLayer(m);});markerLayers=[];markers=[];
+  let count=0;
+  systems.forEach((s,i)=>{
+    const m=L.marker([s.lat,s.lng],{icon:makeIcon(s.state)}).bindPopup(buildPopup(s),{maxWidth:280}).on('click',()=>highlightListItem(i));
+    markers.push(m);
+    const vis=matchesFilters(s),li=document.getElementById(`mli-${i}`);
+    if(vis){m.addTo(map);markerLayers.push(m);if(li)li.classList.remove('hidden');count++;}
+    else{if(li)li.classList.add('hidden');}
+  });
+  document.getElementById('map-count').textContent=count;
+  if(markerLayers.length&&map)setTimeout(()=>{map.fitBounds(L.featureGroup(markerLayers).getBounds().pad(0.1));},50);
+}
+function initMap(){
+  map=L.map('map').setView([38,-96],4);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{
+    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',maxZoom:19
+  }).addTo(map);
+  buildLegend();buildMapList();updateMapMarkers();
+}
+function focusMarker(i){
+  if(!map||!markers[i])return;
+  highlightListItem(i);map.setView([systems[i].lat,systems[i].lng],11,{animate:true});markers[i].openPopup();
+}
+function highlightListItem(i){
+  document.querySelectorAll('.map-list-item').forEach(el=>el.classList.remove('selected'));
+  const li=document.getElementById(`mli-${i}`);if(li){li.classList.add('selected');li.scrollIntoView({block:'nearest',behavior:'smooth'});}
+}
+function filterAll(){
+  let count=0;
+  systems.forEach((_,i)=>{
+    const card=document.getElementById(`card-${i}`);if(!card)return;
+    const show=matchesFilters(systems[i]);card.classList.toggle('hidden',!show);if(show)count++;
+  });
+  document.getElementById('count').textContent=count;
+  const ex=document.querySelector('.empty');if(ex)ex.remove();
+  if(count===0){const e=document.createElement('div');e.className='empty';e.innerHTML='<div class="empty-title">No systems match</div><p>Adjust your search or filters.</p>';document.getElementById('grid').appendChild(e);}
+  updateStats();if(mapInitialized)updateMapMarkers();
+}
+function bootstrap() {
+  return Promise.all([
+    fetch('data/systems.json').then(function(r){
+      if (!r.ok) throw new Error('Could not load data/systems.json'); return r.json();
+    }),
+    fetch('data/boundaries/_index.json').then(function(r){ return r.ok ? r.json() : {states:[]}; })
+      .catch(function(){ return {states:[]}; })
+  ]).then(function(res){
+    systems = res[0];
+    BOUNDARY_INDEX = (res[1] && res[1].states) || [];
+    populateVendorFilter(); renderCards(); updateStats();
+    document.getElementById('count').textContent = systems.length;
+  }).catch(function(err){
+    document.body.innerHTML = '<div style=\"font-family:sans-serif;max-width:560px;margin:4rem auto;padding:0 1.5rem;color:#2c2820\">' +
+      '<h1 style=\"font-weight:400\">Could not load data</h1>' +
+      '<p style=\"color:#5a5248;line-height:1.6\">This dashboard loads <code>data/systems.json</code> at runtime, so it must be served over HTTP rather than opened directly from disk. ' +
+      'Run <code>python3 -m http.server</code> in the project folder and open the printed address, or view the published GitHub Pages version.</p>' +
+      '<p style=\"color:#9a9088;font-size:0.85rem\">' + (err && err.message ? err.message : '') + '</p></div>';
+    console.error(err);
+  });
+}
+bootstrap();
+
+/* ═══════════════════════════════════════════════════════════════
+   ANALYTICS ENGINE
+═══════════════════════════════════════════════════════════════ */
+const C = {
+  ink:'#2c2820', inkMid:'#5a5248', inkSoft:'#9a9088', inkFaint:'#bdb6aa',
+  bg:'#f7f4ef', bg2:'#f0ece4', surface:'#fdfcf9', border:'#ddd8ce',
+  green:'#3d6b4f', orange:'#c05c2a', blue:'#2e5e8a', gold:'#b08a30',
+  purple:'#6a4a90', teal:'#2a7a6a', brown:'#6b4226', rose:'#7a3030',
+  slate:'#5e5e9a'
+};
+
+function filteredSystems(){ return systems.filter(matchesFilters); }
+
+/* Set up a canvas to a given logical size, returns a scaled ctx.
+   Must be called after the panel is visible (clientWidth > 0). */
+function setupCanvas(id, logicalW, logicalH) {
+  const el = document.getElementById(id);
+  if (!el) return null;
+  const dpr = window.devicePixelRatio || 1;
+  el.width        = Math.round(logicalW * dpr);
+  el.height       = Math.round(logicalH * dpr);
+  el.style.width  = logicalW + 'px';
+  el.style.height = logicalH + 'px';
+  const ctx = el.getContext('2d');
+  ctx.scale(dpr, dpr);
+  ctx.W = logicalW;
+  ctx.H = logicalH;
+  return ctx;
+}
+
+/* Returns the usable inner pixel width of a .chart-panel element. */
+function panelInnerW(canvasId) {
+  const el = document.getElementById(canvasId);
+  if (!el) return 600;
+  const panel = el.closest('.chart-panel') || el.parentElement;
+  // padding is 1.4rem each side ≈ 22px × 2 = 44px
+  return Math.max(200, panel.clientWidth - 44);
+}
+
+/* ── 1. Cumulative launch chart ─────────────────────────────────────────── */
+function drawCumulative(yearMap) {
+  const years   = Object.keys(yearMap).map(Number).sort((a,b) => a - b);
+  if (!years.length) return;
+  const perYear = years.map(y => yearMap[y] || 0);
+  let cum = 0;
+  const cumLine = perYear.map(v => { cum += v; return cum; });
+  const maxCum  = cum * 1.18;
+  const maxNew  = Math.max(...perYear) * 1.2 || 1;
+  const n       = years.length;
+
+  const W = panelInnerW('chart-cumulative');
+  const H = 240;
+  const ctx = setupCanvas('chart-cumulative', W, H);
+  if (!ctx) return;
+
+  const pad = { top: 32, right: 20, bottom: 42, left: 46 };
+  const cw  = W - pad.left - pad.right;
+  const ch  = H - pad.top  - pad.bottom;
+  const slotW = cw / n;
+  const barW  = Math.max(6, Math.floor(slotW * 0.45));
+  const FONT  = "11px 'Source Code Pro',monospace";
+  const FONTB = "bold 11px 'Source Code Pro',monospace";
+
+  ctx.clearRect(0, 0, W, H);
+
+  /* y-axis grid */
+  ctx.setLineDash([3, 5]);
+  ctx.lineWidth = 1;
+  ctx.strokeStyle = C.border;
+  [0, 0.25, 0.5, 0.75, 1.0].forEach(t => {
+    const y   = pad.top + ch * (1 - t);
+    const val = Math.round(maxCum * t);
+    ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(pad.left + cw, y); ctx.stroke();
+    ctx.fillStyle    = C.inkFaint;
+    ctx.font         = FONT;
+    ctx.textAlign    = 'right';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(val, pad.left - 7, y);
+  });
+  ctx.setLineDash([]);
+
+  /* bars — new per year */
+  years.forEach((y, i) => {
+    const cx = pad.left + slotW * i + slotW / 2;
+    const bh = (perYear[i] / maxNew) * ch;
+    const bx = cx - barW / 2;
+    const by = pad.top + ch - bh;
+    ctx.fillStyle   = C.blue + '55';
+    ctx.fillRect(bx, by, barW, bh);
+    ctx.strokeStyle = C.blue;
+    ctx.lineWidth   = 1.5;
+    ctx.strokeRect(bx, by, barW, bh);
+    if (perYear[i] > 0) {
+      ctx.fillStyle    = C.blue;
+      ctx.font         = FONTB;
+      ctx.textAlign    = 'center';
+      ctx.textBaseline = 'alphabetic';
+      ctx.fillText(perYear[i], cx, by - 5);
+    }
+  });
+
+  /* cumulative line */
+  ctx.beginPath();
+  years.forEach((y, i) => {
+    const px = pad.left + slotW * i + slotW / 2;
+    const py = pad.top + ch * (1 - cumLine[i] / maxCum);
+    i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+  });
+  ctx.strokeStyle = C.orange; ctx.lineWidth = 2.5; ctx.stroke();
+
+  /* dots + value labels */
+  years.forEach((y, i) => {
+    const px = pad.left + slotW * i + slotW / 2;
+    const py = pad.top + ch * (1 - cumLine[i] / maxCum);
+    ctx.beginPath(); ctx.arc(px, py, 4, 0, Math.PI * 2);
+    ctx.fillStyle   = C.surface; ctx.fill();
+    ctx.strokeStyle = C.orange; ctx.lineWidth = 2; ctx.stroke();
+    ctx.fillStyle    = C.orange;
+    ctx.font         = FONTB;
+    ctx.textAlign    = 'center';
+    ctx.textBaseline = 'alphabetic';
+    ctx.fillText(cumLine[i], px, py - 9);
+  });
+
+  /* x-axis year labels */
+  ctx.fillStyle    = C.inkMid;
+  ctx.font         = FONT;
+  ctx.textAlign    = 'center';
+  ctx.textBaseline = 'alphabetic';
+  years.forEach((y, i) => {
+    ctx.fillText(y, pad.left + slotW * i + slotW / 2, H - 10);
+  });
+
+  /* legend — bottom-left, below the y=0 line, clear of the chart */
+  const lgX = pad.left + 4;
+  const lgY = H - 10;  /* align with year labels row */
+  /* shift to a box below the chart area — actually put it top-left inside pad */
+  const bLX = pad.left + 8, bLY = pad.top + 6;
+  /* bar swatch */
+  ctx.fillStyle   = C.blue + '55';
+  ctx.fillRect(bLX, bLY, 14, 11);
+  ctx.strokeStyle = C.blue; ctx.lineWidth = 1.5;
+  ctx.strokeRect(bLX, bLY, 14, 11);
+  ctx.fillStyle    = C.inkMid;
+  ctx.font         = FONT;
+  ctx.textAlign    = 'left';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('New / year', bLX + 18, bLY + 5.5);
+  /* line swatch */
+  ctx.strokeStyle = C.orange; ctx.lineWidth = 2.5;
+  ctx.beginPath(); ctx.moveTo(bLX, bLY + 22); ctx.lineTo(bLX + 14, bLY + 22); ctx.stroke();
+  ctx.beginPath(); ctx.arc(bLX + 7, bLY + 22, 3.5, 0, Math.PI * 2);
+  ctx.fillStyle = C.surface; ctx.fill();
+  ctx.strokeStyle = C.orange; ctx.lineWidth = 2; ctx.stroke();
+  ctx.fillStyle    = C.inkMid;
+  ctx.font         = FONT;
+  ctx.textBaseline = 'middle';
+  ctx.fillText('Cumulative', bLX + 18, bLY + 22);
+}
+
+/* ── 2. Donut chart ─────────────────────────────────────────────────────── */
+function drawDonut(canvasId, legendId, slices) {
+  const el = document.getElementById(canvasId);
+  if (!el) return;
+  const dpr = window.devicePixelRatio || 1;
+  const sz  = 160;   /* px — fixed, not CSS-stretched */
+  el.width        = sz * dpr;
+  el.height       = sz * dpr;
+  el.style.width  = sz + 'px';
+  el.style.height = sz + 'px';
+  const ctx = el.getContext('2d');
+  ctx.scale(dpr, dpr);
+
+  const total = slices.reduce((a, s) => a + s.v, 0);
+  const cx = sz / 2, cy = sz / 2, r = 62, ri = 38;
+  let angle = -Math.PI / 2;
+
+  slices.forEach(s => {
+    const sweep = total ? s.v / total * Math.PI * 2 : 0;
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.arc(cx, cy, r, angle, angle + sweep);
+    ctx.closePath();
+    ctx.fillStyle = s.c;
+    ctx.fill();
+    ctx.strokeStyle = C.surface;
+    ctx.lineWidth   = 2;
+    ctx.stroke();
+    angle += sweep;
+  });
+
+  /* hole */
+  ctx.beginPath(); ctx.arc(cx, cy, ri, 0, Math.PI * 2);
+  ctx.fillStyle = C.surface; ctx.fill();
+
+  /* centre label */
+  ctx.fillStyle    = C.ink;
+  ctx.font         = "bold 18px 'Lora',serif";
+  ctx.textAlign    = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(total, cx, cy - 4);
+  ctx.fillStyle = C.inkSoft;
+  ctx.font      = "10px 'Source Code Pro',monospace";
+  ctx.fillText('systems', cx, cy + 11);
+  ctx.textBaseline = 'alphabetic';
+
+  /* legend */
+  const lg = document.getElementById(legendId);
+  if (!lg) return;
+  lg.innerHTML = slices.map(s => {
+    const pct = total ? Math.round(s.v / total * 100) : 0;
+    return `<div class="dl-item">
+      <span class="dl-swatch" style="background:${s.c}"></span>
+      <span>${s.label}</span>
+      <span class="dl-pct">${pct}%&thinsp;<span style="color:var(--ink-faint);font-weight:400">(${s.v})</span></span>
+    </div>`;
+  }).join('');
+}
+
+/* ── 3. Horizontal bar chart ────────────────────────────────────────────── */
+function drawHBar(canvasId, labels, values, colors) {
+  const ROW_H   = 30;
+  const LABEL_W = 150;
+  const PAD_T   = 6;
+  const PAD_B   = 6;
+  const PAD_R   = 44;   /* room for value after bar */
+  const BAR_H   = 16;
+  const n       = labels.length;
+  const logH    = PAD_T + n * ROW_H + PAD_B;
+  const logW    = panelInnerW(canvasId);
+  const ctx     = setupCanvas(canvasId, logW, logH);
+  if (!ctx) return;
+
+  const barAreaW = Math.max(60, logW - LABEL_W - 8 - PAD_R);
+  const maxV     = Math.max(...values) * 1.05 || 1;
+  const FONT     = "11px 'Source Code Pro',monospace";
+  const FONTB    = "bold 11px 'Source Code Pro',monospace";
+
+  ctx.clearRect(0, 0, logW, logH);
+
+  labels.forEach((lbl, i) => {
+    const rowMid = PAD_T + i * ROW_H + ROW_H / 2;
+    const barY   = rowMid - BAR_H / 2;
+
+    /* label */
+    const maxChars = Math.floor(LABEL_W / 7);
+    const shortLbl = lbl.length > maxChars ? lbl.slice(0, maxChars - 1) + '…' : lbl;
+    ctx.fillStyle    = C.inkMid;
+    ctx.font         = FONT;
+    ctx.textAlign    = 'right';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(shortLbl, LABEL_W - 8, rowMid);
+
+    /* track */
+    ctx.fillStyle = C.bg2;
+    ctx.fillRect(LABEL_W, barY, barAreaW, BAR_H);
+
+    /* filled bar — color comes from caller */
+    const bw = (values[i] / maxV) * barAreaW;
+    const col = colors[i] || C.blue;
+    ctx.fillStyle = col;
+    ctx.fillRect(LABEL_W, barY, bw, BAR_H);
+
+    /* value label */
+    ctx.fillStyle    = C.ink;
+    ctx.font         = FONTB;
+    ctx.textAlign    = 'left';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(values[i], LABEL_W + bw + 5, rowMid);
+  });
+}
+
+/* ── 4. Status stacked bar ──────────────────────────────────────────────── */
+function drawStatusBar(data) {
+  const logW = panelInnerW('chart-status');
+  const H    = 90;
+  const ctx  = setupCanvas('chart-status', logW, H);
+  if (!ctx) return;
+
+  const pad   = { top: 14, bottom: 30 };
+  const ch    = H - pad.top - pad.bottom;
+  const total = data.reduce((a, d) => a + d.v, 0);
+  const FONT  = "10px 'Source Code Pro',monospace";
+  const FONTB = "bold 11px 'Source Code Pro',monospace";
+
+  ctx.clearRect(0, 0, logW, H);
+
+  let x = 0;
+  data.forEach(d => {
+    const bw = total ? (d.v / total) * logW : 0;
+    ctx.fillStyle = d.c;
+    ctx.fillRect(x, pad.top, bw, ch);
+    ctx.strokeStyle = C.surface; ctx.lineWidth = 1.5;
+    ctx.strokeRect(x, pad.top, bw, ch);
+    if (bw > 26) {
+      ctx.fillStyle    = '#fff';
+      ctx.font         = FONTB;
+      ctx.textAlign    = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(d.v, x + bw / 2, pad.top + ch / 2);
+    }
+    x += bw;
+  });
+
+  /* labels below */
+  x = 0;
+  data.forEach(d => {
+    const bw = total ? (d.v / total) * logW : 0;
+    if (bw > 36) {
+      ctx.fillStyle    = C.inkMid;
+      ctx.font         = FONT;
+      ctx.textAlign    = 'center';
+      ctx.textBaseline = 'alphabetic';
+      const lbl = d.label.replace('Active - ', '').replace('Pilot - ', 'Pilot /');
+      ctx.fillText(lbl, x + bw / 2, H - 6);
+    }
+    x += bw;
+  });
+}
+
+/* ── Data builder ───────────────────────────────────────────────────────── */
+function buildAnalyticsData() {
+  const s = filteredSystems();
+
+  const yearMap = {};
+  s.forEach(sys => {
+    const y = sys.year;
+    if (y && y !== 'Not specified' && /^\d{4}$/.test(y))
+      yearMap[y] = (yearMap[y] || 0) + 1;
+  });
+
+  const geoMap = {};
+  s.forEach(sys => {
+    const key = (sys.geo || 'Unknown').startsWith('Mixed') ? 'Mixed' : (sys.geo || 'Unknown');
+    geoMap[key] = (geoMap[key] || 0) + 1;
+  });
+
+  const fb = { 'Free': 0, '$1–$2': 0, '$2–$3': 0, '$3–$5': 0, 'Unknown': 0 };
+  s.forEach(sys => {
+    const f = (sys.fare || '').toLowerCase();
+    if (!f || f === 'not specified')       fb['Unknown']++;
+    else if (f.includes('free'))           fb['Free']++;
+    else if (/\b1\.(0|2|5|7|8)/.test(f))  fb['$1–$2']++;
+    else if (/\b2\.(0|2|5|7)/.test(f))    fb['$2–$3']++;
+    else if (/\b[345]\.(0|5)/.test(f))    fb['$3–$5']++;
+    else                                   fb['Unknown']++;
+  });
+
+  const vm = {};
+  s.forEach(sys => {
+    let v = (sys.vendor || '').trim();
+    if (!v || v === 'Not specified') return;
+    if (v.startsWith('The Routing')) v = 'TRC / Pingo';
+    vm[v] = (vm[v] || 0) + 1;
+  });
+  const vendors = Object.entries(vm).sort((a, b) => b[1] - a[1]).slice(0, 9);
+
+  const sm = {};
+  s.forEach(sys => { const st = sys.state || '?'; sm[st] = (sm[st] || 0) + 1; });
+  const states = Object.entries(sm).sort((a, b) => b[1] - a[1]);
+
+  const stMap = {};
+  s.forEach(sys => { const st = sys.status || 'Unknown'; stMap[st] = (stMap[st] || 0) + 1; });
+
+  const knownYears = Object.values(yearMap).reduce((a, b) => a + b, 0);
+  return { yearMap, geoMap, fb, vendors, states, stMap, total: s.length, knownYears };
+}
+
+/* ── Entry points ───────────────────────────────────────────────────────── */
+let analyticsInitialized = false;
+function initAnalytics()  { refreshAnalytics(); }
+
+function refreshAnalytics() {
+  const d = buildAnalyticsData();
+
+  const aC = document.getElementById('a-count');
+  if (aC) aC.textContent = d.total;
+  const aN = document.getElementById('a-note-year');
+  if (aN) aN.textContent = `${d.knownYears} of ${d.total} systems have known launch years`;
+
+  drawCumulative(d.yearMap);
+
+  const geoC  = { Urban: C.blue, Suburban: C.teal, Rural: C.brown, Mixed: C.gold, Unknown: C.inkFaint };
+  drawDonut('chart-geo', 'legend-geo',
+    Object.entries(d.geoMap).map(([k, v]) => ({ label: k, v, c: geoC[k] || C.inkSoft })));
+
+  const fareC = { 'Free': C.green, '$1–$2': C.teal, '$2–$3': C.blue, '$3–$5': C.orange, 'Unknown': C.inkFaint };
+  drawDonut('chart-fare', 'legend-fare',
+    Object.entries(d.fb).filter(([, v]) => v > 0).map(([k, v]) => ({ label: k, v, c: fareC[k] || C.inkSoft })));
+
+  const vColors = [C.blue, C.orange, C.green, C.teal, C.purple, C.gold, C.brown, C.slate, C.rose];
+  drawHBar('chart-vendor',
+    d.vendors.map(([name]) => name),
+    d.vendors.map(([, cnt]) => cnt),
+    vColors);
+
+  /* State bar — '#' + hex string from STATE_COLORS */
+  drawHBar('chart-states',
+    d.states.map(([st]) => STATE_NAMES[st] || st),
+    d.states.map(([, v]) => v),
+    d.states.map(([st]) => '#' + (STATE_COLORS[st] || '888888')));
+
+  const sOrder = ['Active','Active - Expanding','Active - New','Active - Post Pilot','Pilot','Active - Pilot','Pilot - Ended'];
+  const sC = {
+    'Active': C.green, 'Active - Expanding': '#2d8a5e',
+    'Active - New': '#5eb87e', 'Active - Post Pilot': '#8ed8ae',
+    'Active - Pilot': '#aae8be', 'Pilot': C.gold, 'Pilot - Ended': C.inkFaint
+  };
+  drawStatusBar(sOrder.filter(k => d.stMap[k]).map(k => ({ label: k, v: d.stMap[k], c: sC[k] || C.inkSoft })));
+  drawFleetCharts(filteredSystems());
+}
+
+/* ── DEEP SUMMARY MODAL ─────────────────────────────────────────────────── */
+function mv(v){return(!v||v==='Not specified')?'<span class="modal-fv muted">—</span>':`<span class="modal-fv">${v}</span>`;}
+
+function buildModalHTML(s){
+  const tc=s.type.replace(/[\s-]+/g,'-'), sc=statusClass(s.status), col=STATE_COLORS[s.state]||'#888';
+  const stateName=STATE_NAMES[s.state]||s.state;
+  const url=s.url?`<div class="modal-url" style="margin-top:0.5rem"><a href="${s.url}" target="_blank" rel="noopener">${s.url}</a></div>`:'';
+  return`<div class="modal-eyebrow">${stateName} &nbsp;·&nbsp; ${s.geo} &nbsp;·&nbsp; ${s.type}</div>
+    <div class="modal-title" style="border-left:4px solid #${col};padding-left:0.75rem">${s.name}</div>
+    <div class="modal-subtitle">${s.area}</div>
+    <div class="modal-tags">
+      <span class="tag tag-type-${tc}">${s.type}</span>
+      <span class="tag tag-geo">${s.geo}</span>
+      <span class="status-text" style="font-family:var(--mono);font-size:0.65rem;display:flex;align-items:center;gap:0.3rem">
+        <span class="status-dot status-${sc}" style="width:7px;height:7px;border-radius:50%;flex-shrink:0;display:inline-block"></span>${s.status}
+      </span>
+    </div>
+    <div class="modal-grid">
+      <div class="modal-field"><span class="modal-fl">Operator</span>${mv(s.operator)}</div>
+      <div class="modal-field"><span class="modal-fl">Technology Vendor</span>${mv(s.vendor)}</div>
+      <div class="modal-field"><span class="modal-fl">Fare</span>${mv(s.fare)}</div>
+      <div class="modal-field"><span class="modal-fl">Launch Year</span>${mv(s.year)}</div>
+      <div class="modal-field"><span class="modal-fl">Booking</span>${mv(s.booking)}</div>
+      <div class="modal-field"><span class="modal-fl">Scheduling Window</span>${mv(s.window)}</div>
+      <div class="modal-field"><span class="modal-fl">Service Hours</span>${mv(s.hours)}</div>
+      <div class="modal-field"><span class="modal-fl">Funding Source</span>${mv(s.funding)}</div>
+      <div class="modal-field modal-full"><span class="modal-fl">Fleet</span>${mv(s.fleet)}</div>
+    </div>
+    ${s.notes&&s.notes!=='Not specified'?`<div class="modal-notes">${s.notes}</div>`:''}
+    ${url}`;
+}
+
+function openDeepModal(i, e){
+  if(e) e.stopPropagation();
+  document.getElementById('modal-content').innerHTML = buildModalHTML(systems[i]);
+  document.getElementById('deep-modal').style.display='flex';
+  document.body.style.overflow='hidden';
+}
+function closeDeepModal(){
+  document.getElementById('deep-modal').style.display='none';
+  document.body.style.overflow='';
+}
+function closeModal(e){if(e.target===document.getElementById('deep-modal'))closeDeepModal();}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDeepModal();});
+
+/* ── STATE BOUNDARY ON MAP ──────────────────────────────────────────────── */
+let stateBoundaryLayer = null;
+
+async function drawStateBoundary(stateAbbr) {
+  // Remove existing boundary
+  if (stateBoundaryLayer && map) { map.removeLayer(stateBoundaryLayer); stateBoundaryLayer = null; }
+  if (!stateAbbr || !map) return;
+  try {
+    const url = `https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json`;
+    const resp = await fetch(url);
+    const data = await resp.json();
+    const feature = data.features.find(f =>
+      f.properties.name === (STATE_NAMES[stateAbbr] || stateAbbr)
+    );
+    if (!feature) return;
+    stateBoundaryLayer = L.geoJSON(feature, {
+      style: {
+        color: '#' + (STATE_COLORS[stateAbbr] || '2c2820'),
+        weight: 2.5,
+        opacity: 0.9,
+        fillColor: '#' + (STATE_COLORS[stateAbbr] || '2c2820'),
+        fillOpacity: 0.06,
+        dashArray: '6 4'
+      }
+    }).addTo(map);
+    // Fit to state bounds with markers still visible
+    const group = L.featureGroup([stateBoundaryLayer, ...markerLayers]);
+    map.fitBounds(group.getBounds().pad(0.08));
+  } catch(err) { console.warn('State boundary fetch failed:', err); }
+}
+
+/* ── FLEET ANALYTICS CHARTS ─────────────────────────────────────────────── */
+function drawFleetCharts(systems_list) {
+  // Chart 7: EV / propulsion type donut
+  const propulsion = { 'All-Electric': 0, 'Hybrid/PHEV': 0, 'Conventional': 0, 'Mixed/Unknown': 0 };
+  systems_list.forEach(s => {
+    const f = (s.fleet||'').toLowerCase();
+    if (f.includes('all-ev') || f.includes('all electric') || f.includes('100% electric') ||
+        f.includes('vw id') || f.includes('kia niro') || (f.includes('electric') && !f.includes('hybrid')))
+      propulsion['All-Electric']++;
+    else if (f.includes('hybrid') || f.includes('phev') || f.includes('plug-in'))
+      propulsion['Hybrid/PHEV']++;
+    else if (f !== 'not specified' && f !== '' && !f.includes('electric') && !f.includes('hybrid'))
+      propulsion['Conventional']++;
+    else
+      propulsion['Mixed/Unknown']++;
+  });
+  const propColors = { 'All-Electric': '#3d6b4f', 'Hybrid/PHEV': '#2a7a6a', 'Conventional': '#9a9088', 'Mixed/Unknown': '#bdb6aa' };
+  drawDonut('chart-propulsion', 'legend-propulsion',
+    Object.entries(propulsion).filter(([,v])=>v>0).map(([k,v])=>({label:k,v,c:propColors[k]})));
+
+  // Chart 8: WAV/ADA availability bar (yes/no/unknown)
+  const wav = { 'WAV Available': 0, 'ADA Accessible': 0, 'Not Specified': 0 };
+  systems_list.forEach(s => {
+    const f = (s.fleet||'').toLowerCase();
+    const n = (s.notes||'').toLowerCase();
+    if (f.includes('wav') || n.includes('wav') || f.includes('wheelchair accessible') || n.includes('wheelchair accessible'))
+      wav['WAV Available']++;
+    else if (f.includes('ada') || n.includes('ada') || n.includes('wheelchair'))
+      wav['ADA Accessible']++;
+    else
+      wav['Not Specified']++;
+  });
+  const wavColors = { 'WAV Available': '#2e5e8a', 'ADA Accessible': '#5e5e9a', 'Not Specified': '#bdb6aa' };
+  drawDonut('chart-wav', 'legend-wav',
+    Object.entries(wav).map(([k,v])=>({label:k,v,c:wavColors[k]})));
+
+  // Chart 9: Known fleet sizes ranked bar
+  const sized = [];
+  systems_list.forEach(s => {
+    const f = s.fleet || '';
+    const m = f.match(/[~]?(\d+)\s+(?:vehicle|van|EV|minivan)/i);
+    if (m) sized.push({ name: s.name, size: parseInt(m[1]) });
+  });
+  sized.sort((a,b) => b.size - a.size);
+  const top = sized.slice(0,12);
+  if (top.length > 0) {
+    const states_for_sized = systems_list.reduce((acc,s)=>{acc[s.name]=s.state;return acc;},{});
+    drawHBar('chart-fleet-sizes',
+      top.map(x => {
+        const nm = x.name.length > 22 ? x.name.slice(0,21)+'…' : x.name;
+        return nm;
+      }),
+      top.map(x => x.size),
+      top.map(x => '#' + (STATE_COLORS[states_for_sized[x.name]] || '888888'))
+    );
+  }
+}
+
+const _origFA = filterAll;
+filterAll = function() {
+  _origFA();
+  if (analyticsInitialized && document.getElementById('analytics-view').style.display !== 'none')
+    refreshAnalytics();
+  if (mapInitialized) {
+    const st = document.getElementById('filter-state').value;
+    drawStateBoundary(st);
+  }
+};
+
+
+// ── NC SERVICE AREA BOUNDARIES ────────────────────────────────
+// boundaries loaded on demand from data/boundaries/{STATE}.geojson
+
+// ── Boundary loading (per-state, on demand) ──
+var BOUNDARY_CACHE = {};      // state -> geojson
+var BOUNDARY_INDEX = [];      // states that have boundary files (from manifest)
+function ensureBoundaries(state) {
+  if (BOUNDARY_CACHE[state]) return Promise.resolve(BOUNDARY_CACHE[state]);
+  return fetch('data/boundaries/' + state + '.geojson')
+    .then(function(r){ if (!r.ok) throw new Error('no boundary file'); return r.json(); })
+    .then(function(gj){ BOUNDARY_CACHE[state] = gj; return gj; })
+    .catch(function(){ return null; });  // missing file = state not digitized yet
+}
+
+const BOUNDARY_COLORS = {
+  'city':               {fill:'#2e5e8a', stroke:'#1a3d5c', dash:null, label:'City limits (Census)'},
+  'county':             {fill:'#3d6b4f', stroke:'#264432', dash:null, label:'County (Census)'},
+  'counties':           {fill:'#3d6b4f', stroke:'#264432', dash:null, label:'Multi-county (Census)'},
+  'places':             {fill:'#5e5e9a', stroke:'#3a3a6a', dash:null, label:'Town boundaries (Census)'},
+  'neighborhood_npa':   {fill:'#8a5e2a', stroke:'#5c3d1a', dash:null, label:'Neighborhoods (Charlotte NPA)'},
+  'census_tracts':      {fill:'#2a7a6a', stroke:'#1a4a3a', dash:null, label:'Census tracts'},
+  'places_constructed': {fill:'#6a4a90', stroke:'#3a2a5c', dash:'4,3', label:'Constructed from places'},
+  'zone_approx':        {fill:'#c05c2a', stroke:'#8a3d1a', dash:'6,4', label:'Approximate zone'},
+  'zones_approx':       {fill:'#c05c2a', stroke:'#8a3d1a', dash:'6,4', label:'Approximate zone'},
+};
+
+let ncBoundaryLayer = null;
+
+function showStateBoundaries(state) {
+  if (!map) return;
+  hideStateBoundaries();
+  var ncBoundaries = BOUNDARY_CACHE[state];
+  if (!ncBoundaries) return;
+  
+  ncBoundaryLayer = L.geoJSON(ncBoundaries, {
+    style: function(feature) {
+      const bt = feature.properties.boundary_type;
+      const colors = BOUNDARY_COLORS[bt] || BOUNDARY_COLORS['zone_approx'];
+      return {
+        fillColor: colors.fill,
+        fillOpacity: 0.15,
+        color: colors.stroke,
+        weight: 2,
+        opacity: 0.75,
+        dashArray: colors.dash
+      };
+    },
+    onEachFeature: function(feature, layer) {
+      const p = feature.properties;
+      const bt = BOUNDARY_COLORS[p.boundary_type] || BOUNDARY_COLORS['zone_approx'];
+      const sys = systems.find(function(s) { return s.name === p.name && s.state === state; });
+      var popup = '<div style="min-width:180px;max-width:240px">';
+      popup += '<div class="popup-name">' + p.name + '</div>';
+      popup += '<div style="font-family:var(--mono);font-size:0.58rem;color:var(--ink-soft);margin-bottom:0.25rem;padding:0.12rem 0.35rem;background:var(--bg2);display:inline-block">' + bt.label + '</div>';
+      if (sys) {
+        popup += '<div class="popup-area" style="margin-top:0.3rem">' + sys.area + '</div>';
+        var status = sys.status || '';
+        var sc = status.startsWith('Active') ? 'var(--green)' : status === 'Pilot' ? 'var(--gold)' : 'var(--ink-faint)';
+        popup += '<div style="display:flex;gap:0.4rem;align-items:center;margin:0.25rem 0">';
+        popup += '<span style="width:6px;height:6px;border-radius:50%;background:'+sc+';display:inline-block"></span>';
+        popup += '<span style="font-family:var(--mono);font-size:0.6rem">' + status + '</span></div>';
+        popup += '<div class="popup-grid">';
+        if (sys.fare && sys.fare !== 'Not specified') popup += '<div><span class="popup-fl">Fare</span><span class="popup-fv">'+sys.fare+'</span></div>';
+        if (sys.vendor && sys.vendor !== 'Not specified') popup += '<div><span class="popup-fl">Vendor</span><span class="popup-fv">'+sys.vendor+'</span></div>';
+        if (sys.type) popup += '<div><span class="popup-fl">Type</span><span class="popup-fv">'+sys.type+'</span></div>';
+        if (sys.year && sys.year !== 'Not specified') popup += '<div><span class="popup-fl">Year</span><span class="popup-fv">'+sys.year+'</span></div>';
+        popup += '</div>';
+        if (sys.notes && sys.notes !== 'Not specified') {
+          var noteText = sys.notes.length > 150 ? sys.notes.substring(0,150) + '...' : sys.notes;
+          popup += '<div class="popup-note">' + noteText + '</div>';
+        }
+      }
+      if (p.boundary_type && (p.boundary_type.includes('approx') || p.boundary_type === 'places_constructed')) {
+        popup += '<div style="font-family:var(--mono);font-size:0.56rem;color:#8a5e2a;margin-top:0.3rem;font-style:italic">Boundary is approximate</div>';
+      }
+      popup += '</div>';
+      layer.bindPopup(popup, {maxWidth: 280});
+      
+      layer.on('mouseover', function() { this.setStyle({fillOpacity: 0.28, weight: 3}); });
+      layer.on('mouseout', function() { ncBoundaryLayer.resetStyle(this); });
+    }
+  }).addTo(map);
+
+  // Add boundary legend
+  var legendEl = document.createElement('div');
+  legendEl.id = 'nc-boundary-legend';
+  legendEl.style.cssText = 'position:absolute;bottom:1rem;right:1rem;z-index:400;background:var(--surface);border:1px solid var(--border);padding:0.65rem 0.85rem;box-shadow:0 2px 10px rgba(0,0,0,0.1)';
+  var legendHTML = '<div class="map-legend-title">Service Area Boundaries</div>';
+  var shown = {};
+  ncBoundaries.features.forEach(function(f) {
+    var bt = f.properties.boundary_type;
+    if (!shown[bt] && BOUNDARY_COLORS[bt]) {
+      shown[bt] = true;
+      var c = BOUNDARY_COLORS[bt];
+      legendHTML += '<div class="map-legend-item"><span style="width:14px;height:10px;flex-shrink:0;background:'+c.fill+';opacity:0.4;border:1.5px '+(c.dash?'dashed':'solid')+' '+c.stroke+'"></span>'+c.label+'</div>';
+    }
+  });
+  legendEl.innerHTML = legendHTML;
+  document.getElementById('map-view').appendChild(legendEl);
+}
+
+function hideStateBoundaries() {
+  if (ncBoundaryLayer && map) { map.removeLayer(ncBoundaryLayer); ncBoundaryLayer = null; }
+  var el = document.getElementById('nc-boundary-legend');
+  if (el) el.remove();
+}
+
+// Hook into filter to auto-show NC boundaries
+var _origFilterAll = filterAll;
+filterAll = function() {
+  _origFilterAll();
+  if (mapInitialized) {
+    var sf = document.getElementById('filter-state').value;
+    if (sf && BOUNDARY_INDEX.indexOf(sf) !== -1) {
+      ensureBoundaries(sf).then(function(){
+        // re-check: user may have changed filter while fetching
+        if (document.getElementById('filter-state').value === sf) showStateBoundaries(sf);
+      });
+    } else {
+      hideStateBoundaries();
+    }
+  }
+};
+
+</script>
+</body>
+</html>

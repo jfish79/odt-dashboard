@@ -1,0 +1,44 @@
+ODT Database — Legend & Data Dictionary,
+,
+State Color Key,
+AZ,Arizona
+CA,California
+CO,Colorado
+CT,Connecticut
+FL,Florida
+GA,Georgia
+MD,Maryland
+MN,Minnesota
+NC,North Carolina
+NJ,New Jersey
+NY,New York
+OH,Ohio
+OR,Oregon
+PA,Pennsylvania
+SD,South Dakota
+TX,Texas
+UT,Utah
+VA,Virginia
+WA,Washington
+WI,Wisconsin
+,
+Status Values,
+Active,Currently operating
+Active - Expanding,Operating and growing service area
+Active - New,Recently launched (within ~6 months)
+Active - Post Pilot,Graduated from pilot to permanent service
+Pilot,Ongoing pilot program
+Pilot - Ended,Pilot has concluded; permanent status unknown
+,
+Scheduling Window Values,
+Same-day,Rides booked and served same day (true on-demand)
+Advance,Rides must be booked ahead (typically 1+ days)
+Flexible,Mix of same-day and advance booking
+,
+Geographic Context Values,
+Urban,Within a city core
+Suburban,Suburban municipality or outer metro area
+Rural,Low-density county or regional service
+Mixed,"Crosses multiple context types (Military/Urban, etc.)"
+Paratransit,ADA/senior/disabled-restricted demand-response service (eligibility required)
+Source,Indicates whether row is from original database or supplemental CA/CO list
