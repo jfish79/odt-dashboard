@@ -2,7 +2,7 @@
 
 A searchable research inventory of microtransit and demand-response public transit deployments across the United States.
 
-**[View the live dashboard →](https://USERNAME.github.io/odt-database/)**
+**[View the live dashboard →](https://USERNAME.github.io/odt-dashboard/)**
 
 > ⚠️ Replace `USERNAME` above (and in `index.html` OG tags) with your GitHub username after creating the repo.
 
