@@ -2,11 +2,12 @@
 
 # On-Demand Transit Database
 
+> 🚧 This project is under active development. Data coverage is incomplete and some entries are unverified.
+
 A searchable research inventory of microtransit and demand-response public transit deployments across the United States.
 
 **[View the live dashboard →](https://jfish79.github.io/odt-dashboard/)**
 
-> ⚠️ Replace `USERNAME` above (and in `index.html` OG tags) with your GitHub username after creating the repo.
 
 ---
 
@@ -54,7 +55,7 @@ Reports missing coordinates, unknown states, duplicate name+state pairs, and unu
 No build step required on the server. Push to `main`, then:
 
 1. Go to **Settings → Pages → Source** → Deploy from branch: `main` / `root`.
-2. The site is live at `https://USERNAME.github.io/odt-database/` within ~1 minute.
+2. The site is live at `https://jfish79.github.io/odt-dashboard/` within ~1 minute.
 
 ### Local testing
 
