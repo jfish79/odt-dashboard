@@ -4,11 +4,44 @@
   "batch_size": 3,
   "interval": "65m",
   "rules_summary": "Include only systems meeting index.html Reference-tab scope rules: same-day app/phone booking with no fixed schedule; OR advance-window demand-response open to general public; OR confirmed-vendor+funding planned/pilot. Paratransit (eligibility-restricted) allowed as its own System Type. Exclude 24h+ advance-only, private/employer/campus-only, permanently discontinued. Verify every candidate before adding; log gaps/uncertainties in concerns.csv.",
-  "remaining": ["ID", "IN", "KS", "LA", "ME", "MS", "MO", "MT", "ND", "NE", "NH", "NM", "NV", "OK", "RI", "SC", "TN", "VT", "WV", "WY", "DC"],
+  "remaining": [
+    "LA",
+    "ME",
+    "MS",
+    "MO",
+    "MT",
+    "ND",
+    "NE",
+    "NH",
+    "NM",
+    "NV",
+    "OK",
+    "RI",
+    "SC",
+    "TN",
+    "VT",
+    "WV",
+    "WY",
+    "DC"
+  ],
   "in_progress": [],
-  "done": ["AL", "AK", "AR", "DE", "HI", "IA"],
+  "done": [
+    "AL",
+    "AK",
+    "AR",
+    "DE",
+    "HI",
+    "IA",
+    "ID",
+    "IN",
+    "KS"
+  ],
   "attempted_empty": [],
-  "batches_completed": 2,
-  "rows_added_total": 38,
-  "notes": ["Batch 1 (AL/AK/AR): 13 systems added. Note: args reached workflow as a JSON string, so the run merged all 3 states into one pipeline item; agents still covered all three. Script fixed to parse string args for focused per-state runs going forward.", "Batch 2 (DE/HI/IA): 25 systems added (DE 2, HI 6, IA 17). Improved assembler dedup to strip diacritics + leading 'The' (caught Hawaiian ʻokina/kahakō dupes); dropped one DE semantic dupe (DART Paratransit == DART First State Paratransit). IA is legitimately large (~16 regional transit agencies)."]
+  "batches_completed": 3,
+  "rows_added_total": 58,
+  "notes": [
+    "Batch 1 (AL/AK/AR): 13 systems added. Note: args reached workflow as a JSON string, so the run merged all 3 states into one pipeline item; agents still covered all three. Script fixed to parse string args for focused per-state runs going forward.",
+    "Batch 2 (DE/HI/IA): 25 systems added (DE 2, HI 6, IA 17). Improved assembler dedup to strip diacritics + leading 'The' (caught Hawaiian \u02bbokina/kahak\u014d dupes); dropped one DE semantic dupe (DART Paratransit == DART First State Paratransit). IA is legitimately large (~16 regional transit agencies).",
+    "Batch 3 (ID/IN/KS): 20 systems added (ID 4, IN 11, KS 5). First run hung ~2.5h on unbounded research; killed it, added ~8-fetch/agent efficiency budget to the workflow, re-ran clean in ~6min. Dropped 3 semantic dupes (VRT ACCESS, BLink, Topeka Lift). Widened cron to every 2h."
+  ]
 }
