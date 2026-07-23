@@ -4,11 +4,11 @@
   "batch_size": 3,
   "interval": "65m",
   "rules_summary": "Include only systems meeting index.html Reference-tab scope rules: same-day app/phone booking with no fixed schedule; OR advance-window demand-response open to general public; OR confirmed-vendor+funding planned/pilot. Paratransit (eligibility-restricted) allowed as its own System Type. Exclude 24h+ advance-only, private/employer/campus-only, permanently discontinued. Verify every candidate before adding; log gaps/uncertainties in concerns.csv.",
-  "remaining": ["AL", "AK", "AR", "DE", "HI", "IA", "ID", "IN", "KS", "LA", "ME", "MS", "MO", "MT", "ND", "NE", "NH", "NM", "NV", "OK", "RI", "SC", "TN", "VT", "WV", "WY", "DC"],
+  "remaining": ["DE", "HI", "IA", "ID", "IN", "KS", "LA", "ME", "MS", "MO", "MT", "ND", "NE", "NH", "NM", "NV", "OK", "RI", "SC", "TN", "VT", "WV", "WY", "DC"],
   "in_progress": [],
-  "done": [],
+  "done": ["AL", "AK", "AR"],
   "attempted_empty": [],
-  "batches_completed": 0,
-  "rows_added_total": 0,
-  "notes": []
+  "batches_completed": 1,
+  "rows_added_total": 13,
+  "notes": ["Batch 1 (AL/AK/AR): 13 systems added. Note: args reached workflow as a JSON string, so the run merged all 3 states into one pipeline item; agents still covered all three. Script fixed to parse string args for focused per-state runs going forward."]
 }
