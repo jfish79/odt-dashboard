@@ -196,13 +196,25 @@ only the systemic/borderline items are listed here.
   River HOP) — added as a new row. Both pair with a separate official
   ADA Paratransit rider's guide at the same operator, but the Dial-A-Ride
   products themselves are confirmed general-public/no-application-required.
-- **IL borderline items not added**: Pace On Demand's 11 named zones
-  (existing single CSV row) — question of whether to split by zone, not
-  resolved; TransVAC/Kendall Area Transit (gating reads restrictive);
-  RMTD "Call to Connect" and Bond County Transit (thin/secondary sourcing
-  only); Knox County/Galesburg expansion (funding vote not finalized, no
-  vendor — excluded per pilot rule); BPART (Bureau-Putnam; existence
-  confirmed, details never extracted).
+- **IL borderline items — mostly resolved (2026-07-24)**. Pace On
+  Demand's 11-zone list confirmed still current via pacebus.com, zero
+  changes — the zone-split-into-11-rows question remains an open human
+  decision, not re-litigated. TransVAC/Kendall Area Transit confirmed
+  general-public (capacity/priority gating only, not an eligibility gate)
+  — added as "Kendall Area Transit (KAT) / TransVAC." Bond County Transit
+  confirmed directly ("ANYONE OF ANY AGE IS ELIGIBLE TO RIDE!") — added.
+  BPART confirmed directly via ridebpart.org — added as "Bureau-Putnam
+  Area Rural Transit (BPART)." Knox County/Galesburg **still not
+  finalized** — Galesburg council approved its side ~Jul 20 2026, county
+  board vote is scheduled Jul 29 2026 (not yet occurred), no vendor named
+  yet; re-check after that date. RMTD "Call to Connect" **still
+  unresolved** — no service by that name found on MetroLINK (metroqc.com)
+  or the existing "RIM Rural Transit" row's own site (ridetherim.org);
+  the RIM Rural Transit site did surface a few "Not specified" field
+  fills for that existing row (hours Mon-Fri 8:00-4:30, explicit 60+
+  no-duration-requirement eligibility) worth applying in an enrichment
+  pass, separate from the "Call to Connect" naming question, which likely
+  needs a phone call (309-788-6335 / 309-788-3360) to fully close out.
 - **OK tribal systems — re-checked, mostly still unclear (2026-07-24)**.
   **Citizen Potawatomi Nation Transit resolved: eligibility-gated, out of
   scope** (per CPN's own criteria — enrolled members 18+, or other Native
