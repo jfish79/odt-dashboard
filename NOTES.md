@@ -255,12 +255,32 @@ OR/MI/AR, KS/NH/NV in parallel) took the CSV from 397 to 478 rows. Build
 validates clean. Per-row unverified fields are logged in `concerns.csv` as
 usual; the items below are the *systemic* ones worth surfacing here:
 
-- **WI shared-ride taxi program (Wis. Stat. 85.20) is a large untapped
-  source.** Only 5 of a plausibly 20-40+ eligible WI cities were checked
-  (Fond du Lac, Wisconsin Rapids, Waupun, Medford, Viroqua-Westby). Brown
-  Cab Service and Passenger Transit Inc. alone list ~10 more WI cities
-  under the same model, not yet individually verified. Worth a dedicated
-  WI-only follow-up pass rather than folding into general rotation.
+- **WI shared-ride taxi program (Wis. Stat. 85.20) — resolved (2026-07-24)**.
+  Found the authoritative roster: WI Legislative Fiscal Bureau
+  Informational Paper 43 ("Transit Assistance," Jan 2025), Appendix I,
+  itemizes all 46 CY2024 state-aid shared-ride-taxi systems. Of those, 4
+  were already in the CSV, 39 were added as new rows, and 3 were confirmed
+  discontinued (Clark County, Rhinelander, Waupaca — all ended their
+  contracts Dec 2024–Dec 2025; logged in concerns.csv as `Status Change`).
+  This closes the original open item — Brown Cab's and Passenger Transit's
+  full city lists are now independently confirmed via the LFB roster.
+  Remaining loose ends from this pass:
+  - **Waupaca County's 2026 replacement program** (Feonix – Mobility
+    Rising, county-wide, launched after the old Brown Cab contract ended)
+    postdates the LFB roster and was NOT researched — good next targeted
+    follow-up.
+  - The roster only covers systems that received CY2024 WisDOT 85.20 aid;
+    any purely locally-funded shared-ride-taxi system, or one launched in
+    2025/2026, wouldn't appear on it — a structural gap, not a shortcut.
+  - 5 official city pages returned errors during fetch (Tomah, Whitewater,
+    Hartford, Ripon, Waupaca) — those rows relied on operator sites/news
+    coverage rather than a primary city source; worth a manual re-check.
+  - Several fare/operator discrepancies were found and logged per-row in
+    concerns.csv rather than silently resolved (Chippewa Falls, Fort
+    Atkinson, and Whitewater fare figures; Ozaukee County operator
+    identity — STS vs. GoRiteway, possibly confused with neighboring
+    Washington County's 2026 changeover; Plover's operator, mid-transition
+    as of Jan 2026 and unnamed in sources found).
 - **Several states hit a shared WebSearch budget cap mid-sweep** (parallel
   sub-forks within one agent draw from the same quota) and are confirmed
   incomplete, not exhaustively covered: **NM** (Rio Metro, Farmington,
