@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+.python-version
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Local env / secrets
+.env
+.env.local
+
+# NOTE: data/systems.json, summary.csv, and data/boundaries/_index.json are
+# build outputs from scripts/build.py, but they are also what index.html
+# fetches at runtime via GitHub Pages. Do NOT ignore them — they must stay
+# committed.
