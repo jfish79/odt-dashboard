@@ -164,14 +164,21 @@ only the systemic/borderline items are listed here.
   destination, while Go Wake Forest is the town's own town-wide
   Via-operated system (replaced the old "Wake Forest Loop" fixed route,
   Oct 2024). Added "Go Wake Forest" as a new row.
-- **Douglas County, CO — "Link on Demand" service-area update, not a new
-  row**: the existing Lone Tree row's Via-powered service has since
-  expanded into Parker (Apr 2026) and Castle Rock (launching Jul 2026,
-  $1.99M contract). Not added as new rows; existing row's `Region/Service
-  Area` field should be updated once confirmed.
-- **Mountain Valley Transit (CO)** — San Luis Valley routes reportedly
-  paused since April 2026 due to funding cuts. Not added (status too
-  uncertain to confirm as currently operating); re-check before adding.
+- **Douglas County, CO — "Link on Demand" — resolved (2026-07-24)**.
+  Confirmed and applied: Parker/Stonegate expansion is live (Apr 2026);
+  Castle Rock ($1.9M contract, approved Jul 14 2026) goes live Jul 31
+  2026 — not yet live as of this update. Row's `Region/Service Area` and
+  `Ridership/Performance Notes` updated. The row's name still says
+  "(Lone Tree)" though its service area has outgrown that single city —
+  a rename (e.g. to "Link on Demand (Douglas County)") may be warranted
+  once Castle Rock actually goes live; left as a human judgment call.
+- **Mountain Valley Transit (CO) — re-checked, still not added**. Status
+  is genuinely mixed, not a clean discontinuation: Antonito-Alamosa
+  resumed Apr 1 2026, but all other San Luis Valley routes remain paused
+  since Feb 2 2026 due to funding cuts, and the former Buena Vista-Salida
+  leg is no longer MVT at all (absorbed by CDOT's Bustang service, Jan
+  2026). Recommend against adding until status stabilizes further; if
+  added later, scope narrowly to the Antonito-Alamosa corridor only.
 - **Broken Arrow Transit microtransit pilot (OK) — resolved, same system**.
   Confirmed MTTA rebranded to "MetroLink Tulsa" in 2024 (same legal
   entity); Broken Arrow's pilot runs on the same GoPass app under that
@@ -196,17 +203,34 @@ only the systemic/borderline items are listed here.
   only); Knox County/Galesburg expansion (funding vote not finalized, no
   vendor — excluded per pilot rule); BPART (Bureau-Putnam; existence
   confirmed, details never extracted).
-- **Eligibility-unclear tribal systems not added (OK)**: Cheyenne and
-  Arapaho Tribal Transit's demand-response component, Otoe-Missouria Tribe
-  Transit, Muscogee (Creek) Nation Transit, Comanche Nation Transit,
-  Citizen Potawatomi Nation Transit — general-public framing found but not
-  confirmed strongly enough this pass.
-- **FL borderline, not added**: Gainesville RTS Mobility on Demand (framed
-  around clinic/social-service destinations, general trip-taking
-  unconfirmed); Bayway On Demand/Flex (Bay County, reads TD-eligibility
-  gated); Babcock Ranch AV shuttle (likely private-community/school
-  shuttle); a Lake County Facebook post describing a "free on-demand"
-  service, likely a TD-program rebrand, unconfirmed as distinct.
+- **OK tribal systems — re-checked, mostly still unclear (2026-07-24)**.
+  **Citizen Potawatomi Nation Transit resolved: eligibility-gated, out of
+  scope** (per CPN's own criteria — enrolled members 18+, or other Native
+  American applicants who are 60+/meet an income limit/live in tribal
+  jurisdiction; not general-public). The other 4 remain genuinely
+  unresolved even after a direct-source check: Cheyenne and Arapaho
+  Tribal Transit's DR component (describes eligibility by trip purpose,
+  never by rider category) and Otoe-Missouria Tribe Transit (leans
+  tribal-member-focused per program description) stay unclear; Muscogee
+  (Creek) Nation Transit has an unconfirmed secondary-source claim of
+  general-public eligibility, not found on any official page. **Comanche
+  Nation Transit is the strongest lead** — a non-official source (Lawton
+  MPO) describes it as open to both tribal and non-tribal members
+  covering Lawton/Fort Sill/Cache/Apache/Elgin/Fletcher/Cyril, but the
+  operator's own page 404'd; retry at comanchenation.com/general-services/page/transit.
+- **FL borderline — Gainesville RTS Mobility on Demand added, Bayway
+  confirmed excluded (2026-07-24)**. Mobility on Demand (Gainesville
+  RTS): the "clinic/social-service" framing turned out to be
+  equity-marketing emphasis, not a booking restriction — riders can go to
+  any destination within the East Gainesville MOD zone, no eligibility
+  gate found. Added. Bayway On Demand/Flex (Bay County): confirmed
+  eligibility-gated via the operator's own application criteria (60+,
+  below poverty line, or disability, with a 21-day application process;
+  site explicitly states "not available to the general public") —
+  correctly excluded. Still open: Babcock Ranch AV shuttle (likely
+  private-community/school shuttle) and the Lake County Facebook post
+  describing a "free on-demand" service (likely a TD-program rebrand) —
+  neither re-checked this pass.
 - **Coverage still incomplete even in the 3 completed sweeps** — notably:
   AZ (Nogales/Santa Cruz County, Apache County towns, unincorporated
   Maricopa fringe cities); FL (FDOT's full CTC directory never pulled,

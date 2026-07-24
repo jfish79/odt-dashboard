@@ -632,7 +632,7 @@
  {
   "name": "Link on Demand (Lone Tree)",
   "state": "CO",
-  "area": "Lone Tree and Meridian",
+  "area": "Lone Tree, Meridian, Highlands Ranch, Stonegate, and parts of Parker (Castle Rock joining July 31, 2026)",
   "geo": "Suburban",
   "operator": "City of Lone Tree (Tech by Via)",
   "type": "Microtransit",
@@ -645,7 +645,7 @@
   "funding": "Local",
   "status": "Active",
   "fleet": "Not specified",
-  "notes": "One of Colorado's earliest microtransit deployments; expanded to Meridian in 2024.",
+  "notes": "One of Colorado's earliest microtransit deployments; expanded to Meridian in 2024. Expanded from Lone Tree/Meridian into Highlands Ranch, Stonegate, and parts of Parker (Apr 2026); Castle Rock addition approved July 14, 2026 ($1.9M contract), service begins July 31, 2026.",
   "url": "https://lonetreeco.gov",
   "lat": 39.53,
   "lng": -104.87
@@ -16819,5 +16819,26 @@
   "url": "yuroktribe.org/transportation",
   "lat": 41.53,
   "lng": -124.04
+ },
+ {
+  "name": "Mobility on Demand (Gainesville RTS)",
+  "state": "FL",
+  "area": "East Gainesville MOD zone",
+  "geo": "Urban",
+  "operator": "City of Gainesville Regional Transit System (RTS)",
+  "type": "Microtransit",
+  "vendor": "Not specified",
+  "booking": "App/Phone",
+  "window": "Same-day / up to 7 days advance",
+  "fare": "Free",
+  "hours": "Weekdays 5:30-8:30am, 4:30-8:00pm",
+  "year": "Not specified",
+  "funding": "Not specified",
+  "status": "Active",
+  "fleet": "Not specified",
+  "notes": "Not specified",
+  "url": "go-rts.com",
+  "lat": 29.66,
+  "lng": -82.29
  }
 ]
