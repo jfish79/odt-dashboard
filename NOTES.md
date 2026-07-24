@@ -71,12 +71,12 @@ only the systemic/borderline items are listed here.
   database's fixed-schedule exclusion; Troup Transit and Warner Robins
   Transit — general-public eligibility not fully confirmed in a primary
   source (Warner Robins also has an unusual private-operator model).
-- **GA existing-row updates flagged, not new rows**: CobbLinc Go's North
-  Cobb/Acworth-Kennesaw expansion ($3.84M funding) and MARTA Reach's
-  expansion to Alpharetta/North Fulton CID both look like additional zones
-  of already-listed systems (CobbLinc Go, MARTA Reach) rather than new
-  systems — their `Region/Service Area` fields should be updated once
-  confirmed, not duplicated as new rows.
+- **GA existing-row updates — resolved**. CobbLinc Go's `Region/Service
+  Area` updated to note its North Cobb/Acworth-Kennesaw expansion ($3.84M
+  funding confirmed 2026, launch date unconfirmed). MARTA Reach's existing
+  12-zone list already included "North Fulton" — the Alpharetta/North
+  Fulton CID expansion noted in wave 3 appears to be within that
+  already-listed zone, not a new one, so no edit was needed there.
 - **REAL Flash (TX) added as a separate row from existing "REAL Microtransit
   (Rockport/Fulton)"** — same operator/brand (Rural Economic Assistance
   League), disjoint zone (Beeville/Alice/Rancho Alegre vs. Rockport/Fulton).
