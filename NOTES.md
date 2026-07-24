@@ -105,17 +105,29 @@ only the systemic/borderline items are listed here.
   never successfully pulled as itemized lists (only program-description
   pages) — flagged as the single highest-value next source for CA
   specifically.
-- **NC's NCDOT MEE-NC grant cohort is a rich, well-sourced vein** — Local
-  Link, ACTA Microtransit, Go Randolph, and Salisbury Connect (all added
-  this wave) are 4 of an 11-community MEE-NC cohort; grant docs cleanly
-  give vendor/funding, matching the CLAUDE.md "state DOT toolkit" research
-  heuristic. Worth a dedicated future pass to check the other ~7 MEE-NC
-  communities not yet individually confirmed.
-- **Possible duplicate: "GoRaleigh MicroLink" vs. "Go Wake Forest" (NC)** —
-  both appear to cover Wake Forest via a GoTriangle-family ("Go*") brand;
-  only GoRaleigh MicroLink was added this pass. Needs a human check on
-  whether these are the same service reported twice or genuinely distinct
-  city vs. regional products.
+- **NC's NCDOT MEE-NC grant cohort — resolved (2026-07-24)**. Full
+  program name is "Mobility for Everyone, Everywhere in NC" (MEE NC), an
+  11-community cohort. Follow-up research confirmed all 11 already
+  correspond to an existing CSV row (Kerr Area Regional Transit/KARTS,
+  Johnston Quick Ride/JCATS, McDowell Express, Go Randolph/RCATS, ACTA
+  Microtransit, Wilson RIDE, Local Link, Buzzline, RideMICRO/Castle Hayne,
+  Salisbury Connect, Tar River Transit RGP) — zero new rows needed. Along
+  the way: enriched the existing **Buzzline** row with newly-available
+  confirmed data (launch Nov 12 2025, $5 fare, weekday-from-6am hours,
+  more specific MEE-NC funding source). **Wilson RIDE**'s funding source
+  may be incomplete (original AIM grant vs. MEE-NC continuation funding)
+  but wasn't confirmed well enough to edit. **Tar River Transit/Rocky
+  Mount** is MEE-NC-funded but has NOT launched a distinct same-day
+  on-demand product yet (existing row is the legacy advance-booking RGP
+  service, unaffected) — don't add a second Tar River row without a
+  direct launch confirmation.
+- **"GoRaleigh MicroLink" vs. "Go Wake Forest" (NC) — resolved,
+  genuinely distinct**. Confirmed different operators (City of Raleigh
+  vs. Town of Wake Forest), vendors, fares, hours, and fleets — GoRaleigh
+  MicroLink's Rolesville zone only connects into Wake Forest as a
+  destination, while Go Wake Forest is the town's own town-wide
+  Via-operated system (replaced the old "Wake Forest Loop" fixed route,
+  Oct 2024). Added "Go Wake Forest" as a new row.
 - **Douglas County, CO — "Link on Demand" service-area update, not a new
   row**: the existing Lone Tree row's Via-powered service has since
   expanded into Parker (Apr 2026) and Castle Rock (launching Jul 2026,
@@ -124,18 +136,23 @@ only the systemic/borderline items are listed here.
 - **Mountain Valley Transit (CO)** — San Luis Valley routes reportedly
   paused since April 2026 due to funding cuts. Not added (status too
   uncertain to confirm as currently operating); re-check before adding.
-- **Broken Arrow Transit microtransit pilot (OK)** — operated by MetroLink
-  Tulsa on the same GoPass platform as the existing "MTTA On-Demand
-  Microtransit" row; not added pending a human call on whether it's a
-  distinct zone of that system or a genuinely separate pilot.
-- **CT dedup risks, not added**: "WRTD Dial-A-Ride" may be the same service
-  as the existing "WRTD Link" row (same operator, Mansfield/Windham) under
-  a different name; "River Valley Transit (Estuary Transit District)
-  Dial-A-Ride" (16-town Estuary region) heavily geographically overlaps
-  the existing XtraMile/River HOP rows for the same operator and may be the
-  same underlying traditional advance-book service described differently.
-  Worth checking whether Estuary Transit District's traditional Dial-A-Ride
-  deserves its own row distinct from its branded same-day zone products.
+- **Broken Arrow Transit microtransit pilot (OK) — resolved, same system**.
+  Confirmed MTTA rebranded to "MetroLink Tulsa" in 2024 (same legal
+  entity); Broken Arrow's pilot runs on the same GoPass app under that
+  agency. Folded Broken Arrow's confirmed zone details (20 sq mi, $500K
+  CMAQ grant, 4 Mustang Mach-E + 1 accessible van, zone-specific fare/
+  hours) into the existing "MTTA On-Demand Microtransit (GoPass App)"
+  row rather than creating a duplicate.
+- **CT dedup risks — resolved, both genuinely distinct**. "WRTD
+  Dial-A-Ride" (9-town district, Ecolane, Advance window, $3.00) is a
+  separate legacy product from same-day "WRTD Link" (2-town, Via) —
+  added as a new row. "River Valley Transit Dial-A-Ride" (16-town
+  Estuary district, Ecolane, Advance window, $3.50, curb-to-curb ¾-mile-
+  beyond-fixed-routes model) is likewise a separate legacy product from
+  the operator's same-day TransLoc-based branded zones (XtraMile x3,
+  River HOP) — added as a new row. Both pair with a separate official
+  ADA Paratransit rider's guide at the same operator, but the Dial-A-Ride
+  products themselves are confirmed general-public/no-application-required.
 - **IL borderline items not added**: Pace On Demand's 11 named zones
   (existing single CSV row) — question of whether to split by zone, not
   resolved; TransVAC/Kendall Area Transit (gating reads restrictive);
