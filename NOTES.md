@@ -7,19 +7,81 @@ a permanent log (that's what `concerns.csv` and git history are for).
 
 ## Full 50-state deep sweep — wave 3 follow-ups (2026-07-24)
 
-Wave 3 (AZ/CA/FL, CT/NC/CO, OK/IL/MA, TX/GA — 4 parallel research passes)
-covered the last 11 states not yet given the high-recall deep-sweep
-treatment. AZ/CA/FL, CT/NC/CO, and OK/IL/MA completed; **TX/GA failed
-mid-run on an API error and needs a re-run** (not yet attempted as of this
-note). The three completed passes took the CSV from 597 to 672 rows (76
-adds, 1 rename/update, 1 removal). Every added row has a `Data Gap
-(new-state research)` entry in `concerns.csv`; only the systemic/borderline
-items are listed here.
+Wave 3 (AZ/CA/FL, CT/NC/CO, OK/IL/MA, TX/GA — 5 research passes; TX/GA
+required one retry after an API failure) covered the last 11 states not yet
+given the high-recall deep-sweep treatment. Wave 3 is now **complete**: took
+the CSV from 597 to 724 rows (128 adds, 1 rename/update, 1 removal). Every
+added row has a `Data Gap (new-state research)` entry in `concerns.csv`;
+only the systemic/borderline items are listed here.
 
-- **TX and GA still need their deep sweep** — the research agent for this
-  pair failed on a transient API error before producing any findings.
-  Re-run before considering wave 3 complete; both states were already
-  thin (11 rows each) going in.
+- **TX and GA were both dramatically under-covered going in** (11 rows
+  each) — the deep sweep found 34 new TX systems and 18 new GA systems,
+  nearly tripling/doubling their counts respectively. GA's research agent
+  also surfaced **~40 additional named county systems** from the Georgia
+  Transit Association's statewide roster that plausibly fit the same
+  general-public rural demand-response pattern but were NOT individually
+  verified this pass (listed by name in the agent's report, not
+  reproduced here) — good candidate for a dedicated targeted follow-up
+  rather than a broad re-sweep: Wilcox, Cook, Americus, Pierce, Haralson,
+  Taylor, Cedartown, Murray, Habersham, Bleckley, Conyers, Taliaferro,
+  River Valley Regional Transit (16-county), Lumpkin, Paulding, Dawson,
+  Douglas/Coffee, Clay, Heard, Glascock, Greene, Hart, Banks, Wilkinson,
+  Walker, Lincoln, Jefferson, Morgan, Macon, Bryan, Catoosa, Crawford,
+  Hancock (name suggests possible senior-restriction, check eligibility),
+  Talbot, McDuffie, Tift, Dade, Dooly, Wilkes, Burke counties.
+- **TX 24-hour-advance policy question, affects ~7 systems**: several
+  added TX rural systems (Panhandle Transit, PTS, Valley Metro/LRGVDC,
+  Alamo Regional Transit, GoBus/ETCOG, both TRAX systems, HOTCOG) are
+  24-hour-advance-minimum general-public demand-response. The research
+  agent read CLAUDE.md's "24+ hour advance-only booking" exclusion as
+  targeting paratransit-only services specifically (per the fuller
+  Reference-tab wording), not general-public advance-window service, and
+  included these on that reading. Worth confirming this as an explicit
+  single policy call rather than per-row, since it recurs constantly in
+  rural demand-response research.
+- **TX name collision, handled**: two unrelated systems are both branded
+  "TRAX" — one run by Ark-Tex COG (NE Texas), one by Permian Basin RTD
+  (West Texas). Both added, disambiguated in the CSV `Name` field as
+  "TRAX (Ark-Tex COG)" / "TRAX (Permian Basin RTD)".
+- **TX TNC-subsidy programs, category-level scope question not yet
+  resolved**: Cedar Park Microtransit Pilot, Uber Kyle ($3.14 flat fare),
+  and Pfetch a Ride (Pflugerville) are all subsidized-TNC-voucher programs
+  (city pays down an Uber/Lyft-style fare rather than running its own
+  fleet/app). None added pending one category-level ruling on whether
+  fare-subsidy-on-a-commercial-TNC counts as an in-scope "system" the way
+  a city-run microtransit app does — resolving it once would settle all
+  three at once plus any future finds of the same model.
+- **TX borderline, not added**: CARR/City and Rural Rides (Central Texas
+  RTD) — primary purpose is job/training access, general public served
+  only "space-available," reads as not truly general-public; SaGO (San
+  Antonio) — free electric shuttle but privately/ad-funded, not a public
+  transit agency, scope-fit unresolved; Gulf Coast Transit District "Ride
+  the Wave" (Galveston/League City/Texas City/Brazoria) — partial detail
+  only, worth a direct follow-up; CVTGoNow (Colorado Valley Transit) — launch
+  announcement removed from site, phone-arranged fare card argues against
+  same-day app model; BTD Micro-Transit (Liberty/Dayton/Ames) — funding not
+  confirmed, fails pilot-inclusion rule; El Aguila Rural Transit (Webb
+  County) — booking window never confirmed; SETRPC — scheduling window
+  unresolved; Plano Rides, Collin County Transit/McKinney UTD, GoGeo
+  (Georgetown), Cletran — all read as 65+/disabled/income-gated or have
+  conflicting eligibility sources, excluded on current information.
+- **GA borderline, not added**: Statesboro Area Transit (SAT) — deviated
+  fixed-route requiring pickup within 1/4 mile of an existing route, needs
+  a human call on whether that counts as demand-response under this
+  database's fixed-schedule exclusion; Troup Transit and Warner Robins
+  Transit — general-public eligibility not fully confirmed in a primary
+  source (Warner Robins also has an unusual private-operator model).
+- **GA existing-row updates flagged, not new rows**: CobbLinc Go's North
+  Cobb/Acworth-Kennesaw expansion ($3.84M funding) and MARTA Reach's
+  expansion to Alpharetta/North Fulton CID both look like additional zones
+  of already-listed systems (CobbLinc Go, MARTA Reach) rather than new
+  systems — their `Region/Service Area` fields should be updated once
+  confirmed, not duplicated as new rows.
+- **REAL Flash (TX) added as a separate row from existing "REAL Microtransit
+  (Rockport/Fulton)"** — same operator/brand (Rural Economic Assistance
+  League), disjoint zone (Beeville/Alice/Rancho Alegre vs. Rockport/Fulton).
+  Flagged in concerns.csv for a human merge-vs-keep-separate decision,
+  following the same open question as DCTA GoZone/GoZone Frisco.
 - **CRIS Rural Transit (IL) removed** — reported dissolved 2026-01-02 after
   IDOT froze funding over an accounting issue; not independently
   reconfirmed beyond the research pass that surfaced it. See `concerns.csv`
