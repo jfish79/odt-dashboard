@@ -5,9 +5,6 @@
   "interval": "65m",
   "rules_summary": "Include only systems meeting index.html Reference-tab scope rules: same-day app/phone booking with no fixed schedule; OR advance-window demand-response open to general public; OR confirmed-vendor+funding planned/pilot. Paratransit (eligibility-restricted) allowed as its own System Type. Exclude 24h+ advance-only, private/employer/campus-only, permanently discontinued. Verify every candidate before adding; log gaps/uncertainties in concerns.csv.",
   "remaining": [
-    "NV",
-    "OK",
-    "RI",
     "SC",
     "TN",
     "VT",
@@ -34,18 +31,22 @@
     "ND",
     "NE",
     "NH",
-    "NM"
+    "NM",
+    "NV",
+    "OK",
+    "RI"
   ],
   "attempted_empty": [],
-  "batches_completed": 6,
-  "rows_added_total": 108,
+  "batches_completed": 7,
+  "rows_added_total": 135,
   "notes": [
     "Batch 1 (AL/AK/AR): 13 systems added. Note: args reached workflow as a JSON string, so the run merged all 3 states into one pipeline item; agents still covered all three. Script fixed to parse string args for focused per-state runs going forward.",
     "Batch 2 (DE/HI/IA): 25 systems added (DE 2, HI 6, IA 17). Improved assembler dedup to strip diacritics + leading 'The' (caught Hawaiian \u02bbokina/kahak\u014d dupes); dropped one DE semantic dupe (DART Paratransit == DART First State Paratransit). IA is legitimately large (~16 regional transit agencies).",
     "Batch 3 (ID/IN/KS): 20 systems added (ID 4, IN 11, KS 5). First run hung ~2.5h on unbounded research; killed it, added ~8-fetch/agent efficiency budget to the workflow, re-ran clean in ~6min. Dropped 3 semantic dupes (VRT ACCESS, BLink, Topeka Lift). Widened cron to every 2h.",
     "Batch 4 (LA/ME/MS): 15 systems added (LA 7, ME 7, MS 1). First batch on Sonnet subagents (834k tokens, ~5min, 0 errors) \u2014 quality held. MS thin (only Coast Transit paratransit found) \u2014 flag for follow-up enrichment. RTP vs RTP Catch-A-Ride (ME) kept as distinct but worth review.",
     "Batch 5 (MO/MT/ND): 22 systems added (MO 6, MT 14, ND 2). MT very wide (rural + tribal transit). ND thin (2: MATBUS Paratransit, Souris Basin) \u2014 likely missed Bismarck CAT & Grand Forks CAT; flag for follow-up. MS also thin (batch 4). 1.02M tokens on Sonnet, ~9min.",
-    "Batch 6 (NE/NH/NM): 13 systems added (NE 6, NH 7, NM 1). Dropped 1 dupe (Micro Flex Omaha variant). NM thin (only ABQ RIDE Connect) \u2014 missed Santa Fe, Las Cruces, regional RTDs; added to thin-state watchlist for a dedicated follow-up discovery pass."
+    "Batch 6 (NE/NH/NM): 13 systems added (NE 6, NH 7, NM 1). Dropped 1 dupe (Micro Flex Omaha variant). NM thin (only ABQ RIDE Connect) \u2014 missed Santa Fe, Las Cruces, regional RTDs; added to thin-state watchlist for a dedicated follow-up discovery pass.",
+    "Batch 7 (NV/OK/RI): 27 systems added (NV 5, OK 20, RI 2). OK very wide (rural/tribal transit network). Dropped 1 RI dupe (RIde Paratransit). Fixes: GET My Ride scheduling window unverified -> set 'Advance' (inclusion unaffected) + logged; RTC Paratransit NV added on inference (site 403'd) + logged; 2 OK rows had non-numeric coords -> approximate county centroids + logged. Assembler now flags non-numeric coords in dry run."
   ],
   "thin_states": [
     "MS (1)",
