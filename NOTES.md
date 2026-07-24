@@ -167,18 +167,6 @@ only the systemic/borderline items are listed here.
   Denver-metro exurban fringe, Custer County — unresolved lead "Carry Me to
   Town").
 
-## Pending CSV updates (found, not yet applied)
-
-- **Bay Transit Express (VA)** — `Fleet` currently "Not specified". Found: 3
-  vehicles — Ford E450, Ford Transit 350, Ford Transit van (6 seats). Source:
-  Virginia DRPT "Rural Microtransit Suitability Checklist and Implementation
-  Toolkit."
-- **METGo! (VA)** — `Fleet` currently "Not specified". Found: 4 Ford vans,
-  each 7-ambulatory-passenger capacity. Same DRPT source as above.
-  - Note: that source also states the service area is "~15 sq mi"; the CSV
-    currently has "~11 sq mi core." Possibly core-zone vs. full-zone rather
-    than a real conflict — don't overwrite silently, note both if updating.
-
 ## Dead ends (don't re-research)
 
 - **El Cajon Microtransit (CA)** — no public vehicle capacity number exists.
