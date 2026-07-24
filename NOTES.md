@@ -19,16 +19,20 @@ only the systemic/borderline items are listed here.
   nearly tripling/doubling their counts respectively. GA's research agent
   also surfaced **~40 additional named county systems** from the Georgia
   Transit Association's statewide roster that plausibly fit the same
-  general-public rural demand-response pattern but were NOT individually
-  verified this pass (listed by name in the agent's report, not
-  reproduced here) — good candidate for a dedicated targeted follow-up
-  rather than a broad re-sweep: Wilcox, Cook, Americus, Pierce, Haralson,
-  Taylor, Cedartown, Murray, Habersham, Bleckley, Conyers, Taliaferro,
-  River Valley Regional Transit (16-county), Lumpkin, Paulding, Dawson,
-  Douglas/Coffee, Clay, Heard, Glascock, Greene, Hart, Banks, Wilkinson,
-  Walker, Lincoln, Jefferson, Morgan, Macon, Bryan, Catoosa, Crawford,
-  Hancock (name suggests possible senior-restriction, check eligibility),
-  Talbot, McDuffie, Tift, Dade, Dooly, Wilkes, Burke counties.
+  general-public rural demand-response pattern.
+  **Batch 1 of that follow-up (15 checked, 2026-07-24): 14 confirmed and
+  added** (Wilcox, Cook, Americus/Sumter, Pierce, Haralson, Taylor,
+  Cedartown/Polk, Murray, Habersham, Bleckley, Taliaferro, Lumpkin,
+  Paulding, Dawson counties) — **Conyers/Rockdale County excluded**, still
+  in planning stage (a Nov 2023 transit development plan recommends
+  microtransit but no vendor/launch date confirmed as of this check; fails
+  the pilot-inclusion rule, re-check in a future pass).
+  **Remaining ~25 counties/entities not yet checked** (batch 2+ candidate):
+  River Valley Regional Transit (16-county), Douglas/Coffee, Clay, Heard,
+  Glascock, Greene, Hart, Banks, Wilkinson, Walker, Lincoln, Jefferson,
+  Morgan, Macon, Bryan, Catoosa, Crawford, Hancock (name suggests possible
+  senior-restriction, check eligibility), Talbot, McDuffie, Tift, Dade,
+  Dooly, Wilkes, Burke counties.
 - **TX 24-hour-advance policy question, affects ~7 systems**: several
   added TX rural systems (Panhandle Transit, PTS, Valley Metro/LRGVDC,
   Alamo Regional Transit, GoBus/ETCOG, both TRAX systems, HOTCOG) are
