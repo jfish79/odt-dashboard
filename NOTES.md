@@ -88,14 +88,16 @@ only the systemic/borderline items are listed here.
   (`Status Change`). Re-add if service has actually resumed.
 - **WeRIDE Peoria (AZ) renamed/updated to "Peoria Transit On-Demand"** —
   City of Peoria's WeRIDE pilot ended and was replaced April 2026;
-  vendor/funding for the new service unconfirmed. While updating it, also
-  fixed a pre-existing column-shift data-entry bug on that one row (Fleet /
-  Ridership / Website URL columns were misaligned by one column). **The
-  same bug still exists, uncorrected, on the other 3 WeRIDE-family AZ rows**
-  (WeRIDE, WeRIDE Buckeye, WeRIDE El Mirage) and likely elsewhere in the
-  "New addition on July 1/July 7" batches — worth a dedicated cleanup pass
-  checking those batches' Fleet/Ridership/Website URL columns for the same
-  shift.
+  vendor/funding for the new service unconfirmed.
+- **Website URL / Ridership Notes column swap — fixed dataset-wide
+  (2026-07-24)**. Turned out to be much bigger than the single WeRIDE
+  Peoria row: 123 rows across AZ/CT/FL/GA/IL/MA had Website URL and
+  Ridership/Performance Notes swapped, not limited to the "New addition
+  on July 1/July 7" batches (83 of the 123 have a blank Source field).
+  Fixed mechanically (no research needed). The `Fleet` column on many of
+  these same rows still holds a general description rather than real
+  fleet specs — left untouched since some mix in genuine fleet mentions;
+  still worth a closer human pass per `concerns.csv`.
 - **CA appears significantly under-built relative to its real microtransit
   footprint** — 25 new candidates found in one pass (vs. 3-9 for other wave
   3 states), and the research agent flagged this explicitly. Caltrans'
