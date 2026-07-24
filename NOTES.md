@@ -5,6 +5,104 @@ applied to the CSV yet, or aren't resolved. Clear items out once they're
 actually committed — this file should reflect *current* open items, not be
 a permanent log (that's what `concerns.csv` and git history are for).
 
+## Full 50-state deep sweep — wave 3 follow-ups (2026-07-24)
+
+Wave 3 (AZ/CA/FL, CT/NC/CO, OK/IL/MA, TX/GA — 4 parallel research passes)
+covered the last 11 states not yet given the high-recall deep-sweep
+treatment. AZ/CA/FL, CT/NC/CO, and OK/IL/MA completed; **TX/GA failed
+mid-run on an API error and needs a re-run** (not yet attempted as of this
+note). The three completed passes took the CSV from 597 to 672 rows (76
+adds, 1 rename/update, 1 removal). Every added row has a `Data Gap
+(new-state research)` entry in `concerns.csv`; only the systemic/borderline
+items are listed here.
+
+- **TX and GA still need their deep sweep** — the research agent for this
+  pair failed on a transient API error before producing any findings.
+  Re-run before considering wave 3 complete; both states were already
+  thin (11 rows each) going in.
+- **CRIS Rural Transit (IL) removed** — reported dissolved 2026-01-02 after
+  IDOT froze funding over an accounting issue; not independently
+  reconfirmed beyond the research pass that surfaced it. See `concerns.csv`
+  (`Status Change`). Re-add if service has actually resumed.
+- **WeRIDE Peoria (AZ) renamed/updated to "Peoria Transit On-Demand"** —
+  City of Peoria's WeRIDE pilot ended and was replaced April 2026;
+  vendor/funding for the new service unconfirmed. While updating it, also
+  fixed a pre-existing column-shift data-entry bug on that one row (Fleet /
+  Ridership / Website URL columns were misaligned by one column). **The
+  same bug still exists, uncorrected, on the other 3 WeRIDE-family AZ rows**
+  (WeRIDE, WeRIDE Buckeye, WeRIDE El Mirage) and likely elsewhere in the
+  "New addition on July 1/July 7" batches — worth a dedicated cleanup pass
+  checking those batches' Fleet/Ridership/Website URL columns for the same
+  shift.
+- **CA appears significantly under-built relative to its real microtransit
+  footprint** — 25 new candidates found in one pass (vs. 3-9 for other wave
+  3 states), and the research agent flagged this explicitly. Caltrans'
+  §5311/§5310 subrecipient roster and the CalACT member directory were
+  never successfully pulled as itemized lists (only program-description
+  pages) — flagged as the single highest-value next source for CA
+  specifically.
+- **NC's NCDOT MEE-NC grant cohort is a rich, well-sourced vein** — Local
+  Link, ACTA Microtransit, Go Randolph, and Salisbury Connect (all added
+  this wave) are 4 of an 11-community MEE-NC cohort; grant docs cleanly
+  give vendor/funding, matching the CLAUDE.md "state DOT toolkit" research
+  heuristic. Worth a dedicated future pass to check the other ~7 MEE-NC
+  communities not yet individually confirmed.
+- **Possible duplicate: "GoRaleigh MicroLink" vs. "Go Wake Forest" (NC)** —
+  both appear to cover Wake Forest via a GoTriangle-family ("Go*") brand;
+  only GoRaleigh MicroLink was added this pass. Needs a human check on
+  whether these are the same service reported twice or genuinely distinct
+  city vs. regional products.
+- **Douglas County, CO — "Link on Demand" service-area update, not a new
+  row**: the existing Lone Tree row's Via-powered service has since
+  expanded into Parker (Apr 2026) and Castle Rock (launching Jul 2026,
+  $1.99M contract). Not added as new rows; existing row's `Region/Service
+  Area` field should be updated once confirmed.
+- **Mountain Valley Transit (CO)** — San Luis Valley routes reportedly
+  paused since April 2026 due to funding cuts. Not added (status too
+  uncertain to confirm as currently operating); re-check before adding.
+- **Broken Arrow Transit microtransit pilot (OK)** — operated by MetroLink
+  Tulsa on the same GoPass platform as the existing "MTTA On-Demand
+  Microtransit" row; not added pending a human call on whether it's a
+  distinct zone of that system or a genuinely separate pilot.
+- **CT dedup risks, not added**: "WRTD Dial-A-Ride" may be the same service
+  as the existing "WRTD Link" row (same operator, Mansfield/Windham) under
+  a different name; "River Valley Transit (Estuary Transit District)
+  Dial-A-Ride" (16-town Estuary region) heavily geographically overlaps
+  the existing XtraMile/River HOP rows for the same operator and may be the
+  same underlying traditional advance-book service described differently.
+  Worth checking whether Estuary Transit District's traditional Dial-A-Ride
+  deserves its own row distinct from its branded same-day zone products.
+- **IL borderline items not added**: Pace On Demand's 11 named zones
+  (existing single CSV row) — question of whether to split by zone, not
+  resolved; TransVAC/Kendall Area Transit (gating reads restrictive);
+  RMTD "Call to Connect" and Bond County Transit (thin/secondary sourcing
+  only); Knox County/Galesburg expansion (funding vote not finalized, no
+  vendor — excluded per pilot rule); BPART (Bureau-Putnam; existence
+  confirmed, details never extracted).
+- **Eligibility-unclear tribal systems not added (OK)**: Cheyenne and
+  Arapaho Tribal Transit's demand-response component, Otoe-Missouria Tribe
+  Transit, Muscogee (Creek) Nation Transit, Comanche Nation Transit,
+  Citizen Potawatomi Nation Transit — general-public framing found but not
+  confirmed strongly enough this pass.
+- **FL borderline, not added**: Gainesville RTS Mobility on Demand (framed
+  around clinic/social-service destinations, general trip-taking
+  unconfirmed); Bayway On Demand/Flex (Bay County, reads TD-eligibility
+  gated); Babcock Ranch AV shuttle (likely private-community/school
+  shuttle); a Lake County Facebook post describing a "free on-demand"
+  service, likely a TD-program rebrand, unconfirmed as distinct.
+- **Coverage still incomplete even in the 3 completed sweeps** — notably:
+  AZ (Nogales/Santa Cruz County, Apache County towns, unincorporated
+  Maricopa fringe cities); FL (FDOT's full CTC directory never pulled,
+  Panhandle counties beyond Bay/Escambia, North Central rural counties);
+  IL (Grundy, Will beyond West Joliet, Kane beyond Ride in Kane, DuPage
+  beyond Ride DuPage, Cook south suburbs beyond Lansing); MA (MassDOT/FTA
+  §5310/5311 rosters returned fetch errors, relied on secondary press;
+  other MAPC subregions unchecked); NC (Outer Banks/far-eastern counties,
+  Sandhills, southwestern mountain counties, the 16 NC COGs' pages);
+  CO (southeast counties, San Luis Valley county-by-county, western slope,
+  Denver-metro exurban fringe, Custer County — unresolved lead "Carry Me to
+  Town").
+
 ## Pending CSV updates (found, not yet applied)
 
 - **Bay Transit Express (VA)** — `Fleet` currently "Not specified". Found: 3
