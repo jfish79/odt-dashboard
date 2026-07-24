@@ -98,13 +98,49 @@ only the systemic/borderline items are listed here.
   these same rows still holds a general description rather than real
   fleet specs — left untouched since some mix in genuine fleet mentions;
   still worth a closer human pass per `concerns.csv`.
-- **CA appears significantly under-built relative to its real microtransit
-  footprint** — 25 new candidates found in one pass (vs. 3-9 for other wave
-  3 states), and the research agent flagged this explicitly. Caltrans'
-  §5311/§5310 subrecipient roster and the CalACT member directory were
-  never successfully pulled as itemized lists (only program-description
-  pages) — flagged as the single highest-value next source for CA
-  specifically.
+- **CA under-coverage — substantially addressed (2026-07-24), roster
+  question resolved as a permanent dead-end.** A dedicated Caltrans/CalACT
+  follow-up added 35 more CA systems (LA County, a 6-city Kern County
+  cluster, SLO/Santa Barbara, Central Valley, Solano Delta towns, rural
+  Sierra/far-north counties, Calaveras County, 3 tribal systems). Neither
+  the Caltrans §5311/§5310 BlackCat system nor the CalACT member directory
+  was ever obtained as a public document across three separate passes —
+  both are login-gated with no public roster page. **Stop trying this
+  route without actual login credentials.** Instead, this pass found and
+  recommends a public substitute for future state sweeps: the FTA
+  National Transit Database "Service by Agency" dataset, queryable with
+  no auth at `https://data.transportation.gov/resource/6y83-7vuw.json`
+  (filter `?max_state=XX`) — it returned 313 named CA agencies and is
+  federal, current, and machine-readable, though it only captures
+  agencies that file NTD reports (a blind spot for tiny
+  volunteer-run/purely-locally-funded services).
+  Open items from this pass:
+  - **Tehachapi Dial-A-Ride vs. Kern Regional Transit Dial-A-Ride
+    network** — both added as separate rows, but they share a phone
+    number and hosting domain; may be the same underlying service.
+    Flagged in concerns.csv, not resolved.
+  - **GoMonrovia's vendor** recorded as Lyft (confirmed this pass); a
+    secondary source elsewhere describes Via — unresolved whether there
+    was an earlier Via phase.
+  - Several fields need a direct spot-check before being treated as
+    final: Lodi GrapeLine's $7 fare (single search snippet), Dixon
+    Readi-Ride's ~8-vehicle fleet count (2022 planning doc, may be
+    stale), Claremont Dial-a-Ride's conflicting reported hours, Avalon
+    COAST's truncated funding-source citation.
+  - **313-agency NTD list was triaged by name/city-size judgment, not
+    exhaustively researched** — only ~55 likely-small-rural-or-city-run
+    operators were sent to research; large Full Reporter fixed-route
+    agencies and clear MPOs/COGs were excluded on a reasonable but
+    unverified assumption. A specific list of NOT-yet-researched entities
+    (Foothill Transit, Access Services, Paratransit Inc./Sacramento,
+    CalVans, Easy Lift Transportation/Goleta, Attentive Transportation
+    LLC/Sacramento — a private NEMT/microtransit contractor worth a
+    second look — and others) is in this pass's full report if resuming.
+  - LA County DPW's ~8 named shuttle programs (Athens, Florence-Firestone,
+    Willowbrook, Lennox, etc.) appear only in 2022 NTD data, absent from
+    2024 — likely discontinued or folded into LA Metro's microtransit
+    zones (possibly already covered by the existing Metro row) — not
+    individually checked.
 - **NC's NCDOT MEE-NC grant cohort — resolved (2026-07-24)**. Full
   program name is "Mobility for Everyone, Everywhere in NC" (MEE NC), an
   11-community cohort. Follow-up research confirmed all 11 already
