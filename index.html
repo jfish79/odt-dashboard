@@ -149,7 +149,6 @@ select:focus { border-color: var(--ink); }
 .card-meta { display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; }
 .tag { font-family: var(--mono); font-size: 0.6rem; padding: 0.15rem 0.4rem; border: 1px solid; }
 .tag-type-Microtransit { color: var(--green); border-color: #a8c8b4; background: #f0f7f2; }
-.tag-type-Paratransit { color: #8a3060; border-color: #d4a0b8; background: #faf0f4; }
 .tag-type-Demand-Response { color: var(--blue); border-color: #a8bee0; background: #f0f4fa; }
 .tag-geo { color: var(--ink-soft); border-color: var(--border); background: var(--bg2); }
 .status-text { font-family: var(--mono); font-size: 0.6rem; color: var(--ink-soft); display: flex; align-items: center; gap: 0.3rem; }
@@ -210,6 +209,16 @@ select:focus { border-color: var(--ink); }
 .map-item-name { font-family: var(--sans); font-size: 0.8rem; font-weight: 500; line-height: 1.3; color: var(--ink); }
 .map-item-sub { font-family: var(--mono); font-size: 0.6rem; color: var(--ink-soft); margin-top: 0.12rem; }
 .map-legend { position: absolute; bottom: 1rem; left: 1rem; z-index: 400; background: var(--surface); border: 1px solid var(--border); padding: 0.65rem 0.85rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); max-height: 250px; overflow-y: auto; }
+.map-symbol-control { background: var(--surface); border: 1px solid var(--border); padding: 0.55rem 0.7rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); font-family: var(--mono); }
+.map-symbol-control-label { font-size: 0.56rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.35rem; }
+.map-symbol-control select {
+  width: 100%; padding: 0.32rem 1.4rem 0.32rem 0.45rem;
+  background: var(--bg); border: 1px solid var(--border2);
+  font-family: var(--mono); font-size: 0.7rem; color: var(--ink); outline: none; appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='5' viewBox='0 0 9 5'%3E%3Cpath d='M1 1l3.5 3 3.5-3' stroke='%239a9088' stroke-width='1.3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 6px center; cursor: pointer;
+}
+.map-symbol-control select:focus { border-color: var(--ink); }
 .map-legend-title { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.45rem; }
 .map-legend-item { display: flex; align-items: center; gap: 0.45rem; font-family: var(--mono); font-size: 0.67rem; color: var(--ink-mid); margin-bottom: 0.28rem; }
 .map-legend-item:last-child { margin-bottom: 0; }
@@ -375,18 +384,6 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
     <span class="filter-label">State</span>
     <select id="filter-state" onchange="filterAll()">
       <option value="">All</option>
-      <option value="AZ">AZ</option><option value="CA">CA</option>
-      <option value="CO">CO</option><option value="CT">CT</option>
-      <option value="FL">FL</option><option value="GA">GA</option>
-      <option value="IL">IL</option><option value="KY">KY</option>
-      <option value="MA">MA</option><option value="MD">MD</option>
-      <option value="MI">MI</option><option value="MN">MN</option>
-      <option value="NC">NC</option><option value="NJ">NJ</option>
-      <option value="NY">NY</option><option value="OH">OH</option>
-      <option value="OR">OR</option><option value="PA">PA</option>
-      <option value="SD">SD</option><option value="TX">TX</option>
-      <option value="UT">UT</option><option value="VA">VA</option>
-      <option value="WA">WA</option><option value="WI">WI</option>
     </select>
   </div>
   <div class="filter-group">
@@ -395,7 +392,6 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
       <option value="">All</option>
       <option value="Microtransit">Microtransit</option>
       <option value="Demand-Response">Demand-Response</option>
-      <option value="Paratransit">Paratransit</option>
     </select>
   </div>
   <div class="filter-group">
@@ -615,10 +611,6 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
               <div class="ref-type-label tag tag-type-Demand-Response" style="display:inline-block;margin-bottom:0.4rem">Demand-Response</div>
               <div class="ref-type-desc">Rides are booked in advance (typically the prior day or further out). Vehicles are dynamically routed but scheduled rather than immediately dispatched. Common in rural settings. Open to the general public. Flagged with "Advance" scheduling window in this database.</div>
             </div>
-            <div class="ref-type-item">
-              <div class="ref-type-label tag tag-type-Paratransit" style="display:inline-block;margin-bottom:0.4rem">Paratransit</div>
-              <div class="ref-type-desc">Eligibility-restricted demand-response service, typically limited to seniors, people with disabilities, or ADA-certified riders. Advance booking required. Added during the June 2026 supplemental data integration to distinguish these from general-public demand-response services.</div>
-            </div>
           </div>
         </div>
 
@@ -664,12 +656,12 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
     <div class="ref-section">
       <div class="ref-section-label">Data caveats</div>
       <p class="ref-prose">Fleet figures are sourced from press releases and agency reports and may not reflect current operations. Service hours and fares change frequently — verify with the agency before travel planning. Latitude/longitude pins represent approximate service area centers, not coverage boundaries. Systems marked "Not specified" have data that is not publicly available or not yet researched.</p>
-      <p class="ref-prose" style="margin-top:0.75rem">Last updated: <strong>June 2026</strong>. This is a living document; if you identify errors or omissions, please contact the research team.</p>
+      <p class="ref-prose" style="margin-top:0.75rem">Last updated: <strong>July 2026</strong>. This is a living document; if you identify errors or omissions, please contact the research team.</p>
     </div>
 
     <div class="ref-section">
       <div class="ref-section-label">Data quality concerns</div>
-      <p class="ref-prose" style="margin-bottom:1rem">The June 2026 update added 120 systems from supplemental CA/CO lists. Several data quality issues were identified during integration and are documented below. The full log (including 83 individual paratransit reclassifications) is in the <code>Concerns</code> tab of the companion spreadsheet.</p>
+      <p class="ref-prose" style="margin-bottom:1rem">The June 2026 update added 120 systems from supplemental CA/CO lists. Several data quality issues were identified during integration and are documented below. The full log is in the <code>Concerns</code> tab of the companion spreadsheet.</p>
 
       <div class="ref-def-block">
         <div class="ref-def-term">Vendor errors (verified)</div>
@@ -690,8 +682,8 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
       </div>
 
       <div class="ref-def-block">
-        <div class="ref-def-term">Paratransit reclassification</div>
-        <div class="ref-def-body">83 systems from the supplemental lists were reclassified from "Demand-Response" to "Paratransit" based on eligibility restrictions found in their names or notes (ADA, senior, disabled, age cutoffs). These are traditional eligibility-restricted dial-a-ride services, not general-public on-demand transit. Each reclassification is individually logged in the spreadsheet's Concerns tab. Filter by <code>System Type = Paratransit</code> and <code>Source = Supplemental CA/CO list</code> to isolate these entries.</div>
+        <div class="ref-def-term">Paratransit scope change (2026-07)</div>
+        <div class="ref-def-body">83 systems from the supplemental CA/CO lists were originally reclassified from "Demand-Response" to a separate "Paratransit" System Type, based on eligibility restrictions found in their names or notes (ADA, senior, disabled, age cutoffs). As of July 2026, paratransit was removed from scope entirely rather than tracked as a distinct type — all 170 eligibility-restricted rows database-wide (not just the 83 from the CA/CO integration) were removed, and "Paratransit" was retired as a System Type. This database now covers general-public on-demand transit only; eligibility-certified-rider-only services are out of scope regardless of how demand-responsive they are. Each original reclassification (and the later removal) is logged in the spreadsheet's Concerns tab.</div>
       </div>
 
       <div class="ref-def-block">
@@ -744,7 +736,7 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
 </div>
 
 <footer>
-  On-Demand Transit Database · Updated June 2026 · 241 systems across 24 states</footer>
+  On-Demand Transit Database · Updated July 2026 · <span id="footer-stat">…</span></footer>
 
 <script>
 const STATE_COLORS = {
@@ -762,6 +754,57 @@ const STATE_NAMES = {
   IL:'Illinois',KY:'Kentucky',MA:'Massachusetts',MI:'Michigan'
 };
 
+/* ── MAP SYMBOLIZATION ──────────────────────────────────────────────────
+   Lets the map encode a field other than State via marker color.
+   Palettes are kept separate (not shared with the analytics `C` object,
+   which is declared later in the file) so this section has no load-order
+   dependency on it. */
+const TYPE_COLORS = {
+  'Microtransit':     '#3d6b4f',
+  'Demand-Response':  '#2e5e8a'
+};
+const STATUS_COLORS = {
+  'Active':              '#3d6b4f',
+  'Active - Expanding':  '#2d8a5e',
+  'Active - New':        '#5eb87e',
+  'Active - Post Pilot': '#8ed8ae',
+  'Active - Pilot':      '#aae8be',
+  'Pilot':               '#b08a30',
+  'Pilot - Ended':       '#bdb6aa'
+};
+const GEO_COLORS = {
+  'Urban':    '#2e5e8a',
+  'Suburban': '#2a7a6a',
+  'Rural':    '#6b4226',
+  'Mixed':    '#b08a30'
+};
+// Only the platforms with a meaningful presence get a dedicated color —
+// the vendor field has ~25 distinct values (many one-offs), so anything
+// outside this list buckets into "Other" to keep the legend readable.
+const VENDOR_COLORS = {
+  'Via':            '#2e5e8a',
+  'In-house':       '#9a9088',
+  'Not specified':  '#bdb6aa',
+  'Freebee':        '#c05c2a',
+  'Spare':          '#3d6b4f',
+  'RideCo':         '#6a4a90',
+  'Other':          '#8a5e2a'
+};
+function geoBucket(g){ return (g||'').startsWith('Mixed') ? 'Mixed' : (g || 'Unknown'); }
+function vendorBucket(v){
+  if(!v || v==='Not specified') return 'Not specified';
+  return VENDOR_COLORS[v] ? v : 'Other';
+}
+const SYMBOL_MODES = {
+  state:  { label:'State',               key:s=>s.state,             keyLabel:k=>STATE_NAMES[k]||k, colorByKey:k=>STATE_COLORS[k]||'#888' },
+  type:   { label:'System Type',         key:s=>s.type||'Unknown',   keyLabel:k=>k,                  colorByKey:k=>TYPE_COLORS[k]||'#888' },
+  status: { label:'Status',              key:s=>s.status||'Unknown', keyLabel:k=>k,                  colorByKey:k=>STATUS_COLORS[k]||'#888' },
+  geo:    { label:'Geographic Context',  key:s=>geoBucket(s.geo),    keyLabel:k=>k,                  colorByKey:k=>GEO_COLORS[k]||'#888' },
+  vendor: { label:'Technology Vendor',   key:s=>vendorBucket(s.vendor), keyLabel:k=>k,                colorByKey:k=>VENDOR_COLORS[k]||'#888' }
+};
+let mapSymbolMode = 'state';
+function symbolColor(s){ const m=SYMBOL_MODES[mapSymbolMode]; return m.colorByKey(m.key(s)); }
+
 let systems = [];
 
 
@@ -770,6 +813,11 @@ function populateVendorFilter(){
   const vendors=[...new Set(systems.map(s=>s.vendor).filter(v=>v&&v!=="Not specified"&&v!=="In-house"))]
     .sort((a,b)=>a.localeCompare(b));
   sel.innerHTML='<option value="">All</option>'+vendors.map(v=>`<option value="${v}">${v}</option>`).join("");
+}
+function populateStateFilter(){
+  const sel=document.getElementById("filter-state");
+  const states=[...new Set(systems.map(s=>s.state).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
+  sel.innerHTML='<option value="">All</option>'+states.map(s=>`<option value="${s}">${s}</option>`).join("");
 }
 
 function statusClass(s){if(s.includes('Ended'))return'Pilot---Ended';return s.replace(/[\s–\-]+/g,'-');}
@@ -853,8 +901,8 @@ function renderCards(){
 function toggleExpand(i,e){e.stopPropagation();document.getElementById(`card-${i}`).classList.toggle('expanded');}
 
 let map,markers=[],markerLayers=[];
-function makeIcon(state){
-  const c=STATE_COLORS[state]||'#888';
+function makeIcon(sys){
+  const c=symbolColor(sys);
   const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="32" viewBox="0 0 24 32"><path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 20 12 20S24 21 24 12C24 5.37 18.63 0 12 0z" fill="${c}"/><circle cx="12" cy="12" r="4.5" fill="white" opacity="0.92"/></svg>`;
   return L.divIcon({html:svg,className:'',iconSize:[24,32],iconAnchor:[12,32],popupAnchor:[0,-34]});
 }
@@ -878,14 +926,18 @@ function buildPopup(s){
   </div>`;
 }
 function buildLegend(){
-  const used=[...new Set(systems.map(s=>s.state))].sort();
-  document.getElementById('map-legend').innerHTML='<div class="map-legend-title">State</div>'+
-    used.map(st=>`<div class="map-legend-item"><span class="legend-dot" style="background:${STATE_COLORS[st]||'#888'}"></span>${STATE_NAMES[st]||st}</div>`).join('');
+  const mode = SYMBOL_MODES[mapSymbolMode];
+  const counts = {};
+  systems.forEach(s=>{ const k=mode.key(s); counts[k]=(counts[k]||0)+1; });
+  let keys = Object.keys(counts);
+  keys.sort(mapSymbolMode==='state' ? (a,b)=>a.localeCompare(b) : (a,b)=>counts[b]-counts[a]);
+  document.getElementById('map-legend').innerHTML = `<div class="map-legend-title">${mode.label}</div>`+
+    keys.map(k=>`<div class="map-legend-item"><span class="legend-dot" style="background:${mode.colorByKey(k)}"></span>${mode.keyLabel(k)}<span style="color:var(--ink-faint);margin-left:auto">${counts[k]}</span></div>`).join('');
 }
 function buildMapList(){
   document.getElementById('map-list').innerHTML=systems.map((s,i)=>
     `<div class="map-list-item" id="mli-${i}" onclick="focusMarker(${i})">
-      <span class="map-pin-dot" style="background:${STATE_COLORS[s.state]||'#888'}"></span>
+      <span class="map-pin-dot" style="background:${symbolColor(s)}"></span>
       <div><div class="map-item-name">${s.name}</div><div class="map-item-sub">${s.state} · ${s.geo} · ${s.type}</div></div>
     </div>`).join('');
 }
@@ -893,7 +945,7 @@ function updateMapMarkers(){
   markerLayers.forEach(m=>{if(map)map.removeLayer(m);});markerLayers=[];markers=[];
   let count=0;
   systems.forEach((s,i)=>{
-    const m=L.marker([s.lat,s.lng],{icon:makeIcon(s.state)}).bindPopup(buildPopup(s),{maxWidth:280}).on('click',()=>highlightListItem(i));
+    const m=L.marker([s.lat,s.lng],{icon:makeIcon(s)}).bindPopup(buildPopup(s),{maxWidth:280}).on('click',()=>highlightListItem(i));
     markers.push(m);
     const vis=matchesFilters(s),li=document.getElementById(`mli-${i}`);
     if(vis){m.addTo(map);markerLayers.push(m);if(li)li.classList.remove('hidden');count++;}
@@ -907,6 +959,34 @@ function initMap(){
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{
     attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',maxZoom:19
   }).addTo(map);
+  addSymbolControl();buildLegend();buildMapList();updateMapMarkers();
+}
+let symbolControl=null;
+function addSymbolControl(){
+  if(symbolControl||!map)return;
+  const Ctl=L.Control.extend({
+    options:{position:'topright'},
+    onAdd:function(){
+      const div=L.DomUtil.create('div','map-symbol-control');
+      div.innerHTML=`<div class="map-symbol-control-label">Symbolize by</div>
+        <select>
+          <option value="state">State</option>
+          <option value="type">System Type</option>
+          <option value="status">Status</option>
+          <option value="geo">Geographic Context</option>
+          <option value="vendor">Technology Vendor</option>
+        </select>`;
+      L.DomEvent.disableClickPropagation(div);
+      L.DomEvent.disableScrollPropagation(div);
+      div.querySelector('select').addEventListener('change',e=>setSymbolMode(e.target.value));
+      return div;
+    }
+  });
+  symbolControl=new Ctl();
+  symbolControl.addTo(map);
+}
+function setSymbolMode(mode){
+  mapSymbolMode=mode;
   buildLegend();buildMapList();updateMapMarkers();
 }
 function focusMarker(i){
@@ -938,7 +1018,8 @@ function bootstrap() {
   ]).then(function(res){
     systems = res[0];
     BOUNDARY_INDEX = (res[1] && res[1].states) || [];
-    populateVendorFilter(); renderCards(); updateStats();
+    populateVendorFilter(); populateStateFilter(); renderCards(); updateStats();
+    document.getElementById('footer-stat').textContent = systems.length + ' systems across ' + new Set(systems.map(s=>s.state)).size + ' states';
     document.getElementById('count').textContent = systems.length;
   }).catch(function(err){
     document.body.innerHTML = '<div style=\"font-family:sans-serif;max-width:560px;margin:4rem auto;padding:0 1.5rem;color:#2c2820\">' +

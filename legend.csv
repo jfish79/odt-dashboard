@@ -40,5 +40,5 @@ Urban,Within a city core
 Suburban,Suburban municipality or outer metro area
 Rural,Low-density county or regional service
 Mixed,"Crosses multiple context types (Military/Urban, etc.)"
-Paratransit,ADA/senior/disabled-restricted demand-response service (eligibility required)
+,
 Source,Indicates whether row is from original database or supplemental CA/CO list
