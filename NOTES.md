@@ -27,12 +27,22 @@ only the systemic/borderline items are listed here.
   in planning stage (a Nov 2023 transit development plan recommends
   microtransit but no vendor/launch date confirmed as of this check; fails
   the pilot-inclusion rule, re-check in a future pass).
-  **Remaining ~25 counties/entities not yet checked** (batch 2+ candidate):
-  River Valley Regional Transit (16-county), Douglas/Coffee, Clay, Heard,
-  Glascock, Greene, Hart, Banks, Wilkinson, Walker, Lincoln, Jefferson,
-  Morgan, Macon, Bryan, Catoosa, Crawford, Hancock (name suggests possible
-  senior-restriction, check eligibility), Talbot, McDuffie, Tift, Dade,
-  Dooly, Wilkes, Burke counties.
+  **Batch 2 (15 checked, 2026-07-24): 12 confirmed and added** (Clay,
+  Heard, Glascock, Greene, Hart, Banks, Wilkinson, Walker, Lincoln,
+  Jefferson, Morgan, Macon/Oglethorpe counties — note Macon County here is
+  distinct from the existing "MTA Rapid Transit" Macon-Bibb row). **3
+  excluded/duplicate**: River Valley Regional Transit (a 16-county
+  planning/coordinating body, not itself a rider-facing system — its
+  member counties are already covered individually via METRA, RMS-operated
+  systems, or newly-added rows); Douglas/Coffee County Rideshare (Coffee
+  County is already covered by the existing "Southern Georgia Regional
+  Transit" row); Bryan County (already covered by the existing "Coastal
+  Regional Coaches" row). Lincoln County Transit's data is notably thinner
+  than the rest of this batch (no live county webpage found, sourced only
+  from an FTA NTD profile) — worth a dedicated re-check.
+  **Remaining ~10 counties for batch 3**: Catoosa, Crawford, Hancock (name
+  suggests possible senior-restriction, check eligibility), Talbot,
+  McDuffie, Tift, Dade, Dooly, Wilkes, Burke counties.
 - **TX 24-hour-advance policy question, affects ~7 systems**: several
   added TX rural systems (Panhandle Transit, PTS, Valley Metro/LRGVDC,
   Alamo Regional Transit, GoBus/ETCOG, both TRAX systems, HOTCOG) are
