@@ -423,8 +423,17 @@ usual; the items below are the *systemic* ones worth surfacing here:
     Mohawk Valley, Central NY unchecked) — not yet re-checked.
   - **ND** (~30 other §5311 rural subrecipients unchecked) — not yet
     re-checked.
-  - **OR** (Coos, Douglas, Josephine, Umatilla counties unchecked) — not
-    yet re-checked.
+  - **OR — checked, 2 added.** CoosGO (Coos County/Bandon) and UPTD
+    Dial-A-Ride (Douglas County) — both confirmed general-public directly
+    on the operator's own site, with same-operator ADA/senior-certified
+    paratransit siblings (CoosLIFT, UPTD ParaTransit) correctly excluded.
+    Josephine County's app-based "Transit On Demand" evening service is
+    confirmed discontinued per JCT's own current alerts page. Umatilla
+    County's Kayak Public Transit demand-response is certification-gated
+    ADA paratransit; a separately-referenced "WORC Taxi Voucher Program"
+    (Hermiston/Umatilla/Stanfield) reads general-public but couldn't be
+    verified from a primary source — flagged, not added, comparable to
+    the TX TNC-subsidy scope question.
   - **MI** (~10 of MDOT's ~15 rural "Advancing Rural Mobility" providers
     unchecked) — not yet re-checked.
 - **DC's old "Transport DC" concern entries are now stale/orphaned** — that
