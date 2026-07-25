@@ -434,19 +434,21 @@ usual; the items below are the *systemic* ones worth surfacing here:
     (Hermiston/Umatilla/Stanfield) reads general-public but couldn't be
     verified from a primary source — flagged, not added, comparable to
     the TX TNC-subsidy scope question.
-  - **MI — batch 1 checked, 4 added, 11 remain.** The MDOT "Advancing
-    Rural Mobility Program" roster turned out to be larger than
+  - **MI — fully checked and closed, 16 added total.** The MDOT
+    "Advancing Rural Mobility Program" roster turned out larger than
     estimated: 23 agencies total (4 pilot + 19 expansion partners), not
     ~15. 6 were already in the CSV (Benzie, Wexford/WexExpress,
-    Charlevoix, Roscommon, Battle Creek/BCGo, Marquette/MarqTran). Added
-    Blugo (Clinton Transit/St. Johns-DeWitt), I-Ride (Isabella County),
-    I-DART (Ionia), and The Interurban (Saugatuck/Douglas). Blue Water
-    Area Transit checked and excluded (60+/ADA-card gated). Straits
-    Regional Ride checked but left unresolved (ambiguous flex-route vs.
-    demand-response classification, needs a closer look at the
-    operator's own page). **11 providers remain unchecked for a batch
-    2**: Antrim, Arenac, Clare, Crawford, Gladwin, Iosco, Kalkaska,
-    Manistee, Ogemaw, Thunder Bay, Yates Township.
+    Charlevoix, Roscommon, Battle Creek/BCGo, Marquette/MarqTran).
+    Batch 1 added Blugo (Clinton Transit), I-Ride (Isabella County),
+    I-DART (Ionia), The Interurban (Saugatuck/Douglas); excluded Blue
+    Water Area Transit (60+/ADA-card gated). Batch 2 added the remaining
+    11 county/township providers (Antrim, Arenac, Clare, Crawford,
+    Gladwin, Iosco, Kalkaska, Manistee, Ogemaw, Thunder Bay, Yates
+    Township) plus Straits Regional Ride, whose flex-route-vs-
+    demand-response classification question was resolved by checking
+    FTA's National Transit Database — it's officially classified
+    Demand-Response (not Deviated Fixed Route) across all filed years.
+    All 23 roster agencies are now accounted for; MI's thread is closed.
 - **DC's old "Transport DC" concern entries are now stale/orphaned** — that
   system was already correctly removed in the paratransit purge before
   this wave started; the older concerns.csv rows referencing it as a live
