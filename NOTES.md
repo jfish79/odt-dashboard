@@ -386,16 +386,30 @@ usual; the items below are the *systemic* ones worth surfacing here:
     Washington County's 2026 changeover; Plover's operator, mid-transition
     as of Jan 2026 and unnamed in sources found).
 - **Several states hit a shared WebSearch budget cap mid-sweep** (parallel
-  sub-forks within one agent draw from the same quota) and are confirmed
-  incomplete, not exhaustively covered: **NM** (Rio Metro, Farmington,
-  Silver City, Gallup, Grants/Cibola, Roswell/Pecos Trails, non-Navajo
-  tribal transit unchecked — treat NM's count as a floor), **NY** (~15-18
-  rural counties across the North Country, Finger Lakes, Mohawk Valley,
-  Central NY unchecked), **NH** (Concord Area Transit, Advance Transit
-  non-ADA options unchecked), **ID** (Kootenai County/Coeur d'Alene
-  unchecked), **ND** (~30 other §5311 rural subrecipients unchecked), **OR**
-  (Coos, Douglas, Josephine, Umatilla counties unchecked), **MI** (~10 of
-  MDOT's ~15 rural "Advancing Rural Mobility" providers unchecked).
+  sub-forks within one agent draw from the same quota) and were confirmed
+  incomplete, not exhaustively covered. Re-sweep in progress (2026-07-24),
+  state by state:
+  - **NH — checked, closed, 0 added.** Concord Area Transit's only
+    demand-response is ADA Paratransit (certified-only) and Concord
+    Senior Transit (60+ only) — both hard eligibility gates. Advance
+    Transit's only demand-response is Access AT, ADA-certification
+    required. No general-public service found for either operator.
+  - **ID — checked, closed, 0 added.** Kootenai County/Coeur d'Alene:
+    Citylink North's Ring-a-Ride is restricted to 65+ with a mobility
+    challenge; Citylink South's (Coeur d'Alene Tribe) demand-response is
+    ADA-only within 3/4 mile of its fixed route. No general-public
+    service found.
+  - **NM** (Rio Metro, Farmington, Silver City, Gallup, Grants/Cibola,
+    Roswell/Pecos Trails, non-Navajo tribal transit unchecked — treat
+    NM's count as a floor) — not yet re-checked.
+  - **NY** (~15-18 rural counties across the North Country, Finger Lakes,
+    Mohawk Valley, Central NY unchecked) — not yet re-checked.
+  - **ND** (~30 other §5311 rural subrecipients unchecked) — not yet
+    re-checked.
+  - **OR** (Coos, Douglas, Josephine, Umatilla counties unchecked) — not
+    yet re-checked.
+  - **MI** (~10 of MDOT's ~15 rural "Advancing Rural Mobility" providers
+    unchecked) — not yet re-checked.
 - **DC's old "Transport DC" concern entries are now stale/orphaned** — that
   system was already correctly removed in the paratransit purge before
   this wave started; the older concerns.csv rows referencing it as a live
