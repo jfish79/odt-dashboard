@@ -434,8 +434,19 @@ usual; the items below are the *systemic* ones worth surfacing here:
     (Hermiston/Umatilla/Stanfield) reads general-public but couldn't be
     verified from a primary source — flagged, not added, comparable to
     the TX TNC-subsidy scope question.
-  - **MI** (~10 of MDOT's ~15 rural "Advancing Rural Mobility" providers
-    unchecked) — not yet re-checked.
+  - **MI — batch 1 checked, 4 added, 11 remain.** The MDOT "Advancing
+    Rural Mobility Program" roster turned out to be larger than
+    estimated: 23 agencies total (4 pilot + 19 expansion partners), not
+    ~15. 6 were already in the CSV (Benzie, Wexford/WexExpress,
+    Charlevoix, Roscommon, Battle Creek/BCGo, Marquette/MarqTran). Added
+    Blugo (Clinton Transit/St. Johns-DeWitt), I-Ride (Isabella County),
+    I-DART (Ionia), and The Interurban (Saugatuck/Douglas). Blue Water
+    Area Transit checked and excluded (60+/ADA-card gated). Straits
+    Regional Ride checked but left unresolved (ambiguous flex-route vs.
+    demand-response classification, needs a closer look at the
+    operator's own page). **11 providers remain unchecked for a batch
+    2**: Antrim, Arenac, Clare, Crawford, Gladwin, Iosco, Kalkaska,
+    Manistee, Ogemaw, Thunder Bay, Yates Township.
 - **DC's old "Transport DC" concern entries are now stale/orphaned** — that
   system was already correctly removed in the paratransit purge before
   this wave started; the older concerns.csv rows referencing it as a live
