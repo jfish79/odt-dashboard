@@ -399,9 +399,26 @@ usual; the items below are the *systemic* ones worth surfacing here:
     challenge; Citylink South's (Coeur d'Alene Tribe) demand-response is
     ADA-only within 3/4 mile of its fixed route. No general-public
     service found.
-  - **NM** (Rio Metro, Farmington, Silver City, Gallup, Grants/Cibola,
-    Roswell/Pecos Trails, non-Navajo tribal transit unchecked — treat
-    NM's count as a floor) — not yet re-checked.
+  - **NM — checked, 4 added.** Rio Metro Valencia County Dial-A-Ride,
+    Rockin' 66 Express (Cibola County/Grants), Po'Pay Messenger (Ohkay
+    Owingeh Pueblo). Rio Rancho Dial-a-Ride, Farmington's Red Apple
+    Transit Dial-A-Ride, Silver City's Corre Caminos Silver Route, and
+    Gallup Express were checked and confirmed out of scope (ADA/senior-
+    restricted or route-deviation-only, not standalone demand-response).
+    **Corre Cantinas (Silver City/Grant County) added but flagged as a
+    genuine scope edge case** — a weekend-night DWI-prevention "safe ride
+    home" service, not general mobility transit by original purpose, but
+    it satisfies the database's literal eligibility-based scope rules
+    (open to the public, no certification, same-day dispatch). CLAUDE.md
+    doesn't address purpose-restricted services — needs a human policy
+    call, comparable to the TX TNC-subsidy question below. **3 items still
+    unresolved**: Roswell/Pecos Trails Transit (conflicting
+    general-public-vs-paratransit signals), Pueblo of Isleta Dial-a-Ride
+    (eligibility beyond geographic scope unconfirmed), and non-Navajo NM
+    tribal transit generally (grant records found for Jicarilla Apache,
+    Mescalero Apache, Taos/Tesuque/Santa Clara pueblos, but no
+    service-level detail; Sandia and Santa Ana pueblos had no leads at
+    all) — worth a dedicated future pass per pueblo/tribe.
   - **NY** (~15-18 rural counties across the North Country, Finger Lakes,
     Mohawk Valley, Central NY unchecked) — not yet re-checked.
   - **ND** (~30 other §5311 rural subrecipients unchecked) — not yet
