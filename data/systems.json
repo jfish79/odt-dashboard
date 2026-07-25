@@ -17680,5 +17680,26 @@
   "url": "https://burkecounty-ga.gov/departments/burke_transit.php",
   "lat": 33.0946,
   "lng": -82.0146
+ },
+ {
+  "name": "Call to Connect (RMTD)",
+  "state": "IL",
+  "area": "Machesney Park (Winnebago County)",
+  "geo": "Suburban",
+  "operator": "Rockford Mass Transit District (RMTD)",
+  "type": "Demand-Response",
+  "vendor": "Not specified",
+  "booking": "Phone",
+  "window": "Advance (up to 24 hours before trip)",
+  "fare": "Standard fixed-route fare (transfers free)",
+  "hours": "Not specified",
+  "year": "Not specified",
+  "funding": "Local, RTA/State (RMTD general operating funds)",
+  "status": "Active",
+  "fleet": "Not specified",
+  "notes": "Point-deviation/flex connector service bridging RMTD's fixed-route Machesney Park service to the Armory, Meijer, and OSF Rock Cut; vehicle meets riders at the Target on I-73 for transfers.",
+  "url": "rmtd.org/travel-information/paratransit/call-to-connect",
+  "lat": 42.3392,
+  "lng": -89.0523
  }
 ]

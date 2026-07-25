@@ -149,20 +149,25 @@ only the systemic/borderline items are listed here.
     Readi-Ride's ~8-vehicle fleet count (2022 planning doc, may be
     stale), Claremont Dial-a-Ride's conflicting reported hours, Avalon
     COAST's truncated funding-source citation.
-  - **313-agency NTD list was triaged by name/city-size judgment, not
-    exhaustively researched** — only ~55 likely-small-rural-or-city-run
-    operators were sent to research; large Full Reporter fixed-route
-    agencies and clear MPOs/COGs were excluded on a reasonable but
-    unverified assumption. A specific list of NOT-yet-researched entities
-    (Foothill Transit, Access Services, Paratransit Inc./Sacramento,
-    CalVans, Easy Lift Transportation/Goleta, Attentive Transportation
-    LLC/Sacramento — a private NEMT/microtransit contractor worth a
-    second look — and others) is in this pass's full report if resuming.
-  - LA County DPW's ~8 named shuttle programs (Athens, Florence-Firestone,
-    Willowbrook, Lennox, etc.) appear only in 2022 NTD data, absent from
-    2024 — likely discontinued or folded into LA Metro's microtransit
-    zones (possibly already covered by the existing Metro row) — not
-    individually checked.
+  - **The 6 previously-unresearched NTD entities — checked, all
+    out-of-scope (2026-07-24)**: Foothill Transit (fixed-route), Access
+    Services (LA County's ADA paratransit broker), Paratransit Inc./
+    Sacramento (SacRT's ADA contractor), CalVans (statewide vanpool JPA,
+    not demand-response), Easy Lift Transportation/Goleta (ADA/disability-
+    restricted Dial-A-Ride), Attentive Transportation LLC/Sacramento
+    (private NEMT, medical-trip-purpose-restricted, not general-public
+    transit). None added. The 313-agency NTD list overall was still only
+    triaged by name/city-size judgment for the ~55 sent to research, not
+    exhaustively — a future pass could still find more among the
+    untouched majority, but the specific flagged leads are now resolved.
+  - **LA County DPW's ~8 named shuttle programs — checked, out of scope
+    as a category (2026-07-24)**: all still active in 2026 (confirmed via
+    the current LA County Public Works shuttles page), but every one is a
+    fixed-route shuttle with a published timed schedule, not demand-
+    response — not folded into Metro Micro, just genuinely fixed-route.
+    Their absence from 2024 NTD data appears to be a reporting artifact,
+    not a service change. Thread closed, no further per-program checks
+    needed.
 - **NC's NCDOT MEE-NC grant cohort — resolved (2026-07-24)**. Full
   program name is "Mobility for Everyone, Everywhere in NC" (MEE NC), an
   11-community cohort. Follow-up research confirmed all 11 already
@@ -229,14 +234,19 @@ only the systemic/borderline items are listed here.
   Area Rural Transit (BPART)." Knox County/Galesburg **still not
   finalized** — Galesburg council approved its side ~Jul 20 2026, county
   board vote is scheduled Jul 29 2026 (not yet occurred), no vendor named
-  yet; re-check after that date. RMTD "Call to Connect" **still
-  unresolved** — no service by that name found on MetroLINK (metroqc.com)
-  or the existing "RIM Rural Transit" row's own site (ridetherim.org);
-  the RIM Rural Transit site did surface a few "Not specified" field
-  fills for that existing row (hours Mon-Fri 8:00-4:30, explicit 60+
-  no-duration-requirement eligibility) worth applying in an enrichment
-  pass, separate from the "Call to Connect" naming question, which likely
-  needs a phone call (309-788-6335 / 309-788-3360) to fully close out.
+  yet; re-check after that date. **RMTD "Call to Connect" — resolved
+  (2026-07-24)**: it was never Rock Island — "RMTD" is Rockford Mass
+  Transit District. It's a point-deviation/flex connector in Machesney
+  Park (Winnebago County) bridging RMTD's fixed-route service to a few
+  destinations, Advance (24hr) booking, standard fixed-route fare.
+  Added as "Call to Connect (RMTD)." Confidence on general-public
+  eligibility is moderate-high (textually distinguished from RMTD's
+  separate ADA paratransit section across three fetches) but not
+  phone-verified — call 815-961-2230 if higher certainty is needed. The
+  existing "RIM Rural Transit" row (the actual Rock Island/Mercer county
+  operator) still has a few "Not specified" fields a prior pass could
+  fill in (hours Mon-Fri 8:00-4:30, explicit 60+ no-duration-requirement
+  eligibility) — unrelated enrichment opportunity, not yet applied.
 - **OK tribal systems — re-checked, mostly still unclear (2026-07-24)**.
   **Citizen Potawatomi Nation Transit resolved: eligibility-gated, out of
   scope** (per CPN's own criteria — enrolled members 18+, or other Native
