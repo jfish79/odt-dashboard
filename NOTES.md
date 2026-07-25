@@ -419,33 +419,36 @@ usual; the items below are the *systemic* ones worth surfacing here:
     Mescalero Apache, Taos/Tesuque/Santa Clara pueblos, but no
     service-level detail; Sandia and Santa Ana pueblos had no leads at
     all) — worth a dedicated future pass per pueblo/tribe.
-  - **NY — batch 1 checked, 1 added, 6 remain.** Identified 17 genuine
+  - **NY — fully checked and closed, 3 added.** Identified 17 genuine
     candidate-gap counties across the North Country, Finger Lakes,
-    Mohawk Valley, and Central NY. Added Schoharie County Public
-    Transportation's Demand Response service (confirmed general-public).
-    10 excluded with a clear reason each (St. Lawrence/Jefferson: fixed-
-    route feeders only; Essex: no demand-response beyond Medicaid NEMT;
-    Yates: contracted dial-a-ride discontinued 12/31/2025, no successor
-    yet; Herkimer: age-60+ restricted; Fulton/Montgomery: route-deviation
-    + application-gated paratransit only; Madison: county's own page says
-    "currently unavailable"; Cayuga: only disability-certified paratransit
-    + age-60+ rideshare voucher; Chenango: restarted service is
-    fixed-route + route-deviation only). Applied the existing Franklin
-    County CSV precedent consistently: route-deviation (up to 3/4 mile
+    Mohawk Valley, and Central NY. Batch 1 added Schoharie County Public
+    Transportation's Demand Response service and excluded 10 with a clear
+    reason each (St. Lawrence/Jefferson: fixed-route feeders only; Essex:
+    no demand-response beyond Medicaid NEMT; Yates: contracted dial-a-ride
+    discontinued 12/31/2025, no successor yet; Herkimer: age-60+
+    restricted; Fulton/Montgomery: route-deviation + application-gated
+    paratransit only; Madison: county's own page says "currently
+    unavailable"; Cayuga: only disability-certified paratransit + age-60+
+    rideshare voucher; Chenango: restarted service is fixed-route +
+    route-deviation only). Applied the existing Franklin County CSV
+    precedent consistently throughout: route-deviation (up to 3/4 mile
     off a fixed route) and fixed-route-feeder services don't count as
     standalone demand-response, even when a county's own site loosely
-    calls them "demand response." **6 left unresolved for batch 2**:
-    Clinton (source conflict, one fetch returned a mismatched
-    Michigan-area-code result), Hamilton (no dedicated transit page found
-    at all, very low-population county), Lewis (DARTT service described
-    inconsistently as either true door-to-door or route-deviation), Steuben
-    (real NTD-reported Demand Response mode exists, general-public
-    eligibility vs. Council-on-Aging/senior restriction unconfirmed),
-    Cortland (ambiguous "within 3/4 of in-town routes" phrasing, plus
-    eligibility unconfirmed), Otsego (a claimed "Otsego County Bus System"
-    with anywhere-in-county demand-response surfaced only via a source
-    with a suspicious Michigan area code — needs direct verification
-    against the county's own site before treating as real).
+    calls them "demand response." Batch 2 resolved the remaining 6:
+    added Clinton County (CCPT Rural Zone/Dial-A-Ride — confirmed
+    general-public; the earlier Michigan-area-code lead was an unrelated
+    system, correctly discarded) and Steuben County (confirmed
+    general-public via regional mobility management site — note a
+    same-named agency exists in Steuben County, Indiana, don't confuse
+    them); excluded Hamilton (no transit department exists at all, one
+    of only two NY counties with no county highway system either),
+    Lewis (confirmed route-deviation; also caught that
+    lewiscountytransit.org/dartt was actually Lewis County, *Washington*
+    — a bad domain match, not NY at all), Cortland (confirmed
+    route-deviation), and Otsego ("OCBS" was entirely a Michigan system
+    in Gaylord, MI — another bad cross-state lead, discarded; the real NY
+    Otsego Express is the already-excluded route-deviation service).
+    NY's rural-county thread is now fully closed.
   - **ND** (~30 other §5311 rural subrecipients unchecked) — not yet
     re-checked.
   - **ND** (~30 other §5311 rural subrecipients unchecked) — not yet
