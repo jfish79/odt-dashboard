@@ -449,10 +449,33 @@ usual; the items below are the *systemic* ones worth surfacing here:
     in Gaylord, MI — another bad cross-state lead, discarded; the real NY
     Otsego Express is the already-excluded route-deviation service).
     NY's rural-county thread is now fully closed.
-  - **ND** (~30 other §5311 rural subrecipients unchecked) — not yet
-    re-checked.
-  - **ND** (~30 other §5311 rural subrecipients unchecked) — not yet
-    re-checked.
+  - **ND — batch 1 checked, 17 added, 9 remain.** Combined the Dakota
+    Transit Association membership list with ND Community Action
+    Partnership's statewide transit resource guide to reconstruct
+    NDDOT's roster (~34 programs, matching NDDOT's own "approximately 34
+    bus programs" figure — no flat directory page exists). 4 already in
+    CSV (Souris Basin, Standing Rock, NW Dakota, Wildrose). 4 excluded as
+    urban fixed-route (Bis-Man/Bismarck-Mandan, Cities Area Transit/Grand
+    Forks, Fargo MATBUS, Minot City Transit). Added 17 general-public
+    demand-response systems: Benson County, Cavalier County, Dickey
+    County, Dickinson, Golden Valley/Billings County, Hazen, James River
+    (Jamestown), Kenmare Wheels & Meals, Kidder Emmons (Steele), Nutrition
+    United/Can-Do Transportation (Rolla), Pembina County, South Central
+    Transit Network (Valley City), Southwest Public Transit (Bowman),
+    Valley Senior Services' rural-county service only (its separate
+    Fargo-Moorhead metro Senior Ride Service reads senior-restricted, not
+    added), Walsh County, West River Transit, Devils Lake Transit. Three
+    of these (Golden Valley/Billings, Nutrition United/Can-Do, Devils
+    Lake) lean on the CAP-ND brochure's blanket "open to the public"
+    statement rather than first-party language — flagged as second-tier
+    confidence in concerns.csv. **9 remain for batch 2**, mostly a
+    Rolette County/Turtle Mountain cluster that may collapse to fewer
+    net-new systems once disambiguated: Eddy County, Glen Ullin City
+    Transportation, Nelson County, Rolette County Transportation, Royal
+    Coach Transportation, Spirit Lake Transit, Trenton Indian Services,
+    Turtle Mountain Transit, Turtle Mountain Tribal Transit (the last 4
+    Rolette-area names may represent as few as 2 distinct operators under
+    multiple program names).
   - **OR — checked, 2 added.** CoosGO (Coos County/Bandon) and UPTD
     Dial-A-Ride (Douglas County) — both confirmed general-public directly
     on the operator's own site, with same-operator ADA/senior-certified
