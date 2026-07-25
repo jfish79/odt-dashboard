@@ -399,26 +399,34 @@ usual; the items below are the *systemic* ones worth surfacing here:
     challenge; Citylink South's (Coeur d'Alene Tribe) demand-response is
     ADA-only within 3/4 mile of its fixed route. No general-public
     service found.
-  - **NM — checked, 4 added.** Rio Metro Valencia County Dial-A-Ride,
-    Rockin' 66 Express (Cibola County/Grants), Po'Pay Messenger (Ohkay
-    Owingeh Pueblo). Rio Rancho Dial-a-Ride, Farmington's Red Apple
-    Transit Dial-A-Ride, Silver City's Corre Caminos Silver Route, and
-    Gallup Express were checked and confirmed out of scope (ADA/senior-
-    restricted or route-deviation-only, not standalone demand-response).
-    **Corre Cantinas (Silver City/Grant County) added but flagged as a
-    genuine scope edge case** — a weekend-night DWI-prevention "safe ride
-    home" service, not general mobility transit by original purpose, but
-    it satisfies the database's literal eligibility-based scope rules
-    (open to the public, no certification, same-day dispatch). CLAUDE.md
-    doesn't address purpose-restricted services — needs a human policy
-    call, comparable to the TX TNC-subsidy question below. **3 items still
-    unresolved**: Roswell/Pecos Trails Transit (conflicting
-    general-public-vs-paratransit signals), Pueblo of Isleta Dial-a-Ride
-    (eligibility beyond geographic scope unconfirmed), and non-Navajo NM
-    tribal transit generally (grant records found for Jicarilla Apache,
-    Mescalero Apache, Taos/Tesuque/Santa Clara pueblos, but no
-    service-level detail; Sandia and Santa Ana pueblos had no leads at
-    all) — worth a dedicated future pass per pueblo/tribe.
+  - **NM — checked, 6 added, mostly closed (2026-07-25).** Rio Metro
+    Valencia County Dial-A-Ride, Rockin' 66 Express (Cibola County/
+    Grants), Po'Pay Messenger (Ohkay Owingeh Pueblo), plus (added in a
+    follow-up pass) Roswell Dial-a-Ride and Pueblo of Isleta Dial-a-Ride
+    (Rio Metro) — the latter two resolve what were previously conflicting/
+    unconfirmed eligibility signals. Rio Rancho Dial-a-Ride, Farmington's
+    Red Apple Transit Dial-A-Ride, Silver City's Corre Caminos Silver
+    Route, and Gallup Express were checked and confirmed out of scope
+    (ADA/senior-restricted or route-deviation-only, not standalone
+    demand-response). **Corre Cantinas (Silver City/Grant County) added
+    but flagged as a genuine scope edge case** — a weekend-night
+    DWI-prevention "safe ride home" service, not general mobility transit
+    by original purpose, but it satisfies the database's literal
+    eligibility-based scope rules (open to the public, no certification,
+    same-day dispatch). CLAUDE.md doesn't address purpose-restricted
+    services — needs a human policy call, comparable to the TX TNC-subsidy
+    question below. **Non-Navajo NM tribal transit re-checked
+    (2026-07-25), genuinely no service found for 6 of 7**: Jicarilla
+    Apache, Taos, Tesuque, and Santa Clara are served only by NCRTD fixed
+    routes (no standalone tribal demand-response); Mescalero Apache
+    contracts to Ztrans (Otero County) but booking/eligibility type
+    unconfirmed; Sandia Pueblo's transportation program is medical/
+    elder-restricted, excluded. **Santa Ana Pueblo remains the one
+    genuinely promising unresolved lead** — a secondary DOL/FTA filing
+    says beneficiaries include "the tribe and other general public," but
+    the tribe's own transportation pages show only school-transportation
+    content; worth one more direct call (Transportation Manager David
+    Griego) if revisited.
   - **NY — fully checked and closed, 3 added.** Identified 17 genuine
     candidate-gap counties across the North Country, Finger Lakes,
     Mohawk Valley, and Central NY. Batch 1 added Schoharie County Public
@@ -488,17 +496,21 @@ usual; the items below are the *systemic* ones worth surfacing here:
     "South Central Transit Network" was missing Nelson County from its
     county list despite serving it — added. **ND's thread, and the whole
     7-state re-sweep, is now fully closed.**
-  - **OR — checked, 2 added.** CoosGO (Coos County/Bandon) and UPTD
-    Dial-A-Ride (Douglas County) — both confirmed general-public directly
-    on the operator's own site, with same-operator ADA/senior-certified
-    paratransit siblings (CoosLIFT, UPTD ParaTransit) correctly excluded.
-    Josephine County's app-based "Transit On Demand" evening service is
-    confirmed discontinued per JCT's own current alerts page. Umatilla
-    County's Kayak Public Transit demand-response is certification-gated
-    ADA paratransit; a separately-referenced "WORC Taxi Voucher Program"
-    (Hermiston/Umatilla/Stanfield) reads general-public but couldn't be
-    verified from a primary source — flagged, not added, comparable to
-    the TX TNC-subsidy scope question.
+  - **OR — fully checked and closed, 2 added.** CoosGO (Coos County/
+    Bandon) and UPTD Dial-A-Ride (Douglas County) — both confirmed
+    general-public directly on the operator's own site, with same-operator
+    ADA/senior-certified paratransit siblings (CoosLIFT, UPTD ParaTransit)
+    correctly excluded. Josephine County's app-based "Transit On Demand"
+    evening service is confirmed discontinued per JCT's own current
+    alerts page. Umatilla County's Kayak Public Transit demand-response is
+    certification-gated ADA paratransit. **WORC Taxi Voucher Program —
+    re-checked (2026-07-25), confirmed excluded**: WORC stands for
+    "Workforce," not a general community program — confirmed via
+    hermiston.gov's own page that it's explicitly employment-restricted
+    (proof of current employment required, intended exclusively for work
+    commutes) and is a subsidized third-party taxi-voucher scheme
+    (Hermiston Taxi Company), not an agency-operated demand-response
+    system. The earlier "reads general-public" summary was incorrect.
   - **MI — fully checked and closed, 16 added total.** The MDOT
     "Advancing Rural Mobility Program" roster turned out larger than
     estimated: 23 agencies total (4 pilot + 19 expansion partners), not
