@@ -40,9 +40,17 @@ only the systemic/borderline items are listed here.
   Regional Coaches" row). Lincoln County Transit's data is notably thinner
   than the rest of this batch (no live county webpage found, sourced only
   from an FTA NTD profile) — worth a dedicated re-check.
-  **Remaining ~10 counties for batch 3**: Catoosa, Crawford, Hancock (name
-  suggests possible senior-restriction, check eligibility), Talbot,
-  McDuffie, Tift, Dade, Dooly, Wilkes, Burke counties.
+  **Batch 3 (final, 10 checked, 2026-07-24): all 10 confirmed and added**
+  (Catoosa, Crawford, Hancock, Talbot, McDuffie, Tift/"Tift Lift", Dade,
+  Dooly, Wilkes, Burke counties). Hancock County was double-checked for
+  the possible senior-restriction the "Hancock County Senior Center /
+  Transit" combined naming suggested — FTA NTD classifies it as "Rural
+  General Public Transit" across three profile years (2014/2016/2019)
+  and the county's own page states no eligibility restriction; confirmed
+  general-public despite sharing office space with the senior center.
+  **GA's county-roster follow-up thread is now closed** — all ~40
+  originally-flagged leads have been checked across 3 batches (36
+  confirmed and added, 4 excluded as duplicates/still-planning).
 - **TX 24-hour-advance policy question, affects ~7 systems**: several
   added TX rural systems (Panhandle Transit, PTS, Valley Metro/LRGVDC,
   Alamo Regional Transit, GoBus/ETCOG, both TRAX systems, HOTCOG) are
