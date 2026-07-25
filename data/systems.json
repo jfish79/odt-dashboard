@@ -18163,5 +18163,26 @@
   "url": "https://www.cheboygancounty.net/departments-services/straits-regional-ride/",
   "lat": 45.6469,
   "lng": -84.4738
+ },
+ {
+  "name": "Schoharie County Public Transportation (Demand Response)",
+  "state": "NY",
+  "area": "Schoharie County - service one day/week per outlying area, bringing riders to Cobleskill",
+  "geo": "Rural",
+  "operator": "Schoharie County Public Transportation (operated by Schoharie County Council of Senior Citizens Inc.)",
+  "type": "Demand-Response",
+  "vendor": "Not specified",
+  "booking": "Phone",
+  "window": "Advance",
+  "fare": "Not specified",
+  "hours": "Dispatch Mon-Fri 7:00am-5:00pm; demand-response routes run one day/week per outlying area",
+  "year": "Not specified",
+  "funding": "Not specified (NYSDOT 5311 rural formula program plausible but not confirmed on source page)",
+  "status": "Active",
+  "fleet": "Not specified",
+  "notes": "Operator's own site states service is \"available to ALL residents of Schoharie County\"; brings riders from outlying areas to Cobleskill for shopping/medical/pharmacy, by appointment, one day/week per area. Reservations needed by 12:00pm the prior business day (or Friday for Monday trips). Distinct from the county's separate Route Deviation and fixed Commuter Routes to Albany.",
+  "url": "ridescpt.com",
+  "lat": 42.6759,
+  "lng": -74.4826
  }
 ]
