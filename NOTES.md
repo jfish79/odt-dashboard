@@ -468,14 +468,26 @@ usual; the items below are the *systemic* ones worth surfacing here:
     of these (Golden Valley/Billings, Nutrition United/Can-Do, Devils
     Lake) lean on the CAP-ND brochure's blanket "open to the public"
     statement rather than first-party language — flagged as second-tier
-    confidence in concerns.csv. **9 remain for batch 2**, mostly a
-    Rolette County/Turtle Mountain cluster that may collapse to fewer
-    net-new systems once disambiguated: Eddy County, Glen Ullin City
-    Transportation, Nelson County, Rolette County Transportation, Royal
-    Coach Transportation, Spirit Lake Transit, Trenton Indian Services,
-    Turtle Mountain Transit, Turtle Mountain Tribal Transit (the last 4
-    Rolette-area names may represent as few as 2 distinct operators under
-    multiple program names).
+    confidence in concerns.csv. **Batch 2 (final) resolved the remaining
+    9, adding 4.** The Rolette County/Turtle Mountain cluster of 5 names
+    turned out to be 3 real systems: Rolette County Transit (Nutrition
+    United Inc., non-reservation Rolette County — distinct from that same
+    nonprofit's Towner County "Can-Do" service) and Turtle Mountain
+    Transit (= "Turtle Mountain Tribal Transit," one system under two
+    names, confirmed via matching phone numbers and a single FTA NTD ID)
+    were both added; Royal Coach Transportation was confirmed defunct
+    (involuntarily dissolved 2018) and excluded. Also added Spirit Lake
+    Transit (Fort Totten — a genuinely separate tribe/reservation, not
+    part of the Turtle Mountain cluster) and Trenton Indian Service Area
+    Aging Program (Williams County). Eddy County, Glen Ullin, and Nelson
+    County were NOT added as new rows — each turned out to be the same
+    operator as an existing row, serving an area that row's Region field
+    hadn't documented. Two existing rows were corrected as a result:
+    "Nutrition United Transit (Can-Do Transportation)" had mislabeled
+    Rolla (the Rolette County seat) as being in Towner County — fixed;
+    "South Central Transit Network" was missing Nelson County from its
+    county list despite serving it — added. **ND's thread, and the whole
+    7-state re-sweep, is now fully closed.**
   - **OR — checked, 2 added.** CoosGO (Coos County/Bandon) and UPTD
     Dial-A-Ride (Douglas County) — both confirmed general-public directly
     on the operator's own site, with same-operator ADA/senior-certified
