@@ -1,0 +1,216 @@
+[
+ {
+  "name": "CARTA GO",
+  "state": "TN",
+  "boundary_type": "city",
+  "fidelity": "approximate",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Chattanooga"
+   }
+  ],
+  "confidence": 0.7,
+  "note": "Service covers specific corridors within Chattanooga (initially Enterprise South/Amnicola Highway corridor; expanding to East Chattanooga/Route 10)"
+ },
+ {
+  "name": "Clarksville Transit System Demand Response",
+  "state": "TN",
+  "boundary_type": "county",
+  "fidelity": "approximate",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Montgomery"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Countywide demand-response serving areas outside fixed CTS routes"
+ },
+ {
+  "name": "Groove On-Demand",
+  "state": "TN",
+  "boundary_type": "city",
+  "fidelity": "approximate",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Memphis"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Service covers multiple zones within Memphis (Downtown, Medical District, South City, New Chicago); exact boundaries not specified"
+ },
+ {
+  "name": "katConnect",
+  "state": "TN",
+  "boundary_type": "city",
+  "fidelity": "approximate",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Knoxville"
+   }
+  ],
+  "confidence": 0.7,
+  "note": "Service limited to North Knoxville area (apartment complexes: Holston Ridge, Cassell Ridge, Elk Hill Way)"
+ },
+ {
+  "name": "NET Trans CONNECT",
+  "state": "TN",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Greeneville"
+   },
+   {
+    "layer": "place",
+    "name": "Tusculum"
+   },
+   {
+    "layer": "place",
+    "name": "Elizabethton"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Three separate municipalities in Northeast Tennessee"
+ },
+ {
+  "name": "NWTHRA Rural Public Transportation",
+  "state": "TN",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Benton"
+   },
+   {
+    "layer": "county",
+    "name": "Carroll"
+   },
+   {
+    "layer": "county",
+    "name": "Crockett"
+   },
+   {
+    "layer": "county",
+    "name": "Dyer"
+   },
+   {
+    "layer": "county",
+    "name": "Gibson"
+   },
+   {
+    "layer": "county",
+    "name": "Henry"
+   },
+   {
+    "layer": "county",
+    "name": "Lake"
+   },
+   {
+    "layer": "county",
+    "name": "Obion"
+   },
+   {
+    "layer": "county",
+    "name": "Weakley"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Nine-county regional demand-response service in Northwest Tennessee"
+ },
+ {
+  "name": "Pick Up Upper Cumberland",
+  "state": "TN",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Cookeville"
+   },
+   {
+    "layer": "place",
+    "name": "Algood"
+   },
+   {
+    "layer": "place",
+    "name": "Baxter"
+   },
+   {
+    "layer": "place",
+    "name": "Monterey"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Four municipalities in Putnam County"
+ },
+ {
+  "name": "SETHRA Transit",
+  "state": "TN",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Bledsoe"
+   },
+   {
+    "layer": "county",
+    "name": "Bradley"
+   },
+   {
+    "layer": "county",
+    "name": "Franklin"
+   },
+   {
+    "layer": "county",
+    "name": "Grundy"
+   },
+   {
+    "layer": "county",
+    "name": "Hamilton"
+   },
+   {
+    "layer": "county",
+    "name": "Marion"
+   },
+   {
+    "layer": "county",
+    "name": "McMinn"
+   },
+   {
+    "layer": "county",
+    "name": "Meigs"
+   },
+   {
+    "layer": "county",
+    "name": "Polk"
+   },
+   {
+    "layer": "county",
+    "name": "Rhea"
+   },
+   {
+    "layer": "county",
+    "name": "Sequatchie"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Eleven-county regional demand-response service in Southeast Tennessee"
+ },
+ {
+  "name": "WeGo Link",
+  "state": "TN",
+  "boundary_type": "county",
+  "fidelity": "approximate",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Davidson"
+   }
+  ],
+  "confidence": 0.7,
+  "note": "First/last-mile microtransit covering 20+ zones across Davidson County (Antioch, Bellevue, Bordeaux, Goodlettsville, Hermitage, Maplewood, Old Hickory, Skyline, South Nashville, Sylvan Park, and others); exact zone boundaries not specified"
+ }
+]

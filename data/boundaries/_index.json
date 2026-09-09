@@ -28,6 +28,8 @@
   "PA",
   "RI",
   "SC",
+  "TN",
+  "TX",
   "UT",
   "VA",
   "VT",
@@ -146,6 +148,14 @@
   },
   "SC": {
    "features": 5,
+   "updated": "2026-09"
+  },
+  "TN": {
+   "features": 9,
+   "updated": "2026-09"
+  },
+  "TX": {
+   "features": 33,
    "updated": "2026-09"
   },
   "UT": {
