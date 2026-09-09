@@ -1,0 +1,381 @@
+[
+ {
+  "name": "Brunswick Breeze",
+  "state": "GA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Brunswick"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "City of Brunswick, Glynn County; city-level operator"
+ },
+ {
+  "name": "CAT SMART Transit",
+  "state": "GA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Savannah"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.65,
+  "note": "West Chatham Zone 2; microtransit zone within Savannah connecting to fixed-route buses"
+ },
+ {
+  "name": "CATS Micro-transit",
+  "state": "GA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Canton"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Pilot in Canton, Cherokee County; replaced fixed bus routes within city"
+ },
+ {
+  "name": "CobbLinc Go",
+  "state": "GA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Austell"
+   },
+   {
+    "layer": "auto",
+    "name": "Powder Springs"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Currently serves South Cobb (Austell, Powder Springs); replaced former FLEX service; planning expansion to Mableton, Acworth, Kennesaw"
+ },
+ {
+  "name": "Cook County Transit",
+  "state": "GA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Cook"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "County-operated demand-response system"
+ },
+ {
+  "name": "Crawford County Transit",
+  "state": "GA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Crawford"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Base service area is Crawford County (all residents eligible); the county's own site (crawfordcountyga.org/transit-department) states it also transports residents TO Bibb, Houston, Peach, Taylor, and Upson counties for trip purposes (e.g. medical, shopping), but does not describe pickup coverage or a service zone within those five counties, so they are not drawn as separate coverage units here -- see URL for the destination-county language."
+ },
+ {
+  "name": "Habersham County Transit",
+  "state": "GA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Habersham"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "County-operated demand-response system"
+ },
+ {
+  "name": "Hancock County Transit",
+  "state": "GA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Hancock"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "County-operated demand-response system"
+ },
+ {
+  "name": "Haralson County Transit",
+  "state": "GA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Haralson"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "County-operated demand-response system"
+ },
+ {
+  "name": "Henry Connect Microtransit",
+  "state": "GA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "McDonough"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "McDonough Transit Zone in Henry County; enhancement to existing demand-response with planned expansion to Stockbridge"
+ },
+ {
+  "name": "Jackson County Transport",
+  "state": "GA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Jackson"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "County-operated demand-response system"
+ },
+ {
+  "name": "Lincoln County Transit",
+  "state": "GA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Lincoln"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "County-operated demand-response system"
+ },
+ {
+  "name": "MARTA Reach",
+  "state": "GA",
+  "boundary_type": "needs_research",
+  "note": "12 named zones (West Atlanta, Kirkwood/Candler Park, County Line, Lakewood, Oakley Industrial, Fulton Industrial, East Point, Hillandale, Candler-McAfee/Belvedere Park, Cedar Grove, Gresham Park, North Fulton) spread across at least Fulton and DeKalb counties with no stated sizes or boundary streets. Checked MARTA fact sheet PDF (itsmarta.com Reach fact sheet) and roughdraftatlanta.com/2026/03/02/marta-reach-on-demand-transit/ - both name the zones but give no square-mileage or street boundaries. No single containing county/city applies across all 12 zones; a human would need MARTA's internal zone-map GIS data to resolve further."
+ },
+ {
+  "name": "MTA Rapid Transit",
+  "state": "GA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Bibb"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Pilot program in downtown Macon and Gray Hwy areas; serves consolidated Macon-Bibb County"
+ },
+ {
+  "name": "Murray County Transit",
+  "state": "GA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Murray"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "County-operated demand-response system"
+ },
+ {
+  "name": "Pierce County Transit",
+  "state": "GA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Pierce"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "County-operated demand-response system"
+ },
+ {
+  "name": "Ride Gwinnett Microtransit",
+  "state": "GA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Snellville"
+   },
+   {
+    "layer": "auto",
+    "name": "Lawrenceville"
+   },
+   {
+    "layer": "auto",
+    "name": "Norcross"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Three cities in Gwinnett County; system expanded to Norcross/Gateway85 CID in Sept 2024"
+ },
+ {
+  "name": "Roll With Us (METRA)",
+  "state": "GA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Columbus"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "Service limited to Uptown Columbus area, not citywide coverage"
+ },
+ {
+  "name": "Shift On Demand",
+  "state": "GA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Atlanta"
+   },
+   {
+    "layer": "auto",
+    "name": "College Park"
+   },
+   {
+    "layer": "auto",
+    "name": "East Point"
+   },
+   {
+    "layer": "auto",
+    "name": "Hapeville"
+   },
+   {
+    "layer": "auto",
+    "name": "South Fulton"
+   },
+   {
+    "layer": "auto",
+    "name": "Forest Park"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.55,
+  "note": "Service area is the ATL Airport Community Improvement Districts (AACIDs), a ~15.7 sq mi district spanning portions of Fulton and Clayton counties, covering portions of the cities of Atlanta, College Park, East Point, Hapeville, South Fulton, and Forest Park - not the full extent of any of these cities. Sources: web.gachamber.com/blog/Government/ATL-Airport-Community-Improvement-Districts-(CIDs)-3120, aacids.com/airport-west-board, shift-atl.com/ondemand/. No CID-specific boundary shapefile found publicly, so the six named cities are used as an approximate proxy."
+ },
+ {
+  "name": "Talbot County Transit",
+  "state": "GA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Talbot"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "County-wide demand-response service operated by Talbot County Government"
+ },
+ {
+  "name": "Taylor County Transit",
+  "state": "GA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Taylor"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "County-operated demand-response system"
+ },
+ {
+  "name": "The Buc",
+  "state": "GA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Atlanta"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "Serves Buckhead neighborhood in Atlanta; first-mile/last-mile to MARTA rail"
+ },
+ {
+  "name": "Valdosta On-Demand",
+  "state": "GA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Valdosta"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "First full-city microtransit system in Georgia"
+ },
+ {
+  "name": "WeGo",
+  "state": "GA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Gainesville"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Replaced fixed-route bus service within Gainesville city limits"
+ },
+ {
+  "name": "Wilkes County Transit",
+  "state": "GA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Washington",
+    "county": "Wilkes"
+   },
+   {
+    "layer": "auto",
+    "name": "Tignall"
+   },
+   {
+    "layer": "auto",
+    "name": "Rayle"
+   }
+  ],
+  "confidence": 0.6,
+  "note": "Text describes scheduled city departures (7:30am/10am/12:30pm/2pm/4pm) plus on-demand service within Washington, not a county-wide zone; also names Tignall and Rayle as served towns, so mapped as those three places rather than the full county. https://www.wilkescountyga.org/transit"
+ },
+ {
+  "name": "Wilkinson County Transit",
+  "state": "GA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Wilkinson"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "County-operated demand-response system"
+ }
+]

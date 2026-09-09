@@ -5,6 +5,8 @@
   "CT",
   "DC",
   "DE",
+  "FL",
+  "GA",
   "HI",
   "ID",
   "IN",
@@ -52,6 +54,14 @@
   },
   "DE": {
    "features": 1,
+   "updated": "2026-09"
+  },
+  "FL": {
+   "features": 42,
+   "updated": "2026-09"
+  },
+  "GA": {
+   "features": 25,
    "updated": "2026-09"
   },
   "HI": {

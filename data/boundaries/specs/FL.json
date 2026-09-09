@@ -1,0 +1,631 @@
+[
+ {
+  "name": "ART On Demand (St. Lucie County)",
+  "state": "FL",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Port St. Lucie",
+    "fidelity": "approximate"
+   },
+   {
+    "layer": "place",
+    "name": "Fort Pierce",
+    "fidelity": "approximate"
+   }
+  ],
+  "confidence": 0.6,
+  "note": "3 partial zones, not full-city coverage: Zone 1 is SW Port St. Lucie only (not the whole city); Zone 2 is the St. Lucie West/Torino area, an unincorporated CDP west of Port St. Lucie with no separately mappable Census/place boundary in this tool, so it is not drawn as its own polygon here; Zone 3 is SW Fort Pierce plus the area around Treasure Coast International Airport (not the whole city). No published zone-boundary map or acreage; only named transfer points between zones (Port St. Lucie Intermodal, Bayshore Park & Ride, Jobs Express Terminal; White City Park and a Ralls Rd point in Fort Pierce). Source: https://www.stlucieco.gov/departments-and-services/area-regional-transit/our-services/microtransit"
+ },
+ {
+  "name": "BocaConnect",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Boca Raton"
+   }
+  ],
+  "confidence": 0.85,
+  "fidelity": "approximate",
+  "note": "Downtown Boca Raton and Brightline station area; partial city coverage"
+ },
+ {
+  "name": "Breeze OnDemand",
+  "state": "FL",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Sarasota"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "County-wide service across 3 zones in Sarasota County."
+ },
+ {
+  "name": "Circuit Fort Lauderdale",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Fort Lauderdale"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Service focuses on Downtown Fort Lauderdale and Brightline station connections."
+ },
+ {
+  "name": "Circuit Pompano Beach",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Pompano Beach"
+   }
+  ],
+  "confidence": 0.85,
+  "fidelity": "approximate",
+  "note": "Fisher Family Pier & Business Districts; partial city coverage"
+ },
+ {
+  "name": "Circuit Shuttle WPB",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "West Palm Beach"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Service concentrated in Downtown West Palm Beach and transit connections."
+ },
+ {
+  "name": "Circuit Wilton Manors",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Wilton Manors"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Wilton Manors citywide service"
+ },
+ {
+  "name": "Circuit-by-the-sea",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Lauderdale-By-The-Sea"
+   }
+  ],
+  "confidence": 0.85,
+  "fidelity": "approximate",
+  "note": "Lauderdale-By-The-Sea and Galt Ocean Mile area; partial town coverage"
+ },
+ {
+  "name": "FlexTransit",
+  "state": "FL",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Escambia"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "County microtransit system operated by ECAT; served from Pensacola area"
+ },
+ {
+  "name": "Freebee Aventura",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Aventura"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Aventura; service covers city"
+ },
+ {
+  "name": "Freebee Coral Gables",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Coral Gables"
+   }
+  ],
+  "confidence": 0.85,
+  "fidelity": "approximate",
+  "note": "Downtown Coral Gables; partial city coverage"
+ },
+ {
+  "name": "Freebee Deerfield Beach",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Deerfield Beach"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "Pickups allowed from anywhere in the City of Deerfield Beach, but dropoffs/trips must begin or end in the CRA District 'Inner Zone' along Hillsboro Blvd east of US-1 and the beachside area (no street-level boundary published, map image only). Service is a subset of city limits, not citywide. Sources: deerfield-beach.com/2189/Freebee-Rideshare, ridefreebee.com/service-areas/deerfield-beach."
+ },
+ {
+  "name": "Freebee Doral",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Doral"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City-wide Freebee service in Doral."
+ },
+ {
+  "name": "Freebee Downtown Miami & Brickell",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Miami"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.8,
+  "note": "Service covers Downtown Miami, Brickell, and Arts & Entertainment District neighborhoods."
+ },
+ {
+  "name": "Freebee Fort Pierce",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Fort Pierce"
+   }
+  ],
+  "confidence": 0.85,
+  "fidelity": "approximate",
+  "note": "Downtown Fort Pierce & Beachside zones; partial city coverage"
+ },
+ {
+  "name": "Freebee Islamorada",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Islamorada, Village of Islands"
+   }
+  ],
+  "fidelity": "exact",
+  "confidence": 0.9,
+  "note": "Village-wide Freebee microtransit service covering all of Islamorada, Village of Islands, Monroe County. https://www.islamorada.fl.us/384/Freebee-Ridesharing-Services"
+ },
+ {
+  "name": "Freebee Key Biscayne",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Key Biscayne"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Village of Key Biscayne, island community."
+ },
+ {
+  "name": "Freebee Kissimmee",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Kissimmee"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Downtown and commercial zone service within Kissimmee city."
+ },
+ {
+  "name": "Freebee Miami Gardens",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Miami Gardens"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City-wide service covering Miami Gardens."
+ },
+ {
+  "name": "Freebee Miami Lakes",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Miami Lakes"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Town of Miami Lakes service area."
+ },
+ {
+  "name": "Freebee Palmetto Bay",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Palmetto Bay"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Village-wide service in Palmetto Bay, South Dade area."
+ },
+ {
+  "name": "Freebee Pinecrest",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Pinecrest"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Village of Pinecrest, suburban Miami-Dade community."
+ },
+ {
+  "name": "Freebee Plantation",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Plantation"
+   }
+  ],
+  "confidence": 0.85,
+  "fidelity": "approximate",
+  "note": "Plantation Midtown area with expansion planned to Covenant Village and Plantation Central Park"
+ },
+ {
+  "name": "Freebee Wynwood & Midtown",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Miami"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.8,
+  "note": "Service covers Wynwood Arts District, Midtown, and Edgewater neighborhoods within Miami."
+ },
+ {
+  "name": "Go Glades",
+  "state": "FL",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Palm Beach"
+   }
+  ],
+  "confidence": 0.75,
+  "fidelity": "approximate",
+  "note": "Glades Region (rural area near Lake Okeechobee in Palm Beach County)"
+ },
+ {
+  "name": "HARTFlex",
+  "state": "FL",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Hillsborough"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "County-wide demand-response service; operates route-deviation zones within Hillsborough County."
+ },
+ {
+  "name": "Island Hopper",
+  "state": "FL",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Nassau"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.6,
+  "note": "NassauTRANSIT's Island Hopper covers the northern half of Amelia Island (fixed loop from Fernandina Beach City Hall), with Saturday on-demand service described by the operator as 'island-wide,' extending beyond Fernandina Beach city limits to unincorporated Amelia Island (e.g. American Beach). No incorporated-place or zone-size data exists for the island itself, so Nassau County is shown as an approximate proxy — actual coverage is limited to Amelia Island, not the mainland county. Sources: nassautransit.org/island-hopper/; fernandinaobserver.org, \"NassauTRANSIT re-launches the Island Hopper with Saturday Island-wide service.\""
+ },
+ {
+  "name": "JTA ReadiRide",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Jacksonville"
+   }
+  ],
+  "confidence": 0.8,
+  "fidelity": "approximate",
+  "note": "14 zones within Jacksonville"
+ },
+ {
+  "name": "MB Freebee (Miami Beach)",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Miami Beach"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Service covers mid and north beach neighborhoods within Miami Beach city limits."
+ },
+ {
+  "name": "MetroConnect (Miami-Dade)",
+  "state": "FL",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Miami-Dade"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "County-wide multi-zone service (10 zones as of latest configuration)."
+ },
+ {
+  "name": "MetroConnect SoMi",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "South Miami"
+   }
+  ],
+  "confidence": 0.75,
+  "note": "Primary service in South Miami, with connections to Coral Gables and Pinecrest."
+ },
+ {
+  "name": "Mobility on Demand (Gainesville RTS)",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Gainesville"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "Microtransit zone in East Gainesville; service area is subset of city limits"
+ },
+ {
+  "name": "NeighborLink",
+  "state": "FL",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Orange"
+   },
+   {
+    "layer": "county",
+    "name": "Seminole"
+   },
+   {
+    "layer": "county",
+    "name": "Osceola"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "Regional service with 10 zones across Orange, Seminole, and Osceola counties; operates with LYNX/SunRail transfers."
+ },
+ {
+  "name": "Ride DTO",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Orlando"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Service focused on Downtown Orlando with connections to SunRail stations."
+ },
+ {
+  "name": "Scout (Seminole County)",
+  "state": "FL",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Seminole"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "County-wide service replacing most LYNX bus routes across 5 zones."
+ },
+ {
+  "name": "StarMetro FLEX (Lake Jackson & Southside)",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Tallahassee"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "Demand-response service in Lake Jackson and Southside zones within city limits"
+ },
+ {
+  "name": "Sun Shuttle (Hollywood East)",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Hollywood"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.9,
+  "note": "Service focuses on Hollywood Beach and Downtown area; city-wide coverage assumed."
+ },
+ {
+  "name": "The Snapper",
+  "state": "FL",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Safety Harbor"
+   },
+   {
+    "layer": "place",
+    "name": "Clearwater"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.8,
+  "note": "Microtransit service connecting Safety Harbor to Clearwater area in Pinellas County."
+ },
+ {
+  "name": "The Squeeze",
+  "state": "FL",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Lakeland"
+   },
+   {
+    "layer": "place",
+    "name": "Bartow"
+   },
+   {
+    "layer": "place",
+    "name": "Lake Wales"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Golf-cart shuttle service serving Lakeland, Bartow, and Lake Wales in Polk County."
+ },
+ {
+  "name": "TheBus Ride (Route 6)",
+  "state": "FL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Brooksville"
+   }
+  ],
+  "confidence": 0.7,
+  "note": "Demand-response service on Route 6 operating in Brooksville; exact service area TBD"
+ },
+ {
+  "name": "ULTRA On-Demand Transit",
+  "state": "FL",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Lee"
+   }
+  ],
+  "confidence": 0.8,
+  "fidelity": "approximate",
+  "note": "Specific underperforming zones within Lee County"
+ },
+ {
+  "name": "VoRide",
+  "state": "FL",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "DeLand"
+   },
+   {
+    "layer": "auto",
+    "name": "Orange City"
+   },
+   {
+    "layer": "auto",
+    "name": "Deltona"
+   },
+   {
+    "layer": "auto",
+    "name": "DeBary"
+   },
+   {
+    "layer": "auto",
+    "name": "New Smyrna Beach"
+   },
+   {
+    "layer": "auto",
+    "name": "Edgewater"
+   },
+   {
+    "layer": "auto",
+    "name": "Ormond Beach"
+   },
+   {
+    "layer": "auto",
+    "name": "Ponce Inlet"
+   },
+   {
+    "layer": "auto",
+    "name": "Daytona Beach"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "VoRide zones are named-place subsets, not full county: West Volusia covers DeLand, Orange City, Deltona, DeBary; East Volusia covers New Smyrna Beach and Edgewater (former NSB FLEX zones), Ormond Beach (north of Granada Blvd only, both beachside and mainland), Ponce Inlet (south of Dunlawton Ave, via Uber Transit), and a Daytona Beach night-service zone (excludes beachside). Zones do not connect to each other or span the full county. Source: votran.org/take-a-trip/voride.stml."
+ }
+]
