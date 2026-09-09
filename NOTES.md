@@ -35,9 +35,27 @@ push per stage on `state-expansion`). Progress:
   only its Broken Arrow zone is drawn; other Tulsa-metro zones need MetroLink maps.
 - Stage 11 (MT, ND, SD, WA, OR): done 2026-09-09. **All 12 stages complete.**
 
-Follow-up list (rows left as `needs_research`, or approximate proxies worth a
-human look) is visible in the spec files: search for `"needs_research"` and
-`"fidelity": "approximate"` with confidence <= 0.5.
+**Result (2026-09-09):** 659 of 665 rows have a polygon (99%), all 50 states
+have a boundary file, ~5.9 MB total across per-state files (largest TX 704 KB).
+421 features are exact administrative units, 238 are labeled approximate
+(containing city/county proxy, stated-size circle, or municipality + radius).
+
+Six rows have no polygon — all are multi-zone systems whose zones are named by
+neighborhood with no published size; each needs the agency's zone map traced:
+GRTC LINK (VA), MARTA Reach (GA), Metro Micro (CA), Mid-City GO (CA),
+Southeastern Connect (CA), FAST Connect (CA).
+
+Low-confidence proxies (confidence <= 0.5) worth a human look are listed by
+`python3 scripts/boundaries/...` — or grep the spec files for
+`"confidence": 0.5` / `0.4`: SV Hopper, Via West Sacramento, Hele-On (HI),
+Po'Pay Messenger, MTTA On-Demand, Harris County Transit Plus, High Valley
+Transit Micro, UTA On Demand, Arlington MICRO, GLTC Flex, MicroCAT, FlexRide
+Milwaukee, Oneida Public Transit, Basin Connect North (OR).
+
+Pin-vs-polygon mismatches the resolver flagged but which are pin problems, not
+polygon problems (CSV pin is a hub/city centroid, service is elsewhere): Fort
+Belknap Transit (MT), Southwest Transit (OK), Clallam Transit Interlink (WA),
+MTTA On-Demand (OK, pin in Tulsa, zone in Broken Arrow).
 
 NC housekeeping: NC.geojson still carries three features for rows removed in
 the scope sweep (KARTS, Tar River Transit RGP, YVEDDI GOTransit); the NC merge

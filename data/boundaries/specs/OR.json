@@ -23,15 +23,11 @@
    {
     "layer": "auto",
     "name": "La Pine"
-   },
-   {
-    "layer": "auto",
-    "name": "Bend"
    }
   ],
   "fidelity": "approximate",
-  "confidence": 0.65,
-  "note": "Operator's own site does not list towns, but Herald and News coverage (heraldandnews.com, 'Basin Transit Services announces new Basin Connect North program') and Transit App's published route (transitapp.com Basin Connect North) confirm stops at Beaver Marsh, Chemult, Crescent, Gilchrist, La Pine, and Bend, spanning North Klamath County into Deschutes County."
+  "confidence": 0.5,
+  "note": "Operator's own site does not list towns, but Herald and News coverage (heraldandnews.com, 'Basin Transit Services announces new Basin Connect North program') and Transit App's published route (transitapp.com Basin Connect North) confirm stops at Beaver Marsh, Chemult, Crescent, Gilchrist, La Pine, and Bend, spanning North Klamath County into Deschutes County. Bend (Deschutes County) omitted from the polygon as a connection destination rather than a service zone."
  },
  {
   "name": "CET Rural Dial-A-Ride",
