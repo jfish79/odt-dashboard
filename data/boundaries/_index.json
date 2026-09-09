@@ -2,7 +2,9 @@
  "states": [
   "AL",
   "AR",
+  "AZ",
   "CA",
+  "CO",
   "CT",
   "DC",
   "DE",
@@ -23,6 +25,7 @@
   "NE",
   "NH",
   "NJ",
+  "NM",
   "NV",
   "NY",
   "OH",
@@ -47,8 +50,16 @@
    "features": 4,
    "updated": "2026-09"
   },
+  "AZ": {
+   "features": 27,
+   "updated": "2026-09"
+  },
   "CA": {
    "features": 90,
+   "updated": "2026-09"
+  },
+  "CO": {
+   "features": 23,
    "updated": "2026-09"
   },
   "CT": {
@@ -129,6 +140,10 @@
   },
   "NJ": {
    "features": 8,
+   "updated": "2026-09"
+  },
+  "NM": {
+   "features": 7,
    "updated": "2026-09"
   },
   "NV": {

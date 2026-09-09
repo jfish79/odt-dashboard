@@ -1,0 +1,140 @@
+[
+ {
+  "name": "ABQ RIDE Connect",
+  "state": "NM",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Albuquerque"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Three on-demand zones within Albuquerque city limits: Southwest Mesa Zone, Rio Grande Zone (active since March 2024), and South Valley Zone (launching May 2026). Service area varies by zone."
+ },
+ {
+  "name": "Corre Cantinas",
+  "state": "NM",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Grant"
+   },
+   {
+    "layer": "county",
+    "name": "Luna"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Weekend-night safe-ride service in Grant County (Silver City hub) and Luna County. Distinct from daytime Silver Route. Expanded to Luna County in Sept 2009."
+ },
+ {
+  "name": "MyBlue On-Demand Microtransit",
+  "state": "NM",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Española",
+    "county": "Rio Arriba"
+   },
+   {
+    "layer": "place",
+    "name": "Taos",
+    "county": "Taos"
+   },
+   {
+    "layer": "aiannh",
+    "name": "Nambe"
+   },
+   {
+    "layer": "aiannh",
+    "name": "Pojoaque"
+   },
+   {
+    "layer": "place",
+    "name": "Edgewood",
+    "county": "Santa Fe"
+   },
+   {
+    "layer": "place",
+    "name": "La Cienega",
+    "county": "Santa Fe"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.55,
+  "note": "Five MyBlue zones per NCRTD: Espanola (town, plus service within a 15-mi radius of the Espanola Transit Center), Taos (town, plus service within a 2-mi radius of the 340 Chile Line route), Pojoaque-Nambe (Pueblo of Pojoaque + Nambe Pueblo + Jacona schools campus), Edgewood (Town of Edgewood -- NCRTD site places this in Santa Fe County, though the row text says Torrance County), La Cienega (La Cienega/La Cieneguilla, Santa Fe County). Drawn as the named towns/pueblos only, at approximate fidelity; the Espanola and Taos zones extend further (~15mi / ~2mi radius) beyond these municipal limits per official source, so true coverage is somewhat larger than shown. Source: https://ncrtd.org/myblue/"
+ },
+ {
+  "name": "Po'Pay Messenger",
+  "state": "NM",
+  "boundary_type": "zone_approx",
+  "buffer": {
+   "radius_km": 57.4
+  },
+  "fidelity": "approximate",
+  "confidence": 0.5,
+  "note": "Row text states a ~4,000 sq mi four-county primary service area (~10,079 route miles) centered on Ohkay Owingeh Pueblo; the four counties are not individually named in available sources, so this is drawn as a circle of the stated ~4,000 sq mi area centered on the pueblo rather than the ~27 sq mi tribal boundary alone (which drastically understated the stated service area). Source: FTA National Transit Database agency profile for Ohkay Owingeh Pueblo (https://www.transit.dot.gov/ntd/transit-agency-profiles/ohkay-owingeh-pueblo), matching figures on https://ohkay.org/popay-messenger/."
+ },
+ {
+  "name": "Rio Metro Valencia County Dial-A-Ride",
+  "state": "NM",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Valencia"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Countywide dial-a-ride serving Belen, Bosque Farms, Los Chavez, Los Lunas, Peralta, Rio Communities, Tome, and UNM-Valencia Campus."
+ },
+ {
+  "name": "Rockin' 66 Express",
+  "state": "NM",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Milan"
+   },
+   {
+    "layer": "auto",
+    "name": "Grants"
+   },
+   {
+    "layer": "auto",
+    "name": "Bluewater Village",
+    "county": "Cibola"
+   },
+   {
+    "layer": "auto",
+    "name": "San Rafael"
+   },
+   {
+    "layer": "auto",
+    "name": "Mount Taylor",
+    "county": "Cibola"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "Cibola County demand-response serving Milan, Grants, Bluewater Village, San Rafael, and the Mt. Taylor Addition (mapped to the Mount Taylor CDP bordering Grants; extended-area stops there require 24hr notice)."
+ },
+ {
+  "name": "Roswell Dial-a-Ride",
+  "state": "NM",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Roswell"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Citywide demand-response within Roswell city limits, serving off-route stops not covered by Main Street fixed route."
+ }
+]

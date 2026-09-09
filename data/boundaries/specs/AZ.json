@@ -1,0 +1,378 @@
+[
+ {
+  "name": "Apache Junction Dial-a-Ride",
+  "state": "AZ",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Apache Junction"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Apache Junction curb-to-curb demand-response"
+ },
+ {
+  "name": "Beeline Bus Dial-a-Ride",
+  "state": "AZ",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Payson"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Town of Payson operates dial-a-ride service serving seniors and general public."
+ },
+ {
+  "name": "Camel Express",
+  "state": "AZ",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "La Paz"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Curb-to-curb Dial-A-Ride core zone covers the Town of Quartzsite plus the adjacent unincorporated La Paz Valley (an RV/desert area ~5 mi south of town) and Rainbow Acres, all within La Paz County; deviated flex routes extend further to Parker, Ehrenberg, Blythe, Yuma, and Lake Havasu City. No published zone boundary or size, so La Paz County is used as the containing unit at approximate fidelity rather than the town alone. Sources: https://www.ci.quartzsite.az.us/government/departments/transportation.php and https://cptdb.ca/wiki/index.php/Quartzsite_Camel_Express."
+ },
+ {
+  "name": "CG LINK (Casa Grande) (formerly CART Dial-a-Ride)",
+  "state": "AZ",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Casa Grande"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "City of Casa Grande operates dial-a-ride service within city limits."
+ },
+ {
+  "name": "Chandler Flex",
+  "state": "AZ",
+  "boundary_type": "city",
+  "fidelity": "approximate",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Chandler"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Service limited to south Chandler (Chandler Blvd to Chandler Heights Rd, Price Rd to Arizona Ave); using city as proxy for mapped service zone."
+ },
+ {
+  "name": "Cobre Valley Community Transit",
+  "state": "AZ",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Globe"
+   },
+   {
+    "layer": "place",
+    "name": "Miami"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Dial-a-ride service covering Globe-Miami area in Cobre Valley."
+ },
+ {
+  "name": "CRIT Transit",
+  "state": "AZ",
+  "boundary_type": "tribal",
+  "units": [
+   {
+    "layer": "aiannh",
+    "name": "Colorado River"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Colorado River Indian Tribes demand-response service; Parker indicates location near reservation"
+ },
+ {
+  "name": "Florence Dial-a-Ride",
+  "state": "AZ",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Florence"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Town of Florence operates local demand-response service."
+ },
+ {
+  "name": "Gila River Transit Dial-a-Ride",
+  "state": "AZ",
+  "boundary_type": "tribal",
+  "units": [
+   {
+    "layer": "aiannh",
+    "name": "Gila River"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Tribal demand-response service on Gila River Indian Community reservation."
+ },
+ {
+  "name": "Glendale OnBoard (formerly Glendale Dial-A-Ride)",
+  "state": "AZ",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Glendale"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "City of Glendale operates curb-to-curb service within city limits."
+ },
+ {
+  "name": "Havasu Mobility",
+  "state": "AZ",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Lake Havasu City"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Lake Havasu City operates this demand-response service."
+ },
+ {
+  "name": "May Mobility AV Pilot",
+  "state": "AZ",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Sun City"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Autonomous microtransit pilot in Sun City; pilot concluded"
+ },
+ {
+  "name": "Mountain Line GO!",
+  "state": "AZ",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Flagstaff"
+   }
+  ],
+  "confidence": 0.7,
+  "fidelity": "approximate",
+  "note": "Microtransit pilot serving specific zones in Flagstaff; full zone boundaries not specified"
+ },
+ {
+  "name": "Peoria Transit On-Demand",
+  "state": "AZ",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Peoria"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Peoria microtransit service in Maricopa County"
+ },
+ {
+  "name": "SEAGO Area Transit",
+  "state": "AZ",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Graham"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Demand-response for Graham County per fleet notes; Safford and Thatcher are county-seat context"
+ },
+ {
+  "name": "Sedona Shuttle Connect",
+  "state": "AZ",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Sedona"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City-operated shuttle service within Sedona city limits."
+ },
+ {
+  "name": "Sun On Demand",
+  "state": "AZ",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Tucson"
+   }
+  ],
+  "confidence": 0.7,
+  "fidelity": "approximate",
+  "note": "Zone-based microtransit complementing fixed routes; specific zone coverage not detailed"
+ },
+ {
+  "name": "Sun Shuttle - Green Valley",
+  "state": "AZ",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Green Valley"
+   },
+   {
+    "layer": "place",
+    "name": "Sahuarita"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Two-town service area in southern Pima County. Green Valley and Sahuarita are both established communities south of Tucson."
+ },
+ {
+  "name": "Sun Shuttle - Oro Valley",
+  "state": "AZ",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Oro Valley"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "App-enabled microtransit zone in Oro Valley, Northern Pima County"
+ },
+ {
+  "name": "Sun Shuttle Dial-a-Ride",
+  "state": "AZ",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Pima"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "RTA operates countywide; description emphasizes Tucson metro but service is county-based."
+ },
+ {
+  "name": "Tolleson Micro Transit Program",
+  "state": "AZ",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Tolleson"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Microtransit program; all rides must begin or end within Tolleson city limits"
+ },
+ {
+  "name": "WeRIDE",
+  "state": "AZ",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Avondale"
+   },
+   {
+    "layer": "place",
+    "name": "Goodyear"
+   },
+   {
+    "layer": "place",
+    "name": "Surprise"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Shared microtransit service across three West Valley cities."
+ },
+ {
+  "name": "WeRIDE Buckeye",
+  "state": "AZ",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Buckeye"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Buckeye microtransit encompassing municipal area"
+ },
+ {
+  "name": "WeRIDE El Mirage",
+  "state": "AZ",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "El Mirage"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Microtransit zone encompassing El Mirage municipal area"
+ },
+ {
+  "name": "White Mountain Apache Transit",
+  "state": "AZ",
+  "boundary_type": "tribal",
+  "units": [
+   {
+    "layer": "aiannh",
+    "name": "Fort Apache"
+   }
+  ],
+  "confidence": 0.75,
+  "note": "Demand-response service serving Whiteriver and the Fort Apache Indian Reservation, operated by the White Mountain Apache Tribe (whitemountainapache.org). Encoded as the Fort Apache Indian Reservation (Census AIANNH) boundary, approximate fidelity, matching the pattern used for Gila River.",
+  "fidelity": "approximate"
+ },
+ {
+  "name": "Wickenburg Dial-a-Ride",
+  "state": "AZ",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Wickenburg"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Town of Wickenburg dial-a-ride service"
+ },
+ {
+  "name": "YavaLine / YAV Connect",
+  "state": "AZ",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Prescott Valley"
+   },
+   {
+    "layer": "place",
+    "name": "Prescott"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Serves both Prescott Valley and Prescott in Yavapai County. Operator serves Town of Prescott Valley with regional coordination."
+ }
+]

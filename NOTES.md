@@ -27,8 +27,11 @@ push per stage on `state-expansion`). Progress:
 - Stage 6 (FL, GA): done 2026-09-09. Open: **MARTA Reach** (GA) — 12 named
   zones across Fulton/DeKalb/Clayton with no sizes; needs MARTA's zone maps.
 - Stage 7 (TN, TX): done 2026-09-09.
-- Stage 8 (CA): done 2026-09-09.
-- Stage 9 (AZ, CO, NM): launched 2026-09-09.
+- Stage 8 (CA): done 2026-09-09, 90/94. Open: **Metro Micro (LA Metro)** (8
+  neighborhood zones), **Mid-City GO** and **Southeastern Connect** (San Diego
+  neighborhood zones), **FAST Connect** (two Fairfield zones) — need agency zone maps.
+- Stage 9 (AZ, CO, NM): done 2026-09-09.
+- Stage 10 (OK, KS, IA, MN, IL): launched 2026-09-09.
 
 Follow-up list (rows left as `needs_research`, or approximate proxies worth a
 human look) is visible in the spec files: search for `"needs_research"` and
