@@ -2,6 +2,7 @@
  "states": [
   "AL",
   "AR",
+  "CA",
   "CT",
   "DC",
   "DE",
@@ -44,6 +45,10 @@
   },
   "AR": {
    "features": 4,
+   "updated": "2026-09"
+  },
+  "CA": {
+   "features": 90,
    "updated": "2026-09"
   },
   "CT": {

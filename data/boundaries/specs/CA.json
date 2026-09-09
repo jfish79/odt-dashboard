@@ -1,0 +1,1483 @@
+[
+ {
+  "name": "Atascadero Dial-A-Ride",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Atascadero"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Atascadero, SLO County"
+ },
+ {
+  "name": "AVTA On-Request Microtransit",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Lancaster"
+   },
+   {
+    "layer": "place",
+    "name": "Palmdale"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Antelope Valley region covers Lancaster and Palmdale"
+ },
+ {
+  "name": "B-Line FLEX",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Paradise"
+   },
+   {
+    "layer": "auto",
+    "name": "Magalia"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Service covers Paradise and Magalia in Butte County"
+ },
+ {
+  "name": "BeeLine",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Woodland"
+   },
+   {
+    "layer": "auto",
+    "name": "Winters"
+   },
+   {
+    "layer": "auto",
+    "name": "Knights Landing"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Microtransit service covering three communities in Yolo County"
+ },
+ {
+  "name": "Calexico On Demand",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Calexico"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Citywide service in Calexico, Imperial County at CA-Mexico border."
+ },
+ {
+  "name": "California City Dial-A-Ride",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "California City"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Rural Mojave Desert city dial-a-ride"
+ },
+ {
+  "name": "Chowchilla Area Transit Express (CATX)",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Chowchilla"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Service includes city limits plus 'Gold Line' destinations; mapped to city as proxy"
+ },
+ {
+  "name": "Chula Vista Senior Microtransit",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Chula Vista"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Service covers City of Chula Vista citywide"
+ },
+ {
+  "name": "Claremont Dial-a-Ride",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Claremont"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Primary service area is City of Claremont; also serves nearby medical/civic facilities in Pomona area"
+ },
+ {
+  "name": "Clovis Transit Micro-Transit",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Clovis"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Microtransit service within city of Clovis."
+ },
+ {
+  "name": "COAST (City of Avalon Seaside Transit)",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Avalon"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Avalon on Catalina Island; replaces previous ADA-restricted dial-a-ride"
+ },
+ {
+  "name": "COLT RIDE On-Demand (Lompoc Transit)",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Lompoc"
+   },
+   {
+    "layer": "auto",
+    "name": "Mission Hills"
+   },
+   {
+    "layer": "auto",
+    "name": "Vandenberg Village"
+   }
+  ],
+  "confidence": 0.75,
+  "note": "City and surrounding communities in Santa Barbara County"
+ },
+ {
+  "name": "Colusa County Transit Agency",
+  "state": "CA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Colusa"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "County-wide service via Colusa County Transit Agency covering multiple towns"
+ },
+ {
+  "name": "Connect Torrance",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Torrance"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Service covers City of Torrance citywide"
+ },
+ {
+  "name": "Corcoran Area Transit (C-A-T)",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Corcoran"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Service includes city limits plus fringe areas and state prisons; mapped to city as proxy"
+ },
+ {
+  "name": "Delano DART N'GO",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Delano"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Microtransit service within city of Delano."
+ },
+ {
+  "name": "Desert Roadrunner Dial-A-Ride (Palo Verde Valley Transit Agency)",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Blythe"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "Service centers on Blythe; Palo Verde Valley and East Riverside County context suggests broader coverage area but discrete boundaries unclear"
+ },
+ {
+  "name": "Dixon Readi-Ride",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Dixon"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Dixon, Solano County; medical paratransit to Vacaville/Davis is separate service"
+ },
+ {
+  "name": "Eastern Sierra Transit Authority - Bishop/Mammoth Dial-A-Ride",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Bishop"
+   },
+   {
+    "layer": "auto",
+    "name": "Mammoth Lakes"
+   },
+   {
+    "layer": "auto",
+    "name": "Lone Pine"
+   },
+   {
+    "layer": "auto",
+    "name": "Walker"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Service covers Bishop, Mammoth Lakes, Lone Pine, and Walker in Eastern Sierra; discrete town coverage"
+ },
+ {
+  "name": "El Cajon Microtransit",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "El Cajon"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Service covers City of El Cajon service zone"
+ },
+ {
+  "name": "Escalon eRide",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Escalon"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Door-to-door service within city of Escalon."
+ },
+ {
+  "name": "EVE (Everyone Ventures Everywhere)",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Anaheim"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "City of Anaheim on-demand service; replacing legacy FRAN service with ZEV fleet."
+ },
+ {
+  "name": "FAST Connect",
+  "state": "CA",
+  "boundary_type": "needs_research",
+  "note": "Two zones (Cordelia/Green Valley and Northeast Fairfield) named by areas without stated sizes or clear boundaries; includes Fairfield-Vacaville Hannigan Train Station and Travis AFB"
+ },
+ {
+  "name": "FRANC",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "National City"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City agency serving National City"
+ },
+ {
+  "name": "GET Bus On-Demand",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Bakersfield"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Zone-based, not full-city coverage: originally southwest Bakersfield only, expanded April 2026 to add downtown and parts of the east side; no published boundary streets or sq-mi figure. https://www.turnto23.com/news/local-news/golden-empire-transit-district-on-demand-service-expands-zones"
+ },
+ {
+  "name": "GO Now",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Oxnard"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Zone is a subset of South Oxnard only (Lemonwood, Cal-Gisler, Diamond Bar, Tierra Vista, Oxnard Pacific Mobile Estates neighborhoods), not Port Hueneme or all of Oxnard; no published zone map with boundary streets. https://www.gctd.org/gctd-launches-go-now-on-demand-service-in-south-oxnard-with-a-ribbon-cutting-ceremony-on-june-28-2023/"
+ },
+ {
+  "name": "Go West Covina",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "West Covina"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Service covers City of West Covina citywide"
+ },
+ {
+  "name": "gO'side Electric Shuttle",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Oceanside"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "SANDAG/City of Oceanside electric shuttle service"
+ },
+ {
+  "name": "GoMicro",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Hemet"
+   },
+   {
+    "layer": "place",
+    "name": "San Jacinto"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Serves both Hemet and San Jacinto in Riverside County. Replaced low-performing fixed routes."
+ },
+ {
+  "name": "GoMonrovia",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Monrovia"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Monrovia in San Gabriel Valley"
+ },
+ {
+  "name": "KART Flex Route",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Hanford"
+   },
+   {
+    "layer": "auto",
+    "name": "Lemoore"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Demand-response service serving Hanford and Lemoore in Kings County."
+ },
+ {
+  "name": "Kern Regional Transit Dial-A-Ride network",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Frazier Park"
+   },
+   {
+    "layer": "auto",
+    "name": "Mojave"
+   },
+   {
+    "layer": "auto",
+    "name": "Lamont"
+   },
+   {
+    "layer": "auto",
+    "name": "Rosamond"
+   }
+  ],
+  "confidence": 0.55,
+  "note": "CDP polygons for these four unincorporated Kern County communities (kerntransit.org/dial-a-ride) overstate actual coverage: Rosamond CDP alone is ~74 sq mi of largely undeveloped high desert, and Kern Transit states dial-a-ride service runs 'on paved and maintained roads ONLY' with no published zone map or acreage (checked kerntransit.org/dial-a-ride/rosamond-dial-a-ride/ and /mojave-dial-a-ride/ -- neither gives a boundary or size). Kept as the named-CDP proxy (best available unit) since no smaller stated zone exists; treat mapped area as an overstatement of true coverage.",
+  "fidelity": "approximate"
+ },
+ {
+  "name": "Lake Link",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "South Lake Tahoe"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "App-based microtransit serving South Lake Tahoe area."
+ },
+ {
+  "name": "Lake Transit Authority Dial-A-Ride",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Clearlake"
+   },
+   {
+    "layer": "auto",
+    "name": "Lower Lake"
+   },
+   {
+    "layer": "auto",
+    "name": "Lakeport"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Service covers Clearlake, the unincorporated CDP of Lower Lake (south of Clearlake, Lake County), and Lakeport. Source: laketransit.org/dial-a-ride"
+ },
+ {
+  "name": "Lathrop Transit Microtransit",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Lathrop"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Lathrop microtransit service"
+ },
+ {
+  "name": "LB Circuit",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Long Beach"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Microtransit service zone within Long Beach (downtown to Belmont Shore area)"
+ },
+ {
+  "name": "LumaGo",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Petaluma"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Petaluma microtransit service"
+ },
+ {
+  "name": "Madera City Dial-A-Ride",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Madera"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Dial-a-ride service within city of Madera."
+ },
+ {
+  "name": "Madera County Connection Dial-A-Ride",
+  "state": "CA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Madera"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.6,
+  "note": "MCC Dial-A-Ride covers rural/unincorporated county areas in and around the Cities of Madera and Chowchilla (plus Fairmead and North Fork), run as separate Madera-area and Chowchilla-area zones with no published boundary map or acreage; the urbanized cores of Madera and Chowchilla have their own city dial-a-ride services. County boundary shown here is an approximation, not the actual rural-only service footprint. Source: https://mcctransit.com/mcc-area-dial-a-ride/"
+ },
+ {
+  "name": "Marin Transit Connect",
+  "state": "CA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Marin"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Geofenced to central Marin and SMART stations; not all of Marin County covered."
+ },
+ {
+  "name": "MBTA Ready Ride",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Yucca Valley"
+   },
+   {
+    "layer": "auto",
+    "name": "Morongo Valley"
+   },
+   {
+    "layer": "auto",
+    "name": "Joshua Tree"
+   },
+   {
+    "layer": "auto",
+    "name": "Twentynine Palms"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Basin Transit's Ready Ride operates in six named Morongo Basin communities with separate schedules per area: Yucca Valley, Morongo Valley, Joshua Tree, Twentynine Palms (all mapped here), plus Wonder Valley and Landers, which have no Census-designated place boundary and are omitted from the drawn area (both are small unincorporated areas adjoining Twentynine Palms/Yucca Valley respectively). https://basin-transit.com/ready-ride/"
+ },
+ {
+  "name": "McFarland City Transit Bus (Dial-A-Ride)",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "McFarland"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Agricultural San Joaquin Valley city dial-a-ride"
+ },
+ {
+  "name": "MCT On Demand (Moorpark City Transit)",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Moorpark"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Moorpark, eastern Ventura County"
+ },
+ {
+  "name": "Merced Microtransit",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Merced"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Microtransit pilot serving city of Merced."
+ },
+ {
+  "name": "Metro Micro (LA Metro)",
+  "state": "CA",
+  "boundary_type": "needs_research",
+  "note": "8 zones named by neighborhoods and corridors (Watts/Compton, LAX/Inglewood, North Hollywood/Burbank, El Monte, Highland Park/Eagle Rock/Glendale, Altadena/Pasadena/Sierra Madre, Northwest San Fernando Valley, UCLA/Westwood/VA Medical Center) without stated sizes or clear zone boundaries"
+ },
+ {
+  "name": "Micro-Link",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Hesperia"
+   },
+   {
+    "layer": "auto",
+    "name": "Victorville"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Victor Valley region; explicitly serves Hesperia and Victorville zones."
+ },
+ {
+  "name": "Mid-City GO",
+  "state": "CA",
+  "boundary_type": "needs_research",
+  "note": "Serves three San Diego communities/neighborhoods (North Park, City Heights, Mid-City) without stated zone size or clear administrative boundary"
+ },
+ {
+  "name": "MODE",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Santa Monica"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Mobility On-Demand Every Day; Big Blue Bus service within Santa Monica."
+ },
+ {
+  "name": "MoGo",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Morgan Hill"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Morgan Hill microtransit service"
+ },
+ {
+  "name": "Morongo Dial-A-Ride",
+  "state": "CA",
+  "boundary_type": "tribal",
+  "units": [
+   {
+    "layer": "aiannh",
+    "name": "Morongo"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Service restricted to Morongo Indian Reservation; also serves Banning/San Gorgonio Pass area residents with tribal affiliation"
+ },
+ {
+  "name": "MST On Call",
+  "state": "CA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Monterey"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Monterey-Salinas Transit operates county-wide; noted service to South County deep rural communities."
+ },
+ {
+  "name": "NCTD+ San Marcos",
+  "state": "CA",
+  "boundary_type": "zone_approx",
+  "units": [
+   {
+    "layer": "place",
+    "name": "San Marcos",
+    "county": "San Diego"
+   }
+  ],
+  "clip_to_units": true,
+  "buffers": [
+   {
+    "center_unit": {
+     "layer": "place",
+     "name": "San Marcos",
+     "county": "San Diego"
+    },
+    "radius_km": 2.87
+   }
+  ],
+  "confidence": 0.85,
+  "note": "10-square-mile service zone centered in San Marcos (North San Diego County); may extend outside city limits (https://www.gonctd.com/plus)"
+ },
+ {
+  "name": "NCTD+ Vista",
+  "state": "CA",
+  "boundary_type": "zone_approx",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Vista",
+    "county": "San Diego"
+   }
+  ],
+  "clip_to_units": true,
+  "buffers": [
+   {
+    "center_unit": {
+     "layer": "place",
+     "name": "Vista",
+     "county": "San Diego"
+    },
+    "radius_km": 2.4
+   }
+  ],
+  "confidence": 0.85,
+  "note": "7-square-mile service zone centered in Vista (North San Diego County); may extend outside city limits (https://www.gonctd.com/plus)"
+ },
+ {
+  "name": "OC Flex",
+  "state": "CA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Orange"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.8,
+  "note": "Orange County service (operator OCTA). Note: service was discontinued July 2025 but boundary is recorded for historical purposes."
+ },
+ {
+  "name": "OmniRide (Omnitrans)",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Bloomington"
+   },
+   {
+    "layer": "place",
+    "name": "Chino"
+   },
+   {
+    "layer": "place",
+    "name": "Chino Hills"
+   },
+   {
+    "layer": "place",
+    "name": "Upland"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Three service zones across San Bernardino Valley: Bloomington, Chino/Chino Hills, and Upland"
+ },
+ {
+  "name": "Pa'Lante",
+  "state": "CA",
+  "boundary_type": "zone_approx",
+  "units": [
+   {
+    "layer": "place",
+    "name": "San Jose"
+   }
+  ],
+  "confidence": 0.75,
+  "note": "Service area is a stated 13-square-mile zone in East San Jose (council districts 5, 7, 8), not the full city (469 km2). Approximated as a circle of matching area centered on the CSV pin, clipped to San Jose city limits. Source: https://www.sanjoseca.gov/your-government/departments-offices/transportation/palante-an-east-san-jose-microtransit-pilot",
+  "buffer": {
+   "radius_km": 3.27
+  },
+  "clip_to_units": true
+ },
+ {
+  "name": "Palo Alto Link",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Palo Alto"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Microtransit rideshare service within city of Palo Alto."
+ },
+ {
+  "name": "Peery Park Rides",
+  "state": "CA",
+  "boundary_type": "zone_approx",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Sunnyvale"
+   }
+  ],
+  "confidence": 0.55,
+  "note": "Zone is bounded by US-101 (north), Fair Oaks Ave (east), El Camino Real (south), and the Mountain View city line (west) — roughly a 2x2.5 mi rectangle in northwest Sunnyvale (~5 sq mi), not the full city (57 km2). Approximated as a ~2.0 km radius circle around the service area (Peery Park business district) clipped to Sunnyvale city limits. Source: https://www.sunnyvale.ca.gov/homes-streets-and-property/transportation-and-traffic-safety/peery-park-rides",
+  "buffer": {
+   "radius_km": 2.0
+  },
+  "clip_to_units": true
+ },
+ {
+  "name": "Placer County Dial-A-Ride Microtransit",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Rocklin"
+   },
+   {
+    "layer": "auto",
+    "name": "Lincoln"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Dial-A-Ride service in Rocklin and Lincoln"
+ },
+ {
+  "name": "Plumas Transit evening on-demand",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Quincy"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Service covers Quincy and American Valley area; evening app-booked block in scope only"
+ },
+ {
+  "name": "Porterville transPORT",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Porterville"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Porterville, Tulare County"
+ },
+ {
+  "name": "RABA Runabout",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Redding"
+   },
+   {
+    "layer": "auto",
+    "name": "Shasta Lake"
+   },
+   {
+    "layer": "auto",
+    "name": "Anderson"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Service covers 5-6 zones in Redding area; listed places are primary service centers"
+ },
+ {
+  "name": "REV-UP",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "West Park"
+   },
+   {
+    "layer": "auto",
+    "name": "Biola"
+   },
+   {
+    "layer": "auto",
+    "name": "Kerman"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Three rural communities in Fresno County (West Park, Biola, Kerman)."
+ },
+ {
+  "name": "Richmond Moves",
+  "state": "CA",
+  "boundary_type": "zone_approx",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Richmond"
+   }
+  ],
+  "buffers": [
+   {
+    "radius_km": 2.15
+   }
+  ],
+  "clip_to_units": true,
+  "confidence": 0.8,
+  "note": "Citywide service zone in Richmond, stated as 5.6 sq mi, centered on the CSV pin location (near BART/Civic Center) rather than the city-wide centroid, since Richmond's irregular shape caused the prior centroid-centered circle to fall partly outside city limits and undershoot the stated area. Clipped to Richmond city limits. Serves predominantly low-income and disadvantaged communities. Source: https://city.ridewithvia.com/richmond-moves"
+ },
+ {
+  "name": "Ride Plus",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "East Palo Alto"
+   },
+   {
+    "layer": "place",
+    "name": "Half Moon Bay"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.6,
+  "note": "Serves East Palo Alto and Half Moon Bay (HMB). Geared towards equity priority communities."
+ },
+ {
+  "name": "Ridgerunner Transit Dial-A-Ride (Ridgecrest)",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Ridgecrest"
+   },
+   {
+    "layer": "place",
+    "name": "Inyokern"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "High desert service covering Ridgecrest and Inyokern in eastern Kern County"
+ },
+ {
+  "name": "Rio Vista Delta Breeze - Route 51 Dial-A-Ride",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Rio Vista"
+   },
+   {
+    "layer": "auto",
+    "name": "Isleton"
+   }
+  ],
+  "confidence": 0.7,
+  "note": "Service covers Rio Vista, Isleton, and unincorporated Delta resort communities (e.g. along SR-160 river frontage) between them; only Rio Vista and Isleton are incorporated places with mappable boundaries, so the resort-community portion of the service area is not separately represented here. Source: riovistacity.com/deltabreeze"
+ },
+ {
+  "name": "Rosemead GO",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Rosemead"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Rosemead all-electric microtransit replacing fixed-route service"
+ },
+ {
+  "name": "SacRT Flex",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Sacramento"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Service in Sacramento. Text does not specify if countywide or citywide; assuming city based on operator focus."
+ },
+ {
+  "name": "Sage Stage (Modoc Transportation Agency)",
+  "state": "CA",
+  "boundary_type": "buffered",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Alturas"
+   }
+  ],
+  "dilate_km": 16.09,
+  "confidence": 0.85,
+  "note": "Alturas city center plus ~10-mile radius service area"
+ },
+ {
+  "name": "San Benito County Express On-Demand",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Hollister"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "On-demand service centered on Hollister"
+ },
+ {
+  "name": "Santa Clarita GO!",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Santa Clarita"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "City of Santa Clarita microtransit; noted service to Canyon Country."
+ },
+ {
+  "name": "Shafter Dial-A-Ride",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Shafter"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.8,
+  "note": "Service includes city limits plus outer-city zone; mapped to city as proxy"
+ },
+ {
+  "name": "ShastaConnect Rural Demand Response",
+  "state": "CA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Shasta"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Rural Shasta County demand-response service"
+ },
+ {
+  "name": "SLO Transit Microtransit",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "San Luis Obispo"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Microtransit service within city limits; launched to reduce fixed route strain."
+ },
+ {
+  "name": "SMART Connect (Larkspur)",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Larkspur"
+   },
+   {
+    "layer": "place",
+    "name": "Corte Madera"
+   }
+  ],
+  "confidence": 0.6,
+  "note": "Zone is a small subset of Larkspur, not the whole city: weekdays the shuttle covers only the SMART Larkspur Station, Golden Gate Ferry Larkspur Terminal, and the surrounding Larkspur Landing area; weekends it expands to include the Village and Town Center shopping malls in Corte Madera. Encoded as the two containing cities (approximate) since no zone size or street-level boundary is published. Source: https://www.sonomamarintrain.org/LarkspurShuttle"
+ },
+ {
+  "name": "Southeastern Connect",
+  "state": "CA",
+  "boundary_type": "needs_research",
+  "note": "Serves three San Diego communities/neighborhoods (Mount Hope, Chollas View, Emerald Hills in Southeast San Diego) without stated zone size or clear administrative boundary"
+ },
+ {
+  "name": "SunRide",
+  "state": "CA",
+  "boundary_type": "places",
+  "confidence": 0.6,
+  "note": "SunRide operates 8 named zones in the Coachella Valley: Cathedral City, Coachella, Desert Hot Springs-Desert Edge, Indio, La Quinta, Mecca-North Shore, Palm Desert, and Palm Springs (RCTC and multiple secondary sources; SunLine's own city.ridewithvia.com/sunride page shows only a map image, no zone list in text). Each named place is used as an approximate proxy for its zone — the actual zone likely covers only part of each city/CDP, not the whole jurisdiction. Source: https://www.rctc.org/emerging-on-demand-microtransit-services-expand-mobility-options-in-riverside-county/",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Cathedral City"
+   },
+   {
+    "layer": "auto",
+    "name": "Coachella"
+   },
+   {
+    "layer": "auto",
+    "name": "Desert Hot Springs"
+   },
+   {
+    "layer": "auto",
+    "name": "Desert Edge"
+   },
+   {
+    "layer": "auto",
+    "name": "Indio"
+   },
+   {
+    "layer": "auto",
+    "name": "La Quinta"
+   },
+   {
+    "layer": "auto",
+    "name": "Mecca"
+   },
+   {
+    "layer": "auto",
+    "name": "North Shore"
+   },
+   {
+    "layer": "auto",
+    "name": "Palm Desert"
+   },
+   {
+    "layer": "auto",
+    "name": "Palm Springs"
+   }
+  ],
+  "fidelity": "approximate"
+ },
+ {
+  "name": "SV Hopper (Silicon Valley Hopper)",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Cupertino"
+   },
+   {
+    "layer": "place",
+    "name": "Santa Clara"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.5,
+  "note": "Cupertino service is citywide (full fidelity). Santa Clara service is Phase 1 only, covering the southern part of the city; Phase 2 (north Santa Clara) is planned but not yet deployed. No street-level or zone-size data is published for the Santa Clara zone (city.ridewithvia.com/hopper only shows an in-app map), so Santa Clara is shown as the whole city as an approximate proxy that overstates current coverage — treat the Santa Clara portion as a rough upper bound, not the actual footprint. Source: https://city.ridewithvia.com/hopper"
+ },
+ {
+  "name": "Taft Area Transit",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Taft"
+   },
+   {
+    "layer": "auto",
+    "name": "Ford City"
+   },
+   {
+    "layer": "auto",
+    "name": "South Taft"
+   },
+   {
+    "layer": "auto",
+    "name": "Taft Heights"
+   }
+  ],
+  "confidence": 0.7,
+  "note": "Multiple communities in SW Kern County; some may be unincorporated"
+ },
+ {
+  "name": "TART Connect",
+  "state": "CA",
+  "boundary_type": "places",
+  "confidence": 0.6,
+  "note": "TART's own site lists 4 California zones: Zone 1 (West Shore, Tahoe City, Dollar Hill), Zone 2 (Carnelian Bay, Tahoe Vista, Kings Beach), Zone 3 (Olympic Valley), Zone 4 (Northstar); the page explicitly notes TART Connect does not serve Incline Village, NV. All named communities are unincorporated Placer County, CA. Only Zone 1/2 communities have Census place/CDP boundaries: Tahoe City is CDP 'Sunnyside-Tahoe City'. 'West Shore' and 'Dollar Hill' are represented via the other Zone 1 communities. Olympic Valley/Squaw Valley and Northstar have no Census CDP boundary in Placer County (the only Census place named 'Squaw Valley' in CA is an unrelated Fresno County community), so Zones 3 and 4 are not captured in this polygon; a human should follow up with Placer County GIS for those two zones. Source: https://tahoetruckeetransit.com/tart-connect/",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Sunnyside-Tahoe City",
+    "county": "Placer"
+   },
+   {
+    "layer": "auto",
+    "name": "Carnelian Bay",
+    "county": "Placer"
+   },
+   {
+    "layer": "auto",
+    "name": "Tahoe Vista",
+    "county": "Placer"
+   },
+   {
+    "layer": "auto",
+    "name": "Kings Beach",
+    "county": "Placer"
+   }
+  ],
+  "fidelity": "approximate"
+ },
+ {
+  "name": "TCRTA Transport",
+  "state": "CA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Tulare"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "County-wide microtransit service in Tulare County."
+ },
+ {
+  "name": "Tehachapi Dial-A-Ride",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Tehachapi"
+   },
+   {
+    "layer": "auto",
+    "name": "Golden Hills"
+   }
+  ],
+  "confidence": 0.75,
+  "note": "Tehachapi city and Golden Hills CDP; Old Towne is likely a neighborhood within the service area"
+ },
+ {
+  "name": "The S Microtransit",
+  "state": "CA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Stanislaus"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "County-wide service; merger of former Modesto Area Express programs under StanRTA."
+ },
+ {
+  "name": "The Wave",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Goleta"
+   },
+   {
+    "layer": "auto",
+    "name": "Carpinteria"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Microtransit zones in Goleta and Carpinteria; official brand name for Santa Barbara MTD's service."
+ },
+ {
+  "name": "TRACER Plus (City of Tracy)",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Tracy"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Within Tracy city limits, San Joaquin County"
+ },
+ {
+  "name": "Tri MyRide (Tri Delta Transit)",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Antioch"
+   },
+   {
+    "layer": "place",
+    "name": "Oakley"
+   },
+   {
+    "layer": "place",
+    "name": "Pittsburg"
+   },
+   {
+    "layer": "place",
+    "name": "Bay Point"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Two service zones: Antioch/Oakley zone and Pittsburg/Bay Point zone in East Contra Costa County"
+ },
+ {
+  "name": "Tuolumne County Transit Agency Dial-A-Ride",
+  "state": "CA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Tuolumne"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "County-wide demand-response service covering Sonora and surrounding Tuolumne County communities"
+ },
+ {
+  "name": "Van Go!",
+  "state": "CA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "San Joaquin"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Countywide demand-response service"
+ },
+ {
+  "name": "Via West Sacramento",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "West Sacramento"
+   },
+   {
+    "layer": "place",
+    "name": "Sacramento"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.5,
+  "note": "Primary service in City of West Sacramento (citywide). Expanded Oct 2024 to pilot zones at Downtown Sacramento locations; exact zones not specified in available text."
+ },
+ {
+  "name": "Visalia Connect",
+  "state": "CA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Visalia"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Microtransit service within city of Visalia."
+ },
+ {
+  "name": "Whittier On-Demand Transit Pilot",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Whittier"
+   },
+   {
+    "layer": "place",
+    "name": "La Habra Heights"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Pilot covers Whittier and La Habra Heights communities"
+ },
+ {
+  "name": "Yuba-Sutter Transit MOD",
+  "state": "CA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Linda"
+   },
+   {
+    "layer": "auto",
+    "name": "Olivehurst"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Microtransit service in Linda and Olivehurst"
+ },
+ {
+  "name": "Yurok Tribe Transit Services - Demand Response",
+  "state": "CA",
+  "boundary_type": "tribal",
+  "units": [
+   {
+    "layer": "aiannh",
+    "name": "Yurok"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Service covers Yurok Ancestral Territory including Klamath, Weitchpec, and Requa vicinity in Del Norte/Humboldt Counties"
+ }
+]
