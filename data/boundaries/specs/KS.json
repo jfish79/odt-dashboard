@@ -1,0 +1,117 @@
+[
+ {
+  "name": "Lawrence Transit On Demand",
+  "state": "KS",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Lawrence"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Citywide curb-to-curb service within Lawrence city limits"
+ },
+ {
+  "name": "MOD Topeka (Metro On-Demand)",
+  "state": "KS",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Topeka"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.6,
+  "note": "Service limited to designated southeast zone of Topeka; represented as city-level approximation"
+ },
+ {
+  "name": "Night Line",
+  "state": "KS",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Lawrence"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Evening/overnight service within Lawrence city limits"
+ },
+ {
+  "name": "OCCK OnDemand (Salina CityGo)",
+  "state": "KS",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Salina"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Curb-to-curb service within Salina city limits"
+ },
+ {
+  "name": "Reno County Area Transit (RCAT) Demand Response",
+  "state": "KS",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Hutchinson"
+   },
+   {
+    "layer": "place",
+    "name": "South Hutchinson"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Door-to-door service in Hutchinson and South Hutchinson in Reno County"
+ },
+ {
+  "name": "RideKC Micro Transit (Johnson County)",
+  "state": "KS",
+  "boundary_type": "zone_approx",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Johnson"
+   }
+  ],
+  "buffer": {
+   "radius_km": 8.12
+  },
+  "clip_to_units": true,
+  "confidence": 0.7,
+  "note": "Approximately 80-square-mile microtransit zone covering Downtown Overland Park, Mission Transit Center, and KU Edwards Campus; radius_km = sqrt(80*2.59/pi) = 8.12, clipped to Johnson County. Source: https://www.jocogov.org/department/transit-ridekc-johnson-county/micro-transit"
+ },
+ {
+  "name": "RideKC On-Demand (Wyandotte County / IRIS)",
+  "state": "KS",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Wyandotte"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.65,
+  "note": "Multiple zones in Wyandotte County (Midtown KCK to Legends, Southwest Edwardsville, Northeast) without stated sizes; represented as county-level approximation"
+ },
+ {
+  "name": "RideLV Micro Transit",
+  "state": "KS",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Leavenworth"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Primarily Leavenworth city limits with extensions to four addresses in Lansing, KS (Progress Drive; W. Eisenhower Rd/DaVita Dialysis; First Terrace)"
+ }
+]

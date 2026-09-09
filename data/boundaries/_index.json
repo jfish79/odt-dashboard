@@ -11,14 +11,18 @@
   "FL",
   "GA",
   "HI",
+  "IA",
   "ID",
+  "IL",
   "IN",
+  "KS",
   "KY",
   "LA",
   "MA",
   "MD",
   "ME",
   "MI",
+  "MN",
   "MO",
   "MS",
   "NC",
@@ -29,6 +33,7 @@
   "NV",
   "NY",
   "OH",
+  "OK",
   "PA",
   "RI",
   "SC",
@@ -86,12 +91,24 @@
    "features": 1,
    "updated": "2026-09"
   },
+  "IA": {
+   "features": 13,
+   "updated": "2026-09"
+  },
   "ID": {
    "features": 2,
    "updated": "2026-09"
   },
+  "IL": {
+   "features": 23,
+   "updated": "2026-09"
+  },
   "IN": {
    "features": 4,
+   "updated": "2026-09"
+  },
+  "KS": {
+   "features": 8,
    "updated": "2026-09"
   },
   "KY": {
@@ -116,6 +133,10 @@
   },
   "MI": {
    "features": 28,
+   "updated": "2026-09"
+  },
+  "MN": {
+   "features": 8,
    "updated": "2026-09"
   },
   "MO": {
@@ -156,6 +177,10 @@
   },
   "OH": {
    "features": 11,
+   "updated": "2026-09"
+  },
+  "OK": {
+   "features": 17,
    "updated": "2026-09"
   },
   "PA": {

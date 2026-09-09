@@ -1,0 +1,529 @@
+[
+ {
+  "name": "Bond County Transit",
+  "state": "IL",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Bond"
+   }
+  ],
+  "confidence": 1.0,
+  "note": "Bond County Transit providing general-public demand-response service across Bond County."
+ },
+ {
+  "name": "Central Illinois Public Transit (CIPT)",
+  "state": "IL",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Christian"
+   },
+   {
+    "layer": "county",
+    "name": "Clay"
+   },
+   {
+    "layer": "county",
+    "name": "Effingham"
+   },
+   {
+    "layer": "county",
+    "name": "Fayette"
+   },
+   {
+    "layer": "county",
+    "name": "Montgomery"
+   },
+   {
+    "layer": "county",
+    "name": "Moultrie"
+   },
+   {
+    "layer": "county",
+    "name": "Shelby"
+   }
+  ],
+  "confidence": 1.0,
+  "note": "Regional demand-response service covering seven central Illinois counties."
+ },
+ {
+  "name": "Coles County Dial-A-Ride",
+  "state": "IL",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Coles"
+   },
+   {
+    "layer": "county",
+    "name": "Douglas"
+   }
+  ],
+  "confidence": 1.0,
+  "note": "Coles County Council on Aging operating dial-a-ride across Coles and Douglas counties."
+ },
+ {
+  "name": "Connect FLEX",
+  "state": "IL",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Bloomington"
+   },
+   {
+    "layer": "place",
+    "name": "Normal"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Twin-city microtransit service in Bloomington-Normal metro"
+ },
+ {
+  "name": "Danville Mass Transit - Evening Dial-A-Ride",
+  "state": "IL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Danville"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Evening demand-response dial-a-ride service covering Danville city."
+ },
+ {
+  "name": "Decatur Moves",
+  "state": "IL",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Macon"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Countywide service with urban microtransit focus in Decatur-Forsyth-Mt. Zion corridor; rural zones elsewhere in county"
+ },
+ {
+  "name": "Henry County Public Transportation (HCPT)",
+  "state": "IL",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Henry"
+   },
+   {
+    "layer": "county",
+    "name": "Stark"
+   },
+   {
+    "layer": "county",
+    "name": "Bureau",
+    "fidelity": "approximate"
+   }
+  ],
+  "confidence": 0.7,
+  "note": "Operator states coverage of 'Henry, Stark and western Bureau Counties,' with all trips required to begin or end in Henry County; Kewanee (Henry Co.) is the base of operations. Henry and Stark are full-county coverage; Bureau County service is only the western portion, shown here as approximate/subset of the county boundary. http://www.ride-hcpt.com/service/"
+ },
+ {
+  "name": "JCMTD On-Demand",
+  "state": "IL",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Jackson"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Countywide on-demand transit service"
+ },
+ {
+  "name": "MCRide",
+  "state": "IL",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "McHenry"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Countywide dial-a-ride service coordinated by county"
+ },
+ {
+  "name": "MCT Micro",
+  "state": "IL",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Collinsville"
+   },
+   {
+    "layer": "auto",
+    "name": "Edwardsville"
+   },
+   {
+    "layer": "auto",
+    "name": "Troy"
+   },
+   {
+    "layer": "auto",
+    "name": "Maryville"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Multi-zone microtransit service covering four named municipalities in Madison County area."
+ },
+ {
+  "name": "MetroLINK On-Demand",
+  "state": "IL",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Moline"
+   },
+   {
+    "layer": "place",
+    "name": "Rock Island"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Illinois-side service replacing underperforming fixed routes in two cities"
+ },
+ {
+  "name": "MTD SafeRides",
+  "state": "IL",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Champaign"
+   },
+   {
+    "layer": "place",
+    "name": "Urbana"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Nighttime on-demand service in Champaign-Urbana university communities"
+ },
+ {
+  "name": "North Central Area Transit (NCAT)",
+  "state": "IL",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "LaSalle"
+   }
+  ],
+  "confidence": 1.0,
+  "note": "Regional transit serving LaSalle County demand-response needs."
+ },
+ {
+  "name": "Pace On Demand",
+  "state": "IL",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Batavia"
+   },
+   {
+    "layer": "auto",
+    "name": "Hoffman Estates"
+   },
+   {
+    "layer": "auto",
+    "name": "Lansing"
+   },
+   {
+    "layer": "auto",
+    "name": "Naperville"
+   },
+   {
+    "layer": "auto",
+    "name": "Aurora"
+   },
+   {
+    "layer": "auto",
+    "name": "Arlington Heights"
+   },
+   {
+    "layer": "auto",
+    "name": "Rolling Meadows"
+   },
+   {
+    "layer": "auto",
+    "name": "Round Lake"
+   },
+   {
+    "layer": "auto",
+    "name": "St. Charles"
+   },
+   {
+    "layer": "auto",
+    "name": "Geneva"
+   },
+   {
+    "layer": "auto",
+    "name": "Vernon Hills"
+   },
+   {
+    "layer": "auto",
+    "name": "Mundelein"
+   },
+   {
+    "layer": "auto",
+    "name": "Joliet"
+   },
+   {
+    "layer": "auto",
+    "name": "Wheaton"
+   },
+   {
+    "layer": "auto",
+    "name": "Winfield"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.55,
+  "note": "Pace On Demand is 11 separate named zones (Batavia; Hoffman Estates; Lansing Area; Naperville-Aurora; Northwest Cook [Arlington Heights-Rolling Meadows]; Round Lake Area; Southeast Aurora; St. Charles-Geneva; Vernon Hills-Mundelein; West Joliet; Wheaton-Winfield), each covering only part of the named municipalities, not full city limits -- e.g. the Naperville-Aurora zone is bounded by I-88, Ferry Rd, Warrenville Rd, Naper Blvd, Gartner Rd, West St, Ogden Ave and Eola Rd (per RTA Chicago blog). No zone-by-zone size or street-boundary data is published for the other 10 zones, so all listed municipalities are used as approximate containing units. Source: https://www.pacebus.com/on-demand ; https://www.rtachicago.org/blog/2022/06/29/pace-introduces-vango-and-expands-naperville-aurora-on-demand-mobility-services"
+ },
+ {
+  "name": "Piattran",
+  "state": "IL",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Piatt"
+   }
+  ],
+  "confidence": 1.0,
+  "note": "Explicitly described as countywide transportation in Piatt County."
+ },
+ {
+  "name": "Pretzel City Area Transit (PCAT)",
+  "state": "IL",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Stephenson"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "PCAT operates a countywide service across Stephenson County (over 50,000 trips/year); Freeport is the base of operations, not a narrower zone within the county. https://cityoffreeport.org/pretzel-city-transit/"
+ },
+ {
+  "name": "Ride in Kane",
+  "state": "IL",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Kane"
+   }
+  ],
+  "confidence": 1.0,
+  "note": "County-wide coordinated paratransit/DAR service covering Kane County."
+ },
+ {
+  "name": "RIDES Mass Transit",
+  "state": "IL",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Clark"
+   },
+   {
+    "layer": "county",
+    "name": "Crawford"
+   },
+   {
+    "layer": "county",
+    "name": "Cumberland"
+   },
+   {
+    "layer": "county",
+    "name": "Edgar"
+   },
+   {
+    "layer": "county",
+    "name": "Edwards"
+   },
+   {
+    "layer": "county",
+    "name": "Gallatin"
+   },
+   {
+    "layer": "county",
+    "name": "Hamilton"
+   },
+   {
+    "layer": "county",
+    "name": "Hardin"
+   },
+   {
+    "layer": "county",
+    "name": "Jasper"
+   },
+   {
+    "layer": "county",
+    "name": "Lawrence"
+   },
+   {
+    "layer": "county",
+    "name": "Pope"
+   },
+   {
+    "layer": "county",
+    "name": "Richland"
+   },
+   {
+    "layer": "county",
+    "name": "Saline"
+   },
+   {
+    "layer": "county",
+    "name": "Wabash"
+   },
+   {
+    "layer": "county",
+    "name": "Wayne"
+   },
+   {
+    "layer": "county",
+    "name": "White"
+   },
+   {
+    "layer": "county",
+    "name": "Williamson"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "RIDES MTD's own site and Wikipedia both name a 17-county southeastern Illinois service area (Clark, Crawford, Cumberland, Edgar, Edwards, Gallatin, Hamilton, Hardin, Jasper, Lawrence, Pope, Richland, Saline, Wabash, Wayne, White, Williamson); the CSV row's '18 Counties' does not match either source, so this uses the confirmed 17-county list -- discrepancy worth a concerns.csv note. Source: https://en.wikipedia.org/wiki/Rides_Mass_Transit_District ; https://ridesmtd.com/about/locations"
+ },
+ {
+  "name": "SCCTD Flyer",
+  "state": "IL",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Belleville"
+   },
+   {
+    "layer": "place",
+    "name": "East St. Louis"
+   },
+   {
+    "layer": "place",
+    "name": "Fairmont City"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "First-mile/last-mile service in three named cities connecting to MetroLink"
+ },
+ {
+  "name": "SCT Demand Response",
+  "state": "IL",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Clinton"
+   },
+   {
+    "layer": "county",
+    "name": "Franklin"
+   },
+   {
+    "layer": "county",
+    "name": "Jefferson"
+   },
+   {
+    "layer": "county",
+    "name": "Marion"
+   },
+   {
+    "layer": "county",
+    "name": "Perry"
+   },
+   {
+    "layer": "county",
+    "name": "Washington"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "South Central Transit's site states it serves 'Clinton, Franklin, Jefferson, Marion, Perry, and Washington Counties.' Source: https://southcentraltransit.org/"
+ },
+ {
+  "name": "Shawnee MTD",
+  "state": "IL",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Alexander"
+   },
+   {
+    "layer": "county",
+    "name": "Johnson"
+   },
+   {
+    "layer": "county",
+    "name": "Massac"
+   },
+   {
+    "layer": "county",
+    "name": "Pulaski"
+   },
+   {
+    "layer": "county",
+    "name": "Union"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Shawnee MTD's site states it serves 'the five southernmost counties in Illinois': Alexander, Johnson, Massac, Pulaski, and Union. Source: https://shawneemtd.com/"
+ },
+ {
+  "name": "SMTD Micro",
+  "state": "IL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Springfield"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Evening/night on-demand zones in Springfield citywide"
+ },
+ {
+  "name": "WCMTD Dial-A-Ride",
+  "state": "IL",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Morgan"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Service area described as 'West Central IL (Morgan Co. area)'; treating as Morgan County-wide coverage."
+ }
+]

@@ -1,0 +1,385 @@
+[
+ {
+  "name": "CorridorRides",
+  "state": "IA",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Benton"
+   },
+   {
+    "layer": "county",
+    "name": "Iowa"
+   },
+   {
+    "layer": "county",
+    "name": "Johnson"
+   },
+   {
+    "layer": "county",
+    "name": "Jones"
+   },
+   {
+    "layer": "county",
+    "name": "Linn"
+   },
+   {
+    "layer": "county",
+    "name": "Washington"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Six-county service; within Linn and Johnson counties, service within 3/4 mi of fixed bus routes restricted to elderly/disabled (paratransit); majority of area is general-public"
+ },
+ {
+  "name": "DART On Demand",
+  "state": "IA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Ankeny"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.8,
+  "note": "No published zone acreage/sq-mi figure found (checked ridedart.com/dart-demand-ankeny and ridedart.com/services); zone is a bounded sub-area of Ankeny defined by streets (NE 62nd Ave south, SE Four Mile Dr east, 36th St north, SW Irvinedale Dr west), so city limits are used as an approximate containing-unit proxy, not an exact match. Planned expansion to Clive, Urbandale, and Altoona zones fall 2026. Source: https://www.ridedart.com/dart-demand-ankeny"
+ },
+ {
+  "name": "EASE (East Ames Service Extension)",
+  "state": "IA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Ames"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "East Ames on-demand zone within city limits; includes pickups at Ames City Hall for transfers"
+ },
+ {
+  "name": "HIRTA On-Demand",
+  "state": "IA",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Boone"
+   },
+   {
+    "layer": "county",
+    "name": "Dallas"
+   },
+   {
+    "layer": "county",
+    "name": "Jasper"
+   },
+   {
+    "layer": "county",
+    "name": "Madison"
+   },
+   {
+    "layer": "county",
+    "name": "Marion"
+   },
+   {
+    "layer": "county",
+    "name": "Story"
+   },
+   {
+    "layer": "county",
+    "name": "Warren"
+   }
+  ],
+  "confidence": 1.0,
+  "note": "Door-to-door service across seven-county region; FTA ITS4US deployment site"
+ },
+ {
+  "name": "MIDAS Regional Transit",
+  "state": "IA",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Calhoun"
+   },
+   {
+    "layer": "county",
+    "name": "Hamilton"
+   },
+   {
+    "layer": "county",
+    "name": "Humboldt"
+   },
+   {
+    "layer": "county",
+    "name": "Pocahontas"
+   },
+   {
+    "layer": "county",
+    "name": "Webster"
+   },
+   {
+    "layer": "county",
+    "name": "Wright"
+   }
+  ],
+  "confidence": 1.0,
+  "note": "Six-county Region 5 service; general public confirmed on operator website; same-day available at premium fare"
+ },
+ {
+  "name": "NTS (Neighborhood Transportation Service)",
+  "state": "IA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Cedar Rapids"
+   },
+   {
+    "layer": "auto",
+    "name": "Marion"
+   },
+   {
+    "layer": "auto",
+    "name": "Hiawatha"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Service covers three named cities in Linn County. Operates during hours when fixed-route buses don't run."
+ },
+ {
+  "name": "Peoplerides",
+  "state": "IA",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Hardin"
+   },
+   {
+    "layer": "county",
+    "name": "Marshall"
+   },
+   {
+    "layer": "county",
+    "name": "Poweshiek"
+   },
+   {
+    "layer": "county",
+    "name": "Tama"
+   }
+  ],
+  "confidence": 1.0,
+  "note": "Four-county service; Marshalltown paratransit requires prior approval; Medicaid trips via MTM broker"
+ },
+ {
+  "name": "Region 8 Regional Transit Authority (RTA) On-Demand",
+  "state": "IA",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Delaware"
+   },
+   {
+    "layer": "county",
+    "name": "Dubuque"
+   },
+   {
+    "layer": "county",
+    "name": "Jackson"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "Delaware and Jackson counties are full-county service. Dubuque County unit is approximate only: RTA8 explicitly excludes the City of Dubuque, which is served instead by a separate city transit provider (The Jule); RTA8 covers the rest (rural/small-town) Dubuque County. The resolver has no county-minus-city subtraction, so the Dubuque County polygon here includes the excluded city area. Source: https://rta8.org/ and https://www.eciatrans.org/rpa8/transit.php (RPA8/DMATS split between RTA8 and The Jule)."
+ },
+ {
+  "name": "RIDES (Region 3 Regional Transit Authority)",
+  "state": "IA",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Buena Vista"
+   },
+   {
+    "layer": "county",
+    "name": "Clay"
+   },
+   {
+    "layer": "county",
+    "name": "Dickinson"
+   },
+   {
+    "layer": "county",
+    "name": "Emmet"
+   },
+   {
+    "layer": "county",
+    "name": "Lyon"
+   },
+   {
+    "layer": "county",
+    "name": "O'Brien"
+   },
+   {
+    "layer": "county",
+    "name": "Osceola"
+   },
+   {
+    "layer": "county",
+    "name": "Palo Alto"
+   },
+   {
+    "layer": "county",
+    "name": "Sioux"
+   }
+  ],
+  "confidence": 1.0,
+  "note": "Nine-county NW Iowa service; general public confirmed on operator website"
+ },
+ {
+  "name": "River Bend Transit",
+  "state": "IA",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Cedar"
+   },
+   {
+    "layer": "county",
+    "name": "Clinton"
+   },
+   {
+    "layer": "county",
+    "name": "Muscatine"
+   },
+   {
+    "layer": "county",
+    "name": "Scott"
+   }
+  ],
+  "confidence": 1.0,
+  "note": "Iowa Quad Cities region; regional consolidated transit system est. 1978"
+ },
+ {
+  "name": "Southern Iowa Trolley",
+  "state": "IA",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Adair"
+   },
+   {
+    "layer": "county",
+    "name": "Adams"
+   },
+   {
+    "layer": "county",
+    "name": "Clarke"
+   },
+   {
+    "layer": "county",
+    "name": "Decatur"
+   },
+   {
+    "layer": "county",
+    "name": "Ringgold"
+   },
+   {
+    "layer": "county",
+    "name": "Taylor"
+   },
+   {
+    "layer": "county",
+    "name": "Union"
+   }
+  ],
+  "confidence": 1.0,
+  "note": "Seven-county SW Iowa service; in-town service in Corning, Creston, Greenfield, Leon, Mt. Ayr, Osceola plus connectors; Bedford available on request"
+ },
+ {
+  "name": "SWITA (Southwest Iowa Transit Agency)",
+  "state": "IA",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Cass"
+   },
+   {
+    "layer": "county",
+    "name": "Fremont"
+   },
+   {
+    "layer": "county",
+    "name": "Harrison"
+   },
+   {
+    "layer": "county",
+    "name": "Mills"
+   },
+   {
+    "layer": "county",
+    "name": "Montgomery"
+   },
+   {
+    "layer": "county",
+    "name": "Page"
+   },
+   {
+    "layer": "county",
+    "name": "Pottawattamie"
+   },
+   {
+    "layer": "county",
+    "name": "Shelby"
+   }
+  ],
+  "confidence": 1.0,
+  "note": "Eight-county SW Iowa service; on-demand 6am-5pm weekdays"
+ },
+ {
+  "name": "Trip Connect (Johnson County)",
+  "state": "IA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Iowa City",
+    "county": "Johnson"
+   },
+   {
+    "layer": "auto",
+    "name": "Coralville",
+    "county": "Johnson"
+   },
+   {
+    "layer": "auto",
+    "name": "University Heights",
+    "county": "Johnson"
+   },
+   {
+    "layer": "auto",
+    "name": "North Liberty",
+    "county": "Johnson"
+   },
+   {
+    "layer": "auto",
+    "name": "Tiffin",
+    "county": "Johnson"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "Service is explicitly within city limits of Iowa City, Coralville, University Heights, North Liberty, and Tiffin, plus pickup/dropoff at other locations north of I-80 in Johnson County (evening service, 5pm-midnight) — not the full county (1,615 km²), which would overstate coverage south of I-80. The unincorporated north-of-I-80 area outside these five cities is not separately mappable with available resolver boundary_types, so this uses the five named cities as an approximate proxy that captures the core of the service area. Pilot ended June 30, 2026. Source: https://www.johnsoncountyiowa.gov/node/14198 and https://www.johnsoncountyiowa.gov/sites/default/files/2025-01/Trip%20Connect%20Flyer.pdf"
+ }
+]

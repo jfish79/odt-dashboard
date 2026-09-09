@@ -31,7 +31,9 @@ push per stage on `state-expansion`). Progress:
   neighborhood zones), **Mid-City GO** and **Southeastern Connect** (San Diego
   neighborhood zones), **FAST Connect** (two Fairfield zones) — need agency zone maps.
 - Stage 9 (AZ, CO, NM): done 2026-09-09.
-- Stage 10 (OK, KS, IA, MN, IL): launched 2026-09-09.
+- Stage 10 (OK, KS, IA, MN, IL): done 2026-09-09. Open: **MTTA On-Demand** (OK)
+  only its Broken Arrow zone is drawn; other Tulsa-metro zones need MetroLink maps.
+- Stage 11 (MT, ND, SD, WA, OR): launched 2026-09-09.
 
 Follow-up list (rows left as `needs_research`, or approximate proxies worth a
 human look) is visible in the spec files: search for `"needs_research"` and

@@ -1,0 +1,177 @@
+[
+ {
+  "name": "Central Community Transit (CCT) Dial-a-Ride",
+  "state": "MN",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Kandiyohi"
+   },
+   {
+    "layer": "county",
+    "name": "Renville"
+   },
+   {
+    "layer": "county",
+    "name": "Meeker"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "CCT's own site (cctbus.org) states it \"provides transportation for all Kandiyohi County, Renville and Meeker County residents\" -- i.e. countywide demand-response, not just the three named towns; Wikipedia's Central Community Transit entry independently corroborates 'countywide demand-response services' across the three counties, with fixed routes limited to Litchfield and Willmar. Full-county units retained (not downgraded to town-only) on that basis."
+ },
+ {
+  "name": "goMARTI",
+  "state": "MN",
+  "boundary_type": "zone_approx",
+  "buffers": [
+   {
+    "center_unit": {
+     "layer": "place",
+     "name": "Grand Rapids"
+    },
+    "radius_km": 4.06
+   }
+  ],
+  "confidence": 0.6,
+  "note": "~20 square mile service area centered on Grand Rapids; by 2025 expanded to connect with rural and tribal communities along Highway 2 (expansion extent not specified)"
+ },
+ {
+  "name": "Maple Grove My Ride",
+  "state": "MN",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Maple Grove"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.6,
+  "note": "Service is subset of Maple Grove city limits; also extends to parts of Osseo, Brooklyn Park, Brooklyn Center"
+ },
+ {
+  "name": "Metro Transit Micro",
+  "state": "MN",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Minneapolis"
+   },
+   {
+    "layer": "auto",
+    "name": "Roseville"
+   },
+   {
+    "layer": "auto",
+    "name": "Woodbury"
+   },
+   {
+    "layer": "auto",
+    "name": "Bloomington"
+   },
+   {
+    "layer": "auto",
+    "name": "Blaine"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.65,
+  "note": "Metro micro is 5 small, non-contiguous zones, each a subset of its city, not full-city coverage. North Minneapolis zone launched at 2.5 sq mi (bounded by I-94, I-394, Theodore Wirth Regional Park, Golden Valley Rd/W Broadway per masstransitmag.com; current metrotransit.org/micro-n-mpls page describes a somewhat larger boundary: 34th Ave N, I-94/Mississippi River, Dunwoody Blvd/I-394, Xerxes Ave N, but no current sq-mi figure). Roseville zone bounded by County Rd B, Old Hwy 8, County Rd F, Victoria St. Bloomington zone bounded by 94th St, Hwy 169, Minnesota River, 3rd Ave. Blaine zone bounded by Central Ave, 81st Ave NE, BNSF rail line, Erlandson/Sand Creek parks, 117th Ave. Woodbury zone spans parts of Woodbury, Oakdale, Lake Elmo. City-level polygons used as approximate containing units since no current per-zone size is published; see metrotransit.org/micro."
+ },
+ {
+  "name": "MVTA Connect",
+  "state": "MN",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Apple Valley"
+   },
+   {
+    "layer": "auto",
+    "name": "Burnsville"
+   },
+   {
+    "layer": "auto",
+    "name": "Rosemount"
+   },
+   {
+    "layer": "auto",
+    "name": "Savage"
+   },
+   {
+    "layer": "auto",
+    "name": "Eagan"
+   },
+   {
+    "layer": "auto",
+    "name": "Prior Lake"
+   },
+   {
+    "layer": "auto",
+    "name": "Shakopee"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Service across three distinct zones: Zone 1 (Apple Valley, Burnsville, Rosemount, Savage), Zone 2 (Eagan), Zone 3 (Prior Lake, Shakopee)"
+ },
+ {
+  "name": "Plymouth Click-and-Ride",
+  "state": "MN",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Plymouth"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.6,
+  "note": "Service is subset of Plymouth city limits; additional zones at Ridgedale, Colonial Square, Golden Valley Center"
+ },
+ {
+  "name": "RPT GO",
+  "state": "MN",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Rochester"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "Service zone is a small subset of Rochester city limits: a triangular area south of 12th St SE/Hwy 14, west of 50th Ave SE, east of Badger Run Creek (both sides of Marion Rd); expanded 2026 to include Central Park. No published sq-mi figure found, so the full Rochester place polygon is used as an approximate containing unit rather than an invented smaller circle. Confirmed via rochestermn.gov/streets-parking-transit/transit/ and rochestermn.qscend.com/311/knowledgebase/article/3214 (7 things to know about new Rochester microtransit service)."
+ },
+ {
+  "name": "SouthWest Prime",
+  "state": "MN",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Eden Prairie"
+   },
+   {
+    "layer": "auto",
+    "name": "Chanhassen"
+   },
+   {
+    "layer": "auto",
+    "name": "Chaska"
+   },
+   {
+    "layer": "auto",
+    "name": "Victoria"
+   },
+   {
+    "layer": "auto",
+    "name": "Carver"
+   }
+  ],
+  "confidence": 0.7,
+  "note": "Primary service area covers 5 named cities; select zones at MSP Airport and MOA outside these boundaries"
+ }
+]

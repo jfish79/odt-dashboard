@@ -1,0 +1,504 @@
+[
+ {
+  "name": "Beaver City Transit",
+  "state": "OK",
+  "boundary_type": "buffered",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Beaver"
+   }
+  ],
+  "dilate_km": 16.09,
+  "confidence": 0.9,
+  "note": "City of Beaver + 10-mile radius in Beaver County panhandle"
+ },
+ {
+  "name": "Call A Ride Public Transit",
+  "state": "OK",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Pontotoc"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Countywide service based in Ada"
+ },
+ {
+  "name": "Cherokee Strip Transit",
+  "state": "OK",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Alfalfa"
+   },
+   {
+    "layer": "county",
+    "name": "Blaine"
+   },
+   {
+    "layer": "county",
+    "name": "Grant"
+   },
+   {
+    "layer": "county",
+    "name": "Kingfisher"
+   },
+   {
+    "layer": "county",
+    "name": "Noble"
+   },
+   {
+    "layer": "county",
+    "name": "Garfield"
+   },
+   {
+    "layer": "county",
+    "name": "Kay"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Alfalfa, Blaine, Grant, Kingfisher, Noble counties fully; portions of Garfield and Kay counties (north-central including Ponca City, Blackwell, Cherokee, Tonkawa, Waukomis, Enid area)"
+ },
+ {
+  "name": "Cimarron Public Transit System",
+  "state": "OK",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Logan"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.8,
+  "note": "Service area described as 'Logan County area (Guthrie)'; ODOT Section 5311 provider based in Guthrie. County boundary used as approximate proxy since exact coverage within county not specified."
+ },
+ {
+  "name": "Delta Public Transit",
+  "state": "OK",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "McClain"
+   },
+   {
+    "layer": "county",
+    "name": "Garvin"
+   },
+   {
+    "layer": "county",
+    "name": "Cleveland"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "McClain and Garvin counties fully; southern Cleveland County only"
+ },
+ {
+  "name": "Enid Public Transportation Authority (EPTA)",
+  "state": "OK",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Enid"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Curb-to-curb service within Enid city limits, Garfield County"
+ },
+ {
+  "name": "Guymon Transit - The Ride",
+  "state": "OK",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Texas"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.8,
+  "note": "Service area described as 'Guymon / Texas County, Oklahoma panhandle'; City of Guymon service with broader Texas County panhandle coverage implied. County boundary used as approximate proxy since exact coverage within county not specified."
+ },
+ {
+  "name": "JAMM Transit",
+  "state": "OK",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Johnston"
+   },
+   {
+    "layer": "county",
+    "name": "Atoka"
+   },
+   {
+    "layer": "county",
+    "name": "Marshall"
+   },
+   {
+    "layer": "county",
+    "name": "Murray"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Covers Johnston, Atoka, Marshall, and Murray counties in southeastern Oklahoma"
+ },
+ {
+  "name": "KI BOIS Area Transit System (KATS)",
+  "state": "OK",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Haskell"
+   },
+   {
+    "layer": "county",
+    "name": "Latimer"
+   },
+   {
+    "layer": "county",
+    "name": "Le Flore"
+   },
+   {
+    "layer": "county",
+    "name": "McIntosh"
+   },
+   {
+    "layer": "county",
+    "name": "Pittsburg"
+   },
+   {
+    "layer": "county",
+    "name": "Sequoyah"
+   },
+   {
+    "layer": "county",
+    "name": "Adair"
+   },
+   {
+    "layer": "county",
+    "name": "Cherokee"
+   },
+   {
+    "layer": "county",
+    "name": "Hughes"
+   },
+   {
+    "layer": "county",
+    "name": "Okfuskee"
+   },
+   {
+    "layer": "county",
+    "name": "Okmulgee"
+   },
+   {
+    "layer": "county",
+    "name": "Wagoner"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "Multi-county service based in Stigler; official site lists differ; coverage includes Haskell, Latimer, Le Flore, McIntosh, Pittsburg, Sequoyah and potentially others (Adair, Cherokee, Hughes, Okfuskee, Okmulgee, Wagoner); exact boundaries not confirmed"
+ },
+ {
+  "name": "Little Dixie Transit",
+  "state": "OK",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "McCurtain"
+   },
+   {
+    "layer": "county",
+    "name": "Choctaw"
+   },
+   {
+    "layer": "county",
+    "name": "Pushmataha"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Southeastern Oklahoma: McCurtain, Choctaw, and Pushmataha counties (corrected from initial 5-county list; Atoka and Bryan not verified by sources)"
+ },
+ {
+  "name": "MTTA On-Demand Microtransit (GoPass App)",
+  "state": "OK",
+  "boundary_type": "zone_approx",
+  "confidence": 0.5,
+  "note": "Only the Broken Arrow zone (20 sq mi, launched Feb 2024) is drawn, as a circle of that size clipped to Broken Arrow city limits; MetroLink Tulsa's other GoPass on-demand zones in the Tulsa metro are not mapped (zone maps needed).",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Broken Arrow"
+   }
+  ],
+  "clip_to_units": true,
+  "buffers": [
+   {
+    "center_unit": {
+     "layer": "place",
+     "name": "Broken Arrow"
+    },
+    "radius_km": 4.06
+   }
+  ],
+  "fidelity": "approximate"
+ },
+ {
+  "name": "Norman On-Demand",
+  "state": "OK",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Norman"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Norman; serves evening/late-night and Sunday zones"
+ },
+ {
+  "name": "Pelivan Transit",
+  "state": "OK",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Craig"
+   },
+   {
+    "layer": "county",
+    "name": "Delaware"
+   },
+   {
+    "layer": "county",
+    "name": "Mayes"
+   },
+   {
+    "layer": "county",
+    "name": "Nowata"
+   },
+   {
+    "layer": "county",
+    "name": "Ottawa"
+   },
+   {
+    "layer": "county",
+    "name": "Rogers"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Northeastern Oklahoma: Craig, Delaware, Mayes, Nowata, Ottawa, and Rogers counties including Owasso/Collinsville zone"
+ },
+ {
+  "name": "PICK Transportation",
+  "state": "OK",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Atoka"
+   },
+   {
+    "layer": "auto",
+    "name": "Bartlesville"
+   },
+   {
+    "layer": "auto",
+    "name": "Owasso"
+   },
+   {
+    "layer": "auto",
+    "name": "Tahlequah"
+   },
+   {
+    "layer": "auto",
+    "name": "Claremore"
+   },
+   {
+    "layer": "auto",
+    "name": "Miami"
+   },
+   {
+    "layer": "auto",
+    "name": "Vinita"
+   },
+   {
+    "layer": "auto",
+    "name": "Pryor Creek"
+   },
+   {
+    "layer": "auto",
+    "name": "Grove"
+   },
+   {
+    "layer": "auto",
+    "name": "McAlester"
+   },
+   {
+    "layer": "auto",
+    "name": "Poteau"
+   },
+   {
+    "layer": "auto",
+    "name": "Eufaula"
+   },
+   {
+    "layer": "auto",
+    "name": "Sallisaw"
+   },
+   {
+    "layer": "auto",
+    "name": "Okmulgee"
+   },
+   {
+    "layer": "auto",
+    "name": "Skiatook"
+   },
+   {
+    "layer": "auto",
+    "name": "Cleveland"
+   },
+   {
+    "layer": "auto",
+    "name": "Sapulpa"
+   },
+   {
+    "layer": "auto",
+    "name": "Ponca City"
+   },
+   {
+    "layer": "auto",
+    "name": "Madill"
+   },
+   {
+    "layer": "auto",
+    "name": "Tishomingo"
+   },
+   {
+    "layer": "auto",
+    "name": "Sulphur"
+   }
+  ],
+  "confidence": 0.7,
+  "note": "SUMC case study names all 21 launch/expansion communities served by the Pelivan-led consortium (Atoka, Bartlesville, Owasso, Tahlequah plus 17 added communities). Service area has continued to evolve since (e.g. Altus added 2025, per a later SUMC update), so this list reflects the documented 21-community footprint rather than the current live roster. https://learn.sharedusemobilitycenter.org/overview/rural-agencies-launch-mobility-on-demand-pilot-21-counties-ok-2021/"
+ },
+ {
+  "name": "Red River Public Transportation Service",
+  "state": "OK",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Roger Mills"
+   },
+   {
+    "layer": "county",
+    "name": "Beckham"
+   },
+   {
+    "layer": "county",
+    "name": "Custer"
+   },
+   {
+    "layer": "county",
+    "name": "Washita"
+   },
+   {
+    "layer": "county",
+    "name": "Kiowa"
+   },
+   {
+    "layer": "county",
+    "name": "Tillman"
+   },
+   {
+    "layer": "county",
+    "name": "Cotton"
+   },
+   {
+    "layer": "county",
+    "name": "Jefferson"
+   },
+   {
+    "layer": "county",
+    "name": "Stephens"
+   },
+   {
+    "layer": "county",
+    "name": "Woodward"
+   },
+   {
+    "layer": "county",
+    "name": "Caddo"
+   },
+   {
+    "layer": "county",
+    "name": "Carter"
+   },
+   {
+    "layer": "county",
+    "name": "Comanche"
+   },
+   {
+    "layer": "county",
+    "name": "Ellis"
+   },
+   {
+    "layer": "county",
+    "name": "Dewey"
+   },
+   {
+    "layer": "county",
+    "name": "Canadian"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "16 counties explicitly listed in Region/Service Area"
+ },
+ {
+  "name": "Southern Oklahoma Rural Transportation System",
+  "state": "OK",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Carter"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Centered in Ardmore (Carter County); exact county coverage unverified"
+ },
+ {
+  "name": "Southwest Transit",
+  "state": "OK",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Jackson"
+   },
+   {
+    "layer": "county",
+    "name": "Harmon"
+   },
+   {
+    "layer": "county",
+    "name": "Greer"
+   }
+  ],
+  "confidence": 0.75,
+  "note": "ODOT S5311 profile identifies service as Jackson, Harmon and Greer counties (demand-response, general public); hub cities Altus, Hollis, Mangum, Granite. https://oklahoma.gov/odot/programs-and-projects/programs/multimodal/transit-programs/section-5311-rural/southwest-transit.html"
+ }
+]
