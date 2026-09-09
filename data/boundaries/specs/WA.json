@@ -1,0 +1,213 @@
+[
+ {
+  "name": "Clallam Transit Interlink",
+  "state": "WA",
+  "boundary_type": "zone_approx",
+  "buffers": [
+   {
+    "center_unit": {
+     "layer": "place",
+     "name": "Sequim"
+    },
+    "radius_km": 1.57
+   },
+   {
+    "center_unit": {
+     "layer": "place",
+     "name": "Forks"
+    },
+    "radius_km": 1.57
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Two separate service zones (~3 sq mi each) centered in Sequim and Forks; replaced fixed-route service; system has non-contiguous coverage. CSV pin (48.08, -123.43) sits ~midway between the two zones (they are ~110 km apart along US-101), so it reads as far from either circle -- this is a CSV pin-placement artifact, not a boundary error; source: clallamtransit.com"
+ },
+ {
+  "name": "CONNECT (Ben Franklin Transit)",
+  "state": "WA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Kennewick"
+   },
+   {
+    "layer": "place",
+    "name": "Richland"
+   },
+   {
+    "layer": "place",
+    "name": "Pasco"
+   }
+  ],
+  "confidence": 0.7,
+  "note": "Tri-Cities service area; six zones within central Kennewick, Richland, and Pasco; connects to fixed-route network with 3-hour transfer window"
+ },
+ {
+  "name": "Cowlitz Tribe Transit Service",
+  "state": "WA",
+  "boundary_type": "zone_approx",
+  "buffers": [
+   {
+    "center_unit": {
+     "layer": "place",
+     "name": "Centralia"
+    },
+    "radius_km": 32.18
+   },
+   {
+    "center_unit": {
+     "layer": "place",
+     "name": "Longview"
+    },
+    "radius_km": 32.18
+   }
+  ],
+  "units": [
+   {
+    "layer": "county",
+    "name": "Lewis"
+   },
+   {
+    "layer": "county",
+    "name": "Cowlitz"
+   }
+  ],
+  "clip_to_units": true,
+  "confidence": 0.6,
+  "note": "Text specifies South Lewis County (Centralia area) and Cowlitz County, up to 20 miles from the I-5 corridor -- not the full extent of either county; approximated as two 20-mile (32.18 km) radius circles centered on Centralia and Longview along I-5, clipped to Lewis and Cowlitz counties. Source: cowlitz.org/transit"
+ },
+ {
+  "name": "HarborFlex (Dial-A-Ride)",
+  "state": "WA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Montesano"
+   },
+   {
+    "layer": "place",
+    "name": "Elma"
+   },
+   {
+    "layer": "place",
+    "name": "Westport"
+   },
+   {
+    "layer": "place",
+    "name": "Tokeland"
+   },
+   {
+    "layer": "place",
+    "name": "Ocean Shores"
+   }
+  ],
+  "confidence": 0.7,
+  "note": "Dial-a-ride (non-paratransit) service across five communities in Grays Harbor County; Tokeland and Ocean Shores weekdays only"
+ },
+ {
+  "name": "Kitsap Transit On-Demand (Ride Pingo)",
+  "state": "WA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Kitsap"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.65,
+  "note": "Five named zones (BI Ride/Bainbridge Island, Kingston Ride, SK Ride/South Kitsap, Purdy Ride, Nollwood Dial-A-Ride); scheduling varies by zone; exact boundaries not specified"
+ },
+ {
+  "name": "Metro Flex",
+  "state": "WA",
+  "boundary_type": "zone_approx",
+  "buffers": [
+   {
+    "center_unit": {
+     "layer": "county",
+     "name": "King"
+    },
+    "radius_km": 9.08
+   }
+  ],
+  "units": [
+   {
+    "layer": "county",
+    "name": "King"
+   }
+  ],
+  "clip_to_units": true,
+  "confidence": 0.75,
+  "note": "~100 sq mi microtransit service area unified from three prior pilots; exact zone boundaries not specified"
+ },
+ {
+  "name": "Pierce Transit Runner",
+  "state": "WA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Pierce"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.6,
+  "note": "5 named zones (Spanaway North/South, Puyallup, Tideflats, Ruston) plus Gig Harbor corridor; exact zone boundaries not specified; service spans Pierce County"
+ },
+ {
+  "name": "STA Link",
+  "state": "WA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Spokane"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.6,
+  "note": "Planned pilot zones: North Spokane Valley, Latah Valley, Liberty Lake, West Plains, Northeast Spokane (incl. Mead); not yet launched as of Sept 2026"
+ },
+ {
+  "name": "The Current (C-TRAN)",
+  "state": "WA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Clark"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.65,
+  "note": "Multiple zones: WSU Vancouver/Salmon Creek, Rose Village, Camas/Washougal, Port of Vancouver, Ridgefield/La Center, Battle Ground; exact boundaries not specified"
+ },
+ {
+  "name": "Zip Shuttle (Community Transit)",
+  "state": "WA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Lynnwood"
+   },
+   {
+    "layer": "auto",
+    "name": "Arlington"
+   },
+   {
+    "layer": "auto",
+    "name": "Darrington"
+   },
+   {
+    "layer": "auto",
+    "name": "Lake Stevens"
+   }
+  ],
+  "confidence": 0.7,
+  "note": "Multiple service zones across Snohomish County; Alderwood zone is in Lynnwood; Darrington, Arlington, Lake Stevens added as separate pilot zones in late 2024"
+ }
+]

@@ -1,0 +1,154 @@
+[
+ {
+  "name": "Brookings Area Transit Authority (BATA)",
+  "state": "SD",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Brookings"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Countywide door-to-door demand-response service"
+ },
+ {
+  "name": "Cheyenne River Sioux Transit",
+  "state": "SD",
+  "boundary_type": "tribal",
+  "units": [
+   {
+    "layer": "aiannh",
+    "name": "Cheyenne River"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Service area is Cheyenne River Indian Reservation (Eagle Butte and surrounding communities)"
+ },
+ {
+  "name": "Palace Transit",
+  "state": "SD",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Mitchell"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Mitchell curb-to-curb demand-response service"
+ },
+ {
+  "name": "River Cities Public Transit",
+  "state": "SD",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Hughes"
+   },
+   {
+    "layer": "county",
+    "name": "Stanley"
+   },
+   {
+    "layer": "county",
+    "name": "Hand"
+   },
+   {
+    "layer": "county",
+    "name": "Hyde"
+   },
+   {
+    "layer": "county",
+    "name": "Dewey"
+   },
+   {
+    "layer": "county",
+    "name": "Ziebach"
+   },
+   {
+    "layer": "county",
+    "name": "Haakon"
+   },
+   {
+    "layer": "county",
+    "name": "Pennington"
+   },
+   {
+    "layer": "county",
+    "name": "Jackson"
+   },
+   {
+    "layer": "county",
+    "name": "Jones"
+   },
+   {
+    "layer": "county",
+    "name": "Lyman"
+   },
+   {
+    "layer": "county",
+    "name": "Minnehaha"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Multi-county demand-response serving Pierre/Fort Pierre hub plus rural counties. Note: row lists 'East Pennington' and 'North Jackson' which are likely subdivisions; treating parent counties."
+ },
+ {
+  "name": "Rosebud Sioux Tribe Transit",
+  "state": "SD",
+  "boundary_type": "tribal",
+  "units": [
+   {
+    "layer": "aiannh",
+    "name": "Rosebud"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Service area is Rosebud Sioux Reservation spanning Todd and Mellette counties"
+ },
+ {
+  "name": "Sioux Falls On-Demand",
+  "state": "SD",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Sioux Falls"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Citywide service integrated with fixed-route transit"
+ },
+ {
+  "name": "Sisseton Wahpeton Oyate Transit",
+  "state": "SD",
+  "boundary_type": "tribal",
+  "units": [
+   {
+    "layer": "aiannh",
+    "name": "Lake Traverse"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Service area is Lake Traverse Reservation (Sisseton and surrounding communities)"
+ },
+ {
+  "name": "Southeast Public Transit (Yankton/Vermillion)",
+  "state": "SD",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Yankton"
+   },
+   {
+    "layer": "auto",
+    "name": "Vermillion"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Merged system serving two cities in Yankton and Clay counties"
+ }
+]

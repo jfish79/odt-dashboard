@@ -1,0 +1,149 @@
+[
+ {
+  "name": "Basin Connect North",
+  "state": "OR",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Beaver Marsh"
+   },
+   {
+    "layer": "auto",
+    "name": "Chemult"
+   },
+   {
+    "layer": "auto",
+    "name": "Crescent"
+   },
+   {
+    "layer": "auto",
+    "name": "Gilchrist"
+   },
+   {
+    "layer": "auto",
+    "name": "La Pine"
+   },
+   {
+    "layer": "auto",
+    "name": "Bend"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.65,
+  "note": "Operator's own site does not list towns, but Herald and News coverage (heraldandnews.com, 'Basin Transit Services announces new Basin Connect North program') and Transit App's published route (transitapp.com Basin Connect North) confirm stops at Beaver Marsh, Chemult, Crescent, Gilchrist, La Pine, and Bend, spanning North Klamath County into Deschutes County."
+ },
+ {
+  "name": "CET Rural Dial-A-Ride",
+  "state": "OR",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Prineville"
+   },
+   {
+    "layer": "auto",
+    "name": "La Pine"
+   },
+   {
+    "layer": "auto",
+    "name": "Madras"
+   },
+   {
+    "layer": "auto",
+    "name": "Redmond"
+   },
+   {
+    "layer": "auto",
+    "name": "Sisters"
+   },
+   {
+    "layer": "auto",
+    "name": "Warm Springs"
+   },
+   {
+    "layer": "auto",
+    "name": "Deschutes River Woods"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Seven towns/places across Central Oregon; Deschutes River Woods pilot zone added May 2026"
+ },
+ {
+  "name": "CoosGO",
+  "state": "OR",
+  "boundary_type": "zone_approx",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Bandon"
+   }
+  ],
+  "buffer": {
+   "radius_km": 3.39
+  },
+  "clip_to_units": true,
+  "confidence": 0.75,
+  "note": "14-sq-mi service zone centered on Bandon (Bullards Beach State Park to Beach Loop Road); riders outside zone connected to fixed routes"
+ },
+ {
+  "name": "SPOT Southwest",
+  "state": "OR",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Washington"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.6,
+  "note": "Service limited to South Cooper Mountain, River Terrace, Murrayhill, and Progress Ridge neighborhoods in Washington County; full county boundary shown for reference"
+ },
+ {
+  "name": "Sunset Empire Transportation District Microtransit Pilot",
+  "state": "OR",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Seaside"
+   },
+   {
+    "layer": "auto",
+    "name": "Cannon Beach"
+   }
+  ],
+  "confidence": 0.6,
+  "note": "Pilot program ended as of Feb 2026; service area was within Route 20 service zone covering Seaside and Cannon Beach in Clatsop County"
+ },
+ {
+  "name": "TriMet NEXT",
+  "state": "OR",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Gresham"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "Service limited to South Gresham and Powell Valley neighborhoods within city limits; full city boundary shown for reference"
+ },
+ {
+  "name": "UPTD Dial-A-Ride",
+  "state": "OR",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Douglas"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.65,
+  "note": "Countywide service across Douglas County, but excludes ADA Paratransit service zone (open to general public with priority to seniors and people with disabilities)"
+ }
+]

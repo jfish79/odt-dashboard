@@ -25,7 +25,9 @@
   "MN",
   "MO",
   "MS",
+  "MT",
   "NC",
+  "ND",
   "NE",
   "NH",
   "NJ",
@@ -34,14 +36,17 @@
   "NY",
   "OH",
   "OK",
+  "OR",
   "PA",
   "RI",
   "SC",
+  "SD",
   "TN",
   "TX",
   "UT",
   "VA",
   "VT",
+  "WA",
   "WI",
   "WV",
   "WY"
@@ -147,8 +152,16 @@
    "features": 3,
    "updated": "2026-09"
   },
+  "MT": {
+   "features": 20,
+   "updated": "2026-09"
+  },
   "NC": {
    "features": 26,
+   "updated": "2026-09"
+  },
+  "ND": {
+   "features": 15,
    "updated": "2026-09"
   },
   "NE": {
@@ -183,6 +196,10 @@
    "features": 17,
    "updated": "2026-09"
   },
+  "OR": {
+   "features": 7,
+   "updated": "2026-09"
+  },
   "PA": {
    "features": 7,
    "updated": "2026-09"
@@ -193,6 +210,10 @@
   },
   "SC": {
    "features": 5,
+   "updated": "2026-09"
+  },
+  "SD": {
+   "features": 8,
    "updated": "2026-09"
   },
   "TN": {
@@ -213,6 +234,10 @@
   },
   "VT": {
    "features": 7,
+   "updated": "2026-09"
+  },
+  "WA": {
+   "features": 10,
    "updated": "2026-09"
   },
   "WI": {

@@ -1,0 +1,289 @@
+[
+ {
+  "name": "Blackfeet Transit",
+  "state": "MT",
+  "boundary_type": "tribal",
+  "units": [
+   {
+    "layer": "aiannh",
+    "name": "Blackfeet"
+   },
+   {
+    "layer": "place",
+    "name": "Kalispell"
+   },
+   {
+    "layer": "place",
+    "name": "Great Falls"
+   },
+   {
+    "layer": "place",
+    "name": "Shelby"
+   },
+   {
+    "layer": "place",
+    "name": "Cut Bank"
+   }
+  ],
+  "confidence": 0.6,
+  "fidelity": "approximate",
+  "note": "Blackfeet Indian Reservation (primary service area) plus the off-reservation cities the service extends to (Kalispell, Great Falls, Shelby, Cut Bank), drawn as whole city limits; the corridors between them are not shown."
+ },
+ {
+  "name": "Central Montana Shuttle",
+  "state": "MT",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Fergus"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Fergus County service with Lewistown as primary hub; weekly regional trips to Billings and Great Falls noted as extended service"
+ },
+ {
+  "name": "Crow Nation Transit",
+  "state": "MT",
+  "boundary_type": "tribal",
+  "units": [
+   {
+    "layer": "aiannh",
+    "name": "Crow"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Crow Indian Reservation with connections to Billings."
+ },
+ {
+  "name": "CSKT Transit",
+  "state": "MT",
+  "boundary_type": "tribal",
+  "units": [
+   {
+    "layer": "aiannh",
+    "name": "Flathead"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Primary service on Flathead Indian Reservation; off-reservation medical trips to Missoula and Kalispell are secondary."
+ },
+ {
+  "name": "Custer County Transit",
+  "state": "MT",
+  "boundary_type": "zone_approx",
+  "buffer": {
+   "center_unit": {
+    "layer": "place",
+    "name": "Miles City"
+   },
+   "radius_km": 3.218
+  },
+  "units": [
+   {
+    "layer": "county",
+    "name": "Custer"
+   }
+  ],
+  "clip_to_units": true,
+  "confidence": 0.85,
+  "fidelity": "approximate",
+  "note": "Primary on-demand coverage is a 2-mile radius ('bubble') from downtown Miles City per the operator's own page (https://custercountymt.gov/services/custer-county-transit/); out-of-town trips elsewhere in Custer County are available but require 72-hour advance coordination, and weekly Billings trips are medical/airport-only, so the mapped zone shows the primary radius rather than the full county"
+ },
+ {
+  "name": "Dawson County Transit",
+  "state": "MT",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Glendive"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Service hub is Glendive city; may include surrounding Dawson County areas"
+ },
+ {
+  "name": "Dillon City Bus",
+  "state": "MT",
+  "boundary_type": "buffered",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Dillon"
+   }
+  ],
+  "dilate_km": 1.609,
+  "confidence": 0.95,
+  "note": "Dillon city plus 1 mile beyond city limits per service area description"
+ },
+ {
+  "name": "Fallon County Council on Aging Transportation",
+  "state": "MT",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Fallon"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Fallon County service open to all community members; Baker and Plevna are service points"
+ },
+ {
+  "name": "Fort Belknap Transit",
+  "state": "MT",
+  "boundary_type": "tribal",
+  "units": [
+   {
+    "layer": "aiannh",
+    "name": "Fort Belknap"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Fort Belknap Indian Reservation (Blaine/Phillips counties, MT); tribal boundary aiannh='Fort Belknap' confirmed correct. CSV pin (48.5310,-108.7773) sits at/near Harlem, which is just NORTH of the Milk River — the reservation's natural north boundary — while the reservation's largest community, Fort Belknap Agency, is immediately south of the river; this places the pin ~3.6km outside the polygon even though the boundary match itself is correct. Likely a CSV geocoding issue (pin should be Fort Belknap Agency, not Harlem), not a spec error — see https://en.wikipedia.org/wiki/Fort_Belknap_Agency,_Montana and https://en.wikipedia.org/wiki/Fort_Belknap_Indian_Reservation."
+ },
+ {
+  "name": "Fort Peck Transit",
+  "state": "MT",
+  "boundary_type": "tribal",
+  "units": [
+   {
+    "layer": "aiannh",
+    "name": "Fort Peck"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Service on Fort Peck Indian Reservation serving reservation communities"
+ },
+ {
+  "name": "Lincoln County Transportation Service (LCTS)",
+  "state": "MT",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Lincoln"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "County-wide service with connections to Kalispell and Missoula."
+ },
+ {
+  "name": "Mineral County Pioneer Council Transportation",
+  "state": "MT",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Mineral"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "County-wide service with trips to Missoula and Plains."
+ },
+ {
+  "name": "Mountain Climber (formerly Eagle Transit)",
+  "state": "MT",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Flathead"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Flathead County Agency on Aging service; listed cities (Kalispell, Whitefish, Columbia Falls) are service hubs"
+ },
+ {
+  "name": "Northern Cheyenne Transit (REZ RUNNER)",
+  "state": "MT",
+  "boundary_type": "tribal",
+  "units": [
+   {
+    "layer": "aiannh",
+    "name": "Northern Cheyenne"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Northern Cheyenne Indian Reservation with monthly trips to Billings and Sheridan WY; general-public service inferred by analogy."
+ },
+ {
+  "name": "Phillips Transit Authority",
+  "state": "MT",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Phillips"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "County-wide service."
+ },
+ {
+  "name": "Powell County Transit",
+  "state": "MT",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Powell"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Powell County primary service; regional trips to Butte, Anaconda, Missoula, Helena noted as extended service"
+ },
+ {
+  "name": "Quality Transit",
+  "state": "MT",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Sheridan"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "County-wide service with trips to Williston ND, Sidney, and Scobey."
+ },
+ {
+  "name": "Richland County Transportation (RCT)",
+  "state": "MT",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Richland"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "County-operated service covering Richland County; named towns (Sidney, Fairview, Lambert, Savage) are service points"
+ },
+ {
+  "name": "Rocky Boy Transit",
+  "state": "MT",
+  "boundary_type": "tribal",
+  "units": [
+   {
+    "layer": "aiannh",
+    "name": "Rocky Boy's"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Service on Rocky Boy's Indian Reservation in Hill/Chouteau County, serving reservation residents"
+ },
+ {
+  "name": "Valley County Transit",
+  "state": "MT",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Valley"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Valley County service with Glasgow as primary hub"
+ }
+]

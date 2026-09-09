@@ -1,0 +1,277 @@
+[
+ {
+  "name": "Benson County Transportation",
+  "state": "ND",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Benson"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Benson County; hub in Maddock."
+ },
+ {
+  "name": "Cavalier County Transit",
+  "state": "ND",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Cavalier"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Cavalier County; hub in Langdon."
+ },
+ {
+  "name": "Devils Lake Transit",
+  "state": "ND",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Devils Lake"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "City of Devils Lake (Ramsey County); parent operator (Senior Meals & Services) also serves Eddy, Benson, Ramsey, and Towner Counties under related branding (separate rows)."
+ },
+ {
+  "name": "Dickinson Public Transit",
+  "state": "ND",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Stark"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Stark County; service emphasizes City of Dickinson."
+ },
+ {
+  "name": "Golden Valley/Billings County Council on Aging Public Transit",
+  "state": "ND",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Golden Valley"
+   },
+   {
+    "layer": "county",
+    "name": "Billings"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Golden Valley and Billings Counties (also marketed as Billings County Transit); hub in Beach; 160-mile service radius."
+ },
+ {
+  "name": "Hazen Public Transit",
+  "state": "ND",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Mercer"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "City of Hazen is the primary hub (in-town fare tier), but the operator's own fare page (hazennd.gov/transit) lists an 'Outside City Limits' tier explicitly covering Beulah, Stanton, and Pick City -- all in Mercer County -- so the true service area extends across Mercer County, not just city limits. Also scheduled routes to Bismarck (Wed) and Dickinson (2nd Thu monthly). Source: https://hazennd.gov/transit"
+ },
+ {
+  "name": "James River Public Transit",
+  "state": "ND",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Sheridan"
+   },
+   {
+    "layer": "county",
+    "name": "Stutsman"
+   },
+   {
+    "layer": "county",
+    "name": "Wells"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Sheridan, Stutsman, and Wells Counties; hub in Jamestown; routes to Bismarck and Fargo."
+ },
+ {
+  "name": "Kenmare Wheels & Meals",
+  "state": "ND",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Burke"
+   },
+   {
+    "layer": "county",
+    "name": "Renville"
+   },
+   {
+    "layer": "county",
+    "name": "Ward"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Burke, Renville, and Ward Counties; hub in Kenmare."
+ },
+ {
+  "name": "Kidder Emmons Senior Services Public Transit",
+  "state": "ND",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Kidder"
+   },
+   {
+    "layer": "county",
+    "name": "Emmons"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Primary service: Kidder and Emmons Counties (hub: Steele); routes extend into Burleigh, Stutsman, and Wells counties."
+ },
+ {
+  "name": "Nutrition United Transit (Can-Do Transportation)",
+  "state": "ND",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Towner"
+   }
+  ],
+  "confidence": 0.75,
+  "note": "Towner County (Can-Do Transportation service area); operator HQ in Rolla (Rolette County seat)."
+ },
+ {
+  "name": "South Central Transit Network",
+  "state": "ND",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Barnes"
+   },
+   {
+    "layer": "county",
+    "name": "Emmons"
+   },
+   {
+    "layer": "county",
+    "name": "Foster"
+   },
+   {
+    "layer": "county",
+    "name": "Griggs"
+   },
+   {
+    "layer": "county",
+    "name": "LaMoure"
+   },
+   {
+    "layer": "county",
+    "name": "McIntosh"
+   },
+   {
+    "layer": "county",
+    "name": "Nelson"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Seven-county service network covering south-central ND; hub in Valley City."
+ },
+ {
+  "name": "Spirit Lake Transit",
+  "state": "ND",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "aiannh",
+    "name": "Spirit Lake"
+   },
+   {
+    "layer": "county",
+    "name": "Benson"
+   },
+   {
+    "layer": "county",
+    "name": "Eddy"
+   },
+   {
+    "layer": "county",
+    "name": "Nelson"
+   },
+   {
+    "layer": "county",
+    "name": "Ramsey"
+   }
+  ],
+  "confidence": 0.6,
+  "note": "Spirit Lake Tribe 477 Program transit; row text states service on the Spirit Lake Reservation (Fort Totten) plus a Benson/Eddy/Nelson/Ramsey county area, with no stated zone size or town list within those counties. Encoded as the reservation plus the four named counties (fidelity approximate) rather than exact routes/zones.",
+  "fidelity": "approximate"
+ },
+ {
+  "name": "Trenton Indian Service Area Aging Program",
+  "state": "ND",
+  "boundary_type": "zone_approx",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Williams"
+   }
+  ],
+  "buffers": [
+   {
+    "center_unit": {
+     "layer": "place",
+     "name": "Trenton"
+    },
+    "radius_km": 30
+   }
+  ],
+  "clip_to_units": true,
+  "confidence": 0.7,
+  "note": "Service area centered on Trenton in Williams County; extent approximated due to limited geographic detail"
+ },
+ {
+  "name": "Turtle Mountain Transit",
+  "state": "ND",
+  "boundary_type": "tribal",
+  "units": [
+   {
+    "layer": "aiannh",
+    "name": "Turtle Mountain"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Service area is Turtle Mountain Indian Reservation in Rolette County"
+ },
+ {
+  "name": "Wildrose Public Transportation",
+  "state": "ND",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Divide"
+   },
+   {
+    "layer": "county",
+    "name": "Williams"
+   }
+  ],
+  "confidence": 0.75,
+  "note": "Service covers Divide and Williams counties in NW ND (Wildrose, Tioga, Ray, McGregor, Williston area); longer routes extend to Minot and Bismarck."
+ }
+]
