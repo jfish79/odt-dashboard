@@ -1,0 +1,83 @@
+[
+ {
+  "name": "LYNX Microtransit (CATS LYNX)",
+  "state": "LA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Baker"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.8,
+  "note": "Service zone in Baker; operator is county transit agency (CATS). CATS also runs 'CATS on Demand' whose relationship to LYNX is unclear; scoped to LYNX microtransit only."
+ },
+ {
+  "name": "Move Metairie On-Demand Zone",
+  "state": "LA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Jefferson"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.6,
+  "note": "Service limited to Metairie Road District within Jefferson Parish; Metairie is not an incorporated city but a community within Jefferson Parish. Scoped to Jefferson Parish (containing unit)."
+ },
+ {
+  "name": "River Parishes Transit Authority (RPTA) On-Demand Service",
+  "state": "LA",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "St. Charles"
+   },
+   {
+    "layer": "county",
+    "name": "St. James"
+   },
+   {
+    "layer": "county",
+    "name": "St. John the Baptist"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "All three parishes explicitly named in service area. Booking portal confirms on-demand service; pre-booking requirements and fixed schedule window not fully clarified."
+ },
+ {
+  "name": "SporTran OnDemand",
+  "state": "LA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Shreveport"
+   },
+   {
+    "layer": "place",
+    "name": "Bossier City"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Multiple zone-based service areas in Shreveport-Bossier City metro; exact zone boundaries not specified in available sources. Scoped to both cities."
+ },
+ {
+  "name": "St. Landry Parish CAA Transit",
+  "state": "LA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "St. Landry"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Primary service in St. Landry Parish (Opelousas area); trips extend into Lafayette Parish and neighboring parishes as scheduling permits. Scoped to primary parish."
+ }
+]

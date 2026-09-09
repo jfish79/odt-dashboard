@@ -1,0 +1,34 @@
+[
+ {
+  "name": "Murray-Calloway Transit Authority On Demand",
+  "state": "KY",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Calloway"
+   },
+   {
+    "layer": "place",
+    "name": "Murray"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Service branded 'City and County On Demand'; covers both Murray and Calloway County areas."
+ },
+ {
+  "name": "TANK Plus",
+  "state": "KY",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Campbell"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.65,
+  "note": "Zone 1 pilot within Campbell County; service may represent a subset of the full county. Pickup within 30 minutes."
+ }
+]

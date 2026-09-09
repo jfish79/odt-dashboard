@@ -1,0 +1,181 @@
+[
+ {
+  "name": "Black River Area Development (BRAD) Public Transit",
+  "state": "AR",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Pocahontas"
+   },
+   {
+    "layer": "place",
+    "name": "Walnut Ridge"
+   },
+   {
+    "layer": "place",
+    "name": "Hoxie"
+   },
+   {
+    "layer": "place",
+    "name": "Piggott"
+   },
+   {
+    "layer": "place",
+    "name": "Corning"
+   },
+   {
+    "layer": "county",
+    "name": "Clay"
+   },
+   {
+    "layer": "county",
+    "name": "Lawrence"
+   },
+   {
+    "layer": "county",
+    "name": "Randolph"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.6,
+  "note": "City routes serve Pocahontas, Walnut Ridge, Hoxie, Piggott, and Corning; county routes extend service into Clay, Lawrence, and Randolph counties (with incidental stops in Greene and Craighead counties, not mapped). https://bradcorp.org/services/transportation/"
+ },
+ {
+  "name": "CADC/SCAT (South Central Arkansas Transit)",
+  "state": "AR",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Calhoun"
+   },
+   {
+    "layer": "county",
+    "name": "Clark"
+   },
+   {
+    "layer": "county",
+    "name": "Columbia"
+   },
+   {
+    "layer": "county",
+    "name": "Dallas"
+   },
+   {
+    "layer": "county",
+    "name": "Garland"
+   },
+   {
+    "layer": "county",
+    "name": "Hempstead"
+   },
+   {
+    "layer": "county",
+    "name": "Hot Spring"
+   },
+   {
+    "layer": "county",
+    "name": "Howard"
+   },
+   {
+    "layer": "county",
+    "name": "Little River"
+   },
+   {
+    "layer": "county",
+    "name": "Lafayette"
+   },
+   {
+    "layer": "county",
+    "name": "Lonoke"
+   },
+   {
+    "layer": "county",
+    "name": "Miller"
+   },
+   {
+    "layer": "county",
+    "name": "Montgomery"
+   },
+   {
+    "layer": "county",
+    "name": "Nevada"
+   },
+   {
+    "layer": "county",
+    "name": "Ouachita"
+   },
+   {
+    "layer": "county",
+    "name": "Pike"
+   },
+   {
+    "layer": "county",
+    "name": "Saline"
+   },
+   {
+    "layer": "county",
+    "name": "Sevier"
+   },
+   {
+    "layer": "county",
+    "name": "Union"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "19-county service area explicitly documented."
+ },
+ {
+  "name": "METRO Connect",
+  "state": "AR",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Little Rock"
+   },
+   {
+    "layer": "place",
+    "name": "North Little Rock"
+   },
+   {
+    "layer": "place",
+    "name": "Sherwood"
+   },
+   {
+    "layer": "place",
+    "name": "Conway"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "Service comprises multiple named zones (John Barrow Road, Riverdale, Levy-Amboy, East Little Rock, Hensley in Little Rock; separate zones in North Little Rock, Sherwood, and Conway). Zone boundaries not precisely specified; approximated by city extent."
+ },
+ {
+  "name": "ORT On-Demand",
+  "state": "AR",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Fayetteville"
+   },
+   {
+    "layer": "place",
+    "name": "Springdale"
+   },
+   {
+    "layer": "place",
+    "name": "Rogers"
+   },
+   {
+    "layer": "place",
+    "name": "Bentonville"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "On-demand zones within and around four NWA cities. Rogers/Fayetteville/Springdale have full service (Mon-Sat); Bentonville Sat only."
+ }
+]

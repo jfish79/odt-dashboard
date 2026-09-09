@@ -1,0 +1,93 @@
+[
+ {
+  "name": "BRATS On-Demand",
+  "state": "AL",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Baldwin"
+   }
+  ],
+  "confidence": 1.0,
+  "note": "Service covers Baldwin County countywide including Eastern Shore, Foley, Robertsdale, Bay Minette, and Gulf Shores areas."
+ },
+ {
+  "name": "LR Rides (Lee-Russell Public Transit On-Demand)",
+  "state": "AL",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Auburn"
+   },
+   {
+    "layer": "place",
+    "name": "Opelika"
+   },
+   {
+    "layer": "county",
+    "name": "Lee"
+   },
+   {
+    "layer": "county",
+    "name": "Russell"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "LRPT on-demand zones cover Auburn, Opelika, Lee County, and Russell County. Separate PEX Paratransit component (Phenix City/Columbus GA) is excluded."
+ },
+ {
+  "name": "MAX On-Demand (formerly Birmingham On-Demand)",
+  "state": "AL",
+  "boundary_type": "zone_approx",
+  "buffers": [
+   {
+    "center_unit": {
+     "layer": "place",
+     "name": "Birmingham"
+    },
+    "radius_km": 4.7
+   }
+  ],
+  "units": [
+   {
+    "layer": "place",
+    "name": "Birmingham"
+   }
+  ],
+  "clip_to_units": true,
+  "confidence": 0.7,
+  "note": "Core coverage ~26.6 sq mi centered on Birmingham with zones in Downtown, East/Airport, North Birmingham, Mountain Brook, and pilot expansion to Homewood and Irondale."
+ },
+ {
+  "name": "MoGo Rideshare",
+  "state": "AL",
+  "boundary_type": "zone_approx",
+  "buffer": {
+   "radius_km": 3.74
+  },
+  "units": [
+   {
+    "layer": "place",
+    "name": "Mobile"
+   }
+  ],
+  "clip_to_units": true,
+  "confidence": 0.6,
+  "note": "Launch press materials describe a '17-mile service zone' (not further specified as radius vs. area) centered on southeastern Mobile, much smaller than the full city. Treated as ~17 sq mi (radius_km derived from area) centered on the CSV pin in southeastern Mobile, clipped to city limits. Sources: https://ridewithvia.com/news/mobile-area-chamber-of-commerce-foundation-and-via-launch-mogo-rideshare-an-on-demand-transit-pilot-to-expand-access-to-career-opportunities and https://city.ridewithvia.com/mogo (zone map image, southeastern Mobile)."
+ },
+ {
+  "name": "The M: Micro Transit",
+  "state": "AL",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Montgomery"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "On-demand service within Montgomery city limits with mapped zones including Downtown, Regional Airport, Whitewater, Maxwell AFB Visitor Center, and Jackson Hospital."
+ }
+]

@@ -1,0 +1,79 @@
+[
+ {
+  "name": "BLink",
+  "state": "IN",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Bloomington"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.95,
+  "note": "Service within Bloomington city limits, specifically Downtown, East, and North zones; serves trips not within walkable distance of fixed bus route"
+ },
+ {
+  "name": "Catch-A-Ride (Lifetime Resources)",
+  "state": "IN",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Ripley"
+   },
+   {
+    "layer": "county",
+    "name": "Jefferson"
+   },
+   {
+    "layer": "county",
+    "name": "Dearborn"
+   },
+   {
+    "layer": "county",
+    "name": "Ohio"
+   },
+   {
+    "layer": "county",
+    "name": "Switzerland"
+   },
+   {
+    "layer": "county",
+    "name": "Decatur"
+   }
+  ],
+  "fidelity": "exact",
+  "confidence": 0.95,
+  "note": "General-public demand-response serving six southeast Indiana counties"
+ },
+ {
+  "name": "Marshall County Rural Transit (MCPT)",
+  "state": "IN",
+  "boundary_type": "buffered",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Marshall"
+   }
+  ],
+  "dilate_km": 160.9,
+  "fidelity": "approximate",
+  "confidence": 0.6,
+  "note": "Core service is countywide (Plymouth & rural Marshall County); brochure also advertises out-of-county trips within an approx. 2-hour drive radius (South Bend/Mishawaka, Fort Wayne, Indianapolis), approximated here as a ~100 mi buffer (2 hr at ~50 mph) around the county. Source: https://marshallcountycouncilonaging.org/transit_brochure2024.pdf"
+ },
+ {
+  "name": "METS Micro",
+  "state": "IN",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Evansville"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.9,
+  "note": "Designated on-demand zones within City of Evansville; expanding to Jacobsville"
+ }
+]

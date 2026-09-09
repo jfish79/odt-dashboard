@@ -1,0 +1,33 @@
+[
+ {
+  "name": "GIFT On-Demand",
+  "state": "ID",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Idaho Falls"
+   }
+  ],
+  "confidence": 1.0,
+  "note": "Service explicitly described as City of Idaho Falls, citywide microtransit coverage."
+ },
+ {
+  "name": "VRT On-Demand (Nampa/Caldwell)",
+  "state": "ID",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Nampa"
+   },
+   {
+    "layer": "place",
+    "name": "Caldwell"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Service described as 'Nampa, Caldwell, and surrounding Canyon County'; encoded as two primary cities with surrounding areas. May extend beyond city limits within Canyon County."
+ }
+]

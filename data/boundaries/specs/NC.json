@@ -1,0 +1,136 @@
+[
+ {
+  "name": "ACTA Microtransit",
+  "state": "NC",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Graham"
+   },
+   {
+    "layer": "auto",
+    "name": "Haw River"
+   },
+   {
+    "layer": "auto",
+    "name": "Mebane"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Three named communities in Alamance County, county transportation authority operated"
+ },
+ {
+  "name": "Go Randolph (RCATS)",
+  "state": "NC",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Asheboro"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "Pilot zone in Asheboro city; partial coverage, not city-wide"
+ },
+ {
+  "name": "Go Wake Forest",
+  "state": "NC",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Wake Forest"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Wake Forest town limits plus a portion of Wakefield; Town of Wake Forest operated"
+ },
+ {
+  "name": "GoRaleigh MicroLink",
+  "state": "NC",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Rolesville"
+   },
+   {
+    "layer": "auto",
+    "name": "Wake Forest"
+   },
+   {
+    "layer": "auto",
+    "name": "Fuquay-Varina"
+   }
+  ],
+  "confidence": 0.75,
+  "note": "Three named service zones (Rolesville/Wake Forest zone and separate Fuquay-Varina zone); City of Raleigh operated"
+ },
+ {
+  "name": "Holly Springs Hopper",
+  "state": "NC",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Holly Springs"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.8,
+  "note": "Holly Springs town limits plus extraterritorial jurisdiction (ETJ)"
+ },
+ {
+  "name": "Local Link",
+  "state": "NC",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Eden"
+   },
+   {
+    "layer": "auto",
+    "name": "Wentworth"
+   },
+   {
+    "layer": "auto",
+    "name": "Madison"
+   },
+   {
+    "layer": "auto",
+    "name": "Mayodan"
+   },
+   {
+    "layer": "auto",
+    "name": "Stoneville"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Five named communities in Rockingham County, county-operated microtransit"
+ },
+ {
+  "name": "Salisbury Connect",
+  "state": "NC",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Salisbury"
+   },
+   {
+    "layer": "auto",
+    "name": "Spencer"
+   },
+   {
+    "layer": "auto",
+    "name": "East Spencer"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Three named communities in Rowan County; City of Salisbury operated"
+ }
+]

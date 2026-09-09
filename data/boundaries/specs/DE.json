@@ -1,0 +1,23 @@
+[
+ {
+  "name": "DART Connect",
+  "state": "DE",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Georgetown"
+   },
+   {
+    "layer": "auto",
+    "name": "Millsboro"
+   },
+   {
+    "layer": "auto",
+    "name": "Newark"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Three on-demand zones: Georgetown and Millsboro in Sussex County, Newark in New Castle County"
+ }
+]

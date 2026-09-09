@@ -1,13 +1,58 @@
 {
  "states": [
+  "AL",
+  "AR",
+  "DC",
+  "DE",
+  "HI",
+  "ID",
+  "IN",
+  "KY",
+  "LA",
   "NC",
   "VA",
   "WI"
  ],
  "detail": {
+  "AL": {
+   "features": 5,
+   "updated": "2026-09"
+  },
+  "AR": {
+   "features": 4,
+   "updated": "2026-09"
+  },
+  "DC": {
+   "features": 1,
+   "updated": "2026-09"
+  },
+  "DE": {
+   "features": 1,
+   "updated": "2026-09"
+  },
+  "HI": {
+   "features": 1,
+   "updated": "2026-09"
+  },
+  "ID": {
+   "features": 2,
+   "updated": "2026-09"
+  },
+  "IN": {
+   "features": 4,
+   "updated": "2026-09"
+  },
+  "KY": {
+   "features": 2,
+   "updated": "2026-09"
+  },
+  "LA": {
+   "features": 5,
+   "updated": "2026-09"
+  },
   "NC": {
-   "features": 22,
-   "updated": "2026-06"
+   "features": 26,
+   "updated": "2026-09"
   },
   "VA": {
    "features": 10,

@@ -1,0 +1,16 @@
+[
+ {
+  "name": "Hele-On Ka Hoʻokele (Rural Door-to-Door Service)",
+  "state": "HI",
+  "boundary_type": "county",
+  "fidelity": "approximate",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Hawaii"
+   }
+  ],
+  "confidence": 0.5,
+  "note": "Not a single contiguous zone: covers rural areas scattered across the Island of Hawaiʻi that fall outside Hele-On's regular fixed routes, including Seaview/Kalapana, Upper Puna, Waimea, Hilo, Kailua-Kona, and Captain Cook districts (island spans Puna to North Kona/South Kona, ~4,000 sq mi). No zone-size or unit-list source found beyond this district list, so shown as Hawaiʻi County with approximate fidelity rather than the individual CDPs, whose union left the CSV pin (a general island-interior coordinate) far outside any single polygon. Source: https://www.heleonbus.hawaiicounty.gov/programs/hele-on-ka-ho-okele-rural-door-to-door-service"
+ }
+]

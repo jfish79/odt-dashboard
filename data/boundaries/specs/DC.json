@@ -1,0 +1,16 @@
+[
+ {
+  "name": "DC Neighborhood Connect",
+  "state": "DC",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Washington"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.6,
+  "note": "Two street-bounded zones within DC, not citywide: Zone 1 (parts of Wards 1, 4, 5) bounded by Georgia Ave, Eastern Ave, Florida Ave, and Bladensburg Rd; Zone 2 (Ward 8) bounded by Pennsylvania Ave SE, Southern Ave SE, and the Anacostia Fwy. No ward-level boundary layer is available to the resolver, so the full District (Washington) is used as an approximate containing-unit proxy. Sources: https://dfhv.dc.gov/page/dc-neighborhood-connect ; https://ggwash.org/view/81932/dc-neighborhood-is-back-and-this-time-covering-parts-of-ward-8 ; https://mayor.dc.gov/release/mayor-bowser-announces-expansion-neighborhood-connect-service-northwest-and-northeast"
+ }
+]
