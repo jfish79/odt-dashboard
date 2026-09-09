@@ -1,0 +1,39 @@
+[
+ {
+  "name": "RIPTA Flex On Demand",
+  "state": "RI",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "South Kingstown"
+   },
+   {
+    "layer": "cousub",
+    "name": "Narragansett"
+   },
+   {
+    "layer": "cousub",
+    "name": "Coventry"
+   },
+   {
+    "layer": "cousub",
+    "name": "West Warwick"
+   },
+   {
+    "layer": "cousub",
+    "name": "Westerly"
+   },
+   {
+    "layer": "cousub",
+    "name": "Newport"
+   },
+   {
+    "layer": "cousub",
+    "name": "Middletown"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Multiple non-contiguous service zones: South County (South Kingstown, Narragansett), Coventry, West Warwick, Westerly, and Aquidneck Island (Newport, Middletown). Pilot launched August 2024, expanded to multiple zones, Aquidneck Island extended through December 31, 2026."
+ }
+]

@@ -1,0 +1,78 @@
+[
+ {
+  "name": "Bamberg County Office on Aging - Handy Ride",
+  "state": "SC",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Bamberg"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "County-level demand-response service operated by county Office on Aging"
+ },
+ {
+  "name": "Lower Richland ReFlex OnDemand",
+  "state": "SC",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Richland"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Service zone is the Lower Richland area subset of Richland County; COMET also operates a separate ReFlex OnDemand service for Downtown Columbia/Forest Acres"
+ },
+ {
+  "name": "Santee Wateree RTA On-Demand (Sumter)",
+  "state": "SC",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Sumter"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "Service zone is a subset of Sumter city limits, following the corridors of former Routes 50, 60, and 100 (West Liberty St., South Main St., East Liberty St.), not the full city; https://www.swrta.com/system-information"
+ },
+ {
+  "name": "SpartaGo",
+  "state": "SC",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Spartanburg"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Service zone covers northside and southside neighborhoods only, not city-wide; one-year pilot program"
+ },
+ {
+  "name": "TriCounty Link",
+  "state": "SC",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Berkeley"
+   },
+   {
+    "layer": "county",
+    "name": "Charleston"
+   },
+   {
+    "layer": "county",
+    "name": "Dorchester"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Hybrid fixed/commuter/on-demand transit across rural areas of three-county region"
+ }
+]

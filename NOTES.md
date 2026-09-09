@@ -18,7 +18,11 @@ push per stage on `state-expansion`). Progress:
   glance: **Delta Rides** and **SMART** (MS) county lists were read by the
   research agent off MDOT's ConnectMS regional map PDF (20 of 21 and 12 of
   13 counties, confidence 0.7 / 0.65) — verify against the map.
-- Stage 3 (RI, SC, UT, WV, WY): launched 2026-09-09.
+- Stage 3 (RI, SC, UT, WV, WY): done 2026-09-09. Follow-up: **UTA On Demand**
+  (UT) is drawn as the union of the nine North Utah County municipalities it
+  names, marked approximate; UTA's five other zones (South Davis, SLC
+  Westside/South, Tooele, Provo/Orem) have no polygon — needs UTA's zone maps.
+- Stage 4 (CT, MA, VT): launched 2026-09-09.
 
 Follow-up list (rows left as `needs_research`, or approximate proxies worth a
 human look) is visible in the spec files: search for `"needs_research"` and

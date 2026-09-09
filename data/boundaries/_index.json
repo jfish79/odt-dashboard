@@ -18,8 +18,13 @@
   "NH",
   "NJ",
   "NV",
+  "RI",
+  "SC",
+  "UT",
   "VA",
-  "WI"
+  "WI",
+  "WV",
+  "WY"
  ],
  "detail": {
   "AL": {
@@ -94,12 +99,32 @@
    "features": 4,
    "updated": "2026-09"
   },
+  "RI": {
+   "features": 1,
+   "updated": "2026-09"
+  },
+  "SC": {
+   "features": 5,
+   "updated": "2026-09"
+  },
+  "UT": {
+   "features": 4,
+   "updated": "2026-09"
+  },
   "VA": {
    "features": 10,
    "updated": "2026-09"
   },
   "WI": {
    "features": 44,
+   "updated": "2026-09"
+  },
+  "WV": {
+   "features": 2,
+   "updated": "2026-09"
+  },
+  "WY": {
+   "features": 5,
    "updated": "2026-09"
   }
  }

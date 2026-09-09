@@ -1,0 +1,158 @@
+[
+ {
+  "name": "Connect Pool (formerly CVTD POOL)",
+  "state": "UT",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Providence"
+   },
+   {
+    "layer": "place",
+    "name": "Millville"
+   },
+   {
+    "layer": "place",
+    "name": "River Heights"
+   },
+   {
+    "layer": "place",
+    "name": "Logan"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.65,
+  "note": "Covers Providence, Millville, River Heights, Cliffside (neighborhood/area name, not found as place), and portions of Logan in Cache County. Service launched Feb 2023 as replacement for removed/modified bus routes."
+ },
+ {
+  "name": "High Valley Transit Micro",
+  "state": "UT",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Silver Summit",
+    "county": "Summit"
+   },
+   {
+    "layer": "place",
+    "name": "Summit Park",
+    "county": "Summit"
+   },
+   {
+    "layer": "place",
+    "name": "Snyderville",
+    "county": "Summit"
+   },
+   {
+    "layer": "place",
+    "name": "Heber",
+    "county": "Wasatch"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.5,
+  "note": "Micro service runs two zones, not full counties: a Summit County zone covering Kimball Junction/Jeremy Ranch and surrounding area (Snyderville Basin CDPs: Silver Summit, Summit Park, Snyderville), and a Wasatch County zone covering Heber Valley and surrounding area. No zone-size figure is published, so unincorporated community CDPs stand in as an approximate proxy rather than the full 8,009 km2 of Summit+Wasatch counties. Jeremy Ranch itself is not a separate Census place; it falls within these CDPs. Source: https://www.hvtutah.gov/ride-micro (checked 2026-09-09)."
+ },
+ {
+  "name": "Moab Area Transit (MAT)",
+  "state": "UT",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Moab"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "On-demand/door-to-door service in Moab and surrounding service area, Grand County. Service launched March 2023. Exact extent of surrounding area not specified."
+ },
+ {
+  "name": "UTA On Demand",
+  "state": "UT",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Salt Lake City"
+   },
+   {
+    "layer": "county",
+    "name": "Davis"
+   },
+   {
+    "layer": "place",
+    "name": "Bluffdale"
+   },
+   {
+    "layer": "place",
+    "name": "Draper"
+   },
+   {
+    "layer": "place",
+    "name": "Herriman"
+   },
+   {
+    "layer": "place",
+    "name": "Riverton"
+   },
+   {
+    "layer": "place",
+    "name": "South Jordan"
+   },
+   {
+    "layer": "county",
+    "name": "Tooele"
+   },
+   {
+    "layer": "place",
+    "name": "Provo"
+   },
+   {
+    "layer": "place",
+    "name": "Orem"
+   },
+   {
+    "layer": "place",
+    "name": "Eagle Mountain"
+   },
+   {
+    "layer": "place",
+    "name": "Saratoga Springs"
+   },
+   {
+    "layer": "place",
+    "name": "Lehi"
+   },
+   {
+    "layer": "place",
+    "name": "American Fork"
+   },
+   {
+    "layer": "place",
+    "name": "Pleasant Grove"
+   },
+   {
+    "layer": "place",
+    "name": "Lindon"
+   },
+   {
+    "layer": "place",
+    "name": "Highland"
+   },
+   {
+    "layer": "place",
+    "name": "Cedar Hills"
+   },
+   {
+    "layer": "place",
+    "name": "Alpine"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.45,
+  "note": "Multi-zone system, treated as a single entry; polygon is a proxy union of the containing municipalities/counties per zone, not the actual on-demand zone shapes. South Davis County and Salt Lake City Westside zones are subsets of Davis County / Salt Lake City. Southern Salt Lake County (original pilot zone, ~65 sq mi) covers Bluffdale, Draper, Herriman, Riverton, South Jordan. Tooele County zone is countywide. West Provo/Orem is a subset of Provo and Orem. North Utah County zone (launching Aug 17, 2026) covers portions of Eagle Mountain, Saratoga Springs, Lehi, American Fork, Pleasant Grove, Lindon, Highland, Cedar Hills, and Alpine; per UTA's site the zone is 77.3 sq mi with a 6-mile max travel distance. Source: https://www.rideuta.com/Services/UTA-On-Demand (fetched 2026-09-09)."
+ }
+]

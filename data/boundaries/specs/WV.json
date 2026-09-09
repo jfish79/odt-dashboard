@@ -1,0 +1,42 @@
+[
+ {
+  "name": "Ready Ride (PVTA)",
+  "state": "WV",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Petersburg"
+   },
+   {
+    "layer": "auto",
+    "name": "Moorefield"
+   },
+   {
+    "layer": "auto",
+    "name": "Romney"
+   },
+   {
+    "layer": "auto",
+    "name": "Keyser"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "On-demand zone service confined to defined pickup areas within each town (Petersburg, Moorefield, Romney, Keyser), not full town/county coverage; no published zone size or boundary map found. Source: https://www.potomacvalleytransit.org/routes/ready-ride-bus-service/",
+  "fidelity": "approximate"
+ },
+ {
+  "name": "RideMon",
+  "state": "WV",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Morgantown"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.8,
+  "note": "Service zone covers Mountain Heights and Grafton Road areas within Morgantown"
+ }
+]

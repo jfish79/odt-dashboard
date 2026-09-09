@@ -1,0 +1,69 @@
+[
+ {
+  "name": "Buffalo Area Transit System (BATS)",
+  "state": "WY",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Johnson"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Primary coverage: Buffalo and Johnson County; weekly regional trips to Sheridan and Gillette counties"
+ },
+ {
+  "name": "Campbell County Dial-a-Ride",
+  "state": "WY",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Campbell"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.8,
+  "note": "Gillette is primary service hub; countywide service available with advance notice"
+ },
+ {
+  "name": "SafeRide (Laramie)",
+  "state": "WY",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Laramie"
+   }
+  ],
+  "confidence": 1.0,
+  "note": "Service within City of Laramie only"
+ },
+ {
+  "name": "START On-Demand",
+  "state": "WY",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Jackson"
+   }
+  ],
+  "confidence": 1.0,
+  "note": "Service within Town of Jackson only"
+ },
+ {
+  "name": "Wind River Transportation Authority (WRTA)",
+  "state": "WY",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Fremont"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Countywide service in Fremont County, includes Wind River Indian Reservation"
+ }
+]
