@@ -37,11 +37,24 @@ the dashboard fetches them at runtime, they're not intermediate artifacts.
 
 Quick summary — check the Reference tab in the live dashboard for the full
 version before making a judgment call on an edge case:
-- Same-day app/phone booking with no fixed schedule → included.
-- Demand-response is included if it's flagged with an "Advance" scheduling
-  window and open to the general public.
-- Excluded: 24+ hour advance-only booking, private/employer/campus-only
-  shuttles, permanently discontinued services.
+- Same-day app/phone booking with no fixed schedule → included, even if a
+  short same-day lead time is required (e.g. "2-hour advance").
+- Demand-response is included only if same-day booking is genuinely
+  available. Advance booking can be preferred, encouraged, or even the
+  norm without disqualifying a system, as long as a same-day request is a
+  real, routinely-honored option — not a rare best-effort exception.
+- Excluded: any system requiring a rider to book by some cutoff on a day
+  *before* the trip, with no same-day option (e.g. "by 4pm the day
+  before," "24hr advance," "next-day only"). The test is same-day-capable
+  or not, not a fixed hour count — a "day-before by 4pm" requirement is
+  excluded even though that can be under 24 actual hours. (Scope change
+  2026-08-27: previously an "Advance" scheduling window was itself
+  includable; a full sweep found ~215 rows across the dataset that read as
+  "Advance" but had no working same-day path, and removed them under this
+  clarified rule. See concerns.csv entries dated 2026-08-27 for the
+  per-system citations.)
+- Excluded: private/employer/campus-only shuttles, permanently discontinued
+  services.
 - Planned/pilot services are includable if vendor and funding are confirmed.
 - Excluded: strictly paratransit — services restricted to eligibility-certified
   riders (ADA/senior/disability). These are out of scope even though they are

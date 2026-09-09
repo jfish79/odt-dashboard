@@ -5,6 +5,199 @@ applied to the CSV yet, or aren't resolved. Clear items out once they're
 actually committed — this file should reflect *current* open items, not be
 a permanent log (that's what `concerns.csv` and git history are for).
 
+## AZ "Paratransit"-batch review, session paused mid-thread (2026-08-21)
+
+**Not yet committed to git** — CSV/build changes are made locally but this
+session stopped before a commit. Next session should review the working
+tree diff, commit if it looks right, then continue.
+
+Started because a routine "next steps" check found 9 AZ rows literally named
+"___ Paratransit" that survived the 2026-07-24 paratransit purge (the purge
+apparently filtered on `System Type == "Paratransit"`, but these 9 all have
+`System Type = Demand-Response` despite Fleet-field text openly describing
+ADA/eligibility restriction). That's when it became clear the whole AZ
+"New addition on  July 1" batch (a synthetic-looking bulk add, many blank
+`Source` fields) has unreliable Fleet/Ridership-Notes text — don't trust it
+without checking a primary source first (this batch is a **different**
+issue from the already-fixed Website-URL/Ridership-Notes column swap noted
+below).
+
+**Done and logged in concerns.csv (all rebuilt clean, 891 → 880 rows):**
+- Removed 9 rows literally named "___ Paratransit" (Valley Metro, Mountain
+  Line, CAT, Vista Transit, Bisbee Bus, KART, BATS, Four Seasons Connection,
+  Page Express) — each individually checked, each had `Scheduling Window:
+  Advance` + a Fleet field explicitly stating ADA/eligible-riders
+  restriction.
+- Removed **East Valley Dial-a-Ride** (AZ) — confirmed via Valley Metro's
+  own site: this *is* their ADA Paratransit program, requiring in-person
+  Mobility Center certification. Same program as the removed Valley Metro
+  Paratransit row, just the East Valley branding.
+- Removed **Salt River Transit** (AZ) — otherwise general-public and
+  ADA-*accessible* (not restricted) per srpmic-nsn.gov, but requires 24-hour
+  advance notice. Removed under the new 24hr+ policy call, see below. This
+  is the row that surfaced the policy question.
+- Corrected (not removed) **Tolleson Dial-a-Ride → renamed "Tolleson Micro
+  Transit Program"** — the CSV's "Strictly a senior and medical/grocery
+  trip shuttle" text was simply wrong. Confirmed via
+  tolleson.az.gov/762/Tolleson-Micro-Transit-Program: general public,
+  Uber/Lyft TNC-subsidy model ($15 city subsidy per ride), same-day app
+  booking. **This also resolves the TX TNC-subsidy scope question below**
+  (Cedar Park, Uber Kyle, Pfetch a Ride) — user's ruling: a city fare-subsidy
+  on a commercial TNC app *does* count as an in-scope system, same as a
+  city-run microtransit app. Those 3 TX rows can now be added on that basis
+  in a future pass.
+
+**AZ batch follow-ups — RESOLVED (2026-08-27), during the 24hr-advance-policy
+sweep below:**
+- **CART Dial-a-Ride (Casa Grande)** — confirmed: CART is the separate
+  fixed-route regional bus; the demand-response service is branded CG LINK,
+  general public, same-day best-effort. Renamed and corrected.
+- **Glendale Dial-A-Ride (AZ)** — confirmed via ridewithvia.com/news and
+  yourvalley.net (glendaleaz.gov itself still 403s): replaced by Glendale
+  OnBoard, a same-day Via-operated curb-to-curb service. Renamed and
+  corrected.
+- San Carlos Apache Nnee Transit, YCAT OnCall, Benson Area Transit (BAT)
+  Dial-a-Ride, and Coolidge Transit Dial-a-Ride were all checked and
+  removed under the confirmed 24hr-advance policy (each required booking a
+  day or more ahead, no same-day option found).
+- **Still unconfirmed**: Wickenburg Dial-a-Ride, Havasu Mobility, Beeline
+  Bus Dial-a-Ride — no primary source found stating a booking policy either
+  way despite a real search attempt; logged as Data Gap entries in
+  concerns.csv, left in scope. Needs a direct phone call, not further web
+  search.
+
+### 24-hour-advance-booking policy — SWEEP COMPLETE (2026-08-27)
+
+**User ruling (2026-08-21): a confirmed 24-hour-plus advance booking
+requirement is a definite disqualifier, full stop — regardless of
+general-public eligibility.** This resolves the "TX 24-hour-advance policy
+question" thread further down this file as well.
+
+**Threshold clarified 2026-08-27 ("spirit-of-the-rule" ruling):** the test
+is whether a rider can book AND ride same-day at all (even with a short
+intraday lead time, e.g. "2-hour advance"), not the literal hour count.
+Any requirement to call by some cutoff on a day *before* the trip (e.g.
+"by 4:30pm the day before," "24hr," "next-day," "noon cutoff day-before")
+disqualifies, regardless of whether that's technically 12, 16, or 24 actual
+hours. Systems where same-day is a real accepted option — even if advance
+booking is preferred/encouraged, or a short same-day lead time is required —
+stay in scope.
+
+This directly contradicts the *current* text in CLAUDE.md's scope rules
+("Demand-response is included if it's flagged with an 'Advance' scheduling
+window and open to the general public") and index.html's Reference-tab
+definition of the "Demand-Response" System Type ("Rides are booked in
+advance (typically the prior day or further out)... Open to the general
+public"). Both need to be rewritten to match the new ruling — **hold off on
+editing them until the data audit below is complete**, so the docs and the
+data don't fall out of sync in the meantime.
+
+**Triage done 2026-08-27** (mechanical text classification of all 880 rows'
+`Scheduling Window` values, no removals yet):
+
+- **KEEP, no action (~29 rows)** — value starts with `Same-day`/`Flexible`
+  as the primary category (advance is an optional extra), or states an
+  intraday lead time only (`2-hour`, `1-hour`, `30 min`, etc.). Confirmed
+  same-day-capable from the text alone; not part of this sweep.
+- **DISQUALIFY_TEXT queue (~90 rows after removing same-day-led false
+  positives)** — existing text already states an unconditional prior-day
+  cutoff with no same-day exception language (e.g. `Advance (24hr)`,
+  `Advance (day-before)`, `Advance (by 4pm day-before)`). Candidates for
+  removal, but each still needs a **light-touch source re-check** before
+  removing per the verify-before-removal rule (bulk-batch text has been
+  wrong before — see the Tolleson correction above) — heavier re-check for
+  blank-`Source`/synthetic-looking batches, lighter for well-cited
+  deep-sweep rows. Grouped by state for batch verification (mirrors the
+  existing deep-sweep batch structure): **GA is by far the largest cluster
+  at ~41 rows** (matches the "rural GA counties" pass flagged as
+  systemically affected), then CA (~16), TX (~14), WI (~9, excluding the
+  ambiguous shared-ride-taxi ones below), IL (6), CO (4), CT (2), NM (2),
+  AZ (1), OK (1).
+  - **Done (2026-08-27):** AR (5) + IL/OK (7) + CO (4) = 16 rows verified.
+    13 removed (NATS, NEAT, SEAT, WTS / Boone County Transit, Fulton County
+    Rural Transit, Kendall Area Transit/TransVAC, BPART, Call to Connect
+    RMTD, White Eagle Transit / All Points Transit, Outback Express, MoCo
+    Public Transportation — all logged in concerns.csv with citations). 2
+    corrected and KEPT after the source showed same-day is actually accepted
+    (CIPT — "24hr suggested, not required"; CADC/SCAT — "72hr requested,"
+    not a hard requirement). 1 flagged unconfirmed, not removed (Call-N-Ride
+    Greeley-Evans — site restructured, no live general-public DR page found;
+    needs a phone check, may have folded into ADA paratransit). Rebuilt
+    clean: 880 → 867 rows.
+  - **Done (2026-08-27, round 2):** GA (36) + CA (11) + TX (14) + WI (9) = 70
+    rows verified, plus the AMBIGUOUS queue (18 rows) verified in the same
+    pass. 60 rows removed total this round, all logged in concerns.csv with
+    citations. 14 corrected and KEPT after the source showed same-day is
+    genuinely accepted (Ridgerunner/Corcoran/Sage Stage/Desert Roadrunner
+    CA; Wilkes County GA; Fond du Lac/Door County/Oneida/Ozaukee/Washington
+    County/Waupaca County WI; Harris County Transit Plus/SCRPT/SWART TX;
+    Lake Mills/Tehachapi/Kern Regional/Dixon Readi-Ride from the ambiguous
+    queue). 1 removed as a judgment call on self-contradicting source text
+    (Kenosha County LINK — flagged medium-confidence in concerns.csv).
+    ~10 rows left genuinely unconfirmed and NOT removed (Colusa County
+    Transit CA, Waupun/Medford/Wisconsin Rapids/Viroqua-Westby WI, Jackson
+    County/Taylor County GA, Shafter/Taft Area CA) — each needs a direct
+    phone call, not a web search, to resolve; logged individually in
+    concerns.csv as Data Gap entries. Rebuilt clean: 867 → 807 rows.
+    **DISQUALIFY_TEXT and AMBIGUOUS queues are now fully worked. Only the
+    BARE `Advance` queue (248 rows) remains — not yet started.**
+  - Several rows in this queue had hedge language worth extra care during
+    verification, not a rubber-stamp removal: "same-day if capacity
+    allows/accommodated/possible/honored," "occasional same-day," "24hr or
+    ASAP," "preferred/encouraged" rather than "required," and genuinely
+    mixed-zone policies (e.g. Door County WI: one zone same-day-capable,
+    other zones 24hr — resolved with a per-zone note, not a single
+    keep/remove verdict for the whole row; Wilkes County GA similarly kept
+    on a real same-day carve-out for city riders specifically).
+- **BARE `Advance` queue — DONE (2026-08-27).** All 248 rows checked against
+  a primary source, in 17 parallel state-batch research passes (ND, AZ, OK,
+  MT, IA, SC, SD+MI, TN+IL, CO+OH, CA+NE, WY+NY, IN+ME, MD+ID+MO, NH+MS+OR,
+  WA+NC+AK, LA+AL+GA+TX, and a 10-state misc batch). 148 removed (logged
+  individually in concerns.csv with citations), ~40 corrected and KEPT after
+  the source showed same-day is genuinely accepted (Scheduling Window
+  updated from bare `Advance` to a confirmed detail), ~54 left genuinely
+  UNCONFIRMED — no source (official site, aggregator, cached snapshot)
+  stated a policy either way after a real search attempt. Those ~54 are not
+  a residual TODO to keep chasing by web search; each is logged in
+  concerns.csv as a Data Gap needing an actual phone call, which is out of
+  scope for this pass.
+
+**Sweep-wide total (2026-08-27, all four queues — DISQUALIFY_TEXT, KEEP_TEXT,
+AMBIGUOUS, BARE): 880 → 665 rows (215 removed).** One state (AK) dropped to
+zero — all 3 of its rows required 24hr+ prior-day booking with no same-day
+option found. Treated as a genuine outcome per the WV precedent above, not
+forced back up. A handful of AZ rows also got name/brand corrections
+discovered along the way (Glendale Dial-A-Ride → Glendale OnBoard; CART
+Dial-a-Ride → CG LINK, resolving the open item from the 2026-08-21 AZ-batch
+thread above) — same pattern as the Tolleson correction: bulk-batch Fleet
+text claiming ADA/senior restriction wasn't corroborated by the current
+source and was cleared, not carried forward.
+
+One process note for next time: two of the 17 parallel research batches'
+results (SD+MI, TN+IL) got read but not applied to the CSV in the first
+pass — caught by a post-sweep integrity check (cross-referencing every
+concerns.csv "Scope Removal" entry's system name against the live CSV) and
+fixed. That check also caught one single-row name-mismatch (removal script
+used "BitterRoot Bus (Ravalli County)," the CSV's actual Name was just
+"BitterRoot Bus"). Worth re-running that same integrity check after any
+future multi-batch sweep before considering it done.
+
+**Still open, lower priority:**
+1. Update CLAUDE.md's scope-rules section and index.html's Reference-tab
+   System Type definitions to state the spirit-of-the-rule threshold plainly
+   and drop the contradictory carve-in language — the docs still describe
+   the old "Advance window + general public = included" rule.
+2. Given the scale (Demand-Response fell from 467 to 265 rows in this
+   sweep, well under half its pre-sweep size), reconsider whether
+   "Demand-Response" survives as a meaningful System Type afterward, or
+   whether it should be redefined/renamed now that same-day-only systems
+   are the norm for what's left.
+3. The ~54 UNCONFIRMED bare-Advance rows and the ~10 UNCONFIRMED rows from
+   the earlier DISQUALIFY_TEXT/AMBIGUOUS queues (Colusa County CA, Waupun/
+   Medford WI, etc.) are all individually logged in concerns.csv as Data Gap
+   entries needing a phone call — a good candidate for a dedicated future
+   session if someone wants to work the phones, not a web-research task.
+
 ## Full 50-state deep sweep — wave 3 follow-ups (2026-07-24)
 
 Wave 3 (AZ/CA/FL, CT/NC/CO, OK/IL/MA, TX/GA — 5 research passes; TX/GA
@@ -541,23 +734,16 @@ usual; the items below are the *systemic* ones worth surfacing here:
   unconfirmed) and RTS On Demand (conflicting vendor signals — Via-style
   URL pattern vs. a TRC/Pingo press release for the same rollout).
 
-## Paratransit scope change — cleanup follow-ups (2026-07-24)
+## Paratransit scope change — cleanup follow-ups — RESOLVED (checked 2026-08-21)
 
-Uncommitted in the working tree as of 2026-07-24: all 170 `Paratransit`-typed
-rows removed from the CSV (see CLAUDE.md scope rules for the decision). Build
-re-run clean. Two things this broke, both open:
-
-- **WV dropped to zero systems** — its only 3 rows were all Paratransit.
-  Discovery research in progress to find real candidates (2026-07-24); a
-  genuine zero is an acceptable outcome, not a bug to force-fix.
-- **index.html Reference tab is now stale** — still documents "Paratransit"
-  as a live System Type (definitions grid, filter dropdown option, and the
-  "Paratransit reclassification" data-quality note don't mention the later
-  full retirement). `legend.csv` also still lists Paratransit under
-  Geographic Context Values (a pre-existing misplacement, unrelated to this
-  change). Needs a documentation pass before committing.
-- Footer stat "241 systems across 24 states" (index.html) is stale
-  independent of this change — needs updating regardless.
+All items below turned out to already be fixed in a later commit; nothing
+open here. Confirmed 2026-08-21: WV sits at 3 rows (real candidates were
+found in the Wave 1 low-recall sweep). index.html's Reference tab already
+documents the July 2026 retirement in its System Type section, and
+`legend.csv` no longer mentions Paratransit at all. The footer stat computes
+dynamically from `systems.length`/state count at load time, so it was never
+actually hardcoded/stale. Leaving this note only so a future pass doesn't
+waste time re-checking it — safe to delete next edit.
 
 ## Full 50-state review — scope decision (2026-07-24)
 
@@ -584,18 +770,11 @@ bringing coverage to all 50 states + DC. Full per-row detail is in
 system — every added row has at least one unverified field). Only the
 *open decisions* are listed here.
 
-### Thin states — likely under-researched, not genuinely sparse
+### Thin states — RESOLVED via later deep-sweep passes (checked 2026-08-21)
 
-Each was capped at ~8 web fetches per research agent, which is too tight for
-states whose systems are dispersed rather than clustered in one metro. Worth
-a dedicated higher-recall discovery pass (more fetches + more search angles,
-e.g. state DOT §5311 rural provider lists and regional transit districts):
-
-- **NM (1 system)** — only ABQ RIDE Connect. Almost certainly missing Santa Fe,
-  Las Cruces, and the regional RTDs.
-- **MS (1 system)** — only Coast Transit paratransit.
-- **ND (2 systems)** — likely missing Bismarck CAT and Grand Forks CAT.
-- **TN (5 systems)** — moderate, but light for the state's size.
+All four caught up since this was written: NM is now 8 systems (NM/OR
+coverage-gap sweep), ND is now 25 (ND coverage gap batches 1-2), TN is now
+16 (Wave 2 deep sweep), MS is now 4. Safe to delete next edit.
 
 ### Rows added on inference, not direct verification
 
