@@ -1,0 +1,27 @@
+[
+ {
+  "name": "CART (Cooperative Alliance for Regional Transportation)",
+  "state": "NH",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Derry"
+   },
+   {
+    "layer": "cousub",
+    "name": "Hampstead"
+   },
+   {
+    "layer": "cousub",
+    "name": "Londonderry"
+   },
+   {
+    "layer": "cousub",
+    "name": "Salem"
+   }
+  ],
+  "confidence": 1.0,
+  "note": "Service covers 4 towns in southern NH: curb-to-curb demand-response."
+ }
+]

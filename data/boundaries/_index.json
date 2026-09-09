@@ -9,7 +9,15 @@
   "IN",
   "KY",
   "LA",
+  "MD",
+  "ME",
+  "MO",
+  "MS",
   "NC",
+  "NE",
+  "NH",
+  "NJ",
+  "NV",
   "VA",
   "WI"
  ],
@@ -50,8 +58,40 @@
    "features": 5,
    "updated": "2026-09"
   },
+  "MD": {
+   "features": 4,
+   "updated": "2026-09"
+  },
+  "ME": {
+   "features": 2,
+   "updated": "2026-09"
+  },
+  "MO": {
+   "features": 4,
+   "updated": "2026-09"
+  },
+  "MS": {
+   "features": 3,
+   "updated": "2026-09"
+  },
   "NC": {
    "features": 26,
+   "updated": "2026-09"
+  },
+  "NE": {
+   "features": 6,
+   "updated": "2026-09"
+  },
+  "NH": {
+   "features": 1,
+   "updated": "2026-09"
+  },
+  "NJ": {
+   "features": 8,
+   "updated": "2026-09"
+  },
+  "NV": {
+   "features": 4,
    "updated": "2026-09"
   },
   "VA": {

@@ -13,7 +13,12 @@ Staging: 12 small stages (batch lists in the session scratchpad, one commit +
 push per stage on `state-expansion`). Progress:
 - Pilot VA + WI: done (54/55). Open: **GRTC LINK** (six named zones across four
   counties, no sizes; needs a human to trace GRTC's zone map).
-- Stage 1 (NC gaps, AL, AR, DC, DE, HI, ID, IN, KY, LA): launched 2026-09-09.
+- Stage 1 (NC gaps, AL, AR, DC, DE, HI, ID, IN, KY, LA): done 2026-09-09, 51/51.
+- Stage 2 (MD, ME, MO, MS, NE, NH, NJ, NV): done 2026-09-09. Worth a human
+  glance: **Delta Rides** and **SMART** (MS) county lists were read by the
+  research agent off MDOT's ConnectMS regional map PDF (20 of 21 and 12 of
+  13 counties, confidence 0.7 / 0.65) — verify against the map.
+- Stage 3 (RI, SC, UT, WV, WY): launched 2026-09-09.
 
 Follow-up list (rows left as `needs_research`, or approximate proxies worth a
 human look) is visible in the spec files: search for `"needs_research"` and

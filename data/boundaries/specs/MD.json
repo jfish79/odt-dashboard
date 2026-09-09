@@ -1,0 +1,84 @@
+[
+ {
+  "name": "Go Time! Annapolis",
+  "state": "MD",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Annapolis"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "Pickup is limited to within 3/4 mile of the former Orange Route (Church Circle, Inner West St, Spa Rd, Pip Moyer/Hilltop Ln, Robinwood, Newtowne Rd, Forest Dr/Safeway) and Purple Route (Westfield Annapolis Mall to Eastport), which together span most but not all of the city; no zone polygon or size is published, so the city is used as an approximate containing shape. Sources: https://annapolis.gov/2177/Go-Time-Annapolis-On-Demand-Transit and https://www.eyeonannapolis.net/2024/08/annapolis-sunsets-orange-and-purple-bus-lines-new-on-demand-service-takes-over/"
+ },
+ {
+  "name": "HoCo RapidRide",
+  "state": "MD",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Elkridge",
+    "county": "Howard"
+   },
+   {
+    "layer": "auto",
+    "name": "Jessup"
+   },
+   {
+    "layer": "auto",
+    "name": "Savage",
+    "county": "Howard"
+   },
+   {
+    "layer": "auto",
+    "name": "Columbia",
+    "county": "Howard"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Service runs along the Route 1 corridor connecting the named communities (Elkridge, Jessup, Savage, Hanover, Columbia) to shopping destinations (Dobbin Center, Snowden Square, Gateway Overlook); it does not cover all of Howard County, so the corridor communities are used rather than the full county. Hanover, MD straddles the Howard/Anne Arundel line and has no separate Census place or county-subdivision boundary, so it is not represented as its own polygon here (it sits between the Jessup and Elkridge shapes). Jessup CDP itself also straddles that county line, so no county hint is applied to it. No zone polygon is published. Sources: https://www.howardcountymd.gov/News031425b and https://ridewithvia.com/news/howard-county-executive-ball-launches-the-transformational-hoco-rapidride-a-new-microtransit-service-along-the-route-one-corridor"
+ },
+ {
+  "name": "PGC Link",
+  "state": "MD",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Fort Washington"
+   },
+   {
+    "layer": "auto",
+    "name": "Oxon Hill"
+   },
+   {
+    "layer": "auto",
+    "name": "Accokeek"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Service covers the confirmed Fort Washington-Oxon Hill-Accokeek zone. Additional zones (Bowie, Hyattsville, Laurel) are planned but not yet confirmed operating."
+ },
+ {
+  "name": "Ride On Flex",
+  "state": "MD",
+  "boundary_type": "zone_approx",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Montgomery"
+   }
+  ],
+  "clip_to_units": true,
+  "buffer": {
+   "radius_km": 2.4
+  },
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "Zone 918 is a narrow corridor along New Hampshire Ave from Cloverly St (Sandy Spring, ~39.083,-76.977) south to Lockwood Dr/White Oak Center (~39.041,-76.995), roughly 3 miles long -- far smaller than Montgomery County, so approximated as a ~1.5-mile-radius circle on the CSV pin, clipped to the county. No published zone polygon or acreage. Rockville and Glenmont/Wheaton zones were discontinued as of July 1, 2026, leaving only Zone 918. Source: https://www.montgomerycountymd.gov/department-transportation/ride-montgomery-county/ride-flex"
+ }
+]

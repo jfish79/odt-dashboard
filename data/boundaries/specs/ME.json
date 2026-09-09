@@ -1,0 +1,32 @@
+[
+ {
+  "name": "Metro Connect (Falmouth)",
+  "state": "ME",
+  "boundary_type": "cousub",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Falmouth"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Service area covers Falmouth, ME."
+ },
+ {
+  "name": "Standish-Gorham Microtransit Pilot",
+  "state": "ME",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Standish"
+   },
+   {
+    "layer": "cousub",
+    "name": "Gorham"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Serves two towns: Standish and Gorham."
+ }
+]

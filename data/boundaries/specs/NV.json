@@ -1,0 +1,79 @@
+[
+ {
+  "name": "GET My Ride",
+  "state": "NV",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Elko"
+   },
+   {
+    "layer": "auto",
+    "name": "Spring Creek"
+   },
+   {
+    "layer": "auto",
+    "name": "Osino"
+   },
+   {
+    "layer": "auto",
+    "name": "Carlin"
+   },
+   {
+    "layer": "auto",
+    "name": "Wells"
+   }
+  ],
+  "confidence": 0.7,
+  "note": "Main service in Elko, Spring Creek, Osino; limited service to Carlin and Wells. Ryndon not resolvable in gazetteer. Veterans medical-only trips available countywide but treated as secondary to primary service area."
+ },
+ {
+  "name": "Lake Link (Nevada service area)",
+  "state": "NV",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Round Hill"
+   },
+   {
+    "layer": "auto",
+    "name": "Zephyr Cove"
+   },
+   {
+    "layer": "auto",
+    "name": "Stateline"
+   }
+  ],
+  "confidence": 0.7,
+  "note": "Douglas County service area covering Round Hill, Lower Kingsbury, Zephyr Cove, Stateline casino corridor. Nevada portion of bi-state Lake Link service (CA row exists separately). Lower Kingsbury treated as part of broader Round Hill/Zephyr Cove cluster."
+ },
+ {
+  "name": "RTC OnDemand",
+  "state": "NV",
+  "boundary_type": "zone_approx",
+  "buffer": {
+   "radius_km": 5.17
+  },
+  "confidence": 0.8,
+  "note": "Approx. 32–33 sq mi zone spanning Southwest Las Vegas Valley and West Henderson, Clark County (RTC OnDemand, https://www.rtcsnv.com/rtcondemand/). Circle centered on CSV pin (36.0272, -115.1147) with radius from stated area (32.5 sq mi → r≈5.17 km); not clipped to city limits since the zone straddles the Las Vegas/Henderson boundary. Service area has expanded multiple times since 2021 launch; current boundary approximated."
+ },
+ {
+  "name": "RTC Washoe FlexRIDE On-Demand Service",
+  "state": "NV",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Reno"
+   },
+   {
+    "layer": "auto",
+    "name": "Sparks"
+   }
+  ],
+  "confidence": 0.7,
+  "note": "Service zones include North Valleys, Sparks/Spanish Springs, South Meadows, Verdi/Somersett. Specify main incorporated centers (Reno, Sparks); unincorporated zones approximated within these bounds."
+ }
+]

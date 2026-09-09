@@ -1,0 +1,143 @@
+[
+ {
+  "name": "Camden Loop",
+  "state": "NJ",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Camden"
+   }
+  ],
+  "confidence": 1.0,
+  "note": "City of Camden, citywide service"
+ },
+ {
+  "name": "GOTrenton!",
+  "state": "NJ",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Trenton"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "City of Trenton with expanded service to surrounding areas; exact coverage of surrounding areas not specified"
+ },
+ {
+  "name": "MicroLink (NJ Transit)",
+  "state": "NJ",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Bergenfield"
+   },
+   {
+    "layer": "auto",
+    "name": "Tenafly"
+   },
+   {
+    "layer": "auto",
+    "name": "Englewood",
+    "county": "Bergen"
+   },
+   {
+    "layer": "auto",
+    "name": "Teaneck"
+   },
+   {
+    "layer": "auto",
+    "name": "Manalapan"
+   },
+   {
+    "layer": "auto",
+    "name": "Marlboro"
+   },
+   {
+    "layer": "auto",
+    "name": "Freehold"
+   }
+  ],
+  "confidence": 0.7,
+  "fidelity": "approximate",
+  "note": "Pilot covers small zones WITHIN named towns, not the full counties: Bergen zone is centered on the Knickerbocker Rd corridor (sections of Bergenfield, Tenafly, Englewood, Teaneck); Monmouth service area 1 covers sections of Manalapan/Marlboro (to Union Hill Park & Ride, Marlboro); service area 2 covers sections of Freehold Township/Freehold Borough (to Freehold Mall Park & Ride) -- Freehold Township is not separately resolvable from TIGER/Line place data (collides with Freehold Borough under this tool's name matching), so only the Freehold Borough polygon is included and the mapped area understates that zone's true footprint. No zone size or exact boundary published as of launch (April 2026). Source: https://www.njtransit.com/press-releases/nj-transit-pilot-microtransit-shuttle-service-monmouth-and-bergen-counties"
+ },
+ {
+  "name": "Middlesex County RIDE On Demand",
+  "state": "NJ",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "New Brunswick"
+   },
+   {
+    "layer": "auto",
+    "name": "North Brunswick Township"
+   },
+   {
+    "layer": "auto",
+    "name": "East Brunswick Township"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Three municipalities in Middlesex County; service launched in New Brunswick and expanded to others"
+ },
+ {
+  "name": "Passaic County MOVE",
+  "state": "NJ",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Passaic"
+   },
+   {
+    "layer": "place",
+    "name": "Clifton"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Two cities in Passaic County"
+ },
+ {
+  "name": "Union County On-Demand Micro-Transit Pilot",
+  "state": "NJ",
+  "boundary_type": "zone_approx",
+  "buffer": {
+   "radius_km": 2.414
+  },
+  "confidence": 0.9,
+  "note": "1.5-mile radius zone centered at Route 28 & South Avenue (40.6640, -74.3181) in Westfield/Scotch Plains/Fanwood area"
+ },
+ {
+  "name": "Via Jersey City",
+  "state": "NJ",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Jersey City"
+   }
+  ],
+  "confidence": 1.0,
+  "note": "City-wide service as stated"
+ },
+ {
+  "name": "Via Newark",
+  "state": "NJ",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Newark"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.9,
+  "note": "Newark Arts and Education District within city limits; service launched as 6-month pilot focusing on downtown destinations"
+ }
+]

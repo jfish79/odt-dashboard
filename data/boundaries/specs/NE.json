@@ -1,0 +1,85 @@
+[
+ {
+  "name": "Fremont Transit Program",
+  "state": "NE",
+  "boundary_type": "buffered",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Fremont"
+   }
+  ],
+  "dilate_km": 3.22,
+  "confidence": 0.9,
+  "note": "Service extends 2 miles beyond Fremont city limits in Dodge County."
+ },
+ {
+  "name": "Micro Flex",
+  "state": "NE",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Omaha"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Service operates in three designated zones (North, South, West) within Omaha city limits; exact zone boundaries not specified."
+ },
+ {
+  "name": "Neligh Dial-A-Ride Public Transportation",
+  "state": "NE",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Neligh"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "Service covers City of Neligh and surrounding Antelope County communities; specific surrounding communities not named."
+ },
+ {
+  "name": "North Platte Public Transit",
+  "state": "NE",
+  "boundary_type": "buffered",
+  "units": [
+   {
+    "layer": "place",
+    "name": "North Platte"
+   }
+  ],
+  "dilate_km": 32.19,
+  "confidence": 0.85,
+  "note": "Service extends 20 miles beyond North Platte city limits; includes Lake Maloney, Indian Hills, Sutherland, Hershey, Maxwell."
+ },
+ {
+  "name": "TeleLift (North Fork Area Transit)",
+  "state": "NE",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Norfolk"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.9,
+  "note": "As of July 2025, service reduced to Norfolk city limits; previously served Norfolk, Madison, Meadow Grove, Newman Grove, and Battle Creek."
+ },
+ {
+  "name": "VANLNK",
+  "state": "NE",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Lincoln"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Door-to-door on-demand service throughout Lincoln city limits."
+ }
+]

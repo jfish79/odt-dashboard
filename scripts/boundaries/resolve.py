@@ -99,6 +99,11 @@ BOUNDARY_TYPES = {
 
 # LSAD codes that are NOT incorporated municipalities (CDPs etc.)
 CDP_LSADS = {'57'}
+# LSAD code for independent cities that are county-equivalents in the Census
+# county layer (e.g. St. Louis city MO, Baltimore city MD, Carson City NV,
+# and VA's independent cities) and so collide by NAME with a same-named
+# county ("St. Louis" -> both "St. Louis County" and "St. Louis city").
+INDEP_CITY_LSAD = {'25'}
 NAME_PREFIX = re.compile(r'^(city|town|village|borough|township|charter township|'
                          r'municipality|cdp) of\s+', re.I)
 NAME_SUFFIX = re.compile(r'\s+(city|town|village|borough|township|charter township|'
@@ -214,6 +219,13 @@ class Layers:
                 inc = [c for c in cands if c.get('LSAD') not in CDP_LSADS]
                 if len(inc) == 1:
                     cands = inc
+            if ly == 'county' and len(cands) > 1:
+                # A same-named independent city (e.g. "St. Louis city") is a
+                # county-equivalent that collides by NAME with the real
+                # county; boundary_type "county" always means the county.
+                proper = [c for c in cands if c.get('LSAD') not in INDEP_CITY_LSAD]
+                if len(proper) == 1:
+                    cands = proper
             if cands:
                 return cands, tried
         return [], tried
@@ -239,7 +251,11 @@ def area_km2(geom):
 
 
 def round_geom(geom, nd=5):
-    return json.loads(json.dumps(mapping(geom)), parse_float=lambda x: round(float(x), nd))
+    # GEOS precision reduction keeps the polygon valid (plain rounding can
+    # create self-touching rings); then emit rounded floats.
+    import shapely
+    g = clean(shapely.set_precision(geom, 10 ** -nd))
+    return json.loads(json.dumps(mapping(g)), parse_float=lambda x: round(float(x), nd))
 
 
 def clean(geom):

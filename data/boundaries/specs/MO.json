@@ -1,0 +1,79 @@
+[
+ {
+  "name": "GEST (Liberty/Gladstone, MO)",
+  "state": "MO",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Liberty"
+   },
+   {
+    "layer": "place",
+    "name": "Gladstone"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Service covers Liberty and Gladstone; candidate also lists North Kansas City, Riverside, Parkville as unverified."
+ },
+ {
+  "name": "IRIS (Independence)",
+  "state": "MO",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Independence"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Dynamic-routing microtransit covering entire Independence city limits."
+ },
+ {
+  "name": "MAPS (Metro Area Public Transit System)",
+  "state": "MO",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Joplin"
+   },
+   {
+    "layer": "place",
+    "name": "Webb City"
+   },
+   {
+    "layer": "place",
+    "name": "Oronogo"
+   },
+   {
+    "layer": "place",
+    "name": "Carterville"
+   },
+   {
+    "layer": "place",
+    "name": "Duquesne"
+   },
+   {
+    "layer": "place",
+    "name": "Duenweg"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Curb-to-curb demand-response covering greater Joplin metro area across six municipalities."
+ },
+ {
+  "name": "Via Metro STL",
+  "state": "MO",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "St. Louis"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Service is three named zones within St. Louis County (North County: parts of Florissant, Bellefontaine Neighbors, Hazelwood, Old Jamestown, Black Jack; West County: along I-64 from eastern Chesterfield to Town and Country near the Ballas Transit Center; South County), not the whole county and not the independent City of St. Louis. No public zone-boundary map or acreage found, so the containing county is used as an approximate proxy. Source: https://www.masstransitmag.com/alt-mobility/shared-mobility/car-sharing/press-release/21220910/bi-state-development-agency-of-the-missouri-illinois-metropolitan-district-st-louis-metro-via-metro-stl-to-expand-service-zones-may-3"
+ }
+]

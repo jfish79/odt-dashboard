@@ -1,0 +1,185 @@
+[
+ {
+  "name": "Delta Rides",
+  "state": "MS",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "DeSoto"
+   },
+   {
+    "layer": "county",
+    "name": "Tunica"
+   },
+   {
+    "layer": "county",
+    "name": "Tate"
+   },
+   {
+    "layer": "county",
+    "name": "Panola"
+   },
+   {
+    "layer": "county",
+    "name": "Coahoma"
+   },
+   {
+    "layer": "county",
+    "name": "Quitman"
+   },
+   {
+    "layer": "county",
+    "name": "Tallahatchie"
+   },
+   {
+    "layer": "county",
+    "name": "Yalobusha"
+   },
+   {
+    "layer": "county",
+    "name": "Grenada"
+   },
+   {
+    "layer": "county",
+    "name": "Bolivar"
+   },
+   {
+    "layer": "county",
+    "name": "Sunflower"
+   },
+   {
+    "layer": "county",
+    "name": "Leflore"
+   },
+   {
+    "layer": "county",
+    "name": "Carroll"
+   },
+   {
+    "layer": "county",
+    "name": "Montgomery"
+   },
+   {
+    "layer": "county",
+    "name": "Washington"
+   },
+   {
+    "layer": "county",
+    "name": "Humphreys"
+   },
+   {
+    "layer": "county",
+    "name": "Holmes"
+   },
+   {
+    "layer": "county",
+    "name": "Sharkey"
+   },
+   {
+    "layer": "county",
+    "name": "Yazoo"
+   },
+   {
+    "layer": "county",
+    "name": "Issaquena"
+   }
+  ],
+  "confidence": 0.7,
+  "note": "County list read directly off MDOT's official 'Regional Coordination Transportation Groups' map (mdot.ms.gov/connectms/images/regional-map.pdf), which color-codes every MS county by its ConnectMS regional network; these 20 counties are shaded as the Delta Rides (orange) region. MDOT's ConnectMS page and Delta Rides' own site (yourdeltarides.org) both state the region as '21' or '20+' counties without naming them, so this list may be missing one county at the boundary with the Trans-Con/EZTAG regions (Attala County was ambiguous on the map and is not included here)."
+ },
+ {
+  "name": "SMART",
+  "state": "MS",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Claiborne"
+   },
+   {
+    "layer": "county",
+    "name": "Jefferson"
+   },
+   {
+    "layer": "county",
+    "name": "Adams"
+   },
+   {
+    "layer": "county",
+    "name": "Franklin"
+   },
+   {
+    "layer": "county",
+    "name": "Amite"
+   },
+   {
+    "layer": "county",
+    "name": "Wilkinson"
+   },
+   {
+    "layer": "county",
+    "name": "Pike"
+   },
+   {
+    "layer": "county",
+    "name": "Walthall"
+   },
+   {
+    "layer": "county",
+    "name": "Lincoln"
+   },
+   {
+    "layer": "county",
+    "name": "Lawrence"
+   },
+   {
+    "layer": "county",
+    "name": "Jefferson Davis"
+   },
+   {
+    "layer": "county",
+    "name": "Copiah"
+   }
+  ],
+  "confidence": 0.65,
+  "note": "County list read directly off MDOT's official 'Regional Coordination Transportation Groups' map (mdot.ms.gov/connectms/images/regional-map.pdf), which color-codes every MS county by its ConnectMS regional network; these 12 counties are shaded as the SMART (yellow) region in southwest MS. MDOT's ConnectMS page and the Mississippi Public Transit Association both cite '13 counties,' so one boundary county may be missing (the yellow/Trans-Con line near Copiah/Simpson was hard to place precisely); no independent SMART operator website was found to confirm the exact list."
+ },
+ {
+  "name": "TRANS-CON (Transportation Connection)",
+  "state": "MS",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Copiah"
+   },
+   {
+    "layer": "county",
+    "name": "Hinds"
+   },
+   {
+    "layer": "county",
+    "name": "Madison"
+   },
+   {
+    "layer": "county",
+    "name": "Rankin"
+   },
+   {
+    "layer": "county",
+    "name": "Simpson"
+   },
+   {
+    "layer": "county",
+    "name": "Warren"
+   },
+   {
+    "layer": "county",
+    "name": "Yazoo"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Service area explicitly listed as 7 central Mississippi counties per MDOT ConnectMS and independent verification of Jackson Medical Mall Foundation operator."
+ }
+]
