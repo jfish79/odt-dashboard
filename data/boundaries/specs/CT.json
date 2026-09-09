@@ -1,0 +1,609 @@
+[
+ {
+  "name": "CTDOT Microtransit Pilot – Norwalk Transit",
+  "state": "CT",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Norwalk"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Norwalk, part of CTDOT statewide pilot"
+ },
+ {
+  "name": "CTDOT Microtransit Pilots – SEAT (SE Connecticut)",
+  "state": "CT",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Groton"
+   },
+   {
+    "layer": "cousub",
+    "name": "New London"
+   },
+   {
+    "layer": "cousub",
+    "name": "Stonington"
+   },
+   {
+    "layer": "cousub",
+    "name": "Waterford"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Four zones launched under CTDOT statewide pilot in Southeastern Connecticut"
+ },
+ {
+  "name": "CTtransit Link New Haven",
+  "state": "CT",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "New Haven"
+   },
+   {
+    "layer": "place",
+    "name": "West Haven"
+   },
+   {
+    "layer": "cousub",
+    "name": "East Haven"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Greater New Haven area service: New Haven and West Haven are incorporated cities (place layer); East Haven has no separate city incorporation and is encoded as its New England town (cousub layer). State-funded CTtransit microtransit connecting to Union Station rail. https://www.cttransit.com"
+ },
+ {
+  "name": "CTtransit Link Stamford",
+  "state": "CT",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Stamford"
+   },
+   {
+    "layer": "cousub",
+    "name": "Darien"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "State pilot serving Stamford (city) and Darien (town); fills gaps between corporate parks and residential areas"
+ },
+ {
+  "name": "Enfield Magic Carpet Link",
+  "state": "CT",
+  "boundary_type": "cousub",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Enfield"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Town of Enfield; replaces fixed schedule loops"
+ },
+ {
+  "name": "Estuary Transit River HOP",
+  "state": "CT",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Madison"
+   },
+   {
+    "layer": "cousub",
+    "name": "Guilford"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Shoreline microtransit serving Madison and Guilford; logged 27.5k rides in second year"
+ },
+ {
+  "name": "gbt connect (Trumbull)",
+  "state": "CT",
+  "boundary_type": "cousub",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Trumbull"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Town of Trumbull, launched July 2024"
+ },
+ {
+  "name": "GHTD Link (Enfield/East Windsor)",
+  "state": "CT",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Enfield"
+   },
+   {
+    "layer": "cousub",
+    "name": "East Windsor"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Service covers Enfield fully and portions of East Windsor, launched April 2024"
+ },
+ {
+  "name": "Groton Smart Ride",
+  "state": "CT",
+  "boundary_type": "cousub",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Groton"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Town of Groton; zone-based service"
+ },
+ {
+  "name": "Meriden Microtransit",
+  "state": "CT",
+  "boundary_type": "cousub",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Meriden"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Zone-based city transit connecting local neighborhoods to Hartford Line commuter rail"
+ },
+ {
+  "name": "Milford Micro",
+  "state": "CT",
+  "boundary_type": "cousub",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Milford"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Town of Milford, part of CTDOT statewide pilot"
+ },
+ {
+  "name": "New Haven Go New Haven",
+  "state": "CT",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "New Haven"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of New Haven; pilot program testing urban demand"
+ },
+ {
+  "name": "New London Smart Ride",
+  "state": "CT",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "New London"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of New London; app-based urban microtransit"
+ },
+ {
+  "name": "NWCTD Link",
+  "state": "CT",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Torrington"
+   }
+  ],
+  "confidence": 0.6,
+  "note": "Service described as covering the core Torrington commercial zone, not the full city — no zone size or street boundaries published on the operator site (https://www.nwcttransit.com/); encoded as Torrington city with approximate fidelity since it is a subset of city limits. Northwestern CT Transit District also runs a 14-town Dial-A-Ride but Link is Torrington-specific.",
+  "fidelity": "approximate"
+ },
+ {
+  "name": "Parkville Microtransit",
+  "state": "CT",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Hartford"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.8,
+  "note": "Pilot in Parkville neighborhood of Hartford; likely subset of city limits"
+ },
+ {
+  "name": "River Valley Transit Dial-A-Ride",
+  "state": "CT",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Chester"
+   },
+   {
+    "layer": "cousub",
+    "name": "Clinton"
+   },
+   {
+    "layer": "cousub",
+    "name": "Deep River"
+   },
+   {
+    "layer": "cousub",
+    "name": "Durham"
+   },
+   {
+    "layer": "cousub",
+    "name": "Essex"
+   },
+   {
+    "layer": "cousub",
+    "name": "East Haddam"
+   },
+   {
+    "layer": "cousub",
+    "name": "East Hampton"
+   },
+   {
+    "layer": "cousub",
+    "name": "Haddam"
+   },
+   {
+    "layer": "cousub",
+    "name": "Killingworth"
+   },
+   {
+    "layer": "cousub",
+    "name": "Lyme"
+   },
+   {
+    "layer": "cousub",
+    "name": "Middlefield"
+   },
+   {
+    "layer": "cousub",
+    "name": "Middletown"
+   },
+   {
+    "layer": "cousub",
+    "name": "Old Lyme"
+   },
+   {
+    "layer": "cousub",
+    "name": "Old Saybrook"
+   },
+   {
+    "layer": "cousub",
+    "name": "Portland"
+   },
+   {
+    "layer": "cousub",
+    "name": "Westbrook"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "16-town Estuary Transit District dial-a-ride service; curb-to-curb, trips must start/end 3/4 mile beyond fixed RVT bus routes"
+ },
+ {
+  "name": "River Valley Transit Microtransit",
+  "state": "CT",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Madison"
+   },
+   {
+    "layer": "cousub",
+    "name": "Guilford"
+   },
+   {
+    "layer": "cousub",
+    "name": "East Hampton"
+   },
+   {
+    "layer": "cousub",
+    "name": "Middletown"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Service covers Madison and Guilford fully, portions of East Hampton and Middletown, part of CTDOT statewide pilot"
+ },
+ {
+  "name": "Southington Microtransit",
+  "state": "CT",
+  "boundary_type": "cousub",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Southington"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Town of Southington; local microtransit pilot"
+ },
+ {
+  "name": "StamFORWARD (Stamford)",
+  "state": "CT",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Stamford"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Stamford, launched November 2024, part of CTDOT statewide pilot"
+ },
+ {
+  "name": "Stonington HOP",
+  "state": "CT",
+  "boundary_type": "cousub",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Stonington"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Stonington town; Mystic is a village/area within Stonington"
+ },
+ {
+  "name": "Tri-Town Connector",
+  "state": "CT",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "East Windsor"
+   },
+   {
+    "layer": "cousub",
+    "name": "Windsor Locks"
+   },
+   {
+    "layer": "cousub",
+    "name": "Somers"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Three-town northern CT service connecting to Bradley Airport transit hub"
+ },
+ {
+  "name": "Via NHV",
+  "state": "CT",
+  "boundary_type": "cousub",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "New Haven"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "App-based microtransit serving downtown and outlying urban neighborhoods; connects to Union Station rail"
+ },
+ {
+  "name": "Via NHV (New Haven)",
+  "state": "CT",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "New Haven"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of New Haven, part of CTDOT statewide pilot"
+ },
+ {
+  "name": "VTD2GO",
+  "state": "CT",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Ansonia"
+   },
+   {
+    "layer": "cousub",
+    "name": "Derby"
+   },
+   {
+    "layer": "cousub",
+    "name": "Shelton"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Late-day microtransit connecting three towns to Metro-North train lines; replaces evening fixed routes"
+ },
+ {
+  "name": "VTD2GO (Valley Transit District)",
+  "state": "CT",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Ansonia"
+   },
+   {
+    "layer": "cousub",
+    "name": "Derby"
+   },
+   {
+    "layer": "cousub",
+    "name": "Shelton"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Service covers Ansonia and Derby fully, portions of Shelton; evening-only service launched April 2024"
+ },
+ {
+  "name": "Waterford HOP",
+  "state": "CT",
+  "boundary_type": "cousub",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Waterford"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Microtransit zone covering key Waterford residential and shopping corridors"
+ },
+ {
+  "name": "Wheels 2U Norwalk",
+  "state": "CT",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Norwalk"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Norwalk, pioneering CT microtransit service"
+ },
+ {
+  "name": "Wheels 2U Westport",
+  "state": "CT",
+  "boundary_type": "cousub",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Westport"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Town of Westport, first/last mile connection to Metro-North rail"
+ },
+ {
+  "name": "WRTD Dial-A-Ride",
+  "state": "CT",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Ashford"
+   },
+   {
+    "layer": "cousub",
+    "name": "Chaplin"
+   },
+   {
+    "layer": "cousub",
+    "name": "Columbia"
+   },
+   {
+    "layer": "cousub",
+    "name": "Coventry"
+   },
+   {
+    "layer": "cousub",
+    "name": "Lebanon"
+   },
+   {
+    "layer": "cousub",
+    "name": "Mansfield"
+   },
+   {
+    "layer": "cousub",
+    "name": "Scotland"
+   },
+   {
+    "layer": "cousub",
+    "name": "Willington"
+   },
+   {
+    "layer": "cousub",
+    "name": "Windham"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "9-town Windham Region Transit District dial-a-ride service; available to general public with no age/disability restrictions"
+ },
+ {
+  "name": "WRTD Link",
+  "state": "CT",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Mansfield"
+   },
+   {
+    "layer": "cousub",
+    "name": "Windham"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "App-based service connecting UConn Storrs (in Mansfield) to Willimantic (in Windham); covers both towns"
+ },
+ {
+  "name": "XtraMile East Hampton",
+  "state": "CT",
+  "boundary_type": "cousub",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "East Hampton"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "On-demand pilot connecting residents to regional employment zones; serves transit desert"
+ },
+ {
+  "name": "XtraMile Middletown",
+  "state": "CT",
+  "boundary_type": "cousub",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Middletown"
+   }
+  ],
+  "confidence": 0.6,
+  "note": "Service is a fixed-stop microtransit covering downtown Middletown, the Washington Street corridor, the Wesleyan University campus, and the north end (17 stops total) -- not the full town of Middletown. Encoded as the containing town with approximate fidelity since no zone size or stop-boundary geometry is published. Source: https://rivervalleytransit.com/xtramile-middletown/",
+  "fidelity": "approximate"
+ },
+ {
+  "name": "XtraMile Old Saybrook",
+  "state": "CT",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Old Saybrook"
+   },
+   {
+    "layer": "cousub",
+    "name": "Essex"
+   },
+   {
+    "layer": "cousub",
+    "name": "Westbrook"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Three-town shoreline microtransit connecting to commuter rail"
+ }
+]

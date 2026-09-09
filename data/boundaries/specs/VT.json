@@ -1,0 +1,143 @@
+[
+ {
+  "name": "Gopher",
+  "state": "VT",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Washington"
+   },
+   {
+    "layer": "cousub",
+    "name": "Orange",
+    "county": "Orange"
+   },
+   {
+    "layer": "cousub",
+    "name": "Washington",
+    "county": "Orange"
+   },
+   {
+    "layer": "cousub",
+    "name": "Williamstown",
+    "county": "Orange"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.8,
+  "note": "Serves all of Washington County plus three neighboring Orange County towns: Orange, Washington, and Williamstown (per gophervt.org and web search of operator materials; site itself doesn't list towns explicitly). https://gophervt.org/"
+ },
+ {
+  "name": "Mountain Town Connector",
+  "state": "VT",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Andover"
+   },
+   {
+    "layer": "cousub",
+    "name": "Chester"
+   },
+   {
+    "layer": "cousub",
+    "name": "Jamaica"
+   },
+   {
+    "layer": "cousub",
+    "name": "Windham"
+   },
+   {
+    "layer": "cousub",
+    "name": "Winhall"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.6,
+  "note": "Greater Londonderry/southern Vermont mountain area; 6 of 14 service towns identified (Andover, Chester, Jamaica, Windham, Winhall; Chester Depot status unknown); 8 additional towns not specified"
+ },
+ {
+  "name": "MyRide by TVT (Middlebury)",
+  "state": "VT",
+  "boundary_type": "cousub",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Middlebury"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Mapped service zone within Middlebury; exact boundary shown only on operator map"
+ },
+ {
+  "name": "MyRide by TVT (Montpelier)",
+  "state": "VT",
+  "boundary_type": "cousub",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Montpelier"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.8,
+  "note": "Downtown core zone (State St/Main St area); service covers subset of city limits"
+ },
+ {
+  "name": "RCT Rides",
+  "state": "VT",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Caledonia"
+   },
+   {
+    "layer": "county",
+    "name": "Essex"
+   },
+   {
+    "layer": "county",
+    "name": "Orleans"
+   },
+   {
+    "layer": "county",
+    "name": "Lamoille"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "Northeast Kingdom region covering 90 towns; exact county composition not independently confirmed; using containing counties"
+ },
+ {
+  "name": "Springfield Microtransit",
+  "state": "VT",
+  "boundary_type": "cousub",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Springfield"
+   }
+  ],
+  "fidelity": "exact",
+  "confidence": 0.95,
+  "note": "Town-wide on-demand service"
+ },
+ {
+  "name": "Windsor MicroMOO",
+  "state": "VT",
+  "boundary_type": "cousub",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Windsor"
+   }
+  ],
+  "fidelity": "exact",
+  "confidence": 0.95,
+  "note": "Town-wide on-demand service"
+ }
+]

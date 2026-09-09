@@ -22,7 +22,8 @@ push per stage on `state-expansion`). Progress:
   (UT) is drawn as the union of the nine North Utah County municipalities it
   names, marked approximate; UTA's five other zones (South Davis, SLC
   Westside/South, Tooele, Provo/Orem) have no polygon — needs UTA's zone maps.
-- Stage 4 (CT, MA, VT): launched 2026-09-09.
+- Stage 4 (CT, MA, VT): done 2026-09-09.
+- Stage 5 (NY, PA, OH, MI): launched 2026-09-09.
 
 Follow-up list (rows left as `needs_research`, or approximate proxies worth a
 human look) is visible in the spec files: search for `"needs_research"` and

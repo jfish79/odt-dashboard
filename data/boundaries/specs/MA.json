@@ -1,0 +1,394 @@
+[
+ {
+  "name": "BAT Flex",
+  "state": "MA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Rockland"
+   },
+   {
+    "layer": "auto",
+    "name": "Bridgewater"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Two towns in Plymouth County area (Bridgewater Cares Microtransit component)"
+ },
+ {
+  "name": "CATA On Demand",
+  "state": "MA",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Gloucester"
+   },
+   {
+    "layer": "cousub",
+    "name": "Rockport"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Cape Ann area, two-town service."
+ },
+ {
+  "name": "CrossTown Connect",
+  "state": "MA",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Acton"
+   },
+   {
+    "layer": "cousub",
+    "name": "Boxborough"
+   },
+   {
+    "layer": "cousub",
+    "name": "Littleton"
+   },
+   {
+    "layer": "cousub",
+    "name": "Maynard"
+   },
+   {
+    "layer": "cousub",
+    "name": "Westford"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Five-town collaborative in northern MetroWest, centralized dispatch for COA and general public."
+ },
+ {
+  "name": "FRTA Microtransit",
+  "state": "MA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Greenfield"
+   },
+   {
+    "layer": "auto",
+    "name": "Deerfield"
+   },
+   {
+    "layer": "auto",
+    "name": "Montague"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Three towns in Franklin County, rural microtransit covering first/last mile gaps"
+ },
+ {
+  "name": "GATRA GO",
+  "state": "MA",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Plymouth"
+   },
+   {
+    "layer": "cousub",
+    "name": "Franklin"
+   },
+   {
+    "layer": "cousub",
+    "name": "Foxborough"
+   },
+   {
+    "layer": "cousub",
+    "name": "Mansfield"
+   },
+   {
+    "layer": "cousub",
+    "name": "Norfolk"
+   },
+   {
+    "layer": "cousub",
+    "name": "Wrentham"
+   },
+   {
+    "layer": "cousub",
+    "name": "Pembroke"
+   },
+   {
+    "layer": "cousub",
+    "name": "Marshfield"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Eight-town service area in South Shore region. Replaces fixed routes in lower-density zones."
+ },
+ {
+  "name": "MART OnDemand",
+  "state": "MA",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Athol"
+   },
+   {
+    "layer": "cousub",
+    "name": "Gardner"
+   },
+   {
+    "layer": "cousub",
+    "name": "Fitchburg"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Three-town service in North Central Massachusetts, integrates with traditional dial-a-ride."
+ },
+ {
+  "name": "MeVa On Demand",
+  "state": "MA",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Haverhill"
+   },
+   {
+    "layer": "cousub",
+    "name": "Lawrence"
+   },
+   {
+    "layer": "cousub",
+    "name": "Andover"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Three-town Merrimack Valley service with zero-fare policy."
+ },
+ {
+  "name": "MWRTA Catch Connect",
+  "state": "MA",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Wellesley"
+   },
+   {
+    "layer": "cousub",
+    "name": "Hudson"
+   },
+   {
+    "layer": "cousub",
+    "name": "Berlin"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Launched in Wellesley, expanded Feb 2025 to Hudson and Berlin. Connections to nearby stations/facilities noted."
+ },
+ {
+  "name": "NewMo (Newton in Motion)",
+  "state": "MA",
+  "boundary_type": "cousub",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Newton"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Citywide service in Newton, first-mile/last-mile to MBTA."
+ },
+ {
+  "name": "NRTA Wave On-Demand",
+  "state": "MA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Nantucket"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Island municipality, townwide service"
+ },
+ {
+  "name": "Quaboag Connector",
+  "state": "MA",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Ware"
+   },
+   {
+    "layer": "cousub",
+    "name": "Palmer"
+   },
+   {
+    "layer": "cousub",
+    "name": "Belchertown"
+   },
+   {
+    "layer": "cousub",
+    "name": "Brookfield"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Four-town rural service area in Central Massachusetts, supports same-day local trips."
+ },
+ {
+  "name": "RC Link",
+  "state": "MA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Revere"
+   },
+   {
+    "layer": "auto",
+    "name": "Chelsea"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Two adjacent cities in Suffolk County, joint municipal service"
+ },
+ {
+  "name": "Salem Skipper",
+  "state": "MA",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Salem"
+   },
+   {
+    "layer": "cousub",
+    "name": "Danvers"
+   },
+   {
+    "layer": "cousub",
+    "name": "Peabody"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Three-town service area on North Shore, connects to MBTA commuter rail."
+ },
+ {
+  "name": "SmartDART",
+  "state": "MA",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Barnstable"
+   },
+   {
+    "layer": "cousub",
+    "name": "Yarmouth"
+   },
+   {
+    "layer": "cousub",
+    "name": "Dennis"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Three towns on Cape Cod, serves tourist and resident needs."
+ },
+ {
+  "name": "SRTA MicroConnector",
+  "state": "MA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Fall River"
+   },
+   {
+    "layer": "auto",
+    "name": "New Bedford"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Two cities with 3 service zones total (Fall River, New Bedford North, New Bedford South); feeds South Coast Rail"
+ },
+ {
+  "name": "Stoneham Shuttle",
+  "state": "MA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Stoneham"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "All-electric townwide microtransit operated by Town of Stoneham"
+ },
+ {
+  "name": "Tri-Town Connector",
+  "state": "MA",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Great Barrington"
+   },
+   {
+    "layer": "cousub",
+    "name": "Stockbridge"
+   },
+   {
+    "layer": "cousub",
+    "name": "Egremont"
+   },
+   {
+    "layer": "cousub",
+    "name": "Sheffield"
+   },
+   {
+    "layer": "cousub",
+    "name": "Monterey"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Five-town rural microtransit in southern Berkshires, replaces fixed routes in transit desert."
+ },
+ {
+  "name": "VTA On Demand",
+  "state": "MA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Edgartown"
+   },
+   {
+    "layer": "auto",
+    "name": "Oak Bluffs"
+   }
+  ],
+  "confidence": 0.6,
+  "note": "CSV lists this as an off-season/evening microtransit covering Edgartown and Oak Bluffs, so units are those two towns per SPEC RULES. Note for follow-up: VTA's only documented on-demand microtransit pilot found in research (vineyardgazette.com, Nov 2020 \"VTA Launches Micro Transit\") served up-Island riders (Aquinnah/Chilmark/West Tisbury/Tisbury area), not Edgartown/Oak Bluffs, and the CSV pin (41.389,-70.6298) sits ~8.6km west of these two towns, closer to that up-Island area – no current vineyardtransit.com page documents a distinct \"On Demand\" service by name (checked vineyardtransit.com, route-maps, and 2025 RFP PDF). Town pairing not independently confirmed; may need human verification against VTA directly (508-693-9440)."
+ },
+ {
+  "name": "WRTA Via",
+  "state": "MA",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Westborough"
+   },
+   {
+    "layer": "cousub",
+    "name": "Shrewsbury"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Service zones are subsets of town limits, not full towns: Shrewsbury zone runs N of Rte 9 to Rte 20/Grafton State Hospital between Lake Quinsigamond and Northborough Crossing; Westborough/Northborough zone runs from downtown Northborough to south of Nourse St/W Main St between Northborough Crossing and I-495 (service also expanded to Northborough by July 2025, not reflected in this row's CSV text). CSV pin (42.2625,-71.8022) matches Worcester's coordinates, not Westborough/Shrewsbury - likely a mislabeled pin in the source CSV, not a boundary error; flagging for CSV correction rather than widening the polygon. Sources: https://city.ridewithvia.com/via-wrta, https://www.communityadvocate.com/news/wrta-service-expands-through-westborough-northborough-shrewsbury/article_099e3002-3348-49f1-9e06-f1247e888139.html",
+  "fidelity": "approximate"
+ }
+]

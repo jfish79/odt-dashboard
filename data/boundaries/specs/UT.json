@@ -79,8 +79,33 @@
     "name": "Salt Lake City"
    },
    {
-    "layer": "county",
-    "name": "Davis"
+    "layer": "place",
+    "name": "Centerville",
+    "county": "Davis"
+   },
+   {
+    "layer": "place",
+    "name": "West Bountiful",
+    "county": "Davis"
+   },
+   {
+    "layer": "place",
+    "name": "Woods Cross",
+    "county": "Davis"
+   },
+   {
+    "layer": "place",
+    "name": "North Salt Lake",
+    "county": "Davis"
+   },
+   {
+    "layer": "place",
+    "name": "Bountiful",
+    "county": "Davis"
+   },
+   {
+    "layer": "place",
+    "name": "Tooele"
    },
    {
     "layer": "place",
@@ -101,10 +126,6 @@
    {
     "layer": "place",
     "name": "South Jordan"
-   },
-   {
-    "layer": "county",
-    "name": "Tooele"
    },
    {
     "layer": "place",
@@ -152,7 +173,7 @@
    }
   ],
   "fidelity": "approximate",
-  "confidence": 0.45,
-  "note": "Multi-zone system, treated as a single entry; polygon is a proxy union of the containing municipalities/counties per zone, not the actual on-demand zone shapes. South Davis County and Salt Lake City Westside zones are subsets of Davis County / Salt Lake City. Southern Salt Lake County (original pilot zone, ~65 sq mi) covers Bluffdale, Draper, Herriman, Riverton, South Jordan. Tooele County zone is countywide. West Provo/Orem is a subset of Provo and Orem. North Utah County zone (launching Aug 17, 2026) covers portions of Eagle Mountain, Saratoga Springs, Lehi, American Fork, Pleasant Grove, Lindon, Highland, Cedar Hills, and Alpine; per UTA's site the zone is 77.3 sq mi with a 6-mile max travel distance. Source: https://www.rideuta.com/Services/UTA-On-Demand (fetched 2026-09-09)."
+  "confidence": 0.4,
+  "note": "Multi-zone system drawn as a proxy union of containing municipalities, not the actual zone shapes: South Davis zone ~ Bountiful/North Salt Lake/Woods Cross/West Bountiful/Centerville; SLC Westside ~ Salt Lake City; southern Salt Lake County ~ Bluffdale/Draper/Herriman/Riverton/South Jordan; Tooele ~ Tooele city; Provo/Orem; North Utah County (77.3 sq mi, Aug 2026) ~ Eagle Mountain through Alpine. Needs UTA zone maps for true shapes."
  }
 ]

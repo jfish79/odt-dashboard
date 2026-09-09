@@ -2,6 +2,7 @@
  "states": [
   "AL",
   "AR",
+  "CT",
   "DC",
   "DE",
   "HI",
@@ -9,6 +10,7 @@
   "IN",
   "KY",
   "LA",
+  "MA",
   "MD",
   "ME",
   "MO",
@@ -22,6 +24,7 @@
   "SC",
   "UT",
   "VA",
+  "VT",
   "WI",
   "WV",
   "WY"
@@ -33,6 +36,10 @@
   },
   "AR": {
    "features": 4,
+   "updated": "2026-09"
+  },
+  "CT": {
+   "features": 33,
    "updated": "2026-09"
   },
   "DC": {
@@ -61,6 +68,10 @@
   },
   "LA": {
    "features": 5,
+   "updated": "2026-09"
+  },
+  "MA": {
+   "features": 19,
    "updated": "2026-09"
   },
   "MD": {
@@ -113,6 +124,10 @@
   },
   "VA": {
    "features": 10,
+   "updated": "2026-09"
+  },
+  "VT": {
+   "features": 7,
    "updated": "2026-09"
   },
   "WI": {
