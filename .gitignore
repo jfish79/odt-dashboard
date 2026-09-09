@@ -24,3 +24,6 @@ Thumbs.db
 # build outputs from scripts/build.py, but they are also what index.html
 # fetches at runtime via GitHub Pages. Do NOT ignore them — they must stay
 # committed.
+
+# Census boundary file download cache (scripts/boundaries/resolve.py)
+scripts/boundaries/cache/

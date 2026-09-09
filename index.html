@@ -609,7 +609,7 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
             </div>
             <div class="ref-type-item">
               <div class="ref-type-label tag tag-type-Demand-Response" style="display:inline-block;margin-bottom:0.4rem">Demand-Response</div>
-              <div class="ref-type-desc">Rides are booked in advance (typically the prior day or further out). Vehicles are dynamically routed but scheduled rather than immediately dispatched. Common in rural settings. Open to the general public. Flagged with "Advance" scheduling window in this database.</div>
+              <div class="ref-type-desc">Rides are typically booked ahead of time, but same-day booking must still be a genuine, routinely-honored option — a system requiring booking by some cutoff on a day before the trip, with no same-day path, is out of scope regardless of the exact hour count. Vehicles are dynamically routed but scheduled rather than immediately dispatched. Common in rural settings. Open to the general public. (Scope change 2026-08-27: previously any "Advance" scheduling window qualified; a full sweep removed ~215 rows dataset-wide that had no working same-day option.)</div>
             </div>
           </div>
         </div>
@@ -655,7 +655,7 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
 
     <div class="ref-section">
       <div class="ref-section-label">Data caveats</div>
-      <p class="ref-prose">Fleet figures are sourced from press releases and agency reports and may not reflect current operations. Service hours and fares change frequently — verify with the agency before travel planning. Latitude/longitude pins represent approximate service area centers, not coverage boundaries. Systems marked "Not specified" have data that is not publicly available or not yet researched.</p>
+      <p class="ref-prose">Fleet figures are sourced from press releases and agency reports and may not reflect current operations. Service hours and fares change frequently — verify with the agency before travel planning. Latitude/longitude pins represent approximate service area centers; where a state has boundary overlays, the polygon shows the documented coverage area at the fidelity noted in its popup. Systems marked "Not specified" have data that is not publicly available or not yet researched.</p>
       <p class="ref-prose" style="margin-top:0.75rem">Last updated: <strong>July 2026</strong>. This is a living document; if you identify errors or omissions, please contact the research team.</p>
     </div>
 
@@ -687,6 +687,11 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
       </div>
 
       <div class="ref-def-block">
+        <div class="ref-def-term">24-hour-advance scope change (2026-08)</div>
+        <div class="ref-def-body">Demand-Response rows were originally included whenever they carried an "Advance" scheduling window and were open to the general public. As of August 2026, the rule was clarified: same-day booking must be a genuine, routinely-honored option (advance can be preferred or the norm, but a rider must actually be able to book and ride same-day, even with a short lead time like a 2-hour notice). A full dataset sweep checked every Advance-family row against its primary source and removed ~215 that required booking by some cutoff on a day before the trip with no same-day path, regardless of whether that cutoff was technically under 24 hours. Roughly 40 more were corrected in place once their source showed same-day genuinely was accepted. A residual set of rows remain logged as unconfirmed (no source stated a policy either way) and were left in scope rather than removed on a guess — each is in the spreadsheet's Concerns tab as a Data Gap entry needing a phone call. Full per-system citations are in the Concerns tab, dated 2026-08-27.</div>
+      </div>
+
+      <div class="ref-def-block">
         <div class="ref-def-term">Status change: OC Flex</div>
         <div class="ref-def-body">OC Flex (Orange County, CA) was discontinued effective July 1, 2025 per OCTA's website. The supplemental list had status "Active." This should be updated to "Ended" or removed.</div>
       </div>
@@ -697,22 +702,23 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
       </div>
 
       <div class="ref-def-block">
-        <div class="ref-def-term">NC service area boundaries</div>
-        <div class="ref-def-body">Boundaries shown on the NC map view come from multiple sources with varying accuracy. No NC microtransit agency publishes downloadable boundary data or GTFS-Flex feeds.</div>
+        <div class="ref-def-term">Service area boundaries</div>
+        <div class="ref-def-body">Boundaries shown on the state map views are built from Census TIGER/Line cartographic boundaries (2023, 1:500k) matched to each system's documented service area. No on-demand transit agency in the inventory publishes downloadable boundary data or GTFS-Flex feeds, so every polygon is a proxy whose fidelity is labeled. Each polygon's popup lists the Census units it was built from and any caveat. The per-state "spec" files under <code>data/boundaries/specs/</code> record the units chosen for every system and regenerate the GeoJSON deterministically. North Carolina was mapped by hand in June 2026; other states by an agent-assisted pipeline (drafted from row text, audited, and web-researched where flagged) from September 2026.</div>
         <div class="ref-table-wrap" style="margin-top:0.5rem">
           <table class="ref-table">
-            <thead><tr><th>Source</th><th>Systems</th><th>Accuracy</th></tr></thead>
+            <thead><tr><th>Boundary type</th><th>Built from</th><th>Accuracy</th></tr></thead>
             <tbody>
-              <tr><td>City limits (Census TIGER 2023)</td><td>Wilson, Gastonia, Morrisville, Greenville, Sanford, High Point</td><td>High — official municipal boundaries</td></tr>
-              <tr><td>County boundaries (Census)</td><td>Orange Co., McDowell Co., YVEDDI (4 counties), KARTS (4 counties), Tar River (2 counties)</td><td>High — but service may not cover entire county</td></tr>
-              <tr><td>Town boundary unions (Census)</td><td>GoWake, Johnston, Burke, Caldwell, CATS Micro</td><td>Good — actual town limits, but zones may extend beyond</td></tr>
-              <tr><td>Charlotte NPAs</td><td>JUMP Transit, SouthPark Skipper</td><td>Good — official neighborhood polygons from City of Charlotte</td></tr>
-              <tr><td>Census tracts</td><td>GoDurham Connect, RTP Connect</td><td>Moderate — tracts selected by geocoding boundary streets from agency websites</td></tr>
-              <tr><td>Constructed from places</td><td>RideMICRO (5 sub-zones)</td><td>Moderate — built from census places matching zone descriptions</td></tr>
-              <tr><td>Approximate buffer</td><td>PART On-Demand, HPTSGo!</td><td>Low — no published boundary data available</td></tr>
+              <tr><td>City limits</td><td>Census incorporated place</td><td>High — official municipal boundary; "approximate" when the zone is a subset of the city</td></tr>
+              <tr><td>County / multi-county</td><td>Census county polygons, dissolved</td><td>High for county-wide services; service may not reach every corner</td></tr>
+              <tr><td>Town boundaries</td><td>Union of Census places or county subdivisions (New England towns, townships)</td><td>Good — actual municipal limits, zones may extend beyond</td></tr>
+              <tr><td>Municipality + service radius</td><td>Place polygon dilated by the stated radius ("city plus 5 miles")</td><td>Moderate — radius as stated by the agency</td></tr>
+              <tr><td>Tribal land</td><td>Census AIANNH area</td><td>Good — reservation boundary; off-reservation trips not shown</td></tr>
+              <tr><td>Neighborhoods / tracts</td><td>Charlotte NPAs; Census tracts geocoded from boundary streets (NC only)</td><td>Moderate</td></tr>
+              <tr><td>Approximate zone</td><td>Circle(s) of the agency-stated size, centered on the zone's city and clipped to it</td><td>Low — shows scale and location, not shape</td></tr>
             </tbody>
           </table>
         </div>
+      </div>
       </div>
 
       <div class="ref-def-block">
@@ -1608,11 +1614,15 @@ const BOUNDARY_COLORS = {
   'city':               {fill:'#2e5e8a', stroke:'#1a3d5c', dash:null, label:'City limits (Census)'},
   'county':             {fill:'#3d6b4f', stroke:'#264432', dash:null, label:'County (Census)'},
   'counties':           {fill:'#3d6b4f', stroke:'#264432', dash:null, label:'Multi-county (Census)'},
+  'cousub':             {fill:'#5e5e9a', stroke:'#3a3a6a', dash:null, label:'Town/township (Census)'},
+  'cousubs':            {fill:'#5e5e9a', stroke:'#3a3a6a', dash:null, label:'Towns/townships (Census)'},
+  'tribal':             {fill:'#7a5a3a', stroke:'#4a3520', dash:null, label:'Tribal land (Census AIANNH)'},
   'places':             {fill:'#5e5e9a', stroke:'#3a3a6a', dash:null, label:'Town boundaries (Census)'},
   'neighborhood_npa':   {fill:'#8a5e2a', stroke:'#5c3d1a', dash:null, label:'Neighborhoods (Charlotte NPA)'},
   'census_tracts':      {fill:'#2a7a6a', stroke:'#1a4a3a', dash:null, label:'Census tracts'},
   'places_constructed': {fill:'#6a4a90', stroke:'#3a2a5c', dash:'4,3', label:'Constructed from places'},
   'zone_approx':        {fill:'#c05c2a', stroke:'#8a3d1a', dash:'6,4', label:'Approximate zone'},
+  'buffered':           {fill:'#b07a2a', stroke:'#7a501a', dash:'6,4', label:'Municipality + service radius'},
   'zones_approx':       {fill:'#c05c2a', stroke:'#8a3d1a', dash:'6,4', label:'Approximate zone'},
 };
 
@@ -1628,13 +1638,14 @@ function showStateBoundaries(state) {
     style: function(feature) {
       const bt = feature.properties.boundary_type;
       const colors = BOUNDARY_COLORS[bt] || BOUNDARY_COLORS['zone_approx'];
+      const approx = feature.properties.fidelity === 'approximate';
       return {
         fillColor: colors.fill,
         fillOpacity: 0.15,
         color: colors.stroke,
         weight: 2,
         opacity: 0.75,
-        dashArray: colors.dash
+        dashArray: colors.dash || (approx ? '6,4' : null)
       };
     },
     onEachFeature: function(feature, layer) {
@@ -1662,8 +1673,13 @@ function showStateBoundaries(state) {
           popup += '<div class="popup-note">' + noteText + '</div>';
         }
       }
-      if (p.boundary_type && (p.boundary_type.includes('approx') || p.boundary_type === 'places_constructed')) {
-        popup += '<div style="font-family:var(--mono);font-size:0.56rem;color:#8a5e2a;margin-top:0.3rem;font-style:italic">Boundary is approximate</div>';
+      if (p.units) {
+        popup += '<div style="font-family:var(--mono);font-size:0.56rem;color:var(--ink-faint);margin-top:0.3rem">Built from: ' + p.units + '</div>';
+      }
+      if (p.fidelity === 'approximate' || (p.boundary_type && (p.boundary_type.includes('approx') || p.boundary_type === 'places_constructed'))) {
+        popup += '<div style="font-family:var(--mono);font-size:0.56rem;color:#8a5e2a;margin-top:0.3rem;font-style:italic">Boundary is approximate' + (p.note ? ' — ' + p.note : '') + '</div>';
+      } else if (p.note) {
+        popup += '<div style="font-family:var(--mono);font-size:0.56rem;color:var(--ink-faint);margin-top:0.3rem;font-style:italic">' + p.note + '</div>';
       }
       popup += '</div>';
       layer.bindPopup(popup, {maxWidth: 280});

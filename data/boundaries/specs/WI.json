@@ -1,0 +1,612 @@
+[
+ {
+  "name": "Baraboo Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "buffered",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Baraboo"
+   },
+   {
+    "layer": "auto",
+    "name": "West Baraboo"
+   }
+  ],
+  "dilate_km": 12.87,
+  "confidence": 0.85,
+  "note": "City of Baraboo and Village of West Baraboo, plus an 8-mile radius outside city/village limits (8 miles = 12.87 km). Confirmed via wiscnews.com/news/local/article_48440bd2-546c-4141-a950-4c9c450c0144.html, which reports the Baraboo Common Council cut the outside-service radius from 15 miles to 8 miles effective Aug. 1, resolving the ambiguity in the row text's bare '(up to 8 miles)'."
+ },
+ {
+  "name": "Beaver Dam Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Beaver Dam"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Service area explicitly limited to City of Beaver Dam."
+ },
+ {
+  "name": "Berlin Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "zone_approx",
+  "buffer": {
+   "radius_km": 8.05
+  },
+  "confidence": 0.9,
+  "note": "Service area is City of Berlin plus 5-mile radius (5 miles = 8.05 km)."
+ },
+ {
+  "name": "Black River Falls Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "zone_approx",
+  "buffer": {
+   "radius_km": 8.05
+  },
+  "confidence": 0.9,
+  "note": "Service area is City of Black River Falls plus 5 miles surrounding (5 miles = 8.05 km)."
+ },
+ {
+  "name": "Chippewa Falls Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Chippewa Falls"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City explicitly stated in Region/Service Area"
+ },
+ {
+  "name": "Clintonville Taxi",
+  "state": "WI",
+  "boundary_type": "zone_approx",
+  "buffer": {
+   "radius_km": 12.87
+  },
+  "confidence": 0.9,
+  "note": "Service area is City of Clintonville plus 8-mile radius (8 miles = 12.87 km)."
+ },
+ {
+  "name": "Door County Shared-Ride Taxi (Door 2 Door Rides)",
+  "state": "WI",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Door"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Service covers most of Door County, divided into taxi zones"
+ },
+ {
+  "name": "Edgerton Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Edgerton"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Citywide service"
+ },
+ {
+  "name": "FlexRide Milwaukee",
+  "state": "WI",
+  "boundary_type": "city",
+  "note": "Service limited to the North/Northwest Neighborhood Zone of Milwaukee (flexridemke.com/fares-and-zones); no published size, city limits shown as proxy.",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Milwaukee"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.5
+ },
+ {
+  "name": "Fond du Lac Area Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Fond du Lac"
+   },
+   {
+    "layer": "place",
+    "name": "North Fond du Lac"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Explicitly named City of Fond du Lac and Village of North Fond du Lac in source."
+ },
+ {
+  "name": "Fort Atkinson Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Fort Atkinson"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Citywide service"
+ },
+ {
+  "name": "GBM On Demand",
+  "state": "WI",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "De Pere"
+   },
+   {
+    "layer": "auto",
+    "name": "Ashwaubenon"
+   },
+   {
+    "layer": "auto",
+    "name": "Green Bay"
+   }
+  ],
+  "confidence": 0.75,
+  "note": "Service covers named municipalities in Green Bay metro area. 'Alderwood' referenced in source not found in census boundaries (possibly neighborhood or zone name). East/West Green Bay zones treated as single city unit."
+ },
+ {
+  "name": "Grant County Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Lancaster"
+   },
+   {
+    "layer": "auto",
+    "name": "Boscobel"
+   },
+   {
+    "layer": "auto",
+    "name": "Fennimore"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Three specific towns in Grant County"
+ },
+ {
+  "name": "Hudson Public Transit (Shared-Ride Taxi)",
+  "state": "WI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Hudson"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Citywide service"
+ },
+ {
+  "name": "Jefferson Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Jefferson"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Citywide service"
+ },
+ {
+  "name": "Lake Mills Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Lake Mills"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Citywide service"
+ },
+ {
+  "name": "Marinette Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "buffered",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Marinette"
+   }
+  ],
+  "dilate_km": 4.827,
+  "fidelity": "approximate",
+  "confidence": 0.9,
+  "note": "City of Marinette plus a stated 3-mile radius beyond city limits (marinette.wi.us/583/Taxi); Peshtigo/Menominee reachable for an additional fee but not shown as part of the standard zone"
+ },
+ {
+  "name": "Marshfield Shared-Ride Taxi (Public Transit)",
+  "state": "WI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Marshfield"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Citywide service"
+ },
+ {
+  "name": "Mauston Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Mauston"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Citywide service"
+ },
+ {
+  "name": "Medford Shared-Ride Taxi Service",
+  "state": "WI",
+  "boundary_type": "zone_approx",
+  "buffer": {
+   "radius_km": 8.05
+  },
+  "confidence": 0.9,
+  "note": "Service area explicitly defined as City of Medford plus 5-mile radius (5 miles = 8.05 km)."
+ },
+ {
+  "name": "Monroe Cab Company (Shared-Ride Taxi)",
+  "state": "WI",
+  "boundary_type": "buffered",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Monroe"
+   }
+  ],
+  "dilate_km": 8.045,
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "City of Monroe plus a stated 1-5 mile extension beyond city limits (cityofmonroe.org/residents/our_community/monroe_cab_company.php); buffer drawn at the upper end (5 mi) of the stated range since an exact zone map isn't published; also serves the Pleasant View county facility, which may fall outside this buffer"
+ },
+ {
+  "name": "New Richmond Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "buffered",
+  "units": [
+   {
+    "layer": "place",
+    "name": "New Richmond"
+   }
+  ],
+  "dilate_km": 8.045,
+  "fidelity": "approximate",
+  "confidence": 0.9,
+  "note": "City of New Richmond plus a stated 5-mile radius beyond city limits (newrichmondwi.gov/community/shared_ride_taxi_service.php)"
+ },
+ {
+  "name": "Onalaska/Holmen/West Salem DriftLink Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Onalaska"
+   },
+   {
+    "layer": "auto",
+    "name": "Holmen"
+   },
+   {
+    "layer": "auto",
+    "name": "West Salem"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Three incorporated municipalities listed; using auto layer to resolve as place or cousub"
+ },
+ {
+  "name": "Oneida Public Transit",
+  "state": "WI",
+  "boundary_type": "tribal",
+  "confidence": 0.5,
+  "note": "Service area is a road-bounded polygon covering the Oneida Reservation and surrounding area toward Green Bay/Fox River (oneida-nsn.gov Passenger Handbook); reservation boundary shown as proxy.",
+  "fidelity": "approximate",
+  "units": [
+   {
+    "layer": "aiannh",
+    "name": "Oneida (WI)"
+   }
+  ]
+ },
+ {
+  "name": "Ozaukee County Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Ozaukee"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "County explicitly stated in Region/Service Area"
+ },
+ {
+  "name": "Plover Taxi Service",
+  "state": "WI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Plover"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Village of Plover"
+ },
+ {
+  "name": "Portage Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Portage"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Portage"
+ },
+ {
+  "name": "Prairie du Chien Shared-Ride Taxi (Coulee Cab)",
+  "state": "WI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Prairie du Chien"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Prairie du Chien"
+ },
+ {
+  "name": "Reedsburg Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "buffered",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Reedsburg"
+   }
+  ],
+  "dilate_km": 8.045,
+  "fidelity": "approximate",
+  "confidence": 0.8,
+  "note": "City of Reedsburg (reedsburgwi.gov/taxi) plus approximately 5 miles outside city limits, per the row's sourced description."
+ },
+ {
+  "name": "Richland Center Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Richland Center"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Richland Center"
+ },
+ {
+  "name": "Ripon Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Ripon"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Ripon"
+ },
+ {
+  "name": "River Falls Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "River Falls"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of River Falls"
+ },
+ {
+  "name": "Sauk Prairie Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Prairie du Sac"
+   },
+   {
+    "layer": "place",
+    "name": "Sauk City"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Village of Prairie du Sac and Village of Sauk City"
+ },
+ {
+  "name": "Shawano Shared-Ride Taxi (Shawano City Cab)",
+  "state": "WI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Shawano"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Shawano"
+ },
+ {
+  "name": "Stoughton Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Stoughton"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City explicitly stated in Region/Service Area"
+ },
+ {
+  "name": "Tomah Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Tomah"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City of Tomah"
+ },
+ {
+  "name": "Viroqua-Westby Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Viroqua"
+   },
+   {
+    "layer": "auto",
+    "name": "Westby"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Explicitly covers City of Viroqua and City of Westby, contracted to same operator."
+ },
+ {
+  "name": "Washington County Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Washington"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "County explicitly stated in Region/Service Area; note that West Bend and Hartford have separate systems"
+ },
+ {
+  "name": "Watertown Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "buffered",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Watertown"
+   }
+  ],
+  "dilate_km": 3.218,
+  "fidelity": "approximate",
+  "confidence": 0.8,
+  "note": "City of Watertown (passengertransit.net/PassengerCity?Name=Watertown) plus approximately 2 miles outside city limits, per the row's sourced description."
+ },
+ {
+  "name": "Waupaca County Catch a Ride",
+  "state": "WI",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Waupaca"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "County-wide service explicitly stated in Region/Service Area"
+ },
+ {
+  "name": "Waupun Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Waupun"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Primary service area is City of Waupun; trips outside available at per-mile rate beyond defined service zone."
+ },
+ {
+  "name": "West Bend Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "West Bend"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City explicitly stated in Region/Service Area; separate from county-wide Washington County service"
+ },
+ {
+  "name": "Whitewater Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Whitewater"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "City explicitly stated in Region/Service Area"
+ },
+ {
+  "name": "Wisconsin Rapids Shared-Ride Taxi",
+  "state": "WI",
+  "boundary_type": "zone_approx",
+  "buffer": {
+   "radius_km": 8.05
+  },
+  "confidence": 0.85,
+  "note": "Service covers City of Wisconsin Rapids plus up to 5 miles beyond city limits (5 miles = 8.05 km). Priority given to in-city passengers."
+ }
+]

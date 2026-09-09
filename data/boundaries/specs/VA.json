@@ -1,0 +1,273 @@
+[
+ {
+  "name": "Arlington Microtransit (MICRO)",
+  "state": "VA",
+  "boundary_type": "county",
+  "confidence": 0.5,
+  "note": "Pilot zones (North/South) are in northwest Arlington, bounded by North Glebe Rd, Langston Blvd and the county line (arlingtontransit.com); no stated size, county shown as proxy.",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Arlington"
+   }
+  ],
+  "fidelity": "approximate"
+ },
+ {
+  "name": "Bay Transit Express",
+  "state": "VA",
+  "boundary_type": "zone_approx",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Gloucester"
+   },
+   {
+    "layer": "county",
+    "name": "King and Queen"
+   },
+   {
+    "layer": "county",
+    "name": "Essex"
+   },
+   {
+    "layer": "county",
+    "name": "New Kent"
+   }
+  ],
+  "buffers": [
+   {
+    "radius_km": 4.06
+   },
+   {
+    "center_unit": {
+     "layer": "place",
+     "name": "West Point"
+    },
+    "radius_km": 4.06
+   },
+   {
+    "center_unit": {
+     "layer": "place",
+     "name": "Tappahannock"
+    },
+    "radius_km": 4.06
+   },
+   {
+    "center_unit": {
+     "layer": "county",
+     "name": "New Kent"
+    },
+    "radius_km": 4.06
+   }
+  ],
+  "clip_to_units": true,
+  "fidelity": "approximate",
+  "confidence": 0.55,
+  "note": "Four zones under one BT4U app/brand. Only the Gloucester zone has a stated size (~20 sq mi, per baytransit.org and the DRPT Rural Microtransit Suitability Checklist toolkit); the other three zones (West Point/King & Queen \"Paper Trail\", Essex/Tappahannock \"Rivah Ride\", New Kent) have no published size, so the same ~20 sq mi circle is used as a proxy for each, per the shared-operator/shared-program pattern (all four run on one Bay Transit/Bay Aging app). Circles are clipped to their home counties. Source: https://www.baytransit.org"
+ },
+ {
+  "name": "GLTC Flex",
+  "state": "VA",
+  "boundary_type": "city",
+  "confidence": 0.5,
+  "note": "Designated zone inside Lynchburg bounded by Graves Mill Rd, Old Graves Mill Rd, Enterprise Dr, Timberlake Rd, LYH airport, Jefferson Ridge Pkwy, Forest Rd, Wyndhurst (gltconline.com/flex); no stated size, city limits shown as proxy.",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Lynchburg"
+   }
+  ],
+  "fidelity": "approximate"
+ },
+ {
+  "name": "GRTC LINK",
+  "state": "VA",
+  "boundary_type": "needs_research",
+  "confidence": 0.3,
+  "note": "Six zones (Ashland, Azalea, Broad Rock, Clover Dale, Powhatan, Sandston) span Henrico, Hanover, Chesterfield, and Powhatan counties. Checked ridegrtc.com/link (ridegrtc.com/grtc-services/link-microtransit) and news coverage (vpm.org, rictoday.6amcity.com): five of the six zones are named for neighborhoods/corridors (e.g. Azalea Ave/Meadowbridge Rd, Broad Rock/Hull Street Rd) with no stated square mileage or boundary streets; only Powhatan is described as \"Entire County of Powhatan.\" No usable size/shape data for the other five zones to build even an approximate circle -- needs a GRTC zone map or service-area PDF for a human to trace."
+ },
+ {
+  "name": "HRT OnDemand",
+  "state": "VA",
+  "boundary_type": "zone_approx",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Virginia Beach"
+   },
+   {
+    "layer": "place",
+    "name": "Newport News"
+   },
+   {
+    "layer": "place",
+    "name": "Chesapeake"
+   },
+   {
+    "layer": "place",
+    "name": "Hampton"
+   }
+  ],
+  "buffers": [
+   {
+    "center_unit": {
+     "layer": "place",
+     "name": "Virginia Beach"
+    },
+    "radius_km": 3.52
+   },
+   {
+    "center_unit": {
+     "layer": "place",
+     "name": "Newport News"
+    },
+    "radius_km": 4.06
+   },
+   {
+    "center_unit": {
+     "layer": "place",
+     "name": "Chesapeake"
+    },
+    "radius_km": 3.05
+   },
+   {
+    "center_unit": {
+     "layer": "place",
+     "name": "Hampton"
+    },
+    "radius_km": 2.21
+   }
+  ],
+  "clip_to_units": true,
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Four independent zones, each within its own named independent city, with sizes confirmed via gohrt.com/services/ondemand/: Virginia Beach ~15 sq mi, Newport News ~20 sq mi, Chesapeake ~11.3 sq mi, Hampton ~5.9 sq mi. Circles centered on each city and clipped to city limits."
+ },
+ {
+  "name": "LC Transit On Demand",
+  "state": "VA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Leesburg"
+   },
+   {
+    "layer": "auto",
+    "name": "Sterling"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Two independent zones in Loudoun County (~5-6 sq mi and ~14 sq mi); trips cannot cross zones."
+ },
+ {
+  "name": "METGo!",
+  "state": "VA",
+  "boundary_type": "zone_approx",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Norton"
+   },
+   {
+    "layer": "county",
+    "name": "Lee"
+   },
+   {
+    "layer": "county",
+    "name": "Scott"
+   },
+   {
+    "layer": "county",
+    "name": "Wise"
+   }
+  ],
+  "buffers": [
+   {
+    "center_unit": {
+     "layer": "place",
+     "name": "Norton"
+    },
+    "radius_km": 3.01
+   }
+  ],
+  "clip_to_units": true,
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Named service area spans the City of Norton plus Lee, Scott, and Wise counties, but the text states the operating zone is an \"~11 sq mi core\" (meoc.org); using a single ~11 sq mi circle centered on Norton rather than the full counties. Source: https://meoc.org"
+ },
+ {
+  "name": "MetroFLX",
+  "state": "VA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Roanoke"
+   },
+   {
+    "layer": "place",
+    "name": "Salem"
+   },
+   {
+    "layer": "place",
+    "name": "Vinton"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Three incorporated places in Roanoke metropolitan area."
+ },
+ {
+  "name": "MicroCAT (Charlottesville Area Transit)",
+  "state": "VA",
+  "boundary_type": "county",
+  "confidence": 0.5,
+  "note": "Service zones (Pantops area and Route 29 North corridor) are small subsets of Albemarle County; no published size. Service is limited to the Pantops area and Route 29 North corridor within Albemarle County, not countywide. Checked charlottesville.gov/microcat (404 at time of check), albemarle.org's \"Meet MicroCAT\" post, dailyprogress.com, and infocville.com coverage: all describe a zone map for the two sub-areas but none states a square-mile size or boundary streets. No usable size data to build an approximate circle -- needs the MicroCAT zone map (in-app or via CAT) for a human to trace.",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Albemarle"
+   }
+  ],
+  "fidelity": "approximate"
+ },
+ {
+  "name": "OmniRide Connect",
+  "state": "VA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Manassas Park"
+   },
+   {
+    "layer": "auto",
+    "name": "Dumfries"
+   },
+   {
+    "layer": "auto",
+    "name": "Triangle"
+   },
+   {
+    "layer": "auto",
+    "name": "Quantico"
+   }
+  ],
+  "confidence": 0.75,
+  "note": "Two separate zones: Manassas Park and Dumfries/Quantico corridor in Prince William County."
+ },
+ {
+  "name": "WinReady",
+  "state": "VA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Winchester"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Citywide service explicitly stated."
+ }
+]

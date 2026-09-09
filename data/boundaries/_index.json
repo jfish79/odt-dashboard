@@ -1,11 +1,21 @@
 {
  "states": [
-  "NC"
+  "NC",
+  "VA",
+  "WI"
  ],
  "detail": {
   "NC": {
    "features": 22,
    "updated": "2026-06"
+  },
+  "VA": {
+   "features": 10,
+   "updated": "2026-09"
+  },
+  "WI": {
+   "features": 44,
+   "updated": "2026-09"
   }
  }
 }

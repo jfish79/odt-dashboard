@@ -43,12 +43,28 @@ python3 scripts/build.py --check
 
 Reports missing coordinates, unknown states, duplicate name+state pairs, and unusual system types.
 
-### Adding boundary overlays for a new state
+### Adding or updating boundary overlays
 
-1. Place a GeoJSON file at `data/boundaries/{STATE}.geojson` (e.g. `TX.geojson`).
-2. Each feature needs `properties.name` (matching a system name in the inventory), `properties.boundary_type`, and optionally `properties.source`, `properties.fidelity`, `properties.updated`.
-3. Run `python3 scripts/build.py` — the manifest auto-updates.
-4. The dashboard will load the overlay when that state is selected in the filter.
+Boundaries are generated, not hand-drawn. Each state has a spec file under
+`data/boundaries/specs/{STATE}.json` naming the Census units (county, place,
+county subdivision, tribal area) or the agency-stated zone size that best
+represents each system's service area. `scripts/boundaries/resolve.py` turns a
+spec file into `data/boundaries/{STATE}.geojson` from Census cartographic
+boundary files (downloaded once into `scripts/boundaries/cache/`).
+
+```
+python3 -m pip install --user shapely pyshp        # one-time
+python3 scripts/boundaries/resolve.py --specs data/boundaries/specs/VA.json --qa /tmp/VA_qa.json
+python3 scripts/build.py                          # refreshes the boundary manifest
+```
+
+To fix one system's polygon, edit its entry in the spec file (see the format
+in the resolver docstring) and re-run the resolver. The resolver reports
+unresolved unit names, a pin-outside-polygon check, and an area sanity check
+against any "~N sq mi" text in the CSV. `scripts/boundaries/workflow.js` is the
+Claude Code workflow that drafts and audits specs for a batch of rows;
+`scripts/boundaries/merge.py` promotes its batch output into the committed
+spec + GeoJSON files.
 
 ### Deploying to GitHub Pages
 
@@ -77,7 +93,7 @@ This is a research inventory, not an official government registry. Data is compi
 - **83 paratransit services** (ADA/senior/disabled-restricted) are included but may be removed after review — they were reclassified from "Demand-Response" using a keyword classifier documented in `scripts/migrate_classify.py`.
 - **Coordinates** for supplemental entries point to city centroids, not service zone centers.
 - **Fleet, hours, and fares** change frequently. Verify with the operating agency before travel planning.
-- **NC is the only state with service area boundary overlays.** Other states show pin markers only.
+- **Service area boundaries are proxies.** Polygons are Census units (city, county, town, tribal land) or agency-stated zone sizes matched to each system's documented area; see the Reference tab and `data/boundaries/specs/` for how each one was built. States without a boundary file show pin markers only.
 
 ## Licensing
 

@@ -1,5 +1,28 @@
 # Notes — pending items, open threads
 
+## Service-area boundary pipeline (started 2026-09-09)
+
+Goal: a boundary polygon for every row, NC-style, in `data/boundaries/{ST}.geojson`.
+Method: `scripts/boundaries/` — an agent workflow drafts a JSON "spec" per row
+(which Census units / stated zone size), `resolve.py` builds the geometry from
+Census cartographic boundary files, `merge.py` promotes batch output into the
+committed `data/boundaries/specs/{ST}.json` + GeoJSON. Specs are the durable
+record; re-running the resolver regenerates the GeoJSON.
+
+Staging: 12 small stages (batch lists in the session scratchpad, one commit +
+push per stage on `state-expansion`). Progress:
+- Pilot VA + WI: done (54/55). Open: **GRTC LINK** (six named zones across four
+  counties, no sizes; needs a human to trace GRTC's zone map).
+- Stage 1 (NC gaps, AL, AR, DC, DE, HI, ID, IN, KY, LA): launched 2026-09-09.
+
+Follow-up list (rows left as `needs_research`, or approximate proxies worth a
+human look) is visible in the spec files: search for `"needs_research"` and
+`"fidelity": "approximate"` with confidence <= 0.5.
+
+NC housekeeping: NC.geojson still carries three features for rows removed in
+the scope sweep (KARTS, Tar River Transit RGP, YVEDDI GOTransit); the NC merge
+in stage 1 drops them.
+
 Working scratchpad for things that came up in research/chat but haven't been
 applied to the CSV yet, or aren't resolved. Clear items out once they're
 actually committed — this file should reflect *current* open items, not be
