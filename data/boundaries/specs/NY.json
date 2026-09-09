@@ -1,0 +1,261 @@
+[
+ {
+  "name": "Buffalo All Access",
+  "state": "NY",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Buffalo"
+   }
+  ],
+  "confidence": 0.7,
+  "fidelity": "approximate",
+  "note": "Service centered on Buffalo Niagara Medical Campus district and surrounding neighborhoods; open to general public. Service zone is a subset of city limits"
+ },
+ {
+  "name": "CDTA FLEX+",
+  "state": "NY",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Albany"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Microtransit zone covering downtown Albany core and Amtrak station connections; actual service area may be subset of city limits"
+ },
+ {
+  "name": "Centro MOVE",
+  "state": "NY",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Rome"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Single microtransit zone in Rome launched March 2024; possible future Syracuse zone expansion reported in Nov 2025 but not yet confirmed as launched"
+ },
+ {
+  "name": "Circuit Brentwood",
+  "state": "NY",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Brentwood"
+   }
+  ],
+  "confidence": 0.75,
+  "note": "Brentwood hamlet service area including Hauppauge Industrial Area and Suffolk County Community College connections"
+ },
+ {
+  "name": "Circuit East Hampton",
+  "state": "NY",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "East Hampton"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "East Hampton village (technically town) covering LIRR station, Main Street, and beach area; overlaps with Suffolk Transit On-Demand East Hampton zone but separate operator"
+ },
+ {
+  "name": "Circuit Montauk",
+  "state": "NY",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Montauk"
+   }
+  ],
+  "confidence": 0.55,
+  "fidelity": "approximate",
+  "note": "Circuit's own site (ridecircuit.com/montauk) and search of local coverage give no stated zone size, radius, or boundary streets - only destination landmarks (Bayfront Park, The Plaza, Jitney stop, beachside hotels), all in the small downtown core of the Montauk CDP. Full Montauk CDP (~51 km2, including Montauk Point park land) is used as the containing unit but is understood to substantially overstate the actual service area, which is limited to the built-up downtown/beachfront core."
+ },
+ {
+  "name": "Circuit New Rochelle (CircuitNR)",
+  "state": "NY",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "New Rochelle"
+   }
+  ],
+  "confidence": 0.75,
+  "note": "Service includes downtown core plus expanded southern/eastern zones; exact zone boundaries not specified"
+ },
+ {
+  "name": "Circuit Rockaways (Rockaway Rides)",
+  "state": "NY",
+  "boundary_type": "zone_approx",
+  "buffer": {
+   "radius_km": 3.5
+  },
+  "units": [
+   {
+    "layer": "place",
+    "name": "New York"
+   }
+  ],
+  "clip_to_units": true,
+  "confidence": 0.6,
+  "note": "Rockaway Peninsula microtransit zone; neighborhood-based service with no fixed administrative boundary. Service area spans Far Rockaway LIRR corridor and beach areas"
+ },
+ {
+  "name": "Circuit Southampton",
+  "state": "NY",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Southampton"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Southampton village (technically town); overlaps geographically with Suffolk Transit On-Demand Southampton zone but separate operator and pricing model (free flag-down vs. paid app)"
+ },
+ {
+  "name": "Franklin County Public Transportation (Southern Zone Demand-Response)",
+  "state": "NY",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Saranac Lake"
+   },
+   {
+    "layer": "place",
+    "name": "Tupper Lake"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "Demand-response 'Southern Zone' service operates curb-to-curb within Saranac Lake and Tupper Lake (county site: 'bus service is provided within Saranac Lake, Tupper Lake and into Lake Placid'); no zone-size or full-county coverage stated, so encoded as the two named villages rather than the whole county. Source: http://www.franklincountyny.gov/departments/transportation/index.php"
+ },
+ {
+  "name": "Move Sullivan",
+  "state": "NY",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Sullivan"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "County-wide service confirmed per operator page; Highland and Delaware routes specifically mentioned"
+ },
+ {
+  "name": "NICE Mini",
+  "state": "NY",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "Merrick"
+   },
+   {
+    "layer": "auto",
+    "name": "Lynbrook"
+   },
+   {
+    "layer": "auto",
+    "name": "Syosset"
+   },
+   {
+    "layer": "auto",
+    "name": "Plainview"
+   },
+   {
+    "layer": "auto",
+    "name": "Woodbury"
+   },
+   {
+    "layer": "auto",
+    "name": "Muttontown"
+   },
+   {
+    "layer": "auto",
+    "name": "East Norwich"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Two service zones: South Shore (Merrick-Lynbrook corridor) and Syosset cluster; additional zones planned"
+ },
+ {
+  "name": "Putnam On-Demand",
+  "state": "NY",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Putnam"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "County-wide service as confirmed by operator page; replaced former PART Route 3"
+ },
+ {
+  "name": "RTS On Demand",
+  "state": "NY",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Genesee"
+   },
+   {
+    "layer": "county",
+    "name": "Livingston"
+   },
+   {
+    "layer": "county",
+    "name": "Ontario"
+   },
+   {
+    "layer": "county",
+    "name": "Orleans"
+   },
+   {
+    "layer": "county",
+    "name": "Seneca"
+   },
+   {
+    "layer": "county",
+    "name": "Wayne"
+   },
+   {
+    "layer": "county",
+    "name": "Wyoming"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Seven-county Rochester region; 7 zones phased in starting early 2025, each zone connecting to RTS Connect bus stops"
+ },
+ {
+  "name": "Suffolk Transit On-Demand",
+  "state": "NY",
+  "boundary_type": "cousubs",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Southampton"
+   },
+   {
+    "layer": "cousub",
+    "name": "East Hampton"
+   }
+  ],
+  "confidence": 0.7,
+  "fidelity": "approximate",
+  "note": "Two zones each covering multiple hamlets across a full NY town, not just incorporated villages: Southampton zone spans Southampton, North Sea, North Haven and Sag Harbor (Town of Southampton); East Hampton zone spans Montauk, East Hampton, Springs and Amagansett (Town of East Hampton), per sctbus.org/On-Demand zone descriptions. Encoded as the two containing towns (approximate) since actual coverage is a multi-hamlet subset of each town, not the whole town."
+ }
+]

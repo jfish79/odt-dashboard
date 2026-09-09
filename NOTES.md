@@ -23,7 +23,8 @@ push per stage on `state-expansion`). Progress:
   names, marked approximate; UTA's five other zones (South Davis, SLC
   Westside/South, Tooele, Provo/Orem) have no polygon — needs UTA's zone maps.
 - Stage 4 (CT, MA, VT): done 2026-09-09.
-- Stage 5 (NY, PA, OH, MI): launched 2026-09-09.
+- Stage 5 (NY, PA, OH, MI): done 2026-09-09.
+- Stage 6 (FL, GA): launched 2026-09-09.
 
 Follow-up list (rows left as `needs_research`, or approximate proxies worth a
 human look) is visible in the spec files: search for `"needs_research"` and

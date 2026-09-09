@@ -1,0 +1,434 @@
+[
+ {
+  "name": "Antrim County Transportation",
+  "state": "MI",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Antrim"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Countywide demand-response service covering Bellaire, Central Lake, Mancelona, Elk Rapids, and surrounding areas"
+ },
+ {
+  "name": "Arenac Public Transportation Authority",
+  "state": "MI",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Arenac"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Countywide demand-response service including Standish, Twining, Au Gres; offers out-of-county medical trips"
+ },
+ {
+  "name": "BATA Link On-Demand",
+  "state": "MI",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Grand Traverse"
+   },
+   {
+    "layer": "county",
+    "name": "Leelanau"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Two-county service area (Traverse City area and surrounding villages in Grand Traverse and Leelanau Counties)."
+ },
+ {
+  "name": "BCGo",
+  "state": "MI",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Calhoun"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Calhoun County service area with primary operations in Battle Creek area."
+ },
+ {
+  "name": "Benzie Bus Dial-A-Ride",
+  "state": "MI",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Benzie"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Countywide demand-response service based in Beulah."
+ },
+ {
+  "name": "Blugo (Clinton Transit)",
+  "state": "MI",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "St. Johns"
+   },
+   {
+    "layer": "place",
+    "name": "DeWitt"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Zone-based service with two distinct service zones; pickup and drop-off must be in same zone"
+ },
+ {
+  "name": "CATA Rydz",
+  "state": "MI",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Lansing"
+   },
+   {
+    "layer": "cousub",
+    "name": "Delta",
+    "county": "Eaton"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.8,
+  "note": "Two on-demand zones, each a subset of its municipality, not full boundaries: Lansing zone bounded by Old Town (north), Mt Hope Hwy (south), Pennsylvania Ave (east), Waverly Rd south of St. Joseph Hwy (west); Delta Township zone bounded by I-496 (north), Millwood Hwy (south), Waverly Rd (east), Nixon Rd/Canal Rd (west). Late-night zone connects the two; airport service (CATA Rydz Connect) serves trips within these same two zones. Source: https://www.cata.org/services/cata-rydz"
+ },
+ {
+  "name": "Charlevoix County Transit",
+  "state": "MI",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Charlevoix"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Countywide demand-response service. Eligibility-restriction language not found; included based on countywide availability statement with no application requirement."
+ },
+ {
+  "name": "Clare County Transit Corporation",
+  "state": "MI",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Clare"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Countywide demand-response service covering Harrison, Clare, and surrounding townships"
+ },
+ {
+  "name": "Crawford County Transportation Authority",
+  "state": "MI",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Crawford"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Countywide demand-response service centered on Grayling; serves Frederic, Maple Forest, Beaver Creek, South Branch, Lovells"
+ },
+ {
+  "name": "Gladwin City/County Transit",
+  "state": "MI",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Gladwin"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Countywide demand-response service covering City of Gladwin and surrounding townships"
+ },
+ {
+  "name": "Go2 (Muskegon Area Transit)",
+  "state": "MI",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Muskegon"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Service area is Muskegon County with fixed-route hub connections."
+ },
+ {
+  "name": "I-DART (Ionia Dial-A-Ride)",
+  "state": "MI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Ionia"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "City of Ionia with surrounding area; service zone is approximate, centered on the city"
+ },
+ {
+  "name": "I-Ride (Isabella County Transportation Commission)",
+  "state": "MI",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Isabella"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Countywide demand-response service with cross-county transfer options available"
+ },
+ {
+  "name": "Iosco Transit Corporation",
+  "state": "MI",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Iosco"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Countywide demand-response service along Lake Huron; covers East Tawas, Tawas City, Oscoda, and surrounding areas"
+ },
+ {
+  "name": "Kalkaska Public Transit Authority",
+  "state": "MI",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Kalkaska"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Countywide demand-response service with separate Village and countywide door-to-door services; connects to Traverse City"
+ },
+ {
+  "name": "Manistee County Transportation",
+  "state": "MI",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Manistee"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Countywide demand-response service along Lake Michigan; covers City of Manistee and surrounding townships"
+ },
+ {
+  "name": "Metro Link (Kalamazoo Metro)",
+  "state": "MI",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "cousub",
+    "name": "Comstock",
+    "county": "Kalamazoo"
+   },
+   {
+    "layer": "place",
+    "name": "Portage",
+    "county": "Kalamazoo"
+   },
+   {
+    "layer": "cousub",
+    "name": "Oshtemo",
+    "county": "Kalamazoo"
+   },
+   {
+    "layer": "cousub",
+    "name": "Texas",
+    "county": "Kalamazoo"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.8,
+  "note": "Three zones, not countywide: East zone covers Comstock Township, South zone covers Portage, West zone covers Oshtemo Township and parts of Texas Township. No exact zone boundaries or size published; townships shown here are approximate containing units, not full zone extent. Sources: https://www.wmuk.org/wmuk-news/2024-04-18/kalamazoo-metro-launches-a-rideshare-service, https://comstockmi.gov/2024/04/01/new-ridesharing-service-to-launch-in-comstock-charter-township/, https://city.ridewithvia.com/metrolink"
+ },
+ {
+  "name": "MTA Genesee Connect",
+  "state": "MI",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Flint"
+   },
+   {
+    "layer": "place",
+    "name": "Grand Blanc",
+    "county": "Genesee"
+   },
+   {
+    "layer": "cousub",
+    "name": "Mundy",
+    "county": "Genesee"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.6,
+  "note": "First zone (launching July 2026) is the Hill Rd. Corridor, a linear corridor, not full coverage of any of these units. MTA's own page says the zone is 'located in Flint and Grand Blanc' (city of Grand Blanc used here; township boundary is ambiguous in Census data and unresolvable from the source text); coverage of the ribbon-cutting event (at the Mundy Township Senior Center on Hill Rd) also names Mundy Township as a stop area. No zone size, radius, or boundary streets published; more zones planned. Sources: https://www.mtaflint.org/genesee-connect/, https://midmichigannow.com/news/local/mta-introduces-the-new-micro-transit-service-in-genesee-county"
+ },
+ {
+  "name": "Ogemaw County Public Transportation",
+  "state": "MI",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Ogemaw"
+   }
+  ],
+  "confidence": 1.0,
+  "note": "County-wide demand-response service"
+ },
+ {
+  "name": "ROSCOTA",
+  "state": "MI",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Roscommon"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Roscommon County service for residents and visitors, with medical connections to neighboring/downstate counties."
+ },
+ {
+  "name": "SMART Flex",
+  "state": "MI",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Wayne"
+   },
+   {
+    "layer": "county",
+    "name": "Oakland"
+   },
+   {
+    "layer": "county",
+    "name": "Macomb"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "Zones in Dearborn, Troy/Clawson, Pontiac/Auburn Hills, Farmington/Farmington Hills, and Hall Road corridor (Utica-New Baltimore). Multiple zones across three counties with varying coverage; actual service area is subset of named counties."
+ },
+ {
+  "name": "Straits Regional Ride",
+  "state": "MI",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Cheboygan"
+   },
+   {
+    "layer": "county",
+    "name": "Emmet"
+   },
+   {
+    "layer": "county",
+    "name": "Presque Isle"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Three-county service; supplemental dial-a-ride offered within City of Cheboygan and 5-mile radius"
+ },
+ {
+  "name": "The Interurban",
+  "state": "MI",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Saugatuck"
+   },
+   {
+    "layer": "place",
+    "name": "Douglas"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.8,
+  "note": "Service area covers Saugatuck city, Douglas city, and Saugatuck Township (Allegan County) per https://saugatuckinterurban.org/; the township is omitted from the mapped boundary because Census cousub data for Saugatuck Township collides on name with a pseudo-cousub for Saugatuck city, which the resolver cannot disambiguate — polygon shown here covers the two incorporated cities only."
+ },
+ {
+  "name": "TheRide FlexRide-East",
+  "state": "MI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Ypsilanti"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.65,
+  "note": "Select areas of Ypsilanti Township, connecting to Ypsilanti Transit Center. Actual service is subset of city proxy."
+ },
+ {
+  "name": "Thunder Bay Transportation Authority",
+  "state": "MI",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Alpena"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Service centered in City of Alpena with service extending to areas just outside city limits"
+ },
+ {
+  "name": "WexExpress",
+  "state": "MI",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Wexford"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "Countywide service with regional connections to Tustin and Traverse City (neighboring areas)."
+ },
+ {
+  "name": "Yates Township Transportation System",
+  "state": "MI",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Lake"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.7,
+  "note": "Service primarily spans Yates and adjacent townships; exact township list undefined (14+ townships mentioned)"
+ }
+]

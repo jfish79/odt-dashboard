@@ -1,0 +1,162 @@
+[
+ {
+  "name": "BGo Curb to Curb",
+  "state": "OH",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Butler"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.8,
+  "note": "Service area includes Oxford and Middletown in Butler County; using county as proxy for multi-zone coverage."
+ },
+ {
+  "name": "COTA Plus",
+  "state": "OH",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Franklin"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.8,
+  "note": "Service covers 8 zones across Columbus/Franklin County; exact zone boundaries not specified, using county as proxy."
+ },
+ {
+  "name": "Dayton RTA Connect On-Demand",
+  "state": "OH",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Montgomery"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Service covers 4 zones in Montgomery County (Miami Valley); using county as proxy."
+ },
+ {
+  "name": "Fairfield County LINK Direct",
+  "state": "OH",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Fairfield"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Primary service area is Fairfield County (Lancaster area); also offers out-of-county trips up to 50 miles statewide but core service is county-based."
+ },
+ {
+  "name": "Knox County Transit",
+  "state": "OH",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Knox"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Primary service area is Knox County (Mount Vernon area); also offers out-of-county trips throughout Ohio but core service is county-based."
+ },
+ {
+  "name": "Laketran Rides on Demand",
+  "state": "OH",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Lake"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "County-wide service."
+ },
+ {
+  "name": "MCFlex (Medina County)",
+  "state": "OH",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Wadsworth"
+   },
+   {
+    "layer": "place",
+    "name": "Medina"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Serves Wadsworth and Medina City; Brunswick planned for expansion."
+ },
+ {
+  "name": "METRO NEXT",
+  "state": "OH",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Summit"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.8,
+  "note": "Service covers Northern, Southern, Eastern, Western zones in Summit County outside Akron METRO fixed-route service; using county as proxy."
+ },
+ {
+  "name": "MetroNow! (Cincinnati Metro)",
+  "state": "OH",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Hamilton"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Service covers 6+ zones in Hamilton County: Springdale, Sharonville, Northgate, Mt. Healthy, Forest Park, Pleasant Run, Blue Ash, Montgomery, Deer Park, Silverton, Kenwood, Madeira. Using county as proxy for multi-zone suburban service."
+ },
+ {
+  "name": "TARTA Flex",
+  "state": "OH",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Lucas"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.85,
+  "note": "Service covers NW, SW, East zones in Lucas County and Rossford area; using county as proxy for multi-zone coverage."
+ },
+ {
+  "name": "ViaLC (Lorain County)",
+  "state": "OH",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "place",
+    "name": "Lorain"
+   },
+   {
+    "layer": "place",
+    "name": "Elyria"
+   }
+  ],
+  "confidence": 0.95,
+  "note": "Serves both Lorain and Elyria cities in Lorain County."
+ }
+]

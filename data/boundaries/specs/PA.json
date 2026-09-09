@@ -1,0 +1,198 @@
+[
+ {
+  "name": "BCTA Connect",
+  "state": "PA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Beaver"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "Primary service area is Beaver County; out-of-county destination service added Feb 2026."
+ },
+ {
+  "name": "CATA GO",
+  "state": "PA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Crawford"
+   }
+  ],
+  "confidence": 0.9,
+  "note": "County-level microtransit service in Crawford County (Meadville area), northwest PA."
+ },
+ {
+  "name": "CATAGO!",
+  "state": "PA",
+  "boundary_type": "city",
+  "units": [
+   {
+    "layer": "place",
+    "name": "State College"
+   }
+  ],
+  "fidelity": "approximate",
+  "confidence": 0.75,
+  "note": "Microtransit zone centered on State College in Centre County; zone extent and boundaries from text alone are not precisely defined."
+ },
+ {
+  "name": "LANtaFlex",
+  "state": "PA",
+  "boundary_type": "zone_approx",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Lehigh"
+   },
+   {
+    "layer": "county",
+    "name": "Northampton"
+   }
+  ],
+  "clip_to_units": true,
+  "buffers": [
+   {
+    "center_unit": {
+     "layer": "auto",
+     "name": "Macungie"
+    },
+    "radius_km": 4.54
+   },
+   {
+    "center_unit": {
+     "layer": "auto",
+     "name": "Bangor"
+    },
+    "radius_km": 4.54
+   },
+   {
+    "center_unit": {
+     "layer": "auto",
+     "name": "Slatington"
+    },
+    "radius_km": 4.54
+   },
+   {
+    "center_unit": {
+     "layer": "auto",
+     "name": "Coplay"
+    },
+    "radius_km": 4.54
+   },
+   {
+    "center_unit": {
+     "layer": "auto",
+     "name": "Coopersburg"
+    },
+    "radius_km": 4.54
+   },
+   {
+    "center_unit": {
+     "layer": "auto",
+     "name": "Bath"
+    },
+    "radius_km": 4.54
+   },
+   {
+    "center_unit": {
+     "layer": "auto",
+     "name": "Easton"
+    },
+    "radius_km": 4.54
+   }
+  ],
+  "confidence": 0.45,
+  "note": "LANtaFlex operates 7 numbered flex zones (501 Macungie, 502 Slate Belt, 503 Slatington/Walnutport, 504 Coplay/Egypt-Airport, 505 Coopersburg, 506 Bath-Hanoverville-Nazareth, 507 West/South Easton) in Lehigh and Northampton counties; CSV notes the largest zone is over 25 sq mi, so each zone is approximated as a ~25 sq mi circle centered on its named town and clipped to the two-county area rather than the town's own (much smaller) municipal boundary. Only one zone's size is public; the other six are sized the same for lack of individual figures, so this is a rough approximation. Zone 502 (Slate Belt) is described by road boundaries reaching the Northampton County line, not by a town list (https://lantabus.com/routes-and-schedules/route-502-slate-belt-flex/), so it is centered on Bangor, the Slate Belt's largest borough. Hanoverville (part of zone 506, an unincorporated place near Bath) has no separate Census place and is not separately resolvable; zone 506 is centered on Bath. Sources: https://lantabus.com/lantaflex/ , https://lantabus.com/routes-and-schedules/route-502-slate-belt-flex/"
+ },
+ {
+  "name": "Monroe County Pony Plus (MCTA)",
+  "state": "PA",
+  "boundary_type": "county",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Monroe"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Multiple zones within Monroe County in Pocono region; county-wide service provided by Monroe County Transit Authority."
+ },
+ {
+  "name": "rabbittransit Stop Hopper",
+  "state": "PA",
+  "boundary_type": "places",
+  "units": [
+   {
+    "layer": "auto",
+    "name": "York"
+   },
+   {
+    "layer": "auto",
+    "name": "Red Lion"
+   },
+   {
+    "layer": "auto",
+    "name": "Dallastown"
+   },
+   {
+    "layer": "auto",
+    "name": "East York"
+   },
+   {
+    "layer": "auto",
+    "name": "Selinsgrove"
+   },
+   {
+    "layer": "auto",
+    "name": "Sunbury"
+   },
+   {
+    "layer": "auto",
+    "name": "Danville"
+   },
+   {
+    "layer": "auto",
+    "name": "Bloomsburg"
+   },
+   {
+    "layer": "auto",
+    "name": "Lewisburg"
+   },
+   {
+    "layer": "auto",
+    "name": "Milton"
+   },
+   {
+    "layer": "auto",
+    "name": "Gettysburg"
+   },
+   {
+    "layer": "auto",
+    "name": "Hanover"
+   }
+  ],
+  "confidence": 0.85,
+  "note": "Multi-zone microtransit service across south-central PA towns; zones listed as presented in service description."
+ },
+ {
+  "name": "SEPTA Go",
+  "state": "PA",
+  "boundary_type": "counties",
+  "units": [
+   {
+    "layer": "county",
+    "name": "Delaware"
+   },
+   {
+    "layer": "county",
+    "name": "Montgomery"
+   }
+  ],
+  "confidence": 0.8,
+  "note": "6 planned zones across Delaware and Montgomery counties in Philadelphia suburbs; phases 2-3 (Spring/Summer 2027). Service area inferred from named counties."
+ }
+]
