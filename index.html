@@ -208,17 +208,24 @@ select:focus { border-color: var(--ink); }
 .map-pin-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; border: 1.5px solid white; }
 .map-item-name { font-family: var(--sans); font-size: 0.8rem; font-weight: 500; line-height: 1.3; color: var(--ink); }
 .map-item-sub { font-family: var(--mono); font-size: 0.6rem; color: var(--ink-soft); margin-top: 0.12rem; }
-.map-legend { position: absolute; bottom: 1rem; left: 1rem; z-index: 400; background: var(--surface); border: 1px solid var(--border); padding: 0.65rem 0.85rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); max-height: 250px; overflow-y: auto; }
-.map-symbol-control { background: var(--surface); border: 1px solid var(--border); padding: 0.55rem 0.7rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); font-family: var(--mono); }
+.map-symbol-control {
+  background: rgba(253,252,249,0.82); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+  border: 1px solid var(--border); padding: 0.55rem 0.7rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  font-family: var(--mono); width: 210px; max-height: calc(100vh - 260px); overflow-y: auto;
+}
 .map-symbol-control-label { font-size: 0.56rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.35rem; }
 .map-symbol-control select {
   width: 100%; padding: 0.32rem 1.4rem 0.32rem 0.45rem;
-  background: var(--bg); border: 1px solid var(--border2);
+  background: rgba(255,255,255,0.6); border: 1px solid var(--border2);
   font-family: var(--mono); font-size: 0.7rem; color: var(--ink); outline: none; appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='5' viewBox='0 0 9 5'%3E%3Cpath d='M1 1l3.5 3 3.5-3' stroke='%239a9088' stroke-width='1.3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-position: right 6px center; cursor: pointer;
 }
 .map-symbol-control select:focus { border-color: var(--ink); }
+.map-control-divider { height: 1px; background: var(--border); margin: 0.55rem 0; }
+.map-layer-toggle { display: flex; align-items: center; gap: 0.4rem; font-family: var(--mono); font-size: 0.66rem; color: var(--ink-mid); margin-bottom: 0.35rem; cursor: pointer; user-select: none; }
+.map-layer-toggle:last-child { margin-bottom: 0; }
+.map-layer-toggle input { margin: 0; width: 12px; height: 12px; accent-color: var(--ink); cursor: pointer; flex-shrink: 0; }
 .map-legend-title { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.45rem; }
 .map-legend-item { display: flex; align-items: center; gap: 0.45rem; font-family: var(--mono); font-size: 0.67rem; color: var(--ink-mid); margin-bottom: 0.28rem; }
 .map-legend-item:last-child { margin-bottom: 0; }
@@ -444,7 +451,6 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
   <div id="card-view"><div class="grid" id="grid"></div></div>
   <div id="map-view">
     <div id="map"></div>
-    <div class="map-legend" id="map-legend"></div>
     <div class="map-sidebar">
       <div class="map-sidebar-header"><span id="map-count">0</span> systems shown</div>
       <div class="map-list" id="map-list"></div>
@@ -933,12 +939,14 @@ function buildPopup(s){
   </div>`;
 }
 function buildLegend(){
+  const el = document.getElementById('map-legend-content');
+  if(!el) return;
   const mode = SYMBOL_MODES[mapSymbolMode];
   const counts = {};
   systems.forEach(s=>{ const k=mode.key(s); counts[k]=(counts[k]||0)+1; });
   let keys = Object.keys(counts);
   keys.sort(mapSymbolMode==='state' ? (a,b)=>a.localeCompare(b) : (a,b)=>counts[b]-counts[a]);
-  document.getElementById('map-legend').innerHTML = `<div class="map-legend-title">${mode.label}</div>`+
+  el.innerHTML = `<div class="map-legend-title">${mode.label}</div>`+
     keys.map(k=>`<div class="map-legend-item"><span class="legend-dot" style="background:${mode.colorByKey(k)}"></span>${mode.keyLabel(k)}<span style="color:var(--ink-faint);margin-left:auto">${counts[k]}</span></div>`).join('');
 }
 function buildMapList(){
@@ -948,6 +956,7 @@ function buildMapList(){
       <div><div class="map-item-name">${s.name}</div><div class="map-item-sub">${s.state} · ${s.geo} · ${s.type}</div></div>
     </div>`).join('');
 }
+let markersVisible=true;
 function updateMapMarkers(){
   markerLayers.forEach(m=>{if(map)map.removeLayer(m);});markerLayers=[];markers=[];
   let count=0;
@@ -955,16 +964,24 @@ function updateMapMarkers(){
     const m=L.marker([s.lat,s.lng],{icon:makeIcon(s)}).bindPopup(buildPopup(s),{maxWidth:280}).on('click',()=>highlightListItem(i));
     markers.push(m);
     const vis=matchesFilters(s),li=document.getElementById(`mli-${i}`);
-    if(vis){m.addTo(map);markerLayers.push(m);if(li)li.classList.remove('hidden');count++;}
+    if(vis){if(markersVisible)m.addTo(map);markerLayers.push(m);if(li)li.classList.remove('hidden');count++;}
     else{if(li)li.classList.add('hidden');}
   });
   document.getElementById('map-count').textContent=count;
   if(markerLayers.length&&map)setTimeout(()=>{map.fitBounds(L.featureGroup(markerLayers).getBounds().pad(0.1));},50);
 }
+function setMarkersVisible(v){
+  markersVisible=v;
+  if(v){markerLayers.forEach(m=>m.addTo(map));}
+  else{markerLayers.forEach(m=>map.removeLayer(m));}
+}
 function initMap(){
   map=L.map('map').setView([38,-96],4);
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',{
     attribution:'Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors, and the GIS community',maxZoom:19,maxNativeZoom:16
+  }).addTo(map);
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}',{
+    maxZoom:19,maxNativeZoom:16,pane:'overlayPane'
   }).addTo(map);
   addSymbolControl();buildLegend();buildMapList();updateMapMarkers();
 }
@@ -982,10 +999,18 @@ function addSymbolControl(){
           <option value="status">Status</option>
           <option value="geo">Geographic Context</option>
           <option value="vendor">Technology Vendor</option>
-        </select>`;
+        </select>
+        <div class="map-control-divider"></div>
+        <label class="map-layer-toggle"><input type="checkbox" id="toggle-markers" checked> Markers</label>
+        <label class="map-layer-toggle"><input type="checkbox" id="toggle-boundaries" checked> Service area boundaries</label>
+        <div class="map-control-divider"></div>
+        <div id="map-legend-content"></div>
+        <div id="boundary-legend-content"></div>`;
       L.DomEvent.disableClickPropagation(div);
       L.DomEvent.disableScrollPropagation(div);
       div.querySelector('select').addEventListener('change',e=>setSymbolMode(e.target.value));
+      div.querySelector('#toggle-markers').addEventListener('change',e=>setMarkersVisible(e.target.checked));
+      div.querySelector('#toggle-boundaries').addEventListener('change',e=>setBoundariesVisible(e.target.checked));
       return div;
     }
   });
@@ -1629,13 +1654,29 @@ const BOUNDARY_COLORS = {
 };
 
 let ncBoundaryLayer = null;
+let boundariesVisible = true;
+
+function setBoundariesVisible(v) {
+  boundariesVisible = v;
+  if (!mapInitialized) return;
+  if (v) {
+    var sf = document.getElementById('filter-state').value;
+    if (sf && BOUNDARY_INDEX.indexOf(sf) !== -1) {
+      ensureBoundaries(sf).then(function(){
+        if (document.getElementById('filter-state').value === sf) showStateBoundaries(sf);
+      });
+    }
+  } else {
+    hideStateBoundaries();
+  }
+}
 
 function showStateBoundaries(state) {
-  if (!map) return;
+  if (!map || !boundariesVisible) return;
   hideStateBoundaries();
   var ncBoundaries = BOUNDARY_CACHE[state];
   if (!ncBoundaries) return;
-  
+
   ncBoundaryLayer = L.geoJSON(ncBoundaries, {
     style: function(feature) {
       const bt = feature.properties.boundary_type;
@@ -1643,10 +1684,10 @@ function showStateBoundaries(state) {
       const approx = feature.properties.fidelity === 'approximate';
       return {
         fillColor: colors.fill,
-        fillOpacity: 0.15,
+        fillOpacity: 0.4,
         color: colors.stroke,
-        weight: 2,
-        opacity: 0.75,
+        weight: 2.5,
+        opacity: 0.9,
         dashArray: colors.dash || (approx ? '6,4' : null)
       };
     },
@@ -1686,33 +1727,32 @@ function showStateBoundaries(state) {
       popup += '</div>';
       layer.bindPopup(popup, {maxWidth: 280});
       
-      layer.on('mouseover', function() { this.setStyle({fillOpacity: 0.28, weight: 3}); });
+      layer.on('mouseover', function() { this.setStyle({fillOpacity: 0.6, weight: 3.5}); });
       layer.on('mouseout', function() { ncBoundaryLayer.resetStyle(this); });
     }
   }).addTo(map);
 
-  // Add boundary legend
-  var legendEl = document.createElement('div');
-  legendEl.id = 'nc-boundary-legend';
-  legendEl.style.cssText = 'position:absolute;bottom:1rem;right:1rem;z-index:400;background:var(--surface);border:1px solid var(--border);padding:0.65rem 0.85rem;box-shadow:0 2px 10px rgba(0,0,0,0.1)';
-  var legendHTML = '<div class="map-legend-title">Service Area Boundaries</div>';
-  var shown = {};
-  ncBoundaries.features.forEach(function(f) {
-    var bt = f.properties.boundary_type;
-    if (!shown[bt] && BOUNDARY_COLORS[bt]) {
-      shown[bt] = true;
-      var c = BOUNDARY_COLORS[bt];
-      legendHTML += '<div class="map-legend-item"><span style="width:14px;height:10px;flex-shrink:0;background:'+c.fill+';opacity:0.4;border:1.5px '+(c.dash?'dashed':'solid')+' '+c.stroke+'"></span>'+c.label+'</div>';
-    }
-  });
-  legendEl.innerHTML = legendHTML;
-  document.getElementById('map-view').appendChild(legendEl);
+  // Add boundary legend into the combined map control panel
+  var legendEl = document.getElementById('boundary-legend-content');
+  if (legendEl) {
+    var legendHTML = '<div class="map-legend-title">Service Area Boundaries</div>';
+    var shown = {};
+    ncBoundaries.features.forEach(function(f) {
+      var bt = f.properties.boundary_type;
+      if (!shown[bt] && BOUNDARY_COLORS[bt]) {
+        shown[bt] = true;
+        var c = BOUNDARY_COLORS[bt];
+        legendHTML += '<div class="map-legend-item"><span style="width:14px;height:10px;flex-shrink:0;background:'+c.fill+';opacity:0.6;border:1.5px '+(c.dash?'dashed':'solid')+' '+c.stroke+'"></span>'+c.label+'</div>';
+      }
+    });
+    legendEl.innerHTML = legendHTML;
+  }
 }
 
 function hideStateBoundaries() {
   if (ncBoundaryLayer && map) { map.removeLayer(ncBoundaryLayer); ncBoundaryLayer = null; }
-  var el = document.getElementById('nc-boundary-legend');
-  if (el) el.remove();
+  var el = document.getElementById('boundary-legend-content');
+  if (el) el.innerHTML = '';
 }
 
 // Hook into filter to auto-show NC boundaries
@@ -1721,7 +1761,7 @@ filterAll = function() {
   _origFilterAll();
   if (mapInitialized) {
     var sf = document.getElementById('filter-state').value;
-    if (sf && BOUNDARY_INDEX.indexOf(sf) !== -1) {
+    if (sf && BOUNDARY_INDEX.indexOf(sf) !== -1 && boundariesVisible) {
       ensureBoundaries(sf).then(function(){
         // re-check: user may have changed filter while fetching
         if (document.getElementById('filter-state').value === sf) showStateBoundaries(sf);
