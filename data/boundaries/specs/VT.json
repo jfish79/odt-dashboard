@@ -87,32 +87,6 @@
   "note": "Downtown core zone (State St/Main St area); service covers subset of city limits"
  },
  {
-  "name": "RCT Rides",
-  "state": "VT",
-  "boundary_type": "counties",
-  "units": [
-   {
-    "layer": "county",
-    "name": "Caledonia"
-   },
-   {
-    "layer": "county",
-    "name": "Essex"
-   },
-   {
-    "layer": "county",
-    "name": "Orleans"
-   },
-   {
-    "layer": "county",
-    "name": "Lamoille"
-   }
-  ],
-  "fidelity": "approximate",
-  "confidence": 0.7,
-  "note": "Northeast Kingdom region covering 90 towns; exact county composition not independently confirmed; using containing counties"
- },
- {
   "name": "Springfield Microtransit",
   "state": "VT",
   "boundary_type": "cousub",

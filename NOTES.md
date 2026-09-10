@@ -63,10 +63,49 @@ prior-day-booking service on the same feed and out of ODT scope). New
 this. METGo!'s spec entry was removed from `data/boundaries/specs/VA.json`
 entirely (not just skipped) so the resolver's `--merge` step, which drops any
 existing feature whose name appears in the specs list, doesn't clobber the
-manually-added feature on a future VA re-run. If a fuller Trillium-hosted
-`--flex` scan turns up more real hits later, apply them the same way: fetch
-the feed, pull the right `location_id`'s feature from `locations.geojson`,
-overwrite the state's `.geojson` feature, and delete that system's spec entry.
+manually-added feature on a future VA re-run.
+
+**Trillium-hosted `--flex` scan follow-up (2026-09-10):** the broad Mobility
+Database pass above undercounted, because it doesn't distinguish who actually
+implements GTFS-Flex. Trillium Transit builds a `--flex-v2.zip` variant into
+every client feed by default, so scanning just Trillium's ~535 hosted feeds
+(85 with a flex variant) for matches against the 665 rows found far more real
+hits: **8 more applied**, all boundary_type `gtfs_flex`: Prowers Area Transit
+(PATS), La Junta Transit, DuranGO! Microtransit, Cripple Creek Bus / On-Demand
+Service (all CO), MetroFLX and Bay Transit Express (VA, Gloucester zone only —
+its 3 newer zones aren't in this feed), TRACER Plus (CA), and RCT Rides (VT,
+its 2 currently-geofenced zones only — CSV describes ~90 towns, this is a
+partial view). Two (MetroFLX, TRACER Plus) have booking_rules that read as
+24-72hr-advance-only, in tension with the CSV's "Same-day" field — flagged in
+concerns.csv for a human to verify, CSV left untouched.
+
+Five more matches from that scan were **checked and rejected** — the feed's
+flex geofence belonged to a different route/service on the same shared feed,
+not the ODT system it superficially matched by agency name: **Avon
+Microtransit** (CO, feed's only flex route is a separate ADA paratransit
+service), **Van Go!** (CA, same issue, San Joaquin RTD's ADA paratransit),
+**Kiowa County Transit** (CO, the feed's 9 zones are scattered long-distance
+medical-trip destinations across the state, not a local service area),
+**Yellow Zone** (CO, the feed's one geofence belongs to a different route,
+the AccesstheBoat ADA paratransit; Yellow Zone's own route has no flex zone
+at all), and **LC Transit On Demand** (VA, the feed's only flex route is
+labeled/described as ADA-eligibility-restricted paratransit despite sharing a
+phone number and RideCo app with the CSV's general-public description — too
+ambiguous to trust either way; see concerns.csv). All five kept their
+existing Census proxy. Lesson: a non-empty `locations.geojson` on a
+name-matched feed is not sufficient — always trace the specific route via
+`booking_rules.txt` → `trips.txt` → `stop_times.txt`'s `location_id` before
+trusting a match, since agencies bundle unrelated paratransit and
+general-public routes on one feed under one operator name.
+
+To apply another Trillium hit later: fetch
+`data.trilliumtransit.com/gtfs/{slug}/{slug}--flex-v2.zip`, confirm which
+`route_id` is the actual matching ODT system (not a same-feed paratransit
+route) via `booking_rules.txt`, trace its `location_id`(s) through
+`trips.txt`/`stop_times.txt`, pull that feature from `locations.geojson`,
+overwrite the state's `.geojson` feature for that system name, and delete the
+system's entry from that state's `specs/{ST}.json` (not just skip it) so
+`resolve.py --merge` doesn't clobber it on a future run.
 
 Low-confidence proxies (confidence <= 0.5) worth a human look are listed by
 `python3 scripts/boundaries/...` — or grep the spec files for

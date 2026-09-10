@@ -862,7 +862,7 @@
    }
   ],
   "confidence": 0.55,
-  "note": "Zone is bounded by US-101 (north), Fair Oaks Ave (east), El Camino Real (south), and the Mountain View city line (west) — roughly a 2x2.5 mi rectangle in northwest Sunnyvale (~5 sq mi), not the full city (57 km2). Approximated as a ~2.0 km radius circle around the service area (Peery Park business district) clipped to Sunnyvale city limits. Source: https://www.sunnyvale.ca.gov/homes-streets-and-property/transportation-and-traffic-safety/peery-park-rides",
+  "note": "Zone is bounded by US-101 (north), Fair Oaks Ave (east), El Camino Real (south), and the Mountain View city line (west) \u2014 roughly a 2x2.5 mi rectangle in northwest Sunnyvale (~5 sq mi), not the full city (57 km2). Approximated as a ~2.0 km radius circle around the service area (Peery Park business district) clipped to Sunnyvale city limits. Source: https://www.sunnyvale.ca.gov/homes-streets-and-property/transportation-and-traffic-safety/peery-park-rides",
   "buffer": {
    "radius_km": 2.0
   },
@@ -1160,7 +1160,7 @@
   "state": "CA",
   "boundary_type": "places",
   "confidence": 0.6,
-  "note": "SunRide operates 8 named zones in the Coachella Valley: Cathedral City, Coachella, Desert Hot Springs-Desert Edge, Indio, La Quinta, Mecca-North Shore, Palm Desert, and Palm Springs (RCTC and multiple secondary sources; SunLine's own city.ridewithvia.com/sunride page shows only a map image, no zone list in text). Each named place is used as an approximate proxy for its zone — the actual zone likely covers only part of each city/CDP, not the whole jurisdiction. Source: https://www.rctc.org/emerging-on-demand-microtransit-services-expand-mobility-options-in-riverside-county/",
+  "note": "SunRide operates 8 named zones in the Coachella Valley: Cathedral City, Coachella, Desert Hot Springs-Desert Edge, Indio, La Quinta, Mecca-North Shore, Palm Desert, and Palm Springs (RCTC and multiple secondary sources; SunLine's own city.ridewithvia.com/sunride page shows only a map image, no zone list in text). Each named place is used as an approximate proxy for its zone \u2014 the actual zone likely covers only part of each city/CDP, not the whole jurisdiction. Source: https://www.rctc.org/emerging-on-demand-microtransit-services-expand-mobility-options-in-riverside-county/",
   "units": [
    {
     "layer": "auto",
@@ -1221,7 +1221,7 @@
   ],
   "fidelity": "approximate",
   "confidence": 0.5,
-  "note": "Cupertino service is citywide (full fidelity). Santa Clara service is Phase 1 only, covering the southern part of the city; Phase 2 (north Santa Clara) is planned but not yet deployed. No street-level or zone-size data is published for the Santa Clara zone (city.ridewithvia.com/hopper only shows an in-app map), so Santa Clara is shown as the whole city as an approximate proxy that overstates current coverage — treat the Santa Clara portion as a rough upper bound, not the actual footprint. Source: https://city.ridewithvia.com/hopper"
+  "note": "Cupertino service is citywide (full fidelity). Santa Clara service is Phase 1 only, covering the southern part of the city; Phase 2 (north Santa Clara) is planned but not yet deployed. No street-level or zone-size data is published for the Santa Clara zone (city.ridewithvia.com/hopper only shows an in-app map), so Santa Clara is shown as the whole city as an approximate proxy that overstates current coverage \u2014 treat the Santa Clara portion as a rough upper bound, not the actual footprint. Source: https://city.ridewithvia.com/hopper"
  },
  {
   "name": "Taft Area Transit",
@@ -1337,19 +1337,6 @@
   ],
   "confidence": 0.85,
   "note": "Microtransit zones in Goleta and Carpinteria; official brand name for Santa Barbara MTD's service."
- },
- {
-  "name": "TRACER Plus (City of Tracy)",
-  "state": "CA",
-  "boundary_type": "city",
-  "units": [
-   {
-    "layer": "place",
-    "name": "Tracy"
-   }
-  ],
-  "confidence": 0.95,
-  "note": "Within Tracy city limits, San Joaquin County"
  },
  {
   "name": "Tri MyRide (Tri Delta Transit)",

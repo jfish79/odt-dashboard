@@ -76,23 +76,6 @@
   "note": "Operator NECALG's own site lists County Express dispatchers by county grouping (Morgan; Logan/Phillips/Sedgwick; Washington/Yuma), confirming service across all six counties. https://necalg.org/county-express/"
  },
  {
-  "name": "Cripple Creek Bus / On-Demand Service",
-  "state": "CO",
-  "boundary_type": "places",
-  "units": [
-   {
-    "layer": "place",
-    "name": "Cripple Creek"
-   },
-   {
-    "layer": "place",
-    "name": "Victor"
-   }
-  ],
-  "confidence": 0.85,
-  "note": "Service area covers City of Cripple Creek and Victor in Teller County"
- },
- {
   "name": "Denver Connector",
   "state": "CO",
   "boundary_type": "city",
@@ -118,20 +101,7 @@
   ],
   "fidelity": "approximate",
   "confidence": 0.85,
-  "note": "Service zone is a subset of city limits: bounded by Aspen Mountain to the south, Gillespie and Puppy Smith streets to the north, 8th Street to the west, and Midland/Crystal Lake Road to the east — the downtown core and adjacent neighborhoods, not the full city of Aspen. Source: https://aspen.gov/270/Downtowner"
- },
- {
-  "name": "DuranGO! Microtransit",
-  "state": "CO",
-  "boundary_type": "city",
-  "units": [
-   {
-    "layer": "place",
-    "name": "Durango"
-   }
-  ],
-  "confidence": 0.95,
-  "note": "City limits only. Launched Oct 18, 2023; evening and outdoor recreation service."
+  "note": "Service zone is a subset of city limits: bounded by Aspen Mountain to the south, Gillespie and Puppy Smith streets to the north, 8th Street to the west, and Midland/Crystal Lake Road to the east \u2014 the downtown core and adjacent neighborhoods, not the full city of Aspen. Source: https://aspen.gov/270/Downtowner"
  },
  {
   "name": "Erie Bee",
@@ -175,19 +145,6 @@
   "note": "Operator is Kiowa County government (Kiowa County Commissioner's Office); service area described as Eads and Haswell, both towns within Kiowa County, with no evidence service is limited to Eads only. Shown as approximate countywide coverage. https://kiowacounty.colorado.gov/government/departments/kiowa-county-transit"
  },
  {
-  "name": "La Junta Transit",
-  "state": "CO",
-  "boundary_type": "city",
-  "units": [
-   {
-    "layer": "place",
-    "name": "La Junta"
-   }
-  ],
-  "confidence": 0.95,
-  "note": "City of La Junta is the operator"
- },
- {
   "name": "Larimer Lift",
   "state": "CO",
   "boundary_type": "county",
@@ -228,7 +185,7 @@
   ],
   "fidelity": "approximate",
   "confidence": 0.8,
-  "note": "Covers Lone Tree, Highlands Ranch, Stonegate, and Castle Rock (added July 31, 2026) fully; Parker coverage is partial ('select areas of Parker', not the whole town) so the Parker polygon here overstates actual coverage — no boundary streets or map are published outside the operator's in-app service-area tool (City.RideWithVia.com/LinkOnDemand). Meridian also served but ambiguous in boundary data (multiple Meridian CDPs exist); mapped coverage uses other resolved places. Service areas are not continuous. Sources: https://www.douglasco.gov/free-link-on-demand-rideshare-now-available-in-stonegate-and-parts-of-parker/ , https://cityoflonetree.com/link-on-demand/"
+  "note": "Covers Lone Tree, Highlands Ranch, Stonegate, and Castle Rock (added July 31, 2026) fully; Parker coverage is partial ('select areas of Parker', not the whole town) so the Parker polygon here overstates actual coverage \u2014 no boundary streets or map are published outside the operator's in-app service-area tool (City.RideWithVia.com/LinkOnDemand). Meridian also served but ambiguous in boundary data (multiple Meridian CDPs exist); mapped coverage uses other resolved places. Service areas are not continuous. Sources: https://www.douglasco.gov/free-link-on-demand-rideshare-now-available-in-stonegate-and-parts-of-parker/ , https://cityoflonetree.com/link-on-demand/"
  },
  {
   "name": "Mountain Village Dial-A-Ride",
@@ -241,20 +198,7 @@
    }
   ],
   "confidence": 0.9,
-  "note": "Verified against the operator's own page: Dial-A-Ride is free transportation to \"most locations within our town limits\" — it does not itself run to Telluride. A separate regional service (SMART, San Miguel Authority for Regional Transportation) connects Mountain Village to Telluride; that is a different system, not part of this boundary. Source: https://townofmountainvillage.com/explore/getting-around/bus-dial-a-ride/"
- },
- {
-  "name": "Prowers Area Transit (PATS)",
-  "state": "CO",
-  "boundary_type": "county",
-  "units": [
-   {
-    "layer": "county",
-    "name": "Prowers"
-   }
-  ],
-  "confidence": 0.9,
-  "note": "Countywide demand-response service serving Lamar and Prowers County."
+  "note": "Verified against the operator's own page: Dial-A-Ride is free transportation to \"most locations within our town limits\" \u2014 it does not itself run to Telluride. A separate regional service (SMART, San Miguel Authority for Regional Transportation) connects Mountain Village to Telluride; that is a different system, not part of this boundary. Source: https://townofmountainvillage.com/explore/getting-around/bus-dial-a-ride/"
  },
  {
   "name": "Ride Free Lafayette",
@@ -331,7 +275,7 @@
   ],
   "fidelity": "approximate",
   "confidence": 0.55,
-  "note": "RTD's site (rtd-denver.com/routes-services/other-services/flexride) names 16 zones: Brighton, Broomfield, DTC, Evergreen, Federal Heights, Golden, Green Mountain, Interlocken/Westmoor, Longmont, Louisville, Parker, South Jeffco, Superior, Thornton, Wagon Road, plus Broomfield North per the CSV. 10 of these correspond to a real municipality or CDP and are mapped above, but each FlexRide zone covers only part of that place, not the whole city/CDP, so these polygons overstate actual coverage — treat as approximate/oversized. DTC, Green Mountain, Interlocken/Westmoor, South Jeffco, Wagon Road, and Broomfield North have no matching Census place/CDP or county subdivision (checked the Census TIGER CO place file directly — 'Green Mountain' is not a CDP, only 'Green Mountain Falls', a different town near Colorado Springs) and are omitted entirely — those areas are not represented in the boundary at all. Precise zone shapes are only in RTD's interactive map: https://rtd-denver.maps.arcgis.com/apps/instant/interactivelegend/index.html?appid=b2d921ef0ad040d28c5ce49527793046&locale=en-us"
+  "note": "RTD's site (rtd-denver.com/routes-services/other-services/flexride) names 16 zones: Brighton, Broomfield, DTC, Evergreen, Federal Heights, Golden, Green Mountain, Interlocken/Westmoor, Longmont, Louisville, Parker, South Jeffco, Superior, Thornton, Wagon Road, plus Broomfield North per the CSV. 10 of these correspond to a real municipality or CDP and are mapped above, but each FlexRide zone covers only part of that place, not the whole city/CDP, so these polygons overstate actual coverage \u2014 treat as approximate/oversized. DTC, Green Mountain, Interlocken/Westmoor, South Jeffco, Wagon Road, and Broomfield North have no matching Census place/CDP or county subdivision (checked the Census TIGER CO place file directly \u2014 'Green Mountain' is not a CDP, only 'Green Mountain Falls', a different town near Colorado Springs) and are omitted entirely \u2014 those areas are not represented in the boundary at all. Precise zone shapes are only in RTD's interactive map: https://rtd-denver.maps.arcgis.com/apps/instant/interactivelegend/index.html?appid=b2d921ef0ad040d28c5ce49527793046&locale=en-us"
  },
  {
   "name": "Snowmass Village On-Demand Shuttle (Route 22)",
@@ -372,7 +316,7 @@
   ],
   "fidelity": "approximate",
   "confidence": 0.6,
-  "note": "Not truly countywide: Via's LINK On Call serves a large portion of unincorporated Weld County plus the towns of Fort Lupton, Milliken, Ault, Gilcrest, Hudson, Johnstown, Keenesburg, Kersey, Nunn, and Platteville — it does not cover incorporated Greeley or other larger cities in the county. Weld County polygon used as a containing-unit proxy; actual coverage is smaller/patchier. Operator's own service-area map: bit.ly/WeldCountyMap. Sources: https://viacolorado.org/2023/08/weld-county-announces-new-accessible-transportation-service-for-residents/ , https://coloradocommunitymedia.com/2023/08/09/weld-county-residents-will-have-access-to-transportation-with-via-mobility-services/"
+  "note": "Not truly countywide: Via's LINK On Call serves a large portion of unincorporated Weld County plus the towns of Fort Lupton, Milliken, Ault, Gilcrest, Hudson, Johnstown, Keenesburg, Kersey, Nunn, and Platteville \u2014 it does not cover incorporated Greeley or other larger cities in the county. Weld County polygon used as a containing-unit proxy; actual coverage is smaller/patchier. Operator's own service-area map: bit.ly/WeldCountyMap. Sources: https://viacolorado.org/2023/08/weld-county-announces-new-accessible-transportation-service-for-residents/ , https://coloradocommunitymedia.com/2023/08/09/weld-county-residents-will-have-access-to-transportation-with-via-mobility-services/"
  },
  {
   "name": "Yellow Zone",

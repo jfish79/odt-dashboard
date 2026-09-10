@@ -14,59 +14,6 @@
   "fidelity": "approximate"
  },
  {
-  "name": "Bay Transit Express",
-  "state": "VA",
-  "boundary_type": "zone_approx",
-  "units": [
-   {
-    "layer": "county",
-    "name": "Gloucester"
-   },
-   {
-    "layer": "county",
-    "name": "King and Queen"
-   },
-   {
-    "layer": "county",
-    "name": "Essex"
-   },
-   {
-    "layer": "county",
-    "name": "New Kent"
-   }
-  ],
-  "buffers": [
-   {
-    "radius_km": 4.06
-   },
-   {
-    "center_unit": {
-     "layer": "place",
-     "name": "West Point"
-    },
-    "radius_km": 4.06
-   },
-   {
-    "center_unit": {
-     "layer": "place",
-     "name": "Tappahannock"
-    },
-    "radius_km": 4.06
-   },
-   {
-    "center_unit": {
-     "layer": "county",
-     "name": "New Kent"
-    },
-    "radius_km": 4.06
-   }
-  ],
-  "clip_to_units": true,
-  "fidelity": "approximate",
-  "confidence": 0.55,
-  "note": "Four zones under one BT4U app/brand. Only the Gloucester zone has a stated size (~20 sq mi, per baytransit.org and the DRPT Rural Microtransit Suitability Checklist toolkit); the other three zones (West Point/King & Queen \"Paper Trail\", Essex/Tappahannock \"Rivah Ride\", New Kent) have no published size, so the same ~20 sq mi circle is used as a proxy for each, per the shared-operator/shared-program pattern (all four run on one Bay Transit/Bay Aging app). Circles are clipped to their home counties. Source: https://www.baytransit.org"
- },
- {
   "name": "GLTC Flex",
   "state": "VA",
   "boundary_type": "city",
@@ -160,27 +107,6 @@
   ],
   "confidence": 0.8,
   "note": "Two independent zones in Loudoun County (~5-6 sq mi and ~14 sq mi); trips cannot cross zones."
- },
- {
-  "name": "MetroFLX",
-  "state": "VA",
-  "boundary_type": "places",
-  "units": [
-   {
-    "layer": "place",
-    "name": "Roanoke"
-   },
-   {
-    "layer": "place",
-    "name": "Salem"
-   },
-   {
-    "layer": "place",
-    "name": "Vinton"
-   }
-  ],
-  "confidence": 0.9,
-  "note": "Three incorporated places in Roanoke metropolitan area."
  },
  {
   "name": "MicroCAT (Charlottesville Area Transit)",
