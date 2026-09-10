@@ -121,6 +121,7 @@ select:focus { border-color: var(--ink); }
 .view-btn:hover:not(.active) { background: var(--bg2); color: var(--ink); }
 
 /* ── CONTENT ── */
+.filter-blurb { padding: 0.6rem 3rem; background: var(--bg2); border-bottom: 1px solid var(--border); font-family: var(--serif); font-style: italic; font-size: 0.9rem; color: var(--ink-mid); }
 .content-area { flex: 1; }
 #card-view { padding: 2rem 3rem; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
@@ -197,9 +198,16 @@ select:focus { border-color: var(--ink); }
 #map-view { display: none; height: calc(100vh - 158px); min-height: 500px; }
 #map-view.active { display: flex; }
 #map { flex: 1; }
-.map-sidebar { width: 290px; flex-shrink: 0; background: var(--surface); border-left: 1px solid var(--border); display: flex; flex-direction: column; overflow: hidden; }
-.map-sidebar-header { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
+.map-sidebar { width: 290px; flex-shrink: 0; background: var(--surface); border-left: 1px solid var(--border); display: flex; flex-direction: column; overflow: hidden; transition: width 0.15s; }
+.map-sidebar.collapsed { width: 34px; }
+.map-sidebar-header { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); display: flex; align-items: center; gap: 0.5rem; }
 .map-sidebar-header span { color: var(--ink); }
+.map-sidebar.collapsed .map-sidebar-header { padding: 0.8rem 0; justify-content: center; }
+.map-sidebar.collapsed .map-sidebar-header span, .map-sidebar.collapsed .map-sidebar-header-label { display: none; }
+.map-sidebar-collapse-btn { background: none; border: none; cursor: pointer; color: var(--ink-soft); display: flex; align-items: center; padding: 0; margin-left: auto; flex-shrink: 0; }
+.map-sidebar-collapse-btn:hover { color: var(--ink); }
+.map-sidebar.collapsed .map-sidebar-collapse-btn { margin-left: 0; transform: rotate(180deg); }
+.map-sidebar.collapsed .map-list { display: none; }
 .map-list { overflow-y: auto; flex: 1; }
 .map-list-item { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.1s; display: flex; align-items: flex-start; gap: 0.6rem; border-left: 3px solid transparent; }
 .map-list-item:hover { background: var(--bg2); }
@@ -210,9 +218,15 @@ select:focus { border-color: var(--ink); }
 .map-item-sub { font-family: var(--mono); font-size: 0.6rem; color: var(--ink-soft); margin-top: 0.12rem; }
 .map-symbol-control {
   background: rgba(253,252,249,0.82); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
-  border: 1px solid var(--border); padding: 0.55rem 0.7rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  font-family: var(--mono); width: 210px; max-height: calc(100vh - 260px); overflow-y: auto;
+  border: 1px solid var(--border); box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  font-family: var(--mono); width: 210px;
 }
+.map-symbol-control-header { display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.7rem; cursor: pointer; user-select: none; }
+.map-symbol-control-header-label { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-mid); flex: 1; }
+.map-symbol-control-chevron { color: var(--ink-soft); flex-shrink: 0; transition: transform 0.15s; }
+.map-symbol-control.collapsed .map-symbol-control-chevron { transform: rotate(-90deg); }
+.map-symbol-control-body { padding: 0 0.7rem 0.6rem; max-height: calc(100vh - 300px); overflow-y: auto; }
+.map-symbol-control.collapsed .map-symbol-control-body { display: none; }
 .map-symbol-control-label { font-size: 0.56rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.35rem; }
 .map-symbol-control select {
   width: 100%; padding: 0.32rem 1.4rem 0.32rem 0.45rem;
@@ -357,6 +371,7 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
 @media (max-width: 760px) {
   header { padding: 1.5rem; }
   .toolbar { padding: 0.65rem 1rem; }
+  .filter-blurb { padding: 0.55rem 1rem; }
   #card-view { padding: 1rem; }
   .grid { grid-template-columns: 1fr; }
   .card.expanded { grid-column: span 1; }
@@ -364,7 +379,9 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
   .header-stats { flex-wrap: wrap; gap: 1rem; }
   .stat { border-right: none; padding-right: 0; margin-right: 0; }
   #map-view { height: calc(100vh - 200px); flex-direction: column; }
-  .map-sidebar { width: 100%; height: 220px; border-left: none; border-top: 1px solid var(--border); }
+  .map-sidebar { width: 100%; height: 220px; border-left: none; border-top: 1px solid var(--border); transition: height 0.15s; }
+  .map-sidebar.collapsed { width: 100%; height: 34px; }
+  .map-sidebar.collapsed .map-sidebar-collapse-btn { transform: rotate(90deg); }
 }
 </style>
 </head>
@@ -447,12 +464,18 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
   </div>
 </div>
 
+<div class="filter-blurb" id="filter-blurb"></div>
 <div class="content-area">
   <div id="card-view"><div class="grid" id="grid"></div></div>
   <div id="map-view">
     <div id="map"></div>
-    <div class="map-sidebar">
-      <div class="map-sidebar-header"><span id="map-count">0</span> systems shown</div>
+    <div class="map-sidebar" id="map-sidebar">
+      <div class="map-sidebar-header">
+        <span id="map-count">0</span><span class="map-sidebar-header-label">&nbsp;systems shown</span>
+        <button class="map-sidebar-collapse-btn" onclick="toggleMapSidebar()" title="Collapse list" aria-label="Collapse list">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
       <div class="map-list" id="map-list"></div>
     </div>
   </div>
@@ -851,6 +874,30 @@ function updateStats(){
   document.getElementById('stat-active').textContent=v.filter(s=>s.status.startsWith('Active')).length;
   document.getElementById('stat-micro').textContent=v.filter(s=>s.type==='Microtransit').length;
 }
+function buildFilterBlurb(){
+  const el=document.getElementById('filter-blurb');
+  if(!el)return;
+  const q=document.getElementById('search').value.trim();
+  const st=document.getElementById('filter-state').value,ty=document.getElementById('filter-type').value;
+  const ge=document.getElementById('filter-geo').value,su=document.getElementById('filter-status').value;
+  const ve=document.getElementById('filter-vendor').value;
+  if(!q&&!st&&!ty&&!ge&&!su&&!ve){
+    el.textContent=`All ${systems.length} systems nationwide`;
+    return;
+  }
+  const typeWord=ty?ty.toLowerCase()+' systems':'systems';
+  let subject=[su?su.toLowerCase():'',typeWord].filter(Boolean).join(' ');
+  subject=subject.charAt(0).toUpperCase()+subject.slice(1);
+  let loc;
+  if(ge&&st)loc=` in ${ge.toLowerCase()} ${STATE_NAMES[st]||st}`;
+  else if(st)loc=` in ${STATE_NAMES[st]||st}`;
+  else if(ge)loc=` in ${ge.toLowerCase()} areas nationwide`;
+  else loc=' nationwide';
+  let extra='';
+  if(ve)extra+=`, using ${ve}`;
+  if(q)extra+=`, matching "${q}"`;
+  el.textContent=`${subject}${loc}${extra}`;
+}
 
 let mapInitialized=false;
 function setView(v){
@@ -992,25 +1039,32 @@ function addSymbolControl(){
     options:{position:'topright'},
     onAdd:function(){
       const div=L.DomUtil.create('div','map-symbol-control');
-      div.innerHTML=`<div class="map-symbol-control-label">Symbolize by</div>
-        <select>
-          <option value="state">State</option>
-          <option value="type">System Type</option>
-          <option value="status">Status</option>
-          <option value="geo">Geographic Context</option>
-          <option value="vendor">Technology Vendor</option>
-        </select>
-        <div class="map-control-divider"></div>
-        <label class="map-layer-toggle"><input type="checkbox" id="toggle-markers" checked> Markers</label>
-        <label class="map-layer-toggle"><input type="checkbox" id="toggle-boundaries" checked> Service area boundaries</label>
-        <div class="map-control-divider"></div>
-        <div id="map-legend-content"></div>
-        <div id="boundary-legend-content"></div>`;
+      div.innerHTML=`<div class="map-symbol-control-header" id="map-legend-header">
+          <span class="map-symbol-control-header-label">Map legend</span>
+          <svg class="map-symbol-control-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="map-symbol-control-body" id="map-legend-body">
+          <div class="map-symbol-control-label">Symbolize by</div>
+          <select>
+            <option value="state">State</option>
+            <option value="type">System Type</option>
+            <option value="status">Status</option>
+            <option value="geo">Geographic Context</option>
+            <option value="vendor">Technology Vendor</option>
+          </select>
+          <div class="map-control-divider"></div>
+          <label class="map-layer-toggle"><input type="checkbox" id="toggle-markers" checked> Markers</label>
+          <label class="map-layer-toggle"><input type="checkbox" id="toggle-boundaries" checked> Service area boundaries</label>
+          <div class="map-control-divider"></div>
+          <div id="map-legend-content"></div>
+          <div id="boundary-legend-content"></div>
+        </div>`;
       L.DomEvent.disableClickPropagation(div);
       L.DomEvent.disableScrollPropagation(div);
       div.querySelector('select').addEventListener('change',e=>setSymbolMode(e.target.value));
       div.querySelector('#toggle-markers').addEventListener('change',e=>setMarkersVisible(e.target.checked));
       div.querySelector('#toggle-boundaries').addEventListener('change',e=>setBoundariesVisible(e.target.checked));
+      div.querySelector('#map-legend-header').addEventListener('click',()=>div.classList.toggle('collapsed'));
       return div;
     }
   });
@@ -1020,6 +1074,15 @@ function addSymbolControl(){
 function setSymbolMode(mode){
   mapSymbolMode=mode;
   buildLegend();buildMapList();updateMapMarkers();
+}
+function toggleMapSidebar(){
+  const el=document.getElementById('map-sidebar');
+  el.classList.toggle('collapsed');
+  const btn=el.querySelector('.map-sidebar-collapse-btn');
+  const collapsed=el.classList.contains('collapsed');
+  btn.title=collapsed?'Expand list':'Collapse list';
+  btn.setAttribute('aria-label',btn.title);
+  if(map)setTimeout(()=>map.invalidateSize(),160);
 }
 function focusMarker(i){
   if(!map||!markers[i])return;
@@ -1038,7 +1101,7 @@ function filterAll(){
   document.getElementById('count').textContent=count;
   const ex=document.querySelector('.empty');if(ex)ex.remove();
   if(count===0){const e=document.createElement('div');e.className='empty';e.innerHTML='<div class="empty-title">No systems match</div><p>Adjust your search or filters.</p>';document.getElementById('grid').appendChild(e);}
-  updateStats();if(mapInitialized)updateMapMarkers();
+  updateStats();buildFilterBlurb();if(mapInitialized)updateMapMarkers();
 }
 function bootstrap() {
   return Promise.all([
@@ -1050,7 +1113,7 @@ function bootstrap() {
   ]).then(function(res){
     systems = res[0];
     BOUNDARY_INDEX = (res[1] && res[1].states) || [];
-    populateVendorFilter(); populateStateFilter(); renderCards(); updateStats();
+    populateVendorFilter(); populateStateFilter(); renderCards(); updateStats(); buildFilterBlurb();
     document.getElementById('footer-stat').textContent = systems.length + ' systems across ' + new Set(systems.map(s=>s.state)).size + ' states';
     document.getElementById('count').textContent = systems.length;
   }).catch(function(err){
