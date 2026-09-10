@@ -162,42 +162,6 @@
   "note": "Two independent zones in Loudoun County (~5-6 sq mi and ~14 sq mi); trips cannot cross zones."
  },
  {
-  "name": "METGo!",
-  "state": "VA",
-  "boundary_type": "zone_approx",
-  "units": [
-   {
-    "layer": "place",
-    "name": "Norton"
-   },
-   {
-    "layer": "county",
-    "name": "Lee"
-   },
-   {
-    "layer": "county",
-    "name": "Scott"
-   },
-   {
-    "layer": "county",
-    "name": "Wise"
-   }
-  ],
-  "buffers": [
-   {
-    "center_unit": {
-     "layer": "place",
-     "name": "Norton"
-    },
-    "radius_km": 3.01
-   }
-  ],
-  "clip_to_units": true,
-  "fidelity": "approximate",
-  "confidence": 0.75,
-  "note": "Named service area spans the City of Norton plus Lee, Scott, and Wise counties, but the text states the operating zone is an \"~11 sq mi core\" (meoc.org); using a single ~11 sq mi circle centered on Norton rather than the full counties. Source: https://meoc.org"
- },
- {
   "name": "MetroFLX",
   "state": "VA",
   "boundary_type": "places",

@@ -84,6 +84,10 @@ STATE_FIPS = {
 # boundary_type -> (default source, default fidelity). Must stay in sync with
 # BOUNDARY_COLORS in index.html.
 BOUNDARY_TYPES = {
+    # 'gtfs_flex' is not generated here: it's an agency-published GTFS-Flex
+    # locations.geojson geofence, added by hand straight to the state's
+    # .geojson (see NOTES.md "GTFS-Flex check"). Its spec entry is removed
+    # entirely (not skipped) so --merge doesn't drop the manual feature.
     'city':               ('Census TIGER place', 'exact'),
     'places':             ('Census TIGER place', 'exact'),
     'county':             ('Census TIGER county', 'exact'),

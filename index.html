@@ -703,11 +703,12 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
 
       <div class="ref-def-block">
         <div class="ref-def-term">Service area boundaries</div>
-        <div class="ref-def-body">Boundaries shown on the state map views are built from Census TIGER/Line cartographic boundaries (2023, 1:500k) matched to each system's documented service area. No on-demand transit agency in the inventory publishes downloadable boundary data or GTFS-Flex feeds, so every polygon is a proxy whose fidelity is labeled. Each polygon's popup lists the Census units it was built from and any caveat. The per-state "spec" files under <code>data/boundaries/specs/</code> record the units chosen for every system and regenerate the GeoJSON deterministically. North Carolina was mapped by hand in June 2026; other states by an agent-assisted pipeline (drafted from row text, audited, and web-researched where flagged) from September 2026.</div>
+        <div class="ref-def-body">Boundaries shown on the state map views are built from Census TIGER/Line cartographic boundaries (2023, 1:500k) matched to each system's documented service area. Almost no on-demand transit agency in the inventory publishes downloadable boundary data or a GTFS-Flex feed, so most polygons are a Census-based proxy whose fidelity is labeled; a 2026-09 check of the Mobility Database's GTFS catalog against every row found real GTFS-Flex (<code>locations.geojson</code>) geofences for only about 1 in 18 matched feeds, an estimated 3-9 systems dataset-wide — <strong>METGo!</strong> (VA) is the one confirmed so far and uses its actual published geofence instead of a proxy. Each polygon's popup lists what it was built from and any caveat. The per-state "spec" files under <code>data/boundaries/specs/</code> record the units chosen for every proxy system and regenerate the GeoJSON deterministically; systems sourced from a real feed instead (like METGo!) are excluded from the specs and kept as-is by the resolver's merge step. North Carolina was mapped by hand in June 2026; other states by an agent-assisted pipeline (drafted from row text, audited, and web-researched where flagged) from September 2026.</div>
         <div class="ref-table-wrap" style="margin-top:0.5rem">
           <table class="ref-table">
             <thead><tr><th>Boundary type</th><th>Built from</th><th>Accuracy</th></tr></thead>
             <tbody>
+              <tr><td>Official service area (GTFS-Flex)</td><td>Agency-published <code>locations.geojson</code> geofence</td><td>Exact — the agency's own operating boundary, not a proxy</td></tr>
               <tr><td>City limits</td><td>Census incorporated place</td><td>High — official municipal boundary; "approximate" when the zone is a subset of the city</td></tr>
               <tr><td>County / multi-county</td><td>Census county polygons, dissolved</td><td>High for county-wide services; service may not reach every corner</td></tr>
               <tr><td>Town boundaries</td><td>Union of Census places or county subdivisions (New England towns, townships)</td><td>Good — actual municipal limits, zones may extend beyond</td></tr>
@@ -1611,6 +1612,7 @@ function ensureBoundaries(state) {
 }
 
 const BOUNDARY_COLORS = {
+  'gtfs_flex':          {fill:'#1a8a4a', stroke:'#0e5c2e', dash:null, label:'Official service area (GTFS-Flex)'},
   'city':               {fill:'#2e5e8a', stroke:'#1a3d5c', dash:null, label:'City limits (Census)'},
   'county':             {fill:'#3d6b4f', stroke:'#264432', dash:null, label:'County (Census)'},
   'counties':           {fill:'#3d6b4f', stroke:'#264432', dash:null, label:'Multi-county (Census)'},

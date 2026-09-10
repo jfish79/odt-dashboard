@@ -45,6 +45,29 @@ neighborhood with no published size; each needs the agency's zone map traced:
 GRTC LINK (VA), MARTA Reach (GA), Metro Micro (CA), Mid-City GO (CA),
 Southeastern Connect (CA), FAST Connect (CA).
 
+**GTFS-Flex check (2026-09-10):** the assumption that no agency publishes
+downloadable boundary data was worth re-checking, since GTFS-Flex (the
+`locations.geojson` extension) was folded into mainline GTFS ~2023 and an
+agency doesn't need a separately-labeled "flex feed" to have it. Fuzzy-matched
+all 665 rows against the Mobility Database's GTFS catalog (~55-165 candidate
+matches by confidence) and inspected 18 high-confidence matches' actual feed
+zips. Only 1 of 18 (5.6%) had real GTFS-Flex data — extrapolated, an
+estimated 3-9 systems dataset-wide, not worth a full systematic pass. The one
+confirmed hit, **METGo!** (VA), was applied: its `zone_approx` proxy was
+replaced with the actual geofence from
+`data.trilliumtransit.com/gtfs/mountainempire-va-us/mountainempire-va-us--flex-v2.zip`
+(`locations.geojson` feature `area_1079`, route 76328 "MetGO!" — the app's
+real-time-booking zone; the feed's other route/area, 76329, is a separate
+prior-day-booking service on the same feed and out of ODT scope). New
+`boundary_type: "gtfs_flex"` added to `BOUNDARY_COLORS`/resolver docs for
+this. METGo!'s spec entry was removed from `data/boundaries/specs/VA.json`
+entirely (not just skipped) so the resolver's `--merge` step, which drops any
+existing feature whose name appears in the specs list, doesn't clobber the
+manually-added feature on a future VA re-run. If a fuller Trillium-hosted
+`--flex` scan turns up more real hits later, apply them the same way: fetch
+the feed, pull the right `location_id`'s feature from `locations.geojson`,
+overwrite the state's `.geojson` feature, and delete that system's spec entry.
+
 Low-confidence proxies (confidence <= 0.5) worth a human look are listed by
 `python3 scripts/boundaries/...` — or grep the spec files for
 `"confidence": 0.5` / `0.4`: SV Hopper, Via West Sacramento, Hele-On (HI),
