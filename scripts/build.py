@@ -16,6 +16,7 @@ import csv
 import json
 import glob
 import os
+import re
 import sys
 from collections import Counter
 from datetime import date
@@ -103,7 +104,109 @@ def validate(rows):
             print(f"  WARN  row {i} ({name}): unusual System Type '{sys_type}'")
             warnings += 1
 
+        geo = row.get('Geographic Context', '').strip()
+        if geo_class(geo) == 'Unknown':
+            print(f"  WARN  row {i} ({name}): Geographic Context not classifiable: '{geo[:60]}'")
+            warnings += 1
+
+        status = row.get('Status/Maturity', '').strip()
+        if status and status_class(status) == 'Not specified' and not status.lower().startswith('not specified'):
+            print(f"  WARN  row {i} ({name}): Status/Maturity not classifiable: '{status[:60]}'")
+            warnings += 1
+
     return errors, warnings
+
+
+# ── Derived / normalized fields ─────────────────────────────────────────────
+# The CSV keeps the researcher's free text (e.g. "Rural (mountain town)",
+# "Via (inferred from Google Play package name…)", "2024 (May 15, 2024)").
+# The dashboard's filters and charts need clean categories, so the build
+# derives them here rather than parsing text in the browser. Raw values are
+# still passed through for display on cards and in the detail modal.
+
+GEO_CLASSES = ('Urban', 'Suburban', 'Rural', 'Mixed')
+
+def geo_class(val):
+    v = (val or '').strip()
+    for g in GEO_CLASSES:
+        if v.lower().startswith(g.lower()):
+            return g
+    if 'rural' in v.lower():
+        return 'Rural'
+    return 'Unknown'
+
+
+def status_class(val):
+    v = (val or '').strip().lower()
+    if not v or v.startswith('not specified'):
+        return 'Not specified'
+    if 'ended' in v or v.startswith('completed') or v.startswith('inactive') or 'discontinued' in v:
+        return 'Pilot - Ended'
+    if v.startswith('active - new'):
+        return 'Active - New'
+    if v.startswith('active - expanding'):
+        return 'Active - Expanding'
+    if v.startswith('active - post pilot'):
+        return 'Active - Post Pilot'
+    if v.startswith('active - pilot') or v.startswith('pilot') or v.startswith('planned'):
+        return 'Pilot'
+    if v.startswith('active'):
+        return 'Active'
+    return 'Not specified'
+
+
+# (search keyword, canonical label). The keyword that appears EARLIEST in the
+# raw text wins, so "Via (originally TransLoc…)" → Via and
+# "May Mobility / Via" → May Mobility.
+VENDOR_KEYWORDS = [
+    ('rideco', 'RideCo'), ('freebee', 'Freebee'), ('transloc', 'TransLoc'),
+    ('spare', 'Spare'), ('circuit', 'Circuit'), ('ecolane', 'Ecolane'),
+    ('downtowner', 'Downtowner'), ('qryde', 'QRyde'),
+    ('routing company', 'TRC (Pingo)'), ('pingo', 'TRC (Pingo)'),
+    ('via', 'Via'), ('may mobility', 'May Mobility'),
+    ('uber', 'Uber / Lyft'), ('lyft', 'Uber / Lyft'),
+    ('in-house', 'In-house'), ('proprietary', 'In-house'),
+]
+VENDOR_UNKNOWN_PREFIXES = ('not specified', 'unknown', 'conflicting', 'transitioned', 'phone')
+
+def vendor_class(val):
+    v = (val or '').strip()
+    low = v.lower()
+    if not low or low.startswith(VENDOR_UNKNOWN_PREFIXES):
+        return 'Not specified'
+    best = None
+    for kw, label in VENDOR_KEYWORDS:
+        m = re.search(r'(?<![a-z])' + re.escape(kw) + r'(?![a-z])', low)
+        if m and (best is None or m.start() < best[0]):
+            best = (m.start(), label)
+    return best[1] if best else 'Other'
+
+
+def year_num(val):
+    v = (val or '').strip()
+    m = re.match(r'^~?\s*((?:19|20)\d{2})(?!\d)', v)
+    if m:
+        return int(m.group(1))
+    m = re.match(r'^((?:19|20)\d)0s$', v)          # "2000s" → 2000
+    if m:
+        return int(m.group(1)) * 10
+    m = re.match(r'^[A-Z][a-z]+ \d{1,2}, ((?:19|20)\d{2})', v)   # "January 2, 2018"
+    if m:
+        return int(m.group(1))
+    m = re.match(r'^Program dates to ((?:19|20)\d{2})', v)
+    if m:
+        return int(m.group(1))
+    return None
+
+
+FLEET_SIZE_RE = re.compile(
+    r'(?:~|approx\.?\s*|about\s*)?(\d{1,3})\s*'
+    r'(?:vehicles?|vans?|EVs?|minivans?|buses|shuttles?|cutaways?|sedans?|cars?|SUVs?|minibus(?:es)?|cabs?|taxis?)\b',
+    re.I)
+
+def fleet_size(val):
+    m = FLEET_SIZE_RE.search(val or '')
+    return int(m.group(1)) if m else None
 
 
 def to_json_record(row):
@@ -116,6 +219,11 @@ def to_json_record(row):
             except (ValueError, TypeError):
                 val = 0.0
         rec[json_key] = val
+    rec['geo_class']    = geo_class(rec['geo'])
+    rec['status_class'] = status_class(rec['status'])
+    rec['vendor_class'] = vendor_class(rec['vendor'])
+    rec['year_num']     = year_num(rec['year'])
+    rec['fleet_size']   = fleet_size(rec['fleet'])
     return rec
 
 
@@ -204,6 +312,10 @@ def main():
     print(f"  {len(records)} systems across {len(states)} states")
     for t, c in sorted(types.items()):
         print(f"    {t}: {c}")
+    other = Counter(r['vendor'] for r in records if r['vendor_class'] == 'Other')
+    if other:
+        print(f"  Vendors bucketed as 'Other' ({sum(other.values())} rows): "
+              + ', '.join(f"{v} ({c})" for v, c in other.most_common()))
 
     print(f"Writing {summary_path}...")
     build_summary(rows, summary_path)

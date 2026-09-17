@@ -10,7 +10,14 @@ across the US, published as a static dashboard via GitHub Pages.
   reference tab). Fetches `data/systems.json` and `data/boundaries/*.geojson`
   at runtime — it does not read the CSV directly.
 - `scripts/build.py` — reads the CSV, validates it, writes `data/systems.json`,
-  `summary.csv`, and `data/boundaries/_index.json`.
+  `summary.csv`, and `data/boundaries/_index.json`. It also derives the
+  normalized fields the dashboard's filters and charts use (`geo_class`,
+  `status_class`, `vendor_class`, `year_num`, `fleet_size`) from the
+  researcher's free text, so the CSV can keep qualifiers like
+  "Rural (mountain town)" or "Via (inferred from app package name)". If a new
+  vendor spelling or status wording shows up, add it to the keyword tables in
+  build.py rather than parsing it in index.html. The build warns when a row's
+  geo or status can't be classified.
 - `concerns.csv` — running log of data-quality issues: vendor errors,
   paratransit reclassifications, status discrepancies, dedup notes. Treat this
   as the changelog for anything questionable in the CSV. Add to it, don't

@@ -81,15 +81,21 @@ header h1 em { font-style: italic; color: #d4c9a8; }
 .stat-num { font-family: var(--serif); font-size: 1.8rem; color: #e8e0d0; line-height: 1; display: block; }
 .stat-label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: #6a6058; margin-top: 0.2rem; display: block; }
 
-/* ── TOOLBAR ── */
+/* ── TOP BAR (view switcher + filters) ── */
+.topbar { position: sticky; top: 0; z-index: 200; background: var(--surface); border-bottom: 2px solid var(--ink); }
+.viewbar { padding: 0.7rem 3rem 0; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.viewbar-hint { font-family: var(--mono); font-size: 0.62rem; color: var(--ink-faint); }
 .toolbar {
-  background: var(--surface);
-  border-bottom: 2px solid var(--ink);
-  padding: 0.8rem 3rem;
+  padding: 0.6rem 3rem 0.75rem;
   display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;
-  position: sticky; top: 0; z-index: 200;
 }
-.search-wrap { position: relative; flex: 1; min-width: 180px; max-width: 260px; }
+.search-wrap { position: relative; flex: 1; min-width: 160px; max-width: 220px; }
+.clear-btn {
+  font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase;
+  background: none; border: 1px solid var(--border2); color: var(--ink-soft); padding: 0.38rem 0.6rem; cursor: pointer;
+}
+.clear-btn:hover { color: var(--ink); border-color: var(--ink); }
+.clear-btn.hidden { display: none; }
 .search-wrap svg { position: absolute; left: 9px; top: 50%; transform: translateY(-50%); color: var(--ink-faint); pointer-events: none; }
 .search-wrap input {
   width: 100%; padding: 0.45rem 0.7rem 0.45rem 2rem;
@@ -108,15 +114,16 @@ select {
   background-repeat: no-repeat; background-position: right 6px center; cursor: pointer;
 }
 select:focus { border-color: var(--ink); }
-.results-count { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-soft); white-space: nowrap; }
+.toolbar select { max-width: 200px; text-overflow: ellipsis; }
+.results-count { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-soft); white-space: nowrap; margin-left: auto; }
 .results-count span { color: var(--ink); }
-.view-toggle { display: flex; border: 1px solid var(--border2); overflow: hidden; flex-shrink: 0; margin-left: auto; }
+.view-toggle { display: flex; border: 1px solid var(--border2); overflow: hidden; flex-shrink: 0; }
 .view-btn {
   padding: 0.42rem 0.85rem; background: var(--bg); border: none; cursor: pointer;
   font-family: var(--mono); font-size: 0.63rem; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--ink-soft); display: flex; align-items: center; gap: 0.35rem; transition: background 0.1s;
 }
-.view-btn:first-child { border-right: 1px solid var(--border2); }
+.view-btn + .view-btn { border-left: 1px solid var(--border2); }
 .view-btn.active { background: var(--ink); color: var(--bg); }
 .view-btn:hover:not(.active) { background: var(--bg2); color: var(--ink); }
 
@@ -157,6 +164,7 @@ select:focus { border-color: var(--ink); }
 .status-Active,.status-Active---Expanding,.status-Active---New,.status-Active---Post-Pilot { background: var(--green); }
 .status-Pilot { background: var(--gold); }
 .status-Pilot---Ended,.status-Inactive { background: var(--ink-faint); }
+.status-Not-specified { background: var(--border2); }
 
 .card-area { font-family: var(--mono); font-size: 0.67rem; color: var(--ink-mid); line-height: 1.5; display: flex; gap: 0.35rem; }
 .card-area svg { flex-shrink: 0; margin-top: 1px; color: var(--ink-faint); }
@@ -195,7 +203,7 @@ select:focus { border-color: var(--ink); }
 .empty p { font-family: var(--mono); font-size: 0.75rem; color: var(--ink-faint); }
 
 /* ── MAP ── */
-#map-view { display: none; height: calc(100vh - 158px); min-height: 500px; }
+#map-view { display: none; height: calc(100vh - 140px); min-height: 500px; }
 #map-view.active { display: flex; }
 #map { flex: 1; }
 .map-sidebar { width: 290px; flex-shrink: 0; background: var(--surface); border-left: 1px solid var(--border); display: flex; flex-direction: column; overflow: hidden; transition: width 0.15s; }
@@ -290,6 +298,11 @@ select:focus { border-color: var(--ink); }
   border-top: 1px solid var(--border); padding-top: 0.5rem;
 }
 
+/* Status legend (row under the stacked bar) */
+.status-legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; margin-top: 0.6rem; }
+.status-legend .dl-item { gap: 0.4rem; }
+.status-legend .dl-pct { margin-left: 0.15rem; }
+
 /* Donut */
 .donut-wrap { display: flex; align-items: center; gap: 1.5rem; }
 .donut-canvas { flex-shrink: 0; display: block; }
@@ -356,6 +369,7 @@ select:focus { border-color: var(--ink); }
 .modal-tags { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-bottom: 1.1rem; }
 .modal-open-btn { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--mono); font-size: 0.65rem; padding: 0.35rem 0.7rem; background: var(--ink); color: var(--bg); border: none; cursor: pointer; text-decoration: none; }
 .modal-open-btn:hover { background: var(--ink-mid); }
+.card .modal-open-btn { align-self: flex-start; }
 
 @media (max-width: 760px) {
   #reference-view { padding: 1rem; }
@@ -370,7 +384,9 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
 
 @media (max-width: 760px) {
   header { padding: 1.5rem; }
-  .toolbar { padding: 0.65rem 1rem; }
+  .toolbar { padding: 0.5rem 1rem 0.65rem; }
+  .viewbar { padding: 0.6rem 1rem 0; }
+  .viewbar-hint { display: none; }
   .filter-blurb { padding: 0.55rem 1rem; }
   #card-view { padding: 1rem; }
   .grid { grid-template-columns: 1fr; }
@@ -399,6 +415,30 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
   </div>
 </header>
 
+<div class="topbar">
+<div class="viewbar">
+  <div class="view-toggle">
+    <button class="view-btn active" id="btn-cards" onclick="setView('cards')">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      Cards
+    </button>
+    <button class="view-btn" id="btn-map" onclick="setView('map')">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+      Map
+    </button>
+    <button class="view-btn" id="btn-analytics" onclick="setView('analytics')">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      Analytics
+    </button>
+    <button class="view-btn" id="btn-reference" onclick="setView('reference')">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      Reference
+    </button>
+  </div>
+  <div class="viewbar-hint" id="viewbar-hint">Filters below apply to the Cards, Map and Analytics views.</div>
+  <div class="results-count"><span id="count">0</span> systems</div>
+  <button class="clear-btn hidden" id="clear-filters" onclick="clearFilters()" title="Clear search and all filters">Clear filters</button>
+</div>
 <div class="toolbar">
   <div class="search-wrap">
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
@@ -443,25 +483,7 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
       <option value="">All</option>
     </select>
   </div>
-  <div class="results-count"><span id="count">0</span> systems</div>
-  <div class="view-toggle">
-    <button class="view-btn active" id="btn-cards" onclick="setView('cards')">
-      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-      Cards
-    </button>
-    <button class="view-btn" id="btn-map" onclick="setView('map')">
-      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
-      Map
-    </button>
-    <button class="view-btn" id="btn-analytics" onclick="setView('analytics')">
-      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-      Analytics
-    </button>
-    <button class="view-btn" id="btn-reference" onclick="setView('reference')">
-      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-      Reference
-    </button>
-  </div>
+</div>
 </div>
 
 <div class="filter-blurb" id="filter-blurb"></div>
@@ -489,9 +511,9 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
     <!-- 1. Cumulative systems launched (full width) -->
     <div class="chart-panel chart-full">
       <div class="chart-panel-title">Growth over time</div>
-      <div class="chart-panel-sub">Cumulative systems launched, 2017–2026</div>
+      <div class="chart-panel-sub" id="a-cum-sub">Cumulative systems launched</div>
       <canvas id="chart-cumulative"></canvas>
-      <div class="chart-note">* Bars show new systems per year. Line shows cumulative total. 26 systems with unknown launch years are excluded from this chart only.</div>
+      <div class="chart-note" id="a-cum-note"></div>
     </div>
 
     <!-- 2. Geographic context donut -->
@@ -502,72 +524,73 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
         <canvas id="chart-geo" class="donut-canvas"></canvas>
         <div class="donut-legend" id="legend-geo"></div>
       </div>
-      <div class="chart-note">Suburban deployments lead, reflecting demand in low-density areas underserved by fixed-route bus.</div>
+      <div class="chart-note" id="a-geo-note"></div>
     </div>
 
     <!-- 3. Fare structure donut -->
     <div class="chart-panel">
       <div class="chart-panel-title">Fare structure</div>
-      <div class="chart-panel-sub">Free · Paid · Unknown</div>
+      <div class="chart-panel-sub">Base fare per ride</div>
       <div class="donut-wrap">
         <canvas id="chart-fare" class="donut-canvas"></canvas>
         <div class="donut-legend" id="legend-fare"></div>
       </div>
-      <div class="chart-note">~30% of systems are fare-free, typically funded by municipal or federal grants.</div>
+      <div class="chart-note" id="a-fare-note"></div>
     </div>
 
     <!-- 4. Top vendors bar -->
     <div class="chart-panel">
       <div class="chart-panel-title">Technology vendor</div>
-      <div class="chart-panel-sub">Known software platforms</div>
+      <div class="chart-panel-sub">Software platforms, systems with a known vendor</div>
       <canvas id="chart-vendor"></canvas>
-      <div class="chart-note">Via dominates the US market. ~38% of systems use an unspecified or proprietary platform.</div>
+      <div class="chart-note" id="a-vendor-note"></div>
     </div>
 
     <!-- 5. Systems per state bar -->
     <div class="chart-panel">
       <div class="chart-panel-title">Geographic distribution</div>
-      <div class="chart-panel-sub">Systems by state</div>
+      <div class="chart-panel-sub" id="a-states-sub">Systems by state</div>
       <canvas id="chart-states"></canvas>
-      <div class="chart-note">NC leads due to the MEE-NC rural initiative and active NCDOT programs.</div>
+      <div class="chart-note" id="a-states-note"></div>
     </div>
 
     <!-- 6. Status breakdown bar -->
     <div class="chart-panel chart-full">
       <div class="chart-panel-title">System maturity</div>
-      <div class="chart-panel-sub">Status distribution across all systems</div>
+      <div class="chart-panel-sub">Status distribution</div>
       <canvas id="chart-status"></canvas>
-      <div class="chart-note">The majority of systems are in sustained operation. "Active – New" reflects services launched within the past ~6 months.</div>
+      <div class="status-legend" id="legend-status"></div>
+      <div class="chart-note" id="a-status-note"></div>
     </div>
 
     <!-- 7. Propulsion type donut -->
     <div class="chart-panel">
       <div class="chart-panel-title">Fleet propulsion</div>
-      <div class="chart-panel-sub">Electric · Hybrid · Conventional</div>
+      <div class="chart-panel-sub">Electric and hybrid vehicles, where the fleet is described</div>
       <div class="donut-wrap">
         <canvas id="chart-propulsion" class="donut-canvas"></canvas>
         <div class="donut-legend" id="legend-propulsion"></div>
       </div>
-      <div class="chart-note">~65% of systems have unknown propulsion type. Of those with known fleets, electrification is prevalent particularly in CA, FL, and CMO-funded services.</div>
+      <div class="chart-note" id="a-prop-note"></div>
     </div>
 
     <!-- 8. WAV/ADA availability donut -->
     <div class="chart-panel">
       <div class="chart-panel-title">Accessibility (WAV/ADA)</div>
-      <div class="chart-panel-sub">Wheelchair-accessible vehicles</div>
+      <div class="chart-panel-sub">Wheelchair-accessible vehicles mentioned in fleet or notes</div>
       <div class="donut-wrap">
         <canvas id="chart-wav" class="donut-canvas"></canvas>
         <div class="donut-legend" id="legend-wav"></div>
       </div>
-      <div class="chart-note">WAV availability is frequently mentioned in press releases when present; "Not Specified" likely understates true ADA compliance, which is federally required for public transit.</div>
+      <div class="chart-note">Based on text mentions only. Accessible service is federally required for public transit, so "Not mentioned" reflects gaps in the source material, not a lack of accessible vehicles.</div>
     </div>
 
     <!-- 9. Known fleet sizes bar -->
     <div class="chart-panel chart-full">
       <div class="chart-panel-title">Fleet size (known deployments)</div>
-      <div class="chart-panel-sub">Vehicles per system — 16 of 123 systems with confirmed counts</div>
+      <div class="chart-panel-sub" id="a-fleet-sub">Vehicles per system</div>
       <canvas id="chart-fleet-sizes"></canvas>
-      <div class="chart-note">Fleet size data is available for only ~13% of systems. Larger fleets (Arlington ~90, DART GoLink, Scout) reflect citywide or multi-zone deployments. Most pilots operate 3–15 vehicles.</div>
+      <div class="chart-note" id="a-fleet-note"></div>
     </div>
 
   </div>
@@ -588,10 +611,10 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
         <table class="ref-table">
           <thead><tr><th>Included</th><th>Excluded</th></tr></thead>
           <tbody>
-            <tr><td>Same-day app or phone booking, no fixed schedule</td><td>Services requiring 24+ hour advance booking (e.g. SacRT SmaRT Ride)</td></tr>
-            <tr><td>Demand-response if flagged with "Advance" scheduling window</td><td>Private employer or apartment shuttles (not publicly accessible)</td></tr>
+            <tr><td>Same-day app or phone booking with no fixed schedule, even if a short same-day lead time (e.g. two hours) is required</td><td>Services with no same-day option — booking required by a cutoff on a day before the trip (e.g. "by 4pm the day before", "24-hour advance", "next-day only")</td></tr>
+            <tr><td>Demand-response where advance booking is preferred or the norm, as long as a same-day request is a real, routinely honored option</td><td>Private employer or apartment shuttles (not publicly accessible)</td></tr>
             <tr><td>Publicly accessible services, even if privately sponsored (e.g. SouthPark Skipper)</td><td>Campus-only or closed-loop shuttles</td></tr>
-            <tr><td>Planned services with confirmed vendor and funding (flagged as Pilot or Planned)</td><td>Services that have permanently ceased operations</td></tr>
+            <tr><td>Planned services with confirmed vendor and funding (flagged as Pilot)</td><td>Services that have permanently ceased operations, and paratransit restricted to eligibility-certified riders</td></tr>
           </tbody>
         </table>
       </div>
@@ -661,7 +684,7 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
           <div class="ref-def-body">How far in advance rides must be booked.</div>
           <div class="ref-status-table">
             <div class="ref-status-row"><span class="ref-status-name">Same-day</span><span class="ref-status-desc">Rides can be booked and received within the same operating day, typically within minutes to an hour of request. The defining characteristic of true on-demand / microtransit.</span></div>
-            <div class="ref-status-row"><span class="ref-status-name">Advance</span><span class="ref-status-desc">Rides must be booked at least one day before travel. Common in demand-response systems and rural programs.</span></div>
+            <div class="ref-status-row"><span class="ref-status-name">Advance</span><span class="ref-status-desc">Advance booking (typically a day ahead) is the norm, but a same-day request is still a genuine option. Common in rural demand-response programs. Systems with no same-day path at all are out of scope (see Scope rules).</span></div>
             <div class="ref-status-row"><span class="ref-status-name">Flexible</span><span class="ref-status-desc">System supports both same-day and advance booking, often with different lead times for different trip types or zones.</span></div>
           </div>
         </div>
@@ -670,7 +693,7 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
           <div class="ref-def-term">Technology Vendor</div>
           <div class="ref-def-body">The software platform provider powering the dispatch, routing, and rider app. Distinct from the operator (who runs the vehicles) and the funding agency (who pays for the service). Many agencies procure the transit management contract and the technology platform separately.</div>
           <div class="ref-vendor-notes">
-            <div class="ref-vendor-row"><span class="ref-vendor-name">Via</span><span class="ref-vendor-desc">New York-based TransitTech company, the dominant US market platform (~39 deployments in this database). Powers both app and operations management. Agencies often brand the service independently of Via's name.</span></div>
+            <div class="ref-vendor-row"><span class="ref-vendor-name">Via</span><span class="ref-vendor-desc">New York-based TransitTech company, the most common platform in this database. Powers both app and operations management. Agencies often brand the service independently of Via's name.</span></div>
             <div class="ref-vendor-row"><span class="ref-vendor-name">Spare</span><span class="ref-vendor-desc">Vancouver-based platform focused on transit agency integration, paratransit, and multi-modal trip planning. Used by DART GoLink, CATS Micro, Metro Transit Micro, and others.</span></div>
             <div class="ref-vendor-row"><span class="ref-vendor-name">RideCo</span><span class="ref-vendor-desc">Toronto-based on-demand transit software. Used by LA Metro Micro, Ride Gwinnett, OmniRide (Omnitrans), and others.</span></div>
             <div class="ref-vendor-row"><span class="ref-vendor-name">Freebee</span><span class="ref-vendor-desc">Miami-based operator-and-software provider. Unlike pure software vendors, Freebee also operates the vehicles. Predominantly deployed in Florida municipalities.</span></div>
@@ -684,13 +707,13 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
 
     <div class="ref-section">
       <div class="ref-section-label">Data caveats</div>
-      <p class="ref-prose">Fleet figures are sourced from press releases and agency reports and may not reflect current operations. Service hours and fares change frequently — verify with the agency before travel planning. Latitude/longitude pins represent approximate service area centers; where a state has boundary overlays, the polygon shows the documented coverage area at the fidelity noted in its popup. Systems marked "Not specified" have data that is not publicly available or not yet researched.</p>
-      <p class="ref-prose" style="margin-top:0.75rem">Last updated: <strong>July 2026</strong>. This is a living document; if you identify errors or omissions, please contact the research team.</p>
+      <p class="ref-prose">Fleet figures are sourced from press releases and agency reports and may not reflect current operations. Service hours and fares change frequently — verify with the agency before travel planning. Latitude/longitude pins represent approximate service area centers; where a state has boundary overlays, the polygon shows the documented coverage area at the fidelity noted in its popup. Systems marked "Not specified" have data that is not publicly available or not yet researched. The filters and analytics use normalized categories derived at build time (vendor names, status, geographic context, launch year); the full researcher text is shown on each card and in the detail view.</p>
+      <p class="ref-prose" style="margin-top:0.75rem">Last updated: <strong>September 2026</strong>. This is a living document; if you identify errors or omissions, please contact the research team.</p>
     </div>
 
     <div class="ref-section">
       <div class="ref-section-label">Data quality concerns</div>
-      <p class="ref-prose" style="margin-bottom:1rem">The June 2026 update added 120 systems from supplemental CA/CO lists. Several data quality issues were identified during integration and are documented below. The full log is in the <code>Concerns</code> tab of the companion spreadsheet.</p>
+      <p class="ref-prose" style="margin-bottom:1rem">The June 2026 update added 120 systems from supplemental CA/CO lists. Several data quality issues were identified during integration and are documented below. The full log is <code>concerns.csv</code> in the project repository.</p>
 
       <div class="ref-def-block">
         <div class="ref-def-term">Vendor errors (verified)</div>
@@ -712,17 +735,17 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
 
       <div class="ref-def-block">
         <div class="ref-def-term">Paratransit scope change (2026-07)</div>
-        <div class="ref-def-body">83 systems from the supplemental CA/CO lists were originally reclassified from "Demand-Response" to a separate "Paratransit" System Type, based on eligibility restrictions found in their names or notes (ADA, senior, disabled, age cutoffs). As of July 2026, paratransit was removed from scope entirely rather than tracked as a distinct type — all 170 eligibility-restricted rows database-wide (not just the 83 from the CA/CO integration) were removed, and "Paratransit" was retired as a System Type. This database now covers general-public on-demand transit only; eligibility-certified-rider-only services are out of scope regardless of how demand-responsive they are. Each original reclassification (and the later removal) is logged in the spreadsheet's Concerns tab.</div>
+        <div class="ref-def-body">83 systems from the supplemental CA/CO lists were originally reclassified from "Demand-Response" to a separate "Paratransit" System Type, based on eligibility restrictions found in their names or notes (ADA, senior, disabled, age cutoffs). As of July 2026, paratransit was removed from scope entirely rather than tracked as a distinct type — all 170 eligibility-restricted rows database-wide (not just the 83 from the CA/CO integration) were removed, and "Paratransit" was retired as a System Type. This database now covers general-public on-demand transit only; eligibility-certified-rider-only services are out of scope regardless of how demand-responsive they are. Each original reclassification (and the later removal) is logged in <code>concerns.csv</code>.</div>
       </div>
 
       <div class="ref-def-block">
         <div class="ref-def-term">24-hour-advance scope change (2026-08)</div>
-        <div class="ref-def-body">Demand-Response rows were originally included whenever they carried an "Advance" scheduling window and were open to the general public. As of August 2026, the rule was clarified: same-day booking must be a genuine, routinely-honored option (advance can be preferred or the norm, but a rider must actually be able to book and ride same-day, even with a short lead time like a 2-hour notice). A full dataset sweep checked every Advance-family row against its primary source and removed ~215 that required booking by some cutoff on a day before the trip with no same-day path, regardless of whether that cutoff was technically under 24 hours. Roughly 40 more were corrected in place once their source showed same-day genuinely was accepted. A residual set of rows remain logged as unconfirmed (no source stated a policy either way) and were left in scope rather than removed on a guess — each is in the spreadsheet's Concerns tab as a Data Gap entry needing a phone call. Full per-system citations are in the Concerns tab, dated 2026-08-27.</div>
+        <div class="ref-def-body">Demand-Response rows were originally included whenever they carried an "Advance" scheduling window and were open to the general public. As of August 2026, the rule was clarified: same-day booking must be a genuine, routinely-honored option (advance can be preferred or the norm, but a rider must actually be able to book and ride same-day, even with a short lead time like a 2-hour notice). A full dataset sweep checked every Advance-family row against its primary source and removed ~215 that required booking by some cutoff on a day before the trip with no same-day path, regardless of whether that cutoff was technically under 24 hours. Roughly 40 more were corrected in place once their source showed same-day genuinely was accepted. A residual set of rows remain logged as unconfirmed (no source stated a policy either way) and were left in scope rather than removed on a guess — each is in <code>concerns.csv</code> as a Data Gap entry needing a phone call. Full per-system citations are there, dated 2026-08-27.</div>
       </div>
 
       <div class="ref-def-block">
         <div class="ref-def-term">Status change: OC Flex</div>
-        <div class="ref-def-body">OC Flex (Orange County, CA) was discontinued effective July 1, 2025 per OCTA's website. The supplemental list had status "Active." This should be updated to "Ended" or removed.</div>
+        <div class="ref-def-body">OC Flex (Orange County, CA) was discontinued effective July 1, 2025 per OCTA's website. The supplemental list had status "Active"; the row was set to "Pilot – Ended" in September 2026 and is retained for the record.</div>
       </div>
 
       <div class="ref-def-block">
@@ -772,22 +795,33 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
 </div>
 
 <footer>
-  On-Demand Transit Database · Updated July 2026 · <span id="footer-stat">…</span></footer>
+  On-Demand Transit Database · Updated September 2026 · <span id="footer-stat">…</span></footer>
 
 <script>
+// Every state gets a color (50 + DC). With this many categories some hues
+// are close; the map's other "Symbolize by" modes are better for comparison.
 const STATE_COLORS = {
   NC:'#2e5e8a',TX:'#b04a28',CO:'#3d6b4f',WA:'#5e5e9a',MN:'#8a5e2a',
   GA:'#b08a30',NJ:'#2a7a6a',CT:'#7a3030',OH:'#6a4a90',CA:'#5e8a2a',
   WI:'#8a2a5e',SD:'#2a6a8a',MD:'#4a6e2a',UT:'#8a3a6a',
   PA:'#6b4226',FL:'#1a7a5e',AZ:'#8a6a1a',VA:'#4a2a7a',NY:'#1a4a7a',OR:'#2a6a4a',
-  IL:'#5e3d7a',KY:'#2a5e3a',MA:'#7a3d2a',MI:'#2a4a7a'
+  IL:'#5e3d7a',KY:'#2a5e3a',MA:'#7a3d2a',MI:'#2a4a7a',
+  AL:'#8a4a2a',AK:'#3a6a8a',AR:'#7a6a2a',DE:'#4a7a7a',DC:'#7a4a6a',HI:'#2a8a7a',
+  ID:'#6a7a3a',IN:'#9a5a3a',IA:'#3a5a9a',KS:'#a07a2a',LA:'#6a3a5a',ME:'#2a5a6a',
+  MS:'#8a6a4a',MO:'#5a4a8a',MT:'#4a6a3a',NE:'#9a4a4a',NV:'#3a7a5a',NH:'#7a5a2a',
+  NM:'#a05a2a',ND:'#4a5a7a',OK:'#8a3a3a',RI:'#3a4a8a',SC:'#6a8a4a',TN:'#9a6a2a',
+  VT:'#2a6a5a',WV:'#7a4a3a',WY:'#5a6a8a'
 };
 const STATE_NAMES = {
-  NC:'North Carolina',TX:'Texas',CO:'Colorado',WA:'Washington',MN:'Minnesota',
-  GA:'Georgia',NJ:'New Jersey',CT:'Connecticut',OH:'Ohio',CA:'California',
-  WI:'Wisconsin',SD:'South Dakota',MD:'Maryland',UT:'Utah',
-  PA:'Pennsylvania',FL:'Florida',AZ:'Arizona',VA:'Virginia',NY:'New York',OR:'Oregon',
-  IL:'Illinois',KY:'Kentucky',MA:'Massachusetts',MI:'Michigan'
+  AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',
+  CT:'Connecticut',DE:'Delaware',DC:'District of Columbia',FL:'Florida',GA:'Georgia',
+  HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',
+  LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',
+  MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',
+  NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',
+  OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',
+  SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',
+  WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming'
 };
 
 /* ── MAP SYMBOLIZATION ──────────────────────────────────────────────────
@@ -804,39 +838,45 @@ const STATUS_COLORS = {
   'Active - Expanding':  '#2d8a5e',
   'Active - New':        '#5eb87e',
   'Active - Post Pilot': '#8ed8ae',
-  'Active - Pilot':      '#aae8be',
   'Pilot':               '#b08a30',
-  'Pilot - Ended':       '#bdb6aa'
+  'Pilot - Ended':       '#bdb6aa',
+  'Not specified':       '#d8d2c6'
 };
+const STATUS_ORDER = ['Active','Active - Expanding','Active - New','Active - Post Pilot','Pilot','Pilot - Ended','Not specified'];
 const GEO_COLORS = {
   'Urban':    '#2e5e8a',
   'Suburban': '#2a7a6a',
   'Rural':    '#6b4226',
-  'Mixed':    '#b08a30'
+  'Mixed':    '#b08a30',
+  'Unknown':  '#bdb6aa'
 };
-// Only the platforms with a meaningful presence get a dedicated color —
-// the vendor field has ~25 distinct values (many one-offs), so anything
-// outside this list buckets into "Other" to keep the legend readable.
+const GEO_ORDER = ['Urban','Suburban','Rural','Mixed','Unknown'];
+// Vendor names are normalized by scripts/build.py into `vendor_class`
+// (e.g. "Via (inferred from Google Play…)" → "Via"). Platforms with only a
+// row or two land in "Other"; the build prints which ones.
 const VENDOR_COLORS = {
-  'Via':            '#2e5e8a',
-  'In-house':       '#9a9088',
-  'Not specified':  '#bdb6aa',
-  'Freebee':        '#c05c2a',
-  'Spare':          '#3d6b4f',
-  'RideCo':         '#6a4a90',
-  'Other':          '#8a5e2a'
+  'Via':                    '#2e5e8a',
+  'RideCo':                 '#c05c2a',
+  'Freebee':                '#3d6b4f',
+  'TransLoc':               '#2a7a6a',
+  'Spare':                  '#6a4a90',
+  'Circuit':                '#b08a30',
+  'Ecolane':                '#6b4226',
+  'Downtowner':             '#5e5e9a',
+  'QRyde':                  '#7a3030',
+  'TRC (Pingo)':            '#8a2a5e',
+  'May Mobility':           '#2a6a8a',
+  'Uber / Lyft':            '#4a6e2a',
+  'In-house':               '#9a9088',
+  'Other':                  '#8a5e2a',
+  'Not specified':          '#bdb6aa'
 };
-function geoBucket(g){ return (g||'').startsWith('Mixed') ? 'Mixed' : (g || 'Unknown'); }
-function vendorBucket(v){
-  if(!v || v==='Not specified') return 'Not specified';
-  return VENDOR_COLORS[v] ? v : 'Other';
-}
 const SYMBOL_MODES = {
-  state:  { label:'State',               key:s=>s.state,             keyLabel:k=>STATE_NAMES[k]||k, colorByKey:k=>STATE_COLORS[k]||'#888' },
-  type:   { label:'System Type',         key:s=>s.type||'Unknown',   keyLabel:k=>k,                  colorByKey:k=>TYPE_COLORS[k]||'#888' },
-  status: { label:'Status',              key:s=>s.status||'Unknown', keyLabel:k=>k,                  colorByKey:k=>STATUS_COLORS[k]||'#888' },
-  geo:    { label:'Geographic Context',  key:s=>geoBucket(s.geo),    keyLabel:k=>k,                  colorByKey:k=>GEO_COLORS[k]||'#888' },
-  vendor: { label:'Technology Vendor',   key:s=>vendorBucket(s.vendor), keyLabel:k=>k,                colorByKey:k=>VENDOR_COLORS[k]||'#888' }
+  state:  { label:'State',               key:s=>s.state,                    keyLabel:k=>STATE_NAMES[k]||k, colorByKey:k=>STATE_COLORS[k]||'#888' },
+  type:   { label:'System Type',         key:s=>s.type||'Unknown',          keyLabel:k=>k,                  colorByKey:k=>TYPE_COLORS[k]||'#888' },
+  status: { label:'Status',              key:s=>s.status_class||'Not specified', keyLabel:k=>k,             colorByKey:k=>STATUS_COLORS[k]||'#888' },
+  geo:    { label:'Geographic Context',  key:s=>s.geo_class||'Unknown',     keyLabel:k=>k,                  colorByKey:k=>GEO_COLORS[k]||'#888' },
+  vendor: { label:'Technology Vendor',   key:s=>s.vendor_class||'Not specified', keyLabel:k=>k,             colorByKey:k=>VENDOR_COLORS[k]||'#888' }
 };
 let mapSymbolMode = 'state';
 function symbolColor(s){ const m=SYMBOL_MODES[mapSymbolMode]; return m.colorByKey(m.key(s)); }
@@ -846,9 +886,11 @@ let systems = [];
 
 function populateVendorFilter(){
   const sel=document.getElementById("filter-vendor");
-  const vendors=[...new Set(systems.map(s=>s.vendor).filter(v=>v&&v!=="Not specified"&&v!=="In-house"))]
-    .sort((a,b)=>a.localeCompare(b));
-  sel.innerHTML='<option value="">All</option>'+vendors.map(v=>`<option value="${v}">${v}</option>`).join("");
+  const counts={};
+  systems.forEach(s=>{const v=s.vendor_class; if(v&&v!=='Not specified') counts[v]=(counts[v]||0)+1;});
+  const vendors=Object.keys(counts).filter(v=>v!=='Other').sort((a,b)=>counts[b]-counts[a]||a.localeCompare(b));
+  if(counts['Other']) vendors.push('Other');
+  sel.innerHTML='<option value="">All</option>'+vendors.map(v=>`<option value="${v}">${v} (${counts[v]})</option>`).join("");
 }
 function populateStateFilter(){
   const sel=document.getElementById("filter-state");
@@ -856,31 +898,39 @@ function populateStateFilter(){
   sel.innerHTML='<option value="">All</option>'+states.map(s=>`<option value="${s}">${s}</option>`).join("");
 }
 
-function statusClass(s){if(s.includes('Ended'))return'Pilot---Ended';return s.replace(/[\s–\-]+/g,'-');}
+function statusClass(sc){return (sc||'Not specified').replace(/[^A-Za-z]/g,'-');}
 function fv(v){return(!v||v==='Not specified')?'<span class="field-value muted">—</span>':`<span class="field-value">${v}</span>`;}
 function matchesFilters(s){
   const q=document.getElementById('search').value.toLowerCase();
   const st=document.getElementById('filter-state').value,ty=document.getElementById('filter-type').value;
   const ge=document.getElementById('filter-geo').value,su=document.getElementById('filter-status').value;
   const ve=document.getElementById('filter-vendor').value;
-  const str=[s.name,s.operator,s.area,s.vendor,s.funding,s.notes,STATE_NAMES[s.state]||''].join(' ').toLowerCase();
-  return(!q||str.includes(q))&&(!st||s.state===st)&&(!ty||s.type===ty)&&(!ge||s.geo.includes(ge))&&
-    (!su||s.status.toLowerCase().includes(su.toLowerCase())||(su==='Ended'&&s.status.includes('Ended')))&&(!ve||s.vendor===ve);
+  const str=[s.name,s.operator,s.area,s.vendor,s.vendor_class,s.funding,s.notes,STATE_NAMES[s.state]||''].join(' ').toLowerCase();
+  const sc=s.status_class||'';
+  const statusOk=!su||(su==='Active'&&sc.startsWith('Active'))||(su==='Pilot'&&sc==='Pilot')||(su==='Ended'&&sc==='Pilot - Ended');
+  return(!q||str.includes(q))&&(!st||s.state===st)&&(!ty||s.type===ty)&&(!ge||s.geo_class===ge)&&statusOk&&(!ve||s.vendor_class===ve);
 }
 function updateStats(){
   const v=systems.filter(matchesFilters);
   document.getElementById('stat-total').textContent=v.length;
   document.getElementById('stat-states').textContent=new Set(v.map(s=>s.state)).size;
-  document.getElementById('stat-active').textContent=v.filter(s=>s.status.startsWith('Active')).length;
+  document.getElementById('stat-active').textContent=v.filter(s=>(s.status_class||'').startsWith('Active')).length;
   document.getElementById('stat-micro').textContent=v.filter(s=>s.type==='Microtransit').length;
+}
+function clearFilters(){
+  document.getElementById('search').value='';
+  ['filter-state','filter-type','filter-geo','filter-status','filter-vendor'].forEach(id=>{document.getElementById(id).value='';});
+  filterAll();
 }
 function buildFilterBlurb(){
   const el=document.getElementById('filter-blurb');
   if(!el)return;
+  const clr=document.getElementById('clear-filters');
   const q=document.getElementById('search').value.trim();
   const st=document.getElementById('filter-state').value,ty=document.getElementById('filter-type').value;
   const ge=document.getElementById('filter-geo').value,su=document.getElementById('filter-status').value;
   const ve=document.getElementById('filter-vendor').value;
+  if(clr)clr.classList.toggle('hidden',!q&&!st&&!ty&&!ge&&!su&&!ve);
   if(!q&&!st&&!ty&&!ge&&!su&&!ve){
     el.textContent=`All ${systems.length} systems nationwide`;
     return;
@@ -915,7 +965,7 @@ function setView(v){
 
 function renderCards(){
   document.getElementById('grid').innerHTML=systems.map((s,i)=>{
-    const tc=s.type.replace(/[\s-]+/g,'-'),sc=statusClass(s.status),col=STATE_COLORS[s.state]||'#888';
+    const tc=s.type.replace(/[\s-]+/g,'-'),sc=statusClass(s.status_class),col=STATE_COLORS[s.state]||'#888';
     const url=s.url?`<div class="card-url"><a href="${s.url}" target="_blank" rel="noopener">${s.url}</a></div>`:'';
     return`<div class="card" id="card-${i}" style="--card-color:${col}" onclick="toggleExpand(${i},event)">
       <div class="card-header">
@@ -1105,10 +1155,10 @@ function filterAll(){
 }
 function bootstrap() {
   return Promise.all([
-    fetch('data/systems.json').then(function(r){
+    fetch('data/systems.json', {cache:'no-cache'}).then(function(r){
       if (!r.ok) throw new Error('Could not load data/systems.json'); return r.json();
     }),
-    fetch('data/boundaries/_index.json').then(function(r){ return r.ok ? r.json() : {states:[]}; })
+    fetch('data/boundaries/_index.json', {cache:'no-cache'}).then(function(r){ return r.ok ? r.json() : {states:[]}; })
       .catch(function(){ return {states:[]}; })
   ]).then(function(res){
     systems = res[0];
@@ -1167,124 +1217,121 @@ function panelInnerW(canvasId) {
 }
 
 /* ── 1. Cumulative launch chart ─────────────────────────────────────────── */
+const CUM_START_YEAR = 2016;   /* earlier launches are grouped into one "≤2015" bar */
+
+function niceStep(maxVal, ticks) {
+  const raw = maxVal / ticks;
+  const mag = Math.pow(10, Math.floor(Math.log10(raw || 1)));
+  const norm = raw / mag;
+  const step = norm <= 1 ? 1 : norm <= 2 ? 2 : norm <= 2.5 ? 2.5 : norm <= 5 ? 5 : 10;
+  return step * mag;
+}
+
 function drawCumulative(yearMap) {
-  const years   = Object.keys(yearMap).map(Number).sort((a,b) => a - b);
-  if (!years.length) return;
-  const perYear = years.map(y => yearMap[y] || 0);
+  const allYears = Object.keys(yearMap).map(Number);
+  if (!allYears.length) { const c = setupCanvas('chart-cumulative', panelInnerW('chart-cumulative'), 60); if (c) { c.fillStyle = C.inkFaint; c.font = "11px 'Source Code Pro',monospace"; c.fillText('No launch-year data for the current filter', 8, 30); } return; }
+  const maxYear = Math.max(...allYears, new Date().getFullYear());
+  const cols = [];
+  let pre = 0;
+  allYears.forEach(y => { if (y < CUM_START_YEAR) pre += yearMap[y]; });
+  if (pre > 0 || Math.min(...allYears) < CUM_START_YEAR) cols.push({ label: '≤' + (CUM_START_YEAR - 1), v: pre });
+  for (let y = CUM_START_YEAR; y <= maxYear; y++) cols.push({ label: String(y), v: yearMap[y] || 0 });
+
+  const perYear = cols.map(c => c.v);
   let cum = 0;
   const cumLine = perYear.map(v => { cum += v; return cum; });
-  const maxCum  = cum * 1.18;
-  const maxNew  = Math.max(...perYear) * 1.2 || 1;
-  const n       = years.length;
+  const n = cols.length;
 
   const W = panelInnerW('chart-cumulative');
-  const H = 240;
+  const H = 260;
   const ctx = setupCanvas('chart-cumulative', W, H);
   if (!ctx) return;
 
-  const pad = { top: 32, right: 20, bottom: 42, left: 46 };
+  const pad = { top: 34, right: 20, bottom: 40, left: 50 };
   const cw  = W - pad.left - pad.right;
   const ch  = H - pad.top  - pad.bottom;
   const slotW = cw / n;
-  const barW  = Math.max(6, Math.floor(slotW * 0.45));
+  const barW  = Math.max(8, Math.min(34, Math.floor(slotW * 0.5)));
   const FONT  = "11px 'Source Code Pro',monospace";
   const FONTB = "bold 11px 'Source Code Pro',monospace";
 
+  /* scales: cumulative line uses the full height (nice ticks); bars use the
+     bottom 55% so their labels rarely collide with the line's */
+  const step   = niceStep(cum, 4);
+  const maxCum = Math.max(step, Math.ceil((cum * 1.08) / step) * step);
+  const maxNew = (Math.max(...perYear) || 1) / 0.55;
+  const yCum = v => pad.top + ch * (1 - v / maxCum);
+  const yNew = v => pad.top + ch * (1 - v / maxNew);
+  const xAt  = i => pad.left + slotW * i + slotW / 2;
+
   ctx.clearRect(0, 0, W, H);
 
-  /* y-axis grid */
-  ctx.setLineDash([3, 5]);
-  ctx.lineWidth = 1;
-  ctx.strokeStyle = C.border;
-  [0, 0.25, 0.5, 0.75, 1.0].forEach(t => {
-    const y   = pad.top + ch * (1 - t);
-    const val = Math.round(maxCum * t);
+  /* y-axis grid (cumulative scale) */
+  ctx.setLineDash([3, 5]); ctx.lineWidth = 1; ctx.strokeStyle = C.border;
+  for (let v = 0; v <= maxCum + 0.001; v += step) {
+    const y = yCum(v);
     ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(pad.left + cw, y); ctx.stroke();
-    ctx.fillStyle    = C.inkFaint;
-    ctx.font         = FONT;
-    ctx.textAlign    = 'right';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(val, pad.left - 7, y);
-  });
+    ctx.fillStyle = C.inkFaint; ctx.font = FONT; ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
+    ctx.fillText(v, pad.left - 8, y);
+  }
   ctx.setLineDash([]);
 
   /* bars — new per year */
-  years.forEach((y, i) => {
-    const cx = pad.left + slotW * i + slotW / 2;
-    const bh = (perYear[i] / maxNew) * ch;
-    const bx = cx - barW / 2;
-    const by = pad.top + ch - bh;
-    ctx.fillStyle   = C.blue + '55';
-    ctx.fillRect(bx, by, barW, bh);
-    ctx.strokeStyle = C.blue;
-    ctx.lineWidth   = 1.5;
-    ctx.strokeRect(bx, by, barW, bh);
-    if (perYear[i] > 0) {
-      ctx.fillStyle    = C.blue;
-      ctx.font         = FONTB;
-      ctx.textAlign    = 'center';
-      ctx.textBaseline = 'alphabetic';
-      ctx.fillText(perYear[i], cx, by - 5);
-    }
+  const barTop = [];
+  cols.forEach((c, i) => {
+    const cx = xAt(i), bh = ch * (perYear[i] / maxNew), bx = cx - barW / 2, by = pad.top + ch - bh;
+    barTop[i] = by;
+    ctx.fillStyle = C.blue + '55'; ctx.fillRect(bx, by, barW, bh);
+    ctx.strokeStyle = C.blue; ctx.lineWidth = 1.5; ctx.strokeRect(bx, by, barW, bh);
   });
 
   /* cumulative line */
   ctx.beginPath();
-  years.forEach((y, i) => {
-    const px = pad.left + slotW * i + slotW / 2;
-    const py = pad.top + ch * (1 - cumLine[i] / maxCum);
-    i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
-  });
+  cols.forEach((c, i) => { const px = xAt(i), py = yCum(cumLine[i]); i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py); });
   ctx.strokeStyle = C.orange; ctx.lineWidth = 2.5; ctx.stroke();
 
-  /* dots + value labels */
-  years.forEach((y, i) => {
-    const px = pad.left + slotW * i + slotW / 2;
-    const py = pad.top + ch * (1 - cumLine[i] / maxCum);
+  /* labels: cumulative above the dot; bar count above the bar, or inside the
+     bar (white) when the two would overlap, or dropped when the bar is tiny */
+  cols.forEach((c, i) => {
+    const px = xAt(i), py = yCum(cumLine[i]);
     ctx.beginPath(); ctx.arc(px, py, 4, 0, Math.PI * 2);
-    ctx.fillStyle   = C.surface; ctx.fill();
-    ctx.strokeStyle = C.orange; ctx.lineWidth = 2; ctx.stroke();
-    ctx.fillStyle    = C.orange;
-    ctx.font         = FONTB;
-    ctx.textAlign    = 'center';
-    ctx.textBaseline = 'alphabetic';
-    ctx.fillText(cumLine[i], px, py - 9);
+    ctx.fillStyle = C.surface; ctx.fill(); ctx.strokeStyle = C.orange; ctx.lineWidth = 2; ctx.stroke();
+    ctx.font = FONTB; ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+    const cumLabelY = py - 9;
+    ctx.fillStyle = C.orange; ctx.fillText(cumLine[i], px, cumLabelY);
+    if (perYear[i] > 0) {
+      const barLabelY = barTop[i] - 5;
+      const bh = pad.top + ch - barTop[i];
+      const baseline = pad.top + ch;
+      /* a label with baseline y occupies [y-9, y]; the dot + its label occupy [cumLabelY-10, py+5] */
+      const conflict = y => (y - 9 < py + 5) && (y > cumLabelY - 10);
+      if (!conflict(barLabelY)) { ctx.fillStyle = C.blue; ctx.fillText(perYear[i], px, barLabelY); }
+      else if (bh > 16) {
+        let insideY = barTop[i] + 12;
+        if (conflict(insideY)) insideY = py + 16;
+        if (insideY <= baseline - 2) { ctx.fillStyle = '#fff'; ctx.fillText(perYear[i], px, insideY); }
+      }
+    }
   });
 
-  /* x-axis year labels */
-  ctx.fillStyle    = C.inkMid;
-  ctx.font         = FONT;
-  ctx.textAlign    = 'center';
-  ctx.textBaseline = 'alphabetic';
-  years.forEach((y, i) => {
-    ctx.fillText(y, pad.left + slotW * i + slotW / 2, H - 10);
-  });
+  /* x-axis labels (skip alternate years when crowded) */
+  ctx.fillStyle = C.inkMid; ctx.font = FONT; ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
+  const every = slotW < 34 ? 2 : 1;
+  cols.forEach((c, i) => { if (i % every === 0 || i === n - 1) ctx.fillText(c.label, xAt(i), H - 10); });
 
-  /* legend — bottom-left, below the y=0 line, clear of the chart */
-  const lgX = pad.left + 4;
-  const lgY = H - 10;  /* align with year labels row */
-  /* shift to a box below the chart area — actually put it top-left inside pad */
-  const bLX = pad.left + 8, bLY = pad.top + 6;
-  /* bar swatch */
-  ctx.fillStyle   = C.blue + '55';
-  ctx.fillRect(bLX, bLY, 14, 11);
-  ctx.strokeStyle = C.blue; ctx.lineWidth = 1.5;
-  ctx.strokeRect(bLX, bLY, 14, 11);
-  ctx.fillStyle    = C.inkMid;
-  ctx.font         = FONT;
-  ctx.textAlign    = 'left';
-  ctx.textBaseline = 'middle';
-  ctx.fillText('New / year', bLX + 18, bLY + 5.5);
-  /* line swatch */
+  /* legend — top-left inside the plot */
+  const bLX = pad.left + 8, bLY = pad.top - 22;
+  ctx.fillStyle = C.blue + '55'; ctx.fillRect(bLX, bLY, 14, 11);
+  ctx.strokeStyle = C.blue; ctx.lineWidth = 1.5; ctx.strokeRect(bLX, bLY, 14, 11);
+  ctx.fillStyle = C.inkMid; ctx.font = FONT; ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+  ctx.fillText('New systems that year', bLX + 18, bLY + 5.5);
+  const lX = bLX + 175;
   ctx.strokeStyle = C.orange; ctx.lineWidth = 2.5;
-  ctx.beginPath(); ctx.moveTo(bLX, bLY + 22); ctx.lineTo(bLX + 14, bLY + 22); ctx.stroke();
-  ctx.beginPath(); ctx.arc(bLX + 7, bLY + 22, 3.5, 0, Math.PI * 2);
-  ctx.fillStyle = C.surface; ctx.fill();
-  ctx.strokeStyle = C.orange; ctx.lineWidth = 2; ctx.stroke();
-  ctx.fillStyle    = C.inkMid;
-  ctx.font         = FONT;
-  ctx.textBaseline = 'middle';
-  ctx.fillText('Cumulative', bLX + 18, bLY + 22);
+  ctx.beginPath(); ctx.moveTo(lX, bLY + 5.5); ctx.lineTo(lX + 14, bLY + 5.5); ctx.stroke();
+  ctx.beginPath(); ctx.arc(lX + 7, bLY + 5.5, 3.5, 0, Math.PI * 2);
+  ctx.fillStyle = C.surface; ctx.fill(); ctx.strokeStyle = C.orange; ctx.lineWidth = 2; ctx.stroke();
+  ctx.fillStyle = C.inkMid; ctx.font = FONT; ctx.textBaseline = 'middle';
+  ctx.fillText('Cumulative total', lX + 18, bLY + 5.5);
 }
 
 /* ── 2. Donut chart ─────────────────────────────────────────────────────── */
@@ -1347,9 +1394,9 @@ function drawDonut(canvasId, legendId, slices) {
 }
 
 /* ── 3. Horizontal bar chart ────────────────────────────────────────────── */
-function drawHBar(canvasId, labels, values, colors) {
+function drawHBar(canvasId, labels, values, colors, labelW) {
   const ROW_H   = 30;
-  const LABEL_W = 150;
+  const LABEL_W = labelW || 150;
   const PAD_T   = 6;
   const PAD_B   = 6;
   const PAD_R   = 44;   /* room for value after bar */
@@ -1372,7 +1419,7 @@ function drawHBar(canvasId, labels, values, colors) {
     const barY   = rowMid - BAR_H / 2;
 
     /* label */
-    const maxChars = Math.floor(LABEL_W / 7);
+    const maxChars = Math.floor((LABEL_W - 8) / 6.7);
     const shortLbl = lbl.length > maxChars ? lbl.slice(0, maxChars - 1) + '…' : lbl;
     ctx.fillStyle    = C.inkMid;
     ctx.font         = FONT;
@@ -1402,97 +1449,93 @@ function drawHBar(canvasId, labels, values, colors) {
 /* ── 4. Status stacked bar ──────────────────────────────────────────────── */
 function drawStatusBar(data) {
   const logW = panelInnerW('chart-status');
-  const H    = 90;
+  const H    = 64;
   const ctx  = setupCanvas('chart-status', logW, H);
   if (!ctx) return;
 
-  const pad   = { top: 14, bottom: 30 };
+  const pad   = { top: 8, bottom: 8 };
   const ch    = H - pad.top - pad.bottom;
   const total = data.reduce((a, d) => a + d.v, 0);
-  const FONT  = "10px 'Source Code Pro',monospace";
   const FONTB = "bold 11px 'Source Code Pro',monospace";
 
   ctx.clearRect(0, 0, logW, H);
-
   let x = 0;
   data.forEach(d => {
     const bw = total ? (d.v / total) * logW : 0;
-    ctx.fillStyle = d.c;
-    ctx.fillRect(x, pad.top, bw, ch);
-    ctx.strokeStyle = C.surface; ctx.lineWidth = 1.5;
-    ctx.strokeRect(x, pad.top, bw, ch);
-    if (bw > 26) {
-      ctx.fillStyle    = '#fff';
-      ctx.font         = FONTB;
-      ctx.textAlign    = 'center';
-      ctx.textBaseline = 'middle';
+    ctx.fillStyle = d.c; ctx.fillRect(x, pad.top, bw, ch);
+    ctx.strokeStyle = C.surface; ctx.lineWidth = 1.5; ctx.strokeRect(x, pad.top, bw, ch);
+    if (bw > 22) {
+      ctx.fillStyle = d.dark ? C.ink : '#fff'; ctx.font = FONTB; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
       ctx.fillText(d.v, x + bw / 2, pad.top + ch / 2);
     }
     x += bw;
   });
 
-  /* labels below */
-  x = 0;
-  data.forEach(d => {
-    const bw = total ? (d.v / total) * logW : 0;
-    if (bw > 36) {
-      ctx.fillStyle    = C.inkMid;
-      ctx.font         = FONT;
-      ctx.textAlign    = 'center';
-      ctx.textBaseline = 'alphabetic';
-      const lbl = d.label.replace('Active - ', '').replace('Pilot - ', 'Pilot /');
-      ctx.fillText(lbl, x + bw / 2, H - 6);
-    }
-    x += bw;
-  });
+  const lg = document.getElementById('legend-status');
+  if (lg) lg.innerHTML = data.map(d => {
+    const pct = total ? Math.round(d.v / total * 100) : 0;
+    return `<div class="dl-item"><span class="dl-swatch" style="background:${d.c}"></span><span>${d.label}</span><span class="dl-pct">${d.v}&thinsp;<span style="color:var(--ink-faint);font-weight:400">(${pct}%)</span></span></div>`;
+  }).join('');
 }
 
 /* ── Data builder ───────────────────────────────────────────────────────── */
+function fareBucket(fare) {
+  const f = (fare || '').trim().toLowerCase();
+  if (!f || f.startsWith('not specified')) return 'Not stated';
+  if (/\bfree\b|no fare|no charge|fare-free/.test(f)) return 'Free';
+  if (/standard|same as|bus fare|regular|local fare|integrated|transit fare/.test(f)) return 'Same as bus fare';
+  const m = f.match(/\$\s*(\d+(?:\.\d+)?)/);
+  if (m) {
+    const a = parseFloat(m[1]);
+    if (a === 0) return 'Free';
+    if (a < 2)  return 'Under $2';
+    if (a < 3)  return '$2–$3';
+    if (a <= 5) return '$3–$5';
+    return 'Over $5';
+  }
+  return 'Varies / not stated';
+}
+const FARE_ORDER = ['Free','Under $2','$2–$3','$3–$5','Over $5','Same as bus fare','Varies / not stated','Not stated'];
+
+function propulsionBucket(fleet) {
+  const f = (fleet || '').trim().toLowerCase();
+  if (!f || f.startsWith('not specified')) return 'No fleet data';
+  if (/all[- ]?electric|100%\s*electric|all[- ]?ev\b|fully electric|zero[- ]emission|entirely electric/.test(f)) return 'All-electric';
+  if (/hybrid|phev|plug-in/.test(f)) return 'Hybrid / plug-in';
+  if (/\belectric\b|\bevs?\b|id\.?\s*buzz|kia niro|tesla|bolt ev|e-transit/.test(f)) return 'Includes electric vehicles';
+  return 'Propulsion not stated';
+}
+const PROP_ORDER = ['All-electric','Includes electric vehicles','Hybrid / plug-in','Propulsion not stated','No fleet data'];
+
+function wavBucket(sys) {
+  const t = ((sys.fleet || '') + ' ' + (sys.notes || '')).toLowerCase();
+  if (/\bwavs?\b|wheelchair/.test(t)) return 'Wheelchair-accessible vehicles noted';
+  if (/\bada\b/.test(t)) return 'ADA mentioned';
+  return 'Not mentioned';
+}
+const WAV_ORDER = ['Wheelchair-accessible vehicles noted','ADA mentioned','Not mentioned'];
+
+function countBy(list, fn) { const m = {}; list.forEach(x => { const k = fn(x); m[k] = (m[k] || 0) + 1; }); return m; }
+function orderedSlices(map, order, colors) {
+  return order.filter(k => map[k]).map(k => ({ label: k, v: map[k], c: colors[k] || C.inkSoft }));
+}
+function pct(a, b) { return b ? Math.round(a / b * 100) : 0; }
+function setText(id, txt) { const el = document.getElementById(id); if (el) el.textContent = txt; }
+
 function buildAnalyticsData() {
   const s = filteredSystems();
-
-  const yearMap = {};
-  s.forEach(sys => {
-    const y = sys.year;
-    if (y && y !== 'Not specified' && /^\d{4}$/.test(y))
-      yearMap[y] = (yearMap[y] || 0) + 1;
-  });
-
-  const geoMap = {};
-  s.forEach(sys => {
-    const key = (sys.geo || 'Unknown').startsWith('Mixed') ? 'Mixed' : (sys.geo || 'Unknown');
-    geoMap[key] = (geoMap[key] || 0) + 1;
-  });
-
-  const fb = { 'Free': 0, '$1–$2': 0, '$2–$3': 0, '$3–$5': 0, 'Unknown': 0 };
-  s.forEach(sys => {
-    const f = (sys.fare || '').toLowerCase();
-    if (!f || f === 'not specified')       fb['Unknown']++;
-    else if (f.includes('free'))           fb['Free']++;
-    else if (/\b1\.(0|2|5|7|8)/.test(f))  fb['$1–$2']++;
-    else if (/\b2\.(0|2|5|7)/.test(f))    fb['$2–$3']++;
-    else if (/\b[345]\.(0|5)/.test(f))    fb['$3–$5']++;
-    else                                   fb['Unknown']++;
-  });
-
-  const vm = {};
-  s.forEach(sys => {
-    let v = (sys.vendor || '').trim();
-    if (!v || v === 'Not specified') return;
-    if (v.startsWith('The Routing')) v = 'TRC / Pingo';
-    vm[v] = (vm[v] || 0) + 1;
-  });
-  const vendors = Object.entries(vm).sort((a, b) => b[1] - a[1]).slice(0, 9);
-
-  const sm = {};
-  s.forEach(sys => { const st = sys.state || '?'; sm[st] = (sm[st] || 0) + 1; });
-  const states = Object.entries(sm).sort((a, b) => b[1] - a[1]);
-
-  const stMap = {};
-  s.forEach(sys => { const st = sys.status || 'Unknown'; stMap[st] = (stMap[st] || 0) + 1; });
-
-  const knownYears = Object.values(yearMap).reduce((a, b) => a + b, 0);
-  return { yearMap, geoMap, fb, vendors, states, stMap, total: s.length, knownYears };
+  const yearMap = countBy(s.filter(x => x.year_num), x => x.year_num);
+  const knownYears = s.filter(x => x.year_num).length;
+  const geoMap  = countBy(s, x => x.geo_class || 'Unknown');
+  const fareMap = countBy(s, x => fareBucket(x.fare));
+  const vendorMap = countBy(s.filter(x => x.vendor_class && x.vendor_class !== 'Not specified'), x => x.vendor_class);
+  const vendors = Object.entries(vendorMap).sort((a, b) => (a[0] === 'Other') - (b[0] === 'Other') || b[1] - a[1]).slice(0, 10);
+  const states  = Object.entries(countBy(s, x => x.state || '?')).sort((a, b) => b[1] - a[1]);
+  const stMap   = countBy(s, x => x.status_class || 'Not specified');
+  const propMap = countBy(s, x => propulsionBucket(x.fleet));
+  const wavMap  = countBy(s, wavBucket);
+  const sized   = s.filter(x => x.fleet_size).map(x => ({ name: x.name, state: x.state, size: x.fleet_size })).sort((a, b) => b.size - a.size);
+  return { s, yearMap, knownYears, geoMap, fareMap, vendorMap, vendors, states, stMap, propMap, wavMap, sized, total: s.length };
 }
 
 /* ── Entry points ───────────────────────────────────────────────────────── */
@@ -1501,53 +1544,101 @@ function initAnalytics()  { refreshAnalytics(); }
 
 function refreshAnalytics() {
   const d = buildAnalyticsData();
+  const T = d.total;
 
-  const aC = document.getElementById('a-count');
-  if (aC) aC.textContent = d.total;
-  const aN = document.getElementById('a-note-year');
-  if (aN) aN.textContent = `${d.knownYears} of ${d.total} systems have known launch years`;
+  setText('a-count', T);
+  setText('a-note-year', `${d.knownYears} of ${T} have a known launch year`);
 
+  /* 1. growth */
+  const yrs = Object.keys(d.yearMap).map(Number);
+  const maxYear = yrs.length ? Math.max(...yrs) : new Date().getFullYear();
+  const preCount = yrs.filter(y => y < CUM_START_YEAR).reduce((a, y) => a + d.yearMap[y], 0);
+  setText('a-cum-sub', `Cumulative systems launched, through ${maxYear}`);
+  setText('a-cum-note', `Bars show new systems by launch year; the line is the running total. ` +
+    (preCount ? `${preCount} systems launched before ${CUM_START_YEAR} are grouped in the first bar (some rural dial-a-ride programs date to the 1970s). ` : '') +
+    `${T - d.knownYears} systems with no known launch year are excluded from this chart only.`);
   drawCumulative(d.yearMap);
 
-  const geoC  = { Urban: C.blue, Suburban: C.teal, Rural: C.brown, Mixed: C.gold, Unknown: C.inkFaint };
-  drawDonut('chart-geo', 'legend-geo',
-    Object.entries(d.geoMap).map(([k, v]) => ({ label: k, v, c: geoC[k] || C.inkSoft })));
+  /* 2. geography */
+  drawDonut('chart-geo', 'legend-geo', orderedSlices(d.geoMap, GEO_ORDER, GEO_COLORS));
+  const geoTop = Object.entries(d.geoMap).filter(([k]) => k !== 'Unknown').sort((a, b) => b[1] - a[1])[0];
+  setText('a-geo-note', geoTop ? `${geoTop[0]} service areas are the largest group at ${pct(geoTop[1], T)}% of systems. Context is assigned from the primary service area's land use; see the Reference tab for definitions.` : '');
 
-  const fareC = { 'Free': C.green, '$1–$2': C.teal, '$2–$3': C.blue, '$3–$5': C.orange, 'Unknown': C.inkFaint };
-  drawDonut('chart-fare', 'legend-fare',
-    Object.entries(d.fb).filter(([, v]) => v > 0).map(([k, v]) => ({ label: k, v, c: fareC[k] || C.inkSoft })));
+  /* 3. fare */
+  const fareC = { 'Free': C.green, 'Under $2': C.teal, '$2–$3': C.blue, '$3–$5': C.orange, 'Over $5': C.rose, 'Same as bus fare': C.purple, 'Varies / not stated': C.inkSoft, 'Not stated': C.inkFaint };
+  drawDonut('chart-fare', 'legend-fare', orderedSlices(d.fareMap, FARE_ORDER, fareC));
+  const free = d.fareMap['Free'] || 0, fareKnown = T - (d.fareMap['Not stated'] || 0) - (d.fareMap['Varies / not stated'] || 0);
+  setText('a-fare-note', `${pct(free, T)}% of systems are fare-free. Of the ${fareKnown} with a stated fare, ${pct(free, fareKnown)}% are free and most of the rest charge $1–$3 per ride. Buckets use the lowest adult fare listed.`);
 
-  const vColors = [C.blue, C.orange, C.green, C.teal, C.purple, C.gold, C.brown, C.slate, C.rose];
-  drawHBar('chart-vendor',
-    d.vendors.map(([name]) => name),
-    d.vendors.map(([, cnt]) => cnt),
-    vColors);
+  /* 4. vendors */
+  const vColors = d.vendors.map(([name]) => VENDOR_COLORS[name] || C.slate);
+  drawHBar('chart-vendor', d.vendors.map(([name]) => name), d.vendors.map(([, c]) => c), vColors);
+  const vendorKnown = Object.values(d.vendorMap).reduce((a, b) => a + b, 0);
+  const via = d.vendorMap['Via'] || 0;
+  setText('a-vendor-note', `${vendorKnown} of ${T} systems (${pct(vendorKnown, T)}%) have a known platform` +
+    (via ? `; Via accounts for ${pct(via, vendorKnown)}% of those.` : '.') +
+    ` The remaining ${T - vendorKnown} use phone dispatch or have not disclosed a vendor. Vendor names are normalized (e.g. "Spare Labs" → Spare).`);
 
-  /* State bar — '#' + hex string from STATE_COLORS */
-  drawHBar('chart-states',
-    d.states.map(([st]) => STATE_NAMES[st] || st),
-    d.states.map(([, v]) => v),
-    d.states.map(([st]) => '#' + (STATE_COLORS[st] || '888888')));
+  /* 5. states (top 15) */
+  const TOPN = 15;
+  const shown = d.states.slice(0, TOPN);
+  drawHBar('chart-states', shown.map(([st]) => STATE_NAMES[st] || st), shown.map(([, v]) => v), shown.map(([st]) => STATE_COLORS[st] || '#888888'));
+  setText('a-states-sub', d.states.length > TOPN ? `Top ${TOPN} of ${d.states.length} states` : `Systems by state`);
+  const rest = d.states.slice(TOPN);
+  setText('a-states-note', rest.length
+    ? `${rest.length} more states have ${rest[0][1]} or fewer systems each (${rest.reduce((a, [, v]) => a + v, 0)} systems combined). Use the State filter to focus the whole dashboard on one state.`
+    : 'Use the State filter to focus the whole dashboard on one state.');
 
-  const sOrder = ['Active','Active - Expanding','Active - New','Active - Post Pilot','Pilot','Active - Pilot','Pilot - Ended'];
-  const sC = {
-    'Active': C.green, 'Active - Expanding': '#2d8a5e',
-    'Active - New': '#5eb87e', 'Active - Post Pilot': '#8ed8ae',
-    'Active - Pilot': '#aae8be', 'Pilot': C.gold, 'Pilot - Ended': C.inkFaint
-  };
-  drawStatusBar(sOrder.filter(k => d.stMap[k]).map(k => ({ label: k, v: d.stMap[k], c: sC[k] || C.inkSoft })));
-  drawFleetCharts(filteredSystems());
+  /* 6. status */
+  const sC = { 'Active': C.green, 'Active - Expanding': '#2d8a5e', 'Active - New': '#5eb87e', 'Active - Post Pilot': '#8ed8ae', 'Pilot': C.gold, 'Pilot - Ended': C.inkFaint, 'Not specified': '#d8d2c6' };
+  const dark = { 'Active - Post Pilot': 1, 'Pilot - Ended': 1, 'Not specified': 1 };
+  drawStatusBar(STATUS_ORDER.filter(k => d.stMap[k]).map(k => ({ label: k, v: d.stMap[k], c: sC[k] || C.inkSoft, dark: !!dark[k] })));
+  const activeAll = Object.entries(d.stMap).filter(([k]) => k.startsWith('Active')).reduce((a, [, v]) => a + v, 0);
+  setText('a-status-note', `${pct(activeAll, T)}% of systems are in operation. "Active – New" marks services launched within roughly six months of the last update; "Pilot – Ended" pilots are kept for the record but are no longer running.`);
+
+  /* 7. propulsion */
+  const propColors = { 'All-electric': C.green, 'Includes electric vehicles': '#5eb87e', 'Hybrid / plug-in': C.teal, 'Propulsion not stated': C.inkSoft, 'No fleet data': C.inkFaint };
+  drawDonut('chart-propulsion', 'legend-propulsion', orderedSlices(d.propMap, PROP_ORDER, propColors));
+  const withFleet = T - (d.propMap['No fleet data'] || 0);
+  const anyEV = (d.propMap['All-electric'] || 0) + (d.propMap['Includes electric vehicles'] || 0) + (d.propMap['Hybrid / plug-in'] || 0);
+  setText('a-prop-note', `${withFleet} of ${T} systems have any fleet description, and ${anyEV} of those mention electric or hybrid vehicles. Most fleet descriptions give a vehicle count or type without propulsion, so this chart shows what sources mention, not the true share of electric fleets.`);
+
+  /* 8. accessibility */
+  const wavColors = { 'Wheelchair-accessible vehicles noted': C.blue, 'ADA mentioned': C.slate, 'Not mentioned': C.inkFaint };
+  drawDonut('chart-wav', 'legend-wav', orderedSlices(d.wavMap, WAV_ORDER, wavColors));
+
+  /* 9. fleet sizes */
+  const top = d.sized.slice(0, 12);
+  setText('a-fleet-sub', d.sized.length ? `Largest stated fleets — ${d.sized.length} of ${T} systems give a vehicle count` : 'No stated vehicle counts for the current filter');
+  if (top.length) {
+    drawHBar('chart-fleet-sizes', top.map(x => x.name), top.map(x => x.size), top.map(x => STATE_COLORS[x.state] || '#888888'), 250);
+    const sizes = d.sized.map(x => x.size).sort((a, b) => a - b);
+    const median = sizes[Math.floor(sizes.length / 2)];
+    setText('a-fleet-note', `Vehicle counts are stated for ${pct(d.sized.length, T)}% of systems; the median stated fleet is ${median} vehicles. The largest fleets are citywide or multi-zone deployments. Counts are parsed from the Fleet field and may include an agency's whole fleet where the source did not separate the on-demand vehicles.`);
+  } else {
+    setupCanvas('chart-fleet-sizes', panelInnerW('chart-fleet-sizes'), 10);
+    setText('a-fleet-note', '');
+  }
 }
+
+/* Redraw charts when the window is resized (canvas sizes are fixed at draw time). */
+let _resizeTimer = null;
+window.addEventListener('resize', () => {
+  clearTimeout(_resizeTimer);
+  _resizeTimer = setTimeout(() => {
+    if (analyticsInitialized && document.getElementById('analytics-view').style.display !== 'none') refreshAnalytics();
+  }, 150);
+});
 
 /* ── DEEP SUMMARY MODAL ─────────────────────────────────────────────────── */
 function mv(v){return(!v||v==='Not specified')?'<span class="modal-fv muted">—</span>':`<span class="modal-fv">${v}</span>`;}
 
 function buildModalHTML(s){
-  const tc=s.type.replace(/[\s-]+/g,'-'), sc=statusClass(s.status), col=STATE_COLORS[s.state]||'#888';
+  const tc=s.type.replace(/[\s-]+/g,'-'), sc=statusClass(s.status_class), col=STATE_COLORS[s.state]||'#888';
   const stateName=STATE_NAMES[s.state]||s.state;
   const url=s.url?`<div class="modal-url" style="margin-top:0.5rem"><a href="${s.url}" target="_blank" rel="noopener">${s.url}</a></div>`:'';
   return`<div class="modal-eyebrow">${stateName} &nbsp;·&nbsp; ${s.geo} &nbsp;·&nbsp; ${s.type}</div>
-    <div class="modal-title" style="border-left:4px solid #${col};padding-left:0.75rem">${s.name}</div>
+    <div class="modal-title" style="border-left:4px solid ${col};padding-left:0.75rem">${s.name}</div>
     <div class="modal-subtitle">${s.area}</div>
     <div class="modal-tags">
       <span class="tag tag-type-${tc}">${s.type}</span>
@@ -1586,25 +1677,29 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDeepModal();});
 
 /* ── STATE BOUNDARY ON MAP ──────────────────────────────────────────────── */
 let stateBoundaryLayer = null;
+let US_STATES_GEOJSON = null;   // fetched once, then reused for every filter change
 
 async function drawStateBoundary(stateAbbr) {
   // Remove existing boundary
   if (stateBoundaryLayer && map) { map.removeLayer(stateBoundaryLayer); stateBoundaryLayer = null; }
   if (!stateAbbr || !map) return;
   try {
-    const url = `https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json`;
-    const resp = await fetch(url);
-    const data = await resp.json();
+    if (!US_STATES_GEOJSON) {
+      const url = `https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json`;
+      const resp = await fetch(url);
+      US_STATES_GEOJSON = await resp.json();
+    }
+    const data = US_STATES_GEOJSON;
     const feature = data.features.find(f =>
       f.properties.name === (STATE_NAMES[stateAbbr] || stateAbbr)
     );
     if (!feature) return;
     stateBoundaryLayer = L.geoJSON(feature, {
       style: {
-        color: '#' + (STATE_COLORS[stateAbbr] || '2c2820'),
+        color: (STATE_COLORS[stateAbbr] || '#2c2820'),
         weight: 2.5,
         opacity: 0.9,
-        fillColor: '#' + (STATE_COLORS[stateAbbr] || '2c2820'),
+        fillColor: (STATE_COLORS[stateAbbr] || '#2c2820'),
         fillOpacity: 0.06,
         dashArray: '6 4'
       }
@@ -1613,64 +1708,6 @@ async function drawStateBoundary(stateAbbr) {
     const group = L.featureGroup([stateBoundaryLayer, ...markerLayers]);
     map.fitBounds(group.getBounds().pad(0.08));
   } catch(err) { console.warn('State boundary fetch failed:', err); }
-}
-
-/* ── FLEET ANALYTICS CHARTS ─────────────────────────────────────────────── */
-function drawFleetCharts(systems_list) {
-  // Chart 7: EV / propulsion type donut
-  const propulsion = { 'All-Electric': 0, 'Hybrid/PHEV': 0, 'Conventional': 0, 'Mixed/Unknown': 0 };
-  systems_list.forEach(s => {
-    const f = (s.fleet||'').toLowerCase();
-    if (f.includes('all-ev') || f.includes('all electric') || f.includes('100% electric') ||
-        f.includes('vw id') || f.includes('kia niro') || (f.includes('electric') && !f.includes('hybrid')))
-      propulsion['All-Electric']++;
-    else if (f.includes('hybrid') || f.includes('phev') || f.includes('plug-in'))
-      propulsion['Hybrid/PHEV']++;
-    else if (f !== 'not specified' && f !== '' && !f.includes('electric') && !f.includes('hybrid'))
-      propulsion['Conventional']++;
-    else
-      propulsion['Mixed/Unknown']++;
-  });
-  const propColors = { 'All-Electric': '#3d6b4f', 'Hybrid/PHEV': '#2a7a6a', 'Conventional': '#9a9088', 'Mixed/Unknown': '#bdb6aa' };
-  drawDonut('chart-propulsion', 'legend-propulsion',
-    Object.entries(propulsion).filter(([,v])=>v>0).map(([k,v])=>({label:k,v,c:propColors[k]})));
-
-  // Chart 8: WAV/ADA availability bar (yes/no/unknown)
-  const wav = { 'WAV Available': 0, 'ADA Accessible': 0, 'Not Specified': 0 };
-  systems_list.forEach(s => {
-    const f = (s.fleet||'').toLowerCase();
-    const n = (s.notes||'').toLowerCase();
-    if (f.includes('wav') || n.includes('wav') || f.includes('wheelchair accessible') || n.includes('wheelchair accessible'))
-      wav['WAV Available']++;
-    else if (f.includes('ada') || n.includes('ada') || n.includes('wheelchair'))
-      wav['ADA Accessible']++;
-    else
-      wav['Not Specified']++;
-  });
-  const wavColors = { 'WAV Available': '#2e5e8a', 'ADA Accessible': '#5e5e9a', 'Not Specified': '#bdb6aa' };
-  drawDonut('chart-wav', 'legend-wav',
-    Object.entries(wav).map(([k,v])=>({label:k,v,c:wavColors[k]})));
-
-  // Chart 9: Known fleet sizes ranked bar
-  const sized = [];
-  systems_list.forEach(s => {
-    const f = s.fleet || '';
-    const m = f.match(/[~]?(\d+)\s+(?:vehicle|van|EV|minivan)/i);
-    if (m) sized.push({ name: s.name, size: parseInt(m[1]) });
-  });
-  sized.sort((a,b) => b.size - a.size);
-  const top = sized.slice(0,12);
-  if (top.length > 0) {
-    const states_for_sized = systems_list.reduce((acc,s)=>{acc[s.name]=s.state;return acc;},{});
-    drawHBar('chart-fleet-sizes',
-      top.map(x => {
-        const nm = x.name.length > 22 ? x.name.slice(0,21)+'…' : x.name;
-        return nm;
-      }),
-      top.map(x => x.size),
-      top.map(x => '#' + (STATE_COLORS[states_for_sized[x.name]] || '888888'))
-    );
-  }
 }
 
 const _origFA = filterAll;
@@ -1693,7 +1730,7 @@ var BOUNDARY_CACHE = {};      // state -> geojson
 var BOUNDARY_INDEX = [];      // states that have boundary files (from manifest)
 function ensureBoundaries(state) {
   if (BOUNDARY_CACHE[state]) return Promise.resolve(BOUNDARY_CACHE[state]);
-  return fetch('data/boundaries/' + state + '.geojson')
+  return fetch('data/boundaries/' + state + '.geojson', {cache:'no-cache'})
     .then(function(r){ if (!r.ok) throw new Error('no boundary file'); return r.json(); })
     .then(function(gj){ BOUNDARY_CACHE[state] = gj; return gj; })
     .catch(function(){ return null; });  // missing file = state not digitized yet
@@ -1764,7 +1801,7 @@ function showStateBoundaries(state) {
       if (sys) {
         popup += '<div class="popup-area" style="margin-top:0.3rem">' + sys.area + '</div>';
         var status = sys.status || '';
-        var sc = status.startsWith('Active') ? 'var(--green)' : status === 'Pilot' ? 'var(--gold)' : 'var(--ink-faint)';
+        var sc = (sys.status_class||'').startsWith('Active') ? 'var(--green)' : sys.status_class === 'Pilot' ? 'var(--gold)' : 'var(--ink-faint)';
         popup += '<div style="display:flex;gap:0.4rem;align-items:center;margin:0.25rem 0">';
         popup += '<span style="width:6px;height:6px;border-radius:50%;background:'+sc+';display:inline-block"></span>';
         popup += '<span style="font-family:var(--mono);font-size:0.6rem">' + status + '</span></div>';
