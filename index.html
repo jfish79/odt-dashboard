@@ -160,6 +160,9 @@ select:focus { border-color: var(--ink); }
 .tag-type-Microtransit { color: var(--green); border-color: #a8c8b4; background: #f0f7f2; }
 .tag-type-Demand-Response { color: var(--blue); border-color: #a8bee0; background: #f0f4fa; }
 .tag-geo { color: var(--ink-soft); border-color: var(--border); background: var(--bg2); }
+.tag-bnd, .tag-bnd-none { display: inline-flex; align-items: center; gap: 0.3rem; }
+.tag-bnd { color: var(--ink-soft); border-color: var(--border); background: var(--surface); }
+.tag-bnd-none { color: var(--orange); border-color: #e3b8a2; background: #fbf1ec; }
 .status-text { font-family: var(--mono); font-size: 0.6rem; color: var(--ink-soft); display: flex; align-items: center; gap: 0.3rem; }
 .status-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
 .status-Active,.status-Active---Expanding,.status-Active---New,.status-Active---Post-Pilot { background: var(--green); }
@@ -953,6 +956,20 @@ function populateStateFilter(){
   sel.innerHTML='<option value="">All</option>'+states.map(s=>`<option value="${s}">${s}</option>`).join("");
 }
 
+/* Service-area boundary indicator (built from data/boundaries by build.py). */
+function boundaryLabel(s){
+  if(!s.boundary) return 'Not mapped';
+  const c=BOUNDARY_COLORS[s.boundary.type];
+  const base=c?c.label:'Mapped';
+  return s.boundary.fidelity==='approximate'?base+', approximate':base;
+}
+function boundaryTag(s){
+  const mapped=!!s.boundary;
+  const icon=mapped
+    ?'<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 7l6-3 6 3 6-3v13l-6 3-6-3-6 3z"/></svg>'
+    :'<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="4 3"><path d="M3 7l6-3 6 3 6-3v13l-6 3-6-3-6 3z"/></svg>';
+  return `<span class="tag ${mapped?'tag-bnd':'tag-bnd-none'}" title="Service area: ${boundaryLabel(s)}">${icon}${mapped?'Area mapped':'No mapped area'}</span>`;
+}
 function statusClass(sc){return (sc||'Not specified').replace(/[^A-Za-z]/g,'-');}
 function fv(v){return(!v||v==='Not specified')?'<span class="field-value muted">—</span>':`<span class="field-value">${v}</span>`;}
 function matchesFilters(s){
@@ -1033,6 +1050,7 @@ function renderCards(){
         <span class="tag tag-type-${tc}">${s.type}</span>
         <span class="tag tag-geo">${s.geo}</span>
         <span class="status-text"><span class="status-dot status-${sc}"></span>${s.status}</span>
+        ${boundaryTag(s)}
       </div>
       <div class="card-area">
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -1183,6 +1201,7 @@ function buildPopup(s){
       <div><span class="popup-fl">Launch</span><span class="popup-fv">${s.year&&s.year!=='Not specified'?s.year:'—'}</span></div>
       <div style="grid-column:1/-1"><span class="popup-fl">Vendor</span><span class="popup-fv">${s.vendor&&s.vendor!=='Not specified'?s.vendor:'—'}</span></div>
       ${s.fleet&&s.fleet!=='Not specified'?`<div style="grid-column:1/-1"><span class="popup-fl">Fleet</span><span class="popup-fv">${s.fleet}</span></div>`:''}
+      <div style="grid-column:1/-1"><span class="popup-fl">Service area</span><span class="popup-fv" style="color:${s.boundary?'var(--ink)':'var(--orange)'}">${boundaryLabel(s)}${s.boundary&&document.getElementById('filter-state').value!==s.state?' · filter by state to view':''}</span></div>
     </div>${note}${url}
   </div>`;
 }
@@ -1202,7 +1221,7 @@ function buildMapList(){
   document.getElementById('map-list').innerHTML=systems.map((s,i)=>
     `<div class="map-list-item" id="mli-${i}" onclick="focusMarker(${i})">
       <span class="map-pin-dot" style="background:${symbolColor(s)}"></span>
-      <div><div class="map-item-name">${s.name}</div><div class="map-item-sub">${s.state} · ${s.geo} · ${s.type}</div></div>
+      <div><div class="map-item-name">${s.name}</div><div class="map-item-sub">${s.state} · ${s.geo_class||s.geo} · ${s.type}${s.boundary?'':' · <span style="color:var(--orange)">no mapped area</span>'}</div></div>
     </div>`).join('');
 }
 let markersVisible=true;
@@ -1825,6 +1844,7 @@ function buildModalHTML(s){
       <div class="modal-field"><span class="modal-fl">Service Hours</span>${mv(s.hours)}</div>
       <div class="modal-field"><span class="modal-fl">Funding Source</span>${mv(s.funding)}</div>
       <div class="modal-field modal-full"><span class="modal-fl">Fleet</span>${mv(s.fleet)}</div>
+      <div class="modal-field modal-full"><span class="modal-fl">Service area boundary</span>${s.boundary?`<span class="modal-fv">${boundaryLabel(s)} — shown on the Map when ${STATE_NAMES[s.state]||s.state} is selected</span>`:'<span class="modal-fv muted">Not mapped — zones are named only by neighborhood; needs the agency\'s zone map</span>'}</div>
     </div>
     ${s.notes&&s.notes!=='Not specified'?`<div class="modal-notes">${s.notes}</div>`:''}
     ${url}`;

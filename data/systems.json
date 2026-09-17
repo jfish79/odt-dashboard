@@ -23,7 +23,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "census_tracts",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Morrisville Smart Shuttle",
@@ -49,7 +53,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "GoWake SmartRide NE",
@@ -75,7 +83,11 @@
   "status_class": "Active",
   "vendor_class": "Uber / Lyft",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Johnston Quick Ride (JCATS)",
@@ -101,7 +113,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "RTP Connect",
@@ -127,7 +143,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "census_tracts",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Orange County MOD",
@@ -153,7 +173,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Burke County Micro-Transit",
@@ -179,7 +203,11 @@
   "status_class": "Active - Post Pilot",
   "vendor_class": "Not specified",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Caldwell County Micro-Transit",
@@ -205,7 +233,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Wilson RIDE",
@@ -231,7 +263,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "RideMICRO",
@@ -257,7 +293,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places_constructed",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "GREAT+",
@@ -283,7 +323,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Buzzline",
@@ -309,7 +353,11 @@
   "status_class": "Pilot",
   "vendor_class": "Not specified",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "GoGastonia",
@@ -335,7 +383,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": 22
+  "fleet_size": 22,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "JUMP Transit",
@@ -361,7 +413,11 @@
   "status_class": "Active",
   "vendor_class": "In-house",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "neighborhood_npa",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "PART On-Demand",
@@ -387,7 +443,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "HPTSGo!",
@@ -413,7 +473,11 @@
   "status_class": "Pilot - Ended",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Arlington Transportation (Via)",
@@ -439,7 +503,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2017,
-  "fleet_size": 90
+  "fleet_size": 90,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Houston Community Connector",
@@ -465,7 +533,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "Circuit",
   "year_num": 2023,
-  "fleet_size": 19
+  "fleet_size": 19,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Tyler Transit MicroTransit",
@@ -491,7 +563,11 @@
   "status_class": "Active",
   "vendor_class": "Other",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Sugar Land On-Demand",
@@ -517,7 +593,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "DCTA GoZone",
@@ -543,7 +623,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "GoZone Frisco",
@@ -569,7 +653,11 @@
   "status_class": "Active - New",
   "vendor_class": "Via",
   "year_num": 2026,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Trinity Metro On-Demand",
@@ -595,7 +683,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Cavazos Connector",
@@ -621,7 +713,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "REAL Microtransit (Rockport/Fulton)",
@@ -647,7 +743,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "DART GoLink",
@@ -673,7 +773,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "Spare",
   "year_num": 2017,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Denver Connector",
@@ -699,7 +803,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "Via",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Link on Demand (Lone Tree)",
@@ -725,7 +833,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2018,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Highlands Ranch Microtransit",
@@ -751,7 +863,11 @@
   "status_class": "Active - New",
   "vendor_class": "Via",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "RTD FlexRide",
@@ -777,7 +893,11 @@
   "status_class": "Active",
   "vendor_class": "Other",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "RIDE Longmont",
@@ -803,7 +923,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "DuranGO! Microtransit",
@@ -829,7 +953,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "gtfs_flex",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Ride Free Lafayette",
@@ -855,7 +983,11 @@
   "status_class": "Active",
   "vendor_class": "Ecolane",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Erie Bee",
@@ -881,7 +1013,11 @@
   "status_class": "Active - New",
   "vendor_class": "Spare",
   "year_num": 2026,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Metro Flex",
@@ -907,7 +1043,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Zip Shuttle (Community Transit)",
@@ -933,7 +1073,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Clallam Transit Interlink",
@@ -959,7 +1103,11 @@
   "status_class": "Active",
   "vendor_class": "TRC (Pingo)",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "SouthWest Prime",
@@ -985,7 +1133,11 @@
   "status_class": "Active",
   "vendor_class": "May Mobility",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Metro Transit Micro",
@@ -1011,7 +1163,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "Spare",
   "year_num": null,
-  "fleet_size": 5
+  "fleet_size": 5,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "MVTA Connect",
@@ -1037,7 +1193,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Maple Grove My Ride",
@@ -1063,7 +1223,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Plymouth Click-and-Ride",
@@ -1089,7 +1253,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Ride Gwinnett Microtransit",
@@ -1115,7 +1283,11 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Via Jersey City",
@@ -1141,7 +1313,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "MicroLink (NJ Transit)",
@@ -1167,7 +1343,11 @@
   "status_class": "Active - New",
   "vendor_class": "Via",
   "year_num": 2026,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "CTDOT Microtransit Pilots – SEAT (SE Connecticut)",
@@ -1193,7 +1373,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "CTDOT Microtransit Pilot – Norwalk Transit",
@@ -1219,7 +1403,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "gbt connect (Trumbull)",
@@ -1245,7 +1433,11 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousub",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "GHTD Link (Enfield/East Windsor)",
@@ -1271,7 +1463,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "VTD2GO (Valley Transit District)",
@@ -1297,7 +1493,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Milford Micro",
@@ -1323,7 +1523,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousub",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "StamFORWARD (Stamford)",
@@ -1349,7 +1553,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Via NHV (New Haven)",
@@ -1375,7 +1583,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "River Valley Transit Microtransit",
@@ -1401,7 +1613,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "COTA Plus",
@@ -1427,7 +1643,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "Via",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Chula Vista Senior Microtransit",
@@ -1453,7 +1673,11 @@
   "status_class": "Active",
   "vendor_class": "Circuit",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "FlexRide Milwaukee",
@@ -1479,7 +1703,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Sioux Falls On-Demand",
@@ -1505,7 +1733,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "MARTA Reach",
@@ -1531,7 +1763,8 @@
   "status_class": "Active - New",
   "vendor_class": "Not specified",
   "year_num": 2026,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": null
  },
  {
   "name": "Camden Loop",
@@ -1557,7 +1790,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Middlesex County RIDE On Demand",
@@ -1583,7 +1820,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Passaic County MOVE",
@@ -1609,7 +1850,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Via Newark",
@@ -1635,7 +1880,11 @@
   "status_class": "Pilot",
   "vendor_class": "Via",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "ViaLC (Lorain County)",
@@ -1661,7 +1910,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Metro Micro (LA Metro)",
@@ -1687,7 +1940,8 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": null
  },
  {
   "name": "Go West Covina",
@@ -1713,7 +1967,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Connect Torrance",
@@ -1739,7 +1997,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "GBM On Demand",
@@ -1765,7 +2027,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "MetroNow! (Cincinnati Metro)",
@@ -1791,7 +2057,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "Not specified",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Tri MyRide (Tri Delta Transit)",
@@ -1817,7 +2087,11 @@
   "status_class": "Active",
   "vendor_class": "TransLoc",
   "year_num": 2019,
-  "fleet_size": 8
+  "fleet_size": 8,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "OmniRide (Omnitrans)",
@@ -1843,7 +2117,11 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "NCTD+ San Marcos",
@@ -1869,7 +2147,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "NCTD+ Vista",
@@ -1895,7 +2177,11 @@
   "status_class": "Active - New",
   "vendor_class": "Not specified",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "El Cajon Microtransit",
@@ -1921,7 +2207,11 @@
   "status_class": "Active - New",
   "vendor_class": "Via",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Mid-City GO",
@@ -1947,7 +2237,8 @@
   "status_class": "Active - New",
   "vendor_class": "Not specified",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": null
  },
  {
   "name": "SouthPark Skipper",
@@ -1973,7 +2264,11 @@
   "status_class": "Pilot",
   "vendor_class": "Freebee",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "neighborhood_npa",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "CATS Micro",
@@ -1999,7 +2294,11 @@
   "status_class": "Active - New",
   "vendor_class": "Spare",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "McDowell Express",
@@ -2025,7 +2324,11 @@
   "status_class": "Active - New",
   "vendor_class": "Not specified",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "FAST Connect",
@@ -2051,7 +2354,8 @@
   "status_class": "Active",
   "vendor_class": "TRC (Pingo)",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": null
  },
  {
   "name": "Southeastern Connect",
@@ -2077,7 +2381,8 @@
   "status_class": "Active - New",
   "vendor_class": "Via",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": null
  },
  {
   "name": "Via West Sacramento",
@@ -2103,7 +2408,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2018,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "SV Hopper (Silicon Valley Hopper)",
@@ -2129,7 +2438,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2022,
-  "fleet_size": 13
+  "fleet_size": 13,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Peery Park Rides",
@@ -2155,7 +2468,11 @@
   "status_class": "Active - New",
   "vendor_class": "Via",
   "year_num": 2025,
-  "fleet_size": 3
+  "fleet_size": 3,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Go Time! Annapolis",
@@ -2181,7 +2498,11 @@
   "status_class": "Active",
   "vendor_class": "Other",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "SEPTA Go",
@@ -2207,7 +2528,11 @@
   "status_class": "Pilot",
   "vendor_class": "RideCo",
   "year_num": 2027,
-  "fleet_size": 48
+  "fleet_size": 48,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "rabbittransit Stop Hopper",
@@ -2233,7 +2558,11 @@
   "status_class": "Active",
   "vendor_class": "TransLoc",
   "year_num": 2018,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "CATAGO!",
@@ -2259,7 +2588,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "CATA GO",
@@ -2285,7 +2618,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Monroe County Pony Plus (MCTA)",
@@ -2311,7 +2648,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "MB Freebee (Miami Beach)",
@@ -2337,7 +2678,11 @@
   "status_class": "Active",
   "vendor_class": "Freebee",
   "year_num": 2019,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Freebee Kissimmee",
@@ -2363,7 +2708,11 @@
   "status_class": "Active",
   "vendor_class": "Freebee",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Scout (Seminole County)",
@@ -2389,7 +2738,11 @@
   "status_class": "Active",
   "vendor_class": "Freebee",
   "year_num": 2025,
-  "fleet_size": 35
+  "fleet_size": 35,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "MetroConnect SoMi",
@@ -2415,7 +2768,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Freebee Downtown Miami & Brickell",
@@ -2441,7 +2798,11 @@
   "status_class": "Active - New",
   "vendor_class": "Freebee",
   "year_num": 2026,
-  "fleet_size": 9
+  "fleet_size": 9,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Chandler Flex",
@@ -2467,7 +2828,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Bay Transit Express",
@@ -2493,7 +2858,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2021,
-  "fleet_size": 3
+  "fleet_size": 3,
+  "boundary": {
+   "type": "gtfs_flex",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "METGo!",
@@ -2519,7 +2888,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "gtfs_flex",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "OmniRide Connect",
@@ -2545,7 +2918,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "GRTC LINK",
@@ -2571,7 +2948,8 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": null
  },
  {
   "name": "CDTA FLEX+",
@@ -2597,7 +2975,11 @@
   "status_class": "Active",
   "vendor_class": "TRC (Pingo)",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "TriMet NEXT",
@@ -2623,7 +3005,11 @@
   "status_class": "Pilot",
   "vendor_class": "Not specified",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "SPOT Southwest",
@@ -2649,7 +3035,11 @@
   "status_class": "Active - New",
   "vendor_class": "Not specified",
   "year_num": 2026,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "High Valley Transit Micro",
@@ -2675,7 +3065,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Decatur Moves",
@@ -2701,7 +3095,11 @@
   "status_class": "Active",
   "vendor_class": "Spare",
   "year_num": 2025,
-  "fleet_size": 25
+  "fleet_size": 25,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "TANK Plus",
@@ -2727,7 +3125,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "MWRTA Catch Connect",
@@ -2753,7 +3155,11 @@
   "status_class": "Active",
   "vendor_class": "In-house",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Go2 (Muskegon Area Transit)",
@@ -2779,7 +3185,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Richmond Moves",
@@ -2805,7 +3215,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2022,
-  "fleet_size": 3
+  "fleet_size": 3,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Calexico On Demand",
@@ -2831,7 +3245,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "MetroConnect (Miami-Dade)",
@@ -2857,7 +3275,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "ART On Demand (St. Lucie County)",
@@ -2883,7 +3305,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Freebee Miami Gardens",
@@ -2909,7 +3335,11 @@
   "status_class": "Active",
   "vendor_class": "Freebee",
   "year_num": 2025,
-  "fleet_size": 10
+  "fleet_size": 10,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Freebee Palmetto Bay",
@@ -2935,7 +3365,11 @@
   "status_class": "Active",
   "vendor_class": "Freebee",
   "year_num": null,
-  "fleet_size": 4
+  "fleet_size": 4,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Freebee Wynwood & Midtown",
@@ -2961,7 +3395,11 @@
   "status_class": "Active",
   "vendor_class": "Freebee",
   "year_num": null,
-  "fleet_size": 4
+  "fleet_size": 4,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "The HOP Microtransit (Hill Country Transit District)",
@@ -2987,7 +3425,11 @@
   "status_class": "Active",
   "vendor_class": "Spare",
   "year_num": 2024,
-  "fleet_size": 36
+  "fleet_size": 36,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Pierce Transit Runner",
@@ -3013,7 +3455,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Metro Link (Kalamazoo Metro)",
@@ -3039,7 +3485,11 @@
   "status_class": "Pilot",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "MicroCAT (Charlottesville Area Transit)",
@@ -3065,7 +3515,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Via Mobility - Weld County",
@@ -3091,7 +3545,11 @@
   "status_class": "Active",
   "vendor_class": "In-house",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Mountain Village Dial-A-Ride",
@@ -3117,7 +3575,11 @@
   "status_class": "Active",
   "vendor_class": "Downtowner",
   "year_num": 1995,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Downtowner Aspen",
@@ -3143,7 +3605,11 @@
   "status_class": "Active",
   "vendor_class": "Downtowner",
   "year_num": 2016,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Prowers Area Transit (PATS)",
@@ -3169,7 +3635,11 @@
   "status_class": "Active",
   "vendor_class": "In-house",
   "year_num": 1990,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "gtfs_flex",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "La Junta Transit",
@@ -3195,7 +3665,11 @@
   "status_class": "Active",
   "vendor_class": "In-house",
   "year_num": 1992,
-  "fleet_size": 4
+  "fleet_size": 4,
+  "boundary": {
+   "type": "gtfs_flex",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Larimer Lift",
@@ -3221,7 +3695,11 @@
   "status_class": "Active",
   "vendor_class": "In-house",
   "year_num": 1998,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Kiowa County Transit",
@@ -3247,7 +3725,11 @@
   "status_class": "Active",
   "vendor_class": "In-house",
   "year_num": 1990,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Avon Microtransit",
@@ -3273,7 +3755,11 @@
   "status_class": "Active",
   "vendor_class": "Downtowner",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "County Express",
@@ -3299,7 +3785,11 @@
   "status_class": "Active",
   "vendor_class": "In-house",
   "year_num": 1992,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "SacRT Flex",
@@ -3325,7 +3815,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "GoMicro",
@@ -3351,7 +3845,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Ride Plus",
@@ -3377,7 +3875,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Pa'Lante",
@@ -3403,7 +3905,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "SunRide",
@@ -3429,7 +3935,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "TART Connect",
@@ -3455,7 +3965,11 @@
   "status_class": "Active",
   "vendor_class": "Downtowner",
   "year_num": 2021,
-  "fleet_size": 47
+  "fleet_size": 47,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "OC Flex",
@@ -3481,7 +3995,11 @@
   "status_class": "Pilot - Ended",
   "vendor_class": "Via",
   "year_num": 2018,
-  "fleet_size": 6
+  "fleet_size": 6,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "MST On Call",
@@ -3507,7 +4025,11 @@
   "status_class": "Active",
   "vendor_class": "In-house",
   "year_num": 2015,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "SLO Transit Microtransit",
@@ -3533,7 +4055,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2023,
-  "fleet_size": 18
+  "fleet_size": 18,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "GO Now",
@@ -3559,7 +4085,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "The Wave",
@@ -3585,7 +4115,11 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "The S Microtransit",
@@ -3611,7 +4145,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "EVE (Everyone Ventures Everywhere)",
@@ -3637,7 +4175,11 @@
   "status_class": "Active",
   "vendor_class": "Circuit",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Marin Transit Connect",
@@ -3663,7 +4205,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2018,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "MBTA Ready Ride",
@@ -3689,7 +4235,11 @@
   "status_class": "Active",
   "vendor_class": "In-house",
   "year_num": 1995,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Micro-Link",
@@ -3715,7 +4265,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "GET Bus On-Demand",
@@ -3741,7 +4295,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "MODE",
@@ -3767,7 +4325,11 @@
   "status_class": "Active",
   "vendor_class": "Uber / Lyft",
   "year_num": 2018,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Santa Clarita GO!",
@@ -3793,7 +4355,11 @@
   "status_class": "Active",
   "vendor_class": "Other",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Merced Microtransit",
@@ -3819,7 +4385,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Escalon eRide",
@@ -3845,7 +4415,11 @@
   "status_class": "Active",
   "vendor_class": "In-house",
   "year_num": 2005,
-  "fleet_size": 4
+  "fleet_size": 4,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Palo Alto Link",
@@ -3871,7 +4445,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Lake Link",
@@ -3897,7 +4475,11 @@
   "status_class": "Active",
   "vendor_class": "Other",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "WeRIDE",
@@ -3923,7 +4505,11 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Sun Shuttle Dial-a-Ride",
@@ -3949,7 +4535,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2000,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Sedona Shuttle Connect",
@@ -3975,7 +4565,11 @@
   "status_class": "Active",
   "vendor_class": "TransLoc",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Havasu Mobility",
@@ -4001,7 +4595,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2000,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Glendale OnBoard (formerly Glendale Dial-A-Ride)",
@@ -4027,7 +4625,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 1990,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "CG LINK (Casa Grande) (formerly CART Dial-a-Ride)",
@@ -4053,7 +4655,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2000,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Florence Dial-a-Ride",
@@ -4079,7 +4685,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2000,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "White Mountain Apache Transit",
@@ -4105,7 +4715,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2000,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "tribal",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Gila River Transit Dial-a-Ride",
@@ -4131,7 +4745,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2010,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "tribal",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Beeline Bus Dial-a-Ride",
@@ -4157,7 +4775,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2000,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Cobre Valley Community Transit",
@@ -4183,7 +4805,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2010,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "SEAGO Area Transit",
@@ -4209,7 +4835,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2000,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Wickenburg Dial-a-Ride",
@@ -4235,7 +4865,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2000,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Apache Junction Dial-a-Ride",
@@ -4261,7 +4895,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2000,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Tolleson Micro Transit Program",
@@ -4287,7 +4925,11 @@
   "status_class": "Active",
   "vendor_class": "Uber / Lyft",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "CRIT Transit",
@@ -4313,7 +4955,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2000,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "tribal",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Mountain Line GO!",
@@ -4339,7 +4985,11 @@
   "status_class": "Active",
   "vendor_class": "Ecolane",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Sun On Demand",
@@ -4365,7 +5015,11 @@
   "status_class": "Active",
   "vendor_class": "Spare",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "May Mobility AV Pilot",
@@ -4391,7 +5045,11 @@
   "status_class": "Pilot - Ended",
   "vendor_class": "May Mobility",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "WeRIDE Buckeye",
@@ -4417,7 +5075,11 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Peoria Transit On-Demand",
@@ -4443,7 +5105,11 @@
   "status_class": "Active - New",
   "vendor_class": "Not specified",
   "year_num": 2026,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "WeRIDE El Mirage",
@@ -4469,7 +5135,11 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Sun Shuttle - Oro Valley",
@@ -4495,7 +5165,11 @@
   "status_class": "Active",
   "vendor_class": "TransLoc",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Sun Shuttle - Green Valley",
@@ -4521,7 +5195,11 @@
   "status_class": "Active",
   "vendor_class": "TransLoc",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Wheels 2U Norwalk",
@@ -4547,7 +5225,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2018,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Wheels 2U Westport",
@@ -4573,7 +5255,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousub",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "XtraMile Middletown",
@@ -4599,7 +5285,11 @@
   "status_class": "Active",
   "vendor_class": "TransLoc",
   "year_num": 2019,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousub",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "XtraMile Old Saybrook",
@@ -4625,7 +5315,11 @@
   "status_class": "Active",
   "vendor_class": "TransLoc",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "New London Smart Ride",
@@ -4651,7 +5345,11 @@
   "status_class": "Active",
   "vendor_class": "TransLoc",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Stonington HOP",
@@ -4677,7 +5375,11 @@
   "status_class": "Active",
   "vendor_class": "TransLoc",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousub",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Groton Smart Ride",
@@ -4703,7 +5405,11 @@
   "status_class": "Active",
   "vendor_class": "TransLoc",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousub",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Parkville Microtransit",
@@ -4729,7 +5435,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Southington Microtransit",
@@ -4755,7 +5465,11 @@
   "status_class": "Active",
   "vendor_class": "Other",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousub",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "New Haven Go New Haven",
@@ -4781,7 +5495,11 @@
   "status_class": "Pilot",
   "vendor_class": "Other",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "CTtransit Link Stamford",
@@ -4807,7 +5525,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "CTtransit Link New Haven",
@@ -4833,7 +5555,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Enfield Magic Carpet Link",
@@ -4859,7 +5585,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousub",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Tri-Town Connector",
@@ -4885,7 +5615,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "NWCTD Link",
@@ -4911,7 +5645,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "WRTD Link",
@@ -4937,7 +5675,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Estuary Transit River HOP",
@@ -4963,7 +5705,11 @@
   "status_class": "Active",
   "vendor_class": "TransLoc",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Meriden Microtransit",
@@ -4989,7 +5735,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousub",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Via NHV",
@@ -5015,7 +5765,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousub",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "VTD2GO",
@@ -5041,7 +5795,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Waterford HOP",
@@ -5067,7 +5825,11 @@
   "status_class": "Active",
   "vendor_class": "TransLoc",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousub",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "XtraMile East Hampton",
@@ -5093,7 +5855,11 @@
   "status_class": "Active",
   "vendor_class": "TransLoc",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousub",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Ride DTO",
@@ -5119,7 +5885,11 @@
   "status_class": "Active",
   "vendor_class": "Circuit",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Breeze OnDemand",
@@ -5145,7 +5915,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Freebee Deerfield Beach",
@@ -5171,7 +5945,11 @@
   "status_class": "Active",
   "vendor_class": "Freebee",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Freebee Fort Pierce",
@@ -5197,7 +5975,11 @@
   "status_class": "Active",
   "vendor_class": "Freebee",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Circuit Pompano Beach",
@@ -5223,7 +6005,11 @@
   "status_class": "Active",
   "vendor_class": "Circuit",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "JTA ReadiRide",
@@ -5249,7 +6035,11 @@
   "status_class": "Active",
   "vendor_class": "Other",
   "year_num": 2018,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Go Glades",
@@ -5275,7 +6065,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "ULTRA On-Demand Transit",
@@ -5301,7 +6095,11 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Circuit Wilton Manors",
@@ -5327,7 +6125,11 @@
   "status_class": "Active",
   "vendor_class": "Circuit",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "BocaConnect",
@@ -5353,7 +6155,11 @@
   "status_class": "Active",
   "vendor_class": "Circuit",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Freebee Coral Gables",
@@ -5379,7 +6185,11 @@
   "status_class": "Active",
   "vendor_class": "Freebee",
   "year_num": 2017,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Freebee Plantation",
@@ -5405,7 +6215,11 @@
   "status_class": "Active",
   "vendor_class": "Freebee",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Freebee Aventura",
@@ -5431,7 +6245,11 @@
   "status_class": "Active",
   "vendor_class": "Freebee",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Circuit-by-the-sea",
@@ -5457,7 +6275,11 @@
   "status_class": "Active",
   "vendor_class": "Circuit",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Sun Shuttle (Hollywood East)",
@@ -5483,7 +6305,11 @@
   "status_class": "Active",
   "vendor_class": "Circuit",
   "year_num": 2019,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Circuit Shuttle WPB",
@@ -5509,7 +6335,11 @@
   "status_class": "Active",
   "vendor_class": "Circuit",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Freebee Islamorada",
@@ -5535,7 +6365,11 @@
   "status_class": "Active",
   "vendor_class": "Freebee",
   "year_num": 2018,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Freebee Pinecrest",
@@ -5561,7 +6395,11 @@
   "status_class": "Active",
   "vendor_class": "Freebee",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Freebee Doral",
@@ -5587,7 +6425,11 @@
   "status_class": "Active",
   "vendor_class": "Freebee",
   "year_num": 2017,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Freebee Miami Lakes",
@@ -5613,7 +6455,11 @@
   "status_class": "Active",
   "vendor_class": "Freebee",
   "year_num": 2018,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Freebee Key Biscayne",
@@ -5639,7 +6485,11 @@
   "status_class": "Active",
   "vendor_class": "Freebee",
   "year_num": 2018,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Circuit Fort Lauderdale",
@@ -5665,7 +6515,11 @@
   "status_class": "Active",
   "vendor_class": "Circuit",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "HARTFlex",
@@ -5691,7 +6545,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2010,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "WeGo",
@@ -5717,7 +6575,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Valdosta On-Demand",
@@ -5743,7 +6605,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "The Buc",
@@ -5769,7 +6635,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Henry Connect Microtransit",
@@ -5795,7 +6665,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "CAT SMART Transit",
@@ -5821,7 +6695,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "MTA Rapid Transit",
@@ -5847,7 +6725,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "CobbLinc Go",
@@ -5873,7 +6755,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "CATS Micro-transit",
@@ -5899,7 +6785,11 @@
   "status_class": "Active",
   "vendor_class": "Ecolane",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Shift On Demand",
@@ -5925,7 +6815,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Pace On Demand",
@@ -5951,7 +6845,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2008,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "SMTD Micro",
@@ -5977,7 +6875,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "MCRide",
@@ -6003,7 +6905,11 @@
   "status_class": "Active",
   "vendor_class": "Other",
   "year_num": 2012,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "SCCTD Flyer",
@@ -6029,7 +6935,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Connect FLEX",
@@ -6055,7 +6965,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "MTD SafeRides",
@@ -6081,7 +6995,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2019,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "MetroLINK On-Demand",
@@ -6107,7 +7025,11 @@
   "status_class": "Active",
   "vendor_class": "TransLoc",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "RIDES Mass Transit",
@@ -6133,7 +7055,11 @@
   "status_class": "Active",
   "vendor_class": "Ecolane",
   "year_num": 1977,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "SCT Demand Response",
@@ -6159,7 +7085,11 @@
   "status_class": "Active",
   "vendor_class": "Ecolane",
   "year_num": 1989,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "JCMTD On-Demand",
@@ -6185,7 +7115,11 @@
   "status_class": "Active",
   "vendor_class": "Other",
   "year_num": 2002,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Shawnee MTD",
@@ -6211,7 +7145,11 @@
   "status_class": "Active",
   "vendor_class": "Ecolane",
   "year_num": 2002,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "WCMTD Dial-A-Ride",
@@ -6237,7 +7175,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2004,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Piattran",
@@ -6263,7 +7205,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 1978,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Ride in Kane",
@@ -6289,7 +7235,11 @@
   "status_class": "Active",
   "vendor_class": "Other",
   "year_num": 2008,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Salem Skipper",
@@ -6315,7 +7265,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "GATRA GO",
@@ -6341,7 +7295,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "CATA On Demand",
@@ -6367,7 +7325,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "NewMo (Newton in Motion)",
@@ -6393,7 +7355,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2019,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousub",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "SmartDART",
@@ -6419,7 +7385,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "WRTA Via",
@@ -6445,7 +7415,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Tri-Town Connector",
@@ -6471,7 +7445,11 @@
   "status_class": "Active",
   "vendor_class": "In-house",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Quaboag Connector",
@@ -6497,7 +7475,11 @@
   "status_class": "Active",
   "vendor_class": "In-house",
   "year_num": 2017,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "MeVa On Demand",
@@ -6523,7 +7505,11 @@
   "status_class": "Active",
   "vendor_class": "Spare",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "CrossTown Connect",
@@ -6549,7 +7535,11 @@
   "status_class": "Active",
   "vendor_class": "In-house",
   "year_num": 2013,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "MART OnDemand",
@@ -6575,7 +7565,11 @@
   "status_class": "Active",
   "vendor_class": "Uber / Lyft",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "FRTA Microtransit",
@@ -6601,7 +7595,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "VTA On Demand",
@@ -6627,7 +7625,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "BRATS On-Demand",
@@ -6653,7 +7655,11 @@
   "status_class": "Active",
   "vendor_class": "Spare",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "MAX On-Demand (formerly Birmingham On-Demand)",
@@ -6679,7 +7685,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "Via",
   "year_num": 2019,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "MoGo Rideshare",
@@ -6705,7 +7715,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "The M: Micro Transit",
@@ -6731,7 +7745,11 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "METRO Connect",
@@ -6757,7 +7775,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "Via",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "ORT On-Demand",
@@ -6783,7 +7805,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "DART Connect",
@@ -6809,7 +7835,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "Via",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Hele-On Ka Hoʻokele (Rural Door-to-Door Service)",
@@ -6835,7 +7865,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "DART On Demand",
@@ -6861,7 +7895,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "Via",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "EASE (East Ames Service Extension)",
@@ -6887,7 +7925,11 @@
   "status_class": "Active",
   "vendor_class": "TRC (Pingo)",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "HIRTA On-Demand",
@@ -6913,7 +7955,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Peoplerides",
@@ -6939,7 +7985,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 1974,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Region 8 Regional Transit Authority (RTA) On-Demand",
@@ -6965,7 +8015,11 @@
   "status_class": "Active - Post Pilot",
   "vendor_class": "QRyde",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "River Bend Transit",
@@ -6991,7 +8045,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 1978,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "SWITA (Southwest Iowa Transit Agency)",
@@ -7017,7 +8075,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Trip Connect (Johnson County)",
@@ -7043,7 +8105,11 @@
   "status_class": "Pilot - Ended",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "BLink",
@@ -7069,7 +8135,11 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "METS Micro",
@@ -7095,7 +8165,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "Via",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Lawrence Transit On Demand",
@@ -7121,7 +8195,11 @@
   "status_class": "Active",
   "vendor_class": "Spare",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Night Line",
@@ -7147,7 +8225,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2013,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "LYNX Microtransit (CATS LYNX)",
@@ -7173,7 +8255,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "River Parishes Transit Authority (RPTA) On-Demand Service",
@@ -7199,7 +8285,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "SporTran OnDemand",
@@ -7225,7 +8315,11 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Metro Connect (Falmouth)",
@@ -7251,7 +8345,11 @@
   "status_class": "Active",
   "vendor_class": "Spare",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousub",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Standish-Gorham Microtransit Pilot",
@@ -7277,7 +8375,11 @@
   "status_class": "Active - New",
   "vendor_class": "Not specified",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "GEST (Liberty/Gladstone, MO)",
@@ -7303,7 +8405,11 @@
   "status_class": "Pilot",
   "vendor_class": "Not specified",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "IRIS (Independence)",
@@ -7329,7 +8435,11 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": null,
-  "fleet_size": 5
+  "fleet_size": 5,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Via Metro STL",
@@ -7355,7 +8465,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Blackfeet Transit",
@@ -7381,7 +8495,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "tribal",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Dawson County Transit",
@@ -7407,7 +8525,11 @@
   "status_class": "Not specified",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Dillon City Bus",
@@ -7433,7 +8555,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "buffered",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Fort Peck Transit",
@@ -7459,7 +8585,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "tribal",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Mountain Climber (formerly Eagle Transit)",
@@ -7485,7 +8615,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Powell County Transit",
@@ -7511,7 +8645,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Richland County Transportation (RCT)",
@@ -7537,7 +8675,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Rocky Boy Transit",
@@ -7563,7 +8705,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "tribal",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Valley County Transit",
@@ -7589,7 +8735,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Micro Flex",
@@ -7615,7 +8765,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Neligh Dial-A-Ride Public Transportation",
@@ -7641,7 +8795,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "ABQ RIDE Connect",
@@ -7667,7 +8825,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "RideCo",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "GET My Ride",
@@ -7693,7 +8855,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "RTC Washoe FlexRIDE On-Demand Service",
@@ -7719,7 +8885,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Beaver City Transit",
@@ -7745,7 +8915,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "buffered",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Call A Ride Public Transit",
@@ -7771,7 +8945,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Cherokee Strip Transit",
@@ -7797,7 +8975,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Cimarron Public Transit System",
@@ -7823,7 +9005,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Delta Public Transit",
@@ -7849,7 +9035,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Enid Public Transportation Authority (EPTA)",
@@ -7875,7 +9065,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Guymon Transit - The Ride",
@@ -7901,7 +9095,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "JAMM Transit",
@@ -7927,7 +9125,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "KI BOIS Area Transit System (KATS)",
@@ -7953,7 +9155,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Little Dixie Transit",
@@ -7979,7 +9185,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 1983,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "MTTA On-Demand Microtransit (GoPass App)",
@@ -8005,7 +9215,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "RideCo",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Pelivan Transit",
@@ -8031,7 +9245,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 1985,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Red River Public Transportation Service",
@@ -8057,7 +9275,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 1984,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Southern Oklahoma Rural Transportation System",
@@ -8083,7 +9305,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Southwest Transit",
@@ -8109,7 +9335,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "RIPTA Flex On Demand",
@@ -8135,7 +9365,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "Not specified",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Bamberg County Office on Aging - Handy Ride",
@@ -8161,7 +9395,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Lower Richland ReFlex OnDemand",
@@ -8187,7 +9425,11 @@
   "status_class": "Active - New",
   "vendor_class": "Not specified",
   "year_num": 2026,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "TriCounty Link",
@@ -8213,7 +9455,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 1996,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Groove On-Demand",
@@ -8239,7 +9485,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "WeGo Link",
@@ -8265,7 +9515,11 @@
   "status_class": "Active",
   "vendor_class": "Uber / Lyft",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "MyRide by TVT (Montpelier)",
@@ -8291,7 +9545,11 @@
   "status_class": "Active - New",
   "vendor_class": "Via",
   "year_num": 2026,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousub",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "RCT Rides",
@@ -8317,7 +9575,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": 23
+  "fleet_size": 23,
+  "boundary": {
+   "type": "gtfs_flex",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Springfield Microtransit",
@@ -8343,7 +9605,11 @@
   "status_class": "Active",
   "vendor_class": "QRyde",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousub",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Windsor MicroMOO",
@@ -8369,7 +9635,11 @@
   "status_class": "Active",
   "vendor_class": "QRyde",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousub",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "DC Neighborhood Connect",
@@ -8395,7 +9665,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "Via",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "START On-Demand",
@@ -8421,7 +9695,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Wind River Transportation Authority (WRTA)",
@@ -8447,7 +9725,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Murray-Calloway Transit Authority On Demand",
@@ -8473,7 +9755,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "HoCo RapidRide",
@@ -8499,7 +9785,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "PGC Link",
@@ -8525,7 +9815,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "TransLoc",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Ride On Flex",
@@ -8551,7 +9845,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Delta Rides",
@@ -8577,7 +9875,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "SMART",
@@ -8603,7 +9905,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "TRANS-CON (Transportation Connection)",
@@ -8629,7 +9935,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "RideMon",
@@ -8655,7 +9965,11 @@
   "status_class": "Active",
   "vendor_class": "Spare",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Ready Ride (PVTA)",
@@ -8681,7 +9995,11 @@
   "status_class": "Active",
   "vendor_class": "Spare",
   "year_num": 2019,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Brookings Area Transit Authority (BATA)",
@@ -8707,7 +10025,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Palace Transit",
@@ -8733,7 +10055,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "River Cities Public Transit",
@@ -8759,7 +10085,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Southeast Public Transit (Yankton/Vermillion)",
@@ -8785,7 +10115,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Cheyenne River Sioux Transit",
@@ -8811,7 +10145,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "tribal",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Sisseton Wahpeton Oyate Transit",
@@ -8837,7 +10175,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "tribal",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Rosebud Sioux Tribe Transit",
@@ -8863,7 +10205,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "tribal",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "UTA On Demand",
@@ -8889,7 +10235,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "Via",
   "year_num": 2019,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Connect Pool (formerly CVTD POOL)",
@@ -8915,7 +10265,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Moab Area Transit (MAT)",
@@ -8941,7 +10295,11 @@
   "status_class": "Active",
   "vendor_class": "Downtowner",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Fond du Lac Area Shared-Ride Taxi",
@@ -8967,7 +10325,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Wisconsin Rapids Shared-Ride Taxi",
@@ -8993,7 +10355,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Waupun Shared-Ride Taxi",
@@ -9019,7 +10385,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Medford Shared-Ride Taxi Service",
@@ -9045,7 +10415,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Viroqua-Westby Shared-Ride Taxi",
@@ -9071,7 +10445,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "GIFT On-Demand",
@@ -9097,7 +10475,11 @@
   "status_class": "Pilot",
   "vendor_class": "Downtowner",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "VRT On-Demand (Nampa/Caldwell)",
@@ -9123,7 +10505,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Wildrose Public Transportation",
@@ -9149,7 +10535,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": 3
+  "fleet_size": 3,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "MyBlue On-Demand Microtransit",
@@ -9175,7 +10565,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "RideKC Micro Transit (Johnson County)",
@@ -9201,7 +10595,11 @@
   "status_class": "Active",
   "vendor_class": "Ecolane",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "RideKC On-Demand (Wyandotte County / IRIS)",
@@ -9227,7 +10625,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "RideLV Micro Transit",
@@ -9253,7 +10655,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2023,
-  "fleet_size": 3
+  "fleet_size": 3,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "MOD Topeka (Metro On-Demand)",
@@ -9279,7 +10685,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "OCCK OnDemand (Salina CityGo)",
@@ -9305,7 +10715,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Reno County Area Transit (RCAT) Demand Response",
@@ -9331,7 +10745,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "CART (Cooperative Alliance for Regional Transportation)",
@@ -9357,7 +10775,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "RTC OnDemand",
@@ -9383,7 +10805,11 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Lake Link (Nevada service area)",
@@ -9409,7 +10835,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "CET Rural Dial-A-Ride",
@@ -9435,7 +10865,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Sunset Empire Transportation District Microtransit Pilot",
@@ -9461,7 +10895,11 @@
   "status_class": "Pilot - Ended",
   "vendor_class": "Not specified",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Basin Connect North",
@@ -9487,7 +10925,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "SMART Flex",
@@ -9513,7 +10955,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "CATA Rydz",
@@ -9539,7 +10985,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "BATA Link On-Demand",
@@ -9565,7 +11015,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2020,
-  "fleet_size": 4
+  "fleet_size": 4,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "TheRide FlexRide-East",
@@ -9591,7 +11045,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "MTA Genesee Connect",
@@ -9617,7 +11075,11 @@
   "status_class": "Pilot",
   "vendor_class": "Via",
   "year_num": 2026,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "BCGo",
@@ -9643,7 +11105,11 @@
   "status_class": "Active",
   "vendor_class": "Other",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Benzie Bus Dial-A-Ride",
@@ -9669,7 +11135,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "WexExpress",
@@ -9695,7 +11165,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Charlevoix County Transit",
@@ -9721,7 +11195,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "ROSCOTA",
@@ -9747,7 +11225,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Black River Area Development (BRAD) Public Transit",
@@ -9773,7 +11255,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 1975,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "CADC/SCAT (South Central Arkansas Transit)",
@@ -9799,7 +11285,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 1975,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "NICE Mini",
@@ -9825,7 +11315,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "Spare",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Suffolk Transit On-Demand",
@@ -9851,7 +11345,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Circuit New Rochelle (CircuitNR)",
@@ -9877,7 +11375,11 @@
   "status_class": "Active",
   "vendor_class": "Circuit",
   "year_num": 2019,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Circuit Rockaways (Rockaway Rides)",
@@ -9903,7 +11405,11 @@
   "status_class": "Active",
   "vendor_class": "Circuit",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Circuit Brentwood",
@@ -9929,7 +11435,11 @@
   "status_class": "Active",
   "vendor_class": "Circuit",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Circuit Southampton",
@@ -9955,7 +11465,11 @@
   "status_class": "Active",
   "vendor_class": "Circuit",
   "year_num": 2013,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Circuit East Hampton",
@@ -9981,7 +11495,11 @@
   "status_class": "Active",
   "vendor_class": "Circuit",
   "year_num": 2011,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Circuit Montauk",
@@ -10007,7 +11525,11 @@
   "status_class": "Active",
   "vendor_class": "Circuit",
   "year_num": 2012,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Buffalo All Access",
@@ -10033,7 +11555,11 @@
   "status_class": "Active - New",
   "vendor_class": "Other",
   "year_num": 2026,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "RTS On Demand",
@@ -10059,7 +11585,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2025,
-  "fleet_size": 132
+  "fleet_size": 132,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Centro MOVE",
@@ -10085,7 +11615,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Franklin County Public Transportation (Southern Zone Demand-Response)",
@@ -10111,7 +11645,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Putnam On-Demand",
@@ -10137,7 +11675,11 @@
   "status_class": "Active - New",
   "vendor_class": "Via",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Move Sullivan",
@@ -10163,7 +11705,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "LANtaFlex",
@@ -10189,7 +11735,11 @@
   "status_class": "Active",
   "vendor_class": "Ecolane",
   "year_num": 2011,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "BCTA Connect",
@@ -10215,7 +11765,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "Not specified",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Buffalo Area Transit System (BATS)",
@@ -10241,7 +11795,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": 4
+  "fleet_size": 4,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "SafeRide (Laramie)",
@@ -10267,7 +11825,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Campbell County Dial-a-Ride",
@@ -10293,7 +11855,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Gopher",
@@ -10319,7 +11885,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Mountain Town Connector",
@@ -10345,7 +11915,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "MyRide by TVT (Middlebury)",
@@ -10371,7 +11945,11 @@
   "status_class": "Active - New",
   "vendor_class": "Via",
   "year_num": 2026,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousub",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "WinReady",
@@ -10397,7 +11975,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "MetroFLX",
@@ -10423,7 +12005,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "gtfs_flex",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "GLTC Flex",
@@ -10449,7 +12035,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "HRT OnDemand",
@@ -10475,7 +12065,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "LC Transit On Demand",
@@ -10501,7 +12095,11 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Arlington Microtransit (MICRO)",
@@ -10527,7 +12125,11 @@
   "status_class": "Active - New",
   "vendor_class": "Via",
   "year_num": 2026,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Union County On-Demand Micro-Transit Pilot",
@@ -10553,7 +12155,11 @@
   "status_class": "Active - New",
   "vendor_class": "Via",
   "year_num": 2026,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "GOTrenton!",
@@ -10579,7 +12185,11 @@
   "status_class": "Active",
   "vendor_class": "Circuit",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Marshall County Rural Transit (MCPT)",
@@ -10605,7 +12215,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "buffered",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Catch-A-Ride (Lifetime Resources)",
@@ -10631,7 +12245,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "MAPS (Metro Area Public Transit System)",
@@ -10657,7 +12275,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "VANLNK",
@@ -10683,7 +12305,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "TeleLift (North Fork Area Transit)",
@@ -10709,7 +12335,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "North Platte Public Transit",
@@ -10735,7 +12365,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "buffered",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Fremont Transit Program",
@@ -10761,7 +12395,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "buffered",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "SpartaGo",
@@ -10787,7 +12425,11 @@
   "status_class": "Pilot",
   "vendor_class": "Not specified",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Santee Wateree RTA On-Demand (Sumter)",
@@ -10813,7 +12455,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "RPT GO",
@@ -10839,7 +12485,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "Spare",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "goMARTI",
@@ -10865,7 +12515,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "Via",
   "year_num": 2022,
-  "fleet_size": 9
+  "fleet_size": 9,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "STA Link",
@@ -10891,7 +12545,11 @@
   "status_class": "Pilot",
   "vendor_class": "Spare",
   "year_num": 2026,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "The Current (C-TRAN)",
@@ -10917,7 +12575,11 @@
   "status_class": "Active",
   "vendor_class": "Spare",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Kitsap Transit On-Demand (Ride Pingo)",
@@ -10943,7 +12605,11 @@
   "status_class": "Active",
   "vendor_class": "TRC (Pingo)",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "CONNECT (Ben Franklin Transit)",
@@ -10969,7 +12635,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "HarborFlex (Dial-A-Ride)",
@@ -10995,7 +12665,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Cowlitz Tribe Transit Service",
@@ -11021,7 +12695,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "katConnect",
@@ -11047,7 +12725,11 @@
   "status_class": "Active",
   "vendor_class": "Other",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "CARTA GO",
@@ -11073,7 +12755,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "Not specified",
   "year_num": 2026,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "NET Trans CONNECT",
@@ -11099,7 +12785,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Pick Up Upper Cumberland",
@@ -11125,7 +12815,11 @@
   "status_class": "Active",
   "vendor_class": "Uber / Lyft",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "SETHRA Transit",
@@ -11151,7 +12845,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "NWTHRA Rural Public Transportation",
@@ -11177,7 +12875,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Clarksville Transit System Demand Response",
@@ -11203,7 +12905,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "TARTA Flex",
@@ -11229,7 +12935,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Dayton RTA Connect On-Demand",
@@ -11255,7 +12965,11 @@
   "status_class": "Active",
   "vendor_class": "Uber / Lyft",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "BGo Curb to Curb",
@@ -11281,7 +12995,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "MCFlex (Medina County)",
@@ -11307,7 +13025,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Laketran Rides on Demand",
@@ -11333,7 +13055,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Fairfield County LINK Direct",
@@ -11359,7 +13085,11 @@
   "status_class": "Active",
   "vendor_class": "TRC (Pingo)",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "METRO NEXT",
@@ -11385,7 +13115,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "Ecolane",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Knox County Transit",
@@ -11411,7 +13145,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Move Metairie On-Demand Zone",
@@ -11437,7 +13175,11 @@
   "status_class": "Active",
   "vendor_class": "Uber / Lyft",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "St. Landry Parish CAA Transit",
@@ -11463,7 +13205,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": 6
+  "fleet_size": 6,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Central Community Transit (CCT) Dial-a-Ride",
@@ -11489,7 +13235,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "RIDES (Region 3 Regional Transit Authority)",
@@ -11515,7 +13265,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "MIDAS Regional Transit",
@@ -11541,7 +13295,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "CorridorRides",
@@ -11567,7 +13325,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Southern Iowa Trolley",
@@ -11593,7 +13355,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "NTS (Neighborhood Transportation Service)",
@@ -11619,7 +13385,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "LR Rides (Lee-Russell Public Transit On-Demand)",
@@ -11645,7 +13415,11 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Custer County Transit",
@@ -11671,7 +13445,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Fallon County Council on Aging Transportation",
@@ -11697,7 +13475,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Central Montana Shuttle",
@@ -11723,7 +13505,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "CSKT Transit",
@@ -11749,7 +13535,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "tribal",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Lincoln County Transportation Service (LCTS)",
@@ -11775,7 +13565,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Mineral County Pioneer Council Transportation",
@@ -11801,7 +13595,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Phillips Transit Authority",
@@ -11827,7 +13625,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Quality Transit",
@@ -11853,7 +13655,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Crow Nation Transit",
@@ -11879,7 +13685,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "tribal",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Fort Belknap Transit",
@@ -11905,7 +13715,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "tribal",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Northern Cheyenne Transit (REZ RUNNER)",
@@ -11931,7 +13745,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "tribal",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Norman On-Demand",
@@ -11957,7 +13775,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "PICK Transportation",
@@ -11983,7 +13805,11 @@
   "status_class": "Active",
   "vendor_class": "Uber / Lyft",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "MCT Micro",
@@ -12009,7 +13835,11 @@
   "status_class": "Active",
   "vendor_class": "Spare",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Central Illinois Public Transit (CIPT)",
@@ -12035,7 +13865,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Coles County Dial-A-Ride",
@@ -12061,7 +13895,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "North Central Area Transit (NCAT)",
@@ -12087,7 +13925,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Pretzel City Area Transit (PCAT)",
@@ -12113,7 +13955,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Henry County Public Transportation (HCPT)",
@@ -12139,7 +13985,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Danville Mass Transit - Evening Dial-A-Ride",
@@ -12165,7 +14015,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "BAT Flex",
@@ -12191,7 +14045,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "SRTA MicroConnector",
@@ -12217,7 +14075,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "NRTA Wave On-Demand",
@@ -12243,7 +14105,11 @@
   "status_class": "Active",
   "vendor_class": "QRyde",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "RC Link",
@@ -12269,7 +14135,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Stoneham Shuttle",
@@ -12295,7 +14165,11 @@
   "status_class": "Active",
   "vendor_class": "Circuit",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Local Link",
@@ -12321,7 +14195,11 @@
   "status_class": "Pilot",
   "vendor_class": "Not specified",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "ACTA Microtransit",
@@ -12347,7 +14225,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "GoRaleigh MicroLink",
@@ -12373,7 +14255,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Holly Springs Hopper",
@@ -12399,7 +14285,11 @@
   "status_class": "Active - New",
   "vendor_class": "Freebee",
   "year_num": 2026,
-  "fleet_size": 4
+  "fleet_size": 4,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Go Randolph (RCATS)",
@@ -12425,7 +14315,11 @@
   "status_class": "Active - New",
   "vendor_class": "Not specified",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Salisbury Connect",
@@ -12451,7 +14345,11 @@
   "status_class": "Active - New",
   "vendor_class": "Downtowner",
   "year_num": 2026,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "The Lift Flex",
@@ -12477,7 +14375,11 @@
   "status_class": "Active - New",
   "vendor_class": "Not specified",
   "year_num": 2026,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Yellow Zone",
@@ -12503,7 +14405,11 @@
   "status_class": "Active",
   "vendor_class": "Downtowner",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Basalt Connect",
@@ -12529,7 +14435,11 @@
   "status_class": "Active",
   "vendor_class": "Downtowner",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Snowmass Village On-Demand Shuttle (Route 22)",
@@ -12555,7 +14465,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Call-N-Ride (Greeley-Evans Transit)",
@@ -12581,7 +14495,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Cripple Creek Bus / On-Demand Service",
@@ -12607,7 +14525,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "gtfs_flex",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "YavaLine / YAV Connect",
@@ -12633,7 +14555,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "Via",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Camel Express",
@@ -12659,7 +14585,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "REV-UP",
@@ -12685,7 +14615,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Clovis Transit Micro-Transit",
@@ -12711,7 +14645,11 @@
   "status_class": "Active - New",
   "vendor_class": "Spare",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Visalia Connect",
@@ -12737,7 +14675,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "TCRTA Transport",
@@ -12763,7 +14705,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "KART Flex Route",
@@ -12789,7 +14735,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Delano DART N'GO",
@@ -12815,7 +14765,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Madera City Dial-A-Ride",
@@ -12841,7 +14795,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Madera County Connection Dial-A-Ride",
@@ -12867,7 +14825,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "RABA Runabout",
@@ -12893,7 +14855,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "ShastaConnect Rural Demand Response",
@@ -12919,7 +14885,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "B-Line FLEX",
@@ -12945,7 +14915,11 @@
   "status_class": "Pilot",
   "vendor_class": "Not specified",
   "year_num": 2026,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Yuba-Sutter Transit MOD",
@@ -12971,7 +14945,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Placer County Dial-A-Ride Microtransit",
@@ -12997,7 +14975,11 @@
   "status_class": "Active",
   "vendor_class": "Spare",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "BeeLine",
@@ -13023,7 +15005,11 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "LumaGo",
@@ -13049,7 +15035,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "SMART Connect (Larkspur)",
@@ -13075,7 +15065,11 @@
   "status_class": "Pilot",
   "vendor_class": "TRC (Pingo)",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Van Go!",
@@ -13101,7 +15095,11 @@
   "status_class": "Active",
   "vendor_class": "Ecolane",
   "year_num": 2018,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Lathrop Transit Microtransit",
@@ -13127,7 +15125,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "San Benito County Express On-Demand",
@@ -13153,7 +15155,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "MoGo",
@@ -13179,7 +15185,11 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "AVTA On-Request Microtransit",
@@ -13205,7 +15215,11 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "LB Circuit",
@@ -13231,7 +15245,11 @@
   "status_class": "Active",
   "vendor_class": "Circuit",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Whittier On-Demand Transit Pilot",
@@ -13257,7 +15275,11 @@
   "status_class": "Pilot",
   "vendor_class": "TRC (Pingo)",
   "year_num": 2025,
-  "fleet_size": 16
+  "fleet_size": 16,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "FRANC",
@@ -13283,7 +15305,11 @@
   "status_class": "Active",
   "vendor_class": "Circuit",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "gO'side Electric Shuttle",
@@ -13309,7 +15335,11 @@
   "status_class": "Active",
   "vendor_class": "Circuit",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "The Snapper",
@@ -13335,7 +15365,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "Not specified",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "The Squeeze",
@@ -13361,7 +15395,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "NeighborLink",
@@ -13387,7 +15425,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "FlexTransit",
@@ -13413,7 +15455,11 @@
   "status_class": "Active - Expanding",
   "vendor_class": "RideCo",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "VoRide",
@@ -13439,7 +15485,11 @@
   "status_class": "Active",
   "vendor_class": "Spare",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "StarMetro FLEX (Lake Jackson & Southside)",
@@ -13465,7 +15515,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "TheBus Ride (Route 6)",
@@ -13491,7 +15545,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Island Hopper",
@@ -13517,7 +15575,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "VIA Link",
@@ -13543,7 +15605,11 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": 2019,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "CapMetro Pickup",
@@ -13569,7 +15635,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2019,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Sun Metro Microtransit",
@@ -13595,7 +15665,11 @@
   "status_class": "Pilot",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Micro McAllen",
@@ -13621,7 +15695,11 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Micro Dash",
@@ -13647,7 +15725,11 @@
   "status_class": "Active",
   "vendor_class": "TRC (Pingo)",
   "year_num": 2024,
-  "fleet_size": 6
+  "fleet_size": 6,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Citibus On-Demand",
@@ -13673,7 +15755,11 @@
   "status_class": "Active",
   "vendor_class": "Other",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "ZipZone",
@@ -13699,7 +15785,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "STARNow",
@@ -13725,7 +15815,11 @@
   "status_class": "Active",
   "vendor_class": "Spare",
   "year_num": 2019,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "CARTS Now",
@@ -13751,7 +15845,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Via Grand Prairie",
@@ -13777,7 +15875,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2022,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Addison Orbit",
@@ -13803,7 +15905,11 @@
   "status_class": "Active - New",
   "vendor_class": "Via",
   "year_num": 2026,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Highland Park On-Demand",
@@ -13829,7 +15935,11 @@
   "status_class": "Active - New",
   "vendor_class": "Via",
   "year_num": 2026,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "buffered",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Harris County Transit Plus",
@@ -13855,7 +15965,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2021,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Round Rock Rides",
@@ -13881,7 +15995,11 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": 2023,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "METRO curb2curb",
@@ -13907,7 +16025,11 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "ART Pronto",
@@ -13933,7 +16055,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "SPARTAN Same Day",
@@ -13959,7 +16085,11 @@
   "status_class": "Active - New",
   "vendor_class": "QRyde",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "TRAX (Permian Basin RTD)",
@@ -13985,7 +16115,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "SCRPT / The Connection",
@@ -14011,7 +16145,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 1989,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "SWART Dial-a-Ride",
@@ -14037,7 +16175,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 1981,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "City of Del Rio Transportation",
@@ -14063,7 +16205,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "REAL Flash (Beeville/Alice/Rancho Alegre)",
@@ -14089,7 +16235,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Brunswick Breeze",
@@ -14115,7 +16265,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Roll With Us (METRA)",
@@ -14141,7 +16295,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Jackson County Transport",
@@ -14167,7 +16325,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Go Wake Forest",
@@ -14193,7 +16355,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2024,
-  "fleet_size": 3
+  "fleet_size": 3,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "WRTD Dial-A-Ride",
@@ -14219,7 +16385,11 @@
   "status_class": "Active",
   "vendor_class": "Ecolane",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "River Valley Transit Dial-A-Ride",
@@ -14245,7 +16415,11 @@
   "status_class": "Active",
   "vendor_class": "Ecolane",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "cousubs",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Baraboo Shared-Ride Taxi",
@@ -14271,7 +16445,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "buffered",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Beaver Dam Shared-Ride Taxi",
@@ -14297,7 +16475,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Berlin Shared-Ride Taxi",
@@ -14323,7 +16505,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Black River Falls Shared-Ride Taxi",
@@ -14349,7 +16535,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 1989,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Clintonville Taxi",
@@ -14375,7 +16565,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Door County Shared-Ride Taxi (Door 2 Door Rides)",
@@ -14401,7 +16595,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Edgerton Shared-Ride Taxi",
@@ -14427,7 +16625,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Fort Atkinson Shared-Ride Taxi",
@@ -14453,7 +16655,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Grant County Shared-Ride Taxi",
@@ -14479,7 +16685,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Hudson Public Transit (Shared-Ride Taxi)",
@@ -14505,7 +16715,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Jefferson Shared-Ride Taxi",
@@ -14531,7 +16745,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Lake Mills Shared-Ride Taxi",
@@ -14557,7 +16775,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Marinette Shared-Ride Taxi",
@@ -14583,7 +16805,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "buffered",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Marshfield Shared-Ride Taxi (Public Transit)",
@@ -14609,7 +16835,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": 4
+  "fleet_size": 4,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Mauston Shared-Ride Taxi",
@@ -14635,7 +16865,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Monroe Cab Company (Shared-Ride Taxi)",
@@ -14661,7 +16895,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": 4
+  "fleet_size": 4,
+  "boundary": {
+   "type": "buffered",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "New Richmond Shared-Ride Taxi",
@@ -14687,7 +16925,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "buffered",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Oneida Public Transit",
@@ -14713,7 +16955,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "tribal",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Plover Taxi Service",
@@ -14739,7 +16985,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Portage Shared-Ride Taxi",
@@ -14765,7 +17015,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Prairie du Chien Shared-Ride Taxi (Coulee Cab)",
@@ -14791,7 +17045,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 1995,
-  "fleet_size": 4
+  "fleet_size": 4,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Sauk Prairie Shared-Ride Taxi",
@@ -14817,7 +17075,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Reedsburg Shared-Ride Taxi",
@@ -14843,7 +17105,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "buffered",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Richland Center Shared-Ride Taxi",
@@ -14869,7 +17135,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2010,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Ripon Shared-Ride Taxi",
@@ -14895,7 +17165,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": 3
+  "fleet_size": 3,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "River Falls Shared-Ride Taxi",
@@ -14921,7 +17195,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 1985,
-  "fleet_size": 2
+  "fleet_size": 2,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Shawano Shared-Ride Taxi (Shawano City Cab)",
@@ -14947,7 +17225,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": 3
+  "fleet_size": 3,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Tomah Shared-Ride Taxi",
@@ -14973,7 +17255,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Watertown Shared-Ride Taxi",
@@ -14999,7 +17285,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": 6
+  "fleet_size": 6,
+  "boundary": {
+   "type": "buffered",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Whitewater Shared-Ride Taxi",
@@ -15025,7 +17315,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": 1
+  "fleet_size": 1,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Chippewa Falls Shared-Ride Taxi",
@@ -15051,7 +17345,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": 4
+  "fleet_size": 4,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Onalaska/Holmen/West Salem DriftLink Shared-Ride Taxi",
@@ -15077,7 +17375,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Ozaukee County Shared-Ride Taxi",
@@ -15103,7 +17405,11 @@
   "status_class": "Active",
   "vendor_class": "Ecolane",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Stoughton Shared-Ride Taxi",
@@ -15129,7 +17435,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2018,
-  "fleet_size": 2
+  "fleet_size": 2,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Washington County Shared-Ride Taxi",
@@ -15155,7 +17465,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "West Bend Shared-Ride Taxi",
@@ -15181,7 +17495,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "COAST (City of Avalon Seaside Transit)",
@@ -15207,7 +17525,11 @@
   "status_class": "Active",
   "vendor_class": "Circuit",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "GoMonrovia",
@@ -15233,7 +17555,11 @@
   "status_class": "Active",
   "vendor_class": "Uber / Lyft",
   "year_num": 2018,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Claremont Dial-a-Ride",
@@ -15259,7 +17585,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Rosemead GO",
@@ -15285,7 +17615,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "California City Dial-A-Ride",
@@ -15311,7 +17645,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "McFarland City Transit Bus (Dial-A-Ride)",
@@ -15337,7 +17675,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Ridgerunner Transit Dial-A-Ride (Ridgecrest)",
@@ -15363,7 +17705,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Shafter Dial-A-Ride",
@@ -15389,7 +17735,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Taft Area Transit",
@@ -15415,7 +17765,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Tehachapi Dial-A-Ride",
@@ -15441,7 +17795,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": 2
+  "fleet_size": 2,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Kern Regional Transit Dial-A-Ride network",
@@ -15467,7 +17825,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Atascadero Dial-A-Ride",
@@ -15493,7 +17855,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "COLT RIDE On-Demand (Lompoc Transit)",
@@ -15519,7 +17885,11 @@
   "status_class": "Active",
   "vendor_class": "TRC (Pingo)",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Chowchilla Area Transit Express (CATX)",
@@ -15545,7 +17915,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Corcoran Area Transit (C-A-T)",
@@ -15571,7 +17945,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 1999,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "MCT On Demand (Moorpark City Transit)",
@@ -15597,7 +17975,11 @@
   "status_class": "Active",
   "vendor_class": "RideCo",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Porterville transPORT",
@@ -15623,7 +18005,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "TRACER Plus (City of Tracy)",
@@ -15649,7 +18035,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 2020,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "gtfs_flex",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Dixon Readi-Ride",
@@ -15675,7 +18065,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 1983,
-  "fleet_size": 8
+  "fleet_size": 8,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Rio Vista Delta Breeze - Route 51 Dial-A-Ride",
@@ -15701,7 +18095,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Colusa County Transit Agency",
@@ -15727,7 +18125,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": 9
+  "fleet_size": 9,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Eastern Sierra Transit Authority - Bishop/Mammoth Dial-A-Ride",
@@ -15753,7 +18155,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Lake Transit Authority Dial-A-Ride",
@@ -15779,7 +18185,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Sage Stage (Modoc Transportation Agency)",
@@ -15805,7 +18215,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "buffered",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Desert Roadrunner Dial-A-Ride (Palo Verde Valley Transit Agency)",
@@ -15831,7 +18245,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Plumas Transit evening on-demand",
@@ -15857,7 +18275,11 @@
   "status_class": "Active",
   "vendor_class": "TRC (Pingo)",
   "year_num": 2024,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Tuolumne County Transit Agency Dial-A-Ride",
@@ -15883,7 +18305,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Morongo Dial-A-Ride",
@@ -15909,7 +18335,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2014,
-  "fleet_size": 1
+  "fleet_size": 1,
+  "boundary": {
+   "type": "tribal",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Yurok Tribe Transit Services - Demand Response",
@@ -15935,7 +18365,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2013,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "tribal",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Mobility on Demand (Gainesville RTS)",
@@ -15961,7 +18395,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Bond County Transit",
@@ -15987,7 +18425,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Waupaca County Catch a Ride",
@@ -16013,7 +18455,11 @@
   "status_class": "Active",
   "vendor_class": "Other",
   "year_num": 2026,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Cook County Transit",
@@ -16039,7 +18485,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": 8
+  "fleet_size": 8,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Pierce County Transit",
@@ -16065,7 +18515,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 1992,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Haralson County Transit",
@@ -16091,7 +18545,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Taylor County Transit",
@@ -16117,7 +18575,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": 3
+  "fleet_size": 3,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Murray County Transit",
@@ -16143,7 +18605,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Habersham County Transit",
@@ -16169,7 +18635,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Wilkinson County Transit",
@@ -16195,7 +18665,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Lincoln County Transit",
@@ -16221,7 +18695,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Crawford County Transit",
@@ -16247,7 +18725,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Hancock County Transit",
@@ -16273,7 +18755,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Talbot County Transit",
@@ -16299,7 +18785,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Wilkes County Transit",
@@ -16325,7 +18815,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Rio Metro Valencia County Dial-A-Ride",
@@ -16351,7 +18845,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Rockin' 66 Express",
@@ -16377,7 +18875,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Po'Pay Messenger",
@@ -16403,7 +18905,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Corre Cantinas",
@@ -16429,7 +18935,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2006,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "CoosGO",
@@ -16455,7 +18965,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 2025,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "UPTD Dial-A-Ride",
@@ -16481,7 +18995,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Blugo (Clinton Transit)",
@@ -16507,7 +19025,11 @@
   "status_class": "Active",
   "vendor_class": "Ecolane",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "I-Ride (Isabella County Transportation Commission)",
@@ -16533,7 +19055,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "I-DART (Ionia Dial-A-Ride)",
@@ -16559,7 +19085,11 @@
   "status_class": "Active",
   "vendor_class": "Via",
   "year_num": 1980,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "The Interurban",
@@ -16585,7 +19115,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "places",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Antrim County Transportation",
@@ -16611,7 +19145,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Arenac Public Transportation Authority",
@@ -16637,7 +19175,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Clare County Transit Corporation",
@@ -16663,7 +19205,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Crawford County Transportation Authority",
@@ -16689,7 +19235,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 1976,
-  "fleet_size": 16
+  "fleet_size": 16,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Gladwin City/County Transit",
@@ -16715,7 +19265,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 1996,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Iosco Transit Corporation",
@@ -16741,7 +19295,11 @@
   "status_class": "Active",
   "vendor_class": "Ecolane",
   "year_num": null,
-  "fleet_size": 6
+  "fleet_size": 6,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Kalkaska Public Transit Authority",
@@ -16767,7 +19325,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Manistee County Transportation",
@@ -16793,7 +19355,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 1975,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Ogemaw County Public Transportation",
@@ -16819,7 +19385,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": 14
+  "fleet_size": 14,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Thunder Bay Transportation Authority",
@@ -16845,7 +19415,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 1974,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Yates Township Transportation System",
@@ -16871,7 +19445,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": 1976,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Straits Regional Ride",
@@ -16897,7 +19475,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Benson County Transportation",
@@ -16923,7 +19505,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Cavalier County Transit",
@@ -16949,7 +19535,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Dickinson Public Transit",
@@ -16975,7 +19565,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Golden Valley/Billings County Council on Aging Public Transit",
@@ -17001,7 +19595,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Hazen Public Transit",
@@ -17027,7 +19625,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "James River Public Transit",
@@ -17053,7 +19655,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Kenmare Wheels & Meals",
@@ -17079,7 +19685,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Kidder Emmons Senior Services Public Transit",
@@ -17105,7 +19715,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": 3
+  "fleet_size": 3,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Nutrition United Transit (Can-Do Transportation)",
@@ -17131,7 +19745,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "county",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "South Central Transit Network",
@@ -17157,7 +19775,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Devils Lake Transit",
@@ -17183,7 +19805,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Turtle Mountain Transit",
@@ -17209,7 +19835,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "tribal",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Spirit Lake Transit",
@@ -17235,7 +19865,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "counties",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Trenton Indian Service Area Aging Program",
@@ -17261,7 +19895,11 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "zone_approx",
+   "fidelity": "approximate"
+  }
  },
  {
   "name": "Roswell Dial-a-Ride",
@@ -17287,6 +19925,10 @@
   "status_class": "Active",
   "vendor_class": "Not specified",
   "year_num": null,
-  "fleet_size": null
+  "fleet_size": null,
+  "boundary": {
+   "type": "city",
+   "fidelity": "exact"
+  }
  }
 ]

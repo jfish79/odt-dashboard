@@ -227,8 +227,32 @@ def to_json_record(row):
     return rec
 
 
-def build_systems_json(rows, outpath):
+def load_boundary_lookup(boundaries_dir):
+    """(name, state) -> {'type': boundary_type, 'fidelity': fidelity} for every polygon."""
+    lookup = {}
+    if not os.path.isdir(boundaries_dir):
+        return lookup
+    for path in sorted(glob.glob(os.path.join(boundaries_dir, '*.geojson'))):
+        st = os.path.splitext(os.path.basename(path))[0]
+        if st.startswith('_'):
+            continue
+        with open(path, encoding='utf-8') as f:
+            gj = json.load(f)
+        for feat in gj.get('features', []):
+            props = feat.get('properties') or {}
+            if props.get('name'):
+                lookup[(props['name'], st)] = {
+                    'type': props.get('boundary_type', 'unknown'),
+                    'fidelity': props.get('fidelity', 'exact'),
+                }
+    return lookup
+
+
+def build_systems_json(rows, outpath, boundary_lookup=None):
     records = [to_json_record(r) for r in rows]
+    boundary_lookup = boundary_lookup or {}
+    for rec in records:
+        rec['boundary'] = boundary_lookup.get((rec['name'], rec['state']))
     with open(outpath, 'w', encoding='utf-8') as f:
         json.dump(records, f, indent=1, ensure_ascii=False)
     return records
@@ -310,7 +334,11 @@ def main():
         sys.exit(1)
 
     print(f"\nWriting {systems_path}...")
-    records = build_systems_json(rows, systems_path)
+    boundary_lookup = load_boundary_lookup(boundaries_dir)
+    records = build_systems_json(rows, systems_path, boundary_lookup)
+    unmapped = [r['name'] for r in records if not r['boundary']]
+    print(f"  {len(records) - len(unmapped)} systems have a service-area polygon"
+          + (f"; unmapped: {', '.join(unmapped)}" if unmapped else ''))
     states = {r['state'] for r in records}
     types = Counter(r['type'] for r in records)
     print(f"  {len(records)} systems across {len(states)} states")
