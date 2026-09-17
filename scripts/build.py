@@ -258,6 +258,7 @@ def build_summary(rows, outpath):
 
 def build_boundary_manifest(boundaries_dir):
     states_detail = {}
+    type_counts = Counter()
     for path in sorted(glob.glob(os.path.join(boundaries_dir, '*.geojson'))):
         st = os.path.splitext(os.path.basename(path))[0]
         if st.startswith('_'):
@@ -265,13 +266,16 @@ def build_boundary_manifest(boundaries_dir):
         with open(path, encoding='utf-8') as f:
             gj = json.load(f)
         feats = gj.get('features', [])
+        for feat in feats:
+            type_counts[(feat.get('properties') or {}).get('boundary_type', 'unknown')] += 1
         dates = sorted({feat['properties'].get('updated', '')
                         for feat in feats if feat.get('properties')})
         states_detail[st] = {
             'features': len(feats),
             'updated': dates[-1] if dates else None
         }
-    manifest = {'states': sorted(states_detail.keys()), 'detail': states_detail}
+    manifest = {'states': sorted(states_detail.keys()), 'detail': states_detail,
+                'types': dict(type_counts), 'features': sum(type_counts.values())}
     with open(os.path.join(boundaries_dir, '_index.json'), 'w', encoding='utf-8') as f:
         json.dump(manifest, f, indent=1)
     return manifest

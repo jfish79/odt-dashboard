@@ -89,7 +89,7 @@ header h1 em { font-style: italic; color: #d4c9a8; }
   padding: 0.6rem 3rem 0.75rem;
   display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;
 }
-.search-wrap { position: relative; flex: 1; min-width: 160px; max-width: 220px; }
+.search-wrap { position: relative; flex: 1; min-width: 150px; max-width: 200px; }
 .clear-btn {
   font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase;
   background: none; border: 1px solid var(--border2); color: var(--ink-soft); padding: 0.38rem 0.6rem; cursor: pointer;
@@ -115,6 +115,7 @@ select {
 }
 select:focus { border-color: var(--ink); }
 .toolbar select { max-width: 200px; text-overflow: ellipsis; }
+#filter-type { width: 145px; } #filter-geo { width: 105px; } #filter-status { width: 95px; } #filter-vendor { width: 150px; } #filter-year { width: 120px; }
 .results-count { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-soft); white-space: nowrap; margin-left: auto; }
 .results-count span { color: var(--ink); }
 .view-toggle { display: flex; border: 1px solid var(--border2); overflow: hidden; flex-shrink: 0; }
@@ -324,6 +325,8 @@ select:focus { border-color: var(--ink); }
 .ref-section-label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 0.9rem; }
 .ref-prose { font-family: var(--sans); font-size: 0.85rem; color: var(--ink-mid); line-height: 1.7; max-width: 720px; }
 .ref-table-wrap { overflow-x: auto; }
+.ref-list { padding-left: 1.4rem; display: flex; flex-direction: column; gap: 0.45rem; margin-top: 0.5rem; }
+.bt-count { text-align: right; font-weight: 600; color: var(--ink) !important; white-space: nowrap; }
 .ref-table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 0.72rem; }
 .ref-table th { background: var(--ink); color: var(--bg); padding: 0.45rem 0.75rem; text-align: left; font-weight: 600; }
 .ref-table td { padding: 0.4rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--ink-mid); vertical-align: top; line-height: 1.5; }
@@ -412,6 +415,7 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
     <div class="stat"><span class="stat-num" id="stat-states">0</span><span class="stat-label">States</span></div>
     <div class="stat"><span class="stat-num" id="stat-active">0</span><span class="stat-label">Active</span></div>
     <div class="stat"><span class="stat-num" id="stat-micro">0</span><span class="stat-label">Microtransit</span></div>
+    <div class="stat"><span class="stat-num" id="stat-dr">0</span><span class="stat-label">Demand-Response</span></div>
   </div>
 </header>
 
@@ -480,6 +484,12 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
   <div class="filter-group">
     <span class="filter-label">Vendor</span>
     <select id="filter-vendor" onchange="filterAll()">
+      <option value="">All</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <span class="filter-label">Launched</span>
+    <select id="filter-year" onchange="filterAll()">
       <option value="">All</option>
     </select>
   </div>
@@ -611,10 +621,10 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
         <table class="ref-table">
           <thead><tr><th>Included</th><th>Excluded</th></tr></thead>
           <tbody>
-            <tr><td>Same-day app or phone booking with no fixed schedule, even if a short same-day lead time (e.g. two hours) is required</td><td>Services with no same-day option — booking required by a cutoff on a day before the trip (e.g. "by 4pm the day before", "24-hour advance", "next-day only")</td></tr>
-            <tr><td>Demand-response where advance booking is preferred or the norm, as long as a same-day request is a real, routinely honored option</td><td>Private employer or apartment shuttles (not publicly accessible)</td></tr>
-            <tr><td>Publicly accessible services, even if privately sponsored (e.g. SouthPark Skipper)</td><td>Campus-only or closed-loop shuttles</td></tr>
-            <tr><td>Planned services with confirmed vendor and funding (flagged as Pilot)</td><td>Services that have permanently ceased operations, and paratransit restricted to eligibility-certified riders</td></tr>
+            <tr><td>Same-day app or phone booking with no fixed schedule, even if a short same-day lead time (e.g. two hours) is required. Demand-response counts when advance booking is preferred or the norm, as long as a same-day request is a real, routinely honored option.</td><td>Services with no same-day option — booking required by a cutoff on a day before the trip (e.g. "by 4pm the day before", "24-hour advance", "next-day only")</td></tr>
+            <tr><td>Open to the general public, even if the service prioritizes seniors or riders with disabilities</td><td>Paratransit restricted to eligibility-certified riders (ADA, senior, or disability certification required to ride)</td></tr>
+            <tr><td>Publicly accessible services, even if privately sponsored (e.g. SouthPark Skipper)</td><td>Private employer or apartment shuttles, and campus-only or closed-loop shuttles (not publicly accessible)</td></tr>
+            <tr><td>Planned or pilot services with a confirmed vendor and funding (flagged as Pilot)</td><td>Services that have permanently ceased operations (a concluded pilot is kept as "Pilot – Ended" for the record)</td></tr>
           </tbody>
         </table>
       </div>
@@ -706,6 +716,33 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
     </div><!-- /.ref-section -->
 
     <div class="ref-section">
+      <div class="ref-section-label">Service area boundaries</div>
+      <p class="ref-prose">The Map view draws a service-area polygon for <strong id="bnd-covered">most</strong> systems when a state is selected. Almost no on-demand transit agency publishes downloadable boundary data, so polygons come from four sources, in order of preference:</p>
+      <ol class="ref-prose ref-list">
+        <li><strong>The agency's own geofence</strong> from a GTFS-Flex feed (<code>locations.geojson</code>), where one exists. A September 2026 scan of the Mobility Database catalog and of Trillium Transit's hosted feeds found usable geofences for <strong id="bnd-flex">a handful of</strong> systems; five other name-matched feeds were rejected because their geofence belonged to a different route on the same feed (typically ADA paratransit).</li>
+        <li><strong>U.S. Census Bureau TIGER/Line cartographic boundary files</strong> (2023 vintage, 1:500k): incorporated places, county subdivisions (New England towns, townships), counties, and American Indian / Alaska Native / Native Hawaiian areas, chosen to match the service area the agency describes.</li>
+        <li><strong>Local neighborhood geographies</strong> for a few North Carolina zones: Charlotte Neighborhood Profile Areas and Census tracts geocoded from the boundary streets the agency lists.</li>
+        <li><strong>Stated-size circles</strong> where the agency gives only a zone size ("about 12 square miles"), centered on the zone's town and clipped to it.</li>
+      </ol>
+      <p class="ref-prose" style="margin-top:0.75rem">North Carolina was digitized by hand in June 2026; the other 49 states were drafted from each row's service-area text by an agent-assisted pipeline in September 2026, audited, and web-researched where flagged. Every polygon's popup lists what it was built from and whether it is exact or approximate. The choices are recorded per system in <code>data/boundaries/specs/</code>, so the GeoJSON can be regenerated deterministically. Six multi-zone systems have no polygon yet because their zones are named only by neighborhood (GRTC LINK, MARTA Reach, Metro Micro, Mid-City GO, Southeastern Connect, FAST Connect).</p>
+      <div class="ref-table-wrap" style="margin-top:0.75rem">
+        <table class="ref-table">
+          <thead><tr><th>Boundary type</th><th>Built from</th><th>Accuracy</th><th style="text-align:right">Systems</th></tr></thead>
+          <tbody>
+            <tr><td>Official service area (GTFS-Flex)</td><td>Agency-published <code>locations.geojson</code> geofence</td><td>Exact — the agency's own operating boundary, not a proxy</td><td class="bt-count" data-bt="gtfs_flex"></td></tr>
+            <tr><td>City limits</td><td>Census incorporated place</td><td>High — official municipal boundary; "approximate" when the zone is a subset of the city</td><td class="bt-count" data-bt="city"></td></tr>
+            <tr><td>County / multi-county</td><td>Census county polygons, dissolved</td><td>High for county-wide services; service may not reach every corner</td><td class="bt-count" data-bt="county,counties"></td></tr>
+            <tr><td>Town boundaries</td><td>Union of Census places or county subdivisions (New England towns, townships)</td><td>Good — actual municipal limits, zones may extend beyond</td><td class="bt-count" data-bt="places,cousub,cousubs,places_constructed"></td></tr>
+            <tr><td>Municipality + service radius</td><td>Place polygon dilated by the stated radius ("city plus 5 miles")</td><td>Moderate — radius as stated by the agency</td><td class="bt-count" data-bt="buffered"></td></tr>
+            <tr><td>Tribal land</td><td>Census AIANNH area</td><td>Good — reservation boundary; off-reservation trips not shown</td><td class="bt-count" data-bt="tribal"></td></tr>
+            <tr><td>Neighborhoods / tracts</td><td>Charlotte NPAs; Census tracts geocoded from boundary streets (NC only)</td><td>Moderate</td><td class="bt-count" data-bt="neighborhood_npa,census_tracts"></td></tr>
+            <tr><td>Approximate zone</td><td>Circle(s) of the agency-stated size, centered on the zone's city and clipped to it</td><td>Low — shows scale and location, not shape</td><td class="bt-count" data-bt="zone_approx,zones_approx"></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="ref-section">
       <div class="ref-section-label">Data caveats</div>
       <p class="ref-prose">Fleet figures are sourced from press releases and agency reports and may not reflect current operations. Service hours and fares change frequently — verify with the agency before travel planning. Latitude/longitude pins represent approximate service area centers; where a state has boundary overlays, the polygon shows the documented coverage area at the fidelity noted in its popup. Systems marked "Not specified" have data that is not publicly available or not yet researched. The filters and analytics use normalized categories derived at build time (vendor names, status, geographic context, launch year); the full researcher text is shown on each card and in the detail view.</p>
       <p class="ref-prose" style="margin-top:0.75rem">Last updated: <strong>September 2026</strong>. This is a living document; if you identify errors or omissions, please contact the research team.</p>
@@ -713,7 +750,7 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
 
     <div class="ref-section">
       <div class="ref-section-label">Data quality concerns</div>
-      <p class="ref-prose" style="margin-bottom:1rem">The June 2026 update added 120 systems from supplemental CA/CO lists. Several data quality issues were identified during integration and are documented below. The full log is <code>concerns.csv</code> in the project repository.</p>
+      <p class="ref-prose" style="margin-bottom:1rem">Notable data-quality issues found while integrating supplemental lists (June 2026 added 120 CA/CO systems) and during later state-by-state sweeps are summarized below. The full running log, with one entry per system and decision, is <code>concerns.csv</code> in the project repository.</p>
 
       <div class="ref-def-block">
         <div class="ref-def-term">Vendor errors (verified)</div>
@@ -751,27 +788,6 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
       <div class="ref-def-block">
         <div class="ref-def-term">Deduplication</div>
         <div class="ref-def-body">Two pre-existing duplicate pairs were resolved: <strong>CATS Micro</strong> (NC) had two entries with 8 differing fields — the more detailed entry was kept. <strong>Cupertino Microtransit</strong> and <strong>SV Hopper</strong> (CA) were the same Via-operated service listed twice — the richer SV Hopper entry was kept. Additionally, 12 systems that appeared in both the existing database and the supplemental lists were skipped (existing entries retained, since supplemental vendors were unreliable).</div>
-      </div>
-
-      <div class="ref-def-block">
-        <div class="ref-def-term">Service area boundaries</div>
-        <div class="ref-def-body">Boundaries shown on the state map views are built from Census TIGER/Line cartographic boundaries (2023, 1:500k) matched to each system's documented service area. Almost no on-demand transit agency in the inventory publishes downloadable boundary data or a GTFS-Flex feed, so most polygons are a Census-based proxy whose fidelity is labeled; a 2026-09 check of the Mobility Database's GTFS catalog against every row found real GTFS-Flex (<code>locations.geojson</code>) geofences for only about 1 in 18 matched feeds, an estimated 3-9 systems dataset-wide — <strong>METGo!</strong> (VA) is the one confirmed so far and uses its actual published geofence instead of a proxy. Each polygon's popup lists what it was built from and any caveat. The per-state "spec" files under <code>data/boundaries/specs/</code> record the units chosen for every proxy system and regenerate the GeoJSON deterministically; systems sourced from a real feed instead (like METGo!) are excluded from the specs and kept as-is by the resolver's merge step. North Carolina was mapped by hand in June 2026; other states by an agent-assisted pipeline (drafted from row text, audited, and web-researched where flagged) from September 2026.</div>
-        <div class="ref-table-wrap" style="margin-top:0.5rem">
-          <table class="ref-table">
-            <thead><tr><th>Boundary type</th><th>Built from</th><th>Accuracy</th></tr></thead>
-            <tbody>
-              <tr><td>Official service area (GTFS-Flex)</td><td>Agency-published <code>locations.geojson</code> geofence</td><td>Exact — the agency's own operating boundary, not a proxy</td></tr>
-              <tr><td>City limits</td><td>Census incorporated place</td><td>High — official municipal boundary; "approximate" when the zone is a subset of the city</td></tr>
-              <tr><td>County / multi-county</td><td>Census county polygons, dissolved</td><td>High for county-wide services; service may not reach every corner</td></tr>
-              <tr><td>Town boundaries</td><td>Union of Census places or county subdivisions (New England towns, townships)</td><td>Good — actual municipal limits, zones may extend beyond</td></tr>
-              <tr><td>Municipality + service radius</td><td>Place polygon dilated by the stated radius ("city plus 5 miles")</td><td>Moderate — radius as stated by the agency</td></tr>
-              <tr><td>Tribal land</td><td>Census AIANNH area</td><td>Good — reservation boundary; off-reservation trips not shown</td></tr>
-              <tr><td>Neighborhoods / tracts</td><td>Charlotte NPAs; Census tracts geocoded from boundary streets (NC only)</td><td>Moderate</td></tr>
-              <tr><td>Approximate zone</td><td>Circle(s) of the agency-stated size, centered on the zone's city and clipped to it</td><td>Low — shows scale and location, not shape</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
       </div>
 
       <div class="ref-def-block">
@@ -892,6 +908,34 @@ function populateVendorFilter(){
   if(counts['Other']) vendors.push('Other');
   sel.innerHTML='<option value="">All</option>'+vendors.map(v=>`<option value="${v}">${v} (${counts[v]})</option>`).join("");
 }
+const YEAR_RANGE_START = 2018;   /* individual options from this year on; earlier years are ranged */
+function populateYearFilter(){
+  const sel=document.getElementById("filter-year");
+  const years=systems.map(s=>s.year_num).filter(Boolean);
+  const maxY=years.length?Math.max(...years):new Date().getFullYear();
+  const opts=['<option value="">All</option>'];
+  for(let y=maxY;y>=YEAR_RANGE_START;y--) opts.push(`<option value="y:${y}">${y}</option>`);
+  opts.push(`<option value="r:2010-${YEAR_RANGE_START-1}">2010–${YEAR_RANGE_START-1}</option>`);
+  opts.push('<option value="r:0-2009">Before 2010</option>');
+  opts.push('<option value="unknown">Not specified</option>');
+  sel.innerHTML=opts.join('');
+}
+function yearFilterLabel(v){
+  if(!v)return'';
+  if(v==='unknown')return'with no known launch year';
+  if(v.startsWith('y:'))return`launched in ${v.slice(2)}`;
+  const [a,b]=v.slice(2).split('-').map(Number);
+  return a===0?`launched before ${b+1}`:`launched ${a}–${b}`;
+}
+function matchesYear(s,v){
+  if(!v)return true;
+  const y=s.year_num;
+  if(v==='unknown')return!y;
+  if(!y)return false;
+  if(v.startsWith('y:'))return y===Number(v.slice(2));
+  const [a,b]=v.slice(2).split('-').map(Number);
+  return y>=a&&y<=b;
+}
 function populateStateFilter(){
   const sel=document.getElementById("filter-state");
   const states=[...new Set(systems.map(s=>s.state).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
@@ -904,11 +948,11 @@ function matchesFilters(s){
   const q=document.getElementById('search').value.toLowerCase();
   const st=document.getElementById('filter-state').value,ty=document.getElementById('filter-type').value;
   const ge=document.getElementById('filter-geo').value,su=document.getElementById('filter-status').value;
-  const ve=document.getElementById('filter-vendor').value;
+  const ve=document.getElementById('filter-vendor').value,yr=document.getElementById('filter-year').value;
   const str=[s.name,s.operator,s.area,s.vendor,s.vendor_class,s.funding,s.notes,STATE_NAMES[s.state]||''].join(' ').toLowerCase();
   const sc=s.status_class||'';
   const statusOk=!su||(su==='Active'&&sc.startsWith('Active'))||(su==='Pilot'&&sc==='Pilot')||(su==='Ended'&&sc==='Pilot - Ended');
-  return(!q||str.includes(q))&&(!st||s.state===st)&&(!ty||s.type===ty)&&(!ge||s.geo_class===ge)&&statusOk&&(!ve||s.vendor_class===ve);
+  return(!q||str.includes(q))&&(!st||s.state===st)&&(!ty||s.type===ty)&&(!ge||s.geo_class===ge)&&statusOk&&(!ve||s.vendor_class===ve)&&matchesYear(s,yr);
 }
 function updateStats(){
   const v=systems.filter(matchesFilters);
@@ -916,10 +960,11 @@ function updateStats(){
   document.getElementById('stat-states').textContent=new Set(v.map(s=>s.state)).size;
   document.getElementById('stat-active').textContent=v.filter(s=>(s.status_class||'').startsWith('Active')).length;
   document.getElementById('stat-micro').textContent=v.filter(s=>s.type==='Microtransit').length;
+  document.getElementById('stat-dr').textContent=v.filter(s=>s.type==='Demand-Response').length;
 }
 function clearFilters(){
   document.getElementById('search').value='';
-  ['filter-state','filter-type','filter-geo','filter-status','filter-vendor'].forEach(id=>{document.getElementById(id).value='';});
+  ['filter-state','filter-type','filter-geo','filter-status','filter-vendor','filter-year'].forEach(id=>{document.getElementById(id).value='';});
   filterAll();
 }
 function buildFilterBlurb(){
@@ -929,9 +974,9 @@ function buildFilterBlurb(){
   const q=document.getElementById('search').value.trim();
   const st=document.getElementById('filter-state').value,ty=document.getElementById('filter-type').value;
   const ge=document.getElementById('filter-geo').value,su=document.getElementById('filter-status').value;
-  const ve=document.getElementById('filter-vendor').value;
-  if(clr)clr.classList.toggle('hidden',!q&&!st&&!ty&&!ge&&!su&&!ve);
-  if(!q&&!st&&!ty&&!ge&&!su&&!ve){
+  const ve=document.getElementById('filter-vendor').value,yr=document.getElementById('filter-year').value;
+  if(clr)clr.classList.toggle('hidden',!q&&!st&&!ty&&!ge&&!su&&!ve&&!yr);
+  if(!q&&!st&&!ty&&!ge&&!su&&!ve&&!yr){
     el.textContent=`All ${systems.length} systems nationwide`;
     return;
   }
@@ -945,6 +990,7 @@ function buildFilterBlurb(){
   else loc=' nationwide';
   let extra='';
   if(ve)extra+=`, using ${ve}`;
+  if(yr)extra+=`, ${yearFilterLabel(yr)}`;
   if(q)extra+=`, matching "${q}"`;
   el.textContent=`${subject}${loc}${extra}`;
 }
@@ -1154,6 +1200,17 @@ function filterAll(){
   if(count===0){const e=document.createElement('div');e.className='empty';e.innerHTML='<div class="empty-title">No systems match</div><p>Adjust your search or filters.</p>';document.getElementById('grid').appendChild(e);}
   updateStats();buildFilterBlurb();if(mapInitialized)updateMapMarkers();
 }
+function fillBoundaryCounts(manifest) {
+  const types = manifest.types || {};
+  document.querySelectorAll('.bt-count').forEach(td => {
+    const n = td.dataset.bt.split(',').reduce((a, k) => a + (types[k] || 0), 0);
+    td.textContent = n ? n : '—';
+  });
+  const covered = document.getElementById('bnd-covered');
+  if (covered && manifest.features) covered.textContent = `${manifest.features} of ${systems.length}`;
+  const flex = document.getElementById('bnd-flex');
+  if (flex && types.gtfs_flex) flex.textContent = String(types.gtfs_flex);
+}
 function bootstrap() {
   return Promise.all([
     fetch('data/systems.json', {cache:'no-cache'}).then(function(r){
@@ -1164,7 +1221,8 @@ function bootstrap() {
   ]).then(function(res){
     systems = res[0];
     BOUNDARY_INDEX = (res[1] && res[1].states) || [];
-    populateVendorFilter(); populateStateFilter(); renderCards(); updateStats(); buildFilterBlurb();
+    fillBoundaryCounts(res[1] || {});
+    populateVendorFilter(); populateStateFilter(); populateYearFilter(); renderCards(); updateStats(); buildFilterBlurb();
     document.getElementById('footer-stat').textContent = systems.length + ' systems across ' + new Set(systems.map(s=>s.state)).size + ' states';
     document.getElementById('count').textContent = systems.length;
   }).catch(function(err){

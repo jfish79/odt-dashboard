@@ -252,5 +252,21 @@
    "features": 5,
    "updated": "2026-09"
   }
- }
+ },
+ "types": {
+  "county": 131,
+  "counties": 52,
+  "zone_approx": 32,
+  "city": 217,
+  "places": 137,
+  "tribal": 17,
+  "buffered": 13,
+  "gtfs_flex": 9,
+  "cousubs": 28,
+  "cousub": 18,
+  "census_tracts": 2,
+  "neighborhood_npa": 2,
+  "places_constructed": 1
+ },
+ "features": 659
 }
