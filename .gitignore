@@ -27,3 +27,6 @@ Thumbs.db
 
 # Census boundary file download cache (scripts/boundaries/resolve.py)
 scripts/boundaries/cache/
+
+# Office lock files
+~$*
