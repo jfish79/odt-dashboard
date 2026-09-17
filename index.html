@@ -878,7 +878,7 @@ const SYMBOL_MODES = {
   geo:    { label:'Geographic Context',  key:s=>s.geo_class||'Unknown',     keyLabel:k=>k,                  colorByKey:k=>GEO_COLORS[k]||'#888' },
   vendor: { label:'Technology Vendor',   key:s=>s.vendor_class||'Not specified', keyLabel:k=>k,             colorByKey:k=>VENDOR_COLORS[k]||'#888' }
 };
-let mapSymbolMode = 'state';
+let mapSymbolMode = 'geo';   // default: Urban / Suburban / Rural / Mixed
 function symbolColor(s){ const m=SYMBOL_MODES[mapSymbolMode]; return m.colorByKey(m.key(s)); }
 
 let systems = [];
@@ -1042,7 +1042,8 @@ function buildLegend(){
   const counts = {};
   systems.forEach(s=>{ const k=mode.key(s); counts[k]=(counts[k]||0)+1; });
   let keys = Object.keys(counts);
-  keys.sort(mapSymbolMode==='state' ? (a,b)=>a.localeCompare(b) : (a,b)=>counts[b]-counts[a]);
+  const fixed = mapSymbolMode==='geo' ? GEO_ORDER : mapSymbolMode==='status' ? STATUS_ORDER : null;
+  keys.sort(fixed ? (a,b)=>fixed.indexOf(a)-fixed.indexOf(b) : mapSymbolMode==='state' ? (a,b)=>a.localeCompare(b) : (a,b)=>counts[b]-counts[a]);
   el.innerHTML = `<div class="map-legend-title">${mode.label}</div>`+
     keys.map(k=>`<div class="map-legend-item"><span class="legend-dot" style="background:${mode.colorByKey(k)}"></span>${mode.keyLabel(k)}<span style="color:var(--ink-faint);margin-left:auto">${counts[k]}</span></div>`).join('');
 }
@@ -1096,11 +1097,11 @@ function addSymbolControl(){
         <div class="map-symbol-control-body" id="map-legend-body">
           <div class="map-symbol-control-label">Symbolize by</div>
           <select>
-            <option value="state">State</option>
+            <option value="geo" selected>Geographic Context</option>
             <option value="type">System Type</option>
             <option value="status">Status</option>
-            <option value="geo">Geographic Context</option>
             <option value="vendor">Technology Vendor</option>
+            <option value="state">State</option>
           </select>
           <div class="map-control-divider"></div>
           <label class="map-layer-toggle"><input type="checkbox" id="toggle-markers" checked> Markers</label>
