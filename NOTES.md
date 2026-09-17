@@ -624,6 +624,18 @@ only the systemic/borderline items are listed here.
   per-state files once zoomed in), then load by viewport instead of by
   filter. A viewport-based loader alone (fetch files for states in view at
   zoom >= 6) is the cheaper interim step if simplification is not done.
+- **"Population served" metric (idea, 2026-09-17).** Estimate the population
+  inside each service-area polygon and surface it as a field, a card stat and
+  an analytics chart (systems by population served; population per vehicle
+  where fleet size is known). Suggested method: 2020 Census PL 94-171 block
+  populations (or ACS 5-year block groups) intersected with each polygon in
+  `scripts/boundaries/resolve.py`, area-weighted for partial blocks, written
+  into the GeoJSON feature properties and copied to `systems.json` by
+  build.py alongside the `boundary` field. Caveats to label: proxy polygons
+  over-count (a county polygon for a service that only reaches the county
+  seat), stated-size circles are shape-agnostic, and the six unmapped
+  multi-zone systems get no value. Report the number with the boundary
+  fidelity so an "approximate" polygon yields an "approximate" population.
 
 - **NCDOT toolkit check** — Virginia's DRPT publishes a program-evaluation
   document that covers multiple systems at once (see CLAUDE.md). NC already
