@@ -246,6 +246,17 @@ select:focus { border-color: var(--ink); }
 }
 .map-symbol-control select:focus { border-color: var(--ink); }
 .map-control-divider { height: 1px; background: var(--border); margin: 0.55rem 0; }
+.map-growth-control { width: 300px; padding: 0.55rem 0.75rem 0.6rem; }
+.map-growth-control .map-symbol-control-label { margin-bottom: 0.4rem; }
+.map-growth-row { display: flex; align-items: center; gap: 0.5rem; }
+.map-growth-play { width: 26px; height: 26px; flex-shrink: 0; border: 1px solid var(--border2); background: rgba(255,255,255,0.6); cursor: pointer; color: var(--ink); display: flex; align-items: center; justify-content: center; padding: 0; }
+.map-growth-play:hover { background: var(--bg2); }
+.map-growth-play:disabled { opacity: 0.4; cursor: default; }
+.map-growth-control input[type=range] { flex: 1; margin: 0; accent-color: var(--orange); cursor: pointer; }
+.map-growth-control input[type=range]:disabled { opacity: 0.4; cursor: default; }
+.map-growth-year { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); min-width: 52px; text-align: right; }
+.map-growth-label { font-family: var(--mono); font-size: 0.62rem; color: var(--ink-mid); margin-top: 0.35rem; line-height: 1.45; }
+.map-growth-label .undated { color: var(--ink-soft); }
 .map-layer-toggle { display: flex; align-items: center; gap: 0.4rem; font-family: var(--mono); font-size: 0.66rem; color: var(--ink-mid); margin-bottom: 0.35rem; cursor: pointer; user-select: none; }
 .map-layer-toggle:last-child { margin-bottom: 0; }
 .map-layer-toggle input { margin: 0; width: 12px; height: 12px; accent-color: var(--ink); cursor: pointer; flex-shrink: 0; }
@@ -1062,6 +1073,100 @@ function makeIcon(sys){
   const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="32" viewBox="0 0 24 32"><path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 20 12 20S24 21 24 12C24 5.37 18.63 0 12 0z" fill="${c}"/><circle cx="12" cy="12" r="4.5" fill="white" opacity="0.92"/></svg>`;
   return L.divIcon({html:svg,className:'',iconSize:[24,32],iconAnchor:[12,32],popupAnchor:[0,-34]});
 }
+function makeUndatedIcon(){
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="18" height="24" viewBox="0 0 24 32"><path d="M12 1.5C6.2 1.5 1.5 6.2 1.5 12c0 8.2 10.5 18.2 10.5 18.2S22.5 20.2 22.5 12C22.5 6.2 17.8 1.5 12 1.5z" fill="#f7f4ef" stroke="#9a9088" stroke-width="2.2"/><circle cx="12" cy="12" r="3.5" fill="#bdb6aa"/></svg>`;
+  return L.divIcon({html:svg,className:'',iconSize:[18,24],iconAnchor:[9,24],popupAnchor:[0,-26]});
+}
+
+/* ── GROWTH-OVER-TIME ANIMATION ──────────────────────────────────────────
+   A slider on the map reveals dated systems cumulatively by launch year.
+   Undated systems are shown as hollow gray pins from the first frame so the
+   map never looks emptier than the inventory. Far-right stop = inactive. */
+const GROWTH_START = 2016;         /* first individual stop; earlier launches fold into "≤2015" */
+const growth = { stops: [], idx: 0, timer: null, ctl: null };
+let undatedIcon = null;
+function growthBuildStops(){
+  const yrs = systems.map(s=>s.year_num).filter(Boolean);
+  const maxY = Math.max(GROWTH_START, ...(yrs.length?yrs:[GROWTH_START]));
+  growth.stops = [{label:'≤'+(GROWTH_START-1), cutoff:GROWTH_START-1}];
+  for(let y=GROWTH_START;y<=maxY;y++) growth.stops.push({label:String(y), cutoff:y});
+  growth.idx = growth.stops.length-1;
+}
+function growthActive(){ return growth.idx < growth.stops.length-1; }
+function growthCutoff(){ return growth.stops[growth.idx].cutoff; }
+function applyGrowth(){
+  if(!map) return;
+  const active = growthActive(), cutoff = growthCutoff();
+  if(!undatedIcon) undatedIcon = makeUndatedIcon();
+  let dated=0, undated=0;
+  markerLayers.forEach(m=>{
+    const s = systems[m._sysIdx];
+    let show = true, icon = null;
+    if(active){
+      if(!s.year_num){ undated++; icon = undatedIcon; }
+      else if(s.year_num <= cutoff){ dated++; icon = makeIcon(s); }
+      else show = false;
+    } else icon = makeIcon(s);
+    if(icon && m._iconKind !== (icon===undatedIcon?'undated':symbolColor(s))){ m.setIcon(icon); m._iconKind = icon===undatedIcon?'undated':symbolColor(s); }
+    if(show && markersVisible){ if(!map.hasLayer(m)) m.addTo(map); }
+    else if(map.hasLayer(m)) map.removeLayer(m);
+  });
+  growthUpdateUI(active, dated, undated);
+}
+function growthUpdateUI(active, dated, undated){
+  const c = growth.ctl; if(!c) return;
+  const yearFilterOn = !!document.getElementById('filter-year').value;
+  c.slider.disabled = yearFilterOn; c.play.disabled = yearFilterOn;
+  c.slider.value = growth.idx;
+  c.year.textContent = active ? growth.stops[growth.idx].label : 'All';
+  if(yearFilterOn){ c.label.innerHTML = 'Clear the <em>Launched</em> filter to animate growth.'; return; }
+  if(!active){
+    const n = markerLayers.length, u = markerLayers.filter(m=>!systems[m._sysIdx].year_num).length;
+    c.label.innerHTML = `All years · ${n} systems shown. Drag the slider or press play to replay growth by launch year <span class="undated">(${u} undated systems will show in gray)</span>.`;
+  } else {
+    c.label.innerHTML = `Through ${growth.stops[growth.idx].label} · <strong>${dated}</strong> dated systems · <span class="undated">${undated} undated shown in gray</span>`;
+  }
+  c.play.innerHTML = growth.timer ? PAUSE_SVG : PLAY_SVG;
+}
+const PLAY_SVG = '<svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>';
+const PAUSE_SVG = '<svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="3" width="5" height="18"/><rect x="14" y="3" width="5" height="18"/></svg>';
+function growthSet(idx){ growth.idx = Math.max(0, Math.min(growth.stops.length-1, idx)); applyGrowth(); }
+function growthPause(){ if(growth.timer){ clearInterval(growth.timer); growth.timer=null; } growthUpdateUI(growthActive(), null, null); if(growthActive()) applyGrowth(); }
+function growthPlay(){
+  if(growth.timer){ growthPause(); return; }
+  if(!growthActive()) growth.idx = 0;
+  applyGrowth();
+  growth.timer = setInterval(()=>{
+    growthSet(growth.idx+1);
+    if(growth.idx >= growth.stops.length-1) growthPause();   /* reached "All": stop immediately */
+  }, 900);
+  growthUpdateUI(true, null, null); applyGrowth();
+}
+function addGrowthControl(){
+  if(growth.ctl || !map) return;
+  growthBuildStops();
+  const Ctl = L.Control.extend({
+    options:{position:'bottomleft'},
+    onAdd:function(){
+      const div = L.DomUtil.create('div','map-symbol-control map-growth-control');
+      div.innerHTML = `<div class="map-symbol-control-label">Growth over time · launch year</div>
+        <div class="map-growth-row">
+          <button class="map-growth-play" title="Play / pause">${PLAY_SVG}</button>
+          <input type="range" min="0" max="${growth.stops.length-1}" value="${growth.stops.length-1}" step="1">
+          <span class="map-growth-year">All</span>
+        </div>
+        <div class="map-growth-label"></div>`;
+      L.DomEvent.disableClickPropagation(div); L.DomEvent.disableScrollPropagation(div);
+      const slider = div.querySelector('input'), play = div.querySelector('button');
+      slider.addEventListener('input', e=>{ if(growth.timer) growthPause(); growthSet(Number(e.target.value)); });
+      play.addEventListener('click', growthPlay);
+      growth.ctl = { div, slider, play, year: div.querySelector('.map-growth-year'), label: div.querySelector('.map-growth-label') };
+      return div;
+    }
+  });
+  new Ctl().addTo(map);
+}
+
 function buildPopup(s){
   const tc=s.type.replace(/[\s-]+/g,'-'),c=STATE_COLORS[s.state]||'#888';
   const note=s.notes&&s.notes!=='Not specified'?`<div class="popup-note">${s.notes}</div>`:''; const detailBtn=`<div style="margin-top:0.5rem"><button class="modal-open-btn" onclick="openDeepModal(${systems.indexOf(s)})" style="font-size:0.6rem;padding:0.25rem 0.55rem">Full details</button></div>`;
@@ -1106,17 +1211,21 @@ function updateMapMarkers(){
   let count=0;
   systems.forEach((s,i)=>{
     const m=L.marker([s.lat,s.lng],{icon:makeIcon(s)}).bindPopup(buildPopup(s),{maxWidth:280}).on('click',()=>highlightListItem(i));
+    m._sysIdx=i; m._iconKind=symbolColor(s);
     markers.push(m);
     const vis=matchesFilters(s),li=document.getElementById(`mli-${i}`);
     if(vis){if(markersVisible)m.addTo(map);markerLayers.push(m);if(li)li.classList.remove('hidden');count++;}
     else{if(li)li.classList.add('hidden');}
   });
   document.getElementById('map-count').textContent=count;
+  /* a filter change while the growth animation is playing pauses it; the new
+     marker set is then re-staged at the current slider position */
+  if(growth.timer) growthPause(); else if(growth.ctl) applyGrowth();
   if(markerLayers.length&&map)setTimeout(()=>{map.fitBounds(L.featureGroup(markerLayers).getBounds().pad(0.1));},50);
 }
 function setMarkersVisible(v){
   markersVisible=v;
-  if(v){markerLayers.forEach(m=>m.addTo(map));}
+  if(v){ if(growth.ctl) applyGrowth(); else markerLayers.forEach(m=>m.addTo(map)); }
   else{markerLayers.forEach(m=>map.removeLayer(m));}
 }
 function initMap(){
@@ -1127,7 +1236,7 @@ function initMap(){
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}',{
     maxZoom:19,maxNativeZoom:16,pane:'overlayPane'
   }).addTo(map);
-  addSymbolControl();buildLegend();buildMapList();updateMapMarkers();
+  addSymbolControl();addGrowthControl();buildLegend();buildMapList();updateMapMarkers();
 }
 let symbolControl=null;
 function addSymbolControl(){
