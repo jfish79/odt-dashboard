@@ -614,6 +614,17 @@ only the systemic/borderline items are listed here.
 
 ## Open threads
 
+- **Boundaries without the state filter (decided 2026-09-17: keep the
+  limitation for now).** Polygons draw only when a state is selected, mainly
+  because the per-state GeoJSON totals ~5.9 MB and Leaflet renders 659
+  full-resolution Census polygons as SVG paths, which would make national
+  pans sluggish. Preferred future direction: simplify polygons at build time
+  (Douglas-Peucker, ~100 m tolerance) and ideally serve **variable resolution
+  by zoom level** (e.g. a coarse national tier plus the full-resolution
+  per-state files once zoomed in), then load by viewport instead of by
+  filter. A viewport-based loader alone (fetch files for states in view at
+  zoom >= 6) is the cheaper interim step if simplification is not done.
+
 - **NCDOT toolkit check** — Virginia's DRPT publishes a program-evaluation
   document that covers multiple systems at once (see CLAUDE.md). NC already
   leads the dataset in system count, partly attributed to NCDOT programs
