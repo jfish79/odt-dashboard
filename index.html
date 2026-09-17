@@ -249,7 +249,7 @@ select:focus { border-color: var(--ink); }
 }
 .map-symbol-control select:focus { border-color: var(--ink); }
 .map-control-divider { height: 1px; background: var(--border); margin: 0.55rem 0; }
-.map-growth-control { width: 300px; padding: 0.55rem 0.75rem 0.6rem; }
+.map-growth-control { width: 300px; padding: 0.55rem 0.75rem 0.6rem; margin-top: 10px !important; }
 .map-growth-control .map-symbol-control-label { margin-bottom: 0.4rem; }
 .map-growth-row { display: flex; align-items: center; gap: 0.5rem; }
 .map-growth-play { width: 26px; height: 26px; flex-shrink: 0; border: 1px solid var(--border2); background: rgba(255,255,255,0.6); cursor: pointer; color: var(--ink); display: flex; align-items: center; justify-content: center; padding: 0; }
@@ -1033,7 +1033,13 @@ function setView(v){
   document.getElementById('btn-map').classList.toggle('active',v==='map');
   document.getElementById('btn-analytics').classList.toggle('active',v==='analytics');
   document.getElementById('btn-reference').classList.toggle('active',v==='reference');
-  if(v==='map'){if(!mapInitialized){initMap();mapInitialized=true;}else updateMapMarkers();setTimeout(()=>{if(map)map.invalidateSize();},50);}
+  if(v==='map'){
+    if(!mapInitialized){initMap();mapInitialized=true;}else updateMapMarkers();
+    setTimeout(()=>{if(map)map.invalidateSize();},50);
+    const tb=document.querySelector('.topbar'),mv=document.getElementById('map-view');
+    const top=mv.getBoundingClientRect().top+window.scrollY-(tb?tb.offsetHeight:0);
+    if(window.scrollY<top-4)window.scrollTo({top:top,behavior:'smooth'});
+  }
   if(v==='analytics'){requestAnimationFrame(()=>{if(!analyticsInitialized){initAnalytics();analyticsInitialized=true;}else refreshAnalytics();});}
 }
 
@@ -1165,7 +1171,7 @@ function addGrowthControl(){
   if(growth.ctl || !map) return;
   growthBuildStops();
   const Ctl = L.Control.extend({
-    options:{position:'bottomleft'},
+    options:{position:'topleft'},   /* under the zoom buttons, so it is visible without scrolling */
     onAdd:function(){
       const div = L.DomUtil.create('div','map-symbol-control map-growth-control');
       div.innerHTML = `<div class="map-symbol-control-label">Growth over time · launch year</div>
