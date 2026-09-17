@@ -1774,9 +1774,9 @@ function refreshAnalytics() {
   drawHBar('chart-vendor', d.vendors.map(([name]) => name), d.vendors.map(([, c]) => c), vColors);
   const vendorKnown = Object.values(d.vendorMap).reduce((a, b) => a + b, 0);
   const via = d.vendorMap['Via'] || 0;
-  setText('a-vendor-note', `${vendorKnown} of ${T} systems (${pct(vendorKnown, T)}%) have a known platform` +
-    (via ? `; Via accounts for ${pct(via, vendorKnown)}% of those.` : '.') +
-    ` The remaining ${T - vendorKnown} use phone dispatch or have not disclosed a vendor. Vendor names are normalized (e.g. "Spare Labs" → Spare).`);
+  setText('a-vendor-note', `${vendorKnown} of ${T} systems have a known platform` +
+    (via ? `; Via is the most frequently identified, on ${via} of them.` : '.') +
+    ` The remaining ${T - vendorKnown} use phone dispatch or have not disclosed a vendor, so these counts are not market shares. Vendor names are normalized (e.g. "Spare Labs" → Spare).`);
 
   /* 5. states (top 15) */
   const TOPN = 15;
