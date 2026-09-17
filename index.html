@@ -1130,6 +1130,7 @@ function applyGrowth(){
     else if(map.hasLayer(m)) map.removeLayer(m);
   });
   growthUpdateUI(active, dated, undated);
+  applyGrowthToBoundaries();
 }
 function growthUpdateUI(active, dated, undated){
   const c = growth.ctl; if(!c) return;
@@ -1943,6 +1944,45 @@ const BOUNDARY_COLORS = {
 
 let ncBoundaryLayer = null;
 let boundariesVisible = true;
+let boundaryState = null;       // state whose polygons are currently drawn
+let boundarySubLayers = [];     // every polygon layer, including ones hidden by the growth slider
+
+/* How the growth slider treats a polygon: 'normal', 'undated' (faint gray) or 'hidden'. */
+function boundaryGrowthState(feature) {
+  if (typeof growthActive !== 'function' || !growthActive()) return 'normal';
+  const sys = systems.find(function(s) { return s.name === feature.properties.name && s.state === boundaryState; });
+  if (!sys) return 'normal';
+  if (!sys.year_num) return 'undated';
+  return sys.year_num <= growthCutoff() ? 'normal' : 'hidden';
+}
+function boundaryStyle(feature) {
+  const g = boundaryGrowthState(feature);
+  if (g === 'undated') {
+    return { fillColor: '#bdb6aa', fillOpacity: 0.15, color: '#9a9088', weight: 1.5, opacity: 0.8, dashArray: '3,4' };
+  }
+  const bt = feature.properties.boundary_type;
+  const colors = BOUNDARY_COLORS[bt] || BOUNDARY_COLORS['zone_approx'];
+  const approx = feature.properties.fidelity === 'approximate';
+  return {
+    fillColor: colors.fill,
+    fillOpacity: 0.4,
+    color: colors.stroke,
+    weight: 2.5,
+    opacity: 0.9,
+    dashArray: colors.dash || (approx ? '6,4' : null)
+  };
+}
+/* Re-apply growth state to the drawn polygons: hide those launched after the
+   cutoff, restyle the rest. Called on every slider tick and after drawing. */
+function applyGrowthToBoundaries() {
+  if (!ncBoundaryLayer) return;
+  boundarySubLayers.forEach(function(layer) {
+    const g = boundaryGrowthState(layer.feature);
+    if (g === 'hidden') { if (ncBoundaryLayer.hasLayer(layer)) ncBoundaryLayer.removeLayer(layer); return; }
+    if (!ncBoundaryLayer.hasLayer(layer)) ncBoundaryLayer.addLayer(layer);
+    layer.setStyle(boundaryStyle(layer.feature));
+  });
+}
 
 function setBoundariesVisible(v) {
   boundariesVisible = v;
@@ -1965,21 +2005,12 @@ function showStateBoundaries(state) {
   var ncBoundaries = BOUNDARY_CACHE[state];
   if (!ncBoundaries) return;
 
+  boundaryState = state;
+  boundarySubLayers = [];
   ncBoundaryLayer = L.geoJSON(ncBoundaries, {
-    style: function(feature) {
-      const bt = feature.properties.boundary_type;
-      const colors = BOUNDARY_COLORS[bt] || BOUNDARY_COLORS['zone_approx'];
-      const approx = feature.properties.fidelity === 'approximate';
-      return {
-        fillColor: colors.fill,
-        fillOpacity: 0.4,
-        color: colors.stroke,
-        weight: 2.5,
-        opacity: 0.9,
-        dashArray: colors.dash || (approx ? '6,4' : null)
-      };
-    },
+    style: boundaryStyle,
     onEachFeature: function(feature, layer) {
+      boundarySubLayers.push(layer);
       const p = feature.properties;
       const bt = BOUNDARY_COLORS[p.boundary_type] || BOUNDARY_COLORS['zone_approx'];
       const sys = systems.find(function(s) { return s.name === p.name && s.state === state; });
@@ -2015,10 +2046,11 @@ function showStateBoundaries(state) {
       popup += '</div>';
       layer.bindPopup(popup, {maxWidth: 280});
       
-      layer.on('mouseover', function() { this.setStyle({fillOpacity: 0.6, weight: 3.5}); });
+      layer.on('mouseover', function() { const st = boundaryStyle(this.feature); this.setStyle({fillOpacity: st.fillOpacity + 0.2, weight: st.weight + 1}); });
       layer.on('mouseout', function() { ncBoundaryLayer.resetStyle(this); });
     }
   }).addTo(map);
+  applyGrowthToBoundaries();
 
   // Add boundary legend into the combined map control panel
   var legendEl = document.getElementById('boundary-legend-content');
@@ -2039,6 +2071,7 @@ function showStateBoundaries(state) {
 
 function hideStateBoundaries() {
   if (ncBoundaryLayer && map) { map.removeLayer(ncBoundaryLayer); ncBoundaryLayer = null; }
+  boundarySubLayers = []; boundaryState = null;
   var el = document.getElementById('boundary-legend-content');
   if (el) el.innerHTML = '';
 }
