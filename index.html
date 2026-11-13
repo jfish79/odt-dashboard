@@ -1365,6 +1365,7 @@ function bootstrap() {
     var allSt = new Set(systems.map(s=>s.state)), allDC = allSt.has('DC');
     document.getElementById('footer-stat').textContent = systems.length + ' systems across ' + (allSt.size - (allDC?1:0)) + ' states' + (allDC ? ' + DC' : '');
     document.getElementById('count').textContent = systems.length;
+    openSystemFromHash();
   }).catch(function(err){
     document.body.innerHTML = '<div style=\"font-family:sans-serif;max-width:560px;margin:4rem auto;padding:0 1.5rem;color:#2c2820\">' +
       '<h1 style=\"font-weight:400\">Could not load data</h1>' +
@@ -1907,6 +1908,8 @@ async function drawStateBoundary(stateAbbr) {
     // Fit to state bounds with markers still visible
     const group = L.featureGroup([stateBoundaryLayer, ...markerLayers]);
     map.fitBounds(group.getBounds().pad(0.08));
+    // A #system= deep link zoomed in before this outline arrived; restore it.
+    if (pendingFocus && pendingFocus.st === stateAbbr) applyPendingFocus();
   } catch(err) { console.warn('State boundary fetch failed:', err); }
 }
 
@@ -2103,6 +2106,43 @@ filterAll = function() {
     }
   }
 };
+
+/* Deep link: index.html#system=ST/Name opens the map filtered to that one
+   system and zooms to its service-area polygon (or its pin if it has none).
+   The colleague review sheet (scripts/validation/export.py) links here. */
+function openSystemFromHash() {
+  var m = /^#system=([A-Z]{2})\/(.+)$/.exec(location.hash);
+  if (!m) return;
+  var st = m[1], name = decodeURIComponent(m[2]);
+  var i = systems.findIndex(function(s) { return s.state === st && s.name === name; });
+  if (i < 0) return;
+  document.getElementById('filter-state').value = st;
+  document.getElementById('search').value = name;
+  setView('map');
+  filterAll();
+  // The state's polygons load asynchronously, so poll until they're drawn
+  // (about 5 seconds at most). The state outline also loads asynchronously
+  // and refits the map when it arrives; drawStateBoundary re-applies
+  // pendingFocus after that refit, so the zoom sticks whichever lands last.
+  pendingFocus = { st: st, name: name, i: i };
+  setTimeout(function() { pendingFocus = null; }, 10000);
+  var tries = 0;
+  (function zoom() {
+    tries++;
+    var drawn = boundaryState === st || BOUNDARY_INDEX.indexOf(st) === -1;
+    if (drawn || tries >= 35) { applyPendingFocus(); return; }
+    setTimeout(zoom, 150);
+  })();
+}
+var pendingFocus = null;
+function applyPendingFocus() {
+  if (!pendingFocus || !map) return;
+  var f = pendingFocus;
+  var layer = boundarySubLayers.find(function(l) { return l.feature.properties.name === f.name; });
+  if (layer) { map.fitBounds(layer.getBounds().pad(0.15)); layer.openPopup(); }
+  else if (markers[f.i]) focusMarker(f.i);
+}
+window.addEventListener('hashchange', openSystemFromHash);
 
 </script>
 </body>

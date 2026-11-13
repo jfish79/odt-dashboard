@@ -1,5 +1,22 @@
 # Notes — pending items, open threads
 
+## Colleague validation round (started 2026-11-13)
+
+Shared Google Sheet "ODT Inventory Review" (owner joe.fish.a@gmail.com,
+https://docs.google.com/spreadsheets/d/18Lkk3Nn78Y4wyfLPUUJu0LLToBL2p_AP24_KictvCwI/edit),
+built by `scripts/validation/export.py` from commit 1bd7c75. One tab per
+state; reviewers check scope (operating / general public / same-day),
+eight core fields (Name, Operator, Vendor, Booking, Scheduling Window, Status,
+Fare, Website) and the service-area boundary, with free-text Notes for
+anything else. Each row's "Open map" link uses the dashboard's
+`#system=ST/Name` deep link. Boundary findings with an agency map URL are
+the input for redrawing the ~241 approximate/missing polygons. When rows come back:
+File > Download > .xlsx, then `python3 scripts/validation/ingest.py <file>`
+→ `validation/results/` (gitignored). Ingest proposes, it doesn't edit the
+CSV: apply each change by hand and log it in concerns.csv with the reviewer's
+source. Rows edited in the CSV after export show up flagged "CSV value
+changed since export". Rows renamed after export won't match by name.
+
 ## Service-area boundary pipeline (started 2026-09-09)
 
 Goal: a boundary polygon for every row, NC-style, in `data/boundaries/{ST}.geojson`.

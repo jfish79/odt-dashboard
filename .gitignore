@@ -30,3 +30,6 @@ scripts/boundaries/cache/
 
 # Office lock files
 ~$*
+
+# Validation workbooks and ingest results (generated; returned copies carry reviewer names)
+/validation/
