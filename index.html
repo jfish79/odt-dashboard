@@ -1260,6 +1260,13 @@ function setMarkersVisible(v){
 }
 function initMap(){
   map=L.map('map').setView([38,-96],4);
+  // Highlight the service-area polygon of whichever system's popup is open (polygon or pin).
+  map.on('popupopen',function(e){
+    const src=e.popup._source;
+    const name=src&&src.feature?src.feature.properties.name:(src&&src._sysIdx!=null?systems[src._sysIdx].name:null);
+    setSelectedBoundary(name);
+  });
+  map.on('popupclose',function(){setSelectedBoundary(null);});
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',{
     attribution:'Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors, and the GIS community',maxZoom:19,maxNativeZoom:16
   }).addTo(map);
@@ -1969,7 +1976,22 @@ function boundaryGrowthState(feature) {
   if (!sys.year_num) return 'undated';
   return sys.year_num <= growthCutoff() ? 'normal' : 'hidden';
 }
+/* Which system's polygon to emphasize: the one whose popup is open (polygon or
+   pin). Systems outside the current filters/search are drawn as faint context
+   outlines, so a deep link or a name search makes the one system stand out
+   from same-colored neighbors (e.g. adjacent county systems). */
+let selectedBoundaryName = null;
+function boundaryInFilter(feature) {
+  const sys = systems.find(function(s) { return s.name === feature.properties.name && s.state === boundaryState; });
+  return !sys || matchesFilters(sys);
+}
 function boundaryStyle(feature) {
+  if (selectedBoundaryName && feature.properties.name === selectedBoundaryName) {
+    return { fillColor: '#f2b705', fillOpacity: 0.35, color: '#1a1a1a', weight: 4, opacity: 1, dashArray: null };
+  }
+  if (!boundaryInFilter(feature)) {
+    return { fillColor: '#9a9088', fillOpacity: 0.04, color: '#9a9088', weight: 1, opacity: 0.6, dashArray: '2,4' };
+  }
   const g = boundaryGrowthState(feature);
   if (g === 'undated') {
     return { fillColor: '#bdb6aa', fillOpacity: 0.15, color: '#9a9088', weight: 1.5, opacity: 0.8, dashArray: '3,4' };
@@ -1996,6 +2018,14 @@ function applyGrowthToBoundaries() {
     if (!ncBoundaryLayer.hasLayer(layer)) ncBoundaryLayer.addLayer(layer);
     layer.setStyle(boundaryStyle(layer.feature));
   });
+  // Stack order: context outlines at the bottom, in-filter polygons above, the selected one on top.
+  boundarySubLayers.forEach(function(l) { if (ncBoundaryLayer.hasLayer(l) && boundaryInFilter(l.feature)) l.bringToFront(); });
+  boundarySubLayers.forEach(function(l) { if (ncBoundaryLayer.hasLayer(l) && l.feature.properties.name === selectedBoundaryName) l.bringToFront(); });
+}
+function setSelectedBoundary(name) {
+  if (name === selectedBoundaryName) return;
+  selectedBoundaryName = name;
+  applyGrowthToBoundaries();
 }
 
 function setBoundariesVisible(v) {
@@ -2079,6 +2109,10 @@ function showStateBoundaries(state) {
         legendHTML += '<div class="map-legend-item"><span style="width:14px;height:10px;flex-shrink:0;background:'+c.fill+';opacity:0.6;border:1.5px '+(c.dash?'dashed':'solid')+' '+c.stroke+'"></span>'+c.label+'</div>';
       }
     });
+    if (ncBoundaries.features.some(function(f) { return !boundaryInFilter(f); })) {
+      legendHTML += '<div class="map-legend-item"><span style="width:14px;height:10px;flex-shrink:0;border:1px dashed #9a9088"></span>Other systems (outside filter)</div>';
+    }
+    legendHTML += '<div class="map-legend-item"><span style="width:14px;height:10px;flex-shrink:0;background:rgba(242,183,5,0.5);border:2px solid #1a1a1a"></span>Selected system</div>';
     legendEl.innerHTML = legendHTML;
   }
 }
@@ -2119,6 +2153,9 @@ function openSystemFromHash() {
   document.getElementById('filter-state').value = st;
   document.getElementById('search').value = name;
   setView('map');
+  // Drop the polygons already drawn so the poll below waits for the redraw
+  // (otherwise the popup opens on a layer that's about to be replaced).
+  hideStateBoundaries();
   filterAll();
   // The state's polygons load asynchronously, so poll until they're drawn
   // (about 5 seconds at most). The state outline also loads asynchronously
@@ -2137,6 +2174,9 @@ function openSystemFromHash() {
 var pendingFocus = null;
 function applyPendingFocus() {
   if (!pendingFocus || !map) return;
+  // Leaflet drops a zoom requested mid-animation (e.g. the fit-to-pins zoom
+  // after a filter change), so wait for any running zoom to finish first.
+  if (map._animatingZoom) { map.once('zoomend', applyPendingFocus); return; }
   var f = pendingFocus;
   var layer = boundarySubLayers.find(function(l) { return l.feature.properties.name === f.name; });
   if (layer) { map.fitBounds(layer.getBounds().pad(0.15)); layer.openPopup(); }
