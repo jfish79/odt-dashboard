@@ -332,6 +332,33 @@ select:focus { border-color: var(--ink); }
   .chart-full { grid-column: 1; }
   .donut-wrap { flex-direction: column; }
 }
+/* ── VALIDATION VIEW ── */
+#validation-view { padding: 2rem 3rem; max-width: 1100px; }
+.val-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.75rem; }
+.val-tile { background: var(--surface); border: 1px solid var(--border); padding: 0.85rem 1rem; }
+.val-tile-num { font-family: var(--serif); font-size: 1.6rem; color: var(--ink); line-height: 1.1; }
+.val-tile-num small { font-size: 0.85rem; color: var(--ink-soft); }
+.val-tile-label { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); margin-top: 0.3rem; }
+.val-tile-sub { font-family: var(--sans); font-size: 0.72rem; color: var(--ink-mid); margin-top: 0.35rem; line-height: 1.45; }
+.val-bar { display: flex; gap: 2px; height: 12px; min-width: 140px; background: var(--bg2); }
+.val-bar span { display: block; height: 100%; }
+.val-bar span:first-child { border-radius: 2px 0 0 2px; } .val-bar span:last-child { border-radius: 0 2px 2px 0; }
+.val-legend { display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem; margin: 0 0 0.75rem; }
+.val-legend .dl-item { font-size: 0.66rem; }
+.val-table td.num, .val-table th.num { text-align: right; white-space: nowrap; }
+.val-table td.zero { color: var(--ink-faint); }
+.val-pill { display: inline-block; font-family: var(--mono); font-size: 0.6rem; padding: 0.08rem 0.4rem; border: 1px solid var(--border2); background: var(--bg); color: var(--ink-mid); white-space: nowrap; }
+.val-pill.open { border-color: var(--gold); color: #7a5e1a; }
+.val-pill.done { border-color: var(--green); color: var(--green); }
+.val-link { background: none; border: none; padding: 0; font: inherit; color: var(--blue); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; text-align: left; }
+.val-finding { background: var(--surface); border: 1px solid var(--border); padding: 0.8rem 1rem; margin-bottom: 0.6rem; }
+.val-finding-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem; margin-bottom: 0.35rem; font-family: var(--serif); font-size: 0.98rem; }
+.val-finding-meta { font-family: var(--mono); font-size: 0.62rem; color: var(--ink-soft); }
+.val-finding p { font-family: var(--sans); font-size: 0.8rem; color: var(--ink-mid); line-height: 1.55; margin: 0.25rem 0 0; }
+.val-finding a, .val-table a { color: var(--blue); word-break: break-all; }
+.val-toggle { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-mid); display: inline-flex; gap: 0.4rem; align-items: center; margin-top: 0.75rem; cursor: pointer; }
+@media (max-width: 760px) { #validation-view { padding: 1rem; } }
+
 /* ── REFERENCE VIEW ── */
 #reference-view { padding: 2rem 3rem; max-width: 900px; }
 .ref-body { display: flex; flex-direction: column; gap: 2.5rem; }
@@ -449,6 +476,10 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
     <button class="view-btn" id="btn-analytics" onclick="setView('analytics')">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
       Analytics
+    </button>
+    <button class="view-btn" id="btn-validation" onclick="setView('validation')">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      Validation
     </button>
     <button class="view-btn" id="btn-reference" onclick="setView('reference')">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
@@ -621,6 +652,10 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
 
   </div>
 </div>
+</div>
+
+<div id="validation-view" style="display:none">
+  <div class="ref-body" id="validation-body"><p class="ref-prose">Loading validation results…</p></div>
 </div>
 
 <div id="reference-view" style="display:none">
@@ -1033,6 +1068,9 @@ function setView(v){
   document.getElementById('map-view').style.display=v==='map'?'flex':'none';
   document.getElementById('analytics-view').style.display=v==='analytics'?'block':'none';
   document.getElementById('reference-view').style.display=v==='reference'?'block':'none';
+  document.getElementById('validation-view').style.display=v==='validation'?'block':'none';
+  document.getElementById('btn-validation').classList.toggle('active',v==='validation');
+  if(v==='validation') initValidation();
   document.getElementById('btn-cards').classList.toggle('active',v==='cards');
   document.getElementById('btn-map').classList.toggle('active',v==='map');
   document.getElementById('btn-analytics').classList.toggle('active',v==='analytics');
@@ -2183,6 +2221,171 @@ function applyPendingFocus() {
   else if (markers[f.i]) focusMarker(f.i);
 }
 window.addEventListener('hashchange', openSystemFromHash);
+
+/* ═══════════════════════════════════════════════════════════════
+   VALIDATION VIEW
+   Reads data/validation.json, written by scripts/validation/ingest.py from
+   the colleague review workbook. No reviewer names in it: each review is
+   "independent" or "project" (the research team checking its own rows).
+═══════════════════════════════════════════════════════════════ */
+let VAL = null, valLoaded = false, valInclProject = true;
+/* Outcome of one field check. Order is the bar's stacking order. */
+const VAL_OUTCOMES = [
+  { key:'confirmed',    short:'Confirmed', label:'Confirmed',               color:'#3d6b4f', desc:'Reviewer found the value correct as shown.' },
+  { key:'gap',          short:'Added', label:'Added missing info',      color:'#2e5e8a', desc:'We had "Not specified"; the reviewer found the value.' },
+  { key:'refined',      short:'Refined', label:'Refined or reworded',     color:'#b08a30', desc:'Ours was right but incomplete, or a wording change.' },
+  { key:'error',        short:'Wrong', label:'Wrong value',             color:'#c05c2a', desc:'The dashboard value was incorrect.' },
+  { key:'unclassified', short:'To classify', label:'Correction, not yet classified', color:'#6a4a90', desc:'Reviewer changed the value; still to be sorted into a type.' },
+  { key:'cant',         short:'Unverified', label:"Couldn't verify",         color:'#bdb6aa', desc:'Not confirmable from public sources.' },
+];
+const VAL_TYPE_TO_OUTCOME = { gap:'gap', refinement:'refined', cosmetic:'refined', not_error:'refined', error:'error', unclassified:'unclassified' };
+const VAL_STATUS = { open:'Open', applied:'Applied to inventory', declined:'Declined', removed:'Removed from inventory', kept:'Kept in inventory', resolved:'Resolved' };
+const VAL_BOUNDARY_TYPE = { method_question:'Method question', proxy_ok:'Proxy accepted', redraw:'Needs redraw', needs_agency_map:'Needs agency map' };
+const VAL_TYPE_LABEL = { gap:'Added missing info', refinement:'Refined', cosmetic:'Reworded', not_error:'Not an error', error:'Wrong value', unclassified:'Not yet classified' };
+
+function valEsc(t){ return String(t==null?'':t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function valSys(f){
+  const i = systems.findIndex(s => s.state === f.state && s.name === f.name);
+  return i < 0 ? `${valEsc(f.name)} <span class="val-finding-meta">(no longer in inventory under this name)</span>`
+               : `<button class="val-link" onclick="openDeepModal(${i},event)">${valEsc(f.name)}</button>`;
+}
+function valPill(status){
+  const cls = status === 'open' ? 'open' : (status ? 'done' : '');
+  return `<span class="val-pill ${cls}">${valEsc(VAL_STATUS[status] || status || '')}</span>`;
+}
+function valSources(f){
+  if (!f.sources || !f.sources.length) return '<span class="val-finding-meta">No source given</span>';
+  return f.sources.map(u => `<a href="${valEsc(u)}" target="_blank" rel="noopener">${valEsc(u.replace(/^https?:\/\/(www\.)?/,''))}</a>`).join('<br>');
+}
+function valBar(counts, max){
+  if (!max) return '<div class="val-bar"></div>';
+  return '<div class="val-bar">' + VAL_OUTCOMES.filter(o => counts[o.key]).map(o =>
+    `<span style="width:${(counts[o.key]/max*100).toFixed(2)}%;background:${o.color}" title="${valEsc(o.label)}: ${counts[o.key]}"></span>`).join('') + '</div>';
+}
+
+function initValidation(){
+  if (valLoaded) return;
+  valLoaded = true;
+  fetch('data/validation.json', {cache:'no-cache'})
+    .then(r => r.ok ? r.json() : null).catch(() => null)
+    .then(d => { VAL = d; renderValidation(); });
+}
+
+function renderValidation(){
+  const el = document.getElementById('validation-body');
+  if (!VAL) { el.innerHTML = '<p class="ref-prose">No validation results have been published yet.</p>'; return; }
+  const d = VAL, keep = x => valInclProject || x.by === 'independent';
+  const reviews = d.reviews.filter(keep), findings = d.findings.filter(keep);
+  const nProj = d.reviews.filter(r => r.by === 'project').length;
+  const nInd = d.reviews.length - nProj;
+  const fieldFinding = {};
+  findings.filter(f => f.kind === 'field').forEach(f => { fieldFinding[f.state+'|'+f.name+'|'+f.field] = f; });
+
+  // Field outcomes
+  const perField = d.fields.map(field => {
+    const c = { confirmed:0, gap:0, refined:0, error:0, unclassified:0, cant:0, blank:0 };
+    reviews.forEach(r => {
+      const v = r.checks[field] || '';
+      if (v === 'Confirmed') c.confirmed++;
+      else if (v === 'Corrected') { const f = fieldFinding[r.state+'|'+r.name+'|'+field]; c[VAL_TYPE_TO_OUTCOME[f ? f.type : 'unclassified'] || 'unclassified']++; }
+      else if (v) c.cant++;
+      else c.blank++;
+    });
+    c.checked = reviews.length - c.blank;
+    return { field, c };
+  });
+  const tot = { confirmed:0, gap:0, refined:0, error:0, unclassified:0, cant:0, checked:0 };
+  perField.forEach(p => Object.keys(tot).forEach(k => tot[k] += p.c[k]));
+  const verifiable = tot.checked - tot.cant;
+  const shown = VAL_OUTCOMES.filter(o => o.key !== 'unclassified' || tot.unclassified);
+
+  // Scope and boundary tallies
+  const scopeTally = d.scope_questions.map(q => {
+    const t = { Yes:0, No:0, Unsure:0, '':0 };
+    reviews.forEach(r => { const a = r.scope[q] || ''; t[a in t ? a : ''] = (t[a in t ? a : ''] || 0) + 1; });
+    return { q, t };
+  });
+  const scopeF = findings.filter(f => f.kind === 'scope');
+  const scopeOpen = scopeF.filter(f => f.status === 'open').length;
+  const scopeRemoved = scopeF.filter(f => f.status === 'removed').length;
+  const B = ['Matches','Partly matches',"Doesn't match",'No agency map found'];
+  const bt = {}; B.forEach(k => bt[k] = 0); let bBlank = 0;
+  reviews.forEach(r => { if (r.boundary && r.boundary in bt) bt[r.boundary]++; else bBlank++; });
+  const bAnswered = reviews.length - bBlank;
+  const boundF = findings.filter(f => f.kind === 'boundary');
+
+  const states = {};
+  reviews.forEach(r => { states[r.state] = (states[r.state] || 0) + 1; });
+  const stList = Object.keys(states).sort();
+  const asOf = new Date(d.read + 'T12:00:00').toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'});
+  const pct = n => (n / d.total_systems * 100).toFixed(1);
+  const plural = (n, w, ws) => n + ' ' + (n === 1 ? w : (ws || w + 's'));
+
+  let h = '';
+  // ── Summary
+  h += `<div class="ref-section"><div class="ref-section-label">Validation · results as of ${asOf}</div>
+    <p class="ref-prose">Colleagues are spot-checking the inventory against agency sources: whether each system is in scope, eight core fields, and the mapped service area. <strong>${d.reviews.length} of ${d.total_systems} systems</strong> (${pct(d.reviews.length)}%) have been reviewed so far, in ${plural(Object.keys(d.reviews.reduce((a,r)=>(a[r.state]=1,a),{})).length,'state')}: ${nInd} by ${(d.reviewers.independent||0)===1?'one independent reviewer':(d.reviewers.independent||0)+' independent reviewers'}${nProj?` and ${nProj} by the project team`:''}. Reviewers work down a state's list, so this is not a random sample; the counts describe the systems checked, not the inventory as a whole.</p>
+    ${nProj ? `<label class="val-toggle"><input type="checkbox" id="val-incl-project" ${valInclProject?'checked':''} onchange="valInclProject=this.checked;renderValidation()"> Include the project team's own reviews (${nProj})</label>` : ''}
+    <div class="val-tiles" style="margin-top:1rem">
+      <div class="val-tile"><div class="val-tile-num">${reviews.length} <small>of ${d.total_systems}</small></div><div class="val-tile-label">Systems reviewed</div><div class="val-tile-sub">${plural(stList.length,'state')}: ${stList.join(', ') || 'none yet'}</div></div>
+      <div class="val-tile"><div class="val-tile-num">${tot.confirmed} <small>of ${verifiable}</small></div><div class="val-tile-label">Field values confirmed</div><div class="val-tile-sub">of the checked values a reviewer could verify</div></div>
+      <div class="val-tile"><div class="val-tile-num">${tot.error}</div><div class="val-tile-label">Wrong values found</div><div class="val-tile-sub">${tot.gap} added missing info · ${tot.refined} refined or reworded${tot.unclassified?` · ${tot.unclassified} not yet classified`:''}</div></div>
+      <div class="val-tile"><div class="val-tile-num">${scopeF.length}</div><div class="val-tile-label">Scope questions</div><div class="val-tile-sub">${scopeF.length ? `${plural(scopeF.length,'system')} may be out of scope · ${scopeOpen} open${scopeRemoved?` · ${scopeRemoved} removed`:''}` : 'no system flagged as out of scope'}</div></div>
+      <div class="val-tile"><div class="val-tile-num">${bt['Matches']} <small>of ${bAnswered}</small></div><div class="val-tile-label">Boundaries match</div><div class="val-tile-sub">${bt['Partly matches']} partly · ${bt["Doesn't match"]} don't · ${bt['No agency map found']} no agency map</div></div>
+      <div class="val-tile"><div class="val-tile-num">${tot.cant}</div><div class="val-tile-label">Couldn't verify</div><div class="val-tile-sub">field values not confirmable from public sources</div></div>
+    </div></div>`;
+
+  // ── Field checks
+  h += `<div class="ref-section"><div class="ref-section-label">Field checks</div>
+    <div class="val-legend">${VAL_OUTCOMES.map(o => `<div class="dl-item" title="${valEsc(o.desc)}"><span class="dl-swatch" style="background:${o.color}"></span>${o.label}</div>`).join('')}</div>
+    <div class="ref-table-wrap"><table class="ref-table val-table"><thead><tr><th>Field</th><th style="width:26%">Outcome</th><th class="num">Checked</th>${shown.map(o=>`<th class="num" title="${valEsc(o.label)}">${o.short}</th>`).join('')}</tr></thead><tbody>
+    ${perField.map(p => `<tr><td>${valEsc(p.field)}</td><td>${valBar(p.c, reviews.length)}</td><td class="num">${p.c.checked}</td>${shown.map(o=>`<td class="num ${p.c[o.key]?'':'zero'}">${p.c[o.key]}</td>`).join('')}</tr>`).join('')}
+    </tbody></table></div>
+    <p class="ref-prose" style="margin-top:0.6rem;font-size:0.75rem">Bars are scaled to the ${plural(reviews.length,'reviewed system')}; the empty part of a bar is reviews that left the field blank. Corrections are typed automatically where we had "Not specified" (added missing info) or the reviewer kept our value and added to it (refined); the rest are classified by hand in <code>scripts/validation/tags.csv</code>.</p></div>`;
+
+  // ── Field corrections log
+  const fieldF = findings.filter(f => f.kind === 'field');
+  h += `<div class="ref-section"><div class="ref-section-label">Proposed corrections (${fieldF.length})</div>`;
+  h += fieldF.length ? `<div class="ref-table-wrap"><table class="ref-table val-table"><thead><tr><th>System</th><th>Field</th><th>On dashboard</th><th>Reviewer's value</th><th>Type</th><th>Status</th><th>Source</th></tr></thead><tbody>
+    ${fieldF.map(f => `<tr><td>${valSys(f)}<div class="val-finding-meta">${f.state}${f.by==='project'?' · project team':''}</div></td><td>${valEsc(f.field)}</td><td>${valEsc(f.from)}</td><td>${valEsc(f.to)}</td><td>${valEsc(VAL_TYPE_LABEL[f.type]||f.type)}</td><td>${valPill(f.status)}</td><td>${valSources(f)}</td></tr>`).join('')}
+    </tbody></table></div>` : '<p class="ref-prose">None yet.</p>';
+  h += '</div>';
+
+  // ── Scope
+  h += `<div class="ref-section"><div class="ref-section-label">Scope</div>
+    <div class="ref-table-wrap"><table class="ref-table val-table"><thead><tr><th>Question</th><th class="num">Yes</th><th class="num">No</th><th class="num">Unsure</th><th class="num">Not answered</th></tr></thead><tbody>
+    ${scopeTally.map(s => `<tr><td>${valEsc(s.q)}</td>${['Yes','No','Unsure',''].map(k=>`<td class="num ${s.t[k]?'':'zero'}">${s.t[k]}</td>`).join('')}</tr>`).join('')}
+    </tbody></table></div>
+    <p class="ref-prose" style="margin:0.8rem 0 0.6rem">A "No" on any question means the system may fall outside the <button class="val-link" onclick="setView('reference')">scope rules</button>; "Unsure" means the reviewer couldn't tell. Each one is checked against a primary source before a row is removed.</p>
+    ${scopeF.map(f => `<div class="val-finding"><div class="val-finding-head">${valSys(f)} ${valPill(f.status)}</div>
+      <div class="val-finding-meta">${f.state} · ${d.scope_questions.map(q => valEsc(q.replace('?',''))+': <strong>'+valEsc(f.answers[q]||'—')+'</strong>').join(' · ')}</div>
+      ${f.notes?`<p>${valEsc(f.notes)}</p>`:''}${f.call?`<p><em>${valEsc(f.call)}</em></p>`:''}
+      <p>${valSources(f)}</p></div>`).join('')}</div>`;
+
+  // ── Boundaries
+  h += `<div class="ref-section"><div class="ref-section-label">Service-area boundaries</div>
+    <div class="ref-table-wrap"><table class="ref-table val-table"><thead><tr>${B.map(k=>`<th class="num">${k}</th>`).join('')}<th class="num">Not answered</th></tr></thead><tbody>
+    <tr>${B.map(k=>`<td class="num ${bt[k]?'':'zero'}">${bt[k]}</td>`).join('')}<td class="num ${bBlank?'':'zero'}">${bBlank}</td></tr></tbody></table></div>
+    <p class="ref-prose" style="margin:0.8rem 0 0.6rem">Most polygons are Census boundaries standing in for the agency's zone (see the Reference tab). Agency maps that reviewers find are used to redraw the approximate ones.</p>
+    ${boundF.map(f => `<div class="val-finding"><div class="val-finding-head">${valSys(f)} ${f.check?`<span class="val-pill">${valEsc(f.check)}</span>`:''} ${f.type?`<span class="val-pill">${valEsc(VAL_BOUNDARY_TYPE[f.type]||f.type)}</span>`:''} ${valPill(f.status)}</div>
+      <div class="val-finding-meta">${f.state} · On dashboard: ${valEsc(f.on_dashboard)}</div>
+      ${f.difference?`<p><strong>What's different:</strong> ${valEsc(f.difference)}</p>`:''}${f.agency_map?`<p><strong>Agency map:</strong> <a href="${valEsc(f.agency_map)}" target="_blank" rel="noopener">${valEsc(f.agency_map)}</a></p>`:''}
+      ${f.notes?`<p>${valEsc(f.notes)}</p>`:''}${f.call?`<p><em>${valEsc(f.call)}</em></p>`:''}</div>`).join('')}</div>`;
+
+  // ── Progress by state
+  const allStates = Object.keys(d.states).sort();
+  h += `<div class="ref-section"><div class="ref-section-label">Progress by state</div>
+    ${stList.length ? `<div class="ref-table-wrap"><table class="ref-table val-table"><thead><tr><th>State</th><th style="width:45%">Reviewed</th><th class="num">Systems</th></tr></thead><tbody>
+    ${stList.map(st => `<tr><td>${valEsc(STATE_NAMES[st]||st)}</td><td><div class="val-bar" title="${states[st]} of ${d.states[st]} reviewed"><span style="width:${(states[st]/d.states[st]*100).toFixed(1)}%;background:#3d6b4f"></span></div></td><td class="num">${states[st]} of ${d.states[st]}</td></tr>`).join('')}
+    </tbody></table></div>` : ''}
+    <p class="ref-prose" style="margin-top:0.6rem">${(() => { const rest = allStates.filter(st => !states[st]), dc = rest.includes('DC'), n = rest.length - (dc?1:0); return plural(n,'state') + (dc?' and DC':''); })()} not started yet.</p></div>`;
+
+  // ── Missing systems
+  h += `<div class="ref-section"><div class="ref-section-label">Systems reviewers think are missing (${d.missing.length})</div>
+    ${d.missing.length ? d.missing.map(m => `<div class="val-finding"><div class="val-finding-head">${valEsc(m.name)} <span class="val-finding-meta">${valEsc(m.state)}${m.operator?' · '+valEsc(m.operator):''}</span></div>${m.why?`<p>${valEsc(m.why)}</p>`:''}${m.url?`<p><a href="${valEsc(m.url)}" target="_blank" rel="noopener">${valEsc(m.url)}</a></p>`:''}</div>`).join('') : '<p class="ref-prose">None suggested yet.</p>'}</div>`;
+
+  el.innerHTML = h;
+}
 
 </script>
 </body>

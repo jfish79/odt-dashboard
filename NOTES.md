@@ -17,6 +17,20 @@ CSV: apply each change by hand and log it in concerns.csv with the reviewer's
 source. Rows edited in the CSV after export show up flagged "CSV value
 changed since export". Rows renamed after export won't match by name.
 
+**Validation tab (added 2026-11-18).** Ingest also writes `data/validation.json`,
+which the dashboard's Validation tab reads; commit it after each ingest. It is
+public, so it has no reviewer names (notes are scrubbed of them too); reviews are
+"independent" or "project". Refresh:
+`python3 scripts/validation/ingest.py <file> --self "Joe Fish"` (the `--self`
+name marks the project team's own reviews), then commit + push. A Claude session
+can pull the Sheet itself with the Google Drive connector (export as .xlsx).
+Corrections are auto-typed "added missing info" (we had Not specified) or
+"refined" (reviewer kept our value and added to it); anything else shows as
+"not yet classified" until a row in `scripts/validation/tags.csv` gives its
+Type (error / cosmetic / not_error / ...) and, when resolved, its Status.
+Field corrections flip to "Applied" automatically when the CSV value equals the
+reviewer's; scope flags flip to "Removed" when the row leaves the CSV.
+
 ## Service-area boundary pipeline (started 2026-09-09)
 
 Goal: a boundary polygon for every row, NC-style, in `data/boundaries/{ST}.geojson`.

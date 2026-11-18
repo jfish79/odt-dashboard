@@ -1,0 +1,420 @@
+{
+ "read": "2026-11-18",
+ "total_systems": 665,
+ "states": {
+  "AL": 5,
+  "AR": 4,
+  "AZ": 27,
+  "CA": 94,
+  "CO": 23,
+  "CT": 33,
+  "DC": 1,
+  "DE": 1,
+  "FL": 42,
+  "GA": 26,
+  "HI": 1,
+  "IA": 13,
+  "ID": 2,
+  "IL": 23,
+  "IN": 4,
+  "KS": 8,
+  "KY": 2,
+  "LA": 5,
+  "MA": 19,
+  "MD": 4,
+  "ME": 2,
+  "MI": 28,
+  "MN": 8,
+  "MO": 4,
+  "MS": 3,
+  "MT": 20,
+  "NC": 26,
+  "ND": 15,
+  "NE": 6,
+  "NH": 1,
+  "NJ": 8,
+  "NM": 7,
+  "NV": 4,
+  "NY": 15,
+  "OH": 11,
+  "OK": 17,
+  "OR": 7,
+  "PA": 7,
+  "RI": 1,
+  "SC": 5,
+  "SD": 8,
+  "TN": 9,
+  "TX": 33,
+  "UT": 4,
+  "VA": 11,
+  "VT": 7,
+  "WA": 10,
+  "WI": 44,
+  "WV": 2,
+  "WY": 5
+ },
+ "reviewers": {
+  "independent": 2,
+  "project": 1
+ },
+ "fields": [
+  "Name",
+  "Operator",
+  "Technology Vendor",
+  "Booking Method(s)",
+  "Scheduling Window",
+  "Status/Maturity",
+  "Fare",
+  "Website URL"
+ ],
+ "scope_questions": [
+  "Still operating?",
+  "Open to the general public?",
+  "Same-day booking available?"
+ ],
+ "reviews": [
+  {
+   "state": "CO",
+   "id": "CO-01",
+   "name": "Avon Microtransit",
+   "by": "independent",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Confirmed",
+    "Booking Method(s)": "",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "Partly matches"
+  },
+  {
+   "state": "CO",
+   "id": "CO-02",
+   "name": "Basalt Connect",
+   "by": "independent",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Confirmed",
+    "Booking Method(s)": "Corrected",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "Matches"
+  },
+  {
+   "state": "CO",
+   "id": "CO-03",
+   "name": "Call-N-Ride (Greeley-Evans Transit)",
+   "by": "independent",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Unsure",
+    "Same-day booking available?": "No"
+   },
+   "checks": {
+    "Name": "",
+    "Operator": "Confirmed",
+    "Technology Vendor": "",
+    "Booking Method(s)": "",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Corrected",
+    "Website URL": "Couldn't verify"
+   },
+   "boundary": "Matches"
+  },
+  {
+   "state": "CO",
+   "id": "CO-04",
+   "name": "County Express",
+   "by": "independent",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": ""
+   },
+   "checks": {
+    "Name": "",
+    "Operator": "Confirmed",
+    "Technology Vendor": "",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Couldn't verify",
+    "Website URL": "Confirmed"
+   },
+   "boundary": ""
+  },
+  {
+   "state": "CO",
+   "id": "CO-05",
+   "name": "Cripple Creek Bus / On-Demand Service",
+   "by": "independent",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Confirmed",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": ""
+  },
+  {
+   "state": "CO",
+   "id": "CO-06",
+   "name": "Denver Connector",
+   "by": "independent",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": ""
+   },
+   "checks": {
+    "Name": "",
+    "Operator": "Confirmed",
+    "Technology Vendor": "",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Couldn't verify"
+   },
+   "boundary": "Matches"
+  },
+  {
+   "state": "CO",
+   "id": "CO-07",
+   "name": "Downtowner Aspen",
+   "by": "independent",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Confirmed",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "Matches"
+  },
+  {
+   "state": "CO",
+   "id": "CO-08",
+   "name": "DuranGO! Microtransit",
+   "by": "independent",
+   "date": "",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": ""
+   },
+   "checks": {
+    "Name": "",
+    "Operator": "Confirmed",
+    "Technology Vendor": "",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "Matches"
+  },
+  {
+   "state": "OH",
+   "id": "OH-01",
+   "name": "BGo Curb to Curb",
+   "by": "project",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "Corrected",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Confirmed",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "Matches"
+  },
+  {
+   "state": "OH",
+   "id": "OH-02",
+   "name": "COTA Plus",
+   "by": "project",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "Confirmed",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Confirmed",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "Doesn't match"
+  }
+ ],
+ "findings": [
+  {
+   "kind": "boundary",
+   "state": "CO",
+   "id": "CO-01",
+   "name": "Avon Microtransit",
+   "by": "independent",
+   "date": "2026-11-18",
+   "check": "Partly matches",
+   "on_dashboard": "Exact: City limits (Census). Built from Avon town. Town of Avon is the operator; microtransit replaces certain local routes.",
+   "agency_map": "",
+   "difference": "",
+   "type": "method_question",
+   "status": "open",
+   "sources": [
+    "https://www.avon.org/2038/Mobility"
+   ],
+   "notes": "More of a clarification: the service area boundary is represenative of the city limit not the actual service route, is that expected?",
+   "call": "Reviewer asked whether a city-limits polygon standing in for the service zone is expected. Not a reported error."
+  },
+  {
+   "kind": "field",
+   "state": "CO",
+   "id": "CO-02",
+   "name": "Basalt Connect",
+   "by": "independent",
+   "date": "2026-11-18",
+   "field": "Booking Method(s)",
+   "from": "App",
+   "to": "App, Phone",
+   "type": "refinement",
+   "status": "open",
+   "sources": [
+    "https://basalt.net/642/Basalt-Connect"
+   ],
+   "notes": "",
+   "call": "",
+   "flag": ""
+  },
+  {
+   "kind": "scope",
+   "state": "CO",
+   "id": "CO-03",
+   "name": "Call-N-Ride (Greeley-Evans Transit)",
+   "by": "independent",
+   "date": "2026-11-18",
+   "answers": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Unsure",
+    "Same-day booking available?": "No"
+   },
+   "status": "open",
+   "sources": [
+    "https://greeleyco.gov/transit/service-offerings/ada-paratransit-service/"
+   ],
+   "notes": "Page not found for the website URL;Fare is $3 per trip",
+   "call": ""
+  },
+  {
+   "kind": "field",
+   "state": "CO",
+   "id": "CO-03",
+   "name": "Call-N-Ride (Greeley-Evans Transit)",
+   "by": "independent",
+   "date": "2026-11-18",
+   "field": "Fare",
+   "from": "Not specified",
+   "to": "Fare is $3 per trip",
+   "type": "gap",
+   "status": "open",
+   "sources": [
+    "https://greeleyco.gov/transit/service-offerings/ada-paratransit-service/"
+   ],
+   "notes": "Page not found for the website URL;Fare is $3 per trip",
+   "call": "",
+   "flag": ""
+  },
+  {
+   "kind": "field",
+   "state": "OH",
+   "id": "OH-01",
+   "name": "BGo Curb to Curb",
+   "by": "project",
+   "date": "2026-11-18",
+   "field": "Name",
+   "from": "BGo Curb to Curb",
+   "to": "BGo",
+   "type": "cosmetic",
+   "status": "open",
+   "sources": [],
+   "notes": "The agency website includes a map, but the map doesn't actually render with the system boundaries so I can't visually confirm whether there's any difference between the county boundaries and the system coverage. Also, BGo offers a free SafeRide service which seems to be focused on reducing impaired driving. It operates during limited hours near the Miami University campus.",
+   "call": "Shorter brand name; the current name is not wrong.",
+   "flag": "No source given"
+  },
+  {
+   "kind": "boundary",
+   "state": "OH",
+   "id": "OH-02",
+   "name": "COTA Plus",
+   "by": "project",
+   "date": "2026-11-18",
+   "check": "Doesn't match",
+   "on_dashboard": "Approximate: County (Census). Built from Franklin County. Service covers 8 zones across Columbus/Franklin County; exact zone boundaries not specified, using county as proxy.",
+   "agency_map": "https://cota1974.maps.arcgis.com/apps/mapviewer/index.html?layers=9454fd4940284b7eba1c436d1b623ae9",
+   "difference": "Dashboard shows entire county, but COTA plus operates in specific zones - Grove City, Westerville, and South Side; see url for GIS files",
+   "type": "",
+   "status": "open",
+   "sources": [],
+   "notes": "Fares vary depending on rider type.",
+   "call": ""
+  }
+ ],
+ "missing": []
+}

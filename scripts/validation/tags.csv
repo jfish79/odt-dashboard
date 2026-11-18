@@ -1,0 +1,3 @@
+State,Name,Field,Type,Status,Note
+OH,BGo Curb to Curb,Name,cosmetic,open,Shorter brand name; the current name is not wrong.
+CO,Avon Microtransit,Service area boundary,method_question,open,Reviewer asked whether a city-limits polygon standing in for the service zone is expected. Not a reported error.

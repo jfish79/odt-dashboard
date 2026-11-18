@@ -13,6 +13,16 @@ Writes to validation/results/ (or --out-dir):
   missing_systems.csv   rows from the Missing systems tab
   summary.md            per-state progress and per-field tallies
 
+and data/validation.json, which the dashboard's Validation tab reads. That file
+is public (GitHub Pages), so it carries no reviewer names: each review is marked
+"independent" or "project" (pass --self NAME for the project team's own names,
+as typed in the Reviewed by column). Commit it after each ingest.
+
+Manual calls live in scripts/validation/tags.csv (State, Name, Field, Type,
+Status, Note): what kind of correction a change is when it can't be inferred
+(error / cosmetic / ...), and whether a finding is resolved. Field is a core
+field name, "Scope" or "Service area boundary".
+
 Nothing here edits ODT_Inventory.csv. Apply changes by hand (or in a Claude
 session), rebuild with scripts/build.py, and log each one in concerns.csv
 with the reviewer's source, per CLAUDE.md.
@@ -20,6 +30,8 @@ with the reviewer's source, per CLAUDE.md.
 import argparse
 import csv
 import datetime
+import json
+import re
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -34,6 +46,44 @@ from export import (  # noqa: E402  (layout contract lives in export.py)
 CANT_VERIFY = CHECK_CHOICES[2]
 
 DEFAULT_OUT = ROOT / "validation" / "results"
+DEFAULT_JSON = ROOT / "data" / "validation.json"
+TAGS_PATH = Path(__file__).resolve().parent / "tags.csv"
+
+# Correction types. Inferred where possible, otherwise set in tags.csv.
+FIELD_TYPES = {"gap", "refinement", "cosmetic", "error", "not_error"}
+BOUNDARY_TYPES = {"method_question", "proxy_ok", "redraw", "needs_agency_map"}
+STATUSES = {"open", "applied", "declined", "removed", "kept", "resolved"}
+EMPTY_VALUES = {"", "not specified", "unknown", "n/a", "none"}
+
+
+def infer_type(exported, proposed):
+    """gap: we had nothing; refinement: the new value keeps ours and adds to it."""
+    e, p = exported.strip().lower(), proposed.strip().lower()
+    if e in EMPTY_VALUES:
+        return "gap"
+    if p and e in p:
+        return "refinement"
+    return None  # needs a call in tags.csv
+
+
+def load_tags():
+    tags = {}
+    if not TAGS_PATH.exists():
+        return tags
+    with open(TAGS_PATH, newline="", encoding="utf-8") as fh:
+        for r in csv.DictReader(fh):
+            key = (r["State"].strip(), r["Name"].strip(), r["Field"].strip())
+            t, st = r.get("Type", "").strip(), r.get("Status", "").strip()
+            if t and t not in FIELD_TYPES | BOUNDARY_TYPES:
+                sys.exit(f"tags.csv: unknown Type {t!r} for {key}")
+            if st and st not in STATUSES:
+                sys.exit(f"tags.csv: unknown Status {st!r} for {key}")
+            tags[key] = {"type": t, "status": st, "note": r.get("Note", "").strip()}
+    return tags
+
+
+def split_urls(s):
+    return [u for u in (x.strip() for x in s.replace(";", " ").replace(",", " ").split()) if u.startswith("http")]
 
 
 def text(v):
@@ -48,7 +98,16 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("workbook", type=Path)
     ap.add_argument("--out-dir", type=Path, default=DEFAULT_OUT)
+    ap.add_argument("--json", type=Path, default=DEFAULT_JSON, help="dashboard data file (default data/validation.json)")
+    ap.add_argument("--no-json", action="store_true", help="don't write the dashboard data file")
+    ap.add_argument("--self", dest="self_names", action="append", default=[], metavar="NAME",
+                    help="a project-team reviewer name, as typed in Reviewed by (repeatable)")
     args = ap.parse_args()
+    self_names = {n.strip().lower() for n in args.self_names}
+    tags = load_tags()
+    used_tags = set()
+    reviews, pub_findings = [], []
+    reviewer_kinds = defaultdict(set)
 
     with open(CSV_PATH, newline="", encoding="utf-8") as fh:
         live = {(r["Name"], r["State"]): r for r in csv.DictReader(fh)}
@@ -94,6 +153,14 @@ def main():
             when = get(vals, "tail", "Date reviewed")
             sources = get(vals, "tail", "Sources consulted (URLs)")
             notes = get(vals, "tail", "Notes")
+            by = "project" if who.strip().lower() in self_names else "independent"
+            reviewer_kinds[by].add(who.strip().lower() or "(unnamed)")
+            reviews.append({
+                "state": st, "id": rid, "name": name, "by": by, "date": when,
+                "scope": {q: scope[q] for q in scope_qs},
+                "checks": {f: checks[f] for f in check_fields},
+                "boundary": b_check,
+            })
             row_live = live.get((name, st))
             if row_live is None:
                 problems.append(f"{st} {rid} {name!r}: no longer in ODT_Inventory.csv under this name "
@@ -108,6 +175,15 @@ def main():
                     **{q: scope[q] for q in scope_qs},
                     "Reviewer": who, "Date": when, "Sources": sources, "Notes": notes,
                     "Flag": "" if sources or "No" not in bad.values() else "No source given for a No answer",
+                })
+                tg = tags.get((st, name, "Scope"), {})
+                if tg:
+                    used_tags.add((st, name, "Scope"))
+                pub_findings.append({
+                    "kind": "scope", "state": st, "id": rid, "name": name, "by": by, "date": when,
+                    "answers": {q: scope[q] for q in scope_qs},
+                    "status": tg.get("status") or ("removed" if row_live is None else "open"),
+                    "sources": split_urls(sources), "notes": notes, "call": tg.get("note", ""),
                 })
 
             for f in check_fields:
@@ -127,6 +203,18 @@ def main():
                     notes_flag.append("CSV value changed since export")
                 if proposed and proposed == now:
                     notes_flag.append("Already matches CSV")
+                tg = tags.get((st, name, f), {})
+                if tg:
+                    used_tags.add((st, name, f))
+                applied = bool(row_live) and proposed and now.strip().lower() == proposed.strip().lower()
+                pub_findings.append({
+                    "kind": "field", "state": st, "id": rid, "name": name, "by": by, "date": when,
+                    "field": f, "from": exported, "to": proposed,
+                    "type": tg.get("type") or infer_type(exported, proposed) or "unclassified",
+                    "status": tg.get("status") or ("applied" if applied else "open"),
+                    "sources": split_urls(sources), "notes": notes, "call": tg.get("note", ""),
+                    "flag": "; ".join(notes_flag),
+                })
                 changes.append({
                     "State": st, "ID": rid, "Name": name, "Field": f,
                     "Dashboard value at export": exported, "CSV value now": now,
@@ -140,6 +228,17 @@ def main():
                     "Boundary on dashboard": get(vals, "bdash", None),
                     "Check": b_check, "Agency map": b_map, "What's different": b_diff,
                     "Reviewer": who, "Date": when, "Notes": notes,
+                })
+                key = (st, name, "Service area boundary")
+                tg = tags.get(key, {})
+                if tg:
+                    used_tags.add(key)
+                pub_findings.append({
+                    "kind": "boundary", "state": st, "id": rid, "name": name, "by": by, "date": when,
+                    "check": b_check, "on_dashboard": get(vals, "bdash", None),
+                    "agency_map": b_map, "difference": b_diff,
+                    "type": tg.get("type") or "", "status": tg.get("status") or "open",
+                    "sources": split_urls(sources), "notes": notes, "call": tg.get("note", ""),
                 })
         progress[st] = (reviewed, total)
 
@@ -200,11 +299,41 @@ def main():
         md.append(f"| {st} | {r} | {t} |")
     (args.out_dir / "summary.md").write_text("\n".join(md) + "\n", encoding="utf-8")
 
+    for key in sorted(set(tags) - used_tags):
+        problems.append(f"tags.csv row {key} matched no finding in this workbook (renamed, or the answer changed?)")
+    if not args.no_json:
+        out = {
+            "read": datetime.date.today().isoformat(),
+            "total_systems": total,
+            "states": {st: t for st, (_, t) in sorted(progress.items())},
+            "reviewers": {k: len(v) for k, v in reviewer_kinds.items()},
+            "fields": check_fields,
+            "scope_questions": scope_qs,
+            "reviews": reviews,
+            "findings": pub_findings,
+            "missing": [{"state": m.get("State", ""), "name": m.get("System name", ""),
+                         "operator": m.get("Operator", ""), "url": m.get("Website URL", ""),
+                         "why": m.get("Why it looks in scope", ""), "date": m.get("Date", "")} for m in missing],
+        }
+        # Notes are free text; drop any reviewer's name (full or first) before publishing.
+        names = sorted({n for ns in reviewer_kinds.values() for n in ns if n != "(unnamed)"}, key=len, reverse=True)
+        tokens = names + sorted({n.split()[0] for n in names if len(n.split()[0]) >= 3}, key=len, reverse=True)
+        def scrub(t):
+            for n in tokens:
+                t = re.sub(r"\b" + re.escape(n) + r"\b", "[reviewer]", t, flags=re.I)
+            return t
+        for f in out["findings"]:
+            f["notes"] = scrub(f["notes"])
+        args.json.parent.mkdir(parents=True, exist_ok=True)
+        args.json.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+        if not self_names:
+            print("Note: no --self given, so every review is counted as independent.")
+
     print(f"{done}/{total} systems reviewed; {len(changes)} proposed corrections, "
           f"{len(flags)} scope flags, {len(boundaries)} boundary findings, {len(missing)} missing systems.")
     for p in problems:
         print("WARNING:", p)
-    print(f"Wrote results to {args.out_dir}")
+    print(f"Wrote results to {args.out_dir}" + ("" if args.no_json else f" and {args.json.relative_to(ROOT) if args.json.is_relative_to(ROOT) else args.json}"))
 
 
 if __name__ == "__main__":
