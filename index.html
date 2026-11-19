@@ -356,6 +356,16 @@ select:focus { border-color: var(--ink); }
 .val-finding-meta { font-family: var(--mono); font-size: 0.62rem; color: var(--ink-soft); }
 .val-finding p { font-family: var(--sans); font-size: 0.8rem; color: var(--ink-mid); line-height: 1.55; margin: 0.25rem 0 0; }
 .val-finding a, .val-table a { color: var(--blue); word-break: break-all; }
+.val-corr { table-layout: fixed; min-width: 760px; }
+.val-corr td { overflow-wrap: anywhere; }
+/* Shade and rule by system group, not by row (beats .ref-table's zebra). */
+.ref-table.val-corr tbody tr td { background: none; border-bottom: none; border-top: 1px solid var(--border); }
+.ref-table.val-corr tbody tr.val-alt td { background: var(--bg2); }
+.ref-table.val-corr tbody tr.val-cont td { border-top: 1px dotted var(--border2); }
+.ref-table.val-corr tbody tr:last-child td { border-bottom: 1px solid var(--border); }
+.val-corr th { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.val-clamp { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.val-src { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .val-toggle { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-mid); display: inline-flex; gap: 0.4rem; align-items: center; margin-top: 0.75rem; cursor: pointer; }
 @media (max-width: 760px) { #validation-view { padding: 1rem; } }
 
@@ -2258,6 +2268,20 @@ function valPill(status){
   const cls = status === 'open' ? 'open' : (status ? 'done' : '');
   return `<span class="val-pill ${cls}">${valEsc(VAL_STATUS[status] || status || '')}</span>`;
 }
+/* Compact cell helpers for the corrections table: a value clipped to 3 lines
+   (full text on hover, URLs without the protocol/www), and sources as
+   short domain links. */
+function valVal(t){
+  const full = String(t == null ? '' : t);
+  if (!full) return '<span class="val-finding-meta">(none given)</span>';
+  const shown = /^https?:\/\//.test(full) ? full.replace(/^https?:\/\/(www\.)?/, '') : full;
+  return `<div class="val-clamp" title="${valEsc(full)}">${valEsc(shown)}</div>`;
+}
+function valSourcesShort(f){
+  if (!f.sources || !f.sources.length) return '<span class="val-finding-meta">none</span>';
+  return f.sources.map(u => { let d = u; try { d = new URL(u).hostname.replace(/^www\./, ''); } catch(e) {}
+    return `<a class="val-src" href="${valEsc(u)}" target="_blank" rel="noopener" title="${valEsc(u)}">${valEsc(d)} ↗</a>`; }).join('');
+}
 function valSources(f){
   if (!f.sources || !f.sources.length) return '<span class="val-finding-meta">No source given</span>';
   return f.sources.map(u => `<a href="${valEsc(u)}" target="_blank" rel="noopener">${valEsc(u.replace(/^https?:\/\/(www\.)?/,''))}</a>`).join('<br>');
@@ -2351,8 +2375,12 @@ function renderValidation(){
   // ── Field corrections log
   const fieldF = findings.filter(f => f.kind === 'field');
   h += `<div class="ref-section"><div class="ref-section-label">Proposed corrections (${fieldF.length})</div>`;
-  h += fieldF.length ? `<div class="ref-table-wrap"><table class="ref-table val-table"><thead><tr><th>System</th><th>Field</th><th>On dashboard</th><th>Reviewer's value</th><th>Type</th><th>Status</th><th>Source</th></tr></thead><tbody>
-    ${fieldF.map(f => `<tr><td>${valSys(f)}<div class="val-finding-meta">${f.state}${f.by==='project'?' · project team':''}</div></td><td>${valEsc(f.field)}</td><td>${valEsc(f.from)}</td><td>${valEsc(f.to)}</td><td>${valEsc(VAL_TYPE_LABEL[f.type]||f.type)}</td><td>${valPill(f.status)}</td><td>${valSources(f)}</td></tr>`).join('')}
+  h += fieldF.length ? `<div class="ref-table-wrap"><table class="ref-table val-table val-corr">
+    <colgroup><col style="width:18%"><col style="width:10%"><col style="width:21%"><col style="width:21%"><col style="width:10%"><col style="width:7%"><col style="width:13%"></colgroup>
+    <thead><tr><th>System</th><th>Field</th><th>On dashboard</th><th>Reviewer's value</th><th>Type</th><th>Status</th><th>Source</th></tr></thead><tbody>
+    ${(() => { let g = 0; return fieldF.map((f, i) => { const same = i > 0 && fieldF[i-1].state === f.state && fieldF[i-1].name === f.name;
+      if (!same) g++;
+      return `<tr class="${same ? 'val-cont' : ''} ${g % 2 ? '' : 'val-alt'}"><td>${same ? '' : `${valSys(f)}<div class="val-finding-meta">${f.state}${f.by==='project'?' · project team':''}</div>`}</td><td>${valEsc(f.field)}</td><td>${valVal(f.from)}</td><td>${valVal(f.to)}</td><td>${valEsc(VAL_TYPE_LABEL[f.type]||f.type)}</td><td>${valPill(f.status)}</td><td>${valSourcesShort(f)}</td></tr>`; }).join(''); })()}
     </tbody></table></div>` : '<p class="ref-prose">None yet.</p>';
   h += '</div>';
 
