@@ -881,7 +881,7 @@
   "window": "Same-day (min 10 min advance)",
   "fare": "Standard RTD fare (~$2.75)",
   "hours": "Mon–Fri 5:30am–7pm (varies by zone)",
-  "year": "Not specified",
+  "year": "2019 (FlexRide replaced Call-n-Ride, which RTD started in the late 1990s)",
   "funding": "Local (RTD)",
   "status": "Active",
   "fleet": "Not specified",
@@ -892,7 +892,7 @@
   "geo_class": "Suburban",
   "status_class": "Active",
   "vendor_class": "Other",
-  "year_num": null,
+  "year_num": 2019,
   "fleet_size": null,
   "boundary": {
    "type": "agency_gis",
