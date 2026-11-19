@@ -163,7 +163,12 @@ def current_area(state, name):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--tier", choices=["likely", "all"], default="all")
+    ap.add_argument("--tag", default="", help="read/write the files arcgis_search.py wrote with the same --tag")
     args = ap.parse_args()
+    global CAND, OUT
+    if args.tag:
+        CAND = CAND.with_name(f"arcgis_candidates_{args.tag}.csv")
+        OUT = OUT.with_name(f"arcgis_vetted_{args.tag}.csv")
     systems = {(s["state"], s["name"]): s for s in json.load(open(ROOT / "data" / "systems.json"))}
     cands = list(csv.DictReader(open(CAND, newline="", encoding="utf-8")))
     if args.tier == "likely":

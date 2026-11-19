@@ -33,6 +33,39 @@ reviewer's; scope flags flip to "Removed" when the row leaves the CSV.
 
 ## Service-area boundary pipeline (started 2026-09-09)
 
+**Ohio boundary deep dive (2026-11-18, findings held for the review, nothing loaded):**
+three tiers, about 5 min wall time and about 20 tool calls for 11 systems.
+(1) Scripted ArcGIS search + vet (`--states OH --all-fidelity --tag oh`), 40 s:
+layers for COTA Plus and MetroNow! only. (2) 31 hand-written ArcGIS queries
+(acronyms, brand variants): nothing new. (3) Scanning each agency page and the
+reviewers' map links for embedded data found the rest:
+- TARTA Flex: Google My Maps embed on tarta.com, "TARTA Flex Fall 2026"
+  (KML export `google.com/maps/d/kml?mid=1yJQTqtTnJjYtrM8uI4I8GL9t844TGkc&forcekml=1`).
+  Use Flex Zone NW, SW, East; exclude the "TARTA Move" polygon (paratransit).
+  The loader needs KML support first.
+- MetroNow!: go-metro.com embeds web map ba2063d68a3e41bd86d486d372991d65;
+  layer MetroNow2025 (owner metro_mlinder) has 4 current zones matching the CSV,
+  plus "Bond Hill Zone (Coming Soon)", which should be excluded.
+- COTA Plus: COTA_Plus_Zones_All_Public_View has 3 active zones (Grove City,
+  Westerville, South Side). The CSV's "8 zones" is the planned LinkUS count; log it
+  when applying.
+- METRO NEXT: the address-locator app linked from yourmetrobus.org
+  (kylestewart1.github.io/metro-next-southern-zone, third party) bundles one
+  332 sq mi polygon, probably the whole service area, not the Southern zone.
+  The other zones exist only in yourmetrobus.org's metro-next-service-area
+  January 2026 PDF. Uncertain.
+- ViaLC: zone map only as a JPG on city.ridewithvia.com/lorain (07-2024).
+  COTA's page also has zone-map images.
+- Dayton RTA Connect: page names 4 zones, no map data found. BGo: page loads the
+  ArcGIS map component with no item (it doesn't render, as the reviewer noted).
+  MCFlex: page returns 403 to scripts. Fairfield: the reviewer's ArcGIS
+  Experience has only routes, stops and municipal boundaries; its GTFS and Knox's
+  have no flex zones. Laketran, Fairfield, Knox: county polygons match per review.
+Takeaway: the agency-page scan (tier 3) was the higher-yield step and is
+scriptable (My Maps `mid=`, ArcGIS `item-id`/`webmap=`, embedded GeoJSON,
+.kml/.kmz links). Every source still needed a per-system judgment (exclude
+paratransit, coming-soon zones, zone-count mismatches).
+
 **ArcGIS Online pass (2026-11-18):** prompted by a reviewer finding COTA Plus's
 zone layer on ArcGIS Online. `scripts/boundaries/arcgis_search.py` searches
 ArcGIS Online's public catalog for every approximate or unmapped row (CO and OH

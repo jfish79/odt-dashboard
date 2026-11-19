@@ -122,6 +122,7 @@ def main():
     ap.add_argument("--all-fidelity", action="store_true", help="also search rows whose polygon is exact")
     ap.add_argument("--min-score", type=float, default=3.0, help="drop candidates scoring below this")
     ap.add_argument("--per-system", type=int, default=5, help="keep at most this many candidates per system")
+    ap.add_argument("--tag", default="", help="suffix for output file names, e.g. 'oh' -> arcgis_candidates_oh.csv")
     args = ap.parse_args()
 
     systems = json.load(open(ROOT / "data" / "systems.json"))
@@ -178,8 +179,9 @@ def main():
             w.writeheader()
             w.writerows(data)
 
-    dump(OUT_DIR / "arcgis_candidates.csv", cand_rows)
-    dump(OUT_DIR / "arcgis_summary.csv", summary)
+    sfx = f"_{args.tag}" if args.tag else ""
+    dump(OUT_DIR / f"arcgis_candidates{sfx}.csv", cand_rows)
+    dump(OUT_DIR / f"arcgis_summary{sfx}.csv", summary)
     print(f"{sum(1 for s in summary if s['Likely'])} of {len(summary)} systems have a likely match, "
           f"{sum(1 for s in summary if s['Candidates'])} have at least one candidate; "
           f"{len(cand_rows)} candidate layers. Wrote {OUT_DIR.relative_to(ROOT)}/")
