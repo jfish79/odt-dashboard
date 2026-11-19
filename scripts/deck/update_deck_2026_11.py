@@ -486,6 +486,57 @@ def main():
              "this, and blanks will mean 'not checked'. The two scope flags are held, not removed: verify before "
              "removal applies to reviewer findings too.")
 
+    # Level of effort, before questions and next steps
+    from pptx.enum.shapes import MSO_SHAPE
+    s = new_slide(prs, "Level of effort", len(prs.slides) - 1)
+    levels = {1: "Low", 2: "Medium", 3: "High", 4: "Extra high"}
+    rows = [
+        ("Identifying systems", 3, "Nine state research batches, then a three-wave sweep of every state against state DOT "
+                                   "provider rosters; 880 rows at the peak."),
+        ("Verifying scope rules", 4, "Every advance-booking row re-checked against a primary source (215 removed); 170 "
+                                     "paratransit rows retired; borderline calls made one at a time by a person."),
+        ("Creating the dashboard", 2, "One web page with map, cards, analytics, reference and validation views, built and "
+                                      "revised in short iterations."),
+        ("GitHub management", 1, "A build script checks the CSV and regenerates the data files; a push republishes the site."),
+        ("Finding boundaries", 2, "Census outlines matched to each row's described area for 659 systems, in 12 staged "
+                                  "batches; mostly automated."),
+        ("Refining boundaries", 3, f"Searching agency, MPO and state DOT layers is quick; checking each match takes about "
+                                   f"15 minutes per 25 systems, and {n['census']} systems are still on Census outlines."),
+        ("Colleague validation", 2, "About a state per reviewer; reading results back is automated, applying them needs "
+                                    "judgment."),
+    ]
+    y0, rh = 1.12, 0.5
+    for c, (x, w, t) in enumerate(((0.5, 2.3, "Task"), (2.9, 2.2, "Effort"), (5.2, 4.3, "Why"))):
+        _, tf = box(s, x, y0, w, 0.28, margins=(0.1, 0, 0.05, 0))
+        para(tf, t.upper(), 8, True, MUTE, first=True, space_after=0)
+    for i, (task, lvl, why) in enumerate(rows):
+        y = y0 + 0.3 + i * rh
+        bg = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(0.5), Inches(y), Inches(9.0), Inches(rh - 0.06))
+        bg.fill.solid()
+        bg.fill.fore_color.rgb = SAND if i % 2 == 0 else WHITE
+        bg.line.fill.background()
+        bg.shadow.inherit = False
+        _, tf = box(s, 0.5, y, 2.3, rh - 0.06, anchor=MSO_ANCHOR.MIDDLE, margins=(0.1, 0, 0.05, 0))
+        para(tf, task, 11, True, INK, first=True, space_after=0)
+        for k in range(4):
+            seg = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(2.95 + k * 0.29), Inches(y + (rh - 0.06) / 2 - 0.07),
+                                     Inches(0.25), Inches(0.14))
+            seg.fill.solid()
+            seg.fill.fore_color.rgb = NAVY if k < lvl else LINE
+            seg.line.fill.background()
+            seg.shadow.inherit = False
+        _, tf = box(s, 4.1, y, 1.05, rh - 0.06, anchor=MSO_ANCHOR.MIDDLE, margins=(0.02, 0, 0.02, 0))
+        para(tf, levels[lvl], 10, True, NAVY, first=True, space_after=0)
+        _, tf = box(s, 5.2, y, 4.3, rh - 0.06, anchor=MSO_ANCHOR.MIDDLE, margins=(0.1, 0, 0.1, 0))
+        para(tf, why, 8.5, False, MID, first=True, space_after=0)
+    _, tf = box(s, 0.5, y0 + 0.32 + len(rows) * rh, 9.0, 0.3, margins=(0.1, 0, 0.1, 0))
+    para(tf, "Relative ratings judged from the project log, not timed. Agent batches shortened the research time; "
+             "they did not shorten review.", 8.5, False, MUTE, first=True, space_after=0)
+    notes(s, "Scope verification was the biggest effort because every removal needed a primary source and the rules "
+             "were refined twice (paratransit in July, the same-day test in August). Refining boundaries is the "
+             "largest remaining effort: machine search costs seconds per system, but most matches need zones reconciled "
+             "with the CSV or paratransit and proposed zones dropped.")
+
     # Questions and next steps, just before the closing slide
     s = new_slide(prs, "Questions and next steps", len(prs.slides) - 1)
     cols = [("Questions for the group", [

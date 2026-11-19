@@ -804,10 +804,10 @@ human edits before overwriting; merge, never regenerate over it.
   needs Python ≥3.10 (system python is 3.9). PowerPoint opening the file is the
   practical validity check.
 - **November 2026 version** (`docs/ODT-Database-Project-Summary-2026-11.pptx`,
-  19 slides): built by `scripts/deck/update_deck_2026_11.py`, which edits a copy
+  20 slides): built by `scripts/deck/update_deck_2026_11.py`, which edits a copy
   of the user's hand-edited deck in place. It adds a zone-map slide, a
   before/after slide (Denver Connector and Houston Community Connector, images
-  in `docs/img/`), two validation slides and a questions/next-steps slide, and
+  in `docs/img/`), two validation slides, a level-of-effort slide and a questions/next-steps slide, and
   updates the counts, timeline, sources, boundary table and dashboard cards. It
   reads `data/systems.json` and `data/validation.json` at run time. The user had
   hidden "Known gaps", "Key assumptions" and "The dashboard"; they stay hidden.
