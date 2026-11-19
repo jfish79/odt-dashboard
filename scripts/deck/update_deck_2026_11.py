@@ -563,6 +563,90 @@ def main():
     notes(s, "Questions are open prompts for discussion. Fleet: vehicle count is the sparsest field (about 8% of "
              "rows); NTD covers only reporting agencies, so rural demand-response would still need another source.")
 
+    def after_title(title):
+        for i, sl_ in enumerate(prs.slides):
+            if sl_.shapes.title is not None and sl_.shapes.title.text_frame.text.strip() == title:
+                return i + 1
+        raise KeyError(title)
+
+    # State sweeps in depth, after the timeline
+    s = new_slide(prs, "State sweeps in depth", after_title("Methodology timeline"))
+    stages = [
+        ("Seed inventory (June)", "The NC work as a template, an existing spreadsheet, and California and Colorado lists.",
+         "241"),
+        ("State expansion: 9 batches", "Three missing states per batch until all 50 + DC had rows.", "394"),
+        ("Deep sweep: 3 waves", "Every state again, reading state DOT provider rosters and transit-association lists "
+                                "against the CSV. Wave 1 +81, wave 2 +119, wave 3 +127.", "724"),
+        ("Targeted follow-ups", "Leads the waves flagged, checked in small batches: GA county roster +36, ND +21, "
+                                "MI +16, NM +4, OR +2; NH and ID +0.", "889"),
+        ("Same-day scope sweep (August)", "Every advance-booking row checked against a primary source.", "665"),
+    ]
+    for i, (h_, b_, r_) in enumerate(stages):
+        _, tf = box(s, 0.5, 1.15 + i * 0.7, 4.6, 0.62, fill=SAND, anchor=MSO_ANCHOR.MIDDLE, margins=(0.12, 0.04, 0.1, 0.04))
+        para(tf, h_, 10.5, True, INK, first=True, space_after=1)
+        para(tf, b_, 8.5, False, MID, space_after=0)
+        _, tf = box(s, 5.15, 1.15 + i * 0.7, 0.95, 0.62, anchor=MSO_ANCHOR.MIDDLE, margins=(0.05, 0, 0.05, 0))
+        para(tf, r_, 15, True, RUST if i == len(stages) - 1 else NAVY, first=True, space_after=0)
+        _, tf = box(s, 5.15, 1.15 + i * 0.7 + 0.42, 0.95, 0.2, margins=(0.05, 0, 0.05, 0))
+        para(tf, "rows", 7.5, False, MUTE, first=True, space_after=0)
+    side = [("Why three waves", "Each wave ran about six state groups in parallel, then was committed and cross-checked "
+                                "before the next. Small states went first; the largest (TX, GA, CA, FL) went last because "
+                                "they took the longest and needed retries."),
+            ("What the later passes added", "The first pass found services with a web presence, mostly app-based "
+                                            "microtransit. The deep sweep found rural demand-response through state "
+                                            "rosters: 39 Wisconsin shared-ride taxi systems from one Legislative Fiscal "
+                                            "Bureau paper; Texas went from 11 rows to 45, Georgia from 11 to 29."),
+            ("When to stop", "Re-sweeps of New Hampshire and Idaho added nothing: the sign that coverage had saturated.")]
+    yy = 1.15
+    for h_, b_ in side:
+        hh = 0.62 if h_ == "When to stop" else 1.2
+        _, tf = box(s, 6.35, yy, 3.15, hh, fill=None, margins=(0.1, 0.02, 0.05, 0.02))
+        para(tf, h_, 11, True, NAVY, first=True, space_after=2)
+        para(tf, b_, 8.5, False, MID, space_after=0)
+        yy += hh + 0.12
+    _, tf = box(s, 0.5, 4.72, 9.0, 0.3, margins=(0.1, 0, 0.1, 0))
+    para(tf, "Row counts after each stage. The paratransit retirement (170 rows) ran alongside the deep sweep, so the "
+             "stages don't sum exactly.", 8.5, False, MUTE, first=True, space_after=0)
+    notes(s, "The expansion batches were breadth-first: get every state on the board. The deep sweep was "
+             "recall-first: assume each state is under-covered and read the authoritative roster. Most of the large "
+             "gains came from a single roster document per state, which is why state DOT and association lists are "
+             "now the first stop for discovery.")
+
+    # Boundary selection and refinement in depth, after the boundary slide
+    s = new_slide(prs, "Boundaries in depth", after_title("Service-area boundaries"))
+    cols = [("September: a polygon for every row", [
+                ("Draft a spec", "An agent reads each row's service area and picks the Census units, or a circle of "
+                                 "the stated size."),
+                ("Build and check", "A script builds the polygon and compares its area with any stated size; "
+                                    "mismatches are flagged."),
+                ("Audit and fix", "A second agent reviews each spec; flagged rows are fixed or left for research. "
+                                  "659 of 665 drawn in 12 staged batches."),
+                ("Rule learned", "Size beats unit: early drafts picked whole counties for small zones.")]),
+            ("November: swap stand-ins for agency zones", [
+                ("Screen", "Keep layers whose polygons sit near the system and are a plausible size; skip "
+                           "non-transit layers by name."),
+                ("Review each match", "Pick the right features; drop paratransit, proposed and coming-soon zones; "
+                                      "compare the zone list with the CSV and log differences."),
+                ("Check the source", "Prefer the agency, then the state DOT or MPO; hold layers with an unknown "
+                                     "publisher or unclear status."),
+                ("Load and cite", "Union the zones; the popup names the layer, publisher, date and link.")])]
+    for c, (head, items) in enumerate(cols):
+        x = 0.5 + c * 4.65
+        _, tf = box(s, x, 1.08, 4.35, 0.35, margins=(0, 0, 0, 0))
+        para(tf, head, 12.5, True, NAVY, first=True, space_after=0)
+        for i, (t, b) in enumerate(items):
+            _, tf = box(s, x, 1.5 + i * 0.8, 4.35, 0.72, fill=SAND if not t.startswith("Rule") else None,
+                        anchor=MSO_ANCHOR.MIDDLE)
+            para(tf, t, 10.5, True, RUST if t.startswith("Rule") else INK, first=True, space_after=1)
+            para(tf, b, 8.5, False, MID, space_after=0)
+    _, tf = box(s, 0.5, 4.75, 9.0, 0.3, margins=(0.1, 0, 0.1, 0))
+    para(tf, "Rejected along the way: whole-agency districts, simple buffers and preliminary plan layers.",
+         8.5, False, MUTE, first=True, space_after=0)
+    notes(s, "Preference order for a row's polygon: exact administrative units, then a stated-size circle, then a "
+             "containing-unit proxy, then 'needs research'. In November the agency's own zone map moved to the top. "
+             "Examples of holds: Putnam On-Demand (the county's latest layer marks its zone PROPOSED), Erie Bee "
+             "(publisher can't be identified), Catch Connect (five zones in the layer, two in the CSV).")
+
     prs.save(args.out)
     print(f"wrote {args.out}: {len(prs.slides)} slides; polygons {n['poly']} "
           f"(agency {n['agency']}, gtfs {n['gtfs']}, none {len(n['none'])}: {n['none']})")
