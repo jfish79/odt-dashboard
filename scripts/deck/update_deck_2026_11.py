@@ -574,11 +574,12 @@ def main():
     stages = [
         ("Seed inventory (June)", "The NC work as a template, an existing spreadsheet, and California and Colorado lists.",
          "241"),
-        ("State expansion: 9 batches", "Three missing states per batch until all 50 + DC had rows.", "394"),
-        ("Deep sweep: 3 waves", "Every state again, reading state DOT provider rosters and transit-association lists "
-                                "against the CSV. Wave 1 +81, wave 2 +119, wave 3 +127.", "724"),
-        ("Targeted follow-ups", "Leads the waves flagged, checked in small batches: GA county roster +36, ND +21, "
-                                "MI +16, NM +4, OR +2; NH and ID +0.", "889"),
+        ("State expansion: 9 batches", "Three missing states per batch until all 50 + DC had rows; each agent was capped "
+                                       "at about 8 page fetches, so this pass was shallow.", "394"),
+        ("Deep sweep: 3 waves", "Every state again, told to assume it was under-covered and work through state DOT and "
+                                "transit-association rosters. Wave 1 +81, wave 2 +119, wave 3 +127.", "724"),
+        ("Targeted follow-ups", "States that ran out of search budget, and leads the waves flagged: GA county roster "
+                                "+36, ND +21, MI +16, NM +4, NY +3, OR +2; NH and ID +0.", "889"),
         ("Same-day scope sweep (August)", "Every advance-booking row checked against a primary source.", "665"),
     ]
     for i, (h_, b_, r_) in enumerate(stages):
@@ -589,17 +590,18 @@ def main():
         para(tf, r_, 15, True, RUST if i == len(stages) - 1 else NAVY, first=True, space_after=0)
         _, tf = box(s, 5.15, 1.15 + i * 0.7 + 0.42, 0.95, 0.2, margins=(0.05, 0, 0.05, 0))
         para(tf, "rows", 7.5, False, MUTE, first=True, space_after=0)
-    side = [("Why three waves", "Each wave ran about six state groups in parallel, then was committed and cross-checked "
-                                "before the next. Small states went first; the largest (TX, GA, CA, FL) went last because "
-                                "they took the longest and needed retries."),
-            ("What the later passes added", "The first pass found services with a web presence, mostly app-based "
-                                            "microtransit. The deep sweep found rural demand-response through state "
-                                            "rosters: 39 Wisconsin shared-ride taxi systems from one Legislative Fiscal "
-                                            "Bureau paper; Texas went from 11 rows to 45, Georgia from 11 to 29."),
-            ("When to stop", "Re-sweeps of New Hampshire and Idaho added nothing: the sign that coverage had saturated.")]
+    side = [("Why re-sweeps were needed", "The first pass stopped early: with a small fetch cap, agents quit after "
+                                          "the obvious finds. The deep sweep re-ran every state with an explicit push "
+                                          "to keep going. Then parallel agents exhausted a shared search budget (200 "
+                                          "searches) mid-wave; those states were flagged and re-run on their own."),
+            ("Why three waves", "About six state groups ran in parallel per wave, each wave committed and "
+                                "cross-checked before the next. The largest states (TX, GA, CA, FL) went last."),
+            ("What the later passes added", "Rural demand-response found through state rosters: 39 Wisconsin "
+                                            "shared-ride taxis from one fiscal bureau paper; Texas 11 rows to 45, Georgia "
+                                            "11 to 29. NH and ID adding nothing showed coverage had saturated.")]
     yy = 1.15
     for h_, b_ in side:
-        hh = 0.62 if h_ == "When to stop" else 1.2
+        hh = 1.25 if h_.startswith("Why re") else 0.95
         _, tf = box(s, 6.35, yy, 3.15, hh, fill=None, margins=(0.1, 0.02, 0.05, 0.02))
         para(tf, h_, 11, True, NAVY, first=True, space_after=2)
         para(tf, b_, 8.5, False, MID, space_after=0)
@@ -610,7 +612,9 @@ def main():
     notes(s, "The expansion batches were breadth-first: get every state on the board. The deep sweep was "
              "recall-first: assume each state is under-covered and read the authoritative roster. Most of the large "
              "gains came from a single roster document per state, which is why state DOT and association lists are "
-             "now the first stop for discovery.")
+             "now the first stop for discovery. On the re-sweeps: the first-pass agents weren't wrong so much as "
+             "shallow; they stopped once they had a plausible list. Asking for recall explicitly, and logging which "
+             "states hit the search budget, is what made the second pass worth running.")
 
     # Boundary selection and refinement in depth, after the boundary slide
     s = new_slide(prs, "Boundaries in depth", after_title("Service-area boundaries"))
