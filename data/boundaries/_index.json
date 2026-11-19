@@ -70,7 +70,7 @@
   },
   "CO": {
    "features": 23,
-   "updated": "2026-09"
+   "updated": "2026-11"
   },
   "CT": {
    "features": 33,
@@ -190,7 +190,7 @@
   },
   "OH": {
    "features": 11,
-   "updated": "2026-09"
+   "updated": "2026-11"
   },
   "OK": {
    "features": 17,
@@ -254,13 +254,13 @@
   }
  },
  "types": {
-  "county": 124,
+  "county": 120,
   "counties": 51,
   "zone_approx": 26,
-  "city": 204,
-  "places": 125,
+  "city": 200,
+  "places": 123,
   "tribal": 17,
-  "agency_gis": 63,
+  "agency_gis": 73,
   "buffered": 12,
   "gtfs_flex": 9,
   "cousub": 11,

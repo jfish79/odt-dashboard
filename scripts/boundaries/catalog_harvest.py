@@ -62,12 +62,14 @@ def tokens(s):
     return {t for t in re.findall(r"[a-z0-9]+", (s or "").lower()) if len(t) > 2 and t not in GENERIC}
 
 
-def arcgis_topic(q, pages=3):
+def arcgis_topic(q, pages=3, bbox=None):
     out = []
     for start in range(1, pages * 100, 100):
-        d = get_json("https://www.arcgis.com/sharing/rest/search",
-                     {"q": f'({q}) AND (type:"Feature Service" OR type:"Map Service" OR type:"Web Map")',
-                      "num": 100, "start": start, "f": "json"})
+        params = {"q": f'({q}) AND (type:"Feature Service" OR type:"Map Service" OR type:"Web Map")',
+                  "num": 100, "start": start, "f": "json"}
+        if bbox:
+            params["bbox"] = bbox
+        d = get_json("https://www.arcgis.com/sharing/rest/search", params)
         res = (d or {}).get("results", [])
         out += res
         if len(res) < 100:
@@ -110,6 +112,8 @@ def main():
     ap.add_argument("--skip-states", default="")
     ap.add_argument("--near", type=float, default=2.0, help="miles: pin this close to a polygon counts as a location match")
     ap.add_argument("--max-layers", type=int, default=500)
+    ap.add_argument("--bbox", help="xmin,ymin,xmax,ymax (WGS84): only ArcGIS items whose extent intersects it")
+    ap.add_argument("--tag", default="", help="suffix for output file names, e.g. 'co' -> harvest_layers_co.csv")
     args = ap.parse_args()
     only = set(args.states.split(",")) if args.states else None
     skip = set(filter(None, args.skip_states.split(",")))
@@ -120,7 +124,7 @@ def main():
     # 1. Gather candidate items by topic.
     items = {}
     for q in TOPICS:
-        for it in arcgis_topic(q):
+        for it in arcgis_topic(q, bbox=args.bbox):
             if not BAD.search(it.get("title", "")):
                 items.setdefault(it["id"], {**it, "found_by": f"ArcGIS: {q}"})
         for r in socrata_topic(q):
@@ -204,8 +208,9 @@ def main():
             w.writerows(data)
 
     OUT_DIR.mkdir(exist_ok=True)
-    dump(OUT_DIR / "harvest_layers.csv", layers_out)
-    dump(OUT_DIR / "harvest_matches.csv", matches)
+    sfx = f"_{args.tag}" if args.tag else ""
+    dump(OUT_DIR / f"harvest_layers{sfx}.csv", layers_out)
+    dump(OUT_DIR / f"harvest_matches{sfx}.csv", matches)
     print(f"Done in {time.time() - t0:.0f}s: {len(items)} items, {len(layers_out)} polygon layers, "
           f"{len(matches)} polygon-system matches covering {len({(m['State'], m['Name']) for m in matches})} systems; "
           f"{_req} catalog requests.", flush=True)

@@ -134,7 +134,6 @@
  {
   "state": "OH",
   "name": "TARTA Flex",
-  "hold": true,
   "platform": "Google My Maps",
   "kml_url": "https://www.google.com/maps/d/kml?mid=1yJQTqtTnJjYtrM8uI4I8GL9t844TGkc&forcekml=1",
   "item": "https://www.google.com/maps/d/viewer?mid=1yJQTqtTnJjYtrM8uI4I8GL9t844TGkc",
@@ -149,12 +148,11 @@
    "Flex Zone - East",
    "Flex Zone - E"
   ],
-  "note": "NW, SW and East flex zones from the My Maps TARTA embeds on its TARTA Flex page; the map's \"TARTA Move\" polygon (paratransit) is excluded. Held until the OH review findings are applied."
+  "note": "NW, SW and East flex zones from the My Maps TARTA embeds on its TARTA Flex page; the map's \"TARTA Move\" polygon (paratransit) is excluded."
  },
  {
   "state": "OH",
   "name": "MetroNow! (Cincinnati Metro)",
-  "hold": true,
   "layer_url": "https://services.arcgis.com/JyZag7oO4NteHGiq/arcgis/rest/services/MetroNow2025/FeatureServer/0",
   "item": "https://www.arcgis.com/home/item.html?id=ba2063d68a3e41bd86d486d372991d65",
   "title": "MetroNow! (web map embedded on go-metro.com)",
@@ -168,12 +166,11 @@
    "Forest Park / Pleasant Run",
    "Blue Ash Zone"
   ],
-  "note": "The four current zones from the web map on Metro's MetroNow! page; \"Bond Hill Zone (Coming Soon)\" excluded. Held until the OH review findings are applied."
+  "note": "The four current zones from the web map on Metro's MetroNow! page; \"Bond Hill Zone (Coming Soon)\" excluded."
  },
  {
   "state": "OH",
   "name": "COTA Plus",
-  "hold": true,
   "layer_url": "https://services6.arcgis.com/PyaYYixu3QuadcCe/arcgis/rest/services/COTA_Plus_Zones_All_Public_View/FeatureServer/0",
   "item": "https://www.arcgis.com/home/item.html?id=9454fd4940284b7eba1c436d1b623ae9",
   "title": "COTA Plus Zones Current (Public View)",
@@ -182,12 +179,11 @@
   "modified": "2023-11",
   "field": "NAME",
   "include": null,
-  "note": "COTA's public current-zones layer (found by the OH reviewer): Grove City, Westerville, South Side, all STATUS Active. The CSV's \"8 zones\" is the planned LinkUS count; log when applying. Held until the OH review findings are applied."
+  "note": "COTA's public current-zones layer (found by the OH reviewer): Grove City, Westerville, South Side, all STATUS Active. The CSV's \"8 zones\" is the planned LinkUS count (see concerns.csv)."
  },
  {
   "state": "OH",
   "name": "BGo Curb to Curb",
-  "hold": true,
   "platform": "agency KML file",
   "kml_url": "https://www.butlercountyrta.com/wp-content/uploads/2025/04/BCRTA_BGo_04252025.kml",
   "item": "https://www.butlercountyrta.com/wp-content/uploads/2025/04/BCRTA_BGo_04252025.kml",
@@ -197,7 +193,7 @@
   "modified": "2025-04-25",
   "field": "name",
   "include": null,
-  "note": "BCRTA's own BGo service-area KML, linked from its BGo page (the page's map viewer doesn't render it). About 524 sq mi vs. Butler County's 470, so the service area extends past the county line. Held until the OH review findings are applied."
+  "note": "BCRTA's own BGo service-area KML, linked from its BGo page (the page's map viewer doesn't render it). About 524 sq mi vs. Butler County's 470, so the service area extends past the county line."
  },
  {
   "state": "GA",
@@ -2103,5 +2099,117 @@
    "Ride in Kane (County)"
   ],
   "note": "HELD (needs the user's call): CMAP's 2024 dial-a-ride areas; county-scale, and Ride in Kane's is 300 sq mi vs the county's 524. Features auto-picked by pin location/name, not reviewed: Ride in Kane (County)."
+ },
+ {
+  "state": "CO",
+  "name": "Denver Connector",
+  "layer_url": "https://services1.arcgis.com/zdB7qR0BtYrg0Xpl/arcgis/rest/services/Connector_Areas_2025/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=fe72c95387974e2e8e147e7c5142ad8e",
+  "title": "Connector_Areas_2025",
+  "layer": "Connector_Areas_2025",
+  "publisher": "City and County of Denver (geospatialDENVER)",
+  "modified": "2026-06-16",
+  "field": "Zone_Name",
+  "include": [
+   "Globeville/Elyria-Swansea",
+   "Montbello/Gateway",
+   "West Denver"
+  ],
+  "note": "Denver Connector's three 2025 zones as published by the City and County of Denver; West Denver includes the 2024 expansion neighborhoods (Villa Park, Barnum, Westwood, Ruby Hill)."
+ },
+ {
+  "state": "CO",
+  "name": "Link on Demand (Lone Tree)",
+  "layer_url": "https://services7.arcgis.com/M6RDkiPo9JtEo7N6/arcgis/rest/services/Link_on_Demand_Service_Area/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=e2e73404c4814a5988df0b469f99c30a",
+  "title": "Link on Demand Service Area",
+  "layer": "Link on Demand Service Area",
+  "publisher": "City of Lone Tree",
+  "modified": "2026-05-14",
+  "field": "Name",
+  "include": [
+   "Highlands Ranch",
+   "Lone Tree",
+   "Parker",
+   "Littleton Mineral Station",
+   "Castle Pines Park & Ride",
+   "Castle Rock"
+  ],
+  "note": "All six Link on Demand areas from the City of Lone Tree's layer, including the Castle Rock addition and the Littleton Mineral Station and Castle Pines Park & Ride connection points."
+ },
+ {
+  "state": "CO",
+  "name": "RTD FlexRide",
+  "layer_url": "https://services5.arcgis.com/1fZoXlzLW6FCIUcE/arcgis/rest/services/RTD_GIS_Current_Runboard/FeatureServer/7",
+  "item": "https://services5.arcgis.com/1fZoXlzLW6FCIUcE/arcgis/rest/services/RTD_GIS_Current_Runboard/FeatureServer",
+  "title": "RTD_GIS_Current_Runboard",
+  "layer": "FlexRide Areas",
+  "publisher": "RTD",
+  "modified": "2026-11-05",
+  "field": "NAME",
+  "include": [
+   "Brighton",
+   "Broomfield",
+   "Golden",
+   "Green Mountain",
+   "Interlocken/Westmoor",
+   "Longmont",
+   "Louisville",
+   "Parker",
+   "South Jeffco",
+   "Superior",
+   "Thornton/I-25 North",
+   "Evergreen",
+   "DTC"
+  ],
+  "note": "The 13 FlexRide areas in RTD's current-runboard GIS service. The CSV lists 17 zones (see concerns.csv)."
+ },
+ {
+  "state": "CO",
+  "name": "Downtowner Aspen",
+  "layer_url": "https://services5.arcgis.com/iNdIB22pgUW2VVZ9/arcgis/rest/services/Aspen/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=ea02af1e6a63459eb15b18a14804a6b0",
+  "title": "Aspen Microtransit Area",
+  "layer": "Aspen",
+  "publisher": "RFTA",
+  "modified": "2026-11-03",
+  "note": "Aspen microtransit area as published by the Roaring Fork Transportation Authority.",
+  "field": "Name"
+ },
+ {
+  "state": "CO",
+  "name": "Basalt Connect",
+  "layer_url": "https://services5.arcgis.com/iNdIB22pgUW2VVZ9/arcgis/rest/services/Basalt/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=8fb3073d2c1541169eb5f06b49197f46",
+  "title": "Basalt Microtransit Area",
+  "layer": "Basalt",
+  "publisher": "RFTA",
+  "modified": "2026-11-03",
+  "note": "Basalt's two microtransit areas (Old Town, Willits) as published by the Roaring Fork Transportation Authority.",
+  "field": "Name"
+ },
+ {
+  "state": "CO",
+  "name": "Snowmass Village On-Demand Shuttle (Route 22)",
+  "layer_url": "https://services5.arcgis.com/iNdIB22pgUW2VVZ9/arcgis/rest/services/Snowmass_Village_Boundary/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=35703163d70d4050b3940cc80eba85bf",
+  "title": "Snowmass Village Microtransit Area",
+  "layer": "Snowmass_Village_Boundary",
+  "publisher": "RFTA",
+  "modified": "2026-11-03",
+  "note": "Snowmass Village on-demand service area as published by the Roaring Fork Transportation Authority.",
+  "field": "Name"
+ },
+ {
+  "state": "CO",
+  "name": "Erie Bee",
+  "hold": true,
+  "layer_url": "https://services7.arcgis.com/W84KziZxJbXVOT7V/arcgis/rest/services/Erie_Bee_Service_Area/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=58c262cc408d4684a011a390f06316cc",
+  "title": "Erie Bee Service Area",
+  "layer": "Erie_Bee_Service_Area",
+  "publisher": "unidentified account (catherine_scmn)",
+  "modified": "2026-10-23",
+  "note": "HELD: publisher can't be tied to the Town of Erie or its operator; 13.6 sq mi vs the 20.8 sq mi town."
  }
 ]
