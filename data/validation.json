@@ -54,7 +54,7 @@
   "WY": 5
  },
  "reviewers": {
-  "independent": 2,
+  "independent": 1,
   "project": 1
  },
  "fields": [
@@ -163,7 +163,7 @@
     "Fare": "Couldn't verify",
     "Website URL": "Confirmed"
    },
-   "boundary": ""
+   "boundary": "Matches"
   },
   {
    "state": "CO",
@@ -186,7 +186,7 @@
     "Fare": "Confirmed",
     "Website URL": "Confirmed"
    },
-   "boundary": ""
+   "boundary": "Matches"
   },
   {
    "state": "CO",
@@ -239,16 +239,338 @@
    "id": "CO-08",
    "name": "DuranGO! Microtransit",
    "by": "independent",
-   "date": "",
+   "date": "2026-11-18",
    "scope": {
     "Still operating?": "Yes",
     "Open to the general public?": "Yes",
-    "Same-day booking available?": ""
+    "Same-day booking available?": "Yes"
    },
    "checks": {
     "Name": "",
     "Operator": "Confirmed",
-    "Technology Vendor": "",
+    "Technology Vendor": "Confirmed",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "Partly matches"
+  },
+  {
+   "state": "CO",
+   "id": "CO-09",
+   "name": "Erie Bee",
+   "by": "independent",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Couldn't verify",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "Matches"
+  },
+  {
+   "state": "CO",
+   "id": "CO-10",
+   "name": "Highlands Ranch Microtransit",
+   "by": "independent",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Confirmed",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "Partly matches"
+  },
+  {
+   "state": "CO",
+   "id": "CO-11",
+   "name": "Kiowa County Transit",
+   "by": "independent",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Couldn't verify",
+    "Booking Method(s)": "",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Couldn't verify",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "No agency map found"
+  },
+  {
+   "state": "CO",
+   "id": "CO-12",
+   "name": "La Junta Transit",
+   "by": "independent",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Couldn't verify",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Corrected"
+   },
+   "boundary": "No agency map found"
+  },
+  {
+   "state": "CO",
+   "id": "CO-14",
+   "name": "Link on Demand (Lone Tree)",
+   "by": "independent",
+   "date": "",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Confirmed",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "Partly matches"
+  },
+  {
+   "state": "CO",
+   "id": "CO-15",
+   "name": "Mountain Village Dial-A-Ride",
+   "by": "independent",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Couldn't verify",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Corrected"
+   },
+   "boundary": "Matches"
+  },
+  {
+   "state": "CO",
+   "id": "CO-16",
+   "name": "Prowers Area Transit (PATS)",
+   "by": "independent",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Couldn't verify",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Corrected",
+    "Website URL": "Corrected"
+   },
+   "boundary": "Matches"
+  },
+  {
+   "state": "CO",
+   "id": "CO-17",
+   "name": "Ride Free Lafayette",
+   "by": "independent",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Confirmed",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "Matches"
+  },
+  {
+   "state": "CO",
+   "id": "CO-18",
+   "name": "RIDE Longmont",
+   "by": "independent",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Confirmed",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Corrected"
+   },
+   "boundary": "Matches"
+  },
+  {
+   "state": "CO",
+   "id": "CO-19",
+   "name": "RTD FlexRide",
+   "by": "independent",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Confirmed",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "Matches"
+  },
+  {
+   "state": "CO",
+   "id": "CO-20",
+   "name": "Snowmass Village On-Demand Shuttle (Route 22)",
+   "by": "independent",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Confirmed",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "Matches"
+  },
+  {
+   "state": "CO",
+   "id": "CO-21",
+   "name": "The Lift Flex",
+   "by": "independent",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Confirmed",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "Matches"
+  },
+  {
+   "state": "CO",
+   "id": "CO-22",
+   "name": "Via Mobility - Weld County",
+   "by": "independent",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Unsure",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Confirmed",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "Matches"
+  },
+  {
+   "state": "CO",
+   "id": "CO-23",
+   "name": "Yellow Zone",
+   "by": "independent",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Confirmed",
     "Booking Method(s)": "Confirmed",
     "Scheduling Window": "Confirmed",
     "Status/Maturity": "Confirmed",
@@ -302,6 +624,213 @@
     "Website URL": "Confirmed"
    },
    "boundary": "Doesn't match"
+  },
+  {
+   "state": "OH",
+   "id": "OH-03",
+   "name": "Dayton RTA Connect On-Demand",
+   "by": "project",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "Corrected",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Confirmed",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "Doesn't match"
+  },
+  {
+   "state": "OH",
+   "id": "OH-04",
+   "name": "Fairfield County LINK Direct",
+   "by": "project",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "Corrected",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Confirmed",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Corrected",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "Matches"
+  },
+  {
+   "state": "OH",
+   "id": "OH-05",
+   "name": "Knox County Transit",
+   "by": "project",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "Confirmed",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Confirmed",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Corrected",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "Matches"
+  },
+  {
+   "state": "OH",
+   "id": "OH-06",
+   "name": "Laketran Rides on Demand",
+   "by": "project",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "Confirmed",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Corrected",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "No agency map found"
+  },
+  {
+   "state": "OH",
+   "id": "OH-07",
+   "name": "MCFlex (Medina County)",
+   "by": "project",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "Corrected",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Confirmed",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Corrected",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "No agency map found"
+  },
+  {
+   "state": "OH",
+   "id": "OH-08",
+   "name": "METRO NEXT",
+   "by": "project",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "Confirmed",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Confirmed",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "Partly matches"
+  },
+  {
+   "state": "OH",
+   "id": "OH-09",
+   "name": "MetroNow! (Cincinnati Metro)",
+   "by": "project",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "Corrected",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Corrected",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "Partly matches"
+  },
+  {
+   "state": "OH",
+   "id": "OH-10",
+   "name": "TARTA Flex",
+   "by": "project",
+   "date": "2026-11-18",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "Confirmed",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Confirmed",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Confirmed",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "Partly matches"
+  },
+  {
+   "state": "OH",
+   "id": "OH-11",
+   "name": "ViaLC (Lorain County)",
+   "by": "independent",
+   "date": "",
+   "scope": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Yes",
+    "Same-day booking available?": "Yes"
+   },
+   "checks": {
+    "Name": "Corrected",
+    "Operator": "Confirmed",
+    "Technology Vendor": "Confirmed",
+    "Booking Method(s)": "Confirmed",
+    "Scheduling Window": "Confirmed",
+    "Status/Maturity": "Confirmed",
+    "Fare": "Corrected",
+    "Website URL": "Confirmed"
+   },
+   "boundary": "Partly matches"
   }
  ],
  "findings": [
@@ -382,6 +911,212 @@
    "flag": ""
   },
   {
+   "kind": "boundary",
+   "state": "CO",
+   "id": "CO-08",
+   "name": "DuranGO! Microtransit",
+   "by": "independent",
+   "date": "2026-11-18",
+   "check": "Partly matches",
+   "on_dashboard": "Exact: Official service area (GTFS-Flex). Built from GTFS-Flex locations.geojson, area_274 (route 76758 (zone shared with route 16594 Opportunity Bus)). Official geofence from the agency's GTFS-Flex feed (data.trilliumtransit.com/gtfs/durangotransit-co-us/durangotransit-co-us--flex-v2.zip), route 76758 (zone shared with route 16594 Opportunity Bus). Fetched 2026-09-10.",
+   "agency_map": "",
+   "difference": "",
+   "type": "",
+   "status": "open",
+   "sources": [
+    "https://www.durangoco.gov/1724/DuranGO-Microtransit",
+    "https://www.durangoco.gov/DocumentCenter/View/37142/Durango-Transit-Route-Map-2026"
+   ],
+   "notes": "",
+   "call": ""
+  },
+  {
+   "kind": "boundary",
+   "state": "CO",
+   "id": "CO-10",
+   "name": "Highlands Ranch Microtransit",
+   "by": "independent",
+   "date": "2026-11-18",
+   "check": "Partly matches",
+   "on_dashboard": "Approximate: City limits (Census). Built from Highlands Ranch CDP. Serves Highlands Ranch with focus on mobility for older adults. Launched spring 2025.",
+   "agency_map": "",
+   "difference": "",
+   "type": "",
+   "status": "open",
+   "sources": [
+    "https://city.ridewithvia.com/linkondemand"
+   ],
+   "notes": "",
+   "call": ""
+  },
+  {
+   "kind": "boundary",
+   "state": "CO",
+   "id": "CO-11",
+   "name": "Kiowa County Transit",
+   "by": "independent",
+   "date": "2026-11-18",
+   "check": "No agency map found",
+   "on_dashboard": "Approximate: County (Census). Built from Kiowa County. Operator is Kiowa County government (Kiowa County Commissioner's Office); service area described as Eads and Haswell, both towns within Kiowa County, with no evidence service is limited to Eads only. Shown as approximate countywide coverage. https://kiowacounty.colorado.gov/government/departments/kiowa-county-transit.",
+   "agency_map": "",
+   "difference": "",
+   "type": "",
+   "status": "open",
+   "sources": [
+    "https://kiowacounty.colorado.gov/government/departments/kiowa-county-transit"
+   ],
+   "notes": "It seems like they have a fee schedule depending on the destination.",
+   "call": ""
+  },
+  {
+   "kind": "field",
+   "state": "CO",
+   "id": "CO-12",
+   "name": "La Junta Transit",
+   "by": "independent",
+   "date": "2026-11-18",
+   "field": "Website URL",
+   "from": "https://www.lajuntacolorado.org/",
+   "to": "https://www.lajuntacolorado.org/221/Transit",
+   "type": "refinement",
+   "status": "open",
+   "sources": [
+    "https://www.lajuntacolorado.org/221/Transit"
+   ],
+   "notes": "",
+   "call": "",
+   "flag": ""
+  },
+  {
+   "kind": "boundary",
+   "state": "CO",
+   "id": "CO-12",
+   "name": "La Junta Transit",
+   "by": "independent",
+   "date": "2026-11-18",
+   "check": "No agency map found",
+   "on_dashboard": "Exact: Official service area (GTFS-Flex). Built from GTFS-Flex locations.geojson, area_397 (route 18982). Official geofence from the agency's GTFS-Flex feed (data.trilliumtransit.com/gtfs/lajunta-co-us/lajunta-co-us--flex-v2.zip), route 18982. Fetched 2026-09-10.",
+   "agency_map": "",
+   "difference": "",
+   "type": "",
+   "status": "open",
+   "sources": [
+    "https://www.lajuntacolorado.org/221/Transit"
+   ],
+   "notes": "",
+   "call": ""
+  },
+  {
+   "kind": "boundary",
+   "state": "CO",
+   "id": "CO-14",
+   "name": "Link on Demand (Lone Tree)",
+   "by": "independent",
+   "date": "",
+   "check": "Partly matches",
+   "on_dashboard": "Approximate: Town boundaries (Census). Built from Lone Tree city; Highlands Ranch CDP; Stonegate CDP; Parker town; Castle Rock town. Covers Lone Tree, Highlands Ranch, Stonegate, and Castle Rock (added July 31, 2026) fully; Parker coverage is partial ('select areas of Parker', not the whole town) so the Parker polygon here overstates actual coverage — no boundary streets or map are published outside the operator's in-app service-area tool (City.RideWithVia.com/LinkOnDemand). Meridian also served but ambiguous in boundary data (multiple Meridian CDPs exist); mapped coverage uses other resolved places. Service areas are not continuous. Sources: https://www.douglasco.gov/free-link-on-demand-rideshare-now-available-in-stonegate-and-parts-of-parker/ , https://cityoflonetree.com/link-on-demand/.",
+   "agency_map": "",
+   "difference": "",
+   "type": "",
+   "status": "open",
+   "sources": [
+    "https://cityoflonetree.maps.arcgis.com/apps/instant/lookup/index.html?appid=346831e6b3764e498e1fc38c204496e7"
+   ],
+   "notes": "",
+   "call": ""
+  },
+  {
+   "kind": "field",
+   "state": "CO",
+   "id": "CO-15",
+   "name": "Mountain Village Dial-A-Ride",
+   "by": "independent",
+   "date": "2026-11-18",
+   "field": "Website URL",
+   "from": "https://townofmountainvillage.com/",
+   "to": "https://townofmountainvillage.com/explore/getting-around/bus-dial-a-ride/",
+   "type": "refinement",
+   "status": "open",
+   "sources": [
+    "https://townofmountainvillage.com/explore/getting-around/bus-dial-a-ride/"
+   ],
+   "notes": "",
+   "call": "",
+   "flag": ""
+  },
+  {
+   "kind": "field",
+   "state": "CO",
+   "id": "CO-16",
+   "name": "Prowers Area Transit (PATS)",
+   "by": "independent",
+   "date": "2026-11-18",
+   "field": "Fare",
+   "from": "$1.50",
+   "to": "",
+   "type": "unclassified",
+   "status": "open",
+   "sources": [],
+   "notes": "Lamar one way (per stop):$1.50; 10-ride punch ticket $12.50 ($1.25/ride); senior prices are different",
+   "call": "",
+   "flag": "Marked Corrected but no correct value given; No source given; CSV value changed since export"
+  },
+  {
+   "kind": "field",
+   "state": "CO",
+   "id": "CO-16",
+   "name": "Prowers Area Transit (PATS)",
+   "by": "independent",
+   "date": "2026-11-18",
+   "field": "Website URL",
+   "from": "https://www.prowersco.gov/departments/transit/index.php",
+   "to": "https://www.prowersco.gov/departments/prowers-area-transit/GeneralInformation",
+   "type": "unclassified",
+   "status": "open",
+   "sources": [],
+   "notes": "Lamar one way (per stop):$1.50; 10-ride punch ticket $12.50 ($1.25/ride); senior prices are different",
+   "call": "",
+   "flag": "No source given"
+  },
+  {
+   "kind": "field",
+   "state": "CO",
+   "id": "CO-18",
+   "name": "RIDE Longmont",
+   "by": "independent",
+   "date": "2026-11-18",
+   "field": "Website URL",
+   "from": "https://longmontcolorado.gov/ride-longmont",
+   "to": "https://city.ridewithvia.com/longmont",
+   "type": "unclassified",
+   "status": "open",
+   "sources": [
+    "https://city.ridewithvia.com/longmont"
+   ],
+   "notes": "",
+   "call": "",
+   "flag": ""
+  },
+  {
+   "kind": "scope",
+   "state": "CO",
+   "id": "CO-22",
+   "name": "Via Mobility - Weld County",
+   "by": "independent",
+   "date": "2026-11-18",
+   "answers": {
+    "Still operating?": "Yes",
+    "Open to the general public?": "Unsure",
+    "Same-day booking available?": "Yes"
+   },
+   "status": "open",
+   "sources": [
+    "https://www.weld.gov/Government/Departments/Public-Works/On-Demand-Transit-Services"
+   ],
+   "notes": "",
+   "call": ""
+  },
+  {
    "kind": "field",
    "state": "OH",
    "id": "OH-01",
@@ -413,6 +1148,356 @@
    "status": "open",
    "sources": [],
    "notes": "Fares vary depending on rider type.",
+   "call": ""
+  },
+  {
+   "kind": "field",
+   "state": "OH",
+   "id": "OH-03",
+   "name": "Dayton RTA Connect On-Demand",
+   "by": "project",
+   "date": "2026-11-18",
+   "field": "Name",
+   "from": "Dayton RTA Connect On-Demand",
+   "to": "RTA Connect On-Demand",
+   "type": "unclassified",
+   "status": "open",
+   "sources": [],
+   "notes": "",
+   "call": "",
+   "flag": "No source given"
+  },
+  {
+   "kind": "boundary",
+   "state": "OH",
+   "id": "OH-03",
+   "name": "Dayton RTA Connect On-Demand",
+   "by": "project",
+   "date": "2026-11-18",
+   "check": "Doesn't match",
+   "on_dashboard": "Approximate: County (Census). Built from Montgomery County. Service covers 4 zones in Montgomery County (Miami Valley); using county as proxy.",
+   "agency_map": "https://www.iriderta.org/ride/other-transportation-services/demand",
+   "difference": "Maps shown on agency website indicate specific zones (not county overall)",
+   "type": "",
+   "status": "open",
+   "sources": [],
+   "notes": "",
+   "call": ""
+  },
+  {
+   "kind": "field",
+   "state": "OH",
+   "id": "OH-04",
+   "name": "Fairfield County LINK Direct",
+   "by": "project",
+   "date": "2026-11-18",
+   "field": "Name",
+   "from": "Fairfield County LINK Direct",
+   "to": "Fairfield County Transit: The LINK",
+   "type": "unclassified",
+   "status": "open",
+   "sources": [],
+   "notes": "Boundaries seem reasonable without further info; while it technically extends beyon Fairfiled county up to 50 miles, this isn't exactly part of the service area because you couldn't book a trip exclusively within that 50 mile buffer",
+   "call": "",
+   "flag": "No source given"
+  },
+  {
+   "kind": "field",
+   "state": "OH",
+   "id": "OH-04",
+   "name": "Fairfield County LINK Direct",
+   "by": "project",
+   "date": "2026-11-18",
+   "field": "Scheduling Window",
+   "from": "Same-day (space permitting, higher fare/longer wait); 24hr advance preferred",
+   "to": "Flexible - offers same-day but seems more oriented toward advance booking",
+   "type": "unclassified",
+   "status": "open",
+   "sources": [],
+   "notes": "Boundaries seem reasonable without further info; while it technically extends beyon Fairfiled county up to 50 miles, this isn't exactly part of the service area because you couldn't book a trip exclusively within that 50 mile buffer",
+   "call": "",
+   "flag": "No source given"
+  },
+  {
+   "kind": "boundary",
+   "state": "OH",
+   "id": "OH-04",
+   "name": "Fairfield County LINK Direct",
+   "by": "project",
+   "date": "2026-11-18",
+   "check": "Matches",
+   "on_dashboard": "Approximate: County (Census). Built from Fairfield County. Primary service area is Fairfield County (Lancaster area); also offers out-of-county trips up to 50 miles statewide but core service is county-based.",
+   "agency_map": "https://experience.arcgis.com/experience/db2603c9aadd4b0aa8bf4bab199ba3be/; https://www.co.fairfield.oh.us/transit/FCT-oh-us.zip",
+   "difference": "",
+   "type": "",
+   "status": "open",
+   "sources": [],
+   "notes": "Boundaries seem reasonable without further info; while it technically extends beyon Fairfiled county up to 50 miles, this isn't exactly part of the service area because you couldn't book a trip exclusively within that 50 mile buffer",
+   "call": ""
+  },
+  {
+   "kind": "field",
+   "state": "OH",
+   "id": "OH-05",
+   "name": "Knox County Transit",
+   "by": "project",
+   "date": "2026-11-18",
+   "field": "Scheduling Window",
+   "from": "Same-day",
+   "to": "Advance - offers same-day but seems more oriented toward advance booking",
+   "type": "refinement",
+   "status": "open",
+   "sources": [
+    "https://knoxcountytransit.com/riding-knox-county-transit/"
+   ],
+   "notes": "System seems to only marginally fit the definition of ODT since there's no app and same-day is not guaranteed; fares have more nuance including some free options",
+   "call": "",
+   "flag": ""
+  },
+  {
+   "kind": "boundary",
+   "state": "OH",
+   "id": "OH-05",
+   "name": "Knox County Transit",
+   "by": "project",
+   "date": "2026-11-18",
+   "check": "Matches",
+   "on_dashboard": "Approximate: County (Census). Built from Knox County. Primary service area is Knox County (Mount Vernon area); also offers out-of-county trips throughout Ohio but core service is county-based.",
+   "agency_map": "https://knoxcountytransit.com/content/uploads/2026/02/kct-gtfs.zip",
+   "difference": "",
+   "type": "",
+   "status": "open",
+   "sources": [
+    "https://knoxcountytransit.com/riding-knox-county-transit/"
+   ],
+   "notes": "System seems to only marginally fit the definition of ODT since there's no app and same-day is not guaranteed; fares have more nuance including some free options",
+   "call": ""
+  },
+  {
+   "kind": "field",
+   "state": "OH",
+   "id": "OH-06",
+   "name": "Laketran Rides on Demand",
+   "by": "project",
+   "date": "2026-11-18",
+   "field": "Technology Vendor",
+   "from": "Not specified",
+   "to": "Trapeze Software Group",
+   "type": "gap",
+   "status": "open",
+   "sources": [],
+   "notes": "",
+   "call": "",
+   "flag": "No source given"
+  },
+  {
+   "kind": "boundary",
+   "state": "OH",
+   "id": "OH-06",
+   "name": "Laketran Rides on Demand",
+   "by": "project",
+   "date": "2026-11-18",
+   "check": "No agency map found",
+   "on_dashboard": "Exact: County (Census). Built from Lake County. County-wide service.",
+   "agency_map": "",
+   "difference": "Description on website is consistent with county boundary as the service",
+   "type": "",
+   "status": "open",
+   "sources": [],
+   "notes": "",
+   "call": ""
+  },
+  {
+   "kind": "field",
+   "state": "OH",
+   "id": "OH-07",
+   "name": "MCFlex (Medina County)",
+   "by": "project",
+   "date": "2026-11-18",
+   "field": "Name",
+   "from": "MCFlex (Medina County)",
+   "to": "MCFlex",
+   "type": "unclassified",
+   "status": "open",
+   "sources": [
+    "https://www.medinaco.org/wp-content/uploads/August-1-2025.pdf"
+   ],
+   "notes": "Marginal fit for ODT; advance booking preferred (up to 7 days) and the New Brunswick service has fixed drop-off/pickoff points; worth noting somewhere that the New Brunswick service arose in response to a different route being cut; perhaps worth noting as a reason why these services are being developed if we should ever want to tally something like that.",
+   "call": "",
+   "flag": ""
+  },
+  {
+   "kind": "field",
+   "state": "OH",
+   "id": "OH-07",
+   "name": "MCFlex (Medina County)",
+   "by": "project",
+   "date": "2026-11-18",
+   "field": "Scheduling Window",
+   "from": "Same-day",
+   "to": "Flexible - offers same-day but seems more oriented toward advance booking",
+   "type": "refinement",
+   "status": "open",
+   "sources": [
+    "https://www.medinaco.org/wp-content/uploads/August-1-2025.pdf"
+   ],
+   "notes": "Marginal fit for ODT; advance booking preferred (up to 7 days) and the New Brunswick service has fixed drop-off/pickoff points; worth noting somewhere that the New Brunswick service arose in response to a different route being cut; perhaps worth noting as a reason why these services are being developed if we should ever want to tally something like that.",
+   "call": "",
+   "flag": ""
+  },
+  {
+   "kind": "boundary",
+   "state": "OH",
+   "id": "OH-07",
+   "name": "MCFlex (Medina County)",
+   "by": "project",
+   "date": "2026-11-18",
+   "check": "No agency map found",
+   "on_dashboard": "Approximate: Town boundaries (Census). Built from Wadsworth city; Medina city. Serves Wadsworth and Medina City; Brunswick planned for expansion.",
+   "agency_map": "",
+   "difference": "",
+   "type": "",
+   "status": "open",
+   "sources": [
+    "https://www.medinaco.org/wp-content/uploads/August-1-2025.pdf"
+   ],
+   "notes": "Marginal fit for ODT; advance booking preferred (up to 7 days) and the New Brunswick service has fixed drop-off/pickoff points; worth noting somewhere that the New Brunswick service arose in response to a different route being cut; perhaps worth noting as a reason why these services are being developed if we should ever want to tally something like that.",
+   "call": ""
+  },
+  {
+   "kind": "boundary",
+   "state": "OH",
+   "id": "OH-08",
+   "name": "METRO NEXT",
+   "by": "project",
+   "date": "2026-11-18",
+   "check": "Partly matches",
+   "on_dashboard": "Approximate: County (Census). Built from Summit County. Service covers Northern, Southern, Eastern, Western zones in Summit County outside Akron METRO fixed-route service; using county as proxy.",
+   "agency_map": "https://kylestewart1.github.io/metro-next-southern-zone/; https://www.yourmetrobus.org/metro-next.aspx",
+   "difference": "Map should remove Akron city boundaries and/or other areas where fixed rout transit exists per agency map",
+   "type": "",
+   "status": "open",
+   "sources": [],
+   "notes": "",
+   "call": ""
+  },
+  {
+   "kind": "field",
+   "state": "OH",
+   "id": "OH-09",
+   "name": "MetroNow! (Cincinnati Metro)",
+   "by": "project",
+   "date": "2026-11-18",
+   "field": "Name",
+   "from": "MetroNow! (Cincinnati Metro)",
+   "to": "MetroNow!",
+   "type": "unclassified",
+   "status": "open",
+   "sources": [],
+   "notes": "Includes option to select 'less waiting' or 'less walking'",
+   "call": "",
+   "flag": "No source given"
+  },
+  {
+   "kind": "field",
+   "state": "OH",
+   "id": "OH-09",
+   "name": "MetroNow! (Cincinnati Metro)",
+   "by": "project",
+   "date": "2026-11-18",
+   "field": "Technology Vendor",
+   "from": "Not specified",
+   "to": "Via",
+   "type": "gap",
+   "status": "open",
+   "sources": [],
+   "notes": "Includes option to select 'less waiting' or 'less walking'",
+   "call": "",
+   "flag": "No source given"
+  },
+  {
+   "kind": "boundary",
+   "state": "OH",
+   "id": "OH-09",
+   "name": "MetroNow! (Cincinnati Metro)",
+   "by": "project",
+   "date": "2026-11-18",
+   "check": "Partly matches",
+   "on_dashboard": "Approximate: County (Census). Built from Hamilton County. Service covers 6+ zones in Hamilton County: Springdale, Sharonville, Northgate, Mt. Healthy, Forest Park, Pleasant Run, Blue Ash, Montgomery, Deer Park, Silverton, Kenwood, Madeira. Using county as proxy for multi-zone suburban service.",
+   "agency_map": "https://www.go-metro.com/riding-metro/metronow/",
+   "difference": "Operates in distinct zones (not countywide)",
+   "type": "",
+   "status": "open",
+   "sources": [],
+   "notes": "Includes option to select 'less waiting' or 'less walking'",
+   "call": ""
+  },
+  {
+   "kind": "boundary",
+   "state": "OH",
+   "id": "OH-10",
+   "name": "TARTA Flex",
+   "by": "project",
+   "date": "2026-11-18",
+   "check": "Partly matches",
+   "on_dashboard": "Approximate: County (Census). Built from Lucas County. Service covers NW, SW, East zones in Lucas County and Rossford area; using county as proxy for multi-zone coverage.",
+   "agency_map": "https://tarta.com/ride-tarta/tarta-flex/",
+   "difference": "Operates in distinct zones (not countywide)",
+   "type": "",
+   "status": "open",
+   "sources": [],
+   "notes": "",
+   "call": ""
+  },
+  {
+   "kind": "field",
+   "state": "OH",
+   "id": "OH-11",
+   "name": "ViaLC (Lorain County)",
+   "by": "independent",
+   "date": "",
+   "field": "Name",
+   "from": "ViaLC (Lorain County)",
+   "to": "ViaLC",
+   "type": "unclassified",
+   "status": "open",
+   "sources": [],
+   "notes": "",
+   "call": "",
+   "flag": "No source given"
+  },
+  {
+   "kind": "field",
+   "state": "OH",
+   "id": "OH-11",
+   "name": "ViaLC (Lorain County)",
+   "by": "independent",
+   "date": "",
+   "field": "Fare",
+   "from": "Not specified",
+   "to": "$2 ($1 for discounted members and free for veterans and infants under 2)",
+   "type": "gap",
+   "status": "open",
+   "sources": [],
+   "notes": "",
+   "call": "",
+   "flag": "No source given"
+  },
+  {
+   "kind": "boundary",
+   "state": "OH",
+   "id": "OH-11",
+   "name": "ViaLC (Lorain County)",
+   "by": "independent",
+   "date": "",
+   "check": "Partly matches",
+   "on_dashboard": "Exact: Town boundaries (Census). Built from Lorain city; Elyria city. Serves both Lorain and Elyria cities in Lorain County.",
+   "agency_map": "https://city.ridewithvia.com/lorain",
+   "difference": "Agency map is similar to city boundaries but seems to be more inclusive; it could also just be generalized for display purposes",
+   "type": "",
+   "status": "open",
+   "sources": [],
+   "notes": "",
    "call": ""
   }
  ],

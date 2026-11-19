@@ -154,7 +154,10 @@ def main():
             sources = get(vals, "tail", "Sources consulted (URLs)")
             notes = get(vals, "tail", "Notes")
             by = "project" if who.strip().lower() in self_names else "independent"
-            reviewer_kinds[by].add(who.strip().lower() or "(unnamed)")
+            if who.strip():
+                reviewer_kinds[by].add(who.strip().lower())
+            else:
+                problems.append(f"{st} {rid} {name!r}: reviewed but Reviewed by is blank; counted as independent.")
             reviews.append({
                 "state": st, "id": rid, "name": name, "by": by, "date": when,
                 "scope": {q: scope[q] for q in scope_qs},
@@ -316,7 +319,7 @@ def main():
                          "why": m.get("Why it looks in scope", ""), "date": m.get("Date", "")} for m in missing],
         }
         # Notes are free text; drop any reviewer's name (full or first) before publishing.
-        names = sorted({n for ns in reviewer_kinds.values() for n in ns if n != "(unnamed)"}, key=len, reverse=True)
+        names = sorted({n for ns in reviewer_kinds.values() for n in ns}, key=len, reverse=True)
         tokens = names + sorted({n.split()[0] for n in names if len(n.split()[0]) >= 3}, key=len, reverse=True)
         def scrub(t):
             for n in tokens:
