@@ -1,5 +1,5 @@
 {
- "read": "2026-11-18",
+ "read": "2026-11-19",
  "total_systems": 665,
  "states": {
   "AL": 5,
@@ -813,8 +813,8 @@
    "state": "OH",
    "id": "OH-11",
    "name": "ViaLC (Lorain County)",
-   "by": "independent",
-   "date": "",
+   "by": "project",
+   "date": "2026-11-18",
    "scope": {
     "Still operating?": "Yes",
     "Open to the general public?": "Yes",
@@ -864,13 +864,13 @@
    "from": "App",
    "to": "App, Phone",
    "type": "refinement",
-   "status": "open",
+   "status": "applied",
    "sources": [
     "https://basalt.net/642/Basalt-Connect"
    ],
    "notes": "",
    "call": "",
-   "flag": ""
+   "flag": "CSV value changed since export; Already matches CSV"
   },
   {
    "kind": "scope",
@@ -979,13 +979,13 @@
    "from": "https://www.lajuntacolorado.org/",
    "to": "https://www.lajuntacolorado.org/221/Transit",
    "type": "refinement",
-   "status": "open",
+   "status": "applied",
    "sources": [
     "https://www.lajuntacolorado.org/221/Transit"
    ],
    "notes": "",
    "call": "",
-   "flag": ""
+   "flag": "CSV value changed since export; Already matches CSV"
   },
   {
    "kind": "boundary",
@@ -1036,13 +1036,13 @@
    "from": "https://townofmountainvillage.com/",
    "to": "https://townofmountainvillage.com/explore/getting-around/bus-dial-a-ride/",
    "type": "refinement",
-   "status": "open",
+   "status": "applied",
    "sources": [
     "https://townofmountainvillage.com/explore/getting-around/bus-dial-a-ride/"
    ],
    "notes": "",
    "call": "",
-   "flag": ""
+   "flag": "CSV value changed since export; Already matches CSV"
   },
   {
    "kind": "field",
@@ -1284,11 +1284,11 @@
    "from": "Not specified",
    "to": "Trapeze Software Group",
    "type": "gap",
-   "status": "open",
+   "status": "applied",
    "sources": [],
    "notes": "",
    "call": "",
-   "flag": "No source given"
+   "flag": "No source given; CSV value changed since export; Already matches CSV"
   },
   {
    "kind": "boundary",
@@ -1409,11 +1409,11 @@
    "from": "Not specified",
    "to": "Via",
    "type": "gap",
-   "status": "open",
+   "status": "applied",
    "sources": [],
    "notes": "Includes option to select 'less waiting' or 'less walking'",
    "call": "",
-   "flag": "No source given"
+   "flag": "No source given; CSV value changed since export; Already matches CSV"
   },
   {
    "kind": "boundary",
@@ -1454,8 +1454,8 @@
    "state": "OH",
    "id": "OH-11",
    "name": "ViaLC (Lorain County)",
-   "by": "independent",
-   "date": "",
+   "by": "project",
+   "date": "2026-11-18",
    "field": "Name",
    "from": "ViaLC (Lorain County)",
    "to": "ViaLC",
@@ -1471,25 +1471,25 @@
    "state": "OH",
    "id": "OH-11",
    "name": "ViaLC (Lorain County)",
-   "by": "independent",
-   "date": "",
+   "by": "project",
+   "date": "2026-11-18",
    "field": "Fare",
    "from": "Not specified",
    "to": "$2 ($1 for discounted members and free for veterans and infants under 2)",
    "type": "gap",
-   "status": "open",
+   "status": "applied",
    "sources": [],
    "notes": "",
    "call": "",
-   "flag": "No source given"
+   "flag": "No source given; CSV value changed since export; Already matches CSV"
   },
   {
    "kind": "boundary",
    "state": "OH",
    "id": "OH-11",
    "name": "ViaLC (Lorain County)",
-   "by": "independent",
-   "date": "",
+   "by": "project",
+   "date": "2026-11-18",
    "check": "Partly matches",
    "on_dashboard": "Exact: Town boundaries (Census). Built from Lorain city; Elyria city. Serves both Lorain and Elyria cities in Lorain County.",
    "agency_map": "https://city.ridewithvia.com/lorain",
