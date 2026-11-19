@@ -1,3 +1,9 @@
 State,Name,Field,Type,Status,Note
 OH,BGo Curb to Curb,Name,cosmetic,open,Shorter brand name; the current name is not wrong.
 CO,Avon Microtransit,Service area boundary,method_question,open,Reviewer asked whether a city-limits polygon standing in for the service zone is expected. Not a reported error.
+OH,Dayton RTA Connect On-Demand,Name,cosmetic,open,Brand name without the agency qualifier; the current name is not wrong.
+OH,MCFlex (Medina County),Name,cosmetic,open,Brand name without the county qualifier; the current name is not wrong.
+OH,MetroNow! (Cincinnati Metro),Name,cosmetic,open,Brand name without the agency qualifier; the current name is not wrong.
+OH,ViaLC (Lorain County),Name,cosmetic,open,Brand name without the county qualifier; the current name is not wrong.
+OH,Fairfield County LINK Direct,Name,not_error,open,"The LINK is the umbrella brand on the buses; LINK Direct is the curb-to-curb microtransit service and LINK Lines the fixed routes, so LINK Direct is the right name for this row."
+OH,Fairfield County LINK Direct,Scheduling Window,refinement,open,"Same-day is space permitting: ""same-day, subject to availability"" under the proposed Scheduling Window values."

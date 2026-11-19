@@ -1160,11 +1160,11 @@
    "field": "Name",
    "from": "Dayton RTA Connect On-Demand",
    "to": "RTA Connect On-Demand",
-   "type": "unclassified",
+   "type": "cosmetic",
    "status": "open",
    "sources": [],
    "notes": "",
-   "call": "",
+   "call": "Brand name without the agency qualifier; the current name is not wrong.",
    "flag": "No source given"
   },
   {
@@ -1194,11 +1194,11 @@
    "field": "Name",
    "from": "Fairfield County LINK Direct",
    "to": "Fairfield County Transit: The LINK",
-   "type": "unclassified",
+   "type": "not_error",
    "status": "open",
    "sources": [],
    "notes": "Boundaries seem reasonable without further info; while it technically extends beyon Fairfiled county up to 50 miles, this isn't exactly part of the service area because you couldn't book a trip exclusively within that 50 mile buffer",
-   "call": "",
+   "call": "The LINK is the umbrella brand on the buses; LINK Direct is the curb-to-curb microtransit service and LINK Lines the fixed routes, so LINK Direct is the right name for this row.",
    "flag": "No source given"
   },
   {
@@ -1211,11 +1211,11 @@
    "field": "Scheduling Window",
    "from": "Same-day (space permitting, higher fare/longer wait); 24hr advance preferred",
    "to": "Flexible - offers same-day but seems more oriented toward advance booking",
-   "type": "unclassified",
+   "type": "refinement",
    "status": "open",
    "sources": [],
    "notes": "Boundaries seem reasonable without further info; while it technically extends beyon Fairfiled county up to 50 miles, this isn't exactly part of the service area because you couldn't book a trip exclusively within that 50 mile buffer",
-   "call": "",
+   "call": "Same-day is space permitting: \"same-day, subject to availability\" under the proposed Scheduling Window values.",
    "flag": "No source given"
   },
   {
@@ -1317,13 +1317,13 @@
    "field": "Name",
    "from": "MCFlex (Medina County)",
    "to": "MCFlex",
-   "type": "unclassified",
+   "type": "cosmetic",
    "status": "open",
    "sources": [
     "https://www.medinaco.org/wp-content/uploads/August-1-2025.pdf"
    ],
    "notes": "Marginal fit for ODT; advance booking preferred (up to 7 days) and the New Brunswick service has fixed drop-off/pickoff points; worth noting somewhere that the New Brunswick service arose in response to a different route being cut; perhaps worth noting as a reason why these services are being developed if we should ever want to tally something like that.",
-   "call": "",
+   "call": "Brand name without the county qualifier; the current name is not wrong.",
    "flag": ""
   },
   {
@@ -1391,11 +1391,11 @@
    "field": "Name",
    "from": "MetroNow! (Cincinnati Metro)",
    "to": "MetroNow!",
-   "type": "unclassified",
+   "type": "cosmetic",
    "status": "open",
    "sources": [],
    "notes": "Includes option to select 'less waiting' or 'less walking'",
-   "call": "",
+   "call": "Brand name without the agency qualifier; the current name is not wrong.",
    "flag": "No source given"
   },
   {
@@ -1459,11 +1459,11 @@
    "field": "Name",
    "from": "ViaLC (Lorain County)",
    "to": "ViaLC",
-   "type": "unclassified",
+   "type": "cosmetic",
    "status": "open",
    "sources": [],
    "notes": "",
-   "call": "",
+   "call": "Brand name without the county qualifier; the current name is not wrong.",
    "flag": "No source given"
   },
   {
