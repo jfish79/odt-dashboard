@@ -436,28 +436,6 @@
   "note": "Late-day microtransit connecting three towns to Metro-North train lines; replaces evening fixed routes"
  },
  {
-  "name": "VTD2GO (Valley Transit District)",
-  "state": "CT",
-  "boundary_type": "cousubs",
-  "units": [
-   {
-    "layer": "cousub",
-    "name": "Ansonia"
-   },
-   {
-    "layer": "cousub",
-    "name": "Derby"
-   },
-   {
-    "layer": "cousub",
-    "name": "Shelton"
-   }
-  ],
-  "fidelity": "approximate",
-  "confidence": 0.85,
-  "note": "Service covers Ansonia and Derby fully, portions of Shelton; evening-only service launched April 2024"
- },
- {
   "name": "Waterford HOP",
   "state": "CT",
   "boundary_type": "cousub",

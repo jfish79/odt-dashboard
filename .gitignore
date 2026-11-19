@@ -33,3 +33,6 @@ scripts/boundaries/cache/
 
 # Validation workbooks and ingest results (generated; returned copies carry reviewer names)
 /validation/
+
+# ArcGIS search/vet working lists (regenerable; owner usernames include personal emails)
+scripts/boundaries/candidates/

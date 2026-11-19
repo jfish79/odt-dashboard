@@ -569,20 +569,6 @@
   "note": "Demand-response service on Route 6 operating in Brooksville; exact service area TBD"
  },
  {
-  "name": "ULTRA On-Demand Transit",
-  "state": "FL",
-  "boundary_type": "county",
-  "units": [
-   {
-    "layer": "county",
-    "name": "Lee"
-   }
-  ],
-  "confidence": 0.8,
-  "fidelity": "approximate",
-  "note": "Specific underperforming zones within Lee County"
- },
- {
   "name": "VoRide",
   "state": "FL",
   "boundary_type": "places",

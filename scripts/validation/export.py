@@ -57,7 +57,8 @@ CHECK_CHOICES = ["Confirmed", "Corrected", "Couldn't verify"]
 BOUNDARY_CHOICES = ["Matches", "Partly matches", "Doesn't match", "No agency map found"]
 # Labels match BOUNDARY_COLORS in index.html.
 BOUNDARY_LABELS = {
-    "gtfs_flex": "Official service area (GTFS-Flex)", "city": "City limits (Census)",
+    "gtfs_flex": "Official service area (GTFS-Flex)", "agency_gis": "Agency zone map (ArcGIS)",
+    "city": "City limits (Census)",
     "county": "County (Census)", "counties": "Multi-county (Census)",
     "cousub": "Town/township (Census)", "cousubs": "Towns/townships (Census)",
     "tribal": "Tribal land (Census)", "places": "Town boundaries (Census)",

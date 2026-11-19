@@ -295,8 +295,8 @@
   "year_num": 2022,
   "fleet_size": null,
   "boundary": {
-   "type": "places_constructed",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -1495,8 +1495,8 @@
   "year_num": 2024,
   "fleet_size": null,
   "boundary": {
-   "type": "cousubs",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -1941,7 +1941,10 @@
   "vendor_class": "RideCo",
   "year_num": 2020,
   "fleet_size": null,
-  "boundary": null
+  "boundary": {
+   "type": "agency_gis",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Go West Covina",
@@ -3487,8 +3490,8 @@
   "year_num": 2024,
   "fleet_size": null,
   "boundary": {
-   "type": "places",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -6097,8 +6100,8 @@
   "year_num": 2023,
   "fleet_size": null,
   "boundary": {
-   "type": "county",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -8827,8 +8830,8 @@
   "year_num": 2024,
   "fleet_size": null,
   "boundary": {
-   "type": "city",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -9847,8 +9850,8 @@
   "year_num": null,
   "fleet_size": null,
   "boundary": {
-   "type": "zone_approx",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -10957,8 +10960,8 @@
   "year_num": 2021,
   "fleet_size": null,
   "boundary": {
-   "type": "counties",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -15667,8 +15670,8 @@
   "year_num": null,
   "fleet_size": null,
   "boundary": {
-   "type": "city",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -16357,8 +16360,8 @@
   "year_num": 2024,
   "fleet_size": 3,
   "boundary": {
-   "type": "city",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {

@@ -1,19 +1,5 @@
 [
  {
-  "name": "ABQ RIDE Connect",
-  "state": "NM",
-  "boundary_type": "city",
-  "units": [
-   {
-    "layer": "place",
-    "name": "Albuquerque"
-   }
-  ],
-  "fidelity": "approximate",
-  "confidence": 0.75,
-  "note": "Three on-demand zones within Albuquerque city limits: Southwest Mesa Zone, Rio Grande Zone (active since March 2024), and South Valley Zone (launching May 2026). Service area varies by zone."
- },
- {
   "name": "Corre Cantinas",
   "state": "NM",
   "boundary_type": "counties",

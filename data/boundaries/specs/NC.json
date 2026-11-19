@@ -35,20 +35,6 @@
   "note": "Pilot zone in Asheboro city; partial coverage, not city-wide"
  },
  {
-  "name": "Go Wake Forest",
-  "state": "NC",
-  "boundary_type": "city",
-  "units": [
-   {
-    "layer": "place",
-    "name": "Wake Forest"
-   }
-  ],
-  "fidelity": "approximate",
-  "confidence": 0.75,
-  "note": "Wake Forest town limits plus a portion of Wakefield; Town of Wake Forest operated"
- },
- {
   "name": "GoRaleigh MicroLink",
   "state": "NC",
   "boundary_type": "places",

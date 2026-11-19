@@ -62,23 +62,5 @@
   ],
   "confidence": 0.8,
   "note": "Service covers the confirmed Fort Washington-Oxon Hill-Accokeek zone. Additional zones (Bowie, Hyattsville, Laurel) are planned but not yet confirmed operating."
- },
- {
-  "name": "Ride On Flex",
-  "state": "MD",
-  "boundary_type": "zone_approx",
-  "units": [
-   {
-    "layer": "county",
-    "name": "Montgomery"
-   }
-  ],
-  "clip_to_units": true,
-  "buffer": {
-   "radius_km": 2.4
-  },
-  "fidelity": "approximate",
-  "confidence": 0.7,
-  "note": "Zone 918 is a narrow corridor along New Hampshire Ave from Cloverly St (Sandy Spring, ~39.083,-76.977) south to Lockwood Dr/White Oak Center (~39.041,-76.995), roughly 3 miles long -- far smaller than Montgomery County, so approximated as a ~1.5-mile-radius circle on the CSV pin, clipped to the county. No published zone polygon or acreage. Rockville and Glenmont/Wheaton zones were discontinued as of July 1, 2026, leaving only Zone 918. Source: https://www.montgomerycountymd.gov/department-transportation/ride-montgomery-county/ride-flex"
  }
 ]

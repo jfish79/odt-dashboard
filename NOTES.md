@@ -33,6 +33,33 @@ reviewer's; scope flags flip to "Removed" when the row leaves the CSV.
 
 ## Service-area boundary pipeline (started 2026-09-09)
 
+**ArcGIS Online pass (2026-11-18):** prompted by a reviewer finding COTA Plus's
+zone layer on ArcGIS Online. `scripts/boundaries/arcgis_search.py` searches
+ArcGIS Online's public catalog for every approximate or unmapped row (CO and OH
+skipped while under review); `arcgis_vet.py` downloads each candidate layer and
+checks distance to the pin and area vs. the current polygon. Results land in
+`scripts/boundaries/candidates/` (gitignored: owner usernames include personal
+emails). 223 rows searched, 63 with a likely match, 49 with a layer that passed
+location checks; hand review left 10 to load. Chosen layers and zones live in
+`scripts/boundaries/agency_layers.json`; `add_agency_layers.py` loads them as
+`boundary_type: "agency_gis"` (exact) and removes their spec entries, as was done
+for GTFS-Flex. **Loaded:** Metro Micro (LA, previously unmapped), SMART Flex
+(Oakland County's 5-zone layer, not the consultant layers with proposed zones),
+Ride On Flex (Sandy Spring/White Oak only; the other two zones ended July 2026),
+Metro Link Kalamazoo, RideMICRO (4 zones vs. the CSV's 5, in concerns.csv),
+ABQ RIDE Connect, Sun Metro Microtransit, ULTRA, VTD2GO, Go Wake Forest.
+**Held, need a decision:** Pace On Demand (three layer versions disagree on the
+zone list), High Valley Transit (Nov 2022 layer predates the Park City cutback),
+Sun On Demand (zones 1-2 plus a "Planned Zone 3" of unknown status), and partial
+coverage for UTA On Demand (Tooele, South Davis), GRTC LINK (Sandston), Harris
+County Transit Plus, CATAGO!, StarMetro FLEX, DART On Demand. Possibly stale:
+SacRT, Via West Sacramento, OC Flex (may be discontinued), VoRide, NeighborLink.
+**Rejected:** Pierce Transit PTBA and TriMet service area (whole agency), Via
+Metro STL (a buffer), SporTran (preliminary). **OH finds held for the review:**
+COTA Plus ("COTA Plus Zones Current (Public View)", owner COTA1974) and
+MetroNow! Zones (Cincinnati).
+
+
 Goal: a boundary polygon for every row, NC-style, in `data/boundaries/{ST}.geojson`.
 Method: `scripts/boundaries/` — an agent workflow drafts a JSON "spec" per row
 (which Census units / stated zone size), `resolve.py` builds the geometry from

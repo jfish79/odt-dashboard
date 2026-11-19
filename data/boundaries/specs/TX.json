@@ -496,20 +496,6 @@
   "note": "Designated zone covering ~43,000 residents; estimated service radius ~2.6 miles."
  },
  {
-  "name": "Sun Metro Microtransit",
-  "state": "TX",
-  "boundary_type": "city",
-  "units": [
-   {
-    "layer": "place",
-    "name": "El Paso"
-   }
-  ],
-  "fidelity": "approximate",
-  "confidence": 0.75,
-  "note": "service zone is Upper East El Paso / Fort Bliss area"
- },
- {
   "name": "SWART Dial-a-Ride",
   "state": "TX",
   "boundary_type": "counties",

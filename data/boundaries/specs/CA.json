@@ -652,12 +652,6 @@
   "note": "Microtransit pilot serving city of Merced."
  },
  {
-  "name": "Metro Micro (LA Metro)",
-  "state": "CA",
-  "boundary_type": "needs_research",
-  "note": "8 zones named by neighborhoods and corridors (Watts/Compton, LAX/Inglewood, North Hollywood/Burbank, El Monte, Highland Park/Eagle Rock/Glendale, Altadena/Pasadena/Sierra Madre, Northwest San Fernando Valley, UCLA/Westwood/VA Medical Center) without stated sizes or clear zone boundaries"
- },
- {
   "name": "Micro-Link",
   "state": "CA",
   "boundary_type": "places",

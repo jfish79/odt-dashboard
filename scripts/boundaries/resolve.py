@@ -88,6 +88,9 @@ BOUNDARY_TYPES = {
     # locations.geojson geofence, added by hand straight to the state's
     # .geojson (see NOTES.md "GTFS-Flex check"). Its spec entry is removed
     # entirely (not skipped) so --merge doesn't drop the manual feature.
+    # 'agency_gis' likewise: an agency-published ArcGIS Online zone layer,
+    # loaded by add_agency_layers.py from agency_layers.json, which also
+    # removes the system's spec entry.
     'city':               ('Census TIGER place', 'exact'),
     'places':             ('Census TIGER place', 'exact'),
     'county':             ('Census TIGER county', 'exact'),

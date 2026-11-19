@@ -236,36 +236,6 @@
   "note": "Countywide demand-response service along Lake Michigan; covers City of Manistee and surrounding townships"
  },
  {
-  "name": "Metro Link (Kalamazoo Metro)",
-  "state": "MI",
-  "boundary_type": "places",
-  "units": [
-   {
-    "layer": "cousub",
-    "name": "Comstock",
-    "county": "Kalamazoo"
-   },
-   {
-    "layer": "place",
-    "name": "Portage",
-    "county": "Kalamazoo"
-   },
-   {
-    "layer": "cousub",
-    "name": "Oshtemo",
-    "county": "Kalamazoo"
-   },
-   {
-    "layer": "cousub",
-    "name": "Texas",
-    "county": "Kalamazoo"
-   }
-  ],
-  "fidelity": "approximate",
-  "confidence": 0.8,
-  "note": "Three zones, not countywide: East zone covers Comstock Township, South zone covers Portage, West zone covers Oshtemo Township and parts of Texas Township. No exact zone boundaries or size published; townships shown here are approximate containing units, not full zone extent. Sources: https://www.wmuk.org/wmuk-news/2024-04-18/kalamazoo-metro-launches-a-rideshare-service, https://comstockmi.gov/2024/04/01/new-ridesharing-service-to-launch-in-comstock-charter-township/, https://city.ridewithvia.com/metrolink"
- },
- {
   "name": "MTA Genesee Connect",
   "state": "MI",
   "boundary_type": "places",
@@ -314,28 +284,6 @@
   ],
   "confidence": 0.9,
   "note": "Roscommon County service for residents and visitors, with medical connections to neighboring/downstate counties."
- },
- {
-  "name": "SMART Flex",
-  "state": "MI",
-  "boundary_type": "counties",
-  "units": [
-   {
-    "layer": "county",
-    "name": "Wayne"
-   },
-   {
-    "layer": "county",
-    "name": "Oakland"
-   },
-   {
-    "layer": "county",
-    "name": "Macomb"
-   }
-  ],
-  "fidelity": "approximate",
-  "confidence": 0.7,
-  "note": "Zones in Dearborn, Troy/Clawson, Pontiac/Auburn Hills, Farmington/Farmington Hills, and Hall Road corridor (Utica-New Baltimore). Multiple zones across three counties with varying coverage; actual service area is subset of named counties."
  },
  {
   "name": "Straits Regional Ride",
