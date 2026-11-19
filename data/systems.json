@@ -535,8 +535,8 @@
   "year_num": 2023,
   "fleet_size": 19,
   "boundary": {
-   "type": "city",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -595,8 +595,8 @@
   "year_num": 2024,
   "fleet_size": null,
   "boundary": {
-   "type": "zone_approx",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -625,7 +625,7 @@
   "year_num": 2021,
   "fleet_size": null,
   "boundary": {
-   "type": "places",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -655,8 +655,8 @@
   "year_num": 2026,
   "fleet_size": null,
   "boundary": {
-   "type": "zone_approx",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -775,8 +775,8 @@
   "year_num": 2017,
   "fleet_size": null,
   "boundary": {
-   "type": "places",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -1045,8 +1045,8 @@
   "year_num": 2023,
   "fleet_size": null,
   "boundary": {
-   "type": "zone_approx",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -1075,7 +1075,7 @@
   "year_num": 2022,
   "fleet_size": null,
   "boundary": {
-   "type": "places",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -1375,7 +1375,7 @@
   "year_num": 2024,
   "fleet_size": null,
   "boundary": {
-   "type": "cousubs",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -1405,7 +1405,7 @@
   "year_num": 2024,
   "fleet_size": null,
   "boundary": {
-   "type": "city",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -1435,7 +1435,7 @@
   "year_num": 2024,
   "fleet_size": null,
   "boundary": {
-   "type": "cousub",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -1465,8 +1465,8 @@
   "year_num": 2024,
   "fleet_size": null,
   "boundary": {
-   "type": "cousubs",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -1525,7 +1525,7 @@
   "year_num": 2024,
   "fleet_size": null,
   "boundary": {
-   "type": "cousub",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -1555,7 +1555,7 @@
   "year_num": 2024,
   "fleet_size": null,
   "boundary": {
-   "type": "city",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -1615,8 +1615,8 @@
   "year_num": 2024,
   "fleet_size": null,
   "boundary": {
-   "type": "cousubs",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -2926,7 +2926,7 @@
   "year_num": 2023,
   "fleet_size": null,
   "boundary": {
-   "type": "places",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -2955,7 +2955,10 @@
   "vendor_class": "Via",
   "year_num": 2023,
   "fleet_size": null,
-  "boundary": null
+  "boundary": {
+   "type": "agency_gis",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "CDTA FLEX+",
@@ -3463,8 +3466,8 @@
   "year_num": 2022,
   "fleet_size": null,
   "boundary": {
-   "type": "county",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -3523,8 +3526,8 @@
   "year_num": 2023,
   "fleet_size": null,
   "boundary": {
-   "type": "county",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -3973,8 +3976,8 @@
   "year_num": 2021,
   "fleet_size": 47,
   "boundary": {
-   "type": "places",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -4483,7 +4486,7 @@
   "year_num": 2022,
   "fleet_size": null,
   "boundary": {
-   "type": "city",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -5233,7 +5236,7 @@
   "year_num": 2018,
   "fleet_size": null,
   "boundary": {
-   "type": "city",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -5263,7 +5266,7 @@
   "year_num": 2020,
   "fleet_size": null,
   "boundary": {
-   "type": "cousub",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -5293,8 +5296,8 @@
   "year_num": 2019,
   "fleet_size": null,
   "boundary": {
-   "type": "cousub",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -5323,7 +5326,7 @@
   "year_num": 2021,
   "fleet_size": null,
   "boundary": {
-   "type": "cousubs",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -5353,7 +5356,7 @@
   "year_num": 2022,
   "fleet_size": null,
   "boundary": {
-   "type": "city",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -5383,7 +5386,7 @@
   "year_num": 2021,
   "fleet_size": null,
   "boundary": {
-   "type": "cousub",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -5713,7 +5716,7 @@
   "year_num": 2024,
   "fleet_size": null,
   "boundary": {
-   "type": "cousubs",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -5803,7 +5806,7 @@
   "year_num": 2024,
   "fleet_size": null,
   "boundary": {
-   "type": "cousubs",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -5833,7 +5836,7 @@
   "year_num": 2024,
   "fleet_size": null,
   "boundary": {
-   "type": "cousub",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -5863,7 +5866,7 @@
   "year_num": 2024,
   "fleet_size": null,
   "boundary": {
-   "type": "cousub",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -5923,7 +5926,7 @@
   "year_num": 2021,
   "fleet_size": null,
   "boundary": {
-   "type": "county",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -6073,8 +6076,8 @@
   "year_num": 2020,
   "fleet_size": null,
   "boundary": {
-   "type": "county",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -7303,7 +7306,7 @@
   "year_num": 2021,
   "fleet_size": null,
   "boundary": {
-   "type": "cousubs",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -7333,7 +7336,7 @@
   "year_num": 2023,
   "fleet_size": null,
   "boundary": {
-   "type": "cousubs",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -7453,7 +7456,7 @@
   "year_num": 2022,
   "fleet_size": null,
   "boundary": {
-   "type": "cousubs",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -7483,7 +7486,7 @@
   "year_num": 2017,
   "fleet_size": null,
   "boundary": {
-   "type": "cousubs",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -7603,7 +7606,7 @@
   "year_num": 2022,
   "fleet_size": null,
   "boundary": {
-   "type": "places",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -10843,7 +10846,7 @@
   "year_num": 2024,
   "fleet_size": null,
   "boundary": {
-   "type": "places",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -12043,8 +12046,8 @@
   "year_num": 2024,
   "fleet_size": null,
   "boundary": {
-   "type": "city",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -12103,7 +12106,7 @@
   "year_num": 2025,
   "fleet_size": null,
   "boundary": {
-   "type": "places",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -14143,7 +14146,7 @@
   "year_num": 2025,
   "fleet_size": null,
   "boundary": {
-   "type": "places",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -15823,7 +15826,7 @@
   "year_num": 2019,
   "fleet_size": null,
   "boundary": {
-   "type": "places",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -15943,8 +15946,8 @@
   "year_num": 2026,
   "fleet_size": null,
   "boundary": {
-   "type": "buffered",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -16003,7 +16006,7 @@
   "year_num": 2023,
   "fleet_size": null,
   "boundary": {
-   "type": "city",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },

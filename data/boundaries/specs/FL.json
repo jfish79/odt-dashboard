@@ -33,19 +33,6 @@
   "note": "Downtown Boca Raton and Brightline station area; partial city coverage"
  },
  {
-  "name": "Breeze OnDemand",
-  "state": "FL",
-  "boundary_type": "county",
-  "units": [
-   {
-    "layer": "county",
-    "name": "Sarasota"
-   }
-  ],
-  "confidence": 0.9,
-  "note": "County-wide service across 3 zones in Sarasota County."
- },
- {
   "name": "Circuit Fort Lauderdale",
   "state": "FL",
   "boundary_type": "city",
@@ -328,20 +315,6 @@
   "fidelity": "approximate",
   "confidence": 0.8,
   "note": "Service covers Wynwood Arts District, Midtown, and Edgewater neighborhoods within Miami."
- },
- {
-  "name": "Go Glades",
-  "state": "FL",
-  "boundary_type": "county",
-  "units": [
-   {
-    "layer": "county",
-    "name": "Palm Beach"
-   }
-  ],
-  "confidence": 0.75,
-  "fidelity": "approximate",
-  "note": "Glades Region (rural area near Lake Okeechobee in Palm Beach County)"
  },
  {
   "name": "HARTFlex",

@@ -472,19 +472,6 @@
   "fidelity": "approximate"
  },
  {
-  "name": "Lake Link",
-  "state": "CA",
-  "boundary_type": "city",
-  "units": [
-   {
-    "layer": "place",
-    "name": "South Lake Tahoe"
-   }
-  ],
-  "confidence": 0.9,
-  "note": "App-based microtransit serving South Lake Tahoe area."
- },
- {
   "name": "Lake Transit Authority Dial-A-Ride",
   "state": "CA",
   "boundary_type": "places",
@@ -1191,36 +1178,6 @@
   ],
   "confidence": 0.7,
   "note": "Multiple communities in SW Kern County; some may be unincorporated"
- },
- {
-  "name": "TART Connect",
-  "state": "CA",
-  "boundary_type": "places",
-  "confidence": 0.6,
-  "note": "TART's own site lists 4 California zones: Zone 1 (West Shore, Tahoe City, Dollar Hill), Zone 2 (Carnelian Bay, Tahoe Vista, Kings Beach), Zone 3 (Olympic Valley), Zone 4 (Northstar); the page explicitly notes TART Connect does not serve Incline Village, NV. All named communities are unincorporated Placer County, CA. Only Zone 1/2 communities have Census place/CDP boundaries: Tahoe City is CDP 'Sunnyside-Tahoe City'. 'West Shore' and 'Dollar Hill' are represented via the other Zone 1 communities. Olympic Valley/Squaw Valley and Northstar have no Census CDP boundary in Placer County (the only Census place named 'Squaw Valley' in CA is an unrelated Fresno County community), so Zones 3 and 4 are not captured in this polygon; a human should follow up with Placer County GIS for those two zones. Source: https://tahoetruckeetransit.com/tart-connect/",
-  "units": [
-   {
-    "layer": "auto",
-    "name": "Sunnyside-Tahoe City",
-    "county": "Placer"
-   },
-   {
-    "layer": "auto",
-    "name": "Carnelian Bay",
-    "county": "Placer"
-   },
-   {
-    "layer": "auto",
-    "name": "Tahoe Vista",
-    "county": "Placer"
-   },
-   {
-    "layer": "auto",
-    "name": "Kings Beach",
-    "county": "Placer"
-   }
-  ],
-  "fidelity": "approximate"
  },
  {
   "name": "TCRTA Transport",

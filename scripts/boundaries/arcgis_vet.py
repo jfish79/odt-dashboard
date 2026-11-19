@@ -90,8 +90,10 @@ def fetch_features(layer_url):
     meta = get_json(layer_url, {"f": "json"})
     if (meta or {}).get("geometryType") not in ("esriGeometryPolygon",):
         return None, (meta or {}).get("geometryType") or (meta or {}).get("error", "no metadata")
+    # Screening only: generalize geometry (~50 m) to keep downloads small. The
+    # loader (add_agency_layers.py) fetches full-precision geometry.
     gj = get_json(layer_url + "/query", {"where": "1=1", "outFields": "*", "outSR": 4326, "f": "geojson",
-                                         "resultRecordCount": 500})
+                                         "resultRecordCount": 500, "maxAllowableOffset": 0.0005})
     if not gj or "features" not in gj:
         return None, (gj or {}).get("error", "query failed")
     return gj, ""

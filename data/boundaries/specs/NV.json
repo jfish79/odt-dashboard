@@ -29,27 +29,6 @@
   "note": "Main service in Elko, Spring Creek, Osino; limited service to Carlin and Wells. Ryndon not resolvable in gazetteer. Veterans medical-only trips available countywide but treated as secondary to primary service area."
  },
  {
-  "name": "Lake Link (Nevada service area)",
-  "state": "NV",
-  "boundary_type": "places",
-  "units": [
-   {
-    "layer": "auto",
-    "name": "Round Hill"
-   },
-   {
-    "layer": "auto",
-    "name": "Zephyr Cove"
-   },
-   {
-    "layer": "auto",
-    "name": "Stateline"
-   }
-  ],
-  "confidence": 0.7,
-  "note": "Douglas County service area covering Round Hill, Lower Kingsbury, Zephyr Cove, Stateline casino corridor. Nevada portion of bi-state Lake Link service (CA row exists separately). Lower Kingsbury treated as part of broader Round Hill/Zephyr Cove cluster."
- },
- {
   "name": "RTC OnDemand",
   "state": "NV",
   "boundary_type": "zone_approx",

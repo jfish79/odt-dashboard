@@ -4,7 +4,8 @@
 scripts/boundaries/agency_layers.json is the durable record: for each system,
 the map it comes from (an ArcGIS layer via "layer_url", a KML/KMZ file such
 as a Google My Maps export via "kml_url", a GeoJSON file via "geojson_url",
-or several of these via "urls"), which features (zones) to keep, and
+or several of these via "urls"), which features (zones) to keep ("field" +
+"include", and/or "match": {field: value(s)} when one field isn't enough), and
 a note on why. Entries with "hold": true are skipped unless named with --only
 (used for findings waiting on a review, e.g. Ohio). This script fetches each layer, unions the chosen zones into one
 (Multi)Polygon, and writes it as boundary_type "agency_gis" (fidelity exact),
@@ -148,6 +149,11 @@ def main():
             feats = [f for f in src["features"] if f.get("geometry")]
             if e.get("include"):
                 feats = [f for f in feats if str(f["properties"].get(e["field"], "")).strip() in e["include"]]
+            # "match": {field: value or [values]} -- every listed field must match (for layers
+            # where one field doesn't identify the zones, e.g. CTDOT's BrandName + TransitServiceArea)
+            for k, want in (e.get("match") or {}).items():
+                want = [want] if isinstance(want, str) else want
+                feats = [f for f in feats if str(f["properties"].get(k, "")).strip() in want]
             if not feats:
                 sys.exit(f"{st} {e['name']}: no features left after filtering")
             zones = sorted({str(f["properties"].get(e["field"], "")).strip() for f in feats} - {"", "None"})

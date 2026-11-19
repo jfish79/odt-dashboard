@@ -327,5 +327,1781 @@
   "field": "name",
   "include": null,
   "note": "Alliance, Mercantile, North Side, South Tarrant, Southeast, Southside and TCC Northeast zones from Trinity Metro's combined zone file (Mansfield excluded in the file itself). Found by the agency-page scan."
+ },
+ {
+  "state": "CT",
+  "name": "CTDOT Microtransit Pilots – SEAT (SE Connecticut)",
+  "layer_url": "https://services1.arcgis.com/FCaUeJ5SOVtImake/arcgis/rest/services/CTDOT_Bus_Transit_Network/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=74fe97b981c34e5eac9be4b454156002",
+  "title": "CTDOT Bus Transit Network",
+  "layer": "Microtransit Service Areas",
+  "publisher": "CTDOT (Connecticut DOT open data)",
+  "modified": "2026-10-30",
+  "field": "TransitServiceArea",
+  "include": [
+   "Groton",
+   "New London",
+   "Stonington",
+   "Waterford"
+  ],
+  "note": "The four SEAT zones the row lists (HOP Groton, Smart Ride New London, HOP Stonington, HOP Waterford), from CTDOT's statewide microtransit layer."
+ },
+ {
+  "state": "CT",
+  "name": "CTDOT Microtransit Pilot – Norwalk Transit",
+  "layer_url": "https://services1.arcgis.com/FCaUeJ5SOVtImake/arcgis/rest/services/CTDOT_Bus_Transit_Network/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=74fe97b981c34e5eac9be4b454156002",
+  "title": "CTDOT Bus Transit Network",
+  "layer": "Microtransit Service Areas",
+  "publisher": "CTDOT (Connecticut DOT open data)",
+  "modified": "2026-10-30",
+  "field": "TransitServiceArea",
+  "include": [
+   "Norwalk"
+  ],
+  "match": {
+   "BrandName": "Wheels2U"
+  },
+  "note": "CTDOT's statewide layer has one Norwalk microtransit zone (Wheels2U Norwalk), so this row gets the same polygon as Wheels 2U Norwalk; likely duplicate rows (see concerns.csv, 2026-11-19)."
+ },
+ {
+  "state": "CT",
+  "name": "Wheels 2U Norwalk",
+  "layer_url": "https://services1.arcgis.com/FCaUeJ5SOVtImake/arcgis/rest/services/CTDOT_Bus_Transit_Network/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=74fe97b981c34e5eac9be4b454156002",
+  "title": "CTDOT Bus Transit Network",
+  "layer": "Microtransit Service Areas",
+  "publisher": "CTDOT (Connecticut DOT open data)",
+  "modified": "2026-10-30",
+  "field": "TransitServiceArea",
+  "include": [
+   "Norwalk"
+  ],
+  "match": {
+   "BrandName": "Wheels2U"
+  },
+  "note": "Wheels2U Norwalk zone from CTDOT's statewide microtransit layer."
+ },
+ {
+  "state": "CT",
+  "name": "Wheels 2U Westport",
+  "layer_url": "https://services1.arcgis.com/FCaUeJ5SOVtImake/arcgis/rest/services/CTDOT_Bus_Transit_Network/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=74fe97b981c34e5eac9be4b454156002",
+  "title": "CTDOT Bus Transit Network",
+  "layer": "Microtransit Service Areas",
+  "publisher": "CTDOT (Connecticut DOT open data)",
+  "modified": "2026-10-30",
+  "field": "TransitServiceArea",
+  "include": [
+   "Westport"
+  ],
+  "match": {
+   "BrandName": "Wheels2U"
+  },
+  "note": "Wheels2U Westport zone from CTDOT's statewide microtransit layer."
+ },
+ {
+  "state": "CT",
+  "name": "gbt connect (Trumbull)",
+  "layer_url": "https://services1.arcgis.com/FCaUeJ5SOVtImake/arcgis/rest/services/CTDOT_Bus_Transit_Network/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=74fe97b981c34e5eac9be4b454156002",
+  "title": "CTDOT Bus Transit Network",
+  "layer": "Microtransit Service Areas",
+  "publisher": "CTDOT (Connecticut DOT open data)",
+  "modified": "2026-10-30",
+  "field": "TransitServiceArea",
+  "include": [
+   "Trumbull"
+  ],
+  "note": "GBTConnect Trumbull zone from CTDOT's statewide microtransit layer."
+ },
+ {
+  "state": "CT",
+  "name": "GHTD Link (Enfield/East Windsor)",
+  "layer_url": "https://services1.arcgis.com/FCaUeJ5SOVtImake/arcgis/rest/services/CTDOT_Bus_Transit_Network/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=74fe97b981c34e5eac9be4b454156002",
+  "title": "CTDOT Bus Transit Network",
+  "layer": "Microtransit Service Areas",
+  "publisher": "CTDOT (Connecticut DOT open data)",
+  "modified": "2026-10-30",
+  "field": "TransitServiceArea",
+  "include": [
+   "East Windsor"
+  ],
+  "note": "GHTD Link zone from CTDOT's statewide layer; CTDOT labels it East Windsor, and the polygon also covers Enfield."
+ },
+ {
+  "state": "CT",
+  "name": "Milford Micro",
+  "layer_url": "https://services1.arcgis.com/FCaUeJ5SOVtImake/arcgis/rest/services/CTDOT_Bus_Transit_Network/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=74fe97b981c34e5eac9be4b454156002",
+  "title": "CTDOT Bus Transit Network",
+  "layer": "Microtransit Service Areas",
+  "publisher": "CTDOT (Connecticut DOT open data)",
+  "modified": "2026-10-30",
+  "field": "TransitServiceArea",
+  "include": [
+   "Milford"
+  ],
+  "note": "Milford Micro zone from CTDOT's statewide microtransit layer."
+ },
+ {
+  "state": "CT",
+  "name": "StamFORWARD (Stamford)",
+  "layer_url": "https://services1.arcgis.com/FCaUeJ5SOVtImake/arcgis/rest/services/CTDOT_Bus_Transit_Network/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=74fe97b981c34e5eac9be4b454156002",
+  "title": "CTDOT Bus Transit Network",
+  "layer": "Microtransit Service Areas",
+  "publisher": "CTDOT (Connecticut DOT open data)",
+  "modified": "2026-10-30",
+  "field": "TransitServiceArea",
+  "include": [
+   "Stamford"
+  ],
+  "note": "StamFORWARD zone from CTDOT's statewide layer (4.9 sq mi; the city polygon it replaces was 39). CTDOT's web links for StamFORWARD and Ride New Haven are swapped in the source."
+ },
+ {
+  "state": "CT",
+  "name": "River Valley Transit Microtransit",
+  "layer_url": "https://services1.arcgis.com/FCaUeJ5SOVtImake/arcgis/rest/services/CTDOT_Bus_Transit_Network/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=74fe97b981c34e5eac9be4b454156002",
+  "title": "CTDOT Bus Transit Network",
+  "layer": "Microtransit Service Areas",
+  "publisher": "CTDOT (Connecticut DOT open data)",
+  "modified": "2026-10-30",
+  "field": "TransitServiceArea",
+  "include": [
+   "Madison-Guilford",
+   "East Hampton",
+   "Middletown"
+  ],
+  "match": {
+   "BrandName": "XtraMile"
+  },
+  "note": "XtraMile Madison-Guilford, East Hampton and Middletown zones (the row: Madison, Guilford, and portions of East Hampton and Middletown), from CTDOT's statewide layer."
+ },
+ {
+  "state": "CT",
+  "name": "Estuary Transit River HOP",
+  "layer_url": "https://services1.arcgis.com/FCaUeJ5SOVtImake/arcgis/rest/services/CTDOT_Bus_Transit_Network/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=74fe97b981c34e5eac9be4b454156002",
+  "title": "CTDOT Bus Transit Network",
+  "layer": "Microtransit Service Areas",
+  "publisher": "CTDOT (Connecticut DOT open data)",
+  "modified": "2026-10-30",
+  "field": "TransitServiceArea",
+  "include": [
+   "Madison-Guilford"
+  ],
+  "match": {
+   "BrandName": "XtraMile"
+  },
+  "note": "XtraMile Madison-Guilford zone from CTDOT's statewide layer (the row: Madison, Guilford)."
+ },
+ {
+  "state": "CT",
+  "name": "XtraMile Middletown",
+  "layer_url": "https://services1.arcgis.com/FCaUeJ5SOVtImake/arcgis/rest/services/CTDOT_Bus_Transit_Network/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=74fe97b981c34e5eac9be4b454156002",
+  "title": "CTDOT Bus Transit Network",
+  "layer": "Microtransit Service Areas",
+  "publisher": "CTDOT (Connecticut DOT open data)",
+  "modified": "2026-10-30",
+  "field": "TransitServiceArea",
+  "include": [
+   "Middletown"
+  ],
+  "match": {
+   "BrandName": "XtraMile"
+  },
+  "note": "XtraMile Middletown zone from CTDOT's statewide layer."
+ },
+ {
+  "state": "CT",
+  "name": "XtraMile East Hampton",
+  "layer_url": "https://services1.arcgis.com/FCaUeJ5SOVtImake/arcgis/rest/services/CTDOT_Bus_Transit_Network/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=74fe97b981c34e5eac9be4b454156002",
+  "title": "CTDOT Bus Transit Network",
+  "layer": "Microtransit Service Areas",
+  "publisher": "CTDOT (Connecticut DOT open data)",
+  "modified": "2026-10-30",
+  "field": "TransitServiceArea",
+  "include": [
+   "East Hampton"
+  ],
+  "match": {
+   "BrandName": "XtraMile"
+  },
+  "note": "XtraMile East Hampton zone from CTDOT's statewide layer."
+ },
+ {
+  "state": "CT",
+  "name": "XtraMile Old Saybrook",
+  "layer_url": "https://services1.arcgis.com/FCaUeJ5SOVtImake/arcgis/rest/services/CTDOT_Bus_Transit_Network/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=74fe97b981c34e5eac9be4b454156002",
+  "title": "CTDOT Bus Transit Network",
+  "layer": "Microtransit Service Areas",
+  "publisher": "CTDOT (Connecticut DOT open data)",
+  "modified": "2026-10-30",
+  "field": "TransitServiceArea",
+  "include": [
+   "Shoreline"
+  ],
+  "match": {
+   "BrandName": "XtraMile"
+  },
+  "note": "XtraMile Shoreline zone from CTDOT's statewide layer; CTDOT's name for the Old Saybrook/Essex/Westbrook zone."
+ },
+ {
+  "state": "CT",
+  "name": "New London Smart Ride",
+  "layer_url": "https://services1.arcgis.com/FCaUeJ5SOVtImake/arcgis/rest/services/CTDOT_Bus_Transit_Network/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=74fe97b981c34e5eac9be4b454156002",
+  "title": "CTDOT Bus Transit Network",
+  "layer": "Microtransit Service Areas",
+  "publisher": "CTDOT (Connecticut DOT open data)",
+  "modified": "2026-10-30",
+  "field": "TransitServiceArea",
+  "include": [
+   "New London"
+  ],
+  "note": "Smart Ride New London zone from CTDOT's statewide layer."
+ },
+ {
+  "state": "CT",
+  "name": "Stonington HOP",
+  "layer_url": "https://services1.arcgis.com/FCaUeJ5SOVtImake/arcgis/rest/services/CTDOT_Bus_Transit_Network/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=74fe97b981c34e5eac9be4b454156002",
+  "title": "CTDOT Bus Transit Network",
+  "layer": "Microtransit Service Areas",
+  "publisher": "CTDOT (Connecticut DOT open data)",
+  "modified": "2026-10-30",
+  "field": "TransitServiceArea",
+  "include": [
+   "Stonington"
+  ],
+  "match": {
+   "BrandName": "HOP"
+  },
+  "note": "HOP Stonington zone from CTDOT's statewide layer."
+ },
+ {
+  "state": "CT",
+  "name": "Waterford HOP",
+  "layer_url": "https://services1.arcgis.com/FCaUeJ5SOVtImake/arcgis/rest/services/CTDOT_Bus_Transit_Network/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=74fe97b981c34e5eac9be4b454156002",
+  "title": "CTDOT Bus Transit Network",
+  "layer": "Microtransit Service Areas",
+  "publisher": "CTDOT (Connecticut DOT open data)",
+  "modified": "2026-10-30",
+  "field": "TransitServiceArea",
+  "include": [
+   "Waterford"
+  ],
+  "match": {
+   "BrandName": "HOP"
+  },
+  "note": "HOP Waterford zone from CTDOT's statewide layer."
+ },
+ {
+  "state": "CT",
+  "name": "Groton Smart Ride",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/FCaUeJ5SOVtImake/arcgis/rest/services/CTDOT_Bus_Transit_Network/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=74fe97b981c34e5eac9be4b454156002",
+  "title": "CTDOT Bus Transit Network",
+  "layer": "Microtransit Service Areas",
+  "publisher": "CTDOT (Connecticut DOT open data)",
+  "modified": "2026-10-30",
+  "field": "TransitServiceArea",
+  "include": [
+   "Groton"
+  ],
+  "match": {
+   "BrandName": "HOP"
+  },
+  "note": "HELD: CTDOT's only Groton zone is 'HOP Groton', east of the City of Groton; the row's pin and name (Smart Ride, 2023) don't match it. Confirm it's the same service first."
+ },
+ {
+  "state": "CT",
+  "name": "Via NHV (New Haven)",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/FCaUeJ5SOVtImake/arcgis/rest/services/CTDOT_Bus_Transit_Network/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=74fe97b981c34e5eac9be4b454156002",
+  "title": "CTDOT Bus Transit Network",
+  "layer": "Microtransit Service Areas",
+  "publisher": "CTDOT (Connecticut DOT open data)",
+  "modified": "2026-10-30",
+  "field": "TransitServiceArea",
+  "include": [
+   "West Haven"
+  ],
+  "match": {
+   "BrandName": "Ride New Haven"
+  },
+  "note": "HELD: CTDOT's only New Haven-area zone is 'Ride New Haven', labeled West Haven and lying west of the row's pin. Unclear it is the citywide New Haven service. See the 2026-11-19 dedup notes in concerns.csv."
+ },
+ {
+  "state": "CT",
+  "name": "Via NHV",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/FCaUeJ5SOVtImake/arcgis/rest/services/CTDOT_Bus_Transit_Network/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=74fe97b981c34e5eac9be4b454156002",
+  "title": "CTDOT Bus Transit Network",
+  "layer": "Microtransit Service Areas",
+  "publisher": "CTDOT (Connecticut DOT open data)",
+  "modified": "2026-10-30",
+  "field": "TransitServiceArea",
+  "include": [
+   "West Haven"
+  ],
+  "match": {
+   "BrandName": "Ride New Haven"
+  },
+  "note": "HELD: CTDOT's only New Haven-area zone is 'Ride New Haven', labeled West Haven and lying west of the row's pin. Unclear it is the citywide New Haven service. See the 2026-11-19 dedup notes in concerns.csv."
+ },
+ {
+  "state": "CT",
+  "name": "CTtransit Link New Haven",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/FCaUeJ5SOVtImake/arcgis/rest/services/CTDOT_Bus_Transit_Network/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=74fe97b981c34e5eac9be4b454156002",
+  "title": "CTDOT Bus Transit Network",
+  "layer": "Microtransit Service Areas",
+  "publisher": "CTDOT (Connecticut DOT open data)",
+  "modified": "2026-10-30",
+  "field": "TransitServiceArea",
+  "include": [
+   "West Haven"
+  ],
+  "match": {
+   "BrandName": "Ride New Haven"
+  },
+  "note": "HELD: CTDOT's only New Haven-area zone is 'Ride New Haven', labeled West Haven and lying west of the row's pin. Unclear it is the citywide New Haven service. See the 2026-11-19 dedup notes in concerns.csv."
+ },
+ {
+  "state": "CT",
+  "name": "CTtransit Link Stamford",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/FCaUeJ5SOVtImake/arcgis/rest/services/CTDOT_Bus_Transit_Network/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=74fe97b981c34e5eac9be4b454156002",
+  "title": "CTDOT Bus Transit Network",
+  "layer": "Microtransit Service Areas",
+  "publisher": "CTDOT (Connecticut DOT open data)",
+  "modified": "2026-10-30",
+  "field": "TransitServiceArea",
+  "include": [
+   "Stamford"
+  ],
+  "note": "HELD: likely the same service as StamFORWARD (CTDOT lists no CTtransit Stamford microtransit); see concerns.csv 2026-11-19. Load only if confirmed."
+ },
+ {
+  "state": "CT",
+  "name": "VTD2GO",
+  "layer_url": "https://services2.arcgis.com/LD8LGc05Tkd3FQoz/arcgis/rest/services/VTD2GO_service_area/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=8a20e2f1e4ee48b0b7ddccbd75ade0b0",
+  "title": "VTD2GO_service_area",
+  "layer": "VTD2GO_serviceArea",
+  "publisher": "NVCOG1",
+  "modified": "2024-03-12",
+  "field": "Name",
+  "include": null,
+  "note": "VTD2GO on-demand zone as published at launch (March 2024) by the Naugatuck Valley Council of Governments. Same polygon as the 'VTD2GO (Valley Transit District)' row: the two rows are duplicates (see concerns.csv, 2026-11-19). CTDOT's Oct 2026 layer agrees (17.6 sq mi)."
+ },
+ {
+  "state": "MA",
+  "name": "CATA On Demand",
+  "layer_url": "https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/RTA_Paratransit_and_On_Demand_Service_Areas/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=cf8ac164eac04c949f37f368dcc6ebec",
+  "title": "RTA Paratransit and On Demand Service Areas",
+  "layer": "RTA Paratransit and On Demand Service Areas",
+  "publisher": "MassDOT",
+  "modified": "2025-11-03",
+  "field": "Program",
+  "include": [
+   "On Demand"
+  ],
+  "match": {
+   "Agency": "CATA"
+  },
+  "note": "CATA On Demand (general public) from MassDOT's RTA layer; the Dial-a-Ride, ADA and medical features are excluded. MassDOT shows Gloucester only (13 sq mi); the row also names Rockport."
+ },
+ {
+  "state": "MA",
+  "name": "FRTA Microtransit",
+  "layer_url": "https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/RTA_Paratransit_and_On_Demand_Service_Areas/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=cf8ac164eac04c949f37f368dcc6ebec",
+  "title": "RTA Paratransit and On Demand Service Areas",
+  "layer": "RTA Paratransit and On Demand Service Areas",
+  "publisher": "MassDOT",
+  "modified": "2025-11-03",
+  "field": "Program",
+  "include": [
+   "Access Zone 1"
+  ],
+  "match": {
+   "Agency": "FRTA"
+  },
+  "note": "FRTA Access Zone 1 (Deerfield, Erving, Gill, Greenfield, Leyden, Montague, Whately), the zone with the row's towns. Access Zone 2 (Orange area) and the paratransit/medical features are excluded."
+ },
+ {
+  "state": "MA",
+  "name": "Quaboag Connector",
+  "layer_url": "https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/Municipal_Microtransit_Service_Area/FeatureServer/1",
+  "item": "https://www.arcgis.com/home/item.html?id=c9b494e6fd0249a582b312b358825fc6",
+  "title": "Municipal Microtransit Service Area",
+  "layer": "Municipal Microtransit Service Area",
+  "publisher": "MassDOT",
+  "modified": "2025-11-03",
+  "field": "Service",
+  "include": [
+   "Quaboag Connector"
+  ],
+  "note": "MassDOT's municipal layer: one zone covering 10 towns (Belchertown, Brookfield, East Brookfield, Hardwick, Monson, North Brookfield, Palmer, Ware, Warren, West Brookfield). The row names four of them."
+ },
+ {
+  "state": "MA",
+  "name": "RC Link",
+  "layer_url": "https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/Municipal_Microtransit_Service_Area/FeatureServer/1",
+  "item": "https://www.arcgis.com/home/item.html?id=c9b494e6fd0249a582b312b358825fc6",
+  "title": "Municipal Microtransit Service Area",
+  "layer": "Municipal Microtransit Service Area",
+  "publisher": "MassDOT",
+  "modified": "2025-11-03",
+  "field": "Service",
+  "include": [
+   "RC Link"
+  ],
+  "note": "Revere/Chelsea zone from MassDOT's municipal microtransit layer."
+ },
+ {
+  "state": "MA",
+  "name": "Tri-Town Connector",
+  "layer_url": "https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/Municipal_Microtransit_Service_Area/FeatureServer/1",
+  "item": "https://www.arcgis.com/home/item.html?id=c9b494e6fd0249a582b312b358825fc6",
+  "title": "Municipal Microtransit Service Area",
+  "layer": "Municipal Microtransit Service Area",
+  "publisher": "MassDOT",
+  "modified": "2025-11-03",
+  "field": "Service",
+  "include": [
+   "South County Connector"
+  ],
+  "note": "MassDOT calls it the South County Connector; the towns (Great Barrington, Egremont, Stockbridge, West Stockbridge, Monterey, Sheffield) match the row."
+ },
+ {
+  "state": "MA",
+  "name": "GATRA GO",
+  "layer_url": "https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/GATRAGO_Sept2025/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=bdf6d1fcc61f41d788792c049d4f2b99",
+  "title": "GATRA Bus Routes (GATRA system map on gatra.org)",
+  "layer": "GATRAGO_Sept2025",
+  "publisher": "GATRA (hosted by MassDOT)",
+  "modified": "2026-09-20",
+  "field": "Name",
+  "include": null,
+  "note": "All four GATRA GO zones (Coastline/South Plymouth, Explore/Pembroke, Seacoast/Scituate, United/Foxborough-Franklin-Mansfield-Norfolk-Norton-Wrentham), Sept 2025 version, from the map on gatra.org. The row lists Marshfield, which no zone covers, and omits Scituate."
+ },
+ {
+  "state": "MA",
+  "name": "MWRTA Catch Connect",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/RTA_Paratransit_and_On_Demand_Service_Areas/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=cf8ac164eac04c949f37f368dcc6ebec",
+  "title": "RTA Paratransit and On Demand Service Areas",
+  "layer": "RTA Paratransit and On Demand Service Areas",
+  "publisher": "MassDOT",
+  "modified": "2025-11-03",
+  "field": "Program",
+  "include": [
+   "MWRTA Catch Connect Wellesley",
+   "MWRTA Catch Connect Hudson/Berlin",
+   "MWRTA Catch Connect Framingham/Natick",
+   "MWRTA Catch Connect Sudbury",
+   "MWRTA Catch Connect Milford/Hopedale"
+  ],
+  "match": {
+   "Agency": "MWRTA"
+  },
+  "note": "HELD: MassDOT shows five Catch Connect zones (Wellesley, Hudson/Berlin, Framingham/Natick, Sudbury, Milford/Hopedale); the row names only Wellesley and Hudson/Berlin."
+ },
+ {
+  "state": "MA",
+  "name": "SmartDART",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/RTA_Paratransit_and_On_Demand_Service_Areas/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=cf8ac164eac04c949f37f368dcc6ebec",
+  "title": "RTA Paratransit and On Demand Service Areas",
+  "layer": "RTA Paratransit and On Demand Service Areas",
+  "publisher": "MassDOT",
+  "modified": "2025-11-03",
+  "field": "Program",
+  "include": [
+   "SmartDART"
+  ],
+  "match": {
+   "Agency": "CCRTA"
+  },
+  "note": "HELD: MassDOT's SmartDART feature covers all 15 Cape towns (the same polygon as DART dial-a-ride); the row says Barnstable, Yarmouth, Dennis. MassDOT's March 2025 layer has an 87.5 sq mi SmartDART zone instead."
+ },
+ {
+  "state": "MA",
+  "name": "VTA On Demand",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/RTA_Paratransit_and_On_Demand_Service_Areas/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=cf8ac164eac04c949f37f368dcc6ebec",
+  "title": "RTA Paratransit and On Demand Service Areas",
+  "layer": "RTA Paratransit and On Demand Service Areas",
+  "publisher": "MassDOT",
+  "modified": "2025-11-03",
+  "field": "Program",
+  "include": [
+   "On-Demand Transit"
+  ],
+  "match": {
+   "Agency": "VTA"
+  },
+  "note": "HELD: MassDOT's feature is 'beyond 1/2 mile of the Route 1 and 13 corridors' (79 sq mi); the row says Edgartown and Oak Bluffs."
+ },
+ {
+  "state": "MA",
+  "name": "BAT Flex",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/RTA_Paratransit_and_On_Demand_Service_Areas/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=cf8ac164eac04c949f37f368dcc6ebec",
+  "title": "RTA Paratransit and On Demand Service Areas",
+  "layer": "RTA Paratransit and On Demand Service Areas",
+  "publisher": "MassDOT",
+  "modified": "2025-11-03",
+  "field": "Program",
+  "include": [
+   "Flex"
+  ],
+  "match": {
+   "Agency": "BAT"
+  },
+  "note": "HELD: MassDOT has the Rockland zone only; the row also lists Bridgewater (Bridgewater Cares Microtransit)."
+ },
+ {
+  "state": "MA",
+  "name": "MART OnDemand",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/RTA_Paratransit_and_On_Demand_Service_Areas/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=cf8ac164eac04c949f37f368dcc6ebec",
+  "title": "RTA Paratransit and On Demand Service Areas",
+  "layer": "RTA Paratransit and On Demand Service Areas",
+  "publisher": "MassDOT",
+  "modified": "2025-11-03",
+  "field": "Program",
+  "include": [
+   "Evening Ride Service"
+  ],
+  "match": {
+   "Agency": "MART"
+  },
+  "note": "HELD: No MassDOT feature matches the row's Athol/Gardner/Fitchburg: MassDOT lists Devens on-Demand, Evening Ride Service (Fitchburg, Leominster, Westminster, Gardner) and MART Connects (Ayer area)."
+ },
+ {
+  "state": "MA",
+  "name": "Salem Skipper",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/ceiitspzDAHrdGO1/arcgis/rest/services/Municipal_Microtransit_Service_Area/FeatureServer/1",
+  "item": "https://www.arcgis.com/home/item.html?id=c9b494e6fd0249a582b312b358825fc6",
+  "title": "Municipal Microtransit Service Area",
+  "layer": "Municipal Microtransit Service Area",
+  "publisher": "MassDOT",
+  "modified": "2025-11-03",
+  "field": "Service",
+  "include": [
+   "Salem Skipper"
+  ],
+  "note": "HELD: MassDOT shows the City of Salem only (8 sq mi); the row says Salem, Danvers, Peabody."
+ },
+ {
+  "state": "VA",
+  "name": "GRTC LINK",
+  "layer_url": "https://services9.arcgis.com/9oDT7ErWemWCzvY7/arcgis/rest/services/MicrotransitServiceZones/FeatureServer/118",
+  "item": "https://www.arcgis.com/home/item.html?id=e0325bc7ad3246eca95e753f411b0383",
+  "title": "Service: Microtransit Service Zones",
+  "layer": "Microtransit Zones",
+  "publisher": "Virginia DRPT",
+  "modified": "2026-11-16",
+  "field": "NAME",
+  "include": [
+   "GRTC LINK - Washington Park - Azalea Ave",
+   "GRTC LINK - Ashland",
+   "GRTC LINK - Sandston- Elko - New Kent",
+   "GRTC LINK - Clover Dale",
+   "GRTC Link - Powhatan",
+   "GRTC Link - Broad Rock"
+  ],
+  "note": "All six GRTC LINK zones, matching the row's list (Azalea/Meadowbridge, Ashland, Broad Rock, Clover Dale, Powhatan, Sandston/Elko). Previously unmapped."
+ },
+ {
+  "state": "VA",
+  "name": "OmniRide Connect",
+  "layer_url": "https://services9.arcgis.com/9oDT7ErWemWCzvY7/arcgis/rest/services/MicrotransitServiceZones/FeatureServer/118",
+  "item": "https://www.arcgis.com/home/item.html?id=e0325bc7ad3246eca95e753f411b0383",
+  "title": "Service: Microtransit Service Zones",
+  "layer": "Microtransit Zones",
+  "publisher": "Virginia DRPT",
+  "modified": "2026-11-16",
+  "field": "NAME",
+  "include": [
+   "OmniRide Connect - Manassas/Manassas Park",
+   "OmniRide Connect - Dumfries/Quantico"
+  ],
+  "note": "Both OmniRide Connect zones (Manassas/Manassas Park, Dumfries/Quantico), matching the row."
+ },
+ {
+  "state": "VA",
+  "name": "MicroCAT (Charlottesville Area Transit)",
+  "layer_url": "https://services9.arcgis.com/9oDT7ErWemWCzvY7/arcgis/rest/services/MicrotransitServiceZones/FeatureServer/118",
+  "item": "https://www.arcgis.com/home/item.html?id=e0325bc7ad3246eca95e753f411b0383",
+  "title": "Service: Microtransit Service Zones",
+  "layer": "Microtransit Zones",
+  "publisher": "Virginia DRPT",
+  "modified": "2026-11-16",
+  "field": "NAME",
+  "include": [
+   "MicroCAT"
+  ],
+  "note": "MicroCAT zone (Pantops and Route 29 North), replacing an Albemarle County polygon."
+ },
+ {
+  "state": "VA",
+  "name": "GLTC Flex",
+  "layer_url": "https://services9.arcgis.com/9oDT7ErWemWCzvY7/arcgis/rest/services/MicrotransitServiceZones/FeatureServer/118",
+  "item": "https://www.arcgis.com/home/item.html?id=e0325bc7ad3246eca95e753f411b0383",
+  "title": "Service: Microtransit Service Zones",
+  "layer": "Microtransit Zones",
+  "publisher": "Virginia DRPT",
+  "modified": "2026-11-16",
+  "field": "NAME",
+  "include": [
+   "GLTC Flex"
+  ],
+  "note": "GLTC Flex zone from Virginia DRPT's statewide microtransit layer."
+ },
+ {
+  "state": "VA",
+  "name": "HRT OnDemand",
+  "hold": true,
+  "layer_url": "https://services9.arcgis.com/9oDT7ErWemWCzvY7/arcgis/rest/services/MicrotransitServiceZones/FeatureServer/118",
+  "item": "https://www.arcgis.com/home/item.html?id=e0325bc7ad3246eca95e753f411b0383",
+  "title": "Service: Microtransit Service Zones",
+  "layer": "Microtransit Zones",
+  "publisher": "Virginia DRPT",
+  "modified": "2026-11-16",
+  "field": "NAME",
+  "include": [
+   "HRT On Demand - Virginia Beach",
+   "HRT On Demand - Newport News"
+  ],
+  "note": "HELD: DRPT has the Virginia Beach and Newport News zones only; the row lists four (also Chesapeake, Hampton)."
+ },
+ {
+  "state": "VA",
+  "name": "LC Transit On Demand",
+  "layer_url": "https://services1.arcgis.com/MxjRokvPm7bjslyR/arcgis/rest/services/Transit_On_Demand_Service_Area/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=d2a1e4310fb245469cfd968cf6901513",
+  "title": "Transit On Demand",
+  "layer": "Transit On Demand Service Area",
+  "publisher": "Loudoun County GIS",
+  "modified": "2026-08-27",
+  "field": "Service_Area",
+  "include": null,
+  "note": "Leesburg (6.7 sq mi) and Sterling (14.8 sq mi) zones from Loudoun County's own map, matching the row. The paratransit layer in the same map is excluded."
+ },
+ {
+  "state": "TX",
+  "name": "DART GoLink",
+  "layer_url": "https://geospatial.nctcog.org/map/rest/services/Transportation/DFWMaps_Transit/MapServer/11",
+  "item": "https://www.arcgis.com/home/item.html?id=c88e1b9f5412469988547c00db58663c",
+  "title": "On-Demand Zones",
+  "layer": "On-Demand Zones",
+  "publisher": "NCTCOG",
+  "modified": "2026-01-16",
+  "field": "Zone",
+  "include": null,
+  "match": {
+   "Provider": "DART",
+   "Service_Name": "GoLink"
+  },
+  "note": "All 28 DART GoLink zones in NCTCOG's regional layer, replacing a 763 sq mi union of cities. The row says 34 zones (see concerns.csv, 2026-11-19)."
+ },
+ {
+  "state": "TX",
+  "name": "DCTA GoZone",
+  "layer_url": "https://geospatial.nctcog.org/map/rest/services/Transportation/DFWMaps_Transit/MapServer/11",
+  "item": "https://www.arcgis.com/home/item.html?id=c88e1b9f5412469988547c00db58663c",
+  "title": "On-Demand Zones",
+  "layer": "On-Demand Zones",
+  "publisher": "NCTCOG",
+  "modified": "2026-01-16",
+  "field": "Zone",
+  "include": [
+   "Denton",
+   "Lewisville/Highland Village"
+  ],
+  "match": {
+   "Provider": "DCTA"
+  },
+  "note": "DCTA GoZone Denton and Lewisville/Highland Village zones, matching the row. Frisco has its own row; the two station point features are excluded."
+ },
+ {
+  "state": "TX",
+  "name": "GoZone Frisco",
+  "layer_url": "https://geospatial.nctcog.org/map/rest/services/Transportation/DFWMaps_Transit/MapServer/11",
+  "item": "https://www.arcgis.com/home/item.html?id=c88e1b9f5412469988547c00db58663c",
+  "title": "On-Demand Zones",
+  "layer": "On-Demand Zones",
+  "publisher": "NCTCOG",
+  "modified": "2026-01-16",
+  "field": "Zone",
+  "include": [
+   "Frisco"
+  ],
+  "match": {
+   "Provider": "DCTA"
+  },
+  "note": "DCTA GoZone Frisco zone (22 sq mi; the row says ~21)."
+ },
+ {
+  "state": "TX",
+  "name": "STARNow",
+  "layer_url": "https://geospatial.nctcog.org/map/rest/services/Transportation/DFWMaps_Transit/MapServer/11",
+  "item": "https://www.arcgis.com/home/item.html?id=c88e1b9f5412469988547c00db58663c",
+  "title": "On-Demand Zones",
+  "layer": "On-Demand Zones",
+  "publisher": "NCTCOG",
+  "modified": "2026-01-16",
+  "field": "Zone",
+  "include": null,
+  "match": {
+   "Provider": "STAR Transit"
+  },
+  "note": "All 12 STARNow zones, matching the row's 12 cities."
+ },
+ {
+  "state": "TX",
+  "name": "Highland Park On-Demand",
+  "layer_url": "https://geospatial.nctcog.org/map/rest/services/Transportation/DFWMaps_Transit/MapServer/11",
+  "item": "https://www.arcgis.com/home/item.html?id=c88e1b9f5412469988547c00db58663c",
+  "title": "On-Demand Zones",
+  "layer": "On-Demand Zones",
+  "publisher": "NCTCOG",
+  "modified": "2026-01-16",
+  "field": "Zone",
+  "include": [
+   "Highland Park"
+  ],
+  "match": {
+   "Provider": "Highland Park"
+  },
+  "note": "NCTCOG's Highland Park zone (2.2 sq mi). The row also mentions a 1-mile radius to Mockingbird Station, which may be destination-only."
+ },
+ {
+  "state": "TX",
+  "name": "Houston Community Connector",
+  "layer_url": "https://services1.arcgis.com/Z6SBWLWGRRejblAA/arcgis/rest/services/Microtransit_Service_Areas/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=95a617ebb0084902a8a0023001d0c529",
+  "title": "Microtransit Service Areas",
+  "layer": "Microtransit_Service_Areas",
+  "publisher": "H-GAC",
+  "modified": "2026-09-18",
+  "field": "Name",
+  "include": null,
+  "match": {
+   "Type": "Community Connector"
+  },
+  "note": "All five Community Connector zones in H-GAC's layer: Second Ward, Third Ward, Heights South, Downtown (Phase 1), and Near Northside. The row lists the first four ('Active - Expanding')."
+ },
+ {
+  "state": "TX",
+  "name": "Sugar Land On-Demand",
+  "layer_url": "https://services1.arcgis.com/Z6SBWLWGRRejblAA/arcgis/rest/services/Microtransit_Service_Areas/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=95a617ebb0084902a8a0023001d0c529",
+  "title": "Microtransit Service Areas",
+  "layer": "Microtransit_Service_Areas",
+  "publisher": "H-GAC",
+  "modified": "2026-09-18",
+  "field": "Name",
+  "include": [
+   "Sugar Land"
+  ],
+  "note": "Sugar Land Via microtransit zone from H-GAC's regional layer."
+ },
+ {
+  "state": "TX",
+  "name": "METRO curb2curb",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/Z6SBWLWGRRejblAA/arcgis/rest/services/Microtransit_Service_Areas/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=95a617ebb0084902a8a0023001d0c529",
+  "title": "Microtransit Service Areas",
+  "layer": "Microtransit_Service_Areas",
+  "publisher": "H-GAC",
+  "modified": "2026-09-18",
+  "field": "Name",
+  "include": null,
+  "match": {
+   "Type": "Curb2Curb"
+  },
+  "note": "HELD: H-GAC shows five curb2curb zones (Hiram Clarke, Sunnyside, Acres Homes, Missouri City, Kashmere/Maxey Road); the row names only Missouri City and Kashmere Gardens."
+ },
+ {
+  "state": "TX",
+  "name": "Round Rock Rides",
+  "layer_url": "https://services.arcgis.com/KaARkuoKF9vrGr3P/arcgis/rest/services/b3/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=ead255b7994e4c9cb36e9aff718360df",
+  "title": "Round Rock Rides Service Boundary",
+  "layer": "b3",
+  "publisher": "City of Round Rock",
+  "modified": "2026-01-20",
+  "field": "Name",
+  "include": null,
+  "note": "City of Round Rock's own microtransit zone (22 sq mi), replacing the city-limits polygon (38 sq mi)."
+ },
+ {
+  "state": "CA",
+  "name": "Lake Link",
+  "layer_url": "https://maps.trpa.org/server/rest/services/DataDownloader_Transportation/MapServer/20",
+  "item": "https://www.arcgis.com/home/item.html?id=4622c986b56e4fc59f7960df8c40de5e",
+  "title": "Tahoe Transportation data",
+  "layer": "Microtransit Service Areas",
+  "publisher": "Tahoe Regional Planning Agency",
+  "modified": "2026-08-17",
+  "field": "NAME",
+  "include": [
+   "Lake Link Zone 1: Al Tahoe, Sierra Tract, Bijou, Stateline",
+   "Lake Link Zone 3: Tahoe Keys, Tahoe Islands, Gardner Mountain"
+  ],
+  "note": "Lake Link's California zones 1 and 3 from TRPA's microtransit layer. Zone 2 (Nevada) is the NV row. The layer is part of TRPA's regional-plan data; zone 3 is listed with a 2026 start."
+ },
+ {
+  "state": "NV",
+  "name": "Lake Link (Nevada service area)",
+  "layer_url": "https://maps.trpa.org/server/rest/services/DataDownloader_Transportation/MapServer/20",
+  "item": "https://www.arcgis.com/home/item.html?id=4622c986b56e4fc59f7960df8c40de5e",
+  "title": "Tahoe Transportation data",
+  "layer": "Microtransit Service Areas",
+  "publisher": "Tahoe Regional Planning Agency",
+  "modified": "2026-08-17",
+  "field": "NAME",
+  "include": [
+   "Lake Link Zone 2: Stateline, Kingsbury, Round Hill, Zephyr Cove"
+  ],
+  "note": "Lake Link zone 2 (Stateline, Kingsbury, Round Hill, Zephyr Cove), matching the row, from TRPA's microtransit layer."
+ },
+ {
+  "state": "CA",
+  "name": "TART Connect",
+  "layer_url": "https://maps.trpa.org/server/rest/services/DataDownloader_Transportation/MapServer/20",
+  "item": "https://www.arcgis.com/home/item.html?id=4622c986b56e4fc59f7960df8c40de5e",
+  "title": "Tahoe Transportation data",
+  "layer": "Microtransit Service Areas",
+  "publisher": "Tahoe Regional Planning Agency",
+  "modified": "2026-08-17",
+  "field": "NAME",
+  "include": null,
+  "match": {
+   "LEAD": "TART"
+  },
+  "note": "The four TART zones in TRPA's microtransit layer (West Shore/Tahoe City/Dollar Hill, Carnelian Bay/Tahoe Vista/Kings Beach, Olympic Valley, Northstar). The layer is part of TRPA's regional-plan data."
+ },
+ {
+  "state": "WA",
+  "name": "Pierce Transit Runner",
+  "layer_url": "https://services6.arcgis.com/GWxg6t7KXELn1thE/arcgis/rest/services/MODInventory_2026_rtp_final/FeatureServer/2",
+  "item": "https://www.arcgis.com/home/item.html?id=6a3a2bf5f9cf454e9228a63fe549829e",
+  "title": "MODInventory_2026_rtp_final",
+  "layer": "Microtransit_PT_Runner",
+  "publisher": "Puget Sound Regional Council (PSRC)",
+  "modified": "2025-12-05",
+  "field": "Area_Name",
+  "include": null,
+  "note": "All five Runner zones in PSRC's 2026 regional-plan inventory (Spanaway, Puyallup, Tideflats, Ruston, Gig Harbor), matching the row. PSRC draws Spanaway North/South as one zone. Replaces a Pierce County polygon."
+ },
+ {
+  "state": "WA",
+  "name": "Metro Flex",
+  "layer_url": "https://services6.arcgis.com/GWxg6t7KXELn1thE/arcgis/rest/services/MODInventory_2026_rtp_final/FeatureServer/4",
+  "item": "https://www.arcgis.com/home/item.html?id=6a3a2bf5f9cf454e9228a63fe549829e",
+  "title": "MODInventory_2026_rtp_final",
+  "layer": "Microtransit_KCM_MetroFlex",
+  "publisher": "Puget Sound Regional Council (PSRC)",
+  "modified": "2025-12-05",
+  "field": "Area_Name",
+  "include": null,
+  "note": "All nine Metro Flex zones in PSRC's 2026 inventory (76 sq mi; the row says ~100)."
+ },
+ {
+  "state": "WA",
+  "name": "Zip Shuttle (Community Transit)",
+  "urls": [
+   "https://services6.arcgis.com/GWxg6t7KXELn1thE/arcgis/rest/services/MODInventory_2026_rtp_final/FeatureServer/0",
+   "https://services6.arcgis.com/GWxg6t7KXELn1thE/arcgis/rest/services/MODInventory_2026_rtp_final/FeatureServer/3"
+  ],
+  "item": "https://www.arcgis.com/home/item.html?id=6a3a2bf5f9cf454e9228a63fe549829e",
+  "title": "MODInventory_2026_rtp_final",
+  "layer": "Microtransit_CT_Zip + Microtransit_CT_InnovativeServices",
+  "publisher": "Puget Sound Regional Council (PSRC)",
+  "modified": "2025-12-05",
+  "field": "Area_Name",
+  "include": null,
+  "note": "Zip Shuttle Alderwood plus the Lake Stevens, Darrington and Arlington pilot zones, matching the row's four areas."
+ },
+ {
+  "state": "WA",
+  "name": "Kitsap Transit On-Demand (Ride Pingo)",
+  "hold": true,
+  "layer_url": "https://services6.arcgis.com/GWxg6t7KXELn1thE/arcgis/rest/services/MODInventory_2026_rtp_final/FeatureServer/1",
+  "item": "https://www.arcgis.com/home/item.html?id=6a3a2bf5f9cf454e9228a63fe549829e",
+  "title": "MODInventory_2026_rtp_final",
+  "layer": "Microtransit_KT_Ride",
+  "publisher": "Puget Sound Regional Council (PSRC)",
+  "modified": "2025-12-05",
+  "field": "Area_Name",
+  "include": null,
+  "note": "HELD: PSRC has three Kitsap zones (BI Ride, Kingston Ride, SK Ride); the row also lists Purdy Ride and Nollwood Dial-A-Ride."
+ },
+ {
+  "state": "UT",
+  "name": "UTA On Demand",
+  "hold": true,
+  "urls": [
+   "https://maps.rideuta.com/server/rest/services/Hosted/UTA_On_Demand_SSL_County/FeatureServer/125",
+   "https://maps.rideuta.com/server/rest/services/Hosted/UTA_On_Demand_Salt_Lake_City_Westside/FeatureServer/117",
+   "https://maps.rideuta.com/server/rest/services/Hosted/UTA_On_Demand_South_Davis/FeatureServer/1",
+   "https://maps.rideuta.com/server/rest/services/Hosted/TooeleCountyServiceArea/FeatureServer/110"
+  ],
+  "item": "https://www.arcgis.com/home/item.html?id=173d575d50ab4cd28c7bc1132969fce0",
+  "title": "UTA On Demand zone items (4)",
+  "layer": "SSLCounty / Westside / SouthDavis / TooeleCounty",
+  "publisher": "UTA / Utah AGRC",
+  "modified": "2025-12-18",
+  "field": "",
+  "include": null,
+  "note": "HELD: UTA publishes four zone items (Southern Salt Lake County, Salt Lake City Westside, South Davis, Tooele County); the row also lists West Provo/Orem and North Utah County."
+ },
+ {
+  "state": "FL",
+  "name": "Go Glades",
+  "layer_url": "https://services5.arcgis.com/79IoFXBn9ZeqmVlC/arcgis/rest/services/Mobility_On_Demand_Zones/FeatureServer/1",
+  "item": "https://www.arcgis.com/home/item.html?id=60eb6fd926af45a784c97895044cbce4",
+  "title": "Mobility On Demand Zones",
+  "layer": "zone_polygon_mod_tnc",
+  "publisher": "Palm Beach TPA (MPO)",
+  "modified": "2026-04-29",
+  "field": "zone_name",
+  "include": [
+   "Go Glades MOD Zone"
+  ],
+  "note": "Go Glades zone (status 'Operational', 89 sq mi), replacing a Palm Beach County polygon (2,229 sq mi)."
+ },
+ {
+  "state": "FL",
+  "name": "BocaConnect",
+  "hold": true,
+  "layer_url": "https://services5.arcgis.com/79IoFXBn9ZeqmVlC/arcgis/rest/services/Mobility_On_Demand_Zones/FeatureServer/1",
+  "item": "https://www.arcgis.com/home/item.html?id=60eb6fd926af45a784c97895044cbce4",
+  "title": "Mobility On Demand Zones",
+  "layer": "zone_polygon_mod_tnc",
+  "publisher": "Palm Beach TPA (MPO)",
+  "modified": "2026-04-29",
+  "field": "zone_name",
+  "include": [
+   "Boca Raton Southeast Neighborhoods to Downtown Service Area"
+  ],
+  "note": "HELD: the MPO's Boca Raton zones are all marked 'Proposed' in its long-range plan layer, so they may not be the operating BocaConnect area."
+ },
+ {
+  "state": "FL",
+  "name": "Breeze OnDemand",
+  "layer_url": "https://ags3.scgov.net/server/rest/services/Hosted/MobilityOnDemand/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=c8747d4eb8984c65b1cabb99569bd3ab",
+  "title": "Sarasota County Mobility On Demand Areas",
+  "layer": "MobilityOnDemand",
+  "publisher": "Sarasota County GIS",
+  "modified": "2026-08-13",
+  "field": "modname",
+  "include": null,
+  "note": "Breeze OnDemand's three zones (North Port, Downtown/Lido Key/Longboat Key, Venice/Englewood; 95 sq mi) from Sarasota County's layer, which the Breeze Transit Map on scgov.net uses. Replaces a 605 sq mi county polygon."
+ },
+ {
+  "state": "NY",
+  "name": "Putnam On-Demand",
+  "hold": true,
+  "layer_url": "https://services2.arcgis.com/dU6jdOIkCUj2UDe9/arcgis/rest/services/Public_Transit/FeatureServer/19",
+  "item": "https://www.arcgis.com/home/item.html?id=6325fffc39ea4ec68a2a55ecdee572d5",
+  "title": "Public Transit Service",
+  "layer": "Putnam On-Demand Service",
+  "publisher": "Putnam County GIS",
+  "modified": "2025-09-22",
+  "field": "TRANSIT_SERVICE",
+  "include": null,
+  "note": "HELD: Putnam County's Sept 2025 layer shows one pilot zone (all of Patterson, parts of Carmel and Southeast; 43 sq mi). The county's Aug 2026 'Microtransit Update' marks that zone 'PROPOSED' and adds two more proposed zones, so the status conflicts. Confirm what operates before loading."
+ },
+ {
+  "state": "PA",
+  "name": "rabbittransit Stop Hopper",
+  "hold": true,
+  "urls": [
+   "https://services6.arcgis.com/AimfzSBuXRlqLqWg/arcgis/rest/services/Selinsgrove_Sunbury_Service_Zone/FeatureServer/0",
+   "https://services6.arcgis.com/AimfzSBuXRlqLqWg/arcgis/rest/services/Lewisburg_Milton/FeatureServer/0",
+   "https://services6.arcgis.com/AimfzSBuXRlqLqWg/arcgis/rest/services/Red_Lion/FeatureServer/0",
+   "https://services6.arcgis.com/AimfzSBuXRlqLqWg/arcgis/rest/services/Chambersburg/FeatureServer/0",
+   "https://services6.arcgis.com/AimfzSBuXRlqLqWg/arcgis/rest/services/East_York/FeatureServer/0",
+   "https://services6.arcgis.com/AimfzSBuXRlqLqWg/arcgis/rest/services/Waterford_Service_Zone/FeatureServer/0",
+   "https://services6.arcgis.com/AimfzSBuXRlqLqWg/arcgis/rest/services/Danville_Bloomsurg/FeatureServer/1"
+  ],
+  "item": "https://www.arcgis.com/home/item.html?id=beb77f8765f247699825bf8148949bf7",
+  "title": "Stop Hopper service zone items (7)",
+  "layer": "per-zone layers",
+  "publisher": "rabbittransit (Susquehanna Regional Transportation Authority)",
+  "modified": "2024-03-12",
+  "field": "Name",
+  "include": null,
+  "note": "HELD: rabbittransit's March 2024 zone layers are Selinsgrove-Sunbury, Lewisburg-Milton, Red Lion, Chambersburg, East York, Waterford and Danville-Bloomsburg. The row also lists York, Gettysburg and Hanover and omits Chambersburg. A Google My Maps (mid 1xfDsXyQbAeWrrRAva8Bd2fS4XwDCDn10) is linked from the agency page."
+ },
+ {
+  "state": "NY",
+  "name": "CDTA FLEX+",
+  "hold": true,
+  "urls": [
+   "https://services2.arcgis.com/A3lMfLhXIUtyxP6p/arcgis/rest/services/2821_Saratoga_Springs_20260629/FeatureServer/0",
+   "https://services2.arcgis.com/A3lMfLhXIUtyxP6p/arcgis/rest/services/2802_Southern_Saratoga_20260629_/FeatureServer/0",
+   "https://services2.arcgis.com/A3lMfLhXIUtyxP6p/arcgis/rest/services/2801_Guilderland_20260629/FeatureServer/0",
+   "https://services2.arcgis.com/A3lMfLhXIUtyxP6p/arcgis/rest/services/flex_amsterdam_polygon_buffered_NOV26/FeatureServer/0"
+  ],
+  "item": "https://www.arcgis.com/home/item.html?id=16d0872ac6bc46d4ac6e0417ebc9592e",
+  "title": "FLEX_20260717 (20260717_Flex_zones_and_stops)",
+  "layer": "per-zone layers",
+  "publisher": "CDTA",
+  "modified": "2026-07-17",
+  "field": "",
+  "include": null,
+  "note": "HELD (needs the user's call): CDTA's July 2026 map shows FLEX zones in Saratoga Springs, Southern Saratoga, Guilderland and Amsterdam; the row describes Downtown Albany only."
+ },
+ {
+  "state": "NY",
+  "name": "RTS On Demand",
+  "hold": true,
+  "platform": "Google My Maps",
+  "kml_url": "https://www.google.com/maps/d/kml?mid=1faKrThBFsiwjLGKAQOkCObQh4I6WoEY&forcekml=1",
+  "item": "https://www.google.com/maps/d/viewer?mid=1faKrThBFsiwjLGKAQOkCObQh4I6WoEY",
+  "title": "RTS On Demand (My Maps)",
+  "layer": "My Maps",
+  "publisher": "RTS (Google My Maps)",
+  "modified": "",
+  "field": "name",
+  "include": null,
+  "note": "HELD (needs the user's call): the My Maps linked from myrts.com shows seven Monroe County zones (Brockport, Greece, Henrietta, Irondequoit, Pittsford/E. Rochester, etc.); the row describes seven outer counties."
+ },
+ {
+  "state": "IL",
+  "name": "SCCTD Flyer",
+  "hold": true,
+  "layer_url": "https://services3.arcgis.com/HLaa9jZADZMeGHY0/arcgis/rest/services/FlyerZones/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=59cd8244d58142dda938d3dc729666e5",
+  "title": "SCCTD FLyer Zones",
+  "layer": "FlyerZones",
+  "publisher": "SCCTD",
+  "modified": "2026-06-16",
+  "field": "Name",
+  "include": null,
+  "match": {
+   "Status": "Active"
+  },
+  "note": "HELD (needs the user's call): SCCTD's 18 Flyer zones total 1,434 sq mi, 32 times the current Belleville/East St. Louis/Fairmont City polygon. Check which zones are general-public Flyer service."
+ },
+ {
+  "state": "NC",
+  "name": "ACTA Microtransit",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/aT1T0pU1ZdpuDk1t/arcgis/rest/services/Microtransit_Zones/FeatureServer/33",
+  "item": "https://www.arcgis.com/home/item.html?id=12e871c7468947a68c1abf1e9344a0c1",
+  "title": "Microtransit Zones",
+  "layer": "MicrotransitZones",
+  "publisher": "an NC State University account",
+  "modified": "2026-06-05",
+  "field": "microtra_1",
+  "include": [
+   "ACTA ServiceArea"
+  ],
+  "note": "HELD (needs the user's call): a statewide NC compilation (30 zones) published by a university account, not an agency. Features auto-picked by pin location/name, not reviewed: ACTA ServiceArea."
+ },
+ {
+  "state": "NC",
+  "name": "Burke County Micro-Transit",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/aT1T0pU1ZdpuDk1t/arcgis/rest/services/Microtransit_Zones/FeatureServer/33",
+  "item": "https://www.arcgis.com/home/item.html?id=12e871c7468947a68c1abf1e9344a0c1",
+  "title": "Microtransit Zones",
+  "layer": "MicrotransitZones",
+  "publisher": "an NC State University account",
+  "modified": "2026-06-05",
+  "field": "microtra_1",
+  "include": [
+   "MyGreenWay Burke"
+  ],
+  "note": "HELD (needs the user's call): a statewide NC compilation (30 zones) published by a university account, not an agency. Features auto-picked by pin location/name, not reviewed: MyGreenWay Burke."
+ },
+ {
+  "state": "NC",
+  "name": "Buzzline",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/aT1T0pU1ZdpuDk1t/arcgis/rest/services/Microtransit_Zones/FeatureServer/33",
+  "item": "https://www.arcgis.com/home/item.html?id=12e871c7468947a68c1abf1e9344a0c1",
+  "title": "Microtransit Zones",
+  "layer": "MicrotransitZones",
+  "publisher": "an NC State University account",
+  "modified": "2026-06-05",
+  "field": "microtra_1",
+  "include": [
+   "Sanford"
+  ],
+  "note": "HELD (needs the user's call): a statewide NC compilation (30 zones) published by a university account, not an agency. Features auto-picked by pin location/name, not reviewed: Sanford."
+ },
+ {
+  "state": "NC",
+  "name": "CATS Micro",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/aT1T0pU1ZdpuDk1t/arcgis/rest/services/Microtransit_Zones/FeatureServer/33",
+  "item": "https://www.arcgis.com/home/item.html?id=12e871c7468947a68c1abf1e9344a0c1",
+  "title": "Microtransit Zones",
+  "layer": "MicrotransitZones",
+  "publisher": "an NC State University account",
+  "modified": "2026-06-05",
+  "field": "microtra_1",
+  "include": [
+   "CATS Micro"
+  ],
+  "note": "HELD (needs the user's call): a statewide NC compilation (30 zones) published by a university account, not an agency. Features auto-picked by pin location/name, not reviewed: CATS Micro."
+ },
+ {
+  "state": "NC",
+  "name": "Caldwell County Micro-Transit",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/aT1T0pU1ZdpuDk1t/arcgis/rest/services/Microtransit_Zones/FeatureServer/33",
+  "item": "https://www.arcgis.com/home/item.html?id=12e871c7468947a68c1abf1e9344a0c1",
+  "title": "Microtransit Zones",
+  "layer": "MicrotransitZones",
+  "publisher": "an NC State University account",
+  "modified": "2026-06-05",
+  "field": "microtra_1",
+  "include": [
+   "MyGreenWay Caldwell"
+  ],
+  "note": "HELD (needs the user's call): a statewide NC compilation (30 zones) published by a university account, not an agency. Features auto-picked by pin location/name, not reviewed: MyGreenWay Caldwell."
+ },
+ {
+  "state": "NC",
+  "name": "Go Randolph (RCATS)",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/aT1T0pU1ZdpuDk1t/arcgis/rest/services/Microtransit_Zones/FeatureServer/33",
+  "item": "https://www.arcgis.com/home/item.html?id=12e871c7468947a68c1abf1e9344a0c1",
+  "title": "Microtransit Zones",
+  "layer": "MicrotransitZones",
+  "publisher": "an NC State University account",
+  "modified": "2026-06-05",
+  "field": "microtra_1",
+  "include": [
+   "RCATS"
+  ],
+  "note": "HELD (needs the user's call): a statewide NC compilation (30 zones) published by a university account, not an agency. Features auto-picked by pin location/name, not reviewed: RCATS."
+ },
+ {
+  "state": "NC",
+  "name": "GoDurham Connect",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/aT1T0pU1ZdpuDk1t/arcgis/rest/services/Microtransit_Zones/FeatureServer/33",
+  "item": "https://www.arcgis.com/home/item.html?id=12e871c7468947a68c1abf1e9344a0c1",
+  "title": "Microtransit Zones",
+  "layer": "MicrotransitZones",
+  "publisher": "an NC State University account",
+  "modified": "2026-06-05",
+  "field": "microtra_1",
+  "include": [
+   "GoDurham"
+  ],
+  "note": "HELD (needs the user's call): a statewide NC compilation (30 zones) published by a university account, not an agency. Features auto-picked by pin location/name, not reviewed: GoDurham."
+ },
+ {
+  "state": "NC",
+  "name": "GoGastonia",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/aT1T0pU1ZdpuDk1t/arcgis/rest/services/Microtransit_Zones/FeatureServer/33",
+  "item": "https://www.arcgis.com/home/item.html?id=12e871c7468947a68c1abf1e9344a0c1",
+  "title": "Microtransit Zones",
+  "layer": "MicrotransitZones",
+  "publisher": "an NC State University account",
+  "modified": "2026-06-05",
+  "field": "microtra_1",
+  "include": [
+   "GoGastonia"
+  ],
+  "note": "HELD (needs the user's call): a statewide NC compilation (30 zones) published by a university account, not an agency. Features auto-picked by pin location/name, not reviewed: GoGastonia."
+ },
+ {
+  "state": "NC",
+  "name": "GoRaleigh MicroLink",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/aT1T0pU1ZdpuDk1t/arcgis/rest/services/Microtransit_Zones/FeatureServer/33",
+  "item": "https://www.arcgis.com/home/item.html?id=12e871c7468947a68c1abf1e9344a0c1",
+  "title": "Microtransit Zones",
+  "layer": "MicrotransitZones",
+  "publisher": "an NC State University account",
+  "modified": "2026-06-05",
+  "field": "microtra_1",
+  "include": [
+   "Rolesville Microlink",
+   "Fuquay-Varina Microlink"
+  ],
+  "note": "HELD (needs the user's call): a statewide NC compilation (30 zones) published by a university account, not an agency. Features auto-picked by pin location/name, not reviewed: Rolesville Microlink, Fuquay-Varina Microlink."
+ },
+ {
+  "state": "NC",
+  "name": "GoWake SmartRide NE",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/aT1T0pU1ZdpuDk1t/arcgis/rest/services/Microtransit_Zones/FeatureServer/33",
+  "item": "https://www.arcgis.com/home/item.html?id=12e871c7468947a68c1abf1e9344a0c1",
+  "title": "Microtransit Zones",
+  "layer": "MicrotransitZones",
+  "publisher": "an NC State University account",
+  "modified": "2026-06-05",
+  "field": "microtra_1",
+  "include": [
+   "GoWake SmartRide NE",
+   "Wake Tech Campus Microlink"
+  ],
+  "note": "HELD (needs the user's call): a statewide NC compilation (30 zones) published by a university account, not an agency. Features auto-picked by pin location/name, not reviewed: GoWake SmartRide NE, Wake Tech Campus Microlink."
+ },
+ {
+  "state": "NC",
+  "name": "HPTSGo!",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/aT1T0pU1ZdpuDk1t/arcgis/rest/services/Microtransit_Zones/FeatureServer/33",
+  "item": "https://www.arcgis.com/home/item.html?id=12e871c7468947a68c1abf1e9344a0c1",
+  "title": "Microtransit Zones",
+  "layer": "MicrotransitZones",
+  "publisher": "an NC State University account",
+  "modified": "2026-06-05",
+  "field": "microtra_1",
+  "include": [
+   "HPTSGO!"
+  ],
+  "note": "HELD (needs the user's call): a statewide NC compilation (30 zones) published by a university account, not an agency. Features auto-picked by pin location/name, not reviewed: HPTSGO!."
+ },
+ {
+  "state": "NC",
+  "name": "Holly Springs Hopper",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/aT1T0pU1ZdpuDk1t/arcgis/rest/services/Microtransit_Zones/FeatureServer/33",
+  "item": "https://www.arcgis.com/home/item.html?id=12e871c7468947a68c1abf1e9344a0c1",
+  "title": "Microtransit Zones",
+  "layer": "MicrotransitZones",
+  "publisher": "an NC State University account",
+  "modified": "2026-06-05",
+  "field": "microtra_1",
+  "include": [
+   "Holly Springs Microlink"
+  ],
+  "note": "HELD (needs the user's call): a statewide NC compilation (30 zones) published by a university account, not an agency. Features auto-picked by pin location/name, not reviewed: Holly Springs Microlink."
+ },
+ {
+  "state": "NC",
+  "name": "Johnston Quick Ride (JCATS)",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/aT1T0pU1ZdpuDk1t/arcgis/rest/services/Microtransit_Zones/FeatureServer/33",
+  "item": "https://www.arcgis.com/home/item.html?id=12e871c7468947a68c1abf1e9344a0c1",
+  "title": "Microtransit Zones",
+  "layer": "MicrotransitZones",
+  "publisher": "an NC State University account",
+  "modified": "2026-06-05",
+  "field": "microtra_1",
+  "include": [
+   "JCATS QuickRIDE"
+  ],
+  "note": "HELD (needs the user's call): a statewide NC compilation (30 zones) published by a university account, not an agency. Features auto-picked by pin location/name, not reviewed: JCATS QuickRIDE."
+ },
+ {
+  "state": "NC",
+  "name": "McDowell Express",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/aT1T0pU1ZdpuDk1t/arcgis/rest/services/Microtransit_Zones/FeatureServer/33",
+  "item": "https://www.arcgis.com/home/item.html?id=12e871c7468947a68c1abf1e9344a0c1",
+  "title": "Microtransit Zones",
+  "layer": "MicrotransitZones",
+  "publisher": "an NC State University account",
+  "modified": "2026-06-05",
+  "field": "microtra_1",
+  "include": [
+   "McDowell"
+  ],
+  "note": "HELD (needs the user's call): a statewide NC compilation (30 zones) published by a university account, not an agency. Features auto-picked by pin location/name, not reviewed: McDowell."
+ },
+ {
+  "state": "NC",
+  "name": "Morrisville Smart Shuttle",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/aT1T0pU1ZdpuDk1t/arcgis/rest/services/Microtransit_Zones/FeatureServer/33",
+  "item": "https://www.arcgis.com/home/item.html?id=12e871c7468947a68c1abf1e9344a0c1",
+  "title": "Microtransit Zones",
+  "layer": "MicrotransitZones",
+  "publisher": "an NC State University account",
+  "modified": "2026-06-05",
+  "field": "microtra_1",
+  "include": [
+   "Morrisville Smart Shuttle"
+  ],
+  "note": "HELD (needs the user's call): a statewide NC compilation (30 zones) published by a university account, not an agency. Features auto-picked by pin location/name, not reviewed: Morrisville Smart Shuttle."
+ },
+ {
+  "state": "NC",
+  "name": "Orange County MOD",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/aT1T0pU1ZdpuDk1t/arcgis/rest/services/Microtransit_Zones/FeatureServer/33",
+  "item": "https://www.arcgis.com/home/item.html?id=12e871c7468947a68c1abf1e9344a0c1",
+  "title": "Microtransit Zones",
+  "layer": "MicrotransitZones",
+  "publisher": "an NC State University account",
+  "modified": "2026-06-05",
+  "field": "microtra_1",
+  "include": [
+   "Orange County"
+  ],
+  "note": "HELD (needs the user's call): a statewide NC compilation (30 zones) published by a university account, not an agency. Features auto-picked by pin location/name, not reviewed: Orange County."
+ },
+ {
+  "state": "NC",
+  "name": "PART On-Demand",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/aT1T0pU1ZdpuDk1t/arcgis/rest/services/Microtransit_Zones/FeatureServer/33",
+  "item": "https://www.arcgis.com/home/item.html?id=12e871c7468947a68c1abf1e9344a0c1",
+  "title": "Microtransit Zones",
+  "layer": "MicrotransitZones",
+  "publisher": "an NC State University account",
+  "modified": "2026-06-05",
+  "field": "microtra_1",
+  "include": [
+   "PART"
+  ],
+  "note": "HELD (needs the user's call): a statewide NC compilation (30 zones) published by a university account, not an agency. Features auto-picked by pin location/name, not reviewed: PART."
+ },
+ {
+  "state": "NC",
+  "name": "Salisbury Connect",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/aT1T0pU1ZdpuDk1t/arcgis/rest/services/Microtransit_Zones/FeatureServer/33",
+  "item": "https://www.arcgis.com/home/item.html?id=12e871c7468947a68c1abf1e9344a0c1",
+  "title": "Microtransit Zones",
+  "layer": "MicrotransitZones",
+  "publisher": "an NC State University account",
+  "modified": "2026-06-05",
+  "field": "microtra_1",
+  "include": [
+   "Salisbury"
+  ],
+  "note": "HELD (needs the user's call): a statewide NC compilation (30 zones) published by a university account, not an agency. Features auto-picked by pin location/name, not reviewed: Salisbury."
+ },
+ {
+  "state": "NC",
+  "name": "Wilson RIDE",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/aT1T0pU1ZdpuDk1t/arcgis/rest/services/Microtransit_Zones/FeatureServer/33",
+  "item": "https://www.arcgis.com/home/item.html?id=12e871c7468947a68c1abf1e9344a0c1",
+  "title": "Microtransit Zones",
+  "layer": "MicrotransitZones",
+  "publisher": "an NC State University account",
+  "modified": "2026-06-05",
+  "field": "microtra_1",
+  "include": [
+   "Wilson City",
+   "Wilson County"
+  ],
+  "note": "HELD (needs the user's call): a statewide NC compilation (30 zones) published by a university account, not an agency. Features auto-picked by pin location/name, not reviewed: Wilson City, Wilson County."
+ },
+ {
+  "state": "AZ",
+  "name": "Chandler Flex",
+  "hold": true,
+  "layer_url": "https://services3.arcgis.com/0OPQIK59PJJqLK0A/arcgis/rest/services/Phoenix_Area_Microtransit_Zones/FeatureServer/4",
+  "item": "https://www.arcgis.com/home/item.html?id=89b554ae84b4493a9ada3b5136a36dce",
+  "title": "Phoenix Area Microtransit Zones",
+  "layer": "Microtransit Zones",
+  "publisher": "an Arizona State University account",
+  "modified": "2026-10-17",
+  "field": "Zone",
+  "include": [
+   "Chandler Flex"
+  ],
+  "note": "HELD (needs the user's call): a Phoenix-area compilation by a university researcher. ADOT/AZGeo's GTFS-supplement layer (item 8ef377de7906450eb39709457c58dfca) has the same systems, traced from agency website maps. Features auto-picked by pin location/name, not reviewed: Chandler Flex."
+ },
+ {
+  "state": "AZ",
+  "name": "WeRIDE",
+  "hold": true,
+  "layer_url": "https://services3.arcgis.com/0OPQIK59PJJqLK0A/arcgis/rest/services/Phoenix_Area_Microtransit_Zones/FeatureServer/4",
+  "item": "https://www.arcgis.com/home/item.html?id=89b554ae84b4493a9ada3b5136a36dce",
+  "title": "Phoenix Area Microtransit Zones",
+  "layer": "Microtransit Zones",
+  "publisher": "an Arizona State University account",
+  "modified": "2026-10-17",
+  "field": "Zone",
+  "include": [
+   "WeRIDE Goodyear",
+   "WeRIDE Avondale",
+   "WeRIDE Surprise",
+   "WeRIDE Peoria"
+  ],
+  "note": "HELD (needs the user's call): a Phoenix-area compilation by a university researcher. ADOT/AZGeo's GTFS-supplement layer (item 8ef377de7906450eb39709457c58dfca) has the same systems, traced from agency website maps. Features auto-picked by pin location/name, not reviewed: WeRIDE Goodyear, WeRIDE Avondale, WeRIDE Surprise, WeRIDE Peoria."
+ },
+ {
+  "state": "AZ",
+  "name": "CG LINK (Casa Grande) (formerly CART Dial-a-Ride)",
+  "hold": true,
+  "layer_url": "https://services6.arcgis.com/clPWQMwZfdWn4MQZ/arcgis/rest/services/Supplemental_GTFS_and_GTFS_Flex_Files/FeatureServer/1",
+  "item": "https://www.arcgis.com/home/item.html?id=8ef377de7906450eb39709457c58dfca",
+  "title": "Supplemental GTFS and GTFS Flex Files",
+  "layer": "On_Demand_Zones",
+  "publisher": "AZGeo (ADOT Multimodal Planning)",
+  "modified": "2025-09-02",
+  "field": "Area",
+  "include": [
+   "Casa Grande"
+  ],
+  "note": "HELD (needs the user's call): ADOT/AZGeo's statewide on-demand zones, each traced from an agency website map ('AreaMethodology'); some are 3/4-mile paratransit buffers. Features auto-picked by pin location/name, not reviewed: Casa Grande."
+ },
+ {
+  "state": "AZ",
+  "name": "Glendale OnBoard (formerly Glendale Dial-A-Ride)",
+  "hold": true,
+  "layer_url": "https://services6.arcgis.com/clPWQMwZfdWn4MQZ/arcgis/rest/services/Supplemental_GTFS_and_GTFS_Flex_Files/FeatureServer/1",
+  "item": "https://www.arcgis.com/home/item.html?id=8ef377de7906450eb39709457c58dfca",
+  "title": "Supplemental GTFS and GTFS Flex Files",
+  "layer": "On_Demand_Zones",
+  "publisher": "AZGeo (ADOT Multimodal Planning)",
+  "modified": "2025-09-02",
+  "field": "Area",
+  "include": [
+   "Glendale",
+   "Phoenix + metro area",
+   "Maricopa County"
+  ],
+  "note": "HELD (needs the user's call): ADOT/AZGeo's statewide on-demand zones, each traced from an agency website map ('AreaMethodology'); some are 3/4-mile paratransit buffers. Features auto-picked by pin location/name, not reviewed: Glendale, Phoenix + metro area, Maricopa County."
+ },
+ {
+  "state": "AZ",
+  "name": "Havasu Mobility",
+  "hold": true,
+  "layer_url": "https://services6.arcgis.com/clPWQMwZfdWn4MQZ/arcgis/rest/services/Supplemental_GTFS_and_GTFS_Flex_Files/FeatureServer/1",
+  "item": "https://www.arcgis.com/home/item.html?id=8ef377de7906450eb39709457c58dfca",
+  "title": "Supplemental GTFS and GTFS Flex Files",
+  "layer": "On_Demand_Zones",
+  "publisher": "AZGeo (ADOT Multimodal Planning)",
+  "modified": "2025-09-02",
+  "field": "Area",
+  "include": [
+   "Havasu City"
+  ],
+  "note": "HELD (needs the user's call): ADOT/AZGeo's statewide on-demand zones, each traced from an agency website map ('AreaMethodology'); some are 3/4-mile paratransit buffers. Features auto-picked by pin location/name, not reviewed: Havasu City."
+ },
+ {
+  "state": "AZ",
+  "name": "Peoria Transit On-Demand",
+  "hold": true,
+  "layer_url": "https://services6.arcgis.com/clPWQMwZfdWn4MQZ/arcgis/rest/services/Supplemental_GTFS_and_GTFS_Flex_Files/FeatureServer/1",
+  "item": "https://www.arcgis.com/home/item.html?id=8ef377de7906450eb39709457c58dfca",
+  "title": "Supplemental GTFS and GTFS Flex Files",
+  "layer": "On_Demand_Zones",
+  "publisher": "AZGeo (ADOT Multimodal Planning)",
+  "modified": "2025-09-02",
+  "field": "Area",
+  "include": [
+   "City of Peoria",
+   "Peoria",
+   "Phoenix + metro area"
+  ],
+  "note": "HELD (needs the user's call): ADOT/AZGeo's statewide on-demand zones, each traced from an agency website map ('AreaMethodology'); some are 3/4-mile paratransit buffers. Features auto-picked by pin location/name, not reviewed: City of Peoria, Peoria, Phoenix + metro area."
+ },
+ {
+  "state": "AZ",
+  "name": "Sedona Shuttle Connect",
+  "hold": true,
+  "layer_url": "https://services6.arcgis.com/clPWQMwZfdWn4MQZ/arcgis/rest/services/Supplemental_GTFS_and_GTFS_Flex_Files/FeatureServer/1",
+  "item": "https://www.arcgis.com/home/item.html?id=8ef377de7906450eb39709457c58dfca",
+  "title": "Supplemental GTFS and GTFS Flex Files",
+  "layer": "On_Demand_Zones",
+  "publisher": "AZGeo (ADOT Multimodal Planning)",
+  "modified": "2025-09-02",
+  "field": "Area",
+  "include": [
+   "Sedona"
+  ],
+  "note": "HELD (needs the user's call): ADOT/AZGeo's statewide on-demand zones, each traced from an agency website map ('AreaMethodology'); some are 3/4-mile paratransit buffers. Features auto-picked by pin location/name, not reviewed: Sedona."
+ },
+ {
+  "state": "AZ",
+  "name": "Sun On Demand",
+  "hold": true,
+  "layer_url": "https://services6.arcgis.com/clPWQMwZfdWn4MQZ/arcgis/rest/services/Supplemental_GTFS_and_GTFS_Flex_Files/FeatureServer/1",
+  "item": "https://www.arcgis.com/home/item.html?id=8ef377de7906450eb39709457c58dfca",
+  "title": "Supplemental GTFS and GTFS Flex Files",
+  "layer": "On_Demand_Zones",
+  "publisher": "AZGeo (ADOT Multimodal Planning)",
+  "modified": "2025-09-02",
+  "field": "Area",
+  "include": [
+   "Oro Valley",
+   "Tucson",
+   "Ajo",
+   "Green Valley",
+   "Marana"
+  ],
+  "note": "HELD (needs the user's call): ADOT/AZGeo's statewide on-demand zones, each traced from an agency website map ('AreaMethodology'); some are 3/4-mile paratransit buffers. Features auto-picked by pin location/name, not reviewed: Oro Valley, Tucson, Ajo, Green Valley, Marana."
+ },
+ {
+  "state": "AZ",
+  "name": "Sun Shuttle - Oro Valley",
+  "hold": true,
+  "layer_url": "https://services6.arcgis.com/clPWQMwZfdWn4MQZ/arcgis/rest/services/Supplemental_GTFS_and_GTFS_Flex_Files/FeatureServer/1",
+  "item": "https://www.arcgis.com/home/item.html?id=8ef377de7906450eb39709457c58dfca",
+  "title": "Supplemental GTFS and GTFS Flex Files",
+  "layer": "On_Demand_Zones",
+  "publisher": "AZGeo (ADOT Multimodal Planning)",
+  "modified": "2025-09-02",
+  "field": "Area",
+  "include": [
+   "Oro Valley",
+   "Tucson"
+  ],
+  "note": "HELD (needs the user's call): ADOT/AZGeo's statewide on-demand zones, each traced from an agency website map ('AreaMethodology'); some are 3/4-mile paratransit buffers. Features auto-picked by pin location/name, not reviewed: Oro Valley, Tucson."
+ },
+ {
+  "state": "AZ",
+  "name": "Sun Shuttle Dial-a-Ride",
+  "hold": true,
+  "layer_url": "https://services6.arcgis.com/clPWQMwZfdWn4MQZ/arcgis/rest/services/Supplemental_GTFS_and_GTFS_Flex_Files/FeatureServer/1",
+  "item": "https://www.arcgis.com/home/item.html?id=8ef377de7906450eb39709457c58dfca",
+  "title": "Supplemental GTFS and GTFS Flex Files",
+  "layer": "On_Demand_Zones",
+  "publisher": "AZGeo (ADOT Multimodal Planning)",
+  "modified": "2025-09-02",
+  "field": "Area",
+  "include": [
+   "Oro Valley",
+   "Tucson",
+   "Green Valley",
+   "Marana"
+  ],
+  "note": "HELD (needs the user's call): ADOT/AZGeo's statewide on-demand zones, each traced from an agency website map ('AreaMethodology'); some are 3/4-mile paratransit buffers. Features auto-picked by pin location/name, not reviewed: Oro Valley, Tucson, Green Valley, Marana."
+ },
+ {
+  "state": "AZ",
+  "name": "YavaLine / YAV Connect",
+  "hold": true,
+  "layer_url": "https://services6.arcgis.com/clPWQMwZfdWn4MQZ/arcgis/rest/services/Supplemental_GTFS_and_GTFS_Flex_Files/FeatureServer/1",
+  "item": "https://www.arcgis.com/home/item.html?id=8ef377de7906450eb39709457c58dfca",
+  "title": "Supplemental GTFS and GTFS Flex Files",
+  "layer": "On_Demand_Zones",
+  "publisher": "AZGeo (ADOT Multimodal Planning)",
+  "modified": "2025-09-02",
+  "field": "Area",
+  "include": [
+   "Prescott & Prescott Valley"
+  ],
+  "note": "HELD (needs the user's call): ADOT/AZGeo's statewide on-demand zones, each traced from an agency website map ('AreaMethodology'); some are 3/4-mile paratransit buffers. Features auto-picked by pin location/name, not reviewed: Prescott & Prescott Valley."
+ },
+ {
+  "state": "AZ",
+  "name": "Gila River Transit Dial-a-Ride",
+  "hold": true,
+  "layer_url": "https://services6.arcgis.com/clPWQMwZfdWn4MQZ/arcgis/rest/services/Supplemental_GTFS_and_GTFS_Flex_Files/FeatureServer/1",
+  "item": "https://www.arcgis.com/home/item.html?id=8ef377de7906450eb39709457c58dfca",
+  "title": "Supplemental GTFS and GTFS Flex Files",
+  "layer": "On_Demand_Zones",
+  "publisher": "AZGeo (ADOT Multimodal Planning)",
+  "modified": "2025-09-02",
+  "field": "Area",
+  "include": [
+   "Gila River Indian Community"
+  ],
+  "note": "HELD (needs the user's call): ADOT/AZGeo's statewide on-demand zones, each traced from an agency website map ('AreaMethodology'); some are 3/4-mile paratransit buffers. Features auto-picked by pin location/name, not reviewed: Gila River Indian Community."
+ },
+ {
+  "state": "AZ",
+  "name": "Sun Shuttle - Green Valley",
+  "hold": true,
+  "layer_url": "https://services7.arcgis.com/c7auENSOuNDDkLeY/arcgis/rest/services/Microtransit/FeatureServer/5",
+  "item": "https://www.arcgis.com/home/item.html?id=0c9114399a8944c6b33ef1bd9758e6e6",
+  "title": "Microtransit",
+  "layer": "Sun Shuttle DAR General Public Zones",
+  "publisher": "Pima Association of Governments",
+  "modified": "2026-06-18",
+  "field": "Name",
+  "include": [
+   "GV Service Area 2023"
+  ],
+  "note": "HELD (needs the user's call): PAG (Tucson MPO) layer of Sun Shuttle general-public zones; its Sun On Demand layer includes a large zone of unclear status. Features auto-picked by pin location/name, not reviewed: GV Service Area 2023."
+ },
+ {
+  "state": "NY",
+  "name": "Circuit Southampton",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/CEbkk5WeOgep1LWT/arcgis/rest/services/On_Demand_Service_Areas/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=c4fd1c661f6944b296cea0f72fe77946",
+  "title": "On Demand Service Areas",
+  "layer": "On Demand Service Areas",
+  "publisher": "ICF (consultant)",
+  "modified": "2023-11-13",
+  "field": "Zone",
+  "include": [
+   "Southampton On-Demand Zone"
+  ],
+  "note": "HELD (needs the user's call): a 2023 Long Island compilation by a consultant; may be stale. Features auto-picked by pin location/name, not reviewed: Southampton On-Demand Zone."
+ },
+ {
+  "state": "NY",
+  "name": "NICE Mini",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/CEbkk5WeOgep1LWT/arcgis/rest/services/On_Demand_Service_Areas/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=c4fd1c661f6944b296cea0f72fe77946",
+  "title": "On Demand Service Areas",
+  "layer": "On Demand Service Areas",
+  "publisher": "ICF (consultant)",
+  "modified": "2023-11-13",
+  "field": "Zone",
+  "include": null,
+  "note": "HELD (needs the user's call): a 2023 Long Island compilation by a consultant; may be stale. Features auto-picked by pin location/name, not reviewed: none."
+ },
+ {
+  "state": "NY",
+  "name": "Circuit East Hampton",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/CEbkk5WeOgep1LWT/arcgis/rest/services/On_Demand_Service_Areas/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=c4fd1c661f6944b296cea0f72fe77946",
+  "title": "On Demand Service Areas",
+  "layer": "On Demand Service Areas",
+  "publisher": "ICF (consultant)",
+  "modified": "2023-11-13",
+  "field": "Zone",
+  "include": null,
+  "note": "HELD (needs the user's call): a 2023 Long Island compilation by a consultant; may be stale. Features auto-picked by pin location/name, not reviewed: none."
+ },
+ {
+  "state": "NY",
+  "name": "Suffolk Transit On-Demand",
+  "hold": true,
+  "layer_url": "https://services1.arcgis.com/CEbkk5WeOgep1LWT/arcgis/rest/services/On_Demand_Service_Areas/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=c4fd1c661f6944b296cea0f72fe77946",
+  "title": "On Demand Service Areas",
+  "layer": "On Demand Service Areas",
+  "publisher": "ICF (consultant)",
+  "modified": "2023-11-13",
+  "field": "Zone",
+  "include": [
+   "Southampton On-Demand Zone",
+   "East Hampton/Mantauk On-Demand Zone"
+  ],
+  "note": "HELD (needs the user's call): a 2023 Long Island compilation by a consultant; may be stale. Features auto-picked by pin location/name, not reviewed: Southampton On-Demand Zone, East Hampton/Mantauk On-Demand Zone."
+ },
+ {
+  "state": "NE",
+  "name": "Fremont Transit Program",
+  "hold": true,
+  "layer_url": "https://services3.arcgis.com/gjVvdAtTsjMYfRZ8/arcgis/rest/services/Transit_System_Service_Areas/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=e2125d58fcfa4552a4b269dc7fb09a0a",
+  "title": "Transit System Service Areas",
+  "layer": "Transit System Service Areas",
+  "publisher": "a Nebraska transit-planning partner account",
+  "modified": "2024-02-20",
+  "field": "ntd_id",
+  "include": [
+   "99999"
+  ],
+  "note": "HELD (needs the user's call): Nebraska service areas drawn as city limits or radius buffers (e.g. '20 mile radius of North Platte'), close to what we already have. Features auto-picked by pin location/name, not reviewed: 99999."
+ },
+ {
+  "state": "NE",
+  "name": "Neligh Dial-A-Ride Public Transportation",
+  "hold": true,
+  "layer_url": "https://services3.arcgis.com/gjVvdAtTsjMYfRZ8/arcgis/rest/services/Transit_System_Service_Areas/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=e2125d58fcfa4552a4b269dc7fb09a0a",
+  "title": "Transit System Service Areas",
+  "layer": "Transit System Service Areas",
+  "publisher": "a Nebraska transit-planning partner account",
+  "modified": "2024-02-20",
+  "field": "ntd_id",
+  "include": [
+   "70125"
+  ],
+  "note": "HELD (needs the user's call): Nebraska service areas drawn as city limits or radius buffers (e.g. '20 mile radius of North Platte'), close to what we already have. Features auto-picked by pin location/name, not reviewed: 70125."
+ },
+ {
+  "state": "NE",
+  "name": "North Platte Public Transit",
+  "hold": true,
+  "layer_url": "https://services3.arcgis.com/gjVvdAtTsjMYfRZ8/arcgis/rest/services/Transit_System_Service_Areas/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=e2125d58fcfa4552a4b269dc7fb09a0a",
+  "title": "Transit System Service Areas",
+  "layer": "Transit System Service Areas",
+  "publisher": "a Nebraska transit-planning partner account",
+  "modified": "2024-02-20",
+  "field": "ntd_id",
+  "include": [
+   "70153",
+   "70200"
+  ],
+  "note": "HELD (needs the user's call): Nebraska service areas drawn as city limits or radius buffers (e.g. '20 mile radius of North Platte'), close to what we already have. Features auto-picked by pin location/name, not reviewed: 70153, 70200."
+ },
+ {
+  "state": "NE",
+  "name": "TeleLift (North Fork Area Transit)",
+  "hold": true,
+  "layer_url": "https://services3.arcgis.com/gjVvdAtTsjMYfRZ8/arcgis/rest/services/Transit_System_Service_Areas/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=e2125d58fcfa4552a4b269dc7fb09a0a",
+  "title": "Transit System Service Areas",
+  "layer": "Transit System Service Areas",
+  "publisher": "a Nebraska transit-planning partner account",
+  "modified": "2024-02-20",
+  "field": "ntd_id",
+  "include": [
+   "70156"
+  ],
+  "note": "HELD (needs the user's call): Nebraska service areas drawn as city limits or radius buffers (e.g. '20 mile radius of North Platte'), close to what we already have. Features auto-picked by pin location/name, not reviewed: 70156."
+ },
+ {
+  "state": "IL",
+  "name": "MCRide",
+  "hold": true,
+  "layer_url": "https://services5.arcgis.com/LcMXE3TFhi1BSaCY/arcgis/rest/services/Demand_responsive_service_areas_gdb/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=8960448eeb614e0896c3ff498a75df2a",
+  "title": "Demand responsive service areas_gdb",
+  "layer": "DAR_service_areas",
+  "publisher": "CMAP",
+  "modified": "2024-01-05",
+  "field": "SERVICE",
+  "include": [
+   "MCRide and Ride Lake County",
+   "MCRide (McHenry County)"
+  ],
+  "note": "HELD (needs the user's call): CMAP's 2024 dial-a-ride areas; county-scale, and Ride in Kane's is 300 sq mi vs the county's 524. Features auto-picked by pin location/name, not reviewed: MCRide and Ride Lake County, MCRide (McHenry County)."
+ },
+ {
+  "state": "IL",
+  "name": "Ride in Kane",
+  "hold": true,
+  "layer_url": "https://services5.arcgis.com/LcMXE3TFhi1BSaCY/arcgis/rest/services/Demand_responsive_service_areas_gdb/FeatureServer/0",
+  "item": "https://www.arcgis.com/home/item.html?id=8960448eeb614e0896c3ff498a75df2a",
+  "title": "Demand responsive service areas_gdb",
+  "layer": "DAR_service_areas",
+  "publisher": "CMAP",
+  "modified": "2024-01-05",
+  "field": "SERVICE",
+  "include": [
+   "Ride in Kane (County)"
+  ],
+  "note": "HELD (needs the user's call): CMAP's 2024 dial-a-ride areas; county-scale, and Ride in Kane's is 300 sq mi vs the county's 524. Features auto-picked by pin location/name, not reviewed: Ride in Kane (County)."
  }
 ]

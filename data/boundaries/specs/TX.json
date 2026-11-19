@@ -144,98 +144,6 @@
   "note": "City of Del Rio (county seat) provides demand-response service to Val Verde County; intercity medical trips noted but service area is county"
  },
  {
-  "name": "DART GoLink",
-  "state": "TX",
-  "boundary_type": "places",
-  "units": [
-   {
-    "layer": "place",
-    "name": "Dallas"
-   },
-   {
-    "layer": "place",
-    "name": "Plano"
-   },
-   {
-    "layer": "place",
-    "name": "Richardson"
-   },
-   {
-    "layer": "place",
-    "name": "Garland"
-   },
-   {
-    "layer": "place",
-    "name": "Rowlett"
-   },
-   {
-    "layer": "place",
-    "name": "Irving"
-   },
-   {
-    "layer": "place",
-    "name": "Farmers Branch"
-   },
-   {
-    "layer": "place",
-    "name": "Duncanville"
-   },
-   {
-    "layer": "place",
-    "name": "DeSoto"
-   },
-   {
-    "layer": "place",
-    "name": "Cedar Hill"
-   },
-   {
-    "layer": "place",
-    "name": "Mesquite"
-   }
-  ],
-  "fidelity": "approximate",
-  "confidence": 0.85,
-  "note": "34 microtransit zones across ~700 sq mi DART service area; listed cities are primary service centers."
- },
- {
-  "name": "DCTA GoZone",
-  "state": "TX",
-  "boundary_type": "places",
-  "units": [
-   {
-    "layer": "place",
-    "name": "Denton"
-   },
-   {
-    "layer": "place",
-    "name": "Highland Village"
-   },
-   {
-    "layer": "place",
-    "name": "Lewisville"
-   }
-  ],
-  "confidence": 0.95,
-  "note": "Three-city service area in Denton County."
- },
- {
-  "name": "GoZone Frisco",
-  "state": "TX",
-  "boundary_type": "zone_approx",
-  "units": [
-   {
-    "layer": "place",
-    "name": "Frisco"
-   }
-  ],
-  "clip_to_units": true,
-  "buffer": {
-   "radius_km": 4.16
-  },
-  "confidence": 0.85,
-  "note": "Service zone is ~21 sq mi within Frisco city limits, not the full city (DCTA GoZone Frisco, dcta.net) — circle clipped to city boundary."
- },
- {
   "name": "Harris County Transit Plus",
   "state": "TX",
   "boundary_type": "zone_approx",
@@ -261,34 +169,6 @@
   "fidelity": "approximate",
   "confidence": 0.5,
   "note": "Two curb-to-curb microtransit zones along the NE quadrant of Beltway 8 (Sam Houston Tollway) near Generation Park: North Zone from US-59/Eastex Fwy to the NE Beltway 8 bend, South Zone from that bend to Wallisville Rd, each extending about 0.75 mi either side of the highway. No published sq-mi figure; zone centers/radius are estimated from the corridor description and clipped to Harris County. See https://transit.harriscountytx.gov/Transit-Plus and https://www.masstransitmag.com/alt-mobility/shared-mobility/car-sharing/press-release/21230063/harris-county-texas-community-services-department-harris-county-transit-launches-on-demand-transportation"
- },
- {
-  "name": "Highland Park On-Demand",
-  "state": "TX",
-  "boundary_type": "buffered",
-  "units": [
-   {
-    "layer": "place",
-    "name": "Highland Park"
-   }
-  ],
-  "dilate_km": 1.609,
-  "confidence": 0.9,
-  "note": "Town of Highland Park plus 1-mile radius to Mockingbird Station"
- },
- {
-  "name": "Houston Community Connector",
-  "state": "TX",
-  "boundary_type": "city",
-  "units": [
-   {
-    "layer": "place",
-    "name": "Houston"
-   }
-  ],
-  "fidelity": "approximate",
-  "confidence": 0.8,
-  "note": "Service zone covers specific neighborhoods: Second Ward, Third Ward, The Heights, Downtown Houston."
  },
  {
   "name": "METRO curb2curb",
@@ -373,19 +253,6 @@
   "note": "REAL operates a 9-county rural district overall, but this microtransit zone specifically serves the twin towns of Rockport and Fulton (Aransas County); no zone-size figure published. Source: realcap.org/transportation and transit.wiki/REAL_Transit."
  },
  {
-  "name": "Round Rock Rides",
-  "state": "TX",
-  "boundary_type": "city",
-  "units": [
-   {
-    "layer": "place",
-    "name": "Round Rock"
-   }
-  ],
-  "confidence": 1.0,
-  "note": "City of Round Rock operates citywide service"
- },
- {
   "name": "SCRPT / The Connection",
   "state": "TX",
   "boundary_type": "county",
@@ -414,86 +281,6 @@
   ],
   "confidence": 0.9,
   "note": "South Plains Community Action operates zones in two cities"
- },
- {
-  "name": "STARNow",
-  "state": "TX",
-  "boundary_type": "places",
-  "units": [
-   {
-    "layer": "auto",
-    "name": "Mesquite"
-   },
-   {
-    "layer": "auto",
-    "name": "Balch Springs"
-   },
-   {
-    "layer": "auto",
-    "name": "Kaufman"
-   },
-   {
-    "layer": "auto",
-    "name": "Terrell"
-   },
-   {
-    "layer": "auto",
-    "name": "Forney"
-   },
-   {
-    "layer": "auto",
-    "name": "Seagoville"
-   },
-   {
-    "layer": "auto",
-    "name": "DeSoto"
-   },
-   {
-    "layer": "auto",
-    "name": "Cedar Hill"
-   },
-   {
-    "layer": "auto",
-    "name": "Duncanville"
-   },
-   {
-    "layer": "auto",
-    "name": "Hutchins"
-   },
-   {
-    "layer": "auto",
-    "name": "Lancaster"
-   },
-   {
-    "layer": "auto",
-    "name": "Wilmer"
-   }
-  ],
-  "confidence": 0.85,
-  "note": "12 DFW-area cities served by STAR Transit microtransit"
- },
- {
-  "name": "Sugar Land On-Demand",
-  "state": "TX",
-  "boundary_type": "zone_approx",
-  "units": [
-   {
-    "layer": "place",
-    "name": "Sugar Land"
-   }
-  ],
-  "buffers": [
-   {
-    "center_unit": {
-     "layer": "place",
-     "name": "Sugar Land"
-    },
-    "radius_km": 4.2
-   }
-  ],
-  "clip_to_units": true,
-  "confidence": 0.7,
-  "note": "Designated zone covering ~43,000 residents; estimated service radius ~2.6 miles."
  },
  {
   "name": "SWART Dial-a-Ride",

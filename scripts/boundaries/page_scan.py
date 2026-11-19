@@ -42,6 +42,12 @@ HEX = r"[0-9a-f]{32}"
 FOLLOW_WORDS = re.compile(r"map|zone|service[- _]?area|boundar|micro|on[- _]?demand|flex|where", re.I)
 SKIP_LINK = re.compile(r"\.(pdf|jpe?g|png|gif|svg|docx?|xlsx?|zip|mp4)(\?|$)|mailto:|tel:|facebook|twitter|instagram|"
                        r"linkedin|youtube|apps\.apple|play\.google|/(news|events|calendar|jobs|careers)\b", re.I)
+# Layer names that are never service zones; skipped before download (speed).
+IRRELEVANT = re.compile(r"parcel|tax ?lot|imagery|orthophoto|aerial|zoning|flood|fema|wetland|soil|contour|"
+                        r"building|footprint|address|hydrant|sewer|storm|water|utility|police|fire|precinct|"
+                        r"voting|ward|council|school|park|trail|sidewalk|crash|tree|census|tract|block group|"
+                        r"land ?use|easement|right of way|street|road|centerline|pavement", re.I)
+RELEVANT = re.compile(r"micro|on[- _]?demand|flex|zone|service ?area|transit|ride", re.I)
 _requests = 0
 
 
@@ -123,6 +129,9 @@ def resolve(kind, ref):
             [(u, n, "") for u, n in V.polygon_layers({"type": "Feature Service", "url": ref})]
         out = []
         for lu, name, title in layers[:8]:
+            if IRRELEVANT.search(f"{name} {title}") and not RELEVANT.search(name or ""):
+                out.append((lu, name, title, None, "skipped: layer name not transit-related"))
+                continue
             gj, err = V.fetch_features(lu)
             out.append((lu, name, title, gj, err))
         return out

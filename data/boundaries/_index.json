@@ -182,7 +182,7 @@
   },
   "NV": {
    "features": 4,
-   "updated": "2026-09"
+   "updated": "2026-11"
   },
   "NY": {
    "features": 15,
@@ -229,8 +229,8 @@
    "updated": "2026-11"
   },
   "VA": {
-   "features": 10,
-   "updated": "2026-09"
+   "features": 11,
+   "updated": "2026-11"
   },
   "VT": {
    "features": 7,
@@ -254,19 +254,19 @@
   }
  },
  "types": {
-  "county": 128,
+  "county": 124,
   "counties": 51,
-  "zone_approx": 29,
-  "city": 212,
-  "places": 135,
+  "zone_approx": 26,
+  "city": 204,
+  "places": 125,
   "tribal": 17,
-  "agency_gis": 19,
-  "buffered": 13,
+  "agency_gis": 63,
+  "buffered": 12,
   "gtfs_flex": 9,
-  "cousubs": 26,
-  "cousub": 18,
+  "cousub": 11,
+  "cousubs": 16,
   "census_tracts": 2,
   "neighborhood_npa": 2
  },
- "features": 661
+ "features": 662
 }

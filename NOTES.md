@@ -33,6 +33,56 @@ reviewer's; scope flags flip to "Removed" when the row leaves the CSV.
 
 ## Service-area boundary pipeline (started 2026-09-09)
 
+**Regional/state layer pass (2026-11-19):** `scripts/boundaries/catalog_harvest.py`
+searches ArcGIS Online and Socrata by topic ("microtransit service area" etc.)
+instead of by system name. That finds MPO and state DOT layers covering many systems at once.
+An overnight run outside CO/OH took 49 min: 1,291 items, 872 polygon layers, 13,008 raw
+polygon-system matches. Most were noise, such as county-level demand-response coverage layers,
+"Reuse Service Area" utility layers and planning scenarios. About 20 publishers were
+worth review. The same night `page_scan.py --only-exact --tag exact` (27 min, 427 rows)
+checked the exact-flagged rows against agency maps. **Loaded (44, boundary_type
+agency_gis):**
+- CTDOT statewide microtransit layer (Oct 2026), 17 CT rows. Most Census polygons were 2-10x
+  too big, e.g. StamFORWARD 39 -> 4.9 sq mi, Wheels 2U Norwalk 25 -> 2.3. That includes the duplicate
+  VTD2GO row (given the existing NVCOG polygon) and the CTDOT Norwalk pilot row (= Wheels2U Norwalk).
+- MassDOT (Nov 2025, on-demand features only): CATA On Demand, FRTA Microtransit (Access Zone 1),
+  Quaboag Connector, RC Link, Tri-Town Connector (MassDOT: "South County Connector"). Also
+  GATRA GO, from GATRA's Sept 2025 zone layer.
+- Virginia DRPT (2026-11-16): GRTC LINK (6 zones, previously unmapped), OmniRide Connect,
+  MicroCAT, GLTC Flex. LC Transit On Demand came from Loudoun County's own layer.
+- NCTCOG (Jan 2026): DART GoLink (28 zones vs. the CSV's 34; logged in concerns.csv), DCTA
+  GoZone, GoZone Frisco, STARNow (all 12 cities), Highland Park.
+- H-GAC (Sep 2026): Houston Community Connector (5 zones incl. Near Northside; 673 -> 13 sq mi), Sugar Land.
+  City of Round Rock: Round Rock Rides.
+- TRPA: Lake Link (CA zones 1+3, NV zone 2), TART Connect (4 zones). This is TRPA's regional-plan
+  data layer, so revisit if the zones change.
+- PSRC 2026 MOD inventory: Pierce Transit Runner (5 zones, was a 1,690 sq mi county), Metro Flex
+  (9), Zip Shuttle (4).
+- Palm Beach TPA: Go Glades ("Operational" zone; 2,229 -> 89 sq mi). Sarasota County: Breeze
+  OnDemand (3 zones; 605 -> 95 sq mi).
+
+**Held** in `agency_layers.json` (`"hold": true`, the reason in each note):
+- Zone lists that don't match the CSV: MWRTA Catch Connect (5 zones vs. 2), SmartDART (Cape-wide vs.
+  3 towns), VTA On Demand, BAT Flex (no Bridgewater), MART OnDemand, Salem Skipper (Salem only),
+  HRT OnDemand (2 of 4), METRO curb2curb (5 vs. 2), Kitsap (3 of 5), UTA On Demand (4 of 6),
+  rabbittransit Stop Hopper (2024 zones lack York/Gettysburg/Hanover).
+- Status unclear: BocaConnect (MPO polygons "Proposed"), Putnam On-Demand (county's 2025 layer
+  says pilot, its Aug 2026 update says "PROPOSED").
+- Identity unclear (CT): Groton Smart Ride, Via NHV x2, CTtransit Link New Haven, CTtransit Link
+  Stamford. See the 2026-11-19 dedup rows in concerns.csv.
+- Needs a call on the source: the NC compilation by an NCSU account (19 rows); AZ, from ASU's
+  Phoenix-area layer, ADOT/AZGeo's GTFS-supplement layer (traced from website maps) and PAG
+  (Tucson); Long Island (ICF, 2023); Nebraska radius service areas; CMAP 2024 DAR areas. The
+  features for these were auto-picked by pin and name and have not been reviewed. Rows whose
+  agency map disagrees with the CSV: CDTA FLEX+ (Saratoga/Guilderland/Amsterdam vs. Downtown
+  Albany), RTS On Demand (7 Monroe County zones vs. 7 outer counties), SCCTD Flyer (32x the area).
+
+**Not changed:** existing agency_gis/gtfs_flex polygons. The confirmations need no change:
+Addison, Arlington, Grand Prairie, WinReady, IRIS, NewMo. CO and OH were skipped (under review).
+`add_agency_layers.py` gained `"match": {field: value(s)}` for layers where one field doesn't
+identify a zone. The DRCOG layer (RTD FlexRide + microtransit service areas, Nov 2026,
+item c533cbb690124811bc615ff064de041c) is there for after the CO review.
+
 **Agency-page scan (2026-11-18):** `scripts/boundaries/page_scan.py` fetches each
 row's Website URL plus up to 4 same-site map/zone links and extracts Google My
 Maps ids, embedded ArcGIS items/apps, ArcGIS service URLs and KML/KMZ/GeoJSON
