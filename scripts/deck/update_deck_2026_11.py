@@ -241,6 +241,15 @@ def main():
     for i, row in enumerate(tbl.rows):
         row.height = Inches(0.40)
 
+    # Slide 8: use of AI agents, a line on how work was split across models
+    s = sl[7]
+    tf = shape(s, "Text Placeholder 4").text_frame
+    last = tf.paragraphs[-1]._p
+    new_p = copy.deepcopy(last)
+    last.addnext(new_p)
+    set_para(tf.paragraphs[-1], "Lower-cost models did the high-volume research and drafting; more capable "
+                                "models orchestrated the batches and reviewed the results")
+
     # Slide 9: service-area boundaries
     s = sl[8]
     tb = shape(s, "TextBox 2")
