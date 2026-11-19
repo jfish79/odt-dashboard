@@ -162,7 +162,7 @@ def main():
             if not gj:
                 continue
             for f in gj["features"]:
-                rings = V.rings(f.get("geometry"))
+                rings = [r for r in (V.rings(f.get("geometry")) or []) if r and r[0]]
                 if not rings:
                     continue
                 props = f.get("properties") or {}

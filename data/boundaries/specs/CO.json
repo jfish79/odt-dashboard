@@ -63,33 +63,6 @@
   "note": "Operator NECALG's own site lists County Express dispatchers by county grouping (Morgan; Logan/Phillips/Sedgwick; Washington/Yuma), confirming service across all six counties. https://necalg.org/county-express/"
  },
  {
-  "name": "Erie Bee",
-  "state": "CO",
-  "boundary_type": "city",
-  "units": [
-   {
-    "layer": "place",
-    "name": "Erie"
-   }
-  ],
-  "confidence": 0.95,
-  "note": "Town of Erie service zone. Launched April 21, 2026."
- },
- {
-  "name": "Highlands Ranch Microtransit",
-  "state": "CO",
-  "boundary_type": "city",
-  "units": [
-   {
-    "layer": "place",
-    "name": "Highlands Ranch"
-   }
-  ],
-  "fidelity": "approximate",
-  "confidence": 0.9,
-  "note": "Serves Highlands Ranch with focus on mobility for older adults. Launched spring 2025."
- },
- {
   "name": "Kiowa County Transit",
   "state": "CO",
   "boundary_type": "county",
@@ -128,33 +101,6 @@
   ],
   "confidence": 0.9,
   "note": "Verified against the operator's own page: Dial-A-Ride is free transportation to \"most locations within our town limits\" \u2014 it does not itself run to Telluride. A separate regional service (SMART, San Miguel Authority for Regional Transportation) connects Mountain Village to Telluride; that is a different system, not part of this boundary. Source: https://townofmountainvillage.com/explore/getting-around/bus-dial-a-ride/"
- },
- {
-  "name": "Ride Free Lafayette",
-  "state": "CO",
-  "boundary_type": "city",
-  "units": [
-   {
-    "layer": "place",
-    "name": "Lafayette"
-   }
-  ],
-  "fidelity": "approximate",
-  "confidence": 0.85,
-  "note": "Primary service in Lafayette with spillover service to Kestrel community in Louisville."
- },
- {
-  "name": "RIDE Longmont",
-  "state": "CO",
-  "boundary_type": "city",
-  "units": [
-   {
-    "layer": "place",
-    "name": "Longmont"
-   }
-  ],
-  "confidence": 0.95,
-  "note": "Citywide service launched Dec 9, 2024."
  },
  {
   "name": "The Lift Flex",

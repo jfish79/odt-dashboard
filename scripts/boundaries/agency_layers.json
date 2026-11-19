@@ -2202,14 +2202,62 @@
  },
  {
   "state": "CO",
+  "layer_url": "https://services2.arcgis.com/lCUrzfRwZYxmwIse/arcgis/rest/services/Microtransit_Polygons/FeatureServer/33",
+  "item": "https://www.arcgis.com/home/item.html?id=c533cbb690124811bc615ff064de041c",
+  "title": "Microtransit Zones map",
+  "layer": "Microtransit service areas",
+  "publisher": "Denver Regional Council of Governments (DRCOG)",
+  "modified": "2026-11-04",
+  "field": "Service_Name",
   "name": "Erie Bee",
-  "hold": true,
-  "layer_url": "https://services7.arcgis.com/W84KziZxJbXVOT7V/arcgis/rest/services/Erie_Bee_Service_Area/FeatureServer/0",
-  "item": "https://www.arcgis.com/home/item.html?id=58c262cc408d4684a011a390f06316cc",
-  "title": "Erie Bee Service Area",
-  "layer": "Erie_Bee_Service_Area",
-  "publisher": "unidentified account (catherine_scmn)",
-  "modified": "2026-10-23",
-  "note": "HELD: publisher can't be tied to the Town of Erie or its operator; 13.6 sq mi vs the 20.8 sq mi town."
+  "include": [
+   "Erie Bee"
+  ],
+  "note": "Erie Bee service area from DRCOG's regional microtransit layer; matches the 13.6 sq mi layer an unidentified account published in Oct 2026."
+ },
+ {
+  "state": "CO",
+  "layer_url": "https://services2.arcgis.com/lCUrzfRwZYxmwIse/arcgis/rest/services/Microtransit_Polygons/FeatureServer/33",
+  "item": "https://www.arcgis.com/home/item.html?id=c533cbb690124811bc615ff064de041c",
+  "title": "Microtransit Zones map",
+  "layer": "Microtransit service areas",
+  "publisher": "Denver Regional Council of Governments (DRCOG)",
+  "modified": "2026-11-04",
+  "field": "Service_Name",
+  "name": "Ride Free Lafayette",
+  "include": [
+   "Ride - Free Lafayette"
+  ],
+  "note": "Ride Free Lafayette service area from DRCOG's regional microtransit layer."
+ },
+ {
+  "state": "CO",
+  "layer_url": "https://services2.arcgis.com/lCUrzfRwZYxmwIse/arcgis/rest/services/Microtransit_Polygons/FeatureServer/33",
+  "item": "https://www.arcgis.com/home/item.html?id=c533cbb690124811bc615ff064de041c",
+  "title": "Microtransit Zones map",
+  "layer": "Microtransit service areas",
+  "publisher": "Denver Regional Council of Governments (DRCOG)",
+  "modified": "2026-11-04",
+  "field": "Service_Name",
+  "name": "RIDE Longmont",
+  "include": [
+   "Ride - Longmont"
+  ],
+  "note": "RIDE Longmont service area from DRCOG's regional microtransit layer, including service to the Firestone-Longmont CDOT Mobility Hub."
+ },
+ {
+  "state": "CO",
+  "layer_url": "https://services2.arcgis.com/lCUrzfRwZYxmwIse/arcgis/rest/services/Microtransit_Polygons/FeatureServer/33",
+  "item": "https://www.arcgis.com/home/item.html?id=c533cbb690124811bc615ff064de041c",
+  "title": "Microtransit Zones map",
+  "layer": "Microtransit service areas",
+  "publisher": "Denver Regional Council of Governments (DRCOG)",
+  "modified": "2026-11-04",
+  "field": "Service_Name",
+  "name": "Highlands Ranch Microtransit",
+  "include": [
+   "Link On Demand - Highlands Ranch"
+  ],
+  "note": "Douglas County's Link On Demand Highlands Ranch zone from DRCOG's regional microtransit layer. The same zone is part of the Link on Demand (Lone Tree) row (see concerns.csv)."
  }
 ]

@@ -865,8 +865,8 @@
   "year_num": 2025,
   "fleet_size": null,
   "boundary": {
-   "type": "city",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -925,7 +925,7 @@
   "year_num": 2024,
   "fleet_size": null,
   "boundary": {
-   "type": "city",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
@@ -985,8 +985,8 @@
   "year_num": 2020,
   "fleet_size": null,
   "boundary": {
-   "type": "city",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -1015,7 +1015,7 @@
   "year_num": 2026,
   "fleet_size": null,
   "boundary": {
-   "type": "city",
+   "type": "agency_gis",
    "fidelity": "exact"
   }
  },
