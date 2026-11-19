@@ -685,8 +685,8 @@
   "year_num": null,
   "fleet_size": null,
   "boundary": {
-   "type": "county",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -1764,7 +1764,10 @@
   "vendor_class": "Not specified",
   "year_num": 2026,
   "fleet_size": null,
-  "boundary": null
+  "boundary": {
+   "type": "agency_gis",
+   "fidelity": "exact"
+  }
  },
  {
   "name": "Camden Loop",
@@ -2152,8 +2155,8 @@
   "year_num": 2024,
   "fleet_size": null,
   "boundary": {
-   "type": "zone_approx",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -2182,8 +2185,8 @@
   "year_num": 2025,
   "fleet_size": null,
   "boundary": {
-   "type": "zone_approx",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -7420,8 +7423,8 @@
   "year_num": 2020,
   "fleet_size": null,
   "boundary": {
-   "type": "cousubs",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -8770,8 +8773,8 @@
   "year_num": null,
   "fleet_size": null,
   "boundary": {
-   "type": "city",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -10300,8 +10303,8 @@
   "year_num": 2023,
   "fleet_size": null,
   "boundary": {
-   "type": "city",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -10510,8 +10513,8 @@
   "year_num": null,
   "fleet_size": null,
   "boundary": {
-   "type": "places",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {
@@ -12580,8 +12583,8 @@
   "year_num": null,
   "fleet_size": null,
   "boundary": {
-   "type": "county",
-   "fidelity": "approximate"
+   "type": "agency_gis",
+   "fidelity": "exact"
   }
  },
  {

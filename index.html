@@ -771,7 +771,7 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
       <p class="ref-prose">The Map view draws a service-area polygon for <strong id="bnd-covered">most</strong> systems when a state is selected. Few on-demand transit agencies publish downloadable boundary data, so polygons come from five sources, in order of preference:</p>
       <ol class="ref-prose ref-list">
         <li><strong>The agency's own geofence</strong> from a GTFS-Flex feed (<code>locations.geojson</code>), where one exists. A September 2026 scan of the Mobility Database catalog and of Trillium Transit's hosted feeds found usable geofences for <strong id="bnd-flex">a handful of</strong> systems; five other name-matched feeds were rejected because their geofence belonged to a different route on the same feed (typically ADA paratransit).</li>
-        <li><strong>The agency's own zone map on ArcGIS Online</strong>, where the agency, its county or its consultant has published one as a public layer. A November 2026 search of ArcGIS Online for every approximate or unmapped system found usable layers for <strong id="bnd-agis">several</strong> systems. Each was checked for publisher, date and location, and against the zones the agency describes; proposals, outdated versions and whole-agency service areas were rejected.</li>
+        <li><strong>The agency's own zone map</strong>, where the agency, its county or its consultant has published one as a public ArcGIS Online layer or Google My Maps (often the map embedded on the agency's service page). A November 2026 search of ArcGIS Online for every approximate or unmapped system found usable layers for <strong id="bnd-agis">several</strong> systems. Each was checked for publisher, date and location, and against the zones the agency describes; proposals, outdated versions and whole-agency service areas were rejected.</li>
         <li><strong>U.S. Census Bureau TIGER/Line cartographic boundary files</strong> (2023 vintage, 1:500k): incorporated places, county subdivisions (New England towns, townships), counties, and American Indian / Alaska Native / Native Hawaiian areas, chosen to match the service area the agency describes.</li>
         <li><strong>Local neighborhood geographies</strong> for a few North Carolina zones: Charlotte Neighborhood Profile Areas and Census tracts geocoded from the boundary streets the agency lists.</li>
         <li><strong>Stated-size circles</strong> where the agency gives only a zone size ("about 12 square miles"), centered on the zone's town and clipped to it.</li>
@@ -782,7 +782,7 @@ footer { text-align: center; padding: 1.25rem 3rem; border-top: 1px solid var(--
           <thead><tr><th>Boundary type</th><th>Built from</th><th>Accuracy</th><th style="text-align:right">Systems</th></tr></thead>
           <tbody>
             <tr><td>Official service area (GTFS-Flex)</td><td>Agency-published <code>locations.geojson</code> geofence</td><td>Exact — the agency's own operating boundary, not a proxy</td><td class="bt-count" data-bt="gtfs_flex"></td></tr>
-            <tr><td>Agency zone map (ArcGIS)</td><td>Public ArcGIS Online layer published by the agency, its county or its consultant</td><td>Exact as published — check the popup for the layer's date</td><td class="bt-count" data-bt="agency_gis"></td></tr>
+            <tr><td>Agency zone map</td><td>Public ArcGIS Online layer or Google My Maps published by the agency, its county or its consultant</td><td>Exact as published — check the popup for the layer's date</td><td class="bt-count" data-bt="agency_gis"></td></tr>
             <tr><td>City limits</td><td>Census incorporated place</td><td>High — official municipal boundary; "approximate" when the zone is a subset of the city</td><td class="bt-count" data-bt="city"></td></tr>
             <tr><td>County / multi-county</td><td>Census county polygons, dissolved</td><td>High for county-wide services; service may not reach every corner</td><td class="bt-count" data-bt="county,counties"></td></tr>
             <tr><td>Town boundaries</td><td>Union of Census places or county subdivisions (New England towns, townships)</td><td>Good — actual municipal limits, zones may extend beyond</td><td class="bt-count" data-bt="places,cousub,cousubs,places_constructed"></td></tr>
@@ -1990,7 +1990,7 @@ function ensureBoundaries(state) {
 
 const BOUNDARY_COLORS = {
   'gtfs_flex':          {fill:'#1a8a4a', stroke:'#0e5c2e', dash:null, label:'Official service area (GTFS-Flex)'},
-  'agency_gis':         {fill:'#1f7f8f', stroke:'#0f525e', dash:null, label:'Agency zone map (ArcGIS)'},
+  'agency_gis':         {fill:'#1f7f8f', stroke:'#0f525e', dash:null, label:'Agency zone map'},
   'city':               {fill:'#2e5e8a', stroke:'#1a3d5c', dash:null, label:'City limits (Census)'},
   'county':             {fill:'#3d6b4f', stroke:'#264432', dash:null, label:'County (Census)'},
   'counties':           {fill:'#3d6b4f', stroke:'#264432', dash:null, label:'Multi-county (Census)'},

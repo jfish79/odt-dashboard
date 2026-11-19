@@ -114,7 +114,8 @@ def area_sqmi(poly_rings, lat0):
     for poly in poly_rings:
         for i, ring in enumerate(poly):
             a = 0.0
-            for (x1, y1), (x2, y2) in zip(ring, ring[1:]):
+            for p1, p2 in zip(ring, ring[1:]):  # points may carry a z value
+                (x1, y1), (x2, y2) = p1[:2], p2[:2]
                 a += (x1 * kx) * (y2 * ky) - (x2 * kx) * (y1 * ky)
             total += abs(a) / 2 * (1 if i == 0 else -1)
     return total
@@ -122,7 +123,8 @@ def area_sqmi(poly_rings, lat0):
 
 def point_in_ring(x, y, ring):
     inside = False
-    for (x1, y1), (x2, y2) in zip(ring, ring[1:]):
+    for p1, p2 in zip(ring, ring[1:]):
+        (x1, y1), (x2, y2) = p1[:2], p2[:2]
         if (y1 > y) != (y2 > y) and x < (x2 - x1) * (y - y1) / (y2 - y1) + x1:
             inside = not inside
     return inside
@@ -143,8 +145,8 @@ def miles(lat1, lng1, lat2, lng2):
 def nearest_vertex_miles(poly_rings, lat, lng):
     best = float("inf")
     for poly in poly_rings:
-        for x, y in poly[0][:: max(1, len(poly[0]) // 200)]:
-            best = min(best, miles(lat, lng, y, x))
+        for pt in poly[0][:: max(1, len(poly[0]) // 200)]:
+            best = min(best, miles(lat, lng, pt[1], pt[0]))
     return best
 
 

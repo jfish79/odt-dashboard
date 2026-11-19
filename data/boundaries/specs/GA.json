@@ -163,12 +163,6 @@
   "note": "County-operated demand-response system"
  },
  {
-  "name": "MARTA Reach",
-  "state": "GA",
-  "boundary_type": "needs_research",
-  "note": "12 named zones (West Atlanta, Kirkwood/Candler Park, County Line, Lakewood, Oakley Industrial, Fulton Industrial, East Point, Hillandale, Candler-McAfee/Belvedere Park, Cedar Grove, Gresham Park, North Fulton) spread across at least Fulton and DeKalb counties with no stated sizes or boundary streets. Checked MARTA fact sheet PDF (itsmarta.com Reach fact sheet) and roughdraftatlanta.com/2026/03/02/marta-reach-on-demand-transit/ - both name the zones but give no square-mileage or street boundaries. No single containing county/city applies across all 12 zones; a human would need MARTA's internal zone-map GIS data to resolve further."
- },
- {
   "name": "MTA Rapid Transit",
   "state": "GA",
   "boundary_type": "county",

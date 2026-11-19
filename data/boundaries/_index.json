@@ -89,8 +89,8 @@
    "updated": "2026-11"
   },
   "GA": {
-   "features": 25,
-   "updated": "2026-09"
+   "features": 26,
+   "updated": "2026-11"
   },
   "HI": {
    "features": 1,
@@ -102,7 +102,7 @@
   },
   "ID": {
    "features": 2,
-   "updated": "2026-09"
+   "updated": "2026-11"
   },
   "IL": {
    "features": 23,
@@ -126,7 +126,7 @@
   },
   "MA": {
    "features": 19,
-   "updated": "2026-09"
+   "updated": "2026-11"
   },
   "MD": {
    "features": 4,
@@ -166,7 +166,7 @@
   },
   "NE": {
    "features": 6,
-   "updated": "2026-09"
+   "updated": "2026-11"
   },
   "NH": {
    "features": 1,
@@ -226,7 +226,7 @@
   },
   "UT": {
    "features": 4,
-   "updated": "2026-09"
+   "updated": "2026-11"
   },
   "VA": {
    "features": 10,
@@ -238,7 +238,7 @@
   },
   "WA": {
    "features": 10,
-   "updated": "2026-09"
+   "updated": "2026-11"
   },
   "WI": {
    "features": 44,
@@ -254,19 +254,19 @@
   }
  },
  "types": {
-  "county": 130,
+  "county": 128,
   "counties": 51,
-  "zone_approx": 31,
-  "city": 214,
-  "places": 136,
+  "zone_approx": 29,
+  "city": 212,
+  "places": 135,
   "tribal": 17,
+  "agency_gis": 19,
   "buffered": 13,
   "gtfs_flex": 9,
-  "agency_gis": 10,
-  "cousubs": 27,
+  "cousubs": 26,
   "cousub": 18,
   "census_tracts": 2,
   "neighborhood_npa": 2
  },
- "features": 660
+ "features": 661
 }

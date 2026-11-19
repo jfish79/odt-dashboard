@@ -372,23 +372,5 @@
   ],
   "confidence": 0.6,
   "note": "CSV lists this as an off-season/evening microtransit covering Edgartown and Oak Bluffs, so units are those two towns per SPEC RULES. Note for follow-up: VTA's only documented on-demand microtransit pilot found in research (vineyardgazette.com, Nov 2020 \"VTA Launches Micro Transit\") served up-Island riders (Aquinnah/Chilmark/West Tisbury/Tisbury area), not Edgartown/Oak Bluffs, and the CSV pin (41.389,-70.6298) sits ~8.6km west of these two towns, closer to that up-Island area – no current vineyardtransit.com page documents a distinct \"On Demand\" service by name (checked vineyardtransit.com, route-maps, and 2025 RFP PDF). Town pairing not independently confirmed; may need human verification against VTA directly (508-693-9440)."
- },
- {
-  "name": "WRTA Via",
-  "state": "MA",
-  "boundary_type": "cousubs",
-  "units": [
-   {
-    "layer": "cousub",
-    "name": "Westborough"
-   },
-   {
-    "layer": "cousub",
-    "name": "Shrewsbury"
-   }
-  ],
-  "confidence": 0.8,
-  "note": "Service zones are subsets of town limits, not full towns: Shrewsbury zone runs N of Rte 9 to Rte 20/Grafton State Hospital between Lake Quinsigamond and Northborough Crossing; Westborough/Northborough zone runs from downtown Northborough to south of Nourse St/W Main St between Northborough Crossing and I-495 (service also expanded to Northborough by July 2025, not reflected in this row's CSV text). CSV pin (42.2625,-71.8022) matches Worcester's coordinates, not Westborough/Shrewsbury - likely a mislabeled pin in the source CSV, not a boundary error; flagging for CSV correction rather than widening the polygon. Sources: https://city.ridewithvia.com/via-wrta, https://www.communityadvocate.com/news/wrta-service-expands-through-westborough-northborough-shrewsbury/article_099e3002-3348-49f1-9e06-f1247e888139.html",
-  "fidelity": "approximate"
  }
 ]

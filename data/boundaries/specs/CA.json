@@ -727,56 +727,6 @@
   "note": "Monterey-Salinas Transit operates county-wide; noted service to South County deep rural communities."
  },
  {
-  "name": "NCTD+ San Marcos",
-  "state": "CA",
-  "boundary_type": "zone_approx",
-  "units": [
-   {
-    "layer": "place",
-    "name": "San Marcos",
-    "county": "San Diego"
-   }
-  ],
-  "clip_to_units": true,
-  "buffers": [
-   {
-    "center_unit": {
-     "layer": "place",
-     "name": "San Marcos",
-     "county": "San Diego"
-    },
-    "radius_km": 2.87
-   }
-  ],
-  "confidence": 0.85,
-  "note": "10-square-mile service zone centered in San Marcos (North San Diego County); may extend outside city limits (https://www.gonctd.com/plus)"
- },
- {
-  "name": "NCTD+ Vista",
-  "state": "CA",
-  "boundary_type": "zone_approx",
-  "units": [
-   {
-    "layer": "place",
-    "name": "Vista",
-    "county": "San Diego"
-   }
-  ],
-  "clip_to_units": true,
-  "buffers": [
-   {
-    "center_unit": {
-     "layer": "place",
-     "name": "Vista",
-     "county": "San Diego"
-    },
-    "radius_km": 2.4
-   }
-  ],
-  "confidence": 0.85,
-  "note": "7-square-mile service zone centered in Vista (North San Diego County); may extend outside city limits (https://www.gonctd.com/plus)"
- },
- {
   "name": "OC Flex",
   "state": "CA",
   "boundary_type": "county",

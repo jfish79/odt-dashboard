@@ -56,20 +56,6 @@
   "note": "Micro service runs two zones, not full counties: a Summit County zone covering Kimball Junction/Jeremy Ranch and surrounding area (Snyderville Basin CDPs: Silver Summit, Summit Park, Snyderville), and a Wasatch County zone covering Heber Valley and surrounding area. No zone-size figure is published, so unincorporated community CDPs stand in as an approximate proxy rather than the full 8,009 km2 of Summit+Wasatch counties. Jeremy Ranch itself is not a separate Census place; it falls within these CDPs. Source: https://www.hvtutah.gov/ride-micro (checked 2026-09-09)."
  },
  {
-  "name": "Moab Area Transit (MAT)",
-  "state": "UT",
-  "boundary_type": "city",
-  "units": [
-   {
-    "layer": "place",
-    "name": "Moab"
-   }
-  ],
-  "fidelity": "approximate",
-  "confidence": 0.7,
-  "note": "On-demand/door-to-door service in Moab and surrounding service area, Grand County. Service launched March 2023. Exact extent of surrounding area not specified."
- },
- {
   "name": "UTA On Demand",
   "state": "UT",
   "boundary_type": "places",

@@ -172,20 +172,6 @@
   "note": "Planned pilot zones: North Spokane Valley, Latah Valley, Liberty Lake, West Plains, Northeast Spokane (incl. Mead); not yet launched as of Sept 2026"
  },
  {
-  "name": "The Current (C-TRAN)",
-  "state": "WA",
-  "boundary_type": "county",
-  "units": [
-   {
-    "layer": "county",
-    "name": "Clark"
-   }
-  ],
-  "fidelity": "approximate",
-  "confidence": 0.65,
-  "note": "Multiple zones: WSU Vancouver/Salmon Creek, Rose Village, Camas/Washougal, Port of Vancouver, Ridgefield/La Center, Battle Ground; exact boundaries not specified"
- },
- {
   "name": "Zip Shuttle (Community Transit)",
   "state": "WA",
   "boundary_type": "places",

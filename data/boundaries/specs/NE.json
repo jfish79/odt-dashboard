@@ -14,20 +14,6 @@
   "note": "Service extends 2 miles beyond Fremont city limits in Dodge County."
  },
  {
-  "name": "Micro Flex",
-  "state": "NE",
-  "boundary_type": "city",
-  "units": [
-   {
-    "layer": "place",
-    "name": "Omaha"
-   }
-  ],
-  "fidelity": "approximate",
-  "confidence": 0.85,
-  "note": "Service operates in three designated zones (North, South, West) within Omaha city limits; exact zone boundaries not specified."
- },
- {
   "name": "Neligh Dial-A-Ride Public Transportation",
   "state": "NE",
   "boundary_type": "city",

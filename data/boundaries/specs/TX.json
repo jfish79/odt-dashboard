@@ -680,20 +680,6 @@
   "note": "TRAX (Permian Basin Rural Transit District, operated by West Texas Opportunities Inc.) serves 22 named West Texas counties: a southern group (Brewster, Culberson, Hudspeth, Jeff Davis, Presidio) plus a Permian Basin group (Andrews, Borden, Crane, Dawson, Ector, Gaines, Glasscock, Howard, Loving, Martin, Midland, Pecos, Reeves, Terrell, Upton, Ward, Winkler); rural areas of Ector and Midland counties only, excluding the incorporated cities of Odessa and Midland. Source: https://www.transit.wiki/TRAX_(West_Texas)"
  },
  {
-  "name": "Trinity Metro On-Demand",
-  "state": "TX",
-  "boundary_type": "county",
-  "units": [
-   {
-    "layer": "county",
-    "name": "Tarrant"
-   }
-  ],
-  "fidelity": "approximate",
-  "confidence": 0.75,
-  "note": "Multiple zones across Tarrant County including Mercantile, North Side, Southeast zones in Fort Worth area."
- },
- {
   "name": "Tyler Transit MicroTransit",
   "state": "TX",
   "boundary_type": "city",

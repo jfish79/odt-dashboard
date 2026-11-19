@@ -33,6 +33,27 @@ reviewer's; scope flags flip to "Removed" when the row leaves the CSV.
 
 ## Service-area boundary pipeline (started 2026-09-09)
 
+**Agency-page scan (2026-11-18):** `scripts/boundaries/page_scan.py` fetches each
+row's Website URL plus up to 4 same-site map/zone links and extracts Google My
+Maps ids, embedded ArcGIS items/apps, ArcGIS service URLs and KML/KMZ/GeoJSON
+links, then resolves and checks them like arcgis_vet.py. On OH it reproduced the
+manual deep dive in 34 s and also found BGo's own KML (held with the other OH
+finds in agency_layers.json, `"hold": true`). Run on the 213 approximate or
+unmapped rows outside CO/OH: about 25 min, 150 pages fetched (48 rows have no
+URL, 15 pages blocked or 404), 48 with map references, 26 with a passing layer.
+**Loaded (9):** MARTA Reach (12 zones, previously unmapped), NCTD+ San Marcos,
+NCTD+ Vista, WRTA Via, Micro Flex (Omaha; agency GeoJSON files), The Current
+(C-TRAN), Moab Area Transit, VRT On-Demand (Eagle zone excluded: outside this
+row; possibly a separate VRT service missing from the inventory), Trinity Metro
+On-Demand (combined KMZ). **Need a decision:** TANK Plus (Nov 2026 map: "Main
+Zone" plus named destination polygons), JTA ReadiRide (9 zones vs. CSV's 14),
+METRO Connect AR (two My Maps, 4 and 6 zones; CSV lists 8), SporTran OnDemand
+(My Maps mixes zones with paratransit polygons and an unnamed "Polygon 2"), MTA
+Rapid Transit Macon (My Maps found on a news site, not the agency). The loader
+now reads KML/KMZ, My Maps exports and GeoJSON (`kml_url`, `geojson_url`, `urls`).
+A second scan of the 418 exact-flagged rows (`--only-exact --tag exact`) was
+started the same day.
+
 **Ohio boundary deep dive (2026-11-18, findings held for the review, nothing loaded):**
 three tiers, about 5 min wall time and about 20 tool calls for 11 systems.
 (1) Scripted ArcGIS search + vet (`--states OH --all-fidelity --tag oh`), 40 s:
