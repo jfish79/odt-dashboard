@@ -364,6 +364,7 @@ select:focus { border-color: var(--ink); }
 .ref-table.val-corr tbody tr.val-cont td { border-top: 1px dotted var(--border2); }
 .ref-table.val-corr tbody tr:last-child td { border-bottom: 1px solid var(--border); }
 .val-corr th { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.val-corr .val-pill { white-space: normal; max-width: 100%; line-height: 1.35; }
 .val-clamp { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .val-src { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .val-toggle { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-mid); display: inline-flex; gap: 0.4rem; align-items: center; margin-top: 0.75rem; cursor: pointer; }
@@ -2376,7 +2377,7 @@ function renderValidation(){
   const fieldF = findings.filter(f => f.kind === 'field');
   h += `<div class="ref-section"><div class="ref-section-label">Proposed corrections (${fieldF.length})</div>`;
   h += fieldF.length ? `<div class="ref-table-wrap"><table class="ref-table val-table val-corr">
-    <colgroup><col style="width:18%"><col style="width:10%"><col style="width:21%"><col style="width:21%"><col style="width:10%"><col style="width:7%"><col style="width:13%"></colgroup>
+    <colgroup><col style="width:17%"><col style="width:10%"><col style="width:20%"><col style="width:20%"><col style="width:10%"><col style="width:11%"><col style="width:12%"></colgroup>
     <thead><tr><th>System</th><th>Field</th><th>On dashboard</th><th>Reviewer's value</th><th>Type</th><th>Status</th><th>Source</th></tr></thead><tbody>
     ${(() => { let g = 0; return fieldF.map((f, i) => { const same = i > 0 && fieldF[i-1].state === f.state && fieldF[i-1].name === f.name;
       if (!same) g++;
