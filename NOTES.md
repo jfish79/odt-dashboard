@@ -31,6 +31,15 @@ Type (error / cosmetic / not_error / ...) and, when resolved, its Status.
 Field corrections flip to "Applied" automatically when the CSV value equals the
 reviewer's; scope flags flip to "Removed" when the row leaves the CSV.
 
+**Applied 2026-11-19** (user: "fine to make the edits in the dashboard if we keep the
+spreadsheet intact"): Basalt Connect booking, La Junta and Mountain Village URLs, Laketran
+vendor (Trapeze), MetroNow! vendor (Via), ViaLC fare; each logged in concerns.csv as
+"Data Correction (validation review)". Not applied: the five cosmetic name trims (renaming
+breaks boundary/Sheet matching), the three Scheduling Window changes (waiting on the value
+definitions), PATS fare (waiting on Shivam), PATS and RIDE Longmont URLs (user's call),
+Call-N-Ride fare (its source is the ADA page and its scope flag is open). The Sheet's CO and OH
+tabs stay unchanged as the first-pass record.
+
 ## Service-area boundary pipeline (started 2026-09-09)
 
 **Regional/state layer pass (2026-11-19):** `scripts/boundaries/catalog_harvest.py`
@@ -82,6 +91,22 @@ Addison, Arlington, Grand Prairie, WinReady, IRIS, NewMo. CO and OH were skipped
 `add_agency_layers.py` gained `"match": {field: value(s)}` for layers where one field doesn't
 identify a zone. The DRCOG layer (RTD FlexRide + microtransit service areas, Nov 2026,
 item c533cbb690124811bc615ff064de041c) is there for after the CO review.
+
+**CO and OH pass (2026-11-19, after both reviews were done):** the user lifted the boundary
+hold for finished states ("not seeing a strong reason from holding back"). Loaded: Denver
+Connector (City and County of Denver, 3 zones, 155 -> 18 sq mi), RTD FlexRide (RTD's
+current-runboard layer, 13 areas vs. the CSV's 17; logged), Link on Demand Lone Tree (City of
+Lone Tree, 6 areas), Downtowner Aspen, Basalt Connect and Snowmass Village (RFTA), and the four
+staged OH finds (TARTA Flex, MetroNow!, COTA Plus 3 active zones vs. CSV's 8, logged; BGo).
+A CO-only harvest (`catalog_harvest.py --states CO --bbox=-109.1,36.9,-102.0,41.1 --tag co`,
+about 1 h) then found DRCOG's "Microtransit service areas" layer (2026-11-04): loaded Erie Bee,
+Ride Free Lafayette, RIDE Longmont and Highlands Ranch Microtransit from it. Highlands Ranch
+and Link on Demand (Lone Tree) overlap (logged as a dedup). DRCOG also lists services not in
+the inventory, unchecked: BOLT (Brighton), Ride - SouthEast and Ride - BoCo (Boulder County),
+NETC Aero Shuttle and NETC Majestic Commuter Shuttle. Not loaded: Avon, The Lift Flex and
+Call-N-Ride Greeley (only a June 2025 consultant layer, pliu_camsys); DRCOG's extra Federal
+Heights FlexRide zone (kept RTD's 13). Totals after this: 662 polygons, 86 agency-drawn
+(77 agency_gis + 9 gtfs_flex), 576 Census-based, 3 unmapped.
 
 **Agency-page scan (2026-11-18):** `scripts/boundaries/page_scan.py` fetches each
 row's Website URL plus up to 4 same-site map/zone links and extracts Google My
